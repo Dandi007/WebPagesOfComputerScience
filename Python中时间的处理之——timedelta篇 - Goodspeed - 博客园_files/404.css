@@ -1,0 +1,19 @@
+#top {
+	background-color : #1478EB;
+	color : #FFFFFF;
+	border-bottom : 1px solid #47F;
+}
+
+#main {
+	background-color : #EFF3FB;
+	border-bottom : 1px solid #47F;
+	border-left : 1px solid #47F;
+}
+
+#comments h4 span {
+	color : #999;
+}
+body{background-color:#ffffff}
+li{font-size:12px}
+p,td{font-size:12px}
+headermaintitle{color:#FFFFFF}

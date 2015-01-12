@@ -1,0 +1,67 @@
+/**
+ * @author yangzeming
+ * 贴吧全站的默认样式清除
+ */
+
+/*reset*/
+
+/** 清除内外边距 **/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre,code, /* text formatting elements 文本格式元素 */
+form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+th, td /* table elements 表格元素 */ {
+    margin: 0;
+    padding: 0;
+}
+/** 重置表格元素 **/
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+html {
+	width:100%;
+	height:100%;
+	border:none;
+}
+/*=====设置默认字体==============*/
+
+body,
+button, input, select, textarea, td, th{
+	font: 12px/18px Arial,'宋体';
+}
+/*==============按钮鼠标手势===========*/
+button, input[type="button"],input[type="submit"], input[type="reset"], input[type="file"]{
+	cursor:pointer;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0){ button, input[type="button"],input[type="submit"], input[type="reset"], input[type="file"]{
+padding:1px 6px;} }
+textarea,input{
+	outline: none;
+}
+
+/**=====让链接里的 img 无边框===*/
+fieldset,img, iframe {
+	border:none;  
+}
+
+p, div, td {
+    word-break: break-all;
+}
+
+/** 重置列表元素 **/
+ul, ol { list-style: none; }
+
+/** 链接相关 */
+
+a{
+	color:#0449be;
+}
+
+/* 重置 HTML5 元素 */
+article, aside, details, figcaption, figure, footer,header, hgroup, menu, nav, section,
+summary, time, mark, audio, video {
+    display: block;
+    margin: 0;
+    padding: 0;
+}

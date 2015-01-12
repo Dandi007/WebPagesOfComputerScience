@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script src="http://cdn.api.twitter.com/1/urls/count.json?callback=WPCOMSharing.update_twitter_count&amp;url=http%3A%2F%2Fvinta.ws%2Fblog%2F695&amp;_=1418398670569" async=""></script><script src="https://graph.facebook.com/?ids=http%3A%2F%2Fvinta.ws%2Fblog%2F695&amp;format=json&amp;callback=WPCOMSharing.update_facebook_count&amp;_=1418398670568" async=""></script>
+	<meta charset="UTF-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>軟體工程師的鄙視鏈 | 真．他媽的</title>
+	<script src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/ca-pub-2319189500185347.js" type="text/javascript" async=""></script><script src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/ga.js" async="" type="text/javascript"></script><script src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/cloudflare.js" async=""></script><script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:1417583188,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok2v=1613a3a185/"},atok:"3450993e07df07d6abea0ccbc0b77082",petok:"8e5684316e6bf27794c88f84c099833e37478dab-1418398579-1800",zone:"vinta.ws",rocket:"0",apps:{"ga_key":{"ua":"UA-510626-2","ga_bs":"2"}}}];CloudFlare.push({"apps":{"ape":"d7767ec326152bbc75623c9bc108df9e"}});!function(a,b){a=document.createElement("script"),b=document.getElementsByTagName("script")[0],a.async=!0,a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dok2v=919620257c/cloudflare.min.js",b.parentNode.insertBefore(a,b)}()}}catch(e){};
+//]]>
+</script>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="http://vinta.ws/blog/xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="http://vinta.ws/blog/wp-content/themes/stork/js/html5.js" type="text/javascript"></script>
+	<![endif]-->
+	<link rel="alternate" type="application/rss+xml" title="真．他媽的 » Feed" href="http://vinta.ws/blog/feed">
+<link rel="alternate" type="application/rss+xml" title="真．他媽的 » Comments Feed" href="http://vinta.ws/blog/comments/feed">
+<link rel="alternate" type="application/rss+xml" title="真．他媽的 » 軟體工程師的鄙視鏈 Comments Feed" href="http://vinta.ws/blog/695/feed">
+<link rel="stylesheet" id="jgtstork-fonts-css" href="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="jgtstork-style-css" href="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/style.css" type="text/css" media="all">
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='jgtstork-ie-css'  href='http://vinta.ws/blog/wp-content/themes/stork/css/ie.css?ver=1.0' type='text/css' media='all' />
+<![endif]-->
+<link rel="stylesheet" id="genericons-css" href="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/genericons.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/jetpack.css" type="text/css" media="all">
+<!-- This site uses the Yoast Google Analytics plugin v5.2.3 - Universal disabled - https://yoast.com/wordpress/plugins/google-analytics/ -->
+<script type="text/javascript">/* CloudFlare analytics upgrade */
+</script><style type="text/css">.cf-hidden { display: none; } .cf-invisible { visibility: hidden; }</style>
+<!-- / Yoast Google Analytics -->
+<script type="text/javascript" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/jquery.js"></script>
+<script type="text/javascript" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/jquery-migrate.js"></script>
+<script type="text/javascript" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/related-posts.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://vinta.ws/blog/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://vinta.ws/blog/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="佔領行政院：一位失敗主義者的告白" href="http://vinta.ws/blog/653">
+<meta name="generator" content="WordPress 4.0.1">
+<link rel="canonical" href="http://vinta.ws/blog/695">
+<link rel="shortlink" href="http://vinta.ws/blog/?p=695">
+<style type="text/css">img#wpstats{display:none}</style>	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="軟體工程師的鄙視鏈">
+<meta property="og:url" content="http://vinta.ws/blog/695">
+<meta property="og:description" content="&nbsp; 最近這幾年在世界各地突然吹起了一股全民寫程式的風潮，連美國總統歐巴馬都在寫 JavaScript 了，但是身為一介靠寫程式（以及在上班時間胡亂上網）來謀生的 developer（所謂的 developer 就是「軟體工程師」的比較潮的說法），想要提醒那些想學習寫程式的人一件重要的事：慎選你的第一個程式語言。 &nbsp; 在軟體工程師（中國叫做「程序員」或「碼農」）的圈子裡，文...">
+<meta property="article:published_time" content="2014-12-11T18:47:51+00:00">
+<meta property="article:modified_time" content="2014-12-11T18:51:13+00:00">
+<meta property="article:author" content="http://vinta.ws/blog/author/admin">
+<meta property="og:site_name" content="真．他媽的">
+<meta property="og:image" content="https://s0.wp.com/i/blank.jpg">
+<meta name="twitter:site" content="@jetpack">
+<meta name="twitter:card" content="summary">
+		<link rel="stylesheet" id="custom-css-css" type="text/css" href="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/a.css">
+		<script async="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/adsbygoogle.js"></script><script pagespeed_no_defer="" data-pso-version="20141210_220602">window.dynamicgoogletags={config:[]};dynamicgoogletags.config=["ca-pub-2319189500185347",[[[["DIV",,"primary-sidebar",[]],["10px","10px",1],3,,"2471680374",0],[["ARTICLE",0,,["post"],0],["10px","10px",0],0,,"3948413572",0]]],[[[],[],[]]],"WordPressSinglePost","4088014375",,0.0];(function(){var g=function(a,c){function b(){}b.prototype=c.prototype;a.u=c.prototype;a.prototype=new b;a.t=function(a,b,f){for(var h=Array(arguments.length-2),k=2;k<arguments.length;k++)h[k-2]=arguments[k];return c.prototype[b].apply(a,h)}};var m=function(a){return-1!=l.indexOf(a)};var n=function(){},p=function(a,c,b){a.c={};c||(c=[]);a.r=void 0;a.h=-1;a.a=c;r:{if(a.a.length){c=a.a.length-1;var e=a.a[c];if(e&&"object"==typeof e&&"number"!=typeof e.length){a.j=c-a.h;a.i=e;break r}}a.j=Number.MAX_VALUE}if(b)for(c=0;c<b.length;c++)e=b[c],e<a.j?(e+=a.h,a.a[e]=a.a[e]||[]):a.i[e]=a.i[e]||[]},q=function(a,c){return c<a.j?a.a[c+a.h]:a.i[c]},t=function(a,c,b){c<a.j?a.a[c+a.h]=b:a.i[c]=b},u=function(a,c,b){if(!a.c[b]){var e=q(a,b);e&&(a.c[b]=new c(e))}return a.c[b]},v=function(a,c,b){if(!a.c[b]){for(var e=
+q(a,b),d=[],f=0;f<e.length;f++)d[f]=new c(e[f]);a.c[b]=d}return a.c[b]};n.prototype.toString=function(){return this.a.toString()};var w=function(a){p(this,a,[4])};g(w,n);var x=function(a){p(this,a,[])};g(x,n);var y=function(a){p(this,a,[])};g(y,n);y.prototype.l=function(){return q(this,1)};var z=function(a){p(this,a,[])};g(z,n);z.prototype.l=function(){return q(this,3)};var A=function(a){p(this,a,[1])};g(A,n);A.prototype.k=function(){return v(this,z,1)};var B=function(a){p(this,a,[2])};g(B,n);var C=function(a){p(this,a,[])};g(C,n);var D=function(a){p(this,a,[1,2,3])};g(D,n);D.prototype.k=function(){return v(this,z,2)};var E=function(a){p(this,a,[3])};g(E,n);var aa=function(a){var c=window;c.google_image_requests||(c.google_image_requests=[]);var b=c.document.createElement("img");b.src=a;c.google_image_requests.push(b)};var F=function(){var a=window.dynamicgoogletags.s.e,c=window.dynamicgoogletags.s.b;if(null!=a&&q(a,7)&&!(q(a,7)<Math.random())){var b="https://pagead2.googlesyndication.com/pagead/gen_204?",e=function(a,c){c&&(c="function"==typeof encodeURIComponent?encodeURIComponent(c):escape(c),b+="&"+a+"="+c)},b=b+"id=pso_failure";e("wpc",q(a,1));e("sv",ba());e("tn",q(a,4));e("eid",c);e("w",window.innerWidth);e("h",window.innerHeight);e("m","");aa(b)}},ba=function(){for(var a=document.getElementsByTagName("script"),
+c=0;c<a.length;++c){var b=a[c].getAttribute("data-pso-version");if(b)return b}return""};var ca=function(a){var c=document,b=null;if(a.id)if(b=c.getElementById(a.id))b=[b];else return[];if(a.tagName)if(b){for(var e=a.tagName,d=[],f=0;f<b.length;++f)b[f].tagName&&b[f].tagName.toUpperCase()==e.toUpperCase()&&d.push(b[f]);b=d}else{b=c.getElementsByTagName(a.tagName);e=[];for(d=0;d<b.length;++d)e.push(b[d]);b=e}if(a.classNames&&0<a.classNames.length)if(b){c=b;b=a.classNames;e=[];for(d=0;d<c.length;++d)G(c[d],b)&&e.push(c[d]);b=e}else{if(!c.body)return[];b=H(a.classNames,c.body)}if("number"==
+typeof a.occurrenceIndex&&b)if(b.length>a.occurrenceIndex)b=[b[a.occurrenceIndex]];else return[];if("number"==typeof a.paragraphIndex&&b){c=[];for(e=0;e<b.length;e++){for(var d=[],f=b[e].getElementsByTagName("p"),h=0;h<f.length;++h)100<=I(f[h])&&d.push(f[h]);f=a.paragraphIndex;0>f&&(f+=d.length);0<=f&&f<d.length&&c.push(d[f])}b=c}if(void 0!==a.ignoreMode&&b)switch(a.ignoreMode){case "ignoreFirst":return b.slice(1);case "ignoreLast":return b.slice(0,b.length-1);case "ignoreFirstAndLast":return b.slice(1,
+b.length-1)}return b?b:[]},I=function(a){if(3==a.nodeType)return a.length;if(1!=a.nodeType||"SCRIPT"==a.tagName)return 0;for(var c=0,b=0;b<a.childNodes.length;++b)c+=I(a.childNodes[b]);return c},H=function(a,c){if(c.getElementsByClassName){for(var b=c.getElementsByClassName(a.join(" ")),e=[],d=0;d<b.length;++d)e.push(b[d]);return e}b=[];G(c,a)&&b.push(c);for(d=0;d<c.childNodes.length;++d)1==c.childNodes[d].nodeType&&(b=b.concat(H(a,c.childNodes[d])));return b},G=function(a,c){for(var b=a.className?
+a.className.split(/\s+/):[],e={},d=0;d<b.length;++d)e[b[d]]=!0;for(d=0;d<c.length;++d)if(!e[c[d]])return!1;return!0};var J=function(a){return!!a.nextSibling||!!a.parentNode&&J(a.parentNode)};var K=function(a,c,b,e){var d=u(a,w,1);if(null==d)return null;var f={};q(d,1)&&(f.tagName=q(d,1));q(d,3)&&(f.id=q(d,3));q(d,4)&&0<q(d,4).length&&(f.classNames=q(d,4).slice(0));null!=q(d,2)&&(f.occurrenceIndex=q(d,2));null!=q(d,5)&&(f.paragraphIndex=q(d,5));if(null!=q(d,6))switch(q(d,6)){case 0:f.ignoreMode="ignoreFirst";break;case 1:f.ignoreMode="ignoreLast";break;case 2:f.ignoreMode="ignoreFirstAndLast";break;default:throw"Unhandled ignore mode.";}if(d=u(a,x,2))null!=q(d,1)&&(f.marginTop=q(d,1)),
+null!=q(d,2)&&(f.marginBottom=q(d,2)),null!=q(d,3)&&(f.clearBoth=q(d,3));d=da(a.l());if(null==d)return null;f.position=d;if(null==q(a,5))return null;f.adSlot=q(a,5);f.adFormat=ea(q(a,6));if(null==c)return null;f.adClient=c;null!=b&&(f.eid=b);null!=e&&(f.adChannel=e);return f},da=function(a){switch(a){case 0:return"before";case 3:return"after";case 1:return"firstChild";case 2:return"lastChild";default:return null}},ea=function(a){if(a)switch(a){case 1:return"horizontal";case 2:return"vertical";case 3:return"rectangle"}return"auto"};var l;r:{var L=this.navigator;if(L){var M=L.userAgent;if(M){l=M;break r}}l=""};var N=function(){return!(m("iPad")||m("Android")&&!m("Mobile")||m("Silk"))&&(m("iPod")||m("iPhone")||m("Android")||m("IEMobile"))};var O=function(){fa(!0)},fa=function(a){var c=window.dynamicgoogletags.defs;if(c)for(var b=0;b<c.length;b++){var e=c[b];e.placed||P(window,e,a)}},P=function(a,c,b,e){var d=null,f=ca(c);0<f.length&&(d=f[0]);if(!d||"lastChild"==c.position&&!b&&!J(d))return!1;if(e)return!0;e=document;b=e.createElement("div");b.className="googlepublisherpluginad";b.style.textAlign="center";b.style.width="100%";b.style.height="auto";b.style.clear=c.clearBoth?"both":"none";e=e.createElement("ins");e.className="adsbygoogle";
+e.setAttribute("data-ad-client",c.adClient);e.setAttribute("data-ad-slot",c.adSlot);e.setAttribute("data-ad-format",c.adFormat);e.setAttribute("data-tag-origin","pso");e.style.display="block";e.style.margin="auto";e.style.backgroundColor="transparent";c.marginTop&&(e.style.marginTop=c.marginTop);c.marginBottom&&(e.style.marginBottom=c.marginBottom);b.appendChild(e);switch(c.position){case "before":d.parentNode&&d.parentNode.insertBefore(b,d);break;case "after":d.parentNode&&d.parentNode.insertBefore(b,
+d.nextSibling);break;case "firstChild":d.insertBefore(b,d.firstChild);break;case "lastChild":d.appendChild(b)}"INS"==d.tagName&&G(d,["adsbygoogle-placeholder"])&&(d.style.display="block");a.dynamicgoogletags.s&&N()&&(e=document,d=e.documentElement.clientHeight||e.body.clientHeight,e=e.documentElement.getBoundingClientRect(),f=b.getBoundingClientRect(),(e&&f?f.top-e.top:0)<=d&&b.firstChild&&"INS"==b.firstChild.tagName&&(b=b.firstChild,"auto"==b.getAttribute("data-ad-format")&&b.setAttribute("data-ad-format",
+"horizontal")));c.placed=!0;b=c.eid;c=c.adChannel;d={};if(b||c)d.params={},b&&(d.params.google_eids=[b]),c&&(d.params.google_ad_channel=c);a.adsbygoogle||(a.adsbygoogle=[]);a.adsbygoogle.push(d);return!0};window.dynamicgoogletags=window.dynamicgoogletags||{};window.dynamicgoogletags.update=fa;window.attachEvent&&window.attachEvent("onload",O);window.addEventListener&&(window.addEventListener("load",O,!1),window.addEventListener("DOMContentLoaded",O,!1));var Q=function(a,c){this.d=a;this.n=c};var R=function(a,c){Q.call(this,a,c)};g(R,Q);R.prototype.apply=function(a){var c=this.d.dynamicgoogletags.s,b=c.e,c=c.b?c.b.toString():void 0,e=q(b,4)||void 0,d=q(b,1),f=u(b,A,2);if(!f)return!1;for(var b=!0,f=f.k(),h=this.o();h<f.length;h++){var k=f[h];if(!q(k,7)){var r=K(k,d,c,e);r&&P(this.d,r,a,this.n)?t(k,7,!0):b=!1}}return b};R.prototype.o=function(){return 0};var S=function(a,c){Q.call(this,a,c)};g(S,R);S.prototype.o=function(){return this.d.dynamicgoogletags.s.q?1:0};var T=function(a,c){Q.call(this,a,c);this.f=this.g=!1};g(T,Q);T.prototype.apply=function(a){if(this.g&&this.f)return!0;var c=this.d.dynamicgoogletags.s,b=c.e,c=c.b?c.b.toString():void 0,e=q(b,1)||"",d=q(b,4)||void 0,b=v(b,D,3)[0];if(!b||2>q(b,3).length)return!1;for(var f=b.k(),h=0;h<f.length;h++){var k=f[h],r=u(k,y,4);r&&(r=r.l(),this.g||2!=r||(this.g=ga(this,k,q(b,3)[0],e,c,d,a)),this.f||3!=r||(this.f=ga(this,k,q(b,3)[1],e,c,d,a)))}return this.g&&this.f};
+var ga=function(a,c,b,e,d,f,h){t(c,5,b);return(b=K(c,e,d,f))&&P(a.d,b,h,a.n)?(t(c,7,!0),!0):!1};var U={9653709:R,9653710:T,9653715:R,9653716:S};var ia=function(){ha(!0)},ja=function(){var a=window.dynamicgoogletags.s.m;a?a.apply(!0)||F():F()},ha=function(a){var c=window.dynamicgoogletags.s.m;c&&c.apply(a)};var ka=function(){var a=window;try{return"localStorage"in a&&a.localStorage?a.localStorage:null}catch(c){return null}},la=function(){var a=window.dynamicgoogletags.s.p,c=window.dynamicgoogletags.s.e;if(null==a||!c)return null;for(var c=v(c,D,3)[0],c=v(c,B,1),b=0;b<c.length;b++)for(var e=c[b],d=v(e,C,2),f=0;f<d.length;f++){var h=d[f],k=q(h,1),h=q(h,2);if(null!=k&&null!=h&&a>=k&&a<=h)return e}return null};window.dynamicgoogletags=window.dynamicgoogletags||{};
+window.dynamicgoogletags.s={e:null,p:null,b:null,m:null,q:null};var ma=window.dynamicgoogletags.config;ma&&(window.dynamicgoogletags.s.e=new E(ma));var V=null;
+if(N()){var W=window.document.location.hash.split("#");if(2!=W.length||0==W[1].length)V=null;else var na=Number(W[1]),V=isNaN(na)?null:na;if(!V||!U[V]){var X=null,oa=!1,Y=ka();Y&&(X=parseInt(Y.getItem("PSO_EXP0"),10));if(null==X||isNaN(X))X=Math.floor(1E3*Math.random()),Y&&(Y.setItem("PSO_EXP0",X.toString()),oa=!0);window.dynamicgoogletags.s.p=X;window.dynamicgoogletags.s.q=oa;var pa=la();if(pa){var Z;Z=q(pa,1);null!=ka()&&(window.dynamicgoogletags.s.b=Z);V=Z}else V=null}}
+window.dynamicgoogletags.s.m=V&&U[V]?new U[V](window,!1):new R(window,!1);window.dynamicgoogletags.update=ha;window.addEventListener?(window.addEventListener("DOMContentLoaded",ia,!1),window.addEventListener("load",ja,!1)):window.attachEvent&&window.attachEvent("onload",ja);})();
+</script><script type="text/javascript">
+/* <![CDATA[ */
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-510626-2']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+(function(b){(function(a){"__CF"in b&&"DJS"in b.__CF?b.__CF.DJS.push(a):"addEventListener"in b?b.addEventListener("load",a,!1):b.attachEvent("onload",a)})(function(){"FB"in b&&"Event"in FB&&"subscribe"in FB.Event&&(FB.Event.subscribe("edge.create",function(a){_gaq.push(["_trackSocial","facebook","like",a])}),FB.Event.subscribe("edge.remove",function(a){_gaq.push(["_trackSocial","facebook","unlike",a])}),FB.Event.subscribe("message.send",function(a){_gaq.push(["_trackSocial","facebook","send",a])}));"twttr"in b&&"events"in twttr&&"bind"in twttr.events&&twttr.events.bind("tweet",function(a){if(a){var b;if(a.target&&a.target.nodeName=="IFRAME")a:{if(a=a.target.src){a=a.split("#")[0].match(/[^?=&]+=([^&]*)?/g);b=0;for(var c;c=a[b];++b)if(c.indexOf("url")===0){b=unescape(c.split("=")[1]);break a}}b=void 0}_gaq.push(["_trackSocial","twitter","tweet",b])}})})})(window);
+/* ]]> */
+</script>
+</head>
+<body class="single single-post postid-695 single-format-standard single-author">
+	<header class="site-header" role="banner">
+		<div class="inner">
+			<h1 class="site-title">
+				<a href="http://vinta.ws/blog" title="真．他媽的" rel="home" class="logo-text">真．他媽的</a>			</h1>
+					</div> <!-- .inner -->
+	</header><!-- .site-header -->
+	<nav class="site-navigation" role="navigation">
+		<h3 class="screen-reader-text">Menu</h3>
+		<div class="menu-wrap"><ul id="menu-hi" class="menu"><li id="menu-item-689" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-689"><a href="http://vinta.ws/blog/category/curation" onclick="_gaq.push(['_trackEvent', 'outbound-widget-int', 'http://vinta.ws/blog/category/curation', '你可能會想知道']);">你可能會想知道</a></li>
+<li id="menu-item-670" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-670"><a href="http://vinta.ws/blog/category/kuso" onclick="_gaq.push(['_trackEvent', 'outbound-widget-int', 'http://vinta.ws/blog/category/kuso', '假裝沒有惡意']);">假裝沒有惡意</a></li>
+<li id="menu-item-669" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-669"><a href="http://vinta.ws/blog/category/bullshit" onclick="_gaq.push(['_trackEvent', 'outbound-widget-int', 'http://vinta.ws/blog/category/bullshit', '在網誌裡鬼扯才是正經事']);">在網誌裡鬼扯才是正經事</a></li>
+<li id="menu-item-668" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-668"><a href="http://vinta.ws/blog/category/digest" onclick="_gaq.push(['_trackEvent', 'outbound-widget-int', 'http://vinta.ws/blog/category/digest', '做書摘是個好習慣']);">做書摘是個好習慣</a></li>
+<li id="menu-item-673" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-673"><a href="http://vinta.ws/blog/category/acg" onclick="_gaq.push(['_trackEvent', 'outbound-widget-int', 'http://vinta.ws/blog/category/acg', '關於 ACG 哪些很宅的東西']);">關於 ACG 哪些很宅的東西</a></li>
+<li id="menu-item-674" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-674"><a href="http://vinta.ws/blog/category/serious" onclick="_gaq.push(['_trackEvent', 'outbound-widget-int', 'http://vinta.ws/blog/category/serious', '嚴肅的事情']);">嚴肅的事情</a></li>
+<li id="menu-item-666" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-666"><a href="http://vinta.ws/blog/category/unfuckable" onclick="_gaq.push(['_trackEvent', 'outbound-widget-int', 'http://vinta.ws/blog/category/unfuckable', '後娘砲主義']);">後娘砲主義</a></li>
+</ul></div>		<a href="#" id="menu-toggle" title="Show Menu"><i aria-hidden="true" class="icon-plus"></i></a>
+	</nav><!-- .site-navigation -->	<div id="content" role="main">
+		<div class="inner">
+										<article id="post-695" class="post-695 post type-post status-publish format-standard hentry category-bullshit tag-811 tag-812">
+	<header class="entry-header">
+						<h1 class="entry-title">軟體工程師的鄙視鏈</h1>
+				<div class="entry-meta">
+			<a href="http://vinta.ws/blog/695" title="Permalink to 軟體工程師的鄙視鏈" rel="bookmark"><time class="published" datetime="2014-12-12T02:47:51+00:00">2014/12/12</time></a><span class="entry-author"> / <span class="author vcard"><a class="url fn n" href="http://vinta.ws/blog/author/admin" title="View all posts by Vinta" rel="author">Vinta</a></span></span> / <a href="http://vinta.ws/blog/category/bullshit" rel="category tag">在網誌裡鬼扯才是正經事</a> / <a href="http://vinta.ws/blog/695#comments" title="Comment on 軟體工程師的鄙視鏈">81 Replies</a>		</div>
+	</header><!-- .entry-header -->
+	<div class="entry-content">
+		<script><!--
+dynamicgoogletags.update();
+//--></script><p>&nbsp;</p>
+<div style="text-align: center; width: 100%; height: auto; clear: none;" class="googlepublisherpluginad"><ins data-adsbygoogle-status="done" style="display: block; margin: 10px auto; background-color: transparent; height: 90px;" data-tag-origin="pso" data-ad-format="auto" data-ad-slot="3948413572" data-ad-client="ca-pub-2319189500185347" class="adsbygoogle"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:780px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:780px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="90" width="780"></iframe></ins></ins></ins></div><p>最近這幾年在世界各地突然吹起了一股全民寫程式的風潮，<a href="http://www.ithome.com.tw/news/92882" onclick="_gaq.push(['_trackEvent', 'outbound-article', 'http://www.ithome.com.tw/news/92882', '連美國總統歐巴馬都在寫 JavaScript 了']);" target="_blank">連美國總統歐巴馬都在寫 JavaScript 了</a>，但是身為一介靠寫程式（以及在上班時間胡亂上網）來謀生的 developer（所謂的 developer 就是「軟體工程師」的比較潮的說法），想要提醒那些想學習寫程式的人一件重要的事：慎選你的第一個程式語言。</p>
+<p>&nbsp;</p>
+<p>在軟體工程師（中國叫做「程序員」或「碼農」）的圈子裡，文人相輕的現象可是非常嚴重的，在程式設計的各個領域裡都有著錯綜複雜的「鄙視鍊」。從程
+式語言、編輯器、平台到 { 是寫在 if 
+的同一行還是下一行，不同陣營的人都習慣鄙視來鄙視去。而其中「你用什麼程式語言？」更是大家最熱衷的一條鄙視鍊，所以對於剛踏入程式設計領域的初學者來
+說，萬一程式語言選得不好，可是會一開始就落入鄙視鍊的底層啊。</p>
+<p>&nbsp;</p>
+<p>軟體工程師的鄙視鏈到底有多慘烈、多殘酷呢？</p>
+<p>&nbsp;</p>
+<h2>程式語言篇</h2>
+<p>&nbsp;</p>
+<p>懂 Functional Programming 
+的工程師鄙視老是把設計模式掛在嘴邊的工程師，老是把設計模式掛在嘴邊的工程師鄙視會說「你這樣寫就不 OO 了啊」的工程師，會說「你這樣寫就不 OO
+ 了啊」的工程師鄙視會說「蛤？什麼物件導向？不是把重複的 code 寫成一個 function 
+就好了嗎？」的工程師，會說「蛤？什麼物件導向？不是把重複的 code 寫成一個 function 就好了嗎？」的工程師鄙視把同一段 code 
+到處複製貼上的工程師，把同一段 code 到處複製貼上的工程師鄙視 PM。</p>
+<p>&nbsp;</p>
+<p>寫靜態語言的工程師鄙視寫動態語言的工程師。</p>
+<p>&nbsp;</p>
+<p>寫組合語言的工程師鄙視寫 C 語言的工程師，C 語言工程師鄙視 C++ 工程師，C++ 工程師鄙視 Java 和 C# 工程師，Java 
+工程師和 C# 工程師則互相鄙視，而 C# 工程師又鄙視 Visual Basic 工程師和會把 C# 唸成「C 井」的工程師，會把 C# 
+唸成「C 井」的工程師則鄙視認為 HTML 是一種程式語言的設計師。</p>
+<p>&nbsp;</p>
+<p>用 Python 3 的工程師鄙視還在用 Python 2 的工程師，用 Python 2 的工程師鄙視遇到 UnicodeEncodeError 的工程師。</p>
+<p>&nbsp;</p>
+<p>寫 iOS 的工程師鄙視寫 Android 的工程師，寫 Android 的工程師鄙視寫 Windows Phone 的工程師。</p>
+<p>&nbsp;</p>
+<p>有 Swift 一年經驗的工程師鄙視有 Objective-C 五年經驗的工程師，寫 Objective-C 的工程師鄙視用 PhoneGap 包裝成 native app 的工程師。</p>
+<p>&nbsp;</p>
+<p>用 React.js 的工程師鄙視用 AngularJS 的工程師，用 AngularJS 的工程師鄙視用 jQuery 的工程師，用 jQuery 的工程師鄙視用 <a href="http://vanilla-js.com/" onclick="_gaq.push(['_trackEvent', 'outbound-article', 'http://vanilla-js.com/', 'Vanilla JavaScript']);" target="_blank">Vanilla JavaScript</a> 的工程師，用 Vanilla JavaScript 的工程師鄙視 IE 的使用者。</p>
+<p>&nbsp;</p>
+<p>會用 debugger 的工程師鄙視用 assert 的工程師，用 assert 的工程師鄙視只會 print() 的工程師；用 console.log() 來 debug 的工程師鄙視用 alert() 來 debug 的工程師。</p>
+<p>&nbsp;</p>
+<p>寫 Ruby on Rails 的工程師鄙視所有使用其他語言的工程師。<br>
+什麼？你說 Ruby？Ruby 只是 Ruby on Rails 的一套框架，才不是什麼程式語言呢！</p>
+<p>&nbsp;</p>
+<p><a href="http://www.techug.com/if-programming-languages-were-weapons" onclick="_gaq.push(['_trackEvent', 'outbound-article', 'http://www.techug.com/if-programming-languages-were-weapons', '所有的工程師都鄙視 PHP 工程師。']);" target="_blank">所有的工程師都鄙視 PHP 工程師。</a></p>
+<p>&nbsp;</p>
+<p><!-- more --></p>
+<h2>工具篇</h2>
+<p>&nbsp;</p>
+<p>用 text editor 的工程師鄙視用 IDE 的工程師。</p>
+<p>&nbsp;</p>
+<p>用 Vim 的工程師鄙視用 Emacs 的工程師，用 Emacs 的工程師鄙視用 Vim 的工程師，無論是用 Vim 或 Emacs 
+的工程師都鄙視所有用其他編輯器的工程師；用 Atom、Notepadd++、Sublime Text 的工程師鄙視用 Windows 
+記事本的工程師。</p>
+<p>&nbsp;</p>
+<p>用 Android Studio 或 IntelliJ IDEA 的工程師鄙視用 Eclipse 的工程師，用 Eclipse 的工程師鄙視用 NetBeans 的工程師。</p>
+<p>&nbsp;</p>
+<p>用 Git 或 Mercurial 的工程師鄙視用 Subversion 的工程師，用 Subversion 的工程師鄙視用 Dropbox 來做版本控制的工程師，用 Dropbox 來做版本控制的工程師鄙視根本不知道什麼叫做版本控制的工程師。</p>
+<p>&nbsp;</p>
+<p>用 Zsh 的工程師鄙視用 Bash 的工程師，用 Bash 的工程師鄙視用 Cygwin 的工程師，用 Cygwin 的工程師鄙視用「命令提示字元」的工程師，用命令提示字元的工程師鄙視用 GUI 介面的工程師。</p>
+<p>&nbsp;</p>
+<p>用 IRC 的工程師鄙視用 HipChat 的工程師，用 HipChat 的工程師鄙視用 Slack 的設計師。</p>
+<p>&nbsp;</p>
+<p>用 reStructuredText 寫文件的工程師鄙視用 Markdown 寫文件的工程師，用 Markdown 寫文件的工程師鄙視用 
+HTML 寫文件的工程師，用 HTML 寫文件的工程師鄙視不寫文件的工程師，然後用 LaTeX 寫文件的工程師鄙視所有工程師。</p>
+<p>&nbsp;</p>
+<p>用 Docker 來部署 server 的工程師鄙視用 Ansible 或 Puppet 來部署 server 的工程師，用 
+Ansible 或 Puppet 來部署 server 的工程師鄙視用 Fabric 來部署 server 的工程師，用 Fabric 來部署 
+server 的工程師鄙視手動 SSH 的工程師。</p>
+<p>&nbsp;</p>
+<h2>OS 篇</h2>
+<p>&nbsp;</p>
+<p>用 Mac OS X 的工程師鄙視用 Linux 的工程師，用 Linux 的工程師鄙視用 Windows 的工程師。</p>
+<p>&nbsp;</p>
+<p>用 Debian 的工程師瞧不起用 Ubuntu 的工程師，用 Ubuntu 的工程師瞧不起用非 LTS 版本的 Ubuntu 的工程師。</p>
+<p>&nbsp;</p>
+<h2>硬體篇</h2>
+<p>&nbsp;</p>
+<p>用 MacBook Pro Retina 的工程師鄙視用 MacBook Air 的工程師，用 MacBook Air 的工程師鄙視用 
+ThinkPad 的工程師，然後用 Raspberry Pi 的工程師鄙視用 MacBook Pro Retina 的工程師。</p>
+<p>&nbsp;</p>
+<p>用 Dvorak 鍵盤的工程師鄙視用 Mac 鍵盤的工程師，用 Mac 鍵盤的工程師鄙視用 QWERTY 鍵盤的工程師，用 QWERTY 鍵盤的工程師鄙視用手寫板的設計師。</p>
+<p>&nbsp;</p>
+<p>坐 Aeron 椅子的工程師鄙視坐普通辦公椅的工程師，坐普通辦公椅的工程師鄙視跟他一樣做普通辦公椅的 PM，然後站著寫程式的工程師鄙視坐 Aeron 椅子的工程師。</p>
+<p>&nbsp;</p>
+<h2>職場篇</h2>
+<p>&nbsp;</p>
+<p>搞硬體的工程師鄙視搞軟體的工程師。</p>
+<p>&nbsp;</p>
+<p>寫 OS 的工程師鄙視寫 Web 的工程師，寫 Web 的工程師鄙視寫 desktop application 的工程師。</p>
+<p>&nbsp;</p>
+<p>後端工程師鄙視前端工程師。</p>
+<p>&nbsp;</p>
+<p>工程師跟設計師互相鄙視。</p>
+<p>&nbsp;</p>
+<p>信奉 Test-Driven Development 的工程師鄙視先寫 code 再補 tests 的工程師，先寫 code 再補 tests 的工程師鄙視不寫 tests 的工程師，不寫 tests 的工程師鄙視又他媽亂改需求的 PM。</p>
+<p>&nbsp;</p>
+<p>沒有證照的工程師鄙視考了一堆證照的工程師。</p>
+<p>&nbsp;</p>
+<p>上班穿休閒服的工程師鄙視上班穿西裝的工程師，上班穿西裝的工程師鄙視上班穿系服的工程師。</p>
+<p>&nbsp;</p>
+<p>---</p>
+<p>&nbsp;</p>
+<p>如果你看了以上這些慘絕人寰的鄙視鍊之後，仍然沒有擊倒你想要學習 coding 的心，那我必須提醒你一件最重要的事：先去交一個女朋友，再來學寫程式；因為一旦你成為軟體工程師之後，就交不到女朋友了。</p>
+<p>&nbsp;</p>
+<p>P.S.</p>
+<p>有在用 <a href="https://github.com/vinta" onclick="_gaq.push(['_trackEvent', 'outbound-article', 'https://github.com/vinta', 'GitHub']);" target="_blank">GitHub</a> 的朋友一起來交流交流。</p>
+<p>&nbsp;</p>
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-email share-service-visible"><a href="http://vinta.ws/blog/695?share=email&amp;nb=1" onclick="_gaq.push(['_trackEvent', 'outbound-article-int', 'http://vinta.ws/blog/695?share=email', 'Email']);" rel="nofollow" class="share-email sd-button share-icon" title="Click to email this to a friend"><span>Email</span></a></li><li class="share-facebook"><a href="http://vinta.ws/blog/695?share=facebook&amp;nb=1" onclick="_gaq.push(['_trackEvent', 'outbound-article-int', 'http://vinta.ws/blog/695?share=facebook', 'Facebook']);" rel="nofollow" class="share-facebook sd-button share-icon" title="Share on Facebook" id="sharing-facebook-695"><span>Facebook</span></a></li><li class="share-google-plus-1"><a href="http://vinta.ws/blog/695?share=google-plus-1&amp;nb=1" onclick="_gaq.push(['_trackEvent', 'outbound-article-int', 'http://vinta.ws/blog/695?share=google-plus-1', 'Google']);" rel="nofollow" class="share-google-plus-1 sd-button share-icon" title="Click to share on Google+" id="sharing-google-695"><span>Google</span></a></li><li class="share-twitter"><a href="http://vinta.ws/blog/695?share=twitter&amp;nb=1" onclick="_gaq.push(['_trackEvent', 'outbound-article-int', 'http://vinta.ws/blog/695?share=twitter', 'Twitter']);" rel="nofollow" class="share-twitter sd-button share-icon" title="Click to share on Twitter" id="sharing-twitter-695"><span>Twitter</span></a></li><li class="share-end"></li></ul></div></div></div>
+<div style="display: block;" id="jp-relatedposts" class="jp-relatedposts">
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+<div class="jp-relatedposts-items jp-relatedposts-items-minimal"><p class="jp-relatedposts-post jp-relatedposts-post0" data-post-id="406" data-post-format="false"><span class="jp-relatedposts-post-title"><a data-position="0" data-origin="695" rel="nofollow" title="【開始 → 程式集】之「去英文化大作戰」
+
+&amp;nbsp; 以前我媽在學電腦的時候，老是會跟我抱怨說「這一大堆的英文我攏看嘸，兒子啊，有沒有中文的啦？」雖然那台電腦的作業系統明明就已經是中文版，但是，迫於萬惡的美國資本主義下的強制文化入侵（例如：必須要是混蛋才能當總統，這一定是跟美國人學的～），電腦螢幕上終究難免會出現那些讓人看了就討厭的英文字母，諸如 son of bitch、shit、asshole、kiss my ass、cocksucker、mother fuck、she's a fucking slut 之類的詞彙，您瞧，英文就是這種相當不入流又低俗的語言。所以，為了宣揚偉大的中華文化，從我最常接觸的東西：「電腦」開始做起，把「開始 → 程式集」裡面的那些礙眼的英文（軟體名稱）通通改成賞心悅目的「繁體正體中文」吧～ &amp;nbsp; 好吧，其實會寫出這篇文章單純是因為跟我的「ParTner」（我們系學會的財務長～）在閒聊喇賽時，莫名奇妙就突然扯到 PowerPoint，接著又神來一筆地把它翻成中文，然後，就變成下面這個樣子了。 &amp;nbsp; 這是「去英文化」之前的程式集： &amp;nbsp; &amp;nbsp; &amp;nbsp; 【軟體篇】 &amp;nbsp; Microsoft Office → 稍微軟了一點的辦公室 Word →&amp;hellip;" href="http://vinta.ws/blog/406" class="jp-relatedposts-post-a">【開始 → 程式集】之「去英文化大作戰」</a></span><span class="jp-relatedposts-post-context">In "假裝沒有惡意"</span></p><p class="jp-relatedposts-post jp-relatedposts-post1" data-post-id="355" data-post-format="false"><span class="jp-relatedposts-post-title"><a data-position="1" data-origin="695" rel="nofollow" title="eMule 與 VeryCD 的天作之合
+
+&amp;nbsp; 五花八門教學文：第 4 天 &amp;nbsp; 如果你不知道 eMule、eDonkey、BT 是什麼東西的話，我只能跟你說：它們都是從 P2P 地獄來的要塞爆我們的硬碟的惡魔啊～～～ 這一篇教學文就是教你「怎麼用 eMule 下載東西」。這可能是挑戰開始到現在，「實用性」最高的教學文了...... &amp;nbsp; 雖然 eMule 有內建「搜索」的功能，可以搜尋網路上其他使用者開放出來的檔案。但是，我根本就沒在用這個功能，因為我有 VeryCD.com ── 這個網站是中國人最偉大的發明！VeryCD 什麼鬼都有，舉凡：電影、電玩、音樂、漫畫、動畫、軟體、綜藝節目、影集、相聲、楊氏太極拳，只要是可以被數位化的東西，它都有，就看你挖不挖得到。 &amp;nbsp; 【步驟一】 &amp;nbsp; 從官方網站下載最新的版本。 如果是 Linux 的使用者，有 aMule 可以用。&amp;hellip;" href="http://vinta.ws/blog/355" class="jp-relatedposts-post-a">eMule 與 VeryCD 的天作之合</a></span><span class="jp-relatedposts-post-context">In "夏日的 BLOG 傳說"</span></p><p class="jp-relatedposts-post jp-relatedposts-post2" data-post-id="523" data-post-format="false"><span class="jp-relatedposts-post-title"><a data-position="2" data-origin="695" rel="nofollow" title="我的朋友都是智障 - 左邊網 on Facebook
+
+&amp;nbsp; &amp;nbsp; 粉絲專頁：真．他媽的 粉絲專頁：後娘砲主義 粉絲專頁：左邊網 &amp;nbsp; 前陣子花了一點時間研究了 Facebook 的 API，然後替「左邊網」寫了幾個新產品。不是我在說，那個 Facebook Developer Wiki 真的詳細到爆炸（我一直以為 IT 從業人員都不喜歡寫 documents），這是幾個比較有用的頁面： &amp;nbsp; API Methods FBML Tags FQL Tables Javascript SDK &amp;nbsp; 我用的是官方的 PHP Client&amp;hellip;" href="http://vinta.ws/blog/523" class="jp-relatedposts-post-a">我的朋友都是智障 - 左邊網 on Facebook</a></span><span class="jp-relatedposts-post-context">In "在網誌裡鬼扯才是正經事"</span></p></div></div>			</div><!-- .entry-content -->
+		<footer class="entry-meta">
+				<div class="tag-links">Tagged: <a href="http://vinta.ws/blog/tag/%e5%b7%a5%e7%a8%8b%e5%b8%ab" rel="tag">工程師</a><a href="http://vinta.ws/blog/tag/%e7%a8%8b%e5%bc%8f%e8%aa%9e%e8%a8%80" rel="tag">程式語言</a></div> 
+	</footer><!-- .entry-meta -->
+	</article><!-- #post -->				<nav class="nextprev-nav">
+					<h3 class="screen-reader-text">Post navigation</h3>
+					<span class="nav-prev"><a href="http://vinta.ws/blog/653" rel="prev">← 佔領行政院：一位失敗主義者的告白</a></span>
+					<span class="nav-next"></span>
+				</nav><!-- .nav-single -->
+				<div id="comments" class="comments-area">
+			<h3 class="comments-title">
+			81 Comments / <a href="#respond">Add your own comment below</a>
+		</h3>
+		<ol class="commentlist">
+				<li class="comment even thread-even depth-1" id="li-comment-89430">
+		<div id="comment-89430" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/b58b14da65b648d1d3a0f2ce0da670f2" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn">千秋 </cite><a href="http://vinta.ws/blog/695#comment-89430" class="comment-date"><time datetime="2014-12-12T11:39:26+00:00">2014/12/12 at AM 11:39</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>用Arch Linux的工程師不鄙視人，也沒有人可以鄙視他們，因為他們已經是神一般的存在了</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89430#respond" onclick='return addComment.moveForm("comment-89430", "89430", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment odd alt depth-2" id="li-comment-89431">
+		<div id="comment-89431" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/23cb6305d8a8257990092165041f65f5" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://whitebox.im/" rel="external nofollow" class="url">Klion Xu</a> </cite><a href="http://vinta.ws/blog/695#comment-89431" class="comment-date"><time datetime="2014-12-12T12:15:43+00:00">2014/12/12 at PM 12:15</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>用 Arch Linux 的工程师鄙视用 Ubuntu 的工程师<br>
+上次因为开源哲学都开战了</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89431#respond" onclick='return addComment.moveForm("comment-89431", "89431", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="comment even depth-2" id="li-comment-89432">
+		<div id="comment-89432" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/6675c25462ae4117587675a9909c88e3" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn">damn </cite><a href="http://vinta.ws/blog/695#comment-89432" class="comment-date"><time datetime="2014-12-12T12:18:59+00:00">2014/12/12 at PM 12:18</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>slackware 表示：</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89432#respond" onclick='return addComment.moveForm("comment-89432", "89432", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="comment odd alt depth-2" id="li-comment-89433">
+		<div id="comment-89433" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/0da9cd44889fc574b26f09379b8628dd" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn">pichuchen </cite><a href="http://vinta.ws/blog/695#comment-89433" class="comment-date"><time datetime="2014-12-12T12:23:45+00:00">2014/12/12 at PM 12:23</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>你把Gentoo放到哪去了？</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89433#respond" onclick='return addComment.moveForm("comment-89433", "89433", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment even depth-3" id="li-comment-89438">
+		<div id="comment-89438" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/255e8770f833d2ae3d4757fb643eada4" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://gravatar.com/s25g5d4" rel="external nofollow" class="url">s25g5d4</a> </cite><a href="http://vinta.ws/blog/695#comment-89438" class="comment-date"><time datetime="2014-12-12T12:52:15+00:00">2014/12/12 at PM 12:52</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>沒人用所以沒人戰</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89438#respond" onclick='return addComment.moveForm("comment-89438", "89438", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment odd alt depth-4" id="li-comment-89453">
+		<div id="comment-89453" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/picture_003" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="https://www.facebook.com/csiwei1" rel="external nofollow" class="url">Chiu-Hsin Lo</a> </cite><a href="http://vinta.ws/blog/695#comment-89453" class="comment-date"><time datetime="2014-12-12T14:17:02+00:00">2014/12/12 at PM 2:17</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>Gentoo給學弟灌當教學剛好而已</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+							</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even depth-3" id="li-comment-89487">
+		<div id="comment-89487" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/b58b14da65b648d1d3a0f2ce0da670f2" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://gravatar.com/akiakira02" rel="external nofollow" class="url">akiakira02</a> </cite><a href="http://vinta.ws/blog/695#comment-89487" class="comment-date"><time datetime="2014-12-12T18:11:15+00:00">2014/12/12 at PM 6:11</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>這麼說來，好像有個前輩到現在還在用XP，而且鄙視所有人</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89487#respond" onclick='return addComment.moveForm("comment-89487", "89487", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt depth-2" id="li-comment-89443">
+		<div id="comment-89443" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/a" class="avatar avatar-78 photo avatar-default" height="78" width="78"><cite class="fn">Anonymous </cite><a href="http://vinta.ws/blog/695#comment-89443" class="comment-date"><time datetime="2014-12-12T13:28:05+00:00">2014/12/12 at PM 1:28</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>gentoo 呵呵</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89443#respond" onclick='return addComment.moveForm("comment-89443", "89443", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="comment even depth-2" id="li-comment-89451">
+		<div id="comment-89451" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/cd21b6b58238d7f17352d4ff2581a249" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://gravatar.com/hardywu" rel="external nofollow" class="url">虚</a> </cite><a href="http://vinta.ws/blog/695#comment-89451" class="comment-date"><time datetime="2014-12-12T14:12:20+00:00">2014/12/12 at PM 2:12</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>Arch 難道不是自我鄙視麼？ 當年怎麼手賤，養成習慣現在出不來了。</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89451#respond" onclick='return addComment.moveForm("comment-89451", "89451", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-89434">
+		<div id="comment-89434" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/c7aacc21dc9441d5c3c8dba9083e72af_normal.jpeg" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://twitter.com/Roxcutme" rel="external nofollow" class="url">餓即斬 (@Roxcutme)</a> </cite><a href="http://vinta.ws/blog/695#comment-89434" class="comment-date"><time datetime="2014-12-12T12:28:19+00:00">2014/12/12 at PM 12:28</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>更新了了了！</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89434#respond" onclick='return addComment.moveForm("comment-89434", "89434", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment even depth-2" id="li-comment-89474">
+		<div id="comment-89474" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/a" class="avatar avatar-78 photo avatar-default" height="78" width="78"><cite class="fn">Nemo </cite><a href="http://vinta.ws/blog/695#comment-89474" class="comment-date"><time datetime="2014-12-12T16:23:26+00:00">2014/12/12 at PM 4:23</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>沒有人鄙視labview工程師 因為所有使用文字刻程式的工程師腦海中都沒有出現過labview這個字眼過</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89474#respond" onclick='return addComment.moveForm("comment-89474", "89474", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-89435">
+		<div id="comment-89435" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/9ea8fcedc0328e2dc8da5fcb42c06026" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://rjhsiao.wordpress.com/" rel="external nofollow" class="url">RJ</a> </cite><a href="http://vinta.ws/blog/695#comment-89435" class="comment-date"><time datetime="2014-12-12T12:33:28+00:00">2014/12/12 at PM 12:33</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>應該是「用 Ubuntu 的工程師跟非 LTS 版本的 Ubuntu 的工程師互相鄙視」才是<br>
+因為我就是那個鄙視用 Ubuntu 的工程師的非 LTS 版本的 Ubuntu 的工程師...</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89435#respond" onclick='return addComment.moveForm("comment-89435", "89435", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment even depth-2" id="li-comment-89495">
+		<div id="comment-89495" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/12b44b53ebe566f75e5be79cfd13f004" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://gravatar.com/seadog007" rel="external nofollow" class="url">seadog007</a> </cite><a href="http://vinta.ws/blog/695#comment-89495" class="comment-date"><time datetime="2014-12-12T19:43:46+00:00">2014/12/12 at PM 7:43</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>互相鄙視啊(O</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89495#respond" onclick='return addComment.moveForm("comment-89495", "89495", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-89436">
+		<div id="comment-89436" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/670eb312a14e540fee9f24d740275774" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://gravatar.com/kkdai" rel="external nofollow" class="url">Evan LinEvan</a> </cite><a href="http://vinta.ws/blog/695#comment-89436" class="comment-date"><time datetime="2014-12-12T12:41:34+00:00">2014/12/12 at PM 12:41</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>"有 Swift 一年經驗的工程師鄙視有 Objective-C 五年經驗的工程師"  現在如果有一年Swift經驗工程師... 應該只有建立Swift 的團隊... 我想他們應該都很威啊.......</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89436#respond" onclick='return addComment.moveForm("comment-89436", "89436", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-89437">
+		<div id="comment-89437" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/a" class="avatar avatar-78 photo avatar-default" height="78" width="78"><cite class="fn">Anonymous </cite><a href="http://vinta.ws/blog/695#comment-89437" class="comment-date"><time datetime="2014-12-12T12:49:18+00:00">2014/12/12 at PM 12:49</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>用傳統Unix的工程師鄙視用MacOSX的工程師。</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89437#respond" onclick='return addComment.moveForm("comment-89437", "89437", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment odd alt depth-2" id="li-comment-89440">
+		<div id="comment-89440" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/12b44b53ebe566f75e5be79cfd13f004" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://gravatar.com/seadog007" rel="external nofollow" class="url">seadog007</a> </cite><a href="http://vinta.ws/blog/695#comment-89440" class="comment-date"><time datetime="2014-12-12T12:56:22+00:00">2014/12/12 at PM 12:56</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>互相鄙視的關係(O</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89440#respond" onclick='return addComment.moveForm("comment-89440", "89440", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment even depth-3" id="li-comment-89508">
+		<div id="comment-89508" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/picture_006" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="https://www.facebook.com/100000XOwQb" rel="external nofollow" class="url">黃柏瑋</a> </cite><a href="http://vinta.ws/blog/695#comment-89508" class="comment-date"><time datetime="2014-12-12T21:28:19+00:00">2014/12/12 at PM 9:28</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>然後用DOS的鄙視用UNIX的</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89508#respond" onclick='return addComment.moveForm("comment-89508", "89508", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-89439">
+		<div id="comment-89439" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/12b44b53ebe566f75e5be79cfd13f004" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://gravatar.com/seadog007" rel="external nofollow" class="url">seadog007</a> </cite><a href="http://vinta.ws/blog/695#comment-89439" class="comment-date"><time datetime="2014-12-12T12:55:29+00:00">2014/12/12 at PM 12:55</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>用 Mac OS X 的工程師鄙視用 Linux 的工程師，用 Linux 的工程師鄙視用 Windows 的工程師。<br>
+用 Debian 的工程師瞧不起用 Ubuntu 的工程師，用 Ubuntu 的工程師瞧不起用非 LTS 版本的 Ubuntu 的工程師。</p>
+<p>用 MacBook Pro Retina 的工程師鄙視用 MacBook Air 的工程師，用 MacBook Air 的工程師鄙視用 ThinkPad 的工程師</p>
+<p>顆顆 好像鄙視到超多人der</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89439#respond" onclick='return addComment.moveForm("comment-89439", "89439", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-89441">
+		<div id="comment-89441" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/picture_004" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="https://www.facebook.com/iam581" rel="external nofollow" class="url">Boyi Wu</a> </cite><a href="http://vinta.ws/blog/695#comment-89441" class="comment-date"><time datetime="2014-12-12T13:00:02+00:00">2014/12/12 at PM 1:00</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>補一個 用15吋mac pro的鄙視用13吋的</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89441#respond" onclick='return addComment.moveForm("comment-89441", "89441", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment odd alt depth-2" id="li-comment-89479">
+		<div id="comment-89479" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/a" class="avatar avatar-78 photo avatar-default" height="78" width="78"><cite class="fn">Anonymous </cite><a href="http://vinta.ws/blog/695#comment-89479" class="comment-date"><time datetime="2014-12-12T16:54:50+00:00">2014/12/12 at PM 4:54</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>乾 被鄙視了 XDD</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89479#respond" onclick='return addComment.moveForm("comment-89479", "89479", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment even depth-3" id="li-comment-89496">
+		<div id="comment-89496" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/12b44b53ebe566f75e5be79cfd13f004" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://gravatar.com/seadog007" rel="external nofollow" class="url">seadog007</a> </cite><a href="http://vinta.ws/blog/695#comment-89496" class="comment-date"><time datetime="2014-12-12T19:44:12+00:00">2014/12/12 at PM 7:44</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>++</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89496#respond" onclick='return addComment.moveForm("comment-89496", "89496", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-89442">
+		<div id="comment-89442" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/67440068187e5a24005c5eca69397eac" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn">WST </cite><a href="http://vinta.ws/blog/695#comment-89442" class="comment-date"><time datetime="2014-12-12T13:22:25+00:00">2014/12/12 at PM 1:22</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>怎麼沒有用Formal Method鄙視還在做Testing的這條呢</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89442#respond" onclick='return addComment.moveForm("comment-89442", "89442", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment even depth-2" id="li-comment-89486">
+		<div id="comment-89486" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/61f921b0066dbc73426c3b57b8ea5222" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="https://github.com/banacorn" rel="external nofollow" class="url">banacorn</a> </cite><a href="http://vinta.ws/blog/695#comment-89486" class="comment-date"><time datetime="2014-12-12T18:06:06+00:00">2014/12/12 at PM 6:06</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>dependent-type 的路過 XD</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89486#respond" onclick='return addComment.moveForm("comment-89486", "89486", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-89444">
+		<div id="comment-89444" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/6ec89015551dfd81d0c244e0073549e3" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn">Anonymous </cite><a href="http://vinta.ws/blog/695#comment-89444" class="comment-date"><time datetime="2014-12-12T13:47:42+00:00">2014/12/12 at PM 1:47</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>非動漫宅的工程師歧視那些動漫宅又愛自稱工程師的鍵盤工程師</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89444#respond" onclick='return addComment.moveForm("comment-89444", "89444", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-89445">
+		<div id="comment-89445" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/1011fe90cbd3afb10563d1088c14a057" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="https://plus.google.com/106493163103606478029" rel="external nofollow" class="url">凸鎚大法師</a> </cite><a href="http://vinta.ws/blog/695#comment-89445" class="comment-date"><time datetime="2014-12-12T13:52:14+00:00">2014/12/12 at PM 1:52</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>靠！我會C/C++ 也會VB會Java，web 前端同時兼後端，也會Android加Desktop Application，也會subVersion + Git。<br>
+那我應該神經錯亂兼鄙視自己囉</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89445#respond" onclick='return addComment.moveForm("comment-89445", "89445", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment odd alt depth-2" id="li-comment-89455">
+		<div id="comment-89455" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/2fc5573118ed1d338c58bf11eb15dfd4" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn">alfie </cite><a href="http://vinta.ws/blog/695#comment-89455" class="comment-date"><time datetime="2014-12-12T14:18:32+00:00">2014/12/12 at PM 2:18</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>專精的工程師鄙視什麼都碰一點的工程師</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89455#respond" onclick='return addComment.moveForm("comment-89455", "89455", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment even depth-3" id="li-comment-89488">
+		<div id="comment-89488" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/picture_002" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="https://www.facebook.com/jihshienlu" rel="external nofollow" class="url">Jih-Shien Lu</a> </cite><a href="http://vinta.ws/blog/695#comment-89488" class="comment-date"><time datetime="2014-12-12T18:15:07+00:00">2014/12/12 at PM 6:15</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>哈哈哈</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89488#respond" onclick='return addComment.moveForm("comment-89488", "89488", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="comment odd alt depth-3" id="li-comment-89490">
+		<div id="comment-89490" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/28d550a3aa2c2a32c1590fc6cfc0472a" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="https://plus.google.com/+JacobChen" rel="external nofollow" class="url">Jacob Chen</a> </cite><a href="http://vinta.ws/blog/695#comment-89490" class="comment-date"><time datetime="2014-12-12T18:31:06+00:00">2014/12/12 at PM 6:31</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>我還真的因為這樣被鄙視過XDDD</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89490#respond" onclick='return addComment.moveForm("comment-89490", "89490", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="comment even depth-3" id="li-comment-89494">
+		<div id="comment-89494" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/7f110257501127300df3f923119ba043" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://gravatar.com/inndy" rel="external nofollow" class="url">Inndy</a> </cite><a href="http://vinta.ws/blog/695#comment-89494" class="comment-date"><time datetime="2014-12-12T19:37:29+00:00">2014/12/12 at PM 7:37</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>被鄙視了 QAQ</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89494#respond" onclick='return addComment.moveForm("comment-89494", "89494", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment odd alt depth-4" id="li-comment-89497">
+		<div id="comment-89497" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/12b44b53ebe566f75e5be79cfd13f004" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://gravatar.com/seadog007" rel="external nofollow" class="url">seadog007</a> </cite><a href="http://vinta.ws/blog/695#comment-89497" class="comment-date"><time datetime="2014-12-12T19:44:56+00:00">2014/12/12 at PM 7:44</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>被黑了(X<br>
+不對 是被鄙視了</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+							</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even depth-3" id="li-comment-89511">
+		<div id="comment-89511" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/194ad8602e0e80eac65007fe38d9ed19" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn">Danny </cite><a href="http://vinta.ws/blog/695#comment-89511" class="comment-date"><time datetime="2014-12-12T23:34:06+00:00">2014/12/12 at PM 11:34</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>什麼都專精的工程師鄙視只專精一種的工程師</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89511#respond" onclick='return addComment.moveForm("comment-89511", "89511", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-89447">
+		<div id="comment-89447" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/3181e5b8bc041593b6f481f137e461ad" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://zx-1986.blogspot.com/" rel="external nofollow" class="url">張旭</a> </cite><a href="http://vinta.ws/blog/695#comment-89447" class="comment-date"><time datetime="2014-12-12T14:00:05+00:00">2014/12/12 at PM 2:00</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>千秋萬世經典好文！我從頭笑到尾。<br>
+那麼問題來了 ...... 學挖掘機到底哪家強？</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89447#respond" onclick='return addComment.moveForm("comment-89447", "89447", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment even depth-2" id="li-comment-89448">
+		<div id="comment-89448" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/00f29fa85cc9593a9bd0166449998434" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://dyygtfx.com/" rel="external nofollow" class="url">Gothic</a> </cite><a href="http://vinta.ws/blog/695#comment-89448" class="comment-date"><time datetime="2014-12-12T14:01:57+00:00">2014/12/12 at PM 2:01</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>山东济南找蓝翔</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89448#respond" onclick='return addComment.moveForm("comment-89448", "89448", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-admin bypostauthor odd alt depth-2" id="li-comment-89460">
+		<div id="comment-89460" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/022d52ed8da3d3d1b1eda2050bc77332" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://vinta.ws/" rel="external nofollow" class="url">Vinta</a> <span class="post-author"> Post author</span></cite><a href="http://vinta.ws/blog/695#comment-89460" class="comment-date"><time datetime="2014-12-12T14:51:25+00:00">2014/12/12 at PM 2:51</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>哈哈哈大部份的台灣的工程師都看不懂這個梗啦</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89460#respond" onclick='return addComment.moveForm("comment-89460", "89460", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment even depth-3" id="li-comment-89465">
+		<div id="comment-89465" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/3181e5b8bc041593b6f481f137e461ad" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://zx-1986.blogspot.com/" rel="external nofollow" class="url">張旭</a> </cite><a href="http://vinta.ws/blog/695#comment-89465" class="comment-date"><time datetime="2014-12-12T15:19:42+00:00">2014/12/12 at PM 3:19</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>哈哈，不虧是偶像！不同常人。<br>
+我是用網易新聞 App 跟知乎日報與對岸同步，感覺自己萌萌噠。</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89465#respond" onclick='return addComment.moveForm("comment-89465", "89465", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt depth-2" id="li-comment-89473">
+		<div id="comment-89473" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/picture_005" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="https://www.facebook.com/paraselene.sword" rel="external nofollow" class="url">Jerry Wang</a> </cite><a href="http://vinta.ws/blog/695#comment-89473" class="comment-date"><time datetime="2014-12-12T16:17:07+00:00">2014/12/12 at PM 4:17</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>中國山東找藍翔wwwww<br>
+這個梗怎麼又出現了啦(煩躁)</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89473#respond" onclick='return addComment.moveForm("comment-89473", "89473", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-89449">
+		<div id="comment-89449" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/5735bf440bfd239f7019c146b9856c29" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn">Rico </cite><a href="http://vinta.ws/blog/695#comment-89449" class="comment-date"><time datetime="2014-12-12T14:08:14+00:00">2014/12/12 at PM 2:08</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>捕獲 TWXX2K</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89449#respond" onclick='return addComment.moveForm("comment-89449", "89449", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment odd alt depth-2" id="li-comment-89450">
+		<div id="comment-89450" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/5735bf440bfd239f7019c146b9856c29" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn">Rico </cite><a href="http://vinta.ws/blog/695#comment-89450" class="comment-date"><time datetime="2014-12-12T14:09:03+00:00">2014/12/12 at PM 2:09</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>按太快.....應該是捕獲TWXX2K 的RJ</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89450#respond" onclick='return addComment.moveForm("comment-89450", "89450", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment even depth-3" id="li-comment-89475">
+		<div id="comment-89475" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/9ea8fcedc0328e2dc8da5fcb42c06026" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://rjhsiao.wordpress.com/" rel="external nofollow" class="url">RJ</a> </cite><a href="http://vinta.ws/blog/695#comment-89475" class="comment-date"><time datetime="2014-12-12T16:33:49+00:00">2014/12/12 at PM 4:33</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>居然還有人記得...</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89475#respond" onclick='return addComment.moveForm("comment-89475", "89475", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-89452">
+		<div id="comment-89452" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/3f5acdd648f6639f484107af0b3bb13b_normal.jpeg" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://twitter.com/hardy0wu" rel="external nofollow" class="url">Chengjian Wu (@hardy0wu)</a> </cite><a href="http://vinta.ws/blog/695#comment-89452" class="comment-date"><time datetime="2014-12-12T14:14:26+00:00">2014/12/12 at PM 2:14</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>能做出 鄙視鏈 的圖就好了。</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89452#respond" onclick='return addComment.moveForm("comment-89452", "89452", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment even depth-2" id="li-comment-89484">
+		<div id="comment-89484" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/577b164678b6f03d3d5c3f58a3e298a3" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://www.o2opro.com/" rel="external nofollow" class="url">維娜女王</a> </cite><a href="http://vinta.ws/blog/695#comment-89484" class="comment-date"><time datetime="2014-12-12T17:43:35+00:00">2014/12/12 at PM 5:43</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>求圖</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89484#respond" onclick='return addComment.moveForm("comment-89484", "89484", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-89454">
+		<div id="comment-89454" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/a" class="avatar avatar-78 photo avatar-default" height="78" width="78"><cite class="fn">Anonymous </cite><a href="http://vinta.ws/blog/695#comment-89454" class="comment-date"><time datetime="2014-12-12T14:18:32+00:00">2014/12/12 at PM 2:18</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>結論：<br>
+有女友朋的軟體工程師可以鄙視其它所有軟體工程師</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89454#respond" onclick='return addComment.moveForm("comment-89454", "89454", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment even depth-2" id="li-comment-89458">
+		<div id="comment-89458" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/f90780c8bac65f1a662442f9d5385b9c" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn">osk2 </cite><a href="http://vinta.ws/blog/695#comment-89458" class="comment-date"><time datetime="2014-12-12T14:45:04+00:00">2014/12/12 at PM 2:45</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>有女友的不能算工程師（鄙視</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89458#respond" onclick='return addComment.moveForm("comment-89458", "89458", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment odd alt depth-3" id="li-comment-89471">
+		<div id="comment-89471" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/cf757b98972f7277477018b97097fe1a" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://jpress.tw/" rel="external nofollow" class="url">XiaoJun</a> </cite><a href="http://vinta.ws/blog/695#comment-89471" class="comment-date"><time datetime="2014-12-12T16:05:46+00:00">2014/12/12 at PM 4:05</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>難怪osk2是工程師</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89471#respond" onclick='return addComment.moveForm("comment-89471", "89471", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment even depth-4" id="li-comment-89498">
+		<div id="comment-89498" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/12b44b53ebe566f75e5be79cfd13f004" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://gravatar.com/seadog007" rel="external nofollow" class="url">seadog007</a> </cite><a href="http://vinta.ws/blog/695#comment-89498" class="comment-date"><time datetime="2014-12-12T19:45:44+00:00">2014/12/12 at PM 7:45</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>小俊耶 顆顆</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+							</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-89456">
+		<div id="comment-89456" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/a" class="avatar avatar-78 photo avatar-default" height="78" width="78"><cite class="fn">Anonymous </cite><a href="http://vinta.ws/blog/695#comment-89456" class="comment-date"><time datetime="2014-12-12T14:28:07+00:00">2014/12/12 at PM 2:28</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>『會說「蛤？什麼物件導向？不是把重複的 code 寫成一個 function 就好了嗎？」的工程師』重覆了</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89456#respond" onclick='return addComment.moveForm("comment-89456", "89456", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment byuser comment-author-admin bypostauthor even depth-2" id="li-comment-89459">
+		<div id="comment-89459" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/022d52ed8da3d3d1b1eda2050bc77332" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://vinta.ws/" rel="external nofollow" class="url">Vinta</a> <span class="post-author"> Post author</span></cite><a href="http://vinta.ws/blog/695#comment-89459" class="comment-date"><time datetime="2014-12-12T14:49:32+00:00">2014/12/12 at PM 2:49</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>其實沒有重複啦，只是那個句子太長</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89459#respond" onclick='return addComment.moveForm("comment-89459", "89459", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-89457">
+		<div id="comment-89457" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/a" class="avatar avatar-78 photo avatar-default" height="78" width="78"><cite class="fn">Anonymous </cite><a href="http://vinta.ws/blog/695#comment-89457" class="comment-date"><time datetime="2014-12-12T14:39:05+00:00">2014/12/12 at PM 2:39</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>寫 Ruby on Rails 的工程師鄙視所有使用其他語言的工程師。<br>
+什麼？你說 Ruby？Ruby 只是 Ruby on Rails 的一套框架，才不是什麼程式語言呢！</p>
+<p>這段應該改成<br>
+寫 Ruby on Rails 的工程師鄙視所有使用其他語言的工程師。<br>
+什麼？你說 Rails？Rails 只是 Ruby 的一套框架，才不是什麼程式語言呢！</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89457#respond" onclick='return addComment.moveForm("comment-89457", "89457", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment even depth-2" id="li-comment-89461">
+		<div id="comment-89461" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/9ea8fcedc0328e2dc8da5fcb42c06026" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://rjhsiao.wordpress.com/" rel="external nofollow" class="url">RJ</a> </cite><a href="http://vinta.ws/blog/695#comment-89461" class="comment-date"><time datetime="2014-12-12T14:51:47+00:00">2014/12/12 at PM 2:51</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>這是故意的吧～說那些獨尊Rails的人，像是XD**e、X**te還有X*it*等人</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89461#respond" onclick='return addComment.moveForm("comment-89461", "89461", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment odd alt depth-3" id="li-comment-89476">
+		<div id="comment-89476" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/a" class="avatar avatar-78 photo avatar-default" height="78" width="78"><cite class="fn">Anonymous </cite><a href="http://vinta.ws/blog/695#comment-89476" class="comment-date"><time datetime="2014-12-12T16:39:19+00:00">2014/12/12 at PM 4:39</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>原來如此XDD<br>
+再看一次還真的有這樣的感覺</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89476#respond" onclick='return addComment.moveForm("comment-89476", "89476", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="comment even depth-3" id="li-comment-89477">
+		<div id="comment-89477" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/cf757b98972f7277477018b97097fe1a" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn">XiaoJun </cite><a href="http://vinta.ws/blog/695#comment-89477" class="comment-date"><time datetime="2014-12-12T16:42:08+00:00">2014/12/12 at PM 4:42</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>直接這樣打出來沒有問題嗎 XD<br>
+怎麼沒有打星字號呢？ 欸，不對！ 原來有打 XDD</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89477#respond" onclick='return addComment.moveForm("comment-89477", "89477", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment odd alt depth-4" id="li-comment-89499">
+		<div id="comment-89499" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/12b44b53ebe566f75e5be79cfd13f004" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://gravatar.com/seadog007" rel="external nofollow" class="url">seadog007</a> </cite><a href="http://vinta.ws/blog/695#comment-89499" class="comment-date"><time datetime="2014-12-12T19:47:30+00:00">2014/12/12 at PM 7:47</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>X****<br>
+*D***<br>
+**i**<br>
+***t*<br>
+****e</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+							</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even depth-2" id="li-comment-89462">
+		<div id="comment-89462" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/a" class="avatar avatar-78 photo avatar-default" height="78" width="78"><cite class="fn">Anonymous </cite><a href="http://vinta.ws/blog/695#comment-89462" class="comment-date"><time datetime="2014-12-12T14:58:38+00:00">2014/12/12 at PM 2:58</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>我好像看得懂 星字號 後面的字</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89462#respond" onclick='return addComment.moveForm("comment-89462", "89462", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="comment odd alt depth-2" id="li-comment-89464">
+		<div id="comment-89464" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/picture" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="https://www.facebook.com/kevin.luo2" rel="external nofollow" class="url">Luo Kevin</a> </cite><a href="http://vinta.ws/blog/695#comment-89464" class="comment-date"><time datetime="2014-12-12T15:09:50+00:00">2014/12/12 at PM 3:09</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>我也覺得是反諷，更好笑xD</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89464#respond" onclick='return addComment.moveForm("comment-89464", "89464", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-89463">
+		<div id="comment-89463" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/221512d4be373767d9a22e7aa583b7e0" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn">Chuck </cite><a href="http://vinta.ws/blog/695#comment-89463" class="comment-date"><time datetime="2014-12-12T15:04:58+00:00">2014/12/12 at PM 3:04</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>建議把Spark&gt;Hadoop&gt;NoSQL&gt;RDBMS&gt;Excel也補上</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89463#respond" onclick='return addComment.moveForm("comment-89463", "89463", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment byuser comment-author-admin bypostauthor odd alt depth-2" id="li-comment-89467">
+		<div id="comment-89467" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/022d52ed8da3d3d1b1eda2050bc77332" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://vinta.ws/" rel="external nofollow" class="url">Vinta</a> <span class="post-author"> Post author</span></cite><a href="http://vinta.ws/blog/695#comment-89467" class="comment-date"><time datetime="2014-12-12T15:48:33+00:00">2014/12/12 at PM 3:48</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>好！</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89467#respond" onclick='return addComment.moveForm("comment-89467", "89467", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="comment even depth-2" id="li-comment-89500">
+		<div id="comment-89500" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/12b44b53ebe566f75e5be79cfd13f004" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://gravatar.com/seadog007" rel="external nofollow" class="url">seadog007</a> </cite><a href="http://vinta.ws/blog/695#comment-89500" class="comment-date"><time datetime="2014-12-12T19:47:52+00:00">2014/12/12 at PM 7:47</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>Excel XDDD</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89500#respond" onclick='return addComment.moveForm("comment-89500", "89500", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-89466">
+		<div id="comment-89466" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/a" class="avatar avatar-78 photo avatar-default" height="78" width="78"><cite class="fn">Anonymous </cite><a href="http://vinta.ws/blog/695#comment-89466" class="comment-date"><time datetime="2014-12-12T15:42:03+00:00">2014/12/12 at PM 3:42</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>使用倉頡的工程師鄙視使用嘸蝦米的工程師，使用嘸蝦米的工程師鄙視使用注音的工程師，使用注音的工程師鄙視使用新注音的工程師</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89466#respond" onclick='return addComment.moveForm("comment-89466", "89466", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment even depth-2" id="li-comment-89468">
+		<div id="comment-89468" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/9ea8fcedc0328e2dc8da5fcb42c06026" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://rjhsiao.wordpress.com/" rel="external nofollow" class="url">RJ</a> </cite><a href="http://vinta.ws/blog/695#comment-89468" class="comment-date"><time datetime="2014-12-12T15:59:51+00:00">2014/12/12 at PM 3:59</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>使用新酷音的使用者、使用gcin/HIME的使用者、使用小麥注音、Yahoo注音的使用者都不見了...</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89468#respond" onclick='return addComment.moveForm("comment-89468", "89468", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-89469">
+		<div id="comment-89469" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/79a82e290a25c0b51532e68a331c26eb" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="https://plus.google.com/+SarYang" rel="external nofollow" class="url">Sar Yang</a> </cite><a href="http://vinta.ws/blog/695#comment-89469" class="comment-date"><time datetime="2014-12-12T16:00:06+00:00">2014/12/12 at PM 4:00</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>用 Github 的人, 要鄙視誰呢?</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89469#respond" onclick='return addComment.moveForm("comment-89469", "89469", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment byuser comment-author-admin bypostauthor even depth-2" id="li-comment-89470">
+		<div id="comment-89470" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/022d52ed8da3d3d1b1eda2050bc77332" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://vinta.ws/" rel="external nofollow" class="url">Vinta</a> <span class="post-author"> Post author</span></cite><a href="http://vinta.ws/blog/695#comment-89470" class="comment-date"><time datetime="2014-12-12T16:01:21+00:00">2014/12/12 at PM 4:01</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>鄙視為了免費的 private repo 而去用 BitBucket 的人</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89470#respond" onclick='return addComment.moveForm("comment-89470", "89470", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment odd alt depth-3" id="li-comment-89501">
+		<div id="comment-89501" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/12b44b53ebe566f75e5be79cfd13f004" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://gravatar.com/seadog007" rel="external nofollow" class="url">seadog007</a> </cite><a href="http://vinta.ws/blog/695#comment-89501" class="comment-date"><time datetime="2014-12-12T19:48:16+00:00">2014/12/12 at PM 7:48</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>svn的呢www</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89501#respond" onclick='return addComment.moveForm("comment-89501", "89501", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-89472">
+		<div id="comment-89472" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/eeb90e7b92f78e01cac07087165e3640" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="https://plus.google.com/115892940201634465488" rel="external nofollow" class="url">唐瞻立（alsotang）</a> </cite><a href="http://vinta.ws/blog/695#comment-89472" class="comment-date"><time datetime="2014-12-12T16:14:50+00:00">2014/12/12 at PM 4:14</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>已笑尿</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89472#respond" onclick='return addComment.moveForm("comment-89472", "89472", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="pingback odd alt thread-even depth-1" id="comment-89478">
+		<p>Pingback: <a href="http://ttour.sinaapp.com/posts/7456/%e3%80%90%e8%bd%ac%e8%bd%bd%e3%80%91%e8%bb%9f%e9%ab%94%e5%b7%a5%e7%a8%8b%e5%b8%ab%e7%9a%84%e9%84%99%e8%a6%96%e9%8f%88.html" rel="external nofollow" class="url">【转载】軟體工程師的鄙視鏈 - 鄙视链 - 嗅探实事</a> </p>
+	</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-89480">
+		<div id="comment-89480" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/975b8decfbfde73df64e1df2de0d2459" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://gravatar.com/george674834080" rel="external nofollow" class="url">喔喔兒</a> </cite><a href="http://vinta.ws/blog/695#comment-89480" class="comment-date"><time datetime="2014-12-12T17:21:48+00:00">2014/12/12 at PM 5:21</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>有女朋友的鄙视没有女朋友的。。</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89480#respond" onclick='return addComment.moveForm("comment-89480", "89480", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-89481">
+		<div id="comment-89481" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/ed25489511b015321836fc1f07d6d011" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://blog.rengised.com/" rel="external nofollow" class="url">張家振</a> </cite><a href="http://vinta.ws/blog/695#comment-89481" class="comment-date"><time datetime="2014-12-12T17:26:56+00:00">2014/12/12 at PM 5:26</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>哈庫拉瑪塔塔</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89481#respond" onclick='return addComment.moveForm("comment-89481", "89481", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment even depth-2" id="li-comment-89485">
+		<div id="comment-89485" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/a" class="avatar avatar-78 photo avatar-default" height="78" width="78"><cite class="fn">Anonymous </cite><a href="http://vinta.ws/blog/695#comment-89485" class="comment-date"><time datetime="2014-12-12T17:59:27+00:00">2014/12/12 at PM 5:59</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>What a wonderful world~</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89485#respond" onclick='return addComment.moveForm("comment-89485", "89485", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-89482">
+		<div id="comment-89482" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/786aca16036f269e8532024b9bd2699e" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="https://plus.google.com/114250817835102681306" rel="external nofollow" class="url">Allen J</a> </cite><a href="http://vinta.ws/blog/695#comment-89482" class="comment-date"><time datetime="2014-12-12T17:37:29+00:00">2014/12/12 at PM 5:37</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>一直以來，我以為我鄙視是別人，原來我鄙視的是我自已</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89482#respond" onclick='return addComment.moveForm("comment-89482", "89482", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-89483">
+		<div id="comment-89483" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/a" class="avatar avatar-78 photo avatar-default" height="78" width="78"><cite class="fn">Anonymous </cite><a href="http://vinta.ws/blog/695#comment-89483" class="comment-date"><time datetime="2014-12-12T17:40:46+00:00">2014/12/12 at PM 5:40</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>在座的各位，都是雷雷</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89483#respond" onclick='return addComment.moveForm("comment-89483", "89483", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-89489">
+		<div id="comment-89489" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/a" class="avatar avatar-78 photo avatar-default" height="78" width="78"><cite class="fn">Anonymous </cite><a href="http://vinta.ws/blog/695#comment-89489" class="comment-date"><time datetime="2014-12-12T18:18:04+00:00">2014/12/12 at PM 6:18</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>hahah , LMFAO</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89489#respond" onclick='return addComment.moveForm("comment-89489", "89489", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-89491">
+		<div id="comment-89491" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/a" class="avatar avatar-78 photo avatar-default" height="78" width="78"><cite class="fn">Anonymous </cite><a href="http://vinta.ws/blog/695#comment-89491" class="comment-date"><time datetime="2014-12-12T18:39:29+00:00">2014/12/12 at PM 6:39</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>有沒有web service的鄙視鍊?</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89491#respond" onclick='return addComment.moveForm("comment-89491", "89491", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	<ol class="children">
+	<li class="comment odd alt depth-2" id="li-comment-89507">
+		<div id="comment-89507" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/9ea8fcedc0328e2dc8da5fcb42c06026" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://rjhsiao.wordpress.com/" rel="external nofollow" class="url">RJ</a> </cite><a href="http://vinta.ws/blog/695#comment-89507" class="comment-date"><time datetime="2014-12-12T21:17:06+00:00">2014/12/12 at PM 9:17</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>啊就 Nginx 鄙視 Apache，lighttpd 鄙視其他人...</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89507#respond" onclick='return addComment.moveForm("comment-89507", "89507", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-89492">
+		<div id="comment-89492" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/a" class="avatar avatar-78 photo avatar-default" height="78" width="78"><cite class="fn">Anonymous </cite><a href="http://vinta.ws/blog/695#comment-89492" class="comment-date"><time datetime="2014-12-12T18:51:56+00:00">2014/12/12 at PM 6:51</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>Fortran工程師表示......</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89492#respond" onclick='return addComment.moveForm("comment-89492", "89492", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-89493">
+		<div id="comment-89493" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/a" class="avatar avatar-78 photo avatar-default" height="78" width="78"><cite class="fn">Anonymous </cite><a href="http://vinta.ws/blog/695#comment-89493" class="comment-date"><time datetime="2014-12-12T19:25:10+00:00">2014/12/12 at PM 7:25</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>有女朋友的工程師鄙視所有正在寫程式的工程師</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89493#respond" onclick='return addComment.moveForm("comment-89493", "89493", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-89502">
+		<div id="comment-89502" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/b963a9a3beb1863806da7e9aee845fc9" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://twitter.com/kikiqqp" rel="external nofollow" class="url">罐裝貓食 (@kikiqqp)</a> </cite><a href="http://vinta.ws/blog/695#comment-89502" class="comment-date"><time datetime="2014-12-12T20:33:43+00:00">2014/12/12 at PM 8:33</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>Lisp不鄙视各位，大家都平等(飘过)</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89502#respond" onclick='return addComment.moveForm("comment-89502", "89502", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-89503">
+		<div id="comment-89503" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/a" class="avatar avatar-78 photo avatar-default" height="78" width="78"><cite class="fn">Anonymous </cite><a href="http://vinta.ws/blog/695#comment-89503" class="comment-date"><time datetime="2014-12-12T20:34:01+00:00">2014/12/12 at PM 8:34</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>都是it介我認識的人都沒有互相鄙視。大家只會互相用力指教。提升戰鬥水平。都是為了生存。我的群定義是能從哪裡活的更強的資源通通吸收。不適合的就離開。覺得OK就繼續留下。這樣解決問題速度也蠻快的。</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89503#respond" onclick='return addComment.moveForm("comment-89503", "89503", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-89504">
+		<div id="comment-89504" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/a" class="avatar avatar-78 photo avatar-default" height="78" width="78"><cite class="fn">Anonymous </cite><a href="http://vinta.ws/blog/695#comment-89504" class="comment-date"><time datetime="2014-12-12T20:35:59+00:00">2014/12/12 at PM 8:35</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>但沒人會鄙視steve jobs或是bill gates</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89504#respond" onclick='return addComment.moveForm("comment-89504", "89504", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-89505">
+		<div id="comment-89505" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/a" class="avatar avatar-78 photo avatar-default" height="78" width="78"><cite class="fn">Anonymous </cite><a href="http://vinta.ws/blog/695#comment-89505" class="comment-date"><time datetime="2014-12-12T21:02:15+00:00">2014/12/12 at PM 9:02</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>哥先去調個妹回來，你們慢慢鄙視~</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89505#respond" onclick='return addComment.moveForm("comment-89505", "89505", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-89506">
+		<div id="comment-89506" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/89ff80660d6ce5e4bbd2c0ace35e67fa" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="http://gravatar.com/symis" rel="external nofollow" class="url">symis</a> </cite><a href="http://vinta.ws/blog/695#comment-89506" class="comment-date"><time datetime="2014-12-12T21:09:29+00:00">2014/12/12 at PM 9:09</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>文人相輕，自古而然........................曹丕 - 典論論文</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89506#respond" onclick='return addComment.moveForm("comment-89506", "89506", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-89509">
+		<div id="comment-89509" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/378500f19f25b0b90e40013e325e73b0" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn">ARON </cite><a href="http://vinta.ws/blog/695#comment-89509" class="comment-date"><time datetime="2014-12-12T22:06:02+00:00">2014/12/12 at PM 10:06</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>............</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89509#respond" onclick='return addComment.moveForm("comment-89509", "89509", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-89510">
+		<div id="comment-89510" class="comment-body">
+			<div class="comment-meta comment-author vcard">
+				<img alt="" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/picture_007" class="avatar avatar-78 photo" height="78" width="78"><cite class="fn"><a href="https://www.facebook.com/mr.changyuheng" rel="external nofollow" class="url">Chang Yu-heng</a> </cite><a href="http://vinta.ws/blog/695#comment-89510" class="comment-date"><time datetime="2014-12-12T22:59:33+00:00">2014/12/12 at PM 10:59</time></a>			</div><!-- .comment-meta -->
+						<div class="comment-content">
+				<p>Twed2k 現在還在啊！而且銀行的高匯率讓我錢多到花不完！倒是還有人記得辛蒂摩兒嗎？我比較喜歡 phpBB 啊！</p>
+							</div><!-- .comment-content -->
+			<div class="reply">
+				<a class="comment-reply-link" href="http://vinta.ws/blog/695?replytocom=89510#respond" onclick='return addComment.moveForm("comment-89510", "89510", "respond", "695")'>Reply ↓</a>			</div><!-- .reply -->
+		</div><!-- #comment-## -->
+	</li><!-- #comment-## -->
+		</ol><!-- .commentlist -->
+		
+									
+		<div id="respond" class="comment-respond">
+			<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://vinta.ws/blog/695#respond" style="display:none;">Cancel reply</a></small></h3>
+			<div id="commentform" class="comment-form">
+				<iframe src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/a.xhtml" allowtransparency="false" style="width:100%; height: 430px;border:0px;" scrolling="no" name="jetpack_remote_comment" id="jetpack_remote_comment" frameborder="0"></iframe>
+			<input value="1418398671412" name="ak_js" id="ak_js" type="hidden"></div>
+		</div>
+
+		
+		<input name="comment_parent" id="comment_parent" value="" type="hidden">
+
+		</div><!-- #comments -->					</div><!-- .inner -->
+	</div><!-- #content -->
+<section class="social-links">	
+	<div class="inner">		
+		<h3 class="social-title">Say Hello</h3><a href="https://twitter.com/vinta" class="socnet-link" title="Twitter"><i aria-hidden="true" class="icon-twitter"></i><span class="screen-reader-text">Twitter</span></a><a href="https://www.facebook.com/vintalines" class="socnet-link" title="Facebook"><i aria-hidden="true" class="icon-facebook"></i><span class="screen-reader-text">Facebook</span></a><a href="http://tw.linkedin.com/in/vinta" class="socnet-link" title="LinkedIn"><i aria-hidden="true" class="icon-linkedin"></i><span class="screen-reader-text">LinkedIn</span></a><a href="https://github.com/vinta" class="socnet-link" title="GitHub"><i aria-hidden="true" class="icon-github"></i><span class="screen-reader-text">GitHub</span></a><a href="http://vinta.ws/blog/feed" class="socnet-link" title="RSS"><i aria-hidden="true" class="icon-rss"></i><span class="screen-reader-text">RSS</span></a>	</div><!-- .inner -->
+</section><!-- .social links -->
+<footer class="site-footer" role="contentinfo">
+	<div class="inner">
+		<div class="supplementary" role="complementary">
+	<div class="grid">
+			<div class="one-fourth">
+					<aside id="recent-posts-3" class="widget widget_recent_entries">		<h3 class="widget-title">Recent Posts</h3>		<ul>
+					<li>
+				<a href="http://vinta.ws/blog/695">軟體工程師的鄙視鏈</a>
+						</li>
+					<li>
+				<a href="http://vinta.ws/blog/653">佔領行政院：一位失敗主義者的告白</a>
+						</li>
+					<li>
+				<a href="http://vinta.ws/blog/650">我們需要一種精準的憤怒</a>
+						</li>
+					<li>
+				<a href="http://vinta.ws/blog/644">你可能會想知道</a>
+						</li>
+					<li>
+				<a href="http://vinta.ws/blog/543">靈魂強氣運動</a>
+						</li>
+					<li>
+				<a href="http://vinta.ws/blog/536">「小確幸」與「大幹八」</a>
+						</li>
+					<li>
+				<a href="http://vinta.ws/blog/593">犀利人夫 Super</a>
+						</li>
+					<li>
+				<a href="http://vinta.ws/blog/529">關於科幻</a>
+						</li>
+					<li>
+				<a href="http://vinta.ws/blog/100">2010 年度回顧</a>
+						</li>
+					<li>
+				<a href="http://vinta.ws/blog/99">大英國小人物 / 小不列顛 Little Britain</a>
+						</li>
+					<li>
+				<a href="http://vinta.ws/blog/98">特攻聯盟 / 海扁王 Kick-Ass</a>
+						</li>
+					<li>
+				<a href="http://vinta.ws/blog/97">畢業生 The Graduate</a>
+						</li>
+					<li>
+				<a href="http://vinta.ws/blog/516">寶島 Online：台灣人的線上遊戲</a>
+						</li>
+					<li>
+				<a href="http://vinta.ws/blog/531">薛西弗斯的神話 by 卡繆</a>
+						</li>
+					<li>
+				<a href="http://vinta.ws/blog/523">我的朋友都是智障 - 左邊網 on Facebook</a>
+						</li>
+					<li>
+				<a href="http://vinta.ws/blog/96">超異能英雄 Heroes</a>
+						</li>
+					<li>
+				<a href="http://vinta.ws/blog/521">誰說現在的年輕人沒有競爭力？</a>
+						</li>
+					<li>
+				<a href="http://vinta.ws/blog/635">2009 年度回顧</a>
+						</li>
+					<li>
+				<a href="http://vinta.ws/blog/518">大家好，我們是「臉書好友感情狀態糾察隊」</a>
+						</li>
+					<li>
+				<a href="http://vinta.ws/blog/519">我愛用的 Firefox 附加元件</a>
+						</li>
+					<li>
+				<a href="http://vinta.ws/blog/528">鬥陣俱樂部 by 恰克．帕拉尼克</a>
+						</li>
+					<li>
+				<a href="http://vinta.ws/blog/527">Line by 村上龍</a>
+						</li>
+					<li>
+				<a href="http://vinta.ws/blog/522">冒犯書 by 陳希我</a>
+						</li>
+					<li>
+				<a href="http://vinta.ws/blog/94">笑之大學 University Of Laughs</a>
+						</li>
+					<li>
+				<a href="http://vinta.ws/blog/512">哈哈哈請響應「句首哈哈哈運動」</a>
+						</li>
+					<li>
+				<a href="http://vinta.ws/blog/525">好預兆 by 泰瑞．普萊契 &amp; 尼爾．蓋曼</a>
+						</li>
+					<li>
+				<a href="http://vinta.ws/blog/524">人間失格 by 太宰治</a>
+						</li>
+					<li>
+				<a href="http://vinta.ws/blog/334">專攻「小眾路線」的部落格小貼紙</a>
+						</li>
+					<li>
+				<a href="http://vinta.ws/blog/416">每考一圖：考試是必要之惡</a>
+						</li>
+					<li>
+				<a href="http://vinta.ws/blog/517">往下跳 by 尼克．宏比</a>
+						</li>
+				</ul>
+		</aside>		</div>
+				<div class="one-fourth">
+			<aside id="recent-comments-3" class="widget widget_recent_comments"><h3 class="widget-title">Recent Comments</h3><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">Danny</span> on <a href="http://vinta.ws/blog/695#comment-89511">軟體工程師的鄙視鏈</a></li><li class="recentcomments"><span class="comment-author-link"><a href="https://www.facebook.com/mr.changyuheng" rel="external nofollow" class="url">Chang Yu-heng</a></span> on <a href="http://vinta.ws/blog/695#comment-89510">軟體工程師的鄙視鏈</a></li><li class="recentcomments"><span class="comment-author-link">ARON</span> on <a href="http://vinta.ws/blog/695#comment-89509">軟體工程師的鄙視鏈</a></li><li class="recentcomments"><span class="comment-author-link"><a href="https://www.facebook.com/100000XOwQb" rel="external nofollow" class="url">黃柏瑋</a></span> on <a href="http://vinta.ws/blog/695#comment-89508">軟體工程師的鄙視鏈</a></li><li class="recentcomments"><span class="comment-author-link"><a href="http://rjhsiao.wordpress.com/" rel="external nofollow" class="url">RJ</a></span> on <a href="http://vinta.ws/blog/695#comment-89507">軟體工程師的鄙視鏈</a></li><li class="recentcomments"><span class="comment-author-link"><a href="http://gravatar.com/symis" rel="external nofollow" class="url">symis</a></span> on <a href="http://vinta.ws/blog/695#comment-89506">軟體工程師的鄙視鏈</a></li><li class="recentcomments"><span class="comment-author-link">Anonymous</span> on <a href="http://vinta.ws/blog/695#comment-89505">軟體工程師的鄙視鏈</a></li><li class="recentcomments"><span class="comment-author-link">Anonymous</span> on <a href="http://vinta.ws/blog/695#comment-89504">軟體工程師的鄙視鏈</a></li><li class="recentcomments"><span class="comment-author-link">Anonymous</span> on <a href="http://vinta.ws/blog/695#comment-89503">軟體工程師的鄙視鏈</a></li><li class="recentcomments"><span class="comment-author-link"><a href="http://twitter.com/kikiqqp" rel="external nofollow" class="url">罐裝貓食 (@kikiqqp)</a></span> on <a href="http://vinta.ws/blog/695#comment-89502">軟體工程師的鄙視鏈</a></li><li class="recentcomments"><span class="comment-author-link"><a href="http://gravatar.com/seadog007" rel="external nofollow" class="url">seadog007</a></span> on <a href="http://vinta.ws/blog/695#comment-89501">軟體工程師的鄙視鏈</a></li><li class="recentcomments"><span class="comment-author-link"><a href="http://gravatar.com/seadog007" rel="external nofollow" class="url">seadog007</a></span> on <a href="http://vinta.ws/blog/695#comment-89500">軟體工程師的鄙視鏈</a></li><li class="recentcomments"><span class="comment-author-link"><a href="http://gravatar.com/seadog007" rel="external nofollow" class="url">seadog007</a></span> on <a href="http://vinta.ws/blog/695#comment-89499">軟體工程師的鄙視鏈</a></li><li class="recentcomments"><span class="comment-author-link"><a href="http://gravatar.com/seadog007" rel="external nofollow" class="url">seadog007</a></span> on <a href="http://vinta.ws/blog/695#comment-89498">軟體工程師的鄙視鏈</a></li><li class="recentcomments"><span class="comment-author-link"><a href="http://gravatar.com/seadog007" rel="external nofollow" class="url">seadog007</a></span> on <a href="http://vinta.ws/blog/695#comment-89497">軟體工程師的鄙視鏈</a></li></ul></aside>		</div>
+				<div class="one-fourth">
+			<aside id="categories-3" class="widget widget_categories"><h3 class="widget-title">Categories</h3>		<ul>
+	<li class="cat-item cat-item-803"><a href="http://vinta.ws/blog/category/curation">你可能會想知道</a> (3)
+</li>
+	<li class="cat-item cat-item-20"><a href="http://vinta.ws/blog/category/kuso">假裝沒有惡意</a> (43)
+</li>
+	<li class="cat-item cat-item-28"><a href="http://vinta.ws/blog/category/digest">做書摘是個好習慣</a> (51)
+</li>
+	<li class="cat-item cat-item-4"><a href="http://vinta.ws/blog/category/poetry">其實我小時候的志向是成為詩人</a> (22)
+</li>
+	<li class="cat-item cat-item-21"><a href="http://vinta.ws/blog/category/serious">嚴肅的事情</a> (16)
+</li>
+	<li class="cat-item cat-item-25"><a href="http://vinta.ws/blog/category/bullshit">在網誌裡鬼扯才是正經事</a> (51)
+</li>
+	<li class="cat-item cat-item-30"><a href="http://vinta.ws/blog/category/summer_blog_legend">夏日的 BLOG 傳說</a> (32)
+</li>
+	<li class="cat-item cat-item-802"><a href="http://vinta.ws/blog/category/unfuckable">後娘砲主義</a> (86)
+</li>
+	<li class="cat-item cat-item-3"><a href="http://vinta.ws/blog/category/music">我的性感帶一定在耳朵</a> (68)
+</li>
+	<li class="cat-item cat-item-1"><a href="http://vinta.ws/blog/category/uncategorized">未分類</a> (7)
+</li>
+	<li class="cat-item cat-item-26"><a href="http://vinta.ws/blog/category/review">闔上書本後硬是逞強地寫了讀後感</a> (4)
+</li>
+	<li class="cat-item cat-item-324"><a href="http://vinta.ws/blog/category/acg">關於 ACG 哪些很宅的東西</a> (18)
+</li>
+	<li class="cat-item cat-item-12"><a href="http://vinta.ws/blog/category/geek">電腦是我的 E 罐</a> (15)
+</li>
+		</ul>
+</aside>		</div>
+				<div class="one-fourth">
+			<aside id="meta-3" class="widget widget_meta"><h3 class="widget-title">Meta</h3>			<ul>
+						<li><a href="http://vinta.ws/blog/wp-login.php">Log in</a></li>
+			<li><a href="http://vinta.ws/blog/feed">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://vinta.ws/blog/comments/feed">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+</aside><aside id="search-3" class="widget widget_search"><form role="search" method="get" class="search-form" action="http://vinta.ws/blog/"> 
+	<label class="screen-reader-text">Search for:</label>
+	<input value="Search..." name="s" class="search-field" placeholder="Search..." type="text">
+	<input class="search-submit" value="Go" type="submit">
+</form></aside>		</div>
+		</div><!-- .grid -->
+</div><!-- .supplementary -->	
+		<div class="site-info">
+			<p class="copyright">
+				<a href="http://wordpress.org/">Proudly powered by WordPress</a>
+				<span class="sep"> | </span>
+				Stork theme by <a href="http://justgoodthemes.com/" rel="designer">justgoodthemes.com</a>.		  	</p>
+			<a href="#" id="back-to-top" title="Back To Top"><i aria-hidden="true" class="icon-chevron-up"></i></a>
+		</div><!-- .site-info -->
+	</div><!-- .inner -->
+</footer><!-- .site-footer -->
+<script><!--
+dynamicgoogletags.update();
+//--></script>
+	<script type="text/javascript">
+		WPCOM_sharing_counts = {"http:\/\/vinta.ws\/blog\/695":695}	</script>
+	
+		<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-facebook' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-google-plus-1' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomgoogle-plus-1', 'menubar=1,resizable=1,width=480,height=550' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-twitter' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+		});
+		</script>
+		<script type="text/javascript" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/form.js"></script>
+<script type="text/javascript" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/devicepx-jetpack.js"></script>
+<script type="text/javascript" src="http://vinta.ws/blog/wp-includes/js/comment-reply.min.js?ver=4.0.1"></script>
+<script type="text/javascript" src="http://vinta.ws/blog/wp-content/themes/stork/js/custom.js?ver=1.0"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var recaptcha_options = {"lang":"en"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="http://vinta.ws/blog/wp-content/plugins/jetpack/modules/sharedaddy/sharing.js?ver=20140920"></script>
+
+		<!--[if IE]>
+		<script type="text/javascript">
+		if ( 0 === window.location.hash.indexOf( '#comment-' ) ) {
+			// window.location.reload() doesn't respect the Hash in IE
+			window.location.hash = window.location.hash;
+		}
+		</script>
+		<![endif]-->
+		<script type="text/javascript">
+			var comm_par_el = document.getElementById( 'comment_parent' ),
+			    comm_par = (comm_par_el && comm_par_el.value) ? comm_par_el.value : '',
+			    frame = document.getElementById( 'jetpack_remote_comment' ),
+			    tellFrameNewParent;
+
+			tellFrameNewParent = function() {
+				if ( comm_par ) {
+					frame.src = "http://jetpack.wordpress.com/jetpack-comment/?blogid=2629553&postid=695&comment_registration=0&require_name_email=0&stc_enabled=1&stb_enabled=1&show_avatars=1&avatar_default=identicon&greeting=Leave+a+Reply&greeting_reply=Leave+a+Reply+to+%25s&color_scheme=light&lang=en-US&jetpack_version=3.2.1&sig=cae7de5c0bc1dc3da0eed5a777895c42695f9c84#parent=http%3A%2F%2Fvinta.ws%2Fblog%2F695" + '&replytocom=' + parseInt( comm_par, 10 ).toString();
+				} else {
+					frame.src = "http://jetpack.wordpress.com/jetpack-comment/?blogid=2629553&postid=695&comment_registration=0&require_name_email=0&stc_enabled=1&stb_enabled=1&show_avatars=1&avatar_default=identicon&greeting=Leave+a+Reply&greeting_reply=Leave+a+Reply+to+%25s&color_scheme=light&lang=en-US&jetpack_version=3.2.1&sig=cae7de5c0bc1dc3da0eed5a777895c42695f9c84#parent=http%3A%2F%2Fvinta.ws%2Fblog%2F695";
+				}
+			};
+
+	
+			if ( 'undefined' !== typeof addComment ) {
+				addComment._Jetpack_moveForm = addComment.moveForm;
+
+				addComment.moveForm = function( commId, parentId, respondId, postId ) {
+					var returnValue = addComment._Jetpack_moveForm( commId, parentId, respondId, postId ), cancelClick, cancel;
+
+					if ( false === returnValue ) {
+						cancel = document.getElementById( 'cancel-comment-reply-link' );
+						cancelClick = cancel.onclick;
+						cancel.onclick = function() {
+							var cancelReturn = cancelClick.call( this );
+							if ( false !== cancelReturn ) {
+								return cancelReturn;
+							}
+
+							if ( !comm_par ) {
+								return cancelReturn;
+							}
+
+							comm_par = 0;
+
+							tellFrameNewParent();
+
+							return cancelReturn;
+						};
+					}
+
+					if ( comm_par == parentId ) {
+						return returnValue;
+					}
+
+					comm_par = parentId;
+
+					tellFrameNewParent();
+
+					return returnValue;
+				};
+			}
+
+	
+			if ( window.postMessage ) {
+				if ( document.addEventListener ) {
+					window.addEventListener( 'message', function( event ) {
+						if ( "http:\/\/jetpack.wordpress.com" !== event.origin ) {
+							return;
+						}
+
+						jQuery( frame ).height( event.data );
+					} );
+				} else if ( document.attachEvent ) {
+					window.attachEvent( 'message', function( event ) {
+						if ( "http:\/\/jetpack.wordpress.com" !== event.origin ) {
+							return;
+						}
+
+						jQuery( frame ).height( event.data );
+					} );
+				}
+			}
+		</script>
+
+	
+	<script src="http://stats.wp.com/e-201450.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	st_go({v:'ext',j:'1:3.2.1',blog:'2629553',post:'695',tz:'8'});
+	var load_cmc = function(){linktracker_init(2629553,695,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script><img id="wpstats" src="http://pixel.wp.com/g.gif?host=vinta.ws&amp;rand=0.13182497338103638&amp;v=ext&amp;j=1%3A3.2.1&amp;blog=2629553&amp;post=695&amp;tz=8&amp;ref=http%3A//geek.csdn.net/news/detail/21390" alt="">
+
+<div id="sharing_email" style="display: none;">
+		<form action="/blog/695" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input name="target_email" id="target_email" type="email">
+
+			
+				<label for="source_name">Your Name</label>
+				<input name="source_name" id="source_name" type="text">
+
+				<label for="source_email">Your Email Address</label>
+				<input name="source_email" id="source_email" type="email">
+
+			
+			
+			<img style="float: right; display: none" class="loading" src="%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E9%84%99%E8%A6%96%E9%8F%88%20%7C%20%E7%9C%9F%EF%BC%8E%E4%BB%96%E5%AA%BD%E7%9A%84_files/loading.gif" alt="loading" height="16" width="16">
+			<input value="Send Email" class="sharing_send" type="submit">
+			<a href="#cancel" class="sharing_cancel">Cancel</a>
+
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div></body></html>
+<!-- Performance optimized by W3 Total Cache. Learn more: http://www.w3-edge.com/wordpress-plugins/
+
+Page Caching using memcached
+Database Caching 3/14 queries in 0.012 seconds using memcached
+Object Caching 3505/3608 objects using memcached
+
+ Served from: vinta.ws @ 2014-12-12 23:34:07 by W3 Total Cache -->

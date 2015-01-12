@@ -1,0 +1,630 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn"><head><script src="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/analytics.js" async=""></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>为你详解Linux安装GCC方法 - chuncn - 博客园</title>
+<link type="text/css" rel="stylesheet" href="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/bundle-AnotherEon001.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/chuncn/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/chuncn/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/chuncn/wlwmanifest.xml">
+<script src="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/gpt.js" type="text/javascript" async=""></script><script src="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'chuncn', cb_enable_mathjax=false;</script>
+<script src="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/blog-common.js" type="text/javascript"></script>
+<script src="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/pubads_impl_55.js" type="text/javascript" async=""></script><script src="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/osd.js" type="text/javascript"></script></head>
+<body>
+<a name="top"></a>
+
+<div id="wrapper">
+<div id="header">
+
+<div id="top">
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/chuncn/">春夏秋冬</a></h1>
+<div id="subtitle">chuncn</div>
+</div>
+<div id="sub">
+<div class="BlogStats">随笔 - 661, 文章 - 1, 评论 - 125, 引用 - 3</div>
+</div>
+
+
+
+</div>
+<div id="main_container">
+<div id="main_content">
+<div id="content">
+	
+
+	<div class="post">
+		<h2>
+			<a id="cb_post_title_url" href="http://www.cnblogs.com/chuncn/archive/2010/10/15/1851853.html">为你详解Linux安装GCC方法</a>
+		</h2>
+		<div class="postbody">
+		<div id="cnblogs_post_body"><p>下载： <a href="http://ftp.gnu.org/gnu/gcc/gcc-4.5.1/gcc-4.5.1.tar.bz2" target="_blank">http://ftp.gnu.org/gnu/gcc/gcc-4.5.1/gcc-4.5.1.tar.bz2</a><br>浏览： <a href="http://ftp.gnu.org/gnu/gcc/gcc-4.5.1/" target="_blank">http://ftp.gnu.org/gnu/gcc/gcc-4.5.1/</a><br>查看Changes： <a href="http://gcc.gnu.org/gcc-4.5/changes.htm" target="_blank">http://gcc.gnu.org/gcc-4.5/changes.htm</a></p>
+<p class="newtext">现在很多程序员都应用GCC，怎样才能更好的应用GCC。目前，GCC可以用来编译C/C++、FORTRAN、
+JAVA、OBJC、ADA等语言的程序，可根据需要选择安装支持的语言。本文以在Redhat 
+Linux安装GCC4.1.2为例(因在项目开发过程中要求使用，没有用最新的GCC版本)，介绍Linux安装GCC过程。</p>
+<p class="newtext">安装之前，系统中必须要有cc或者gcc等编译器，并且是可用的，或者用环境变量CC指定系统上的编译器。如果系
+统上没有编译器，不能安装源代码形式的GCC 
+4.1.2。如果是这种情况，可以在网上找一个与你系统相适应的如RPM等二进制形式的GCC软件包来安装使用。本文介绍的是以源代码形式提供的GCC软
+件包的安装过程，软件包本身和其安装过程同样适用于其它Linux和Unix系统。</p>
+<p class="newtext">系统上原来的GCC编译器可能是把gcc等命令文件、库文件、头文件等分别存放到系统中的不同目录下的。与此不
+同，现在GCC建议我们将一个版本的GCC安装在一个单独的目录下。这样做的好处是将来不需要它的时候可以方便地删除整个目录即可(因为GCC没有
+uninstall功能);缺点是在安装完成后要做一些设置工作才能使编译器工作正常。在本文中采用这个方案安装GCC 
+4.1.2，并且在安装完成后，仍然能够使用原来低版本的GCC编译器，即一个系统上可以同时存在并使用多个版本的GCC编译器。</p>
+<p class="newtext">按照本文提供的步骤和设置选项，即使以前没有安装过GCC，也可以在系统上安装上一个可工作的新版本的GCC编译器。</p>
+<p class="newtext"><strong>1 下载</strong></p>
+<p class="newtext">在GCC网站上(http://gcc.gnu.org)或者通过网上搜索可以查找到下载资源。目前GCC的最新
+版本为 
+4.2.1。可供下载的文件一般有两种形式：gcc-4.1.2.tar.gz和gcc-4.1.2.tar.bz2，只是压缩格式不一样，内容完全一
+致，下载其中一种即可。</p>
+<p class="newtext"><strong>2. 解压缩</strong></p>
+<p class="newtext">拷贝gcc-4.1.2.tar.bz2(我下载的压缩文件)到/usr/local/src(根据自己喜好选择)下,根据压缩格式，选择下面相应的一种方式解包(以下的“%”表示命令行提示符)：</p>
+<p class="newtext">% tar zxvf gcc-4.1.2.tar.gz</p>
+<p class="newtext">或者</p>
+<p class="newtext">% bzcat gcc-4.1.2.tar.bz2 | tar xvf -</p>
+<p class="newtext">新生成的gcc-4.1.2这个目录被称为源目录，用${srcdir}表示它。以后在出现${srcdir}的地方，应该用真实的路径来替换它。用pwd命令可以查看当前路径。</p>
+<p class="newtext">在${srcdir}/INSTALL目录下有详细的GCC安装说明，可用浏览器打开index.html阅读。</p>
+<p class="newtext"><strong>3. 建立目标目录</strong></p>
+<p class="newtext">目标目录(用${objdir}表示)是用来存放编译结果的地方。GCC建议编译后的文件不要放在源目录${srcdir]中(虽然这样做也可以)，最好单独存放在另外一个目录中，而且不能是${srcdir}的子目录。</p>
+<p class="newtext">例如，可以这样建立一个叫 /usr/local/gcc-4.1.2的目标目录：</p>
+<p class="newtext">% mkdir /usr/local/gcc-4.1.2</p>
+<p class="newtext">% cd gcc-4.1.2</p>
+<p class="newtext">以下的操作主要是在目标目录 ${objdir} 下进行。(否则会出错，后面有解释)</p>
+<p class="newtext"><strong>4. 配置</strong></p>
+<p class="newtext">配置的目的是决定将GCC编译器安装到什么地方(${destdir})，支持什么语言以及指定其它一些选项等。其中，${destdir}不能与${objdir}或${srcdir}目录相同。</p>
+<p class="newtext">配置是通过执行${srcdir}下的configure来完成的。其命令格式为(记得用你的真实路径替换${destdir})：</p>
+<p class="newtext">% ${srcdir}/configure --prefix=${destdir} [其它选项]</p>
+<p class="newtext">例如，如果想将GCC 4.1.2安装到/usr/local/gcc-4.1.2目录下，则${destdir}就表示这个路径。</p>
+<p class="newtext">在我的机器上，我是这样配置的：</p>
+<p class="newtext">% ../gcc-4.1.2/configure 
+--prefix=/usr/local/gcc-4.1.2 --enable-threads=posix --disable-checking 
+--enable--long-long --host=i386-redhat-linux--with-system-zlib 
+--enable-languages=c,c++,java</p>
+<p class="newtext">将GCC安装在/usr/local/gcc-4.1.2目录下，支持C/C++和JAVA语言，其它选项参见GCC提供的帮助说明。</p>
+<p class="newtext"><strong>5. 编译</strong></p>
+<p class="newtext">% make</p>
+<p class="newtext"><strong>6. 安装</strong></p>
+<p class="newtext">执行下面的命令将编译好的库文件等拷贝到${destdir}目录中(根据你设定的路径，可能需要管理员的权限)：</p>
+<p class="newtext">% make install</p>
+<p class="newtext">至此，GCC 4.1.2安装过程就完成了。</p>
+<p class="newtext"><strong>7. 其它设置</strong></p>
+<p class="newtext">GCC 
+4.1.2的所有文件，包括命令文件(如gcc、g++)、库文件等都在${destdir}目录下分别存放，如命令文件放在bin目录下、库文件在 
+lib下、头文件在include下等。由于命令文件和库文件所在的目录还没有包含在相应的搜索路径内，所以必须要作适当的设置之后编译器才能顺利地找到
+并使用它们。</p>
+<p class="newtext">7.1 gcc、g++、gcj的设置</p>
+<p class="newtext">要想使用GCC 4.1.2的gcc等命令，简单的方法就是把它的路径${destdir}/bin放在环境变量PATH中。我不用这种方式，而是用符号连接的方式实现，这样做的好处是我仍然可以使用系统上原来的旧版本的GCC编译器。</p>
+<p class="newtext">首先，查看原来的gcc所在的路径：</p>
+<p class="newtext">% which gcc</p>
+<p class="newtext">在我的系统上，上述命令显示：/usr/bin/gcc。因此，原来的gcc命令在/usr/bin目录下。我们可以把GCC 4.1.2中的gcc、g++、gcj等命令在/usr/bin目录下分别做一个符号连接：</p>
+<p class="newtext">% cd /usr/bin</p>
+<p class="newtext">% ln -s ${destdir}/bin/gcc gcc412</p>
+<p class="newtext">% ln -s ${destdir}/bin/g++ g++412</p>
+<p class="newtext">% ln -s ${destdir}/bin/gcj gcj412</p>
+<p class="newtext">这样，就可以分别使用gcc412、g++412、gcj412来调用GCC 4.1.2的gcc、g++、gcj完成对C、C++、JAVA程序的编译了。同时，仍然能够使用旧版本的GCC编译器中的gcc、g++等命令。</p>
+<p class="newtext">(cool，我感觉棒极了!!1)</p>
+<p class="newtext">7.2 库路径的设置</p>
+<p class="newtext">将${destdir}/lib路径添加到环境变量LD_LIBRARY_PATH中，例如，如果GCC 4.1.2安装在/usr/local/gcc-4.1.2目录下，在RH Linux下可以直接在命令行上执行</p>
+<p class="newtext">% export LD_LIBRARY_PATH=/usr/local/gcc-4.1.2/lib</p>
+<p class="newtext">最好添加到系统的配置文件中，这样就不必要每次都设置这个环境变量了,在文件$HOME/.bash_profile中添加下面两句：</p>
+<p class="newtext">LD_LIBRARY_PATH=/usr/local/gcc-4.1.2/lib:$LD_LIBRARY_PATH</p>
+<p class="newtext">export LD_LIBRARY_PATH</p>
+<p class="newtext">重启系统设置生效，或者执行命令</p>
+<p class="newtext">% source $HOME/.bash_profile</p>
+<p class="newtext">用新的编译命令(gcc412、g++412等)编译你以前的C、C++程序，检验新安装的GCC编译器是否能正常工作。</p>
+<p class="newtext">完成了Linux安装GCC，之后你就能轻松地编辑了。</p>
+<p class="newtext">from:os.51cto.com/art/200912/168804.htm</p>
+<p class="newtext">在RHLinux下安装gcc-4.0.1方法比较简单，但是安装过程中有些环节是需要注意的，否则，可能会导致安装不成功，或者安装报错。具体安装过程如下：</p>
+<p class="newtext">首先，下载并解压缩gcc的RPM包至源目录(如/opt/gcc-4.0.1)</p>
+<p class="newtext"><strong>1、解压缩RPM包：</strong></p>
+<p class="newtext">[root@linuxopt]# tar xjvf gcc-4.0.1.tar.bz2 (解压后生成源目录/opt/gcc-4.0.1)</p>
+<p class="newtext"><strong>2、创建安装目标目录：</strong></p>
+<p class="newtext">[root@linux opt]# mkdir /usr/local/gcc-4.0.1/</p>
+<p class="newtext"><strong>3、进入安装目标目录：</strong></p>
+<p class="newtext">[root@linux opt]# cd /usr/local/gcc-4.0.1/ (这一步很重要，配置安装文件时，需要在目标目录下执行configure命令)</p>
+<p class="newtext">[root@linux opt]# pwd</p>
+<p class="newtext">/usr/local/gcc-4.0.1</p>
+<p class="newtext"><strong>4、配置安装文件：</strong></p>
+<p class="newtext">[root@linux gcc-4.0.1]# /opt/gcc-4.0.1/configure 
+--prefix=/usr/local/gcc-4.0.1/ (这一步非常重要，需要在安装的目标目录下，执行源目录 
+/opt/gcc-4.0.1/中的configure命令，配置将gcc安装到目标目录/usr/local/gcc-4.0.1/)</p>
+<p class="newtext">creating cache ./config.cache</p>
+<p class="newtext">checking host system type... i686-pc-linux-gnu</p>
+<p class="newtext"><strong>5、编译安装文件：</strong></p>
+<p class="newtext">[root@linux gcc-4.0.1]# pwd</p>
+<p class="newtext">/usr/local/gcc-4.0.1</p>
+<p class="newtext">[root@linux gcc-4.0.1]# make (在目标目录下执行编译)</p>
+<p class="newtext"><strong>6、安装gcc：</strong></p>
+<p class="newtext">[root@linux gcc-4.0.1]# pwd</p>
+<p class="newtext">/usr/local/gcc-4.0.1</p>
+<p class="newtext">[root@linux gcc-4.0.1]# make install (在目标目录下执行安装)</p>
+<p class="newtext">如果安装过程中步骤和命令没有错误，你肯定能安装成功。</p>
+<p class="newtext">&nbsp;</p>
+<p class="newtext">---------------------------------------------------------------------</p>
+<p class="newtext">&nbsp;</p>
+<p class="newtext">　　首先，现在最新的包GCC 4.2.bz2，一般的到处都有的下，linux下的下载速度很满，20多k，很恶心，我喜欢迅雷的下载速度，在windows下下载，大概42M，下载速度2到4M，回到linux下，挂载，ntfs格式的我的，具体不说了，说安装！ <br><br>　　进入到挂载的目录下，先cp GCC4.2.bz2 /azuo， <br><br>　　cd /azuo， <br><br>　　tar -xvf GCC 4.2.bz2 ， <br><br>　　得到gcc-4.2, <br><br>　　cd gcc-4.2，在/usr目录下建立一个文件夹就是现在要存放新的gcc的目录， <br><br>　　mkdir /usr/gcc4 <br><br>　　./configure –prefix=/usr/gcc4 <br><br>　　回车，就会有配置信息，只要不报错就可以了， <br><br>　　make，这个过程很久，因为我没有设置一些具体的选项，因此，所有的组件几乎都要编译一遍，我的电脑cpu：AMD 3200＋X2 ，1.5g内存，大概花费一个半小时。 <br><br>　　到这个时候为止，/usr/gcc4下还没有任何东西，编译过程都是发生在源文件夹，让我们再来一个动作，所有的要用到的东西都会配置到目标文件夹下， <br><br>　　make install； <br><br>　　这个过程也不短，等着就是了。 <br><br>　　一切都已经弄好了之后就是使用最新的gcc了，可以看到，在/usr/gcc4/bin下有gcc，g++，等一些东西，都是可以用的，写两个程序： <br><br>　　aa.c： <br><br>　　1 #include <br><br>　　2 <br><br>　　3 int main(void) { <br><br>　　4 printf("ad"); <br><br>　　5 return 1; <br><br>　　6 } <br><br>　　gcc -o aa aa.c <br><br>　　执行 ./aa <br><br>　　上面的这个是c的，下面这个就是c++的了： <br><br>　　a.cpp: <br><br>　　1 #include <br><br>　　2 using namespace std; <br><br>　　3 int main(void) { <br><br>　　4 cout &lt;&lt; "Ok!" &lt;&lt; endl; <br><br>　　5 return 1; <br><br>　　6 } <br><br>　　g++ -o a a.cpp <br><br>　　执行就是了./a <br><br>　　一切ok了，就可以让最新的gcc工具取代原来的工具了。 <br><br>　　看看原来的gcc是什么版本的，我们好卸载它： <br><br>　　[root@BTazuo bin]# rpm -qa gcc <br><br>　　gcc-4.1.2-27.fc7 <br><br>　　[root@BTazuo bin]# rpm -e gcc-4.1.2-27.fc7 <br><br>　　error: Failed dependencies: <br><br>　　gcc is needed by (installed) systemtap-0.5.13-1.fc7.i386 <br><br>　　gcc = 4.1.2-27.fc7 is needed by (installed) gcc-c++-4.1.2-27.fc7.i386 <br><br>　　gcc = 4.1.2-27.fc7 is needed by (installed) gcc-gfortran- 4.1.2 -27.fc7. i386 <br><br>　　[root@BTazuo bin]# rpm -e gcc-c++-4.1.2-27.fc7.i386 <br><br>　　[root@BTazuo bin]# rpm -e gcc-gfortran-4.1.2-27.fc7.i386 <br><br>　　[root@BTazuo bin]# rpm -e gcc-4.1.2-27.fc7 <br><br>　　error: Failed dependencies: <br><br>　　gcc is needed by (installed) systemtap-0.5.13-1.fc7.i386 <br><br>　　[root@BTazuo bin]# g++ <br><br>　　bash: g++: command not found <br><br>　　卸载成功 <br><br>　　[root@BTazuo bin]# gcc <br><br>　　gcc: 没有输入文件 ，可见gcc犹在 <br><br>　　[root@BTazuo bin]# rpm -e systemtap-0.5.13-1.fc7.i386 <br><br>　　[root@BTazuo bin]# gcc <br><br>　　gcc: 没有输入文件 <br><br>　　[root@BTazuo bin]# rpm -e gcc-4.1.2-27.fc7 <br><br>　　[root@BTazuo bin]# gcc <br><br>　　bash: /usr/lib/ccache/gcc: 没有那个文件或目录 <br><br>　　最后的卸载成功！ <br><br>　　这个时候，要注意了，我的gcc在/usr/bin下面有，在/usr/lib/ccache这个目录下也有，分别在这两个下面都要建立一个链接： <br><br>　　[root@BTazuo bin]# ln -s /usr/gcc4/bin/g++ g++ <br><br>　　[root@BTazuo bin]# g++ <br><br>　　g++: 没有输入文件 <br><br>　　可见g++已经装好了，可以使用了。 <br><br>　　然后是gcc： <br><br>　　[root@BTazuo bin]# ln -s /usr/gcc4/bin/gcc gcc <br><br>　　[root@BTazuo bin]# gcc <br><br>　　bash: /usr/lib/ccache/gcc: 没有那个文件或目录 <br><br>　　[root@BTazuo bin]# ./gcc <br><br>　　gcc: 没有输入文件 <br><br>　　可见还要给另外一个目录建立一个gcc的链接： <br><br>　　[root@BTazuo lib]# ln -s /usr/gcc4/bin/gcc /usr/lib/ccache/gcc <br><br>　　[root@BTazuo lib]# gcc <br><br>　　gcc: 没有输入文件 <br><br>　　到此为止，gcc和g++都已经建立好了，可以用了，最后把原来的包和解压文件都可以删除了，以节省硬盘空间！</p>
+<p class="newtext">-------------------------------------------------------------------------------------------------------</p>
+<p class="newtext">下面介绍其在Red Hat Linux 9.0编译器给gcc 3.2.2环境下的安装方法。<br>一．确定安装环境<br>本安装方法适用于Red Hat Linux 9.0操作系统，自带的GCC编译器是GCC 3.2.2版本。其他系列的linux操作系统或是其他版本GCC下安装过程可能有些细节上的不同。<br>注：因为不同版本的GCC编译器下一些库的定义可能有不同，因此首先要确定一下本机的GCC编译器版本。确定方法是进入命令行输入命令gcc –v得到的结果如图1.1所示：<br><br><img onclick="if(!this.resized) {return true;} else {window.open('http://blog.51cto.com/attachment/200705/200705161179326990296.jpg');}" onmouseover="if(this.width>screen.width*0.7) {this.resized=true; this.width=screen.width*0.7; this.style.cursor='hand'; this.alt='Click here to open new window\nCTRL+Mouse wheel to zoom in/out';}" src="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/200705161179326990296.jpg" alt="" border="0"><br><strong>图1.1<br>可见本机的GCC版本为GCC 3.2.2，根据simplescalar网站上的一些介绍，该模拟器的开发工具可能是GCC2.7左右，比较接近GCC 3.2.2，因此估计安装过程会比较顺利。<br>二.获得安装包<br>完成本安装过程的安装包可以在</strong><br><a href="http://www.simplescalar.com/" target="_blank"><span style="color: #000000;">http://www.simplescalar.com</span></a><br><strong>下下载，本安装所需要的安装包共有以下三个<br><img onclick="if(!this.resized) {return true;} else {window.open('http://sprocessor.blog.51cto.com/attachment/200705/200705161179328057703.jpg');}" onmouseover="if(this.width>screen.width*0.7) {this.resized=true; this.width=screen.width*0.7; this.style.cursor='hand'; this.alt='Click here to open new window\nCTRL+Mouse wheel to zoom in/out';}" src="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/200705161179328057703.jpg" alt="" border="0"><br>三 建立安装目录，解压安装包<br>建立安装目录为/root/simplescalar,将安装包复制到安装目录，整个过程如下：<br><img onclick="if(!this.resized) {return true;} else {window.open('http://sprocessor.blog.51cto.com/attachment/200705/200705161179328096656.jpg');}" onmouseover="if(this.width>screen.width*0.7) {this.resized=true; this.width=screen.width*0.7; this.style.cursor='hand'; this.alt='Click here to open new window\nCTRL+Mouse wheel to zoom in/out';}" src="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/200705161179328096656.jpg" alt="" border="0"><br>解压缩，命令为tar –zxvf,加压缩完毕后用rm*.tgz命令删除压缩包，整个过程输入命令如下：<br>tar –zxvf simplesim-3v0d.tgz<br>tar –zxvf simpletools-2v0.tgz<br>tar –zxvf simpleutils-2v0.tgz<br>rm*.tgz<br>加压缩后得到如下七个文件夹：<br><img onclick="if(!this.resized) {return true;} else {window.open('http://sprocessor.blog.51cto.com/attachment/200705/200705161179328262718.jpg');}" onmouseover="if(this.width>screen.width*0.7) {this.resized=true; this.width=screen.width*0.7; this.style.cursor='hand'; this.alt='Click here to open new window\nCTRL+Mouse wheel to zoom in/out';}" src="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/200705161179328262718.jpg" alt="" border="0"><br>四.安装binutils2.5.2<br>首先用configure命令配置程序的安装环境和参数，生成Makefile文件，整个过程如下：<br><img onclick="if(!this.resized) {return true;} else {window.open('http://sprocessor.blog.51cto.com/attachment/200705/200705161179328353578.jpg');}" onmouseover="if(this.width>screen.width*0.7) {this.resized=true; this.width=screen.width*0.7; this.style.cursor='hand'; this.alt='Click here to open new window\nCTRL+Mouse wheel to zoom in/out';}" src="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/200705161179328353578.jpg" alt="" border="0"><br>注：configure命令的参数含义说明<br>-host:配置安装环境<br>-target:配置成littleEndian模式<br>-with-gnu-as 加载汇编器<br>-with-gnu-ld 加载链接器<br>-prefix 设置安装目录<br>此时遇到两个错误，如下所示：<br>&nbsp;&nbsp;<br><img onclick="if(!this.resized) {return true;} else {window.open('http://sprocessor.blog.51cto.com/attachment/200705/200705161179328395687.jpg');}" onmouseover="if(this.width>screen.width*0.7) {this.resized=true; this.width=screen.width*0.7; this.style.cursor='hand'; this.alt='Click here to open new window\nCTRL+Mouse wheel to zoom in/out';}" src="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/200705161179328395687.jpg" alt="" border="0"><br>从
+错误说明可以估计出错误来自于libiberty文件夹下的dummy.c文件。网上一些帖子说是dummy.c中定义的宏functions.def文
+件中的函数定义与声明不一致引起的，将它们改成一致就可以通过编译。但是这样做的话，继续编译依然会遇到许多错误。这里我试出了最好的方法就是将
+dummy.c文件中的内容全部删除（即将dummy.c变成空文件）然后再make一次，这回不报任何错误，编译一次通过！<br>运行make install命令，这时binutils-2.5.2安装成功！<br>五.安装simplescalar<br>Simplescalar是最简单的一个安装过程，运行下列命令即可完成安装！<br><br><img onclick="if(!this.resized) {return true;} else {window.open('http://sprocessor.blog.51cto.com/attachment/200705/200705161179328427828.jpg');}" onmouseover="if(this.width>screen.width*0.7) {this.resized=true; this.width=screen.width*0.7; this.style.cursor='hand'; this.alt='Click here to open new window\nCTRL+Mouse wheel to zoom in/out';}" src="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/200705161179328427828.jpg" alt="" border="0"><br>六.安装gcc-2.6.3<br>安装好simplescalar后在安装文件夹/root/simplescalar下可以找到一个名为bin的文件夹，里面包含的是一些simplescalar自带的工具，如链接工具等，该文件内容如下：<br><br><img onclick="if(!this.resized) {return true;} else {window.open('http://sprocessor.blog.51cto.com/attachment/200705/200705161179328470312.jpg');}" onmouseover="if(this.width>screen.width*0.7) {this.resized=true; this.width=screen.width*0.7; this.style.cursor='hand'; this.alt='Click here to open new window\nCTRL+Mouse wheel to zoom in/out';}" src="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/200705161179328470312.jpg" alt="" border="0"><br>可见，里面没有C编译工具gcc，因此还需要安装gcc2.6.3作为simplescalar的内置编译工具，下面介绍安装方法。<br>首先对安装环境进行配置，生成Makefile文件，具体方法如下图所示。<br><br><img onclick="if(!this.resized) {return true;} else {window.open('http://sprocessor.blog.51cto.com/attachment/200705/200705161179328500140.jpg');}" onmouseover="if(this.width>screen.width*0.7) {this.resized=true; this.width=screen.width*0.7; this.style.cursor='hand'; this.alt='Click here to open new window\nCTRL+Mouse wheel to zoom in/out';}" src="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/200705161179328500140.jpg" alt="" border="0"><br>Makefile文件生成完毕后，运行make命令，此时出现以下错误：<br><br><img onclick="if(!this.resized) {return true;} else {window.open('http://sprocessor.blog.51cto.com/attachment/200705/200705161179328536234.jpg');}" onmouseover="if(this.width>screen.width*0.7) {this.resized=true; this.width=screen.width*0.7; this.style.cursor='hand'; this.alt='Click here to open new window\nCTRL+Mouse wheel to zoom in/out';}" src="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/200705161179328536234.jpg" alt="" border="0"><br>由
+错误报告可知，这是由于sys_errlist的定义不一致造成的，打开cccp.c文件发现其194行附近有如下代码，第194行为extern 
+char 
+*sys_errlist[]。显然要消除冲突，只需改变宏编译的分支方向，使其不走这一分支即可。尝试在这段代码前面如175行加上#define 
+bsd4_4，修改后再次make,该错误改正，遇到下一个错误。<br>&nbsp;&nbsp;<br><img onclick="if(!this.resized) {return true;} else {window.open('http://sprocessor.blog.51cto.com/attachment/200705/200705161179328581296.jpg');}" onmouseover="if(this.width>screen.width*0.7) {this.resized=true; this.width=screen.width*0.7; this.style.cursor='hand'; this.alt='Click here to open new window\nCTRL+Mouse wheel to zoom in/out';}" src="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/200705161179328581296.jpg" alt="" border="0"><br>第二个错误是sdbout.c文件中的一些常量没有定义，如下：<br><br><img onclick="if(!this.resized) {return true;} else {window.open('http://sprocessor.blog.51cto.com/attachment/200705/200705161179328612515.jpg');}" onmouseover="if(this.width>screen.width*0.7) {this.resized=true; this.width=screen.width*0.7; this.style.cursor='hand'; this.alt='Click here to open new window\nCTRL+Mouse wheel to zoom in/out';}" src="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/200705161179328612515.jpg" alt="" border="0"><br></strong><strong><br>因此第一估计是头文件的问题，打开sdbout.c发现其包含的头文件有如下几个： <br><img onclick="if(!this.resized) {return true;} else {window.open('http://sprocessor.blog.51cto.com/attachment/200705/200705161179328657750.jpg');}" onmouseover="if(this.width>screen.width*0.7) {this.resized=true; this.width=screen.width*0.7; this.style.cursor='hand'; this.alt='Click here to open new window\nCTRL+Mouse wheel to zoom in/out';}" src="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/200705161179328657750.jpg" alt="" border="0"><br>可以肯定报错的原因是宏编译的分支的问题（走不同的宏编译分支，可能包含syms.h或者是gsyms.h）。经过多次尝试，发现在前面加上#undef&nbsp;&nbsp;USG即可解决该错误（即把gsyms.h包含进去）。<br>继续make,发生第三个错误，如下：<br><br><img onclick="if(!this.resized) {return true;} else {window.open('http://sprocessor.blog.51cto.com/attachment/200705/200705161179328696406.jpg');}" onmouseover="if(this.width>screen.width*0.7) {this.resized=true; this.width=screen.width*0.7; this.style.cursor='hand'; this.alt='Click here to open new window\nCTRL+Mouse wheel to zoom in/out';}" src="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/200705161179328696406.jpg" alt="" border="0"><br>这个错误和第一个错误一样，是由于sys_errlist定义冲突引起的，因此进入gcc.c文件，在172行之前（这里加在167行）加上#define bsd4_4即可。<br>继续make,发生第四个错误，如下：<br><br><img onclick="if(!this.resized) {return true;} else {window.open('http://sprocessor.blog.51cto.com/attachment/200705/200705161179328720843.jpg');}" onmouseover="if(this.width>screen.width*0.7) {this.resized=true; this.width=screen.width*0.7; this.style.cursor='hand'; this.alt='Click here to open new window\nCTRL+Mouse wheel to zoom in/out';}" src="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/200705161179328720843.jpg" alt="" border="0"><br>和前面一样，只要在g++.c文件的第90行代码段之前（这里加在85行）加上#define bsd4_4即可。<br>继续make,发生第五个错误，如下： <br><br><img onclick="if(!this.resized) {return true;} else {window.open('http://sprocessor.blog.51cto.com/attachment/200705/200705161179328748406.jpg');}" onmouseover="if(this.width>screen.width*0.7) {this.resized=true; this.width=screen.width*0.7; this.style.cursor='hand'; this.alt='Click here to open new window\nCTRL+Mouse wheel to zoom in/out';}" src="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/200705161179328748406.jpg" alt="" border="0"><br>这
+里提示是将cp/g++.c文件中第213行的sys_errlist改成strerror或者strerror_r，然而改过之后会报strerror
+未定义的错误，上网搜了很久也没发现有这两个定义的头文件名，最后根据函数名感觉这段代码(pfatal_with_name)的功能可能是获得错误名，
+将其删除估计对工作影响不大，因此干脆将这个函数放空，放空后再运行make，果然OK,不报任何错误，编译通过！<br>运行make install,gcc 2.6.3安装成功！<br>返回simplescalar，进入bin文件夹，可以发现里面多了一个sslittle-na-sstrix-gcc文件，该文件是simplescalar的内建C编译器，如下所示：<br><br><img onclick="if(!this.resized) {return true;} else {window.open('http://sprocessor.blog.51cto.com/attachment/200705/200705161179328786484.jpg');}" onmouseover="if(this.width>screen.width*0.7) {this.resized=true; this.width=screen.width*0.7; this.style.cursor='hand'; this.alt='Click here to open new window\nCTRL+Mouse wheel to zoom in/out';}" src="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/200705161179328786484.jpg" alt="" border="0"><br>进一步运行./sslittle-na-sstrix-gcc –v测试出该内建编译器版本为gcc 2.6.3。<br><br><img onclick="if(!this.resized) {return true;} else {window.open('http://sprocessor.blog.51cto.com/attachment/200705/200705161179328821843.jpg');}" onmouseover="if(this.width>screen.width*0.7) {this.resized=true; this.width=screen.width*0.7; this.style.cursor='hand'; this.alt='Click here to open new window\nCTRL+Mouse wheel to zoom in/out';}" src="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/200705161179328821843.jpg" alt="" border="0"><br>到此为止，整个安装过程结束，下面进行测试。<br>七.测试<br>为了测试simplescalar是否能够顺利运行，我们对其进行测试，测试程序依然采用最经典的hello world！程序，程序如下：<br>&nbsp; &nbsp; #include <br>main()<br>{<br>printf("Hello World!\n");<br>return 0;<br>}<br>编辑好程序后将其保存在/root/simplescalar文件夹下，文件名为hello.c,用刚刚安装的simplescalar内建编译器编译，编译方法如下。<br><br><img onclick="if(!this.resized) {return true;} else {window.open('http://sprocessor.blog.51cto.com/attachment/200705/200705161179328856343.jpg');}" onmouseover="if(this.width>screen.width*0.7) {this.resized=true; this.width=screen.width*0.7; this.style.cursor='hand'; this.alt='Click here to open new window\nCTRL+Mouse wheel to zoom in/out';}" src="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/200705161179328856343.jpg" alt="" border="0"><br>&nbsp; &nbsp; 运行结果如下：<br><br><img onclick="if(!this.resized) {return true;} else {window.open('http://sprocessor.blog.51cto.com/attachment/200705/200705161179328892781.jpg');}" onmouseover="if(this.width>screen.width*0.7) {this.resized=true; this.width=screen.width*0.7; this.style.cursor='hand'; this.alt='Click here to open new window\nCTRL+Mouse wheel to zoom in/out';}" src="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/200705161179328892781.jpg" alt="" border="0"><br>八 结束语<br>本
+安装方法适用于Red Hat Linux 9.0操作系统，自带的GCC编译器是GCC 
+3.2.2版本。其他系列的linux操作系统或是其他版本GCC下安装过程可能有些细节上的不同，主要原因可能是高版本的GCC没有兼容低版本的一些库
+文件，还有就是遵循的C标准可能会有点出入。如果机器上的GCC正好是低版本的，估计可能一次编译通过！<br>-----------------------------------------------------------------------------------------------------</strong></p>
+<p class="newtext"><span style="color: #0000ff;">　　1. 下载 </span><br>　　在GCC网站上（<br><span style="text-decoration: underline;"><span style="color: #0000ff;">http://gcc.gnu.org/</span></span><br>）或通过网上搜索能查找到下载资源。目前GC<br>C的最新版本为3.4.0。可供下载的文件一般有两种形式：gcc-3.4.0.tar.gz和gcc-3.4.0.tar.bz2，<br>只是压缩格式不相同，内容完全一致，下载其中一种即可。 <br><span style="color: #0000ff;">　　2. 解压缩 </span><br><span style="color: #0000ff;">　　根据压缩格式，选择下面相应的一种方式解包（以下的"%"表示命令行提示符）： </span><br>　　% tar xzvf gcc-3.4.0.tar.gz<br>或<br>% bzcat gcc-3.4.0.tar.bz2 | tar xvf - <br>　　新生成的gcc-3.4.0这个目录被称为源目录，用${srcdir}表示他。以后在出现${srcdir<br>}的地方，应该用真实的路径来替换他。用pwd命令能查看当前路径。 <br><span style="color: #0000ff;">　　在${srcdir}/INSTALL目录下有周详的GCC安装说明，可用浏览器打开index.html阅读。 </span><br><span style="color: #0000ff;">　　3. 建立目标目录 </span><br>　　目标目录（用${objdir}表示）是用来存放编译结果的地方。GCC建议编译后的文件不要<br>放在源目录${srcdir]中（虽然这样做也能），最佳独立存放在另外一个目录中，而且不<br>能是${srcdir}的子目录。 <br>　　例如，能这样建立一个叫 gcc-build<br>的目标目录（和源目录${srcdir}是同级目录）： <br>　　% mkdir gcc-build<br>% cd gcc-build <br><span style="color: #0000ff;">　　以下的操作主要是在目标目录 ${objdir} 下进行。 </span><br><span style="color: #0000ff;">　　4. 设置 </span><br>　　设置的目的是决定将GCC编译器安装到什么地方（${destdir}），支持什么语言及指<br>定其他一些选项等。其中，${destdir}不能和${objdir}或${srcdir}目录相同。 <br>　　设置是通过执行${srcdir}下的configure来完成的。其命令格式为（记得用你的真实路<br>径替换${destdir}）： <br><span style="color: #0000ff;">　　% ${srcdir}/configure --prefix=${destdir} [其他选项] </span><br>　　例如，如果想将GCC<br>3.4.0安装到/usr/local/gcc-3.4.0目录下，则${destdir}就表示这个路径。 <br><span style="color: #0000ff;">　　在我的机器上，我是这样设置的： </span><br>　　% ../gcc-3.4.0/configure --prefix=/usr/local/gcc-3.4.0<br>--enable-threads=posix --disable-checking --enable--long-long<br>--host=i386-redhat-linux --with-system-zlib --enable-languages=c,c++,java <br>　　将GCC安装在/usr/local/gcc-3.4.0目录下，支持C/C++和JAVA语言，其他选项参见GCC<br>提供的帮助说明。 <br><span style="color: #0000ff;">　　5. 编译 </span><br><span style="color: #0000ff;">　　% make </span><br><span style="color: #0000ff;">　　这是个漫长的过程。在我的机器上（P4-1.6），这个过程用了50多分钟。 </span><br><span style="color: #0000ff;">　　6. 安装 </span><br>　　执行下面的命令将编译好的库文件等拷贝到${destdir}目录中（根据你设定的路径，可<br>能需要管理员的权限）： <br><span style="color: #0000ff;">　　% make install </span><br><span style="color: #0000ff;">　　至此，GCC 3.4.0安装过程就完成了。 </span><br><span style="color: #0000ff;">　　6. 其他设置 </span><br>　　GCC<br>3.4.0的所有文件，包括命令文件（如gcc、g++）、库文件等都在${destdir}目录下分别存<br>放，如命令文件放在bin目录下、库文件在lib下、头文件在include下等。由于命令文件和<br>库文件所在的目录还没有包含在相应的搜索路径内，所以必须要作适当的设置之后编译器才<br>能顺利地找到并使用他们。 <br><span style="color: #0000ff;">　　6.1 gcc、g++、gcj的设置 </span><br>　　要想使用GCC<br>3.4.0的gcc等命令，简单的方法就是把他的路径${destdir}/bin放在环境变量PATH中。我不<br>用这种方式，而是用符号连接的方式实现，这样做的好处是我仍然能使用系统上原来的旧<br>版本的GCC编译器。 <br><span style="color: #0000ff;">　　首先，查看原来的gcc所在的路径： </span><br><span style="color: #0000ff;">　　% which gcc </span><br>　　在我的系统上，上述命令显示：/usr/bin/gcc。因此，原来的gcc命令在/usr/bin目录<br>下。我们能把GCC<br>3.4.0中的gcc、g++、gcj等命令在/usr/bin目录下分别做一个符号连接： <br>　　% cd /usr/bin<br>% ln -s ${destdir}/bin/gcc gcc34<br>% ln -s ${destdir}/bin/g++ g++34<br>% ln -s ${destdir}/bin/gcj gcj34 <br>　　这样，就能分别使用gcc34、g++34、gcj34来调用GCC<br>3.4.0的gcc、g++、gcj完成对C、C++、JAVA程式的编译了。同时，仍然能够使用旧版本的GC<br>C编译器中的gcc、g++等命令。 <br><span style="color: #0000ff;">　　6.2 库路径的设置 </span><br>　　将${destdir}/lib路径添加到环境变量LD_LIBRARY_PATH中，最佳添加到系统的设置文<br>件中，这样就不必要每次都设置这个环境变量了。 <br>　　例如，如果GCC 3.4.0安装在/usr/local/gcc-3.4.0目录下，在RH<br>Linux下能直接在命令行上执行或在文件/etc/profile中添加下面一句： <br><span style="color: #0000ff;">　　setenv LD_LIBRARY_PATH /usr/local/gcc-3.4.0/lib:$LD_LIBRARY_PATH </span><br><span style="color: #0000ff;">　　7. 测试 </span><br>　　用新的编译命令（gcc34、g++34等）编译你以前的C、C++程式，检验新安装的GCC编译<br>器是否能正常工作。 <br><span style="color: #0000ff;">　　8. 根据需要，能删除或保留${srcdir}和${objdir}目录。 </span></p>
+<p class="newtext"><strong>&nbsp;</strong></p>
+<p>&nbsp;</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory">分类: <a href="http://www.cnblogs.com/chuncn/category/265759.html">linux</a></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info"><div id="green_channel">
+绿色通道：
+<a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(1851853,cb_blogId,1);green_channel_success(this,'谢谢推荐！');">好文要顶</a>
+<a id="green_channel_follow" onclick="c_follow();" href="javascript:void(0);">关注我</a>
+<a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a><a id="green_channel_contact" href="http://space.cnblogs.com/msg/send/chuncn" target="_blank">与我联系</a>
+<a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/icon_weibo_24.png" alt=""></a>
+</div>
+<div id="author_profile">
+<div id="author_profile_info" class="author_profile_info">
+<a href="http://home.cnblogs.com/u/chuncn/" target="_blank"><img src="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/sample_face.gif" class="author_avatar" alt=""></a>
+<div id="author_profile_detail" class="author_profile_info">
+<a href="http://home.cnblogs.com/u/chuncn/">chuncn</a><br>
+<a href="http://home.cnblogs.com/u/chuncn/followees">关注 - 5</a><br>
+<a href="http://home.cnblogs.com/u/chuncn/followers">粉丝 - 190</a>
+</div>
+</div>
+<div class="clear"></div>
+<div id="author_profile_honor"></div>
+<div id="author_profile_follow">
+    <a href="javascript:void(0);" onclick="c_follow();return false;">+加关注</a>
+</div>
+</div>
+<div id="div_digg">										
+    <div class="diggit" onclick="votePost(1851853,'Digg')">
+        <span class="diggnum" id="digg_count">10</span>
+    </div>
+	<div class="buryit" onclick="votePost(1851853,'Bury')"> 
+		<span class="burynum" id="bury_count">2</span>
+	</div>
+	<div class="clear"></div>	
+	<div class="diggword" id="digg_tips">
+    (请您对文章做出评价)
+    </div>	
+</div>
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/chuncn/archive/2010/08/05/1793472.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/chuncn/archive/2010/08/05/1793472.html" title="发布于2010-08-05 20:07">学习数学的意义</a><br><a href="http://www.cnblogs.com/chuncn/archive/2010/10/16/1853070.html" class="p_n_p_prefix">» </a> 下一篇：<a href="http://www.cnblogs.com/chuncn/archive/2010/10/16/1853070.html" title="发布于2010-10-16 14:56">Linux development tools</a><br></div>
+</div>
+
+
+		</div>
+		<p class="postfoot">
+			posted on <span id="post-date">2010-10-15 02:34</span> <a href="http://www.cnblogs.com/chuncn/">chuncn</a> 阅读(<span id="post_view_count">161120</span>) 评论(<span id="post_comment_count">0</span>)  <a href="http://i.cnblogs.com/EditPosts.aspx?postid=1851853" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(1851853);return false;">收藏</a>
+		</p>
+	</div>
+	<script type="text/javascript">var allowComments=false,isLogined=false,cb_blogId=27538,cb_entryId=1851853,cb_blogApp=currentBlogApp,cb_blogUserGuid='aa773d0b-63cf-dd11-9e4d-001cf0cd104b',cb_entryCreatedDate='2010/10/15 2:34:00';loadViewCount(cb_entryId);</script>
+	
+	<a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" id="lnk_RefreshComments" onclick="return RefreshCommentList();">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+<div id="comment_form_container">（评论功能已被禁用）</div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="site_nav_under"><a href="http://www.imooc.com/view/143?from=cnblogs" target="_blank"><b>【免费课程】系列：走进SVG</b></a><br><a href="http://www.ucancode.com/index.htm" target="_blank">【推荐】50万行VC++源码: 大型组态工控、电力仿真CAD与GIS源码库</a><br><a href="http://www.rongcloud.cn/promotion" target="_blank">融云，免费为你的App加入IM功能——让你的App“聊”起来！！</a><br><a href="http://www.cnblogs.com/cmt/p/tingyun.html" target="_blank">写“听云”原创博文，赢取iPhone 6超级大奖</a></div>
+<div id="opt_under_post"></div>
+<script type="text/javascript">
+    var enableGoogleAd = canShowAdsense(); var googletag = googletag || {}; googletag.cmd = googletag.cmd || [];
+    fixPostBodyFormat();
+</script>
+<div id="ad_under_post_holder">
+<script type="text/javascript">
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function () {
+        if (enableGoogleAd) {
+            var gads = document.createElement('script');
+            gads.async = true;
+            gads.type = 'text/javascript';
+            var useSSL = 'https:' == document.location.protocol;
+            gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+            var node = document.getElementsByTagName('script')[0];
+            node.parentNode.insertBefore(gads, node);
+        }
+    })();
+</script>
+<script type="text/javascript">
+    try {
+        if (enableGoogleAd) {
+            googletag.cmd.push(function () {
+                googletag.defineSlot('/1090369/cnblogs_blogpost_C1_sitehome', [300, 250], 'div-gpt-ad-1346480159711-0').addService(googletag.pubads());
+                googletag.defineSlot('/1090369/cnblogs_blogpost_C2', [468, 60], 'div-gpt-ad-1410860226396-0').addService(googletag.pubads());
+                googletag.pubads().enableSingleRequest();
+                googletag.enableServices();
+            });
+        };
+    } catch (e) { }
+</script>
+<div id="google_ad_c1" class="c_ad_block">
+    <div id="div-gpt-ad-1346480159711-0" style="width: 300px; height: 250px;">
+    <script type="text/javascript">
+        try {
+            if (enableGoogleAd) {
+                googletag.cmd.push(function () { googletag.display('div-gpt-ad-1346480159711-0'); });            
+            } else {
+                $('#div-gpt-ad-1346480159711-0').hide();
+            }
+    } catch (e) { }
+    </script>
+    <div style="border: 0pt none;" id="google_ads_iframe_/1090369/cnblogs_blogpost_C1_sitehome_0__container__"><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px none; vertical-align: bottom;" marginheight="0" marginwidth="0" scrolling="no" name="google_ads_iframe_/1090369/cnblogs_blogpost_C1_sitehome_0" id="google_ads_iframe_/1090369/cnblogs_blogpost_C1_sitehome_0" frameborder="0" height="250" width="300"></iframe></div><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px none; vertical-align: bottom; visibility: hidden; display: none;" marginheight="0" marginwidth="0" scrolling="no" name="google_ads_iframe_/1090369/cnblogs_blogpost_C1_sitehome_0__hidden__" id="google_ads_iframe_/1090369/cnblogs_blogpost_C1_sitehome_0__hidden__" frameborder="0" height="0" width="0"></iframe></div>
+</div>
+</div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="http://news.cnblogs.com/n/510689/" target="_blank">盘点十大"逼疯"用户的网络广告</a><br> ·  <a href="http://news.cnblogs.com/n/510688/" target="_blank">网易回应“唐岩事件”：只针对个人 不针对陌陌</a><br> ·  <a href="http://news.cnblogs.com/n/510687/" target="_blank">去线下店享受线上折扣 移动支付大战蔓延至线下</a><br> ·  <a href="http://news.cnblogs.com/n/510686/" target="_blank">传eBay酝酿大规模裁员 为分拆瘦身</a><br> ·  <a href="http://news.cnblogs.com/n/510685/" target="_blank">Instagram CEO：对FB来说我们并非无足轻重</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="google_ad_c2" class="c_ad_block">
+<div id="div-gpt-ad-1410860226396-0" style="width: 468px; height: 60px;">
+<script type="text/javascript">
+try {
+    if (enableGoogleAd) {
+        googletag.cmd.push(function () { googletag.display('div-gpt-ad-1410860226396-0'); });
+    } else {
+        $('#div-gpt-ad-1346480159711-0').hide();
+    }
+} catch (e) { }
+</script>
+<div style="border: 0pt none;" id="google_ads_iframe_/1090369/cnblogs_blogpost_C2_0__container__"><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px none; vertical-align: bottom;" marginheight="0" marginwidth="0" scrolling="no" name="google_ads_iframe_/1090369/cnblogs_blogpost_C2_0" id="google_ads_iframe_/1090369/cnblogs_blogpost_C2_0" frameborder="0" height="60" width="468"></iframe></div></div>
+</div>
+<div id="under_post_kb"><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/510356/" target="_blank">为什么社交网络中数据翻页技术复杂</a><br> ·  <a href="http://kb.cnblogs.com/page/510354/" target="_blank">案例分析：基于消息的分布式架构</a><br> ·  <a href="http://kb.cnblogs.com/page/506621/" target="_blank">你的数据库危机四伏</a><br> ·  <a href="http://kb.cnblogs.com/page/510192/" target="_blank">《星际穿越》科学解析</a><br> ·  <a href="http://kb.cnblogs.com/page/510190/" target="_blank">《星际穿越》初解析：一部空前绝后的史诗科学巨作</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+$(function () {
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 200);
+});
+</script>
+</div>
+
+</div>
+</div>
+<div id="leftmenu">
+
+
+<h3>导航</h3>
+<ul>
+<li>
+<a id="MyLinks1_HomeLink" href="http://www.cnblogs.com/">博客园</a></li>
+<li>
+<a id="MyLinks1_MyHomeLink" class="two_words" href="http://www.cnblogs.com/chuncn/">首页</a></li>
+<li>
+<a id="MyLinks1_NewPostLink" rel="nofollow" href="http://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li>
+<a id="MyLinks1_ContactLink" accesskey="9" class="two_words" rel="nofollow" href="http://space.cnblogs.com/msg/send/chuncn">联系</a></li>
+<li>
+<a id="MyLinks1_Syndication" class="two_words" href="http://www.cnblogs.com/chuncn/rss">订阅</a>
+<a id="MyLinks1_XMLLink" href="http://www.cnblogs.com/chuncn/rss"><img src="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/xml.gif" alt="订阅"></a>
+</li>
+<li>
+<a id="MyLinks1_Admin" class="two_words" rel="nofollow" href="http://i.cnblogs.com/">管理</a></li>
+</ul>
+
+<div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" title="日历" cellpadding="0" cellspacing="0">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar('2010/09/01');return false;">&lt;</a></td><td align="center">2010年10月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar('2010/11/01');return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" abbr="日" scope="col" align="center">日</th><th class="CalDayHeader" abbr="一" scope="col" align="center">一</th><th class="CalDayHeader" abbr="二" scope="col" align="center">二</th><th class="CalDayHeader" abbr="三" scope="col" align="center">三</th><th class="CalDayHeader" abbr="四" scope="col" align="center">四</th><th class="CalDayHeader" abbr="五" scope="col" align="center">五</th><th class="CalDayHeader" abbr="六" scope="col" align="center">六</th></tr><tr><td class="CalOtherMonthDay" align="center">26</td><td class="CalOtherMonthDay" align="center">27</td><td class="CalOtherMonthDay" align="center">28</td><td class="CalOtherMonthDay" align="center">29</td><td class="CalOtherMonthDay" align="center">30</td><td align="center">1</td><td class="CalWeekendDay" align="center">2</td></tr><tr><td class="CalWeekendDay" align="center">3</td><td align="center">4</td><td align="center">5</td><td align="center"><a href="http://www.cnblogs.com/chuncn/archive/2010/10/06.html"><u>6</u></a></td><td align="center">7</td><td align="center">8</td><td class="CalWeekendDay" align="center">9</td></tr><tr><td class="CalWeekendDay" align="center">10</td><td align="center">11</td><td align="center">12</td><td align="center">13</td><td align="center">14</td><td align="center"><a href="http://www.cnblogs.com/chuncn/archive/2010/10/15.html"><u>15</u></a></td><td class="CalWeekendDay" align="center"><a href="http://www.cnblogs.com/chuncn/archive/2010/10/16.html"><u>16</u></a></td></tr><tr><td class="CalWeekendDay" align="center"><a href="http://www.cnblogs.com/chuncn/archive/2010/10/17.html"><u>17</u></a></td><td align="center">18</td><td align="center">19</td><td align="center">20</td><td align="center">21</td><td align="center"><a href="http://www.cnblogs.com/chuncn/archive/2010/10/22.html"><u>22</u></a></td><td class="CalWeekendDay" align="center">23</td></tr><tr><td class="CalWeekendDay" align="center">24</td><td align="center">25</td><td align="center">26</td><td align="center">27</td><td align="center">28</td><td align="center">29</td><td class="CalWeekendDay" align="center">30</td></tr><tr><td class="CalWeekendDay" align="center">31</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td><td class="CalOtherMonthDay" align="center">6</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+<meta name="vs_showGrid" content="False">
+
+<h3>公告</h3>
+<div id="blog-news">文章和随笔为作者感悟,收藏,和转载,不代表任何公司或团体的立场和观点.
+<div id="profile_block">昵称：<a href="http://home.cnblogs.com/u/chuncn/">chuncn</a><br>园龄：<a href="http://home.cnblogs.com/u/chuncn/" title="入园时间：2007-06-28">7年5个月</a><br>粉丝：<a href="http://home.cnblogs.com/u/chuncn/followers/">190</a><br>关注：<a href="http://home.cnblogs.com/u/chuncn/followees/">5</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="cnblogs.UserManager.FollowBlogger('aa773d0b-63cf-dd11-9e4d-001cf0cd104b')">+加关注</a></div></div></div><script type="text/javascript">loadBlogNews();</script>
+
+<div id="blog-sidecolumn">
+<div class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="widget_my_zzk" class="div_my_zzk"><input id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk" type="text">&nbsp;<input onclick="zzk_go()" value="找找看" id="btnZzk" class="btn_my_zzk" type="button"></div>
+<div id="widget_my_google" class="div_my_zzk"><input name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk" type="text">&nbsp;<input onclick="google_go()" value="谷歌搜索" class="btn_my_zzk" type="button"></div>
+</div>
+
+
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/chuncn/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="http://www.cnblogs.com/chuncn/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="http://www.cnblogs.com/chuncn/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="http://www.cnblogs.com/chuncn/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="http://www.cnblogs.com/chuncn/tag/" title="我的博客的标签列表">我的标签</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+
+</div>
+<h3 class="catListTitle">最新随笔</h3>
+<div class="RecentComment" id="RecentPosts">
+<ul style="word-break:break-all">
+<li><a href="http://www.cnblogs.com/chuncn/p/3160794.html">1. webRTC-实时流媒体的福音</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2013/05/15/3080032.html">2. qt 5.1 quick vs qt 4.x quick  for control</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2013/04/23/3037191.html">3. zeroc ice的概念、组成与服务</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2013/01/21/2869642.html">4. 国内外期货、外汇、股指期货  交易时间</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2012/12/05/2803450.html">5. 使用Visual Leak Detector for Visual C++ 捕捉内存泄露</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2012/11/29/2794902.html">6. window8 metro 之 RSA</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2012/09/19/2693752.html">7. sqlite in qt</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2012/09/10/2679026.html">8. Windows环境下使用Boost</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2012/07/30/2615481.html">9. Qt 表格&amp;列表数据驱动化(c++) 原创</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2012/06/14/2549329.html">10. Qt读写INI配置文件</a></li>
+</ul>
+</div>
+
+		<h3>随笔分类<span style="font-size:11px;font-weight:normal">(529)</span></h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_0_Link_0" href="http://www.cnblogs.com/chuncn/category/101860.html">.net(66)</a></li>
+			
+				<li><a id="CatList_LinkList_0_Link_1" href="http://www.cnblogs.com/chuncn/category/101861.html">asp.net(28)</a></li>
+			
+				<li><a id="CatList_LinkList_0_Link_2" href="http://www.cnblogs.com/chuncn/category/101862.html">gps&amp;gis(7)</a></li>
+			
+				<li><a id="CatList_LinkList_0_Link_3" href="http://www.cnblogs.com/chuncn/category/271235.html">html5(13)</a></li>
+			
+				<li><a id="CatList_LinkList_0_Link_4" href="http://www.cnblogs.com/chuncn/category/147436.html">javascript(11)</a></li>
+			
+				<li><a id="CatList_LinkList_0_Link_5" href="http://www.cnblogs.com/chuncn/category/265759.html">linux(4)</a></li>
+			
+				<li><a id="CatList_LinkList_0_Link_6" href="http://www.cnblogs.com/chuncn/category/252329.html">python、lua、rudy(7)</a></li>
+			
+				<li><a id="CatList_LinkList_0_Link_7" href="http://www.cnblogs.com/chuncn/category/171935.html">vc++(70)</a></li>
+			
+				<li><a id="CatList_LinkList_0_Link_8" href="http://www.cnblogs.com/chuncn/category/157624.html">常识(29)</a></li>
+			
+				<li><a id="CatList_LinkList_0_Link_9" href="http://www.cnblogs.com/chuncn/category/101864.html">短信猫(4)</a></li>
+			
+				<li><a id="CatList_LinkList_0_Link_10" href="http://www.cnblogs.com/chuncn/category/102028.html">法律法规(10)</a></li>
+			
+				<li><a id="CatList_LinkList_0_Link_11" href="http://www.cnblogs.com/chuncn/category/178974.html">股票(164)</a></li>
+			
+				<li><a id="CatList_LinkList_0_Link_12" href="http://www.cnblogs.com/chuncn/category/185412.html">互联网(11)</a></li>
+			
+				<li><a id="CatList_LinkList_0_Link_13" href="http://www.cnblogs.com/chuncn/category/183327.html">流媒体(19)</a></li>
+			
+				<li><a id="CatList_LinkList_0_Link_14" href="http://www.cnblogs.com/chuncn/category/101858.html">美工(8)</a></li>
+			
+				<li><a id="CatList_LinkList_0_Link_15" href="http://www.cnblogs.com/chuncn/category/102003.html">生活(5)</a></li>
+			
+				<li><a id="CatList_LinkList_0_Link_16" href="http://www.cnblogs.com/chuncn/category/101869.html">数据库(73)</a></li>
+			
+				</ul>
+			
+	
+		<h3>随笔档案<span style="font-size:11px;font-weight:normal">(661)</span></h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_1_Link_0" href="http://www.cnblogs.com/chuncn/archive/2013/06.html">2013年6月 (1)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_1" href="http://www.cnblogs.com/chuncn/archive/2013/05.html">2013年5月 (1)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_2" href="http://www.cnblogs.com/chuncn/archive/2013/04.html">2013年4月 (1)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_3" href="http://www.cnblogs.com/chuncn/archive/2013/01.html">2013年1月 (1)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_4" href="http://www.cnblogs.com/chuncn/archive/2012/12.html">2012年12月 (1)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_5" href="http://www.cnblogs.com/chuncn/archive/2012/11.html">2012年11月 (1)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_6" href="http://www.cnblogs.com/chuncn/archive/2012/09.html">2012年9月 (2)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_7" href="http://www.cnblogs.com/chuncn/archive/2012/07.html">2012年7月 (1)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_8" href="http://www.cnblogs.com/chuncn/archive/2012/06.html">2012年6月 (2)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_9" href="http://www.cnblogs.com/chuncn/archive/2012/05.html">2012年5月 (1)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_10" href="http://www.cnblogs.com/chuncn/archive/2012/04.html">2012年4月 (2)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_11" href="http://www.cnblogs.com/chuncn/archive/2012/03.html">2012年3月 (5)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_12" href="http://www.cnblogs.com/chuncn/archive/2012/02.html">2012年2月 (1)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_13" href="http://www.cnblogs.com/chuncn/archive/2012/01.html">2012年1月 (2)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_14" href="http://www.cnblogs.com/chuncn/archive/2011/12.html">2011年12月 (7)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_15" href="http://www.cnblogs.com/chuncn/archive/2011/11.html">2011年11月 (4)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_16" href="http://www.cnblogs.com/chuncn/archive/2011/10.html">2011年10月 (5)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_17" href="http://www.cnblogs.com/chuncn/archive/2011/09.html">2011年9月 (3)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_18" href="http://www.cnblogs.com/chuncn/archive/2011/08.html">2011年8月 (1)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_19" href="http://www.cnblogs.com/chuncn/archive/2011/06.html">2011年6月 (3)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_20" href="http://www.cnblogs.com/chuncn/archive/2011/05.html">2011年5月 (4)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_21" href="http://www.cnblogs.com/chuncn/archive/2011/04.html">2011年4月 (4)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_22" href="http://www.cnblogs.com/chuncn/archive/2011/03.html">2011年3月 (1)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_23" href="http://www.cnblogs.com/chuncn/archive/2011/02.html">2011年2月 (3)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_24" href="http://www.cnblogs.com/chuncn/archive/2010/12.html">2010年12月 (4)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_25" href="http://www.cnblogs.com/chuncn/archive/2010/11.html">2010年11月 (9)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_26" href="http://www.cnblogs.com/chuncn/archive/2010/10.html">2010年10月 (7)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_27" href="http://www.cnblogs.com/chuncn/archive/2010/08.html">2010年8月 (1)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_28" href="http://www.cnblogs.com/chuncn/archive/2010/07.html">2010年7月 (15)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_29" href="http://www.cnblogs.com/chuncn/archive/2010/06.html">2010年6月 (7)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_30" href="http://www.cnblogs.com/chuncn/archive/2010/05.html">2010年5月 (5)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_31" href="http://www.cnblogs.com/chuncn/archive/2010/04.html">2010年4月 (6)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_32" href="http://www.cnblogs.com/chuncn/archive/2010/03.html">2010年3月 (4)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_33" href="http://www.cnblogs.com/chuncn/archive/2010/02.html">2010年2月 (3)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_34" href="http://www.cnblogs.com/chuncn/archive/2010/01.html">2010年1月 (7)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_35" href="http://www.cnblogs.com/chuncn/archive/2009/12.html">2009年12月 (5)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_36" href="http://www.cnblogs.com/chuncn/archive/2009/11.html">2009年11月 (10)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_37" href="http://www.cnblogs.com/chuncn/archive/2009/10.html">2009年10月 (11)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_38" href="http://www.cnblogs.com/chuncn/archive/2009/09.html">2009年9月 (7)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_39" href="http://www.cnblogs.com/chuncn/archive/2009/08.html">2009年8月 (5)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_40" href="http://www.cnblogs.com/chuncn/archive/2009/07.html">2009年7月 (17)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_41" href="http://www.cnblogs.com/chuncn/archive/2009/06.html">2009年6月 (63)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_42" href="http://www.cnblogs.com/chuncn/archive/2009/05.html">2009年5月 (56)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_43" href="http://www.cnblogs.com/chuncn/archive/2009/04.html">2009年4月 (72)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_44" href="http://www.cnblogs.com/chuncn/archive/2009/03.html">2009年3月 (72)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_45" href="http://www.cnblogs.com/chuncn/archive/2009/02.html">2009年2月 (40)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_46" href="http://www.cnblogs.com/chuncn/archive/2009/01.html">2009年1月 (34)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_47" href="http://www.cnblogs.com/chuncn/archive/2008/12.html">2008年12月 (3)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_48" href="http://www.cnblogs.com/chuncn/archive/2008/10.html">2008年10月 (4)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_49" href="http://www.cnblogs.com/chuncn/archive/2008/09.html">2008年9月 (17)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_50" href="http://www.cnblogs.com/chuncn/archive/2008/08.html">2008年8月 (7)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_51" href="http://www.cnblogs.com/chuncn/archive/2008/07.html">2008年7月 (6)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_52" href="http://www.cnblogs.com/chuncn/archive/2008/06.html">2008年6月 (2)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_53" href="http://www.cnblogs.com/chuncn/archive/2008/05.html">2008年5月 (4)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_54" href="http://www.cnblogs.com/chuncn/archive/2008/04.html">2008年4月 (32)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_55" href="http://www.cnblogs.com/chuncn/archive/2008/03.html">2008年3月 (15)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_56" href="http://www.cnblogs.com/chuncn/archive/2008/02.html">2008年2月 (7)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_57" href="http://www.cnblogs.com/chuncn/archive/2008/01.html">2008年1月 (2)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_58" href="http://www.cnblogs.com/chuncn/archive/2007/11.html">2007年11月 (7)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_59" href="http://www.cnblogs.com/chuncn/archive/2007/09.html">2007年9月 (2)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_60" href="http://www.cnblogs.com/chuncn/archive/2007/08.html">2007年8月 (33)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_61" href="http://www.cnblogs.com/chuncn/archive/2007/07.html">2007年7月 (3)</a></li>
+			
+				</ul>
+			
+	
+		<h3>相册</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_2_Link_0" href="http://www.cnblogs.com/chuncn/gallery/177768.html" rel="nofollow">gps车载监控</a></li>
+			
+				<li><a id="CatList_LinkList_2_Link_1" href="http://www.cnblogs.com/chuncn/gallery/314273.html" rel="nofollow">财经应用（独立开发)</a></li>
+			
+				<li><a id="CatList_LinkList_2_Link_2" href="http://www.cnblogs.com/chuncn/gallery/177771.html" rel="nofollow">城市运输行业安全管理系统</a></li>
+			
+				<li><a id="CatList_LinkList_2_Link_3" href="http://www.cnblogs.com/chuncn/gallery/178041.html" rel="nofollow">电商精灵（为自己量身定制）</a></li>
+			
+				<li><a id="CatList_LinkList_2_Link_4" href="http://www.cnblogs.com/chuncn/gallery/178067.html" rel="nofollow">购物网</a></li>
+			
+				<li><a id="CatList_LinkList_2_Link_5" href="http://www.cnblogs.com/chuncn/gallery/260413.html" rel="nofollow">其它</a></li>
+			
+				<li><a id="CatList_LinkList_2_Link_6" href="http://www.cnblogs.com/chuncn/gallery/155861.html" rel="nofollow">中国塑胶五金网</a></li>
+			
+				</ul>
+			
+	
+<h3>积分与排名</h3>
+<ul>
+	<li>
+		积分 -
+		265722
+	</li><li>
+		排名 -
+		370
+	</li>
+</ul>
+<div id="recent_comments_wrap">
+<h3 class="catListTitle">最新评论</h3>
+<div class="RecentComment" id="RecentComments">
+	<div id="RecentCommentsBlock"><ul>
+    <li class="recent_comment_title"><a href="http://www.cnblogs.com/chuncn/archive/2009/04/21/1440233.html#3081936">1. Re:大数据量高并发的数据库优化</a></li>
+    <li class="recent_comment_body">谢谢分享</li>
+    <li class="recent_comment_author">--丝丝记忆</li>
+    <li class="recent_comment_title"><a href="http://www.cnblogs.com/chuncn/archive/2011/11/26/2264718.html#3073036">2. Re:DirectUI的初步分析-转</a></li>
+    <li class="recent_comment_body">不错 收藏了</li>
+    <li class="recent_comment_author">--同志们辛苦了</li>
+    <li class="recent_comment_title"><a href="http://www.cnblogs.com/chuncn/archive/2008/02/26/1082437.html#3070684">3. Re:C#与打印机</a></li>
+    <li class="recent_comment_body">打印与预览结合起来怎么用……</li>
+    <li class="recent_comment_author">--雨湿羽翼</li>
+    <li class="recent_comment_title"><a href="http://www.cnblogs.com/chuncn/archive/2009/04/21/1440233.html#3063499">4. Re:大数据量高并发的数据库优化</a></li>
+    <li class="recent_comment_body">感谢楼主分享</li>
+    <li class="recent_comment_author">--fallof91</li>
+    <li class="recent_comment_title"><a href="http://www.cnblogs.com/chuncn/archive/2010/07/03/1770464.html#3054232">5. Re:转 LUA语言学习教程</a></li>
+    <li class="recent_comment_body">Lua提供了相当多的标准函数来增强语言的功能。使用这些标准函数，可以很方便的操作各种数据类型，并处理输入输出。有关这方面的信息，可以参考:<a href="" target="_blank"></a></li>
+    <li class="recent_comment_author">--Linux308</li>
+    <li class="recent_comment_title"><a href="http://www.cnblogs.com/chuncn/archive/2009/11/22/1608367.html#3033475">6. Re:让代码看起来更舒服：选择适合的字体-转</a></li>
+    <li class="recent_comment_body">怎么都下载不了了？图片也不显示了</li>
+    <li class="recent_comment_author">--袁书</li>
+    <li class="recent_comment_title"><a href="http://www.cnblogs.com/chuncn/archive/2012/01/16/2323986.html#3019469">7. Re:Silverlight桌面部署器及其使用</a></li>
+    <li class="recent_comment_body">请问，我是用silverlight5 + ef +wcf ria，用你的工具安装后，登录界面点击没反映，登录不了系统，也不报错，会是什么问题？</li>
+    <li class="recent_comment_author">--烟灰缸</li>
+    <li class="recent_comment_title"><a href="http://www.cnblogs.com/chuncn/archive/2009/04/07/1430590.html#3019319">8. Re:使用HttpHandler解析并展示PDF文档内容 </a></li>
+    <li class="recent_comment_body">除了能读文字还能做什么？</li>
+    <li class="recent_comment_author">--Free your mind</li>
+    <li class="recent_comment_title"><a href="http://www.cnblogs.com/chuncn/archive/2011/02/24/1963712.html#3008861">9. Re:window下版本控制工具Git 客户端安装</a></li>
+    <li class="recent_comment_body">从入门到精通，不错。<br><a href="" target="_blank"></a></li>
+    <li class="recent_comment_author">--suyuwen1</li>
+    <li class="recent_comment_title"><a href="http://www.cnblogs.com/chuncn/archive/2009/01/29/1381282.html#2997365">10. Re:ORACLE日期时间函数大全</a></li>
+    <li class="recent_comment_body">不错。</li>
+    <li class="recent_comment_author">--夕阳嘉措</li>
+</ul>
+</div>
+</div>
+</div><div id="topview_posts_wrap">
+<h3 class="catListTitle">阅读排行榜</h3>
+<div class="RecentComment" id="TopViewPosts"> 
+	<div id="TopViewPostsBlock"><ul><li><a href="http://www.cnblogs.com/chuncn/archive/2009/01/29/1381282.html">1. ORACLE日期时间函数大全(199039)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2010/10/15/1851853.html">2. 为你详解Linux安装GCC方法(161117)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2010/10/17/1853915.html">3. linux yum命令详解(145562)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2008/10/09/1307321.html">4. CSS教程:div垂直居中的N种方法[转](110915)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2008/04/30/1177767.html">5. SQLserver中用convert函数转换日期格式(57562)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/01/29/1381281.html">6. ORACLE中date类型字段的处理(34838)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/02/13/1390176.html">7. c++字符串详解（转）(30862)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2011/02/24/1963712.html">8. window下版本控制工具Git 客户端安装(25093)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2011/10/14/2212291.html">9. windows下nginx安装、配置与使用(21572)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/07/23/1529663.html">10. 盘口语言解密(14696)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/04/15/1427969.html">11. SQL不重复记录(12102)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/01/29/1381291.html">12. Oracle存储过程学习(11734)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2008/09/28/1301647.html">13. DIV样式汇总(11195)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2011/02/25/1459805.html">14. x264编码详细文字全过程(11159)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/03/12/1409623.html">15. 静态市盈率和动态市盈率(10909)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/04/17/1437748.html">16. Report Server Windows Service (MSSQLSERVER) 无法与报表服务器数据库建立连接(10057)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/03/31/1425643.html">17. HSI、HSV、RGB、CMY、CMYK、HSL、HSB、Ycc、XYZ、Lab、YUV颜色模型(9489)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/04/15/1416458.html">18. Oracle分区表常用命令(9348)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/04/21/1440233.html">19. 大数据量高并发的数据库优化(9247)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2010/07/04/1771052.html">20. 转 Python3中文教程(9082)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/03/29/1424610.html">21. MPEG-4与H264区别，编码及应用(8956)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/03/08/1406096.html">22. CreateThread, AfxBeginThread，_beginthread, _beginthreadex的区别(8502)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/04/16/1437376.html">23. SQL Server里的主键、唯一性约束、聚集索引(8039)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/05/04/1448447.html">24. 股票术语大全(7616)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2011/04/12/2014273.html">25. c/c++内存释放知识总结(7560)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/09/08/1562759.html">26. “远程服务器返回错误: (404) 未找到”的正确解决方法(7527)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/06/15/1503741.html">27. 股票技术分析--- 成交量与换手率专题(7425)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2008/08/08/1263586.html">28. CSS+DIV之强化background属性(6884)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/09/07/1561958.html">29. 各国股市开盘时间及开盘顺序(6798)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/03/08/1406348.html">30. _variant_t ，_bstr_t 与 CString 类有什么区别(6343)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2011/12/20/2294096.html">31. C#与C++之间类型的对应(6309)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/03/27/1423282.html">32. 几个提供在线ping的URL(6229)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/03/31/1425638.html">33. 两个经典的RGB与YUV转换函数(6112)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2010/07/05/1771585.html">34. 转 Lua标准库: table函数, 数学函数, 字符串函数/格式化/配对, WoW新增函数, 函数别名(6064)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/04/15/1434385.html">35. 主键与主键索引的关系(6042)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/06/27/1512100.html">36. 大智慧、飞狐、分析家、通达信、钱龙、麒麟公式编辑教程大全(5827)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/04/21/1440098.html">37. SQL Server 2005实现负载均衡(5785)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/01/28/1381262.html">38. ORACLE与SQL SERVER的区别(5778)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2008/09/03/1283118.html">39.
+ Sys.WebForms.PageRequestManagerServerErrorException: An unknown error 
+occurred while processing the request on the server. The status code 
+returned from the server was: 500 解决办法(5754)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/03/18/1415882.html">40. MFC基本常用控件基本用法(5603)</a></li></ul></div>
+</div>
+</div><div id="topfeedback_posts_wrap">
+<h3 class="catListTitle">评论排行榜</h3>
+<div class="RecentComment" id="TopCommentsPosts">
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="http://www.cnblogs.com/chuncn/archive/2009/01/29/1381282.html">1. ORACLE日期时间函数大全(7)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2012/01/06/2314020.html">2. Silverlight5通过P/Invoke调用自定义C/C++ DLL(Lua)(5)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/04/21/1440233.html">3. 大数据量高并发的数据库优化(5)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/04/21/1440098.html">4. SQL Server 2005实现负载均衡(4)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/04/17/1437748.html">5. Report Server Windows Service (MSSQLSERVER) 无法与报表服务器数据库建立连接(4)</a></li></ul></div>
+</div></div><div id="topdigg_posts_wrap">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div class="RecentComment">
+	<div id="TopDiggPostsBlock"><ul><li><a href="http://www.cnblogs.com/chuncn/archive/2009/01/29/1381282.html">1. ORACLE日期时间函数大全(20)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2010/10/15/1851853.html">2. 为你详解Linux安装GCC方法(10)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2008/10/09/1307321.html">3. CSS教程:div垂直居中的N种方法[转](6)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/04/21/1440233.html">4. 大数据量高并发的数据库优化(6)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2010/10/17/1853915.html">5. linux yum命令详解(5)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/04/16/1437376.html">6. SQL Server里的主键、唯一性约束、聚集索引(3)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/03/29/1424610.html">7. MPEG-4与H264区别，编码及应用(3)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/02/13/1390176.html">8. c++字符串详解（转）(3)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2010/07/04/1771052.html">9. 转 Python3中文教程(3)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/01/29/1381291.html">10. Oracle存储过程学习(3)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/04/21/1440322.html">11. SQL查询效率：100w数据查询只需要1秒钟(2)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2010/04/12/1710651.html">12. DynamicResource与StaticResource的区别(2)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/09/08/1562759.html">13. “远程服务器返回错误: (404) 未找到”的正确解决方法(2)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2010/07/02/1769990.html">14. 动画效果曲线图形--玄酷动态效果曲线(2)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2011/08/23/2150375.html">15. 金融理财终端、股票软件数据剖析： 20、qt for android(c/c++)(2)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2011/04/12/2014273.html">16. c/c++内存释放知识总结(2)</a></li><li><a href="http://www.cnblogs.com/chuncn/p/3160794.html">17. webRTC-实时流媒体的福音(2)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/01/24/1380684.html">18. Windows编程中各种操作文件的方法(2)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/04/15/1427661.html">19. C++中使用内存映射文件处理大文件(2)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/04/13/1434387.html">20. Oracle:查找表的主键，外键，唯一性约束，索引(1)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/03/31/1425643.html">21. HSI、HSV、RGB、CMY、CMYK、HSL、HSB、Ycc、XYZ、Lab、YUV颜色模型(1)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/02/10/1387158.html">22. 交叉编译器(1)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/03/08/1406348.html">23. _variant_t ，_bstr_t 与 CString 类有什么区别(1)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/03/08/1406096.html">24. CreateThread, AfxBeginThread，_beginthread, _beginthreadex的区别(1)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2010/10/17/1853902.html">25. Git和Repo扫盲——如何取得Android源代码 -转(1)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2008/04/30/1177767.html">26. SQLserver中用convert函数转换日期格式(1)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2007/08/06/809674.html">27. GPRS入门知识(1)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2008/02/26/1082418.html">28. C#的哈希(1)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2008/02/26/1082409.html">29. C#范型入门(1)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2011/02/25/1459805.html">30. x264编码详细文字全过程(1)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/01/15/1376412.html">31. 实时传输协议(RTP)(1)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/01/29/1381281.html">32. ORACLE中date类型字段的处理(1)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2009/01/28/1381262.html">33. ORACLE与SQL SERVER的区别(1)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2012/07/30/2615481.html">34. Qt 表格&amp;列表数据驱动化(c++) 原创(1)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2012/03/23/2413082.html">35. win32 DirectUI控件开发与调用指南(1)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2011/12/20/2294096.html">36. C#与C++之间类型的对应(1)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2011/11/26/2264718.html">37. DirectUI的初步分析-转(1)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2011/10/14/2212291.html">38. windows下nginx安装、配置与使用(1)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2011/04/10/2011699.html">39. 初窥NoSQL世界 开源CouchDB新手入门--转(1)</a></li><li><a href="http://www.cnblogs.com/chuncn/archive/2011/02/24/1963712.html">40. window下版本控制工具Git 客户端安装(1)</a></li></ul></div>
+</div></div></div><script type="text/javascript">loadBlogSideColumn();</script><iframe style="visibility: hidden; display: none;" src="%E4%B8%BA%E4%BD%A0%E8%AF%A6%E8%A7%A3Linux%E5%AE%89%E8%A3%85GCC%E6%96%B9%E6%B3%95%20-%20chuncn%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/container.html"></iframe>
+
+</div>
+</div>
+<div class="clear"></div>
+<div id="footer">
+
+<p id="footer">
+	Powered by: 
+	<br>
+	
+	<a id="Footer1_Hyperlink3" name="Hyperlink1" href="http://www.cnblogs.com/" style="font-family:Verdana;font-size:12px;">博客园</a>
+	<br>
+	Copyright © chuncn
+</p>
+</div>
+</div>
+
+
+
+<iframe style="display: none; width: 0px; height: 0px;" name="google_osd_static_frame" id="google_osd_static_frame_156828108026"></iframe></body></html>

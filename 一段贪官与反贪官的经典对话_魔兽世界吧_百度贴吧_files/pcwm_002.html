@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script src="pcwm_data/inlayFixed.js" async="" charset="utf-8"></script><script src="pcwm_data_002/ecom" async="" charset="utf-8"></script>
+	<meta charset="UTF-8">
+	<title>pc网盟js iframe</title>
+<link rel="stylesheet" href="pcwm_data/tb_reset.css">
+	<style type="text/css">
+                 body{margin:0px;}
+		 li {
+			padding: 0 0 0 20px;
+			position: relative;
+			list-style: none;
+		}
+		 .t_con {
+			border-top: 1px dotted #DBDBDB;
+			padding: 10px 0;
+			margin-right: 19px;
+		}
+		 .threadlist_li_left {
+			float: left;
+			width: 70px;
+			overflow: hidden;
+		}
+		.threadlist_rep_num {
+			padding: 0 4px 0 1px;
+			overflow: hidden;
+			width: 50px;
+			height: 23px;
+			line-height: 23px;
+			text-align: center;
+			color: #333;
+			background: url(http://tb2.bdstatic.com/tb/static-frs/img/v2/reply_num_bg.gif?t=1408939248066) no-repeat;
+			margin-left: 10px;
+		}
+		 .threadlist_rep_num {
+			overflow: hidden;
+			width: 50px;
+			height: 30px;
+			line-height: 25px;
+			margin: 0;
+			text-align: center;
+			color: #666;
+			background: url(http://tb2.bdstatic.com/tb/static-frs/img/frs_bright/images_bmg/f_reply_bg_89030dc.png) no-repeat;
+		}
+		/*up is copy from tieba frs*/
+		.BAIDU_CLB_AD_iframe {
+			height:90px;
+                        position: relative;
+                        z-index: 1;
+		}
+		.BAIDU_CLB_AD_iframe_aside{height:auto;}
+		.BAIDU_CLB_AD_iframe_normal{height:auto;}
+		.BAIDU_CLB_AD_frs .threadlist_title {
+			font-size:14px;
+			color:#666;
+		}
+		.BAIDU_CLB_AD_frs .BAIDU_CLB_AD_iframe {
+			margin:5px 0;
+		}
+		.BAIDU_CLB_AD_pb {
+			padding:5px;
+			border-left:1px solid #E5E5E5;
+			border-bottom:1px solid #E5E5E5;
+		}
+		 .threadlist_li_right {
+			float: left;
+			width: auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap_id">
+		
+    		<div class="BAIDU_CLB_AD_iframe" id="BAIDU_CLB_AD_IFRAME_666982"><div id="BAIDU_DUP_wrapper_666982_0"><iframe src="pcwm_data_002/ecom.html" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="true" frameborder="0" height="200" width="200" align="center,center"></iframe></div></div>
+	</div>
+	<script type="text/html" id="tpl_pb">
+		
+    		<div class="BAIDU_CLB_AD_iframe" id="BAIDU_CLB_AD_IFRAME_<%id%>"></div>
+	</script>
+	<script type="text/html" id="tpl_frs">
+		
+                <div class="t_con clearfix">
+                    <div class="threadlist_li_left">
+                        <div class="threadlist_rep_num" title="推广">推广</div>
+                    </div>
+                    <div class="threadlist_li_right">
+                        <div class="threadlist_detail clearfix">
+                            <div class="BAIDU_CLB_AD_iframe" id="BAIDU_CLB_AD_IFRAME_<%id%>"></div>
+                        </div>
+                    </div>
+                </div>
+	</script>
+	<script type="text/html" id="tpl_aside">
+    		<div class="BAIDU_CLB_AD_iframe BAIDU_CLB_AD_iframe_aside" id="BAIDU_CLB_AD_IFRAME_<%id%>"></div>
+	</script>
+	<script type="text/html" id="tpl_normal">
+    		<div class="BAIDU_CLB_AD_iframe BAIDU_CLB_AD_iframe_normal" id="BAIDU_CLB_AD_IFRAME_<%id%>"></div>
+	</script>
+	<script type="text/javascript">
+	var WmAd = {
+		conf:{
+			page:'',//name different tpl by page name
+			id:'',// ad id 
+			forumId:'' ,//forum id
+			tplId :'',//the prefix is tpl_  tpl_frs tpl_pb
+			jsUrl:'http://cbjs.baidu.com/js/m.js',
+			wrapId:'wrap_id'
+		},
+		init:function  (obj) {
+			var self = this;
+			self.initParams(obj)
+			self.tplEngine();
+			self.loadAd();
+		},
+		initParams:function  (obj) {
+			if(typeof obj !='object'){
+				return ;
+			}
+			var self = this;
+			self.conf['tplId'] =  "tpl_"+obj['tpl'];
+			self.conf['page'] =  obj['page'];
+			self.conf['id'] = obj['id'];
+			self.conf['forumId'] = obj['forumId'];
+			self.conf['wrapId'] = obj['wrapId']? obj['wrapId']:self.conf['wrapId'];
+		},
+		//load js ,if loaded,then callback
+		jsLoadManager:function (jsUrl,callback) {
+			// body...
+			var script = document.createElement('script');
+			script.type="text/javascript";
+			if(script.readyState){
+				// ie 
+				script.onreadystatechange  = function  () {
+					if(script.readyState=="loaded" || script.readyState=="complete"){
+						script.onreadystatechange = null;
+						callback();
+					}
+				}
+			}else{
+				// chrome ff opera
+				script.onload = callback;
+			}
+			script.src=jsUrl;
+			document.body.appendChild(script);
+		},
+		//load ad refer to wangmeng js
+		loadAd:function  () {
+			var self = this;
+			var jsUrl = self.conf['jsUrl'];
+			self.jsLoadManager(jsUrl,function  () {
+			var id = self.conf['id'];
+			var forumId = self.conf['forumId'];
+                BAIDU_CLB_addOrientation('tbid', forumId + '');// 坑爹的玩意，必须要传递字符串
+                BAIDU_CLB_fillSlotAsync(id, 'BAIDU_CLB_AD_IFRAME_' + id); // pb页顶部网盟广告
+			});
+		},
+		//formate the template && set to wraper
+		tplEngine:function  () {
+			var self = this;
+			var tplId = self.conf['tplId'];
+			var wrapId = self.conf['wrapId'];
+			var data = self.conf;
+			var oWrap = document.getElementById(wrapId);
+			var oTpl = document.getElementById(tplId);
+			var originalHtml = oTpl.innerHTML;
+			var newHtml = originalHtml.replace(/<%([^%>]+)?%>/g,function(s0,s1){				return data[s1];
+			});
+			oWrap.innerHTML = newHtml;
+		}
+	};
+	function strUnserialize (paramsStr) {
+		var obj = {};
+		var paramsArr =  paramsStr.split('&');
+		for (var i = 0,len = paramsArr.length; i<len ; i++) {
+				var tmpArr = paramsArr[i].split('=');
+				// if is null ,not add the property to obj
+				tmpArr[1] && (obj[tmpArr[0]]=tmpArr[1]);
+		}
+		return obj;
+	}
+	var search = window.location.search;
+		search = search && search.substr(1);
+	var paramObj = strUnserialize(search);
+	/*
+		id:923536,
+		forumId:9587552,
+		tpl:'frs'
+		page:'frs'
+	 just like this---pcIframe.html?jsUrl=http://cbjs.baidu.com/js/m.js&id=923536&forumId=257010&page=frs
+	*/
+	WmAd.init(paramObj);
+
+
+
+
+
+
+
+
+
+
+	</script><script src="%E4%B8%80%E6%AE%B5%E8%B4%AA%E5%AE%98%E4%B8%8E%E5%8F%8D%E8%B4%AA%E5%AE%98%E7%9A%84%E7%BB%8F%E5%85%B8%E5%AF%B9%E8%AF%9D_%E9%AD%94%E5%85%BD%E4%B8%96%E7%95%8C%E5%90%A7_%E7%99%BE%E5%BA%A6%E8%B4%B4%E5%90%A7_files/m.js" type="text/javascript"></script>
+
+</body></html>

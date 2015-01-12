@@ -1,0 +1,946 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+     
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    
+<head>    
+    <script type="text/javascript" src="http://csdnimg.cn/pubfooter/js/tracking.js" charset="utf-8"></script>  
+
+    <script type="text/javascript">
+        var protocol = window.location.protocol;
+        document.write('<script type="text/javascript" src="' + protocol + '//csdnimg.cn/pubfooter/js/repoAddr2.js?v=' + Math.random() + '"></' + 'script>');
+    </script>
+
+
+    <script id="allmobilize" charset="utf-8" src="http://a.yunshipei.com/46aae4d1e2371e4aa769798941cef698/allmobilize.min.js"></script>
+ <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+
+    <title>linux环境变量 export命令详解 - 木木
+        - 博客频道 - CSDN.NET</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="由host $ export DVSDK=${HOME}/ti-dvsdk_dm368-evm_xx_xx_xx_xx引发的问题1、${HOME}：首先， HOME 是个变量，它代表你的 home 目录，变量前必须加上 $ 符号，否则会报错usr/local/dvsdk为dvsdk的destination folder 由#echo $DVSDK测试环境变量添加成功否&#160;2、" />
+    <script src="http://static.blog.csdn.net/scripts/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://static.blog.csdn.net/scripts/ad.js?v=1.1"></script>
+        <!--new top-->
+               <link rel="stylesheet" href="http://static.csdn.net/public/common/toolbar/css/index.css">        <!--new top-->
+
+    <link rel="Stylesheet" type="text/css" href="http://static.blog.csdn.net/skin/default/css/style.css?v=1.1" />
+    <link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="/wl_fln/rss/list" />
+    <link rel="shortcut icon" href="http://csdnimg.cn/public/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="http://static.blog.csdn.net/scripts/SyntaxHighlighter/styles/default.css" />
+ 
+
+
+</head>
+<body>
+    
+   
+      <!--new top-->
+    <script id="toolbar-tpl-scriptId" fixed="true" prod="blog" skin="black" src="http://static.csdn.net/public/common/toolbar/js/html.js" type="text/javascript"></script>
+     <!--new top-->
+    <div id="container">
+        <div id="header">
+    <div class="header">
+        <div id="blog_title">
+            <h2>
+                <a href="http://blog.csdn.net/wl_fln">木木</a></h2>
+            <h3></h3>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div id="navigator">
+    <div class="navigator_bg">
+    </div>
+    <div class="navigator">
+        <ul>
+                <li id="btnContents"><a href="http://blog.csdn.net/wl_fln?viewmode=contents"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_mulu'])">
+                    <img src="http://static.blog.csdn.net/images/ico_list.gif">目录视图</span></a></li>
+                <li id="btnView"><a href="http://blog.csdn.net/wl_fln?viewmode=list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_zhaiyao'])">
+                    <img src="http://static.blog.csdn.net/images/ico_summary.gif">摘要视图</span></a></li>
+                <li id="btnRss"><a href="http://blog.csdn.net/wl_fln/rss/list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_RSS'])">
+                    <img src="http://static.blog.csdn.net/images/ico_rss.gif">订阅</span></a></li>                
+
+            </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var username = "wl_fln";
+    var _blogger = username;
+    var blog_address = "http://blog.csdn.net/wl_fln";
+    var static_host = "http://static.blog.csdn.net";
+    var currentUserName = "";  
+</script>
+
+        <div id="body">
+            <div id="main">
+                <div class="main">
+                        <div class="ad_class">
+<div class="notice tracking-ad" data-mod='popu_3' > 
+
+
+<a href="http://www.csdn.net/article/2015-01-08/2823479-csdn-online-learning">
+<font color=blue>“CSDN学院”上线试运行</font></a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="http://blog.csdn.net/blogdevteam/article/details/41842837">
+<font color=red>《京东技术解密》有奖试读，礼品大放送
+</font></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="http://blog.csdn.net/blogdevteam/article/details/42172979">
+<font color=blue>“我的2014”年度征文活动火爆开启
+</font></a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="http://blog.csdn.net/blogdevteam/article/details/42526281">
+<font color=red>11.1-12.31推荐文章汇总
+</font></a>
+</div>                        </div>
+                        
+
+  
+<link href="http://static.blog.csdn.net/css/comment1.css" type="text/css" rel="stylesheet" />
+<link href="http://static.blog.csdn.net/css/style1.css" type="text/css" rel="stylesheet" />
+<script language='JavaScript' type='text/javascript' src='http://download.csdn.net/js/jquery.cookie.js'></script>
+<script type="text/javascript" src="http://csdnimg.cn/rabbit/search-service/main.js"></script>
+  <script type="text/ecmascript">
+      window.quickReplyflag = true;
+    </script>
+<div id="article_details" class="details">
+    <div class="article_title">   
+         <span class="ico ico_type_Repost"></span>
+
+
+    <h1>
+        <span class="link_title"><a href="/wl_fln/article/details/7258294">
+        linux环境变量 export命令详解
+        </a></span>
+    </h1>
+</div>
+
+    <div class="article_manage">
+        <span class="link_categories">
+        分类：
+            <a href="/wl_fln/article/category/829327" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_fenlei']);">Linux</a> 
+        </span>
+    <span class="link_postdate">2012-02-14 15:14</span>
+    <span class="link_view" title="阅读次数">2836人阅读</span>
+    <span class="link_comments" title="评论次数"><a href="#comments" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_pinglun'])">评论</a>(0)</span>
+    <span class="link_collect"><a href="javascript:void(0);" onclick="javascript:_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shoucang']);collectArticle('linux环境变量 export命令详解','7258294');return false;" title="收藏">收藏</a></span>
+    <span class="link_report"><a href="#report"  onclick="javascript:_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_jubao']);report(7258294,2);return false;" title="举报">举报</a></span>
+    
+</div>
+<div class="tag2box"><a href='http://www.csdn.net/tag/linux' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">linux</a><a href='http://www.csdn.net/tag/shell' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">shell</a><a href='http://www.csdn.net/tag/path' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">path</a><a href='http://www.csdn.net/tag/%e8%84%9a%e6%9c%ac' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">脚本</a><a href='http://www.csdn.net/tag/filenames' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">filenames</a><a href='http://www.csdn.net/tag/bash' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">bash</a></div>
+
+  
+    
+<div id="article_content" class="article_content">
+
+&nbsp;
+<p align="left"><span style="font-size:18px"><strong>由host $ export DVSDK=&quot;${HOME}/ti-dvsdk_dm368-evm_xx_xx_xx_xx&quot;引发的问题</strong></span></p>
+<p><strong><span style="font-size:18px">1、</span></strong>${HOME}：首先， HOME 是个变量，它代表你的 home 目录，变量前必须加上 $ 符号，否则会报错</p>
+<p>usr/local/dvsdk为dvsdk的destination folder 由#echo $DVSDK测试环境变量添加成功否</p>
+<div><img alt="linux export命令详解 - huanghl97 - huanghl97" src="http://img.ph.126.net/bYAxhTjiDdVJDPPm0ZD1wg==/3060195946798914886.bmp" style="margin:0px 10px 0px 0px"></div>
+<div>&nbsp;</div>
+<div><span style="font-size:18px"><strong>2、</strong></span>想要使得开机时自动加载这个环境变量免除以后每次设置，可将其写入/etc/re.local</div>
+<div>
+<div><img alt="linux export命令详解 - huanghl97 - huanghl97" src="http://img157.ph.126.net/-lc3SwkiegTMq3QFZ2rjaQ==/1476336252849211792.bmp" style="margin:0px 10px 0px 0px"></div>
+&nbsp;</div>
+<p><strong>&nbsp;<span style="font-size:18px">Linux export 命令</span></strong></p>
+<p><span style="font-family:Courier new"><strong>功能说明：</strong>设置或显示环境变量。（比如我们要用一个命令，但这个命令的执行文件不在当前目录，这样我们每次用的时候必须指定执行文件的目录，麻烦，在代码中先执行export，这个相当于告诉程序，执行某某东西时，需要的文件或什么东东在这些目录里）</span></p>
+<p><span style="font-family:Courier new"><strong>语　　法：</strong>export [-fnp][变量名称]=[变量设置&#20540;]</span></p>
+<p><span style="font-family:Courier new"><strong>补充说明：</strong>在shell中执行程序时，shell会提供一组环境变量。 export可新增，修改或删除环境变量，供后续执行的程序使用。export的效力仅及于该此登陆操作。</span></p>
+<p><span style="font-family:Courier new"><strong>参　　数：</strong></span></p>
+<p><span style="font-family:Courier new">&nbsp;<wbr>&nbsp;&nbsp; -f 　代表[变量名称]中为函数名称。&nbsp;<wbr></span></p>
+<p><span style="font-family:Courier new">　-n 　删除指定的变量。变量实际上并未删除，只是不会输出到后续指令的执行环境中。&nbsp;<wbr></span></p>
+<p><span style="font-family:Courier new">　-p 　列出所有的shell赋予程序的环境变量。</span></p>
+<p><span style="font-family:Courier new">一个变量创建时，它不会自动地为在它之后创建的shell进程所知。而命令export可以向后面的shell传递变量的&#20540;。当一个shell脚本调用并执行时，它不会自动得到原为脚本（调用者）里定义的变量的访问权，除非这些变量已经被显式地设置为可用。export命令可以用于传递一个或多个变量的&#20540;到任何后继脚本。 &nbsp;<wbr>&nbsp;<wbr>&nbsp;<wbr> ----《UNIX教程》</span></p>
+<p><span style="font-family:Courier new"></span>&nbsp;</p>
+<p><span style="font-family:Courier new"><strong><span style="font-size:18px">&nbsp;在 linux 里设置环境变量的方法 （ export PATH ）</span></strong></span></p>
+<p><span style="font-family:Courier new">&nbsp;</span><span style="font-family:Courier new; font-size:14px">一般来说，配置交叉编译工具链的时候需要指定编译工具的路径，此时就需要设置环境变量。例如我的mips-linux-gcc编译器在“</span><span style="font-family:Arial"><span style="font-size:16px"><span style="font-family:Courier new; font-size:14px">/opt/au1200_rm
+ /build_tools/bin”目录下，build_tools就是我的编译工具，则有如下三种方法来设置环境变量：</span><br>
+<br>
+<span style="color:#ff00"><strong><span style="font-family:Courier new; color:#ff00; font-size:14px">1、直接用export命令：</span></strong></span><br>
+</span><span style="font-family:Arial"><span style="font-size:16px"><span style="background-color:rgb(255,204,0)"><span style="color:#000000"><span style="font-family:Courier new; font-size:14px; background-color:rgb(255,204,0)">#export PATH=$PATH:/opt/au1200_rm/build_tools/bin</span><br>
+</span></span><span style="font-family:Courier new; font-size:14px">查看是否已经设好，可用命令export查看：</span></span></span></span></p>
+<span style="font-family:Arial"><span style="font-family:Arial"><span style="font-size:16px"><span style="font-family:Courier new; font-size:14px"></span></span></span></span>
+<p><br>
+</p>
+<span style="font-size:16px"><span style="font-family:Arial"><span style="font-family:Courier new; font-size:14px">[root@localhost bin]#</span><span style="background-color:rgb(255,204,0)"><span style="color:#000000"><span style="font-family:Courier new; font-size:14px; background-color:rgb(255,204,0)">export</span><br>
+</span></span><span style="font-family:Courier new; font-size:14px">declare -x BASH_ENV=&quot;/root/.bashrc&quot;</span><br>
+<span style="font-family:Courier new; font-size:14px">declare -x G_BROKEN_FILENAMES=&quot;1&quot;</span><br>
+<span style="font-family:Courier new; font-size:14px">declare -x HISTSIZE=&quot;1000&quot;</span><br>
+<span style="font-family:Courier new; font-size:14px">declare -x HOME=&quot;/root&quot;</span><br>
+<span style="font-size:10px"><span style="font-family:Courier new; font-size:14px">declare -x HOSTNAME=&quot;localhost.localdomain&quot;</span><br>
+<span style="font-family:Courier new; font-size:14px">declare -x INPUTRC=&quot;/etc/inputrc&quot;</span><br>
+<span style="font-family:Courier new; font-size:14px">declare -x LANG=&quot;zh_CN.GB18030&quot;</span><br>
+<span style="font-family:Courier new; font-size:14px">declare -x LANGUAGE=&quot;zh_CN.GB18030:zh_CN.GB2312:zh_CN&quot;</span><br>
+<span style="font-family:Courier new; font-size:14px">declare -x LESSOPEN=&quot;|/usr/bin/lesspipe.sh %s&quot;</span><br>
+<span style="font-family:Courier new; font-size:14px">declare -x LOGNAME=&quot;root&quot;</span><br>
+<span style="font-family:Courier new; font-size:14px">declare -x LS_COLORS=&quot;no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:bd=40;33;01:cd=40;33;01:or=01;05;37;41:mi=01;05;37;41:ex=01;32:*.cmd=01;32:*.exe=01;32:*.com=01;32:*.btm=01;32:*.bat=01;32:*.sh=01;32:*.csh=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.bz=01;31:*.tz=01;31:*.rpm=01;31:*.cpio=01;31:*.jpg=01;35:*.gif=01;35:*.bmp=01;35:*.xbm=01;35:*.xpm=01;35:*.png=01;35:*.tif=01;35:&quot;</span><br>
+<span style="font-family:Courier new; font-size:14px">declare -x MAIL=&quot;/var/spool/mail/root&quot;</span><br>
+<span style="font-family:Courier new; font-size:14px">declare -x OLDPWD=&quot;/opt/au1200_rm/build_tools&quot;</span><br>
+</span><span style="font-size:10px"><span style="background-color:#808080"><span style="font-family:Courier new; font-size:14px">declare -x PATH=&quot;/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/root/bin:/opt/au1200_rm/build_tools/bin&quot;</span><br>
+</span><span style="font-family:Courier new; font-size:14px">declare -x PWD=&quot;/opt/au1200_rm/build_tools/bin&quot;</span><br>
+<span style="font-family:Courier new; font-size:14px">declare -x SHELL=&quot;/bin/bash&quot;</span><br>
+<span style="font-family:Courier new; font-size:14px">declare -x SHLVL=&quot;1&quot;</span><br>
+<span style="font-family:Courier new; font-size:14px">declare -x SSH_ASKPASS=&quot;/usr/libexec/openssh/gnome-ssh-askpass&quot;</span><br>
+<span style="font-family:Courier new; font-size:14px">declare -x SSH_AUTH_SOCK=&quot;/tmp/ssh-XX3LKWhz/agent.4242&quot;</span><br>
+<span style="font-family:Courier new; font-size:14px">declare -x SSH_CLIENT=&quot;10.3.37.152 2236 22&quot;</span><br>
+<span style="font-family:Courier new; font-size:14px">declare -x SSH_CONNECTION=&quot;10.3.37.152 2236 10.3.37.186 22&quot;</span><br>
+<span style="font-family:Courier new; font-size:14px">declare -x SSH_TTY=&quot;/dev/pts/2&quot;</span><br>
+<span style="font-family:Courier new; font-size:14px">declare -x TERM=&quot;linux&quot;</span><br>
+<span style="font-family:Courier new; font-size:14px">declare -x USER=&quot;root&quot;</span><br>
+<span style="font-family:Courier new; font-size:14px">declare -x USERNAME=&quot;root&quot;</span></span></span></span><span style="font-size:16px"><span style="font-family:Arial"><span style="font-family:Courier new; font-size:14px"></span></span>
+</span>
+<p><br>
+<span style="font-family:Courier new; font-size:14px">可以看到灰色部分有设置的路径，说明环境变量已经设好，PATH里面已经有了我要加的编译器的路径。</span><br>
+<br>
+<strong><span style="font-family:Courier new; color:#ff00; font-size:14px">2、修改profile文件：</span></strong><br>
+<span style="color:#000000"><span style="font-family:Courier new; font-size:14px; background-color:rgb(255,204,0)">#vi /etc/profile</span><br>
+</span><span style="font-family:Courier new; font-size:14px">在里面加入:</span><br>
+<span style="font-family:Courier new; font-size:14px">export PATH=&quot;$PATH:/</span><span style="font-family:Courier new; font-size:14px">opt/au1200_rm/build_tools/bin</span><span style="font-family:Courier new; font-size:14px">&quot;</span><br>
+<br>
+<strong><span style="font-family:Courier new; color:#ff00; font-size:14px">3. 修改.bashrc文件：</span></strong><br>
+<span style="color:#000000"><span style="font-family:Courier new; font-size:14px; background-color:rgb(255,204,0)"># vi /root/.bashrc</span><br>
+</span><span style="font-family:Courier new; font-size:14px">在里面加入：</span><br>
+<span style="font-family:Courier new; font-size:14px">export PATH=&quot;$PATH:</span><span style="font-family:Courier new; font-size:14px">/opt/au1200_rm/build_tools/bin</span><span style="font-family:Courier new; font-size:14px">&quot;</span><br>
+<br>
+<span style="font-family:Courier new; font-size:14px">后两种方法一般需要重新注销系统才能生效，最后可以通过echo命令测试一下：</span><br>
+<span style="color:#000000"><span style="font-family:Courier new; font-size:14px; background-color:rgb(255,204,0)"># echo $PATH</span><br>
+</span><span style="font-family:Courier new; font-size:14px">看看输出里面是不是已经有了 /my_new_path这个路径了。</span></p>
+<p><span style="font-family:Courier new; font-size:14px">另有：<strong><span style="color:#ff0000">4</span><span style="font-family:Courier new; color:#ff00; font-size:14px"><span style="color:#ff0000">.
+</span>修改<span style="color:#ff0000">/etc/re.local</span>文件：</span></strong><br>
+<span style="font-family:Courier new; font-size:14px; background-color:rgb(255,204,0)"><span style="background-color:#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color:#000000">&nbsp; # vi /etc/re.local</span></span><br>
+<span style="font-family:Courier new; font-size:14px"><span style="color:#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>在里面加入：</span><br>
+<span style="font-family:Courier new; font-size:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;export PATH=&quot;$PATH:</span><span style="font-family:Courier new; font-size:14px">/opt/au1200_rm/build_tools/bin</span><span style="font-family:Courier new; font-size:14px">&quot;</span><br>
+<br>
+</span></p>
+<p><span style="font-family:Courier new; font-size:14px">-----------------------------------------------------------------------------------------------------------------------</span></p>
+<p><span style="font-family:Courier new; font-size:14px"><span style="font-size:16px">　<strong>“/bin”、“/sbin”、“ /usr/bin”、“/usr/sbin”、“/usr/local/bin”等路径已经在系统环境变量中了，如果可执行文件在这几个标准位置，在终端命令行输入该软件可执行文件的文件名和参数(如果需要参数)，回车即可。</strong></span></span></p>
+<p><span style="font-family:Courier new; font-size:14px">　　如果不在标准位置，文件名前面需要加上完整的路径。不过每次都这样跑就太麻烦了，一个“一劳永逸”的办法是把这个路径加入环境变量。命令
+<span style="background-color:#ffcc99"><span style="color:#000000"><strong>export $PATH=&quot;路径”(或</strong>“PATH=$PATH:路径”<strong>)</strong></span></span><strong><span style="color:#000000">
+</span>(</strong>$PATH为环境变量名，如DVSDK；调用时用$DVSDK)可以把这个路径加入环境变量，但是退出这个命令行就失效了。要想永久生效，需要把这行添加到环境变量文件里。有两个文件可选<strong>：“/etc/profile”和用户主目录下的“.bash_profile”，“/etc/profile”对系统里所有用户都有效，用户主目录下的“.bash_profile”只对这个用户有效</strong>。</span></p>
+<p><span style="font-family:Courier new; font-size:14px">　　<span style="color:#000000"><span style="background-color:#ffcc99"><strong>export $PATH=&quot;$PATH:路径1:路径2:...:路径n” （或</strong>“PATH=$PATH:路径1:路径2:...:路径n&quot;　<strong>）</strong></span><strong>，</strong></span>意思是可执行文件的路径包括原先设定的路径，也包括从“路径1”到“路径n”的所有路径。当用户输入一个一串字符并按回车后，shell会依次在这些路径里找对应的可执行文件并交给系统核心执行。那个“$PATH”表示原先设定的路径仍然有效，注意不要漏掉。某些软件可能还有“PATH”以外类型的环境变量需要添加，但方法与此相同，并且也需要注意“$”。</span></p>
+<p><span style="font-family:Courier new; font-size:14px">　　注意，与DOS/Window不同，UNIX类系统环境变量中<span style="color:#000000; background-color:#ffcc99">路径名用冒号分隔</span>，不是分号。另外，软件越装越多，环境变量越添越多，为了避免造成混乱，建议所有语句都添加在文件结尾，按软件的安装顺序添加。</span></p>
+<p><span style="font-family:Courier new; font-size:14px">　　&#26684;式如下()：</span></p>
+<p><span style="font-family:Courier new; font-size:14px">　　# 软件名-版本号</span></p>
+<p><span style="font-family:Courier new; font-size:14px">　　PATH=$PATH:路径1:路径 2:...:路径n</span></p>
+<p><span style="font-family:Courier new; font-size:14px">　　其他环境变量=$其他环境变量:...</span></p>
+<p><span style="font-family:Courier new; font-size:14px">　　在“profile”和“.bash_profile”中，“#”是注释符号，写在这里除了视觉分隔外没有任何效果。</span></p>
+<p><span style="font-family:Courier new; font-size:14px">　　设置完毕，注销并重新登录，设置就生效了。如果不注销，直接在shell里执行这些语句，也能生效，但是作用范围只限于执行了这些语句的shell。</span></p>
+<p><span style="font-family:Courier new; font-size:14px">　　相关的环境变量生效后，就不必老跑到软件的可执行文件目录里去操作了。</span></p>
+<p><span style="font-family:Courier new; font-size:14px"></span>&nbsp;</p>
+<p>-----------------------------------------------------------------------------------------------------------------------</p>
+<p>　<span style="font-family:Courier new"></span>&nbsp;</p>
+<p>执行一个脚本时，会先开启一个子shell环境（不知道执行其它程序是不是这样），然后将父shell中的所有系统环境变量复制过来，这个脚本中的语句就在子shell中执行。（也就是说父shell的环境变量在子shell中可以调用，但反过来就不行，如果在子shell中定义了环境变量，则只对该shell或者它的子shell有效，当该子shell结束时，也可以理解为脚本执行完时，变量消失。）为了证明这一点，请看脚本内容：<br>
+　　test=’value’<br>
+　　export test<br>
+　　这样的脚本执行完后，test实际上是不存在的。接着看下面的：<br>
+　　test=’value’<br>
+　　export test<br>
+　　bash<br>
+　　这里在脚本最后一行再开一个子shell，该shell应该是脚本文件所在shell的子shell，这个脚本执行完后，是可以看到test这个变量的，因为现在是处于它的子shell中，当用exit退出子shell后，test变量消失。<br>
+　　如果用source对脚本进行执行时，如果不加export，就不会在子shell中看到这个变量，因为它还不是一个系统环境变量呀，如脚本内容是：<br>
+　　test=’value’<br>
+　　用source执行后，在shell下是能看到这个变量，但再执行bash开一个子shell时，test是不会被复制到子shell中的，因为执行脚本文件其实也是在一个子shell中运行，所以我再建另一个脚本文件执行时，是不会输入任何东西的，内容如：echo $test。所以这点特别注意了，明明在提示符下可以用echo $test输出变量&#20540;，为什么把它放进脚本文件就不行了呢？<br>
+　　所以得出的结论是：1、执行脚本时是在一个子shell环境运行的，脚本执行完后该子shell自动退出；2、一个shell中的系统环境变量才会被复制到子shell中（用export定义的变量）；3、一个shell中的系统环境变量只对该shell或者它的子shell有效，该shell结束时变量消失（并不能返回到父shell中）。3、不用export定义的变量只对该shell有效，对子shell也是无效的。<br>
+　　后来根据版主的提示，整理了一下贴子：为什么一个脚本直接执行和用source执行不一行呢？这也是我自己碰到的一个问题。manual原文是这样的：Read and execute commands from filename in the current shell environment and return the exit status of the last command executed from filename.明白了为什么不一样了吧？直接执行一个脚本文件是在一个子shell中运行的，而source则是在当前shell环境中运行的。</p>
+
+</div>
+
+
+
+
+<!-- Baidu Button BEGIN -->
+
+<div class="bdsharebuttonbox" style="float: right;">
+<a href="#" class="bds_more" data-cmd="more" style="background-position:0 0 !important; background-image: url(http://bdimg.share.baidu.com/static/api/img/share/icons_0_16.png?v=d754dcc0.png) !important"></a>
+<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"  style="background-position:0 -52px !important"></a>
+<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"style="background-position:0 -104px !important"></a>
+<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"style="background-position:0 -260px !important"></a>
+<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"style="background-position:0 -208px !important"></a>
+<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"style="background-position:0 -1612px !important" ></a>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+<!-- Baidu Button END -->
+
+<!--192.168.100.35-->
+<ul class="article_next_prev">
+            <li class="prev_article"><span  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian']);location.href='/wl_fln/article/details/7258035';">上一篇</span><a href="/wl_fln/article/details/7258035" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian'])">GCC笔记</a></li>
+            <li class="next_article"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian']);location.href='/wl_fln/article/details/7258696';">下一篇</span><a href="/wl_fln/article/details/7258696" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian'])">getrlimit和setrlimit函数</a></li>
+</ul>
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1536434" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+
+</div>
+      <dl class="blog-associat-tag">
+        <dt>主题推荐</dt>
+        <dd>
+                <a href="http://www.csdn.net/tag/linux" target="_blank" class="blog-tage-red" >linux</a> 
+                <a href="http://www.csdn.net/tag/交叉编译" target="_blank" class="blog-tage-red" >交叉编译</a> 
+                <a href="http://www.csdn.net/tag/编译器" target="_blank" class="blog-tage-red" >编译器</a> 
+                <a href="http://www.csdn.net/tag/软件" target="_blank" class="blog-tage-red" >软件</a> 
+                <a href="http://www.csdn.net/tag/标准" target="_blank" class="blog-tage-red" >标准</a> 
+        </dd>
+    </dl> 
+
+
+<dl class="blog-ass-articl tracking-ad"  data-mod="popu_36" id="res-relatived"> 
+     <dt><span>猜你在找</span></dt>    
+</dl>
+
+<script type="text/javascript">
+    var searchtitletags = 'linux环境变量 export命令详解' + ',' + 'linux,交叉编译,编译器,软件,标准';
+    searchService({
+        index: 'blog',
+        query: searchtitletags,
+        from: 10,
+        size: 10,
+        appendTo: '#res-relatived',
+        url: 'recommend',
+        his: 2,
+        client: "blog_cf_enhance",
+        tmpl: '<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="#{ url }" title="#{ title }" strategy="#{ strategy }">#{ title }</a></dd>'
+    });
+
+ </script>   
+
+
+    <div id="ad_cen">
+   
+          <script type="text/javascript">
+              new Ad(4, 'ad_cen');
+          </script>
+    </div>
+<div class="comment_class">
+    <div id="comment_title" class="panel_head">
+        <span class="see_comment">查看评论</span><a name="comments"></a></div>
+    <div id="comment_list">
+    </div>
+    <div id="comment_bar">
+    </div>
+    <div id="comment_form">
+    </div>
+
+    <div class="announce">
+        * 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场<a name="reply"></a><a name="quote"></a></div>
+</div>
+
+<script type="text/javascript">
+    var fileName = '7258294';
+    var commentscount = 0;
+    var islock = false
+</script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/comment.js"></script>
+    <div id="ad_bot">
+    </div>
+    <script type="text/javascript">
+    new Ad(5, 'ad_bot');
+    </script>
+<div id="report_dialog">
+</div>
+
+<div id="d-top"  style="bottom:60px;">
+        <a id="quick-reply" class="btn btn-top q-reply" title="快速回复" style="display:none;">
+            <img src="http://static.blog.csdn.net/images/blog-icon-reply.png" alt="快速回复">
+        </a>    
+
+    <a id="d-top-a" class="btn btn-top backtop"  style="display: none;" title="返回顶部" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_huidaodingbu'])" style="">         
+         <img src="http://static.blog.csdn.net/images/top.png" alt="TOP">
+    </a>
+</div>
+<script type="text/javascript">
+    $(function ()
+    {
+        $("#ad_frm_0").height("90px");
+        
+        setTimeout(function(){
+            $("#ad_frm_2").height("200px");
+        },1000);
+        
+        /*
+        if($("#comment_content").length>0)
+        {
+            $("#quick-reply").show();
+
+            $("#quick-reply").click(function(){
+                setEditorFocus();
+            });
+        }       
+     
+        var d_top = $('#d-top-a');
+
+        document.onscroll = function ()
+        {
+            var scrTop = (document.body.scrollTop || document.documentElement.scrollTop);
+            if (scrTop > 500)
+            {
+                d_top.show();
+            } else
+            {
+                d_top.hide();
+            }
+        }
+        $('#d-top-a').click(function ()
+        {
+            scrollTo(0, 0);
+            this.blur();
+            return false;
+        });
+        */
+    });
+  
+</script>
+<style type="text/css">
+    .tag_list
+    {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #D7CBC1;
+        color: #000000;
+        font-size: 12px;
+        line-height: 20px;
+        list-style: none outside none;
+        margin: 10px 2% 0 1%;
+        padding: 1px;
+    }
+    .tag_list h5
+    {
+        background: none repeat scroll 0 0 #E0DBD3;
+        color: #47381C;
+        font-size: 12px;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 5px;
+        margin: 0;
+    }
+    .tag_list h5 a
+    {
+        color: #47381C;
+    }
+    .classify
+    {
+        margin: 10px 0;
+        padding: 4px 12px 8px;
+    }
+    .classify a
+    {
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+</style>
+<div class="tag_list">
+    <h5>
+        <a href="http://www.csdn.net/tag/" target="_blank">核心技术类目</a></h5>
+    <div class="classify">
+<a title="全部主题" href="http://www.csdn.net/tag" target="_blank" onclick="LogClickCount(this,336);">全部主题</a>
+<a title="Hadoop" href="http://g.csdn.net/5272865" target="_blank" onclick="LogClickCount(this,336);">Hadoop</a>
+<a title="AWS" href="http://g.csdn.net/5272866" target="_blank" onclick="LogClickCount(this,336);">AWS</a>
+<a title="移动游戏" href="http://g.csdn.net/5272870" target="_blank" onclick="LogClickCount(this,336);">移动游戏</a>
+<a title="Java" href="http://g.csdn.net/5272871" target="_blank" onclick="LogClickCount(this,336);">Java</a>
+<a title="Android" href="http://g.csdn.net/5272872" target="_blank" onclick="LogClickCount(this,336);">Android</a>
+<a title="iOS" href="http://g.csdn.net/5272873" target="_blank" onclick="LogClickCount(this,336);">iOS</a>
+<a title="Swift" href="http://g.csdn.net/5272868" target="_blank" onclick="LogClickCount(this,336);">Swift</a>
+<a title="智能硬件" href="http://g.csdn.net/5272869" target="_blank" onclick="LogClickCount(this,336);">智能硬件</a>
+<a title="Docker" href="http://g.csdn.net/5272867" target="_blank" onclick="LogClickCount(this,336);">Docker</a>
+<a title="OpenStack" href="http://g.csdn.net/5272925" target="_blank" onclick="LogClickCount(this,336);">OpenStack</a>
+<a title="VPN" href="http://www.csdn.net/tag/vpn" target="_blank" onclick="LogClickCount(this,336);">VPN</a>
+<a title="Spark" href="http://g.csdn.net/5272924" target="_blank" onclick="LogClickCount(this,336);">Spark</a>
+<a title="ERP" href="http://www.csdn.net/tag/erp" target="_blank" onclick="LogClickCount(this,336);">ERP</a>
+<a title="IE10" href="http://www.csdn.net/tag/ie10" target="_blank" onclick="LogClickCount(this,336);">IE10</a>
+<a title="Eclipse" href="http://www.csdn.net/tag/eclipse" target="_blank" onclick="LogClickCount(this,336);">Eclipse</a>
+<a title="CRM" href="http://www.csdn.net/tag/crm" target="_blank" onclick="LogClickCount(this,336);">CRM</a>
+<a title="JavaScript" href="http://www.csdn.net/tag/javascript" target="_blank" onclick="LogClickCount(this,336);">JavaScript</a>
+<a title="数据库" href="http://www.csdn.net/tag/数据库" target="_blank" onclick="LogClickCount(this,336);">数据库</a>
+<a title="Ubuntu" href="http://www.csdn.net/tag/ubuntu" target="_blank" onclick="LogClickCount(this,336);">Ubuntu</a>
+<a title="NFC" href="http://www.csdn.net/tag/nfc" target="_blank" onclick="LogClickCount(this,336);">NFC</a>
+<a title="WAP" href="http://www.csdn.net/tag/wap" target="_blank" onclick="LogClickCount(this,336);">WAP</a>
+<a title="jQuery" href="http://www.csdn.net/tag/jquery" target="_blank" onclick="LogClickCount(this,336);">jQuery</a>
+<a title="BI" href="http://www.csdn.net/tag/bi" target="_blank" onclick="LogClickCount(this,336);">BI</a>
+<a title="HTML5" href="http://www.csdn.net/tag/html5" target="_blank" onclick="LogClickCount(this,336);">HTML5</a>
+<a title="Spring" href="http://www.csdn.net/tag/spring" target="_blank" onclick="LogClickCount(this,336);">Spring</a>
+<a title="Apache" href="http://www.csdn.net/tag/apache" target="_blank" onclick="LogClickCount(this,336);">Apache</a>
+<a title=".NET" href="http://www.csdn.net/tag/.net" target="_blank" onclick="LogClickCount(this,336);">.NET</a>
+<a title="API" href="http://www.csdn.net/tag/api" target="_blank" onclick="LogClickCount(this,336);">API</a>
+<a title="HTML" href="http://www.csdn.net/tag/html" target="_blank" onclick="LogClickCount(this,336);">HTML</a>
+<a title="SDK" href="http://www.csdn.net/tag/sdk" target="_blank" onclick="LogClickCount(this,336);">SDK</a>
+<a title="IIS" href="http://www.csdn.net/tag/iis" target="_blank" onclick="LogClickCount(this,336);">IIS</a>
+<a title="Fedora" href="http://www.csdn.net/tag/fedora" target="_blank" onclick="LogClickCount(this,336);">Fedora</a>
+<a title="XML" href="http://www.csdn.net/tag/xml" target="_blank" onclick="LogClickCount(this,336);">XML</a>
+<a title="LBS" href="http://www.csdn.net/tag/lbs" target="_blank" onclick="LogClickCount(this,336);">LBS</a>
+<a title="Unity" href="http://www.csdn.net/tag/unity" target="_blank" onclick="LogClickCount(this,336);">Unity</a>
+<a title="Splashtop" href="http://www.csdn.net/tag/splashtop" target="_blank" onclick="LogClickCount(this,336);">Splashtop</a>
+<a title="UML" href="http://www.csdn.net/tag/uml" target="_blank" onclick="LogClickCount(this,336);">UML</a>
+<a title="components" href="http://www.csdn.net/tag/components" target="_blank" onclick="LogClickCount(this,336);">components</a>
+<a title="Windows Mobile" href="http://www.csdn.net/tag/windowsmobile" target="_blank" onclick="LogClickCount(this,336);">Windows Mobile</a>
+<a title="Rails" href="http://www.csdn.net/tag/rails" target="_blank" onclick="LogClickCount(this,336);">Rails</a>
+<a title="QEMU" href="http://www.csdn.net/tag/qemu" target="_blank" onclick="LogClickCount(this,336);">QEMU</a>
+<a title="KDE" href="http://www.csdn.net/tag/kde" target="_blank" onclick="LogClickCount(this,336);">KDE</a>
+<a title="Cassandra" href="http://www.csdn.net/tag/cassandra" target="_blank" onclick="LogClickCount(this,336);">Cassandra</a>
+<a title="CloudStack" href="http://www.csdn.net/tag/cloudstack" target="_blank" onclick="LogClickCount(this,336);">CloudStack</a>
+<a title="FTC" href="http://www.csdn.net/tag/ftc" target="_blank" onclick="LogClickCount(this,336);">FTC</a>
+<a title="coremail" href="http://www.csdn.net/tag/coremail" target="_blank" onclick="LogClickCount(this,336);">coremail</a>
+<a title="OPhone " href="http://www.csdn.net/tag/ophone " target="_blank" onclick="LogClickCount(this,336);">OPhone </a>
+<a title="CouchBase" href="http://www.csdn.net/tag/couchbase" target="_blank" onclick="LogClickCount(this,336);">CouchBase</a>
+<a title="云计算" href="http://www.csdn.net/tag/云计算" target="_blank" onclick="LogClickCount(this,336);">云计算</a>
+<a title="iOS6" href="http://www.csdn.net/tag/iOS6" target="_blank" onclick="LogClickCount(this,336);">iOS6</a>
+<a title="Rackspace " href="http://www.csdn.net/tag/rackspace " target="_blank" onclick="LogClickCount(this,336);">Rackspace </a>
+<a title="Web App" href="http://www.csdn.net/tag/webapp" target="_blank" onclick="LogClickCount(this,336);">Web App</a>
+<a title="SpringSide" href="http://www.csdn.net/tag/springside" target="_blank" onclick="LogClickCount(this,336);">SpringSide</a>
+<a title="Maemo" href="http://www.csdn.net/tag/maemo" target="_blank" onclick="LogClickCount(this,336);">Maemo</a>
+<a title="Compuware" href="http://www.csdn.net/tag/compuware" target="_blank" onclick="LogClickCount(this,336);">Compuware</a>
+<a title="大数据" href="http://www.csdn.net/tag/大数据" target="_blank" onclick="LogClickCount(this,336);">大数据</a>
+<a title="aptech" href="http://www.csdn.net/tag/aptech" target="_blank" onclick="LogClickCount(this,336);">aptech</a>
+<a title="Perl" href="http://www.csdn.net/tag/perl" target="_blank" onclick="LogClickCount(this,336);">Perl</a>
+<a title="Tornado" href="http://www.csdn.net/tag/tornado" target="_blank" onclick="LogClickCount(this,336);">Tornado</a>
+<a title="Ruby" href="http://www.csdn.net/tag/ruby" target="_blank" onclick="LogClickCount(this,336);">Ruby</a>
+<a title="Hibernate" href="http://www.csdn.net/hibernate" target="_blank" onclick="LogClickCount(this,336);">Hibernate</a>
+<a title="ThinkPHP" href="http://www.csdn.net/tag/thinkphp" target="_blank" onclick="LogClickCount(this,336);">ThinkPHP</a>
+<a title="HBase" href="http://www.csdn.net/tag/hbase" target="_blank" onclick="LogClickCount(this,336);">HBase</a>
+<a title="Pure" href="http://www.csdn.net/tag/pure" target="_blank" onclick="LogClickCount(this,336);">Pure</a>
+<a title="Solr" href="http://www.csdn.net/tag/solr" target="_blank" onclick="LogClickCount(this,336);">Solr</a>
+<a title="Angular" href="http://www.csdn.net/tag/angular" target="_blank" onclick="LogClickCount(this,336);">Angular</a>
+<a title="Cloud Foundry" href="http://www.csdn.net/tag/cloudfoundry" target="_blank" onclick="LogClickCount(this,336);">Cloud Foundry</a>
+<a title="Redis" href="http://www.csdn.net/tag/redis" target="_blank" onclick="LogClickCount(this,336);">Redis</a>
+<a title="Scala" href="http://www.csdn.net/tag/scala" target="_blank" onclick="LogClickCount(this,336);">Scala</a>
+<a title="Django" href="http://www.csdn.net/tag/django" target="_blank" onclick="LogClickCount(this,336);">Django</a>
+<a title="Bootstrap" href="http://www.csdn.net/tag/bootstrap" target="_blank" onclick="LogClickCount(this,336);">Bootstrap</a>
+    </div>
+</div>
+
+<div id="pop_win" style="display:none ;position: absolute; z-index: 10000; border: 1px solid rgb(220, 220, 220); top: 222.5px; left: 630px; opacity: 1; background: none 0px 0px repeat scroll rgb(255, 255, 255);">
+    
+</div>
+<div id="popup_mask"></div>
+<style>
+    #popup_mask
+    {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        z-index: 9999;
+        left: 0px;
+        top: 0px;
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+        display: none;
+    }
+
+</style>
+
+
+
+
+<script type="text/javascript">
+    $(function(){
+        setTimeout(function(){
+            $(".comment_body:contains('回复')").each(function(index,item){
+                var u=$(this).text().split('：')[0].toString().replace("回复","")
+                var thisComment=$(this);
+                if(u)
+                {
+                    $.getJSON("https://passport.csdn.net/get/nick?callback=?", {users: u}, function(a) {
+                        if(a!=null&&a.data!=null&&a.data.length>0)
+                        {
+                            nick=a.data[0].n; 
+                            if(u!=nick)
+                            {
+                                thisComment.text(thisComment.text().replace(u,nick));  
+                            }
+                        }       
+                    });  
+                }
+            });
+        },200);  
+        
+        setTimeout(function(){
+            $("a img[src='http://js.tongji.linezing.com/stats.gif']").parent().css({"position":"absolute","left":"50%"});
+        },300);
+    });
+
+    function loginbox(){
+        var $logpop=$("#pop_win");
+        $logpop.html('<iframe src="https://passport.csdn.net/account/loginbox?service=http://static.blog.csdn.net/callback.htm" frameborder="0" height="600" width="400" scrolling="no"></iframe>');
+
+        $('#popup_mask').css({
+            opacity: 0.5,
+            width: $( document ).width() + 'px',
+            height:  $( document ).height() + 'px'
+        });
+        $('#popup_mask').css("display","block");
+ 
+        $logpop.css( {
+            top: ($( window ).height() - $logpop.height())/ 2  + $( window 
+       ).scrollTop() + 'px',
+            left:($( window ).width() - $logpop.width())/ 2
+        } );
+ 
+        setTimeout( function () {
+            $logpop.show();
+            $logpop.css( {
+                opacity: 1
+            } );
+        }, 200 );
+ 
+        $('#popup_mask').unbind("click");
+        $('#popup_mask').bind("click", function(){
+            $('#popup_mask').hide();
+            var $clopop = $("#pop_win");
+            $("#common_ask_div_sc").css("display","none");
+            $clopop.css( {
+                opacity: 0
+            } );
+            setTimeout( function () {
+                $clopop.hide();
+            }, 350 );
+            return false;
+        });
+    }    
+
+</script>
+                        <div class="clear">
+                        </div>
+                    </div>                   
+                
+            </div>
+            <div id="side">
+    <div class="side">
+<div id="panel_Profile" class="panel">
+<ul class="panel_head"><span>个人资料</span></ul>
+<ul class="panel_body profile">
+<div id="blog_userface">
+    <a href="http://my.csdn.net/wl_fln" target="_blank">
+    <img src="http://avatar.csdn.net/6/A/C/1_wl_fln.jpg" title="访问我的空间" style="max-width:90%"/>
+    </a>
+    <br />
+    <span><a href="http://my.csdn.net/wl_fln" class="user_name" target="_blank">wl_fln</a></span>
+</div>
+<div class="interact">
+<a href="javascript:void(0);" class="attent" id="span_add_follow" title="[加关注]" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_guanzhu'])"></a>
+
+ <a href="javascript:void(0);" class="letter"  title="[发私信]" onclick="window.open('http://msg.csdn.net/letters/model?receiver=wl_fln','_blank','height=350,width=700');_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_sixin'])"></a>  
+</div>
+<div id="blog_medal">
+                <div id="bms_box">
+               </div>
+</div>
+<ul id="blog_rank">
+    <li>访问：<span>78560次</span></li>
+    <li>积分：<span>1192</span> </li>    
+    <li >等级： <span style="position:relative;display:inline-block;z-index:1" >
+            <img src="http://csdnimg.cn/jifen/images/xunzhang/jianzhang/blog4.png" alt="" style="vertical-align: middle;" id="leveImg">
+            <div id="smallTittle" style=" position: absolute;  left: -24px;  top: 25px;  text-align: center;  width: 101px;  height: 32px;  background-color: #fff;  line-height: 32px;  border: 2px #DDDDDD solid;  box-shadow: 0px 2px 2px rgba (0,0,0,0.1);  display: none;   z-index: 999;">
+            <div style="left: 42%;  top: -8px;  position: absolute;  width: 0;  height: 0;  border-left: 10px solid transparent;  border-right: 10px solid transparent;  border-bottom: 8px solid #EAEAEA;"></div>
+            积分：1192 </div>
+        </span>  </li>
+    <li>排名：<span>第15503名</span></li>
+</ul>
+<ul id="blog_statistics">
+    <li>原创：<span>46篇</span></li>
+    <li>转载：<span>29篇</span></li>
+    <li>译文：<span>0篇</span></li>
+    <li>评论：<span>16条</span></li>
+</ul>
+</ul>
+</div>
+
+
+<div class="panel" id="panel_Search">
+    <ul class="panel_head"><span>文章搜索</span></ul>
+    <ul class="panel_body">
+        <form id="frmSearch" action="http://so.csdn.net/search" class="form_search" target="_blank">
+        <span><input id="inputSearch" type="text" class="blogsearch" title="请输入关键字" /></span>
+        <input id="btnSubmit" type="button" value="搜索" title="search in blog" />
+        <input type="hidden" name="q" id="inputQ" />
+        <input type="hidden" name="t" value="blog" />
+        <a id="btnSearchBlog" target="_blank"></a>
+        </form>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {           
+            search();
+        });
+
+        $("#frmSearch").submit(function () {
+            search();
+            return false;
+        });
+
+        function search()
+        {
+            var url = "http://so.csdn.net/so/search/s.do?q=" + encodeURIComponent($("#inputSearch").val()) + "&u=" + username + "&t=blog";
+            window.location.href = url;
+        }   
+    });
+</script>
+<div id="panel_Category" class="panel">
+<ul class="panel_head"><span>文章分类</span></ul>
+<ul class="panel_body">
+             <li>
+                <a href="http://blog.csdn.net/wl_fln/article/category/803316" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">buf搜集</a><span>(9)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/wl_fln/article/category/803313" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">C++基础</a><span>(9)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/wl_fln/article/category/829327" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Linux</a><span>(17)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/wl_fln/article/category/803318" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">VC for Windows</a><span>(6)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/wl_fln/article/category/816984" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">socket网络编程</a><span>(7)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/wl_fln/article/category/811929" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">好文章啊！！！</a><span>(2)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/wl_fln/article/category/803315" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">流媒体</a><span>(15)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/wl_fln/article/category/936510" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Database</a><span>(4)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/wl_fln/article/category/1181819" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">ffmpeg</a><span>(4)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/wl_fln/article/category/1263832" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">android</a><span>(1)</span>
+            </li>
+</ul>
+</div><div id="panel_Archive" class="panel">
+<ul class="panel_head"><span>文章存档</span></ul>
+<ul class="panel_body">
+<div id="archive_list">
+<!--归档统计-->
+<li><a href="http://blog.csdn.net/wl_fln/article/month/2014/03">2014年03月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/wl_fln/article/month/2014/02">2014年02月</a><span>(3)</span></li><li><a href="http://blog.csdn.net/wl_fln/article/month/2013/12">2013年12月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/wl_fln/article/month/2013/11">2013年11月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/wl_fln/article/month/2013/07">2013年07月</a><span>(11)</span></li><li><a href="http://blog.csdn.net/wl_fln/article/month/2013/06">2013年06月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/wl_fln/article/month/2013/04">2013年04月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/wl_fln/article/month/2013/03">2013年03月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/wl_fln/article/month/2013/01">2013年01月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/wl_fln/article/month/2012/10">2012年10月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/wl_fln/article/month/2012/09">2012年09月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/wl_fln/article/month/2012/08">2012年08月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/wl_fln/article/month/2012/07">2012年07月</a><span>(4)</span></li><li><a href="http://blog.csdn.net/wl_fln/article/month/2012/06">2012年06月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/wl_fln/article/month/2012/05">2012年05月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/wl_fln/article/month/2012/02">2012年02月</a><span>(9)</span></li><li><a href="http://blog.csdn.net/wl_fln/article/month/2011/11">2011年11月</a><span>(8)</span></li><li><a href="http://blog.csdn.net/wl_fln/article/month/2011/07">2011年07月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/wl_fln/article/month/2011/06">2011年06月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/wl_fln/article/month/2011/05">2011年05月</a><span>(11)</span></li><li><a href="http://blog.csdn.net/wl_fln/article/month/2011/04">2011年04月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/wl_fln/article/month/2011/03">2011年03月</a><span>(5)</span></li>
+</div>
+</ul>
+</div>
+<div id="hotarticls" class="panel">
+<ul class="panel_head">
+    <span>       
+阅读排行    </span>
+</ul>
+
+<ul class="panel_body itemlist">
+<li>
+<a href="/wl_fln/article/details/7281986" title="linux shell之sed">linux shell之sed</a><span>(21580)</span>
+</li>
+<li>
+<a href="/wl_fln/article/details/6529865" title="什么是VOIP和SIP?">什么是VOIP和SIP?</a><span>(3422)</span>
+</li>
+<li>
+<a href="/wl_fln/article/details/6386365" title="UDP包的大小与MTU">UDP包的大小与MTU</a><span>(3239)</span>
+</li>
+<li>
+<a href="/wl_fln/article/details/6283587" title="使用Gflags来检测heap问题">使用Gflags来检测heap问题</a><span>(2949)</span>
+</li>
+<li>
+<a href="/wl_fln/article/details/7290484" title="Linux下Daemon的实现">Linux下Daemon的实现</a><span>(2899)</span>
+</li>
+<li>
+<a href="/wl_fln/article/details/7258294" title="linux环境变量 export命令详解">linux环境变量 export命令详解</a><span>(2816)</span>
+</li>
+<li>
+<a href="/wl_fln/article/details/6429464" title="十六进制字符串(CString或char[]) 和 BYTE,char数组 相互转化">十六进制字符串(CString或char[]) 和 BYTE,char数组 相互转化</a><span>(2320)</span>
+</li>
+<li>
+<a href="/wl_fln/article/details/7725591" title="cygwin 和 mingw区别">cygwin 和 mingw区别</a><span>(2303)</span>
+</li>
+<li>
+<a href="/wl_fln/article/details/7284256" title="Linux系统的管道命令">Linux系统的管道命令</a><span>(2290)</span>
+</li>
+<li>
+<a href="/wl_fln/article/details/7258954" title="UDP的系统缓存队列---读取">UDP的系统缓存队列---读取</a><span>(1825)</span>
+</li>
+</ul>
+</div>
+<div id="hotarticls2" class="panel">
+<ul class="panel_head"><span>评论排行</span></ul>
+<ul class="panel_body itemlist">
+<li>
+<a href="/wl_fln/article/details/7281986" title="linux shell之sed">linux shell之sed</a><span>(4)</span>
+</li>
+<li>
+<a href="/wl_fln/article/details/6529865" title="什么是VOIP和SIP?">什么是VOIP和SIP?</a><span>(4)</span>
+</li>
+<li>
+<a href="/wl_fln/article/details/7284256" title="Linux系统的管道命令">Linux系统的管道命令</a><span>(2)</span>
+</li>
+<li>
+<a href="/wl_fln/article/details/6335332" title="QueryPerformanceFrequency和QueryPerformanceCounter计数">QueryPerformanceFrequency和QueryPerformanceCounter计数</a><span>(2)</span>
+</li>
+<li>
+<a href="/wl_fln/article/details/7541737" title="职场五傻，有你吗？">职场五傻，有你吗？</a><span>(2)</span>
+</li>
+<li>
+<a href="/wl_fln/article/details/6394590" title="NALU(NAL单元）">NALU(NAL单元）</a><span>(1)</span>
+</li>
+<li>
+<a href="/wl_fln/article/details/6335760" title="程序员如何在“小公司成长”和“大公司学习”">程序员如何在“小公司成长”和“大公司学习”</a><span>(1)</span>
+</li>
+<li>
+<a href="/wl_fln/article/details/8754689" title="fxo和fxs（o口和s口）">fxo和fxs（o口和s口）</a><span>(0)</span>
+</li>
+<li>
+<a href="/wl_fln/article/details/9030741" title="HTTP协议的C语言编程实现实例">HTTP协议的C语言编程实现实例</a><span>(0)</span>
+</li>
+<li>
+<a href="/wl_fln/article/details/8754563" title="什么是语音网关">什么是语音网关</a><span>(0)</span>
+</li>
+</ul>
+</div>
+<div id="homepageArticles" class="panel tracking-ad" data-mod="popu_4">
+<ul class="panel_head"><span>推荐文章</span></ul>
+<ul class="panel_body" id="ad_commend"></ul>
+</div>
+<script type="text/javascript">
+ new Ad(12, 'ad_commend');
+</script><div id="newcomments" class="panel">
+<ul class="panel_head"><span>最新评论</span></ul>
+<ul class="panel_body itemlist">
+    <li>
+   
+         <a href="/wl_fln/article/details/7541737#comments">职场五傻，有你吗？</a>
+    <p style="margin:0px;"><a href="/xumin330774233" class="user_name">xumin330774233</a>:
+很好。
+    </p>
+    </li>
+    <li>
+   
+         <a href="/wl_fln/article/details/7281986#comments">linux shell之sed</a>
+    <p style="margin:0px;"><a href="/qqike" class="user_name">qqike</a>:
+非常好，谢谢分享！
+    </p>
+    </li>
+    <li>
+   
+         <a href="/wl_fln/article/details/7284256#comments">Linux系统的管道命令</a>
+    <p style="margin:0px;"><a href="/avalanche1002" class="user_name">avalanche1002</a>:
+我用的都是&lt;和&lt;&lt;为什么lz用的是&lt;;和&lt;;&lt;;呢
+    </p>
+    </li>
+    <li>
+   
+         <a href="/wl_fln/article/details/7284256#comments">linux shell之sed</a>
+    <p style="margin:0px;"><a href="/avalanche1002" class="user_name">avalanche1002</a>:
+这个很详细
+    </p>
+    </li>
+    <li>
+   
+         <a href="/wl_fln/article/details/6394590#comments">NALU(NAL单元）</a>
+    <p style="margin:0px;"><a href="/ADF1230" class="user_name">ADF1230</a>:
+请问NAL和NALU有什么区别 ？
+    </p>
+    </li>
+    <li>
+   
+         <a href="/wl_fln/article/details/6394590#comments">Linux系统的管道命令</a>
+    <p style="margin:0px;"><a href="/shuangfeiyanworld" class="user_name">shuangfeiyanworld</a>:
+这个功能真牛啊，多谢LZ分享。
+    </p>
+    </li>
+    <li>
+   
+         <a href="/wl_fln/article/details/6394590#comments">linux shell之sed</a>
+    <p style="margin:0px;"><a href="/dba_road" class="user_name">dba_road</a>:
+感谢分享
+    </p>
+    </li>
+    <li>
+   
+         <a href="/wl_fln/article/details/6394590#comments">linux shell之sed</a>
+    <p style="margin:0px;"><a href="/ayading826" class="user_name">ayading826</a>:
+谢谢楼主分享
+    </p>
+    </li>
+    <li>
+   
+         <a href="/wl_fln/article/details/6335332#comments">QueryPerformanceFrequency和QueryPerformanceCounter计数</a>
+    <p style="margin:0px;"><a href="/wl_fln" class="user_name">wl_fln</a>:
+基本山还是可以的，相对已经比较精确了
+    </p>
+    </li>
+    <li>
+   
+         <a href="/wl_fln/article/details/6529865#comments">什么是VOIP和SIP?</a>
+    <p style="margin:0px;"><a href="/blackiscsh" class="user_name">blackiscsh</a>:
+虽然VoIP会给网络带来负担，并存在语音质量、可扩展性及服务质量(QoS)等问题。但如果能够合理的部...
+    </p>
+    </li>
+</ul>
+</div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+
+            <div class="clear">
+            </div>
+        </div>
+        
+
+<script type="text/javascript" src="http://csdnimg.cn/rabbit/cnick/cnick.js"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/newblog.min.js"></script>
+
+
+<script type="text/javascript" src="http://medal.blog.csdn.net/showblogmedal.ashx?blogid=707928"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/JavaScript1.js"></script>
+
+    <script type="text/javascript" src="http://passport.csdn.net/content/loginbox/login.js"></script>
+<script type="text/javascript">document.write("<img src=http://counter.csdn.net/pv.aspx?id=24 border=0 width=0 height=0>");</script>
+<script type="text/javascript" src="http://www.csdn.net/ui/scripts/Csdn/counter.js"></script>
+<script type="text/javascript" src="http://ad.csdn.net/scripts/ad-blog.js"></script>
+<script type="text/javascript" src="http://zz.csdn.net/js/count.js"></script>
+<script type="text/javascript">
+    $(function () {
+        function __get_code_toolbar(snippet_id) {
+            return $("<a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "' target='_blank' title='在CODE上查看代码片' style='text-indent:0;'><img src='https://code.csdn.net/assets/CODE_ico.png' width=12 height=12 alt='在CODE上查看代码片' style='position:relative;top:1px;left:2px;'/></a>"
+                    + "<a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "/fork' target='_blank' title='派生到我的代码片'  style='text-indent:0;'><img src='https://code.csdn.net/assets/ico_fork.svg' width=12 height=12 alt='派生到我的代码片' style='position:relative;top:2px;left:2px;'/></a>");
+        }
+        
+        $("[code_snippet_id]").each(function () {
+            __s_id = $(this).attr("code_snippet_id");
+            if (__s_id != null && __s_id != "" && __s_id != 0 && parseInt(__s_id) > 70020) {
+                __code_tool = __get_code_toolbar(__s_id);
+                $(this).prev().find(".tools").append(__code_tool);
+            }
+        });
+    });
+</script>
+
+    </div>
+      <!--new top-->
+    
+    <script id="csdn-toolbar-id" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" type="text/javascript" src="http://static.csdn.net/public/common/toolbar/js/toolbar.js"></script>     <!--new top-->
+   
+    <link href="http://csdnimg.cn/comm_ask/css/ask_float_block.css" type="text/css" rel="stylesheet" />
+    <script language='JavaScript' type='text/javascript' src='http://csdnimg.cn/comm_ask/js/libs/wmd.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://csdnimg.cn/comm_ask/js/libs/showdown.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://csdnimg.cn/comm_ask/js/libs/prettify.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://csdnimg.cn/comm_ask/js/apps/ask_float_block.js'></script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>CSDN Ad</title>
+    <style type="text/css">
+        body { margin:0px; padding:0px;}
+    </style>
+     <script src="Java%E4%B8%AD%E7%9A%84StringTokenizer%E7%B1%BB%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%20-%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/jquery.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="div1"><style type="text/css">
+ul { margin:0px; padding:0 4px 0 0; }
+ul, x:-moz-any-link, x:default { width:90%; }
+ul li { padding:3px 0px;}
+a { font-size:12px; text-decoration:none; color:#006699; }
+a:hover { color:#000; }
+</style>
+
+<ul>
+
+<li><a href="http://blog.csdn.net/happyparrot/article/details/42261311" target="_blank">* 挣扎与彷徨--我的2014</a></li>
+
+<li><a href="http://blog.csdn.net/howeverpf/article/details/41412031" target="_blank">* 校招回忆录---小米篇</a></li>
+
+<li><a href="http://blog.csdn.net/wwj_748/article/details/42244865" target="_blank">* Android UI-自定义日历控件</a></li>
+
+<li><a href="http://blog.csdn.net/chinacsharper/article/details/42242593" target="_blank">* 30岁程序员回顾人生、展望未来</a></li>
+
+<li><a href="http://blog.csdn.net/guolin_blog/article/details/41722975" target="_blank">* 2014年终总结，我决定要实现的三个目标</a></li>
+
+<li><a href="http://blog.csdn.net/abcjennifer/article/details/42241631" target="_blank">* Android 启动问题——黑屏 死机 解决方法</a></li>
+
+
+</ul></div>
+<script type="text/javascript">
+    window.onload = function () {
+        if (document.domain != 'blog.csdn.net') {
+            document.domain = "csdn.net";
+        }
+        //这种给广告区域赋值的方式，对于有些JS广告不能完美的显示
+        //top.document.getElementById('ad_commend').innerHTML = document.getElementById('div1').innerHTML;
+
+        var h = document.body.offsetHeight + 2;
+        setTimeout(function () {
+            if (h > 800) h = document.getElementById('div1').offsetHeight + 4;
+            try { top.document.getElementById('ad_frm_2').style.height = h + 'px'; }
+            catch (err) { }
+        }, 100);
+    };
+    $(function() {
+        $("#div1 a").click(function() {
+            top._gaq.push(['_trackEvent', 'function', 'onclick', 'blog_articles_tuijianwenzhang']);
+        });
+    });
+</script>
+
+
+</body></html>

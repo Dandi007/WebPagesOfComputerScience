@@ -1,0 +1,462 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" dir="ltr"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>python tarfile-打包解包 -  - ITeye技术网站</title>
+    <meta name="description" content=" &nbsp;   最近项目上有一个ftp上传程序，需要把碎文件打包上传，到服务端再解包。本来已经只能通过shell来搞这个了，无奈打包过程中有一部分业务逻辑，不能把整个目录都打包，惊喜地发现python有tarfile这个东西，太惊喜了，试用完后发现还挺不错，打包一组466M的文件，共778个文件花了1.9s，解包花了2.3s。打包，解包代码如下：  tar打包  在写打包代码的过程中，使用tar.add( ...">
+    <meta name="keywords" content=" python tarfile-打包解包">
+    <link rel="shortcut icon" href="http://essen.iteye.com/images/favicon.ico" type="image/x-icon">
+    <link rel="search" type="application/opensearchdescription+xml" href="http://essen.iteye.com/open_search.xml" title="ITeye">
+    <link href="http://essen.iteye.com/rss" rel="alternate" title="" type="application/rss+xml">
+    <link href="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/blog.css" media="screen" rel="stylesheet" type="text/css">
+<link href="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/blue.css" media="screen" rel="stylesheet" type="text/css">
+    <script src="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/ga.js" async="" type="text/javascript"></script><script src="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/application.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-535605-1']);
+  _gaq.push(['_setDomainName', 'iteye.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+      <link href="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/SyntaxHighlighter.css" media="screen" rel="stylesheet" type="text/css">
+  <script src="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/shCoreCommon.js" type="text/javascript"></script>
+<script src="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/hotkey.js" type="text/javascript"></script>
+  <script src="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/code_favorites.js" type="text/javascript"></script>
+<script src="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/weiboshare.js" type="text/javascript"></script>
+  <style type="text/css">.dp-py .builtins { color: #ff1493; }.dp-py .magicmethods { color: #808080; }.dp-py .exceptions { color: brown; }.dp-py .types { color: brown; font-style: italic; }.dp-py .commonlibs { color: #8A2BE2; font-style: italic; }</style><style type="text/css">.dp-py .builtins { color: #ff1493; }.dp-py .magicmethods { color: #808080; }.dp-py .exceptions { color: brown; }.dp-py .types { color: brown; font-style: italic; }.dp-py .commonlibs { color: #8A2BE2; font-style: italic; }</style><style type="text/css">.dp-py .builtins { color: #ff1493; }.dp-py .magicmethods { color: #808080; }.dp-py .exceptions { color: brown; }.dp-py .types { color: brown; font-style: italic; }.dp-py .commonlibs { color: #8A2BE2; font-style: italic; }</style></head>
+  <body>
+    <div id="header">
+      <div id="blog_site_nav">
+  <a href="http://www.iteye.com/" class="homepage">首页</a>
+  <a href="http://www.iteye.com/news">资讯</a>
+  <a href="http://www.iteye.com/magazines">精华</a>
+  <a href="http://www.iteye.com/forums">论坛</a>
+  <a href="http://www.iteye.com/ask">问答</a>
+  <a href="http://www.iteye.com/blogs">博客</a>
+  <a href="http://www.iteye.com/blogs/subjects">专栏</a>
+  <a href="http://www.iteye.com/groups">群组</a>
+  <a href="#" onclick="return false;" id="msna"><u>更多</u> <small>▼</small></a>
+  <div class="quick_menu" style="display:none;">
+    <a target="_blank" href="http://job.iteye.com/iteye">招聘</a>
+    <a href="http://www.iteye.com/search">搜索</a>
+  </div>
+</div>
+
+      <div id="user_nav">
+      <a href="http://essen.iteye.com/login" class="welcome" title="登录">您还未登录 !</a>
+    <a href="http://essen.iteye.com/login">登录</a>
+    <a href="http://essen.iteye.com/signup" class="nobg">注册</a>
+  </div>
+
+    </div>
+
+    <div id="page">
+      <div id="branding" class="clearfix">
+        <div id="blog_name">
+          <h1><a href="http://essen.iteye.com/">essen</a></h1>
+        </div>
+        <div id="fd"></div>
+        <div id="blog_navbar">
+          <ul>
+            <li class="blog_navbar_for"><a href="http://essen.iteye.com/"><strong>博客</strong></a></li>
+            <li><a href="http://essen.iteye.com/weibo">微博</a></li>
+            <li><a href="http://essen.iteye.com/album">相册</a></li>
+            <li><a href="http://essen.iteye.com/link">收藏</a></li>
+            <li><a href="http://essen.iteye.com/blog/guest_book">留言</a></li>
+            <li><a href="http://essen.iteye.com/blog/profile">关于我</a></li>
+          </ul>
+    
+          <div class="search">
+            <form action="/blog/search" method="get">
+              <input class="search_text" id="query" name="query" style="margin-left: 10px;width: 110px;" type="text">
+              <input class="submit_search" value="" type="submit">
+            </form>
+          </div> 
+          <div id="fd"></div>         
+        </div>
+      </div>
+      
+      <div id="content" class="clearfix">
+        <div id="main">
+          
+
+
+
+          
+
+
+<div class="h-entry" style="display:none">
+  <a href="http://essen.iteye.com/" class="p-author" target="_blank">essen</a>
+</div>
+
+
+<div class="blog_main">
+  <div class="blog_title">
+    <h3>
+      <a href="http://essen.iteye.com/blog/1941489">python tarfile-打包解包</a>
+      <em class="actions">      </em>
+    </h3>
+    <ul class="blog_categories"><strong>博客分类：</strong> <li><a href="http://essen.iteye.com/category/209569">python</a></li> </ul>
+        <div class="news_tag">&nbsp;</div>
+  </div>
+
+  <div id="blog_content" class="blog_content">
+    <div class="iteye-blog-content-contain" style="font-size: 14px;">
+<p>&nbsp;</p>
+<div>
+<span style="">最近项目上有一个ftp上传程序，需要把碎文件打包上传，到服务端再解包。本来已经只能通过shell来搞这个了，无奈打
+包过程中有一部分业务逻辑，不能把整个目录都打包，惊喜地发现python有tarfile这个东西，太惊喜了，试用完后发现还挺不错，打包一组466M
+的文件，共778个文件花了1.9s，解包花了2.3s。打包，解包代码如下：</span>
+<div style=""><strong>tar打包</strong></div>
+<div style="">在写打包代码的过程中，使用tar.add()增加文件时，会把文件本身的路径也加进去，加上arcname就能根据自己的命名规则将文件加入tar包</div>
+<div style="">打包代码：</div>
+<div style="">
+<div id="" class="dp-highlighter"><div class="bar"><div class="tools">Python代码 <embed wmode="transparent" src="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/clipboard_new.swf" flashvars="clipboard=%23!%2Fusr%2Fbin%2Fenv%20%2Fusr%2Flocal%2Fbin%2Fpython%0A%20%23%20encoding%3A%20utf-8%0A%20import%20tarfile%0A%20import%20os%0A%20import%20time%0A%0A%20start%20%3D%20time.time()%0A%20tar%3Dtarfile.open('%2Fpath%2Fto%2Fyour.tar%2C'w')%0A%20for%20root%2Cdir%2Cfiles%20in%20os.walk('%2Fpath%2Fto%2Fdir%2F')%3A%0A%20%20%20%20%20%20%20%20%20for%20file%20in%20files%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20fullpath%3Dos.path.join(root%2Cfile)%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20tar.add(fullpath%2Carcname%3Dfile)%0A%20tar.close()%0A%20print%20time.time()-start" quality="high" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" height="15" width="14">&nbsp;<a href="javascript:void()" title="收藏这段代码" onclick="code_favorites_do_favorite(this);return false;"><img class="star" src="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/icon_star.png" alt="收藏代码"><img class="spinner" src="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/spinner.gif" style="display:none"></a></div></div><ol class="dp-py" start="1"><li><span><span class="comment">#!/usr/bin/env&nbsp;/usr/local/bin/python</span><span>&nbsp;&nbsp;</span></span></li><li><span>&nbsp;<span class="comment">#&nbsp;encoding:&nbsp;utf-8</span><span>&nbsp;&nbsp;</span></span></li><li><span>&nbsp;<span class="keyword">import</span><span>&nbsp;tarfile&nbsp;&nbsp;</span></span></li><li><span>&nbsp;<span class="keyword">import</span><span>&nbsp;os&nbsp;&nbsp;</span></span></li><li><span>&nbsp;<span class="keyword">import</span><span>&nbsp;time&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;</span></li><li><span>&nbsp;start&nbsp;=&nbsp;time.time()&nbsp;&nbsp;</span></li><li><span>&nbsp;tar=tarfile.open(<span class="string">'/path/to/your.tar,'</span><span>w')&nbsp;&nbsp;</span></span></li><li><span>&nbsp;<span class="keyword">for</span><span>&nbsp;root,dir,files&nbsp;</span><span class="keyword">in</span><span>&nbsp;os.walk(</span><span class="string">'/path/to/dir/'</span><span>):&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span><span>&nbsp;file&nbsp;</span><span class="keyword">in</span><span>&nbsp;files:&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fullpath=os.path.join(root,file)&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tar.add(fullpath,arcname=file)&nbsp;&nbsp;</span></li><li><span>&nbsp;tar.close()&nbsp;&nbsp;</span></li><li><span>&nbsp;<span class="keyword">print</span><span>&nbsp;time.time()-start&nbsp;&nbsp;</span></span></li></ol></div><pre title="python tarfile-打包解包" pre_index="0" source_url="http://essen.iteye.com/blog/1941489" codeable_type="Blog" codeable_id="1941489" style="display: none;" class="python" name="code">#!/usr/bin/env /usr/local/bin/python
+ # encoding: utf-8
+ import tarfile
+ import os
+ import time
+
+ start = time.time()
+ tar=tarfile.open('/path/to/your.tar,'w')
+ for root,dir,files in os.walk('/path/to/dir/'):
+         for file in files:
+                 fullpath=os.path.join(root,file)
+                 tar.add(fullpath,arcname=file)
+ tar.close()
+ print time.time()-start</pre>
+&nbsp;</div>
+<div style="">&nbsp;</div>
+<div style="">在打包的过程中可以设置压缩规则,如想要以gz压缩的格式打包</div>
+<div style="">tar=tarfile.open('/path/to/your.tar.gz','w:gz')</div>
+<div style="">其他格式如下表：</div>
+<div>tarfile.open的mode有很多种：
+<div>
+
+mode
+action
+<table>
+<tbody><tr></tr>
+<tr>
+<td>'r' or 'r:*'</td>
+<td>Open for reading with transparent compression (recommended).</td>
+</tr>
+<tr>
+<td>'r:'</td>
+<td>Open for reading exclusively without compression.</td>
+</tr>
+<tr>
+<td>'r:gz'</td>
+<td>Open for reading with gzip compression.</td>
+</tr>
+<tr>
+<td>'r:bz2'</td>
+<td>Open for reading with bzip2 compression.</td>
+</tr>
+<tr>
+<td>'a' or 'a:'</td>
+<td>Open for appending with no compression.&nbsp;The file is created if it does not exist.</td>
+</tr>
+<tr>
+<td>'w' or 'w:'</td>
+<td>Open for uncompressed writing.</td>
+</tr>
+<tr>
+<td>'w:gz'</td>
+<td>Open for gzip compressed writing.</td>
+</tr>
+<tr>
+<td>'w:bz2'</td>
+<td>Open for bzip2 compressed writing.</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div style="">&nbsp;</div>
+<div style=""><strong>tar解包</strong></div>
+<div style="">tar解包也可以根据不同压缩格式来解压。</div>
+<div style="">
+<div id="" class="dp-highlighter"><div class="bar"><div class="tools">Python代码 <embed wmode="transparent" src="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/clipboard_new.swf" flashvars="clipboard=%23!%2Fusr%2Fbin%2Fenv%20%2Fusr%2Flocal%2Fbin%2Fpython%0A%20%23%20encoding%3A%20utf-8%0A%20import%20tarfile%0A%20import%20time%0A%0A%20start%20%3D%20time.time()%0A%20t%20%3D%20tarfile.open(%22%2Fpath%2Fto%2Fyour.tar%22%2C%20%22r%3A%22)%0A%20t.extractall(path%20%3D%20'%2Fpath%2Fto%2Fextractdir%2F')%0A%20t.close()%0A%20print%20time.time()-start" quality="high" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" height="15" width="14">&nbsp;<a href="javascript:void()" title="收藏这段代码" onclick="code_favorites_do_favorite(this);return false;"><img class="star" src="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/icon_star.png" alt="收藏代码"><img class="spinner" src="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/spinner.gif" style="display:none"></a></div></div><ol class="dp-py" start="1"><li><span><span class="comment">#!/usr/bin/env&nbsp;/usr/local/bin/python</span><span>&nbsp;&nbsp;</span></span></li><li><span>&nbsp;<span class="comment">#&nbsp;encoding:&nbsp;utf-8</span><span>&nbsp;&nbsp;</span></span></li><li><span>&nbsp;<span class="keyword">import</span><span>&nbsp;tarfile&nbsp;&nbsp;</span></span></li><li><span>&nbsp;<span class="keyword">import</span><span>&nbsp;time&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;</span></li><li><span>&nbsp;start&nbsp;=&nbsp;time.time()&nbsp;&nbsp;</span></li><li><span>&nbsp;t&nbsp;=&nbsp;tarfile.open(<span class="string">"/path/to/your.tar"</span><span>,&nbsp;</span><span class="string">"r:"</span><span>)&nbsp;&nbsp;</span></span></li><li><span>&nbsp;t.extractall(path&nbsp;=&nbsp;<span class="string">'/path/to/extractdir/'</span><span>)&nbsp;&nbsp;</span></span></li><li><span>&nbsp;t.close()&nbsp;&nbsp;</span></li><li><span>&nbsp;<span class="keyword">print</span><span>&nbsp;time.time()-start&nbsp;&nbsp;</span></span></li></ol></div><pre title="python tarfile-打包解包" pre_index="1" source_url="http://essen.iteye.com/blog/1941489" codeable_type="Blog" codeable_id="1941489" style="display: none;" class="python" name="code">#!/usr/bin/env /usr/local/bin/python
+ # encoding: utf-8
+ import tarfile
+ import time
+
+ start = time.time()
+ t = tarfile.open("/path/to/your.tar", "r:")
+ t.extractall(path = '/path/to/extractdir/')
+ t.close()
+ print time.time()-start</pre>
+&nbsp;</div>
+<div style="">&nbsp;</div>
+<div style="">上面的代码是解压所有的，也可以挨个起做不同的处理，但要如果tar包内文件过多，小心内存哦~</div>
+<div style="">
+<span style="font-family: Tahoma;"><span style="font-family: Tahoma;"><code style="margin: 0px !important; padding: 0px !important; border-radius: 0px !important; width: auto !important; height: auto !important; line-height: 1.1em !important; overflow: visible !important; vertical-align: baseline !important; float: none !important; display: inline !important; direction: ltr !important; background-image: none !important;"></code></span></span>
+<div id="" class="dp-highlighter"><div class="bar"><div class="tools">Python代码 <embed wmode="transparent" src="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/clipboard_new.swf" flashvars="clipboard=tar%20%3D%20tarfile.open(filename%2C%20'r%3Agz')%0Afor%20tar_info%20in%20tar%3A%0A%20%20%20%20file%20%3D%20tar.extractfile(tar_info)%0A%20%20%20%20do_something_with(file)%0A" quality="high" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" height="15" width="14">&nbsp;<a href="javascript:void()" title="收藏这段代码" onclick="code_favorites_do_favorite(this);return false;"><img class="star" src="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/icon_star.png" alt="收藏代码"><img class="spinner" src="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/spinner.gif" style="display:none"></a></div></div><ol class="dp-py" start="1"><li><span><span>tar&nbsp;=&nbsp;tarfile.open(filename,&nbsp;</span><span class="string">'r:gz'</span><span>)&nbsp;&nbsp;</span></span></li><li><span><span class="keyword">for</span><span>&nbsp;tar_info&nbsp;</span><span class="keyword">in</span><span>&nbsp;tar:&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;file&nbsp;=&nbsp;tar.extractfile(tar_info)&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;do_something_with(file)&nbsp;&nbsp;</span></li></ol></div><pre title="python tarfile-打包解包" pre_index="2" source_url="http://essen.iteye.com/blog/1941489" codeable_type="Blog" codeable_id="1941489" style="display: none;" class="python" name="code">tar = tarfile.open(filename, 'r:gz')
+for tar_info in tar:
+    file = tar.extractfile(tar_info)
+    do_something_with(file)
+</pre>
+<span style="font-family: Tahoma;"><code style="margin: 0px !important; padding: 0px !important; border-radius: 0px !important; width: auto !important; height: auto !important; line-height: 1.1em !important; overflow: visible !important; vertical-align: baseline !important; float: none !important; display: inline !important; direction: ltr !important; background-image: none !important;">&nbsp;</code></span>
+</div>
+</div>
+<p>&nbsp;</p>
+</div>
+  </div>
+
+  
+
+  
+  
+  <iframe src="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/187.html" scrolling="no" frameborder="0" height="60" width="468"></iframe>
+  
+  <div id="bottoms" class="clearfix">
+    
+    <div id="share_weibo">分享到：
+      <a data-type="sina" href="javascript:;" title="分享到新浪微博"><img src="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/sina.jpg"></a>
+      <a data-type="qq" href="javascript:;" title="分享到腾讯微博"><img src="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/tec.jpg"></a>
+    </div>
+  </div>
+
+  <div class="blog_nav">
+    <div class="pre_next">
+      <a href="http://essen.iteye.com/blog/1947164" class="next" title="python 使用ConfigParser，ConfigObj读取配置">python 使用ConfigParser，ConfigObj读取 ...</a>
+      |
+      <a href="http://essen.iteye.com/blog/1920081" class="pre" title="Linux查看系统资源占用命令">Linux查看系统资源占用命令</a>
+    </div>
+  </div>
+  <div class="blog_bottom">
+    <ul>
+      <li>2013-09-12 17:20</li>
+      <li>浏览 1112</li>
+      <li><a href="#comments">评论(0)</a></li>
+      
+      
+            
+      <li class="last"><a href="http://www.iteye.com/wiki/blog/1941489" target="_blank" class="more">相关推荐</a></li>
+    </ul>
+  </div>
+
+  <div class="blog_comment">
+    <h5>评论</h5>
+    <a id="comments" name="comments"></a>
+    
+    
+    
+  </div>
+
+  <div class="blog_comment">
+    <h5>发表评论</h5>
+            <p style="text-align:center; margin-top:30px;margin-bottom:0px;"><a href="http://essen.iteye.com/login" style="background-color:white;"> <img src="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/login_icon.png" style="vertical-align:middle; margin-right: 10px;"></a><a href="http://essen.iteye.com/login">  您还没有登录,请您登录后再发表评论 </a></p>
+      </div>
+</div>
+
+
+<script type="text/javascript">
+  dp.SyntaxHighlighter.HighlightAll('code', true, true);
+
+  $$('#main .blog_content pre[name=code]').each(function(pre, index){ // blog content
+    var post_id = 1941489;
+    var location = window.location;
+    source_url = location.protocol + "//" + location.host + location.pathname + location.search;
+    pre.writeAttribute('codeable_id', post_id);
+    pre.writeAttribute('codeable_type', "Blog");
+    pre.writeAttribute('source_url', source_url);
+    pre.writeAttribute('pre_index', index);
+    pre.writeAttribute('title', 'python tarfile-打包解包');
+  });
+
+  fix_image_size($$('div.blog_content img'), 700);
+
+  function processComment() {
+    $$('#main .blog_comment > div').each(function(comment){// comment
+      var post_id = comment.id.substr(2);
+      $$("#"+comment.id+" pre[name=code]").each(function(pre, index){
+        var location = window.location;
+        source_url = location.protocol + "//" + location.host + location.pathname + location.search;
+        source_url += "#" + comment.id;
+        pre.writeAttribute('codeable_id', post_id);
+        pre.writeAttribute('codeable_type', "BlogComment");
+        pre.writeAttribute('source_url', source_url);
+        pre.writeAttribute('pre_index', index);
+        pre.writeAttribute('title', 'python tarfile-打包解包');
+      });
+    });
+  }
+
+  function quote_comment(id) {
+    new Ajax.Request('/editor/quote', {
+      parameters: {'id':id, 'type':'BlogComment'},
+      onSuccess:function(response){editor.bbcode_editor.textarea.insertAfterSelection(response.responseText);
+        Element.scrollTo(editor.bbcode_editor.textarea.element);}
+    });
+  }
+
+  code_favorites_init();
+  processComment();
+  new WeiboShare({share_buttons: $('share_weibo'), img_scope: $('blog_content')});
+</script>
+
+
+
+
+        </div>
+
+        <div id="local">
+          <div class="local_top"></div>
+          <div id="blog_owner">
+  <div id="blog_owner_logo"><a href="http://essen.iteye.com/"><img alt="essen的博客" class="logo" src="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/31a80957-a2ec-371f-8a41-dc4a9e1e4baf.jpeg" title="essen的博客: " width=""></a></div>
+  <div id="blog_owner_name">essen</div>
+</div>
+
+          <div id="blog_actions">
+            <ul>
+              <li>浏览: 44289 次</li>
+              <li>性别: <img alt="Icon_minigender_2" src="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/icon_minigender_2.gif" title="女"></li>
+              <li>来自: 北京</li>
+              <li><img src="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/offline.gif"></li>
+              
+            </ul>
+          </div>
+          <div id="user_visits" class="clearfix">
+            <h5>最近访客 <span style="font-weight:normal;font-size:12px;padding-left:30px;"><a href="http://essen.iteye.com/blog/user_visits">更多访客&gt;&gt;</a></span></h5>
+            
+              <div class="user_visit">
+                <div class="logo"><a href="http://dylinshi126.iteye.com/" target="_blank"><img alt="dylinshi126的博客" class="logo" src="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/user-logo-thumb.gif" title="dylinshi126的博客: " width="48px"></a></div>
+                <div class="left"><a href="http://dylinshi126.iteye.com/" target="_blank" title="dylinshi126">dylinshi126</a></div>
+              </div>
+            
+              <div class="user_visit">
+                <div class="logo"><a href="http://porterzhang.iteye.com/" target="_blank"><img alt="porterzhang的博客" class="logo" src="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/user-logo-thumb.gif" title="porterzhang的博客: " width="48px"></a></div>
+                <div class="left"><a href="http://porterzhang.iteye.com/" target="_blank" title="porterzhang">porterzhang</a></div>
+              </div>
+            
+              <div class="user_visit">
+                <div class="logo"><a href="http://sosop.iteye.com/" target="_blank"><img alt="hxl1988_0311的博客" class="logo" src="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/user-logo-thumb.gif" title="hxl1988_0311的博客: sosop's Blog" width="48px"></a></div>
+                <div class="left"><a href="http://sosop.iteye.com/" target="_blank" title="hxl1988_0311">hxl1988_0311</a></div>
+              </div>
+            
+              <div class="user_visit">
+                <div class="logo"><a href="http://xinghun7.iteye.com/" target="_blank"><img alt="疯狂的犀牛在慢跑的博客" class="logo" src="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/user-logo-thumb.gif" title="疯狂的犀牛在慢跑的博客: " width="48px"></a></div>
+                <div class="left"><a href="http://xinghun7.iteye.com/" target="_blank" title="疯狂的犀牛在慢跑">疯狂的犀牛在慢跑</a></div>
+              </div>
+            
+          </div>
+
+          
+
+                      <div id="blog_menu">
+              <h5>文章分类</h5>
+              <ul>
+                <li><a href="http://essen.iteye.com/">全部博客 (39)</a></li>
+                
+                  <li><a href="http://essen.iteye.com/category/207895">django book (2)</a></li>
+                
+                  <li><a href="http://essen.iteye.com/category/208173">javascript (0)</a></li>
+                
+                  <li><a href="http://essen.iteye.com/category/209569">python (12)</a></li>
+                
+                  <li><a href="http://essen.iteye.com/category/209664">fusioncharts (2)</a></li>
+                
+                  <li><a href="http://essen.iteye.com/category/209696">mongoDB (3)</a></li>
+                
+                  <li><a href="http://essen.iteye.com/category/210970">mysql (2)</a></li>
+                
+                  <li><a href="http://essen.iteye.com/category/212977">jquery (1)</a></li>
+                
+                  <li><a href="http://essen.iteye.com/category/214025">eclipse (4)</a></li>
+                
+                  <li><a href="http://essen.iteye.com/category/214764">nonTechnology (1)</a></li>
+                
+                  <li><a href="http://essen.iteye.com/category/233797">java (2)</a></li>
+                
+                  <li><a href="http://essen.iteye.com/category/235892">hbase (2)</a></li>
+                
+                  <li><a href="http://essen.iteye.com/category/244498">log (1)</a></li>
+                
+                  <li><a href="http://essen.iteye.com/category/244523">ftp (1)</a></li>
+                
+                  <li><a href="http://essen.iteye.com/category/253007">office (1)</a></li>
+                
+                  <li><a href="http://essen.iteye.com/category/255296">hive (1)</a></li>
+                
+                  <li><a href="http://essen.iteye.com/category/273753">hadoop (2)</a></li>
+                
+                  <li><a href="http://essen.iteye.com/category/284345">软件使用 (2)</a></li>
+                
+                  <li><a href="http://essen.iteye.com/category/287914">linux (1)</a></li>
+                
+                  <li><a href="http://essen.iteye.com/category/299595">pig (1)</a></li>
+                
+              </ul>
+            </div>
+            <div id="month_blogs">
+              <h5>社区版块</h5>
+              <ul>
+                <li><a href="http://essen.iteye.com/blog/news">我的资讯</a> (0)</li>
+                <li>
+                  <a href="http://essen.iteye.com/blog/post">我的论坛</a> (0)
+                </li>
+                <li><a href="http://essen.iteye.com/blog/answered_problems">我的问答</a> (0)</li>
+              </ul>
+            </div>
+            <div id="month_blogs">
+              <h5>存档分类</h5>
+              <ul>
+                
+                  <li><a href="http://essen.iteye.com/blog/monthblog/2013-12">2013-12</a> (2)</li>
+                
+                  <li><a href="http://essen.iteye.com/blog/monthblog/2013-09">2013-09</a> (2)</li>
+                
+                  <li><a href="http://essen.iteye.com/blog/monthblog/2013-08">2013-08</a> (1)</li>
+                
+                <li><a href="http://essen.iteye.com/blog/monthblog_more">更多存档...</a></li>
+              </ul>
+            </div>
+            
+            
+
+            <div id="guest_books">
+              <h5>最新评论</h5>
+              <ul>
+                
+                <li>
+                  <a href="http://heipark.iteye.com/" target="_blank" title="heipark">heipark</a>： 
+                  Good!<br>
+                  <a href="http://essen.iteye.com/blog/1745149#bc2293066">flask-sqlachemy note</a>
+                </li>
+                
+              </ul>
+            </div>
+
+            <div class="local_bottom"></div>
+          
+        </div>
+      </div>
+
+      <div id="footer" class="clearfix">
+        <div id="copyright">
+          <hr>
+          声明：ITeye文章版权属于作者，受法律保护。没有作者书面许可不得转载。若作者同意转载，必须以超链接形式标明文章原始出处和作者。<br>
+          © 2003-2014 ITeye.com.   All rights reserved.  [ 京ICP证110151号  京公网安备110105010620 ]
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+  document.write("<img src='http://stat.iteye.com/?url="+ encodeURIComponent(document.location.href) + "&referrer=" + encodeURIComponent(document.referrer) + "&user_id=' width='0' height='0' />");
+</script><img src="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/a.gif" height="0" width="0">
+
+<script src="python%20tarfile-%E6%89%93%E5%8C%85%E8%A7%A3%E5%8C%85%20-%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/tracking.js" type="text/javascript"></script>
+
+    
+    
+  
+
+</body></html>

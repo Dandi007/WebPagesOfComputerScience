@@ -1,0 +1,936 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+     
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    
+<head>    
+    <script type="text/javascript" src="http://csdnimg.cn/pubfooter/js/tracking.js" charset="utf-8"></script>  
+
+    <script type="text/javascript">
+        var protocol = window.location.protocol;
+        document.write('<script type="text/javascript" src="' + protocol + '//csdnimg.cn/pubfooter/js/repoAddr2.js?v=' + Math.random() + '"></' + 'script>');
+    </script>
+
+
+    <script id="allmobilize" charset="utf-8" src="http://a.yunshipei.com/46aae4d1e2371e4aa769798941cef698/allmobilize.min.js"></script>
+ <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+
+    <title>用python作个简单文件拷贝操作 - JeffreyNicole的专栏
+        - 博客频道 - CSDN.NET</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="本人一直用foobar2000作为音乐播放器，听歌时候把自己喜欢的歌都会特别添加到一个播放列表。自己用iphone，同步歌曲的时候需要用到itunes，而itunes却没有我用foobar2000的精选播放列表呢~本人只好定期把播放列表的mp3文件拷贝到一个目录，我用itunes只需同步这个目录即可（顺便吐槽下itunes不好使，在后期我都直接用其他同步工具代替之）播放列表是*.m" />
+    <script src="http://static.blog.csdn.net/scripts/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://static.blog.csdn.net/scripts/ad.js?v=1.1"></script>
+        <!--new top-->
+               <link rel="stylesheet" href="http://static.csdn.net/public/common/toolbar/css/index.css">        <!--new top-->
+
+    <link rel="Stylesheet" type="text/css" href="http://static.blog.csdn.net/skin/default/css/style.css?v=1.1" />
+    <link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="/JeffreyNicole/rss/list" />
+    <link rel="shortcut icon" href="http://csdnimg.cn/public/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="http://static.blog.csdn.net/scripts/SyntaxHighlighter/styles/default.css" />
+ 
+
+
+</head>
+<body>
+    
+   
+      <!--new top-->
+    <script id="toolbar-tpl-scriptId" fixed="true" prod="blog" skin="black" src="http://static.csdn.net/public/common/toolbar/js/html.js" type="text/javascript"></script>
+     <!--new top-->
+    <div id="container">
+        <div id="header">
+    <div class="header">
+        <div id="blog_title">
+            <h2>
+                <a href="http://blog.csdn.net/jeffreynicole">JeffreyNicole的专栏</a></h2>
+            <h3></h3>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div id="navigator">
+    <div class="navigator_bg">
+    </div>
+    <div class="navigator">
+        <ul>
+                <li id="btnContents"><a href="http://blog.csdn.net/jeffreynicole?viewmode=contents"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_mulu'])">
+                    <img src="http://static.blog.csdn.net/images/ico_list.gif">目录视图</span></a></li>
+                <li id="btnView"><a href="http://blog.csdn.net/jeffreynicole?viewmode=list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_zhaiyao'])">
+                    <img src="http://static.blog.csdn.net/images/ico_summary.gif">摘要视图</span></a></li>
+                <li id="btnRss"><a href="http://blog.csdn.net/jeffreynicole/rss/list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_RSS'])">
+                    <img src="http://static.blog.csdn.net/images/ico_rss.gif">订阅</span></a></li>                
+
+            </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var username = "JeffreyNicole";
+    var _blogger = username;
+    var blog_address = "http://blog.csdn.net/jeffreynicole";
+    var static_host = "http://static.blog.csdn.net";
+    var currentUserName = "";  
+</script>
+
+        <div id="body">
+            <div id="main">
+                <div class="main">
+                        <div class="ad_class">
+<div class="notice tracking-ad" data-mod='popu_3' > 
+
+<a href="http://bbs.csdn.net/topics/390812950?page=5#post-398523062"target="_blank">
+<font color=blue>博客专家福利
+</font></a>
+&nbsp;&nbsp;&nbsp;
+
+<a href="http://blog.csdn.net/csdnproduct/article/details/41806091">
+<font color=red>C币兑换平台上线</font></a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="http://blog.csdn.net/blogdevteam/article/details/41079173">
+<font color=blue>10月推荐文章汇总
+</font></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="http://blog.csdn.net/csdnproduct/article/details/41649453">
+<font color=red>关于11月28日CSDN遭受网络攻击的情况说明
+</font></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+</div>                        </div>
+                        
+
+  
+<link href="http://static.blog.csdn.net/css/comment1.css" type="text/css" rel="stylesheet" />
+<link href="http://static.blog.csdn.net/css/style1.css" type="text/css" rel="stylesheet" />
+<script language='JavaScript' type='text/javascript' src='http://download.csdn.net/js/jquery.cookie.js'></script>
+<script type="text/javascript" src="http://csdnimg.cn/rabbit/search-service/main.js"></script>
+  <script type="text/ecmascript">
+      window.quickReplyflag = true;
+    </script>
+<div id="article_details" class="details">
+    <div class="article_title">   
+         <span class="ico ico_type_Original"></span>
+
+
+    <h1>
+        <span class="link_title"><a href="/jeffreynicole/article/details/8271097">
+        用python作个简单文件拷贝操作
+        </a></span>
+    </h1>
+</div>
+
+    <div class="article_manage">
+        <span class="link_categories">
+        分类：
+            <a href="/JeffreyNicole/article/category/1299358" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_fenlei']);">Python</a> 
+        </span>
+    <span class="link_postdate">2012-12-07 22:06</span>
+    <span class="link_view" title="阅读次数">3075人阅读</span>
+    <span class="link_comments" title="评论次数"><a href="#comments" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_pinglun'])">评论</a>(0)</span>
+    <span class="link_collect"><a href="javascript:void(0);" onclick="javascript:_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shoucang']);collectArticle('用python作个简单文件拷贝操作','8271097');return false;" title="收藏">收藏</a></span>
+    <span class="link_report"><a href="#report"  onclick="javascript:_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_jubao']);report(8271097,2);return false;" title="举报">举报</a></span>
+    
+</div>
+<div class="tag2box"><a href='http://www.csdn.net/tag/linux' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">linux</a><a href='http://www.csdn.net/tag/Linux' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">Linux</a><a href='http://www.csdn.net/tag/LINUX' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">LINUX</a><a href='http://www.csdn.net/tag/python' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">python</a><a href='http://www.csdn.net/tag/Python' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">Python</a><a href='http://www.csdn.net/tag/%e6%96%87%e4%bb%b6%e6%93%8d%e4%bd%9c' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">文件操作</a></div>
+
+  
+    
+<div id="article_content" class="article_content">
+
+本人一直用foobar2000作为音乐播放器，听歌时候把自己喜欢的歌都会特别添加到一个播放列表。<br>
+自己用iphone，同步歌曲的时候需要用到itunes，而itunes却没有我用foobar2000的精选播放列表呢~<br>
+本人只好定期把播放列表的mp3文件拷贝到一个目录，我用itunes只需同步这个目录即可<br>
+（顺便吐槽下itunes不好使，在后期我都直接用其他同步工具代替之）<br>
+播放列表是*.m3u&#26684;式的文本，用记事本打开可以看到mp3的绝对路径。<br>
+<p>直接贴代码吧，写得比较仓促，各位将就参考下即可：</p>
+<p></p>
+<pre name="code" class="python">#coding=gbk  
+import sys, shutil, os, string
+mp3List = &quot;F:\\My Documents\\mp3list\\默认精选.m3u&quot;
+destDir = &quot;G:\\POP\\默认精选&quot;
+
+def cpFile(srcPath):
+    fileName = os.path.basename(srcPath)
+    destPath = destDir + os.path.sep + fileName
+    if os.path.exists(srcPath) and not os.path.exists(destPath):
+        print 'cp %s %s' % (srcPath,destPath)
+        shutil.copy(srcPath,destPath)
+
+if __name__ == '__main__':
+    f = file(mp3List, 'r')
+    lists = f.readlines()
+    for i in lists:
+        cpFile(string.strip(i))
+        
+    f.close()
+</pre>
+<p></p>
+<p><br>
+</p>
+<p>附录：</p>
+<p></p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+<strong>python中对文件、文件夹（文件操作函数）的操作需要涉及到os模块和shutil模块。</strong></p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+得到当前工作目录，即当前Python脚本工作的目录路径:&nbsp;<strong>os.getcwd()</strong></p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+返回指定目录下的所有文件和目录名:<strong>os.listdir()</strong></p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+函数用来删除一个文件:<strong>os.remove()</strong></p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+删除多个目录：<strong>os.removedirs（r“c：\python”）</strong></p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+检验给出的路径是否是一个文件：<strong>os.path.isfile()</strong></p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+检验给出的路径是否是一个目录：<strong>os.path.isdir()</strong></p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+判断是否是绝对路径：<strong>os.path.isabs()</strong></p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+检验给出的路径是否真地存:<strong>os.path.exists()</strong></p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+返回一个路径的目录名和文件名:<strong>os.path.split()&nbsp;&nbsp;</strong>&nbsp;&nbsp; eg os.path.split('/home/swaroop/byte/code/poem.txt') 结果：('/home/swaroop/byte/code', 'poem.txt')&nbsp;<br>
+</p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+分离扩展名：<strong>os.path.splitext()</strong></p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+获取路径名：<strong>os.path.dirname()</strong></p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+获取文件名：<strong>os.path.basename()</strong></p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+运行shell命令:&nbsp;<strong>os.system()</strong></p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+读取和设置环境变量:<strong>os.getenv() 与os.putenv()</strong></p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+给出当前平台使用的行终止符:<strong>os.linesep&nbsp;&nbsp;&nbsp;&nbsp;</strong>Windows使用'\r\n'，Linux使用'\n'而Mac使用'\r'</p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+指示你正在使用的平台：<strong>os.name&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 对于Windows，它是'nt'，而对于Linux/Unix用户，它是'posix'</p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+重命名：<strong>os.rename（old， new）</strong></p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+创建多级目录：<strong>os.makedirs（r“c：\python\test”）</strong></p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+创建单个目录：<strong>os.mkdir（“test”）</strong></p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+获取文件属性：<strong>os.stat（file）</strong></p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+修改文件权限与时间戳：<strong>os.chmod（file）</strong></p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+终止当前进程：<strong>os.exit（）</strong></p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+获取文件大小：<strong>os.path.getsize（filename）</strong></p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+<br>
+<strong>文件操作：<br>
+os.mknod(&quot;test.txt&quot;)&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 创建空文件<br>
+<strong>fp = open(&quot;test.txt&quot;,w)&nbsp;&nbsp;</strong>&nbsp;&nbsp; 直接打开一个文件，如果文件不存在则创建文件</p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+关于open 模式：</p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+w&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以写方式打开，<br>
+a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以追加模式打开 (从 EOF 开始, 必要时创建新文件)<br>
+r&#43;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以读写模式打开<br>
+w&#43;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以读写模式打开 (参见 w )<br>
+a&#43;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以读写模式打开 (参见 a )<br>
+rb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以二进制读模式打开<br>
+wb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以二进制写模式打开 (参见 w )<br>
+ab&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以二进制追加模式打开 (参见 a )<br>
+rb&#43;&nbsp;&nbsp;&nbsp;&nbsp;以二进制读写模式打开 (参见 r&#43; )<br>
+wb&#43;&nbsp;&nbsp;&nbsp;&nbsp;以二进制读写模式打开 (参见 w&#43; )<br>
+ab&#43;&nbsp;&nbsp;&nbsp;&nbsp;以二进制读写模式打开 (参见 a&#43; )</p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+&nbsp;</p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+<strong>fp.read([size])&nbsp;&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#size为读取的长度，以byte为单位</p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+<strong>fp.readline([size])&nbsp;&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #读一行，如果定义了size，有可能返回的只是一行的一部分</p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+<strong>fp.readlines([size])&nbsp;&nbsp;&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #把文件每一行作为一个list的一个成员，并返回这个list。其实它的内部是通过循环调用readline()来实现的。如果提供size参数，size是表示读取内容的总长，也就是说可能只读到文件的一部分。</p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+<strong>fp.write(str)&nbsp;&nbsp;<em>&nbsp;</em></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #把str写到文件中，write()并不会在str后加上一个换行符</p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+<strong>fp.writelines(seq)&nbsp;&nbsp;&nbsp;&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #把seq的内容全部写到文件中(多行一次性写入)。这个函数也只是忠实地写入，不会在每行后面加上任何东西。</p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+<strong>fp.close()&nbsp;&nbsp;&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #关闭文件。python会在一个文件不用后自动关闭文件，不过这一功能没有保证，最好还是养成自己关闭的习惯。&nbsp; 如果一个文件在关闭后还对其进行操作会产生ValueError</p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+<strong>fp.flush()&nbsp;&nbsp;&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; #把缓冲区的内容写入硬盘</p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+<strong>fp.fileno()&nbsp;&nbsp;&nbsp;&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #返回一个长整型的”文件标签“</p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+<strong>fp.isatty()&nbsp;&nbsp;&nbsp;&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #文件是否是一个终端设备文件（unix系统中的）</p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+<strong>fp.tell()</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; #返回文件操作标记的当前位置，以文件的开头为原点</p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+<strong>fp.next() &nbsp; &nbsp;</strong>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #返回下一行，并将文件操作标记位移到下一行。把一个file用于for … in file这样的语句时，就是调用next()函数来实现遍历的。</p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+<strong>fp.seek(offset[,whence])&nbsp;&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #将文件打操作标记移到offset的位置。这个offset一般是相对于文件的开头来计算的，一般为正数。但如果提供了whence参数就不一定了，whence可以为0表示从头开始计算，1表示以当前位置为原点计算。2表示以文件末尾为原点进行计算。需要注意，如果文件以a或a&#43;的模式打开，每次进行写操作时，文件操作标记会自动返回到文件末尾。</p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+<strong>fp.truncate([size])&nbsp;&nbsp;&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #把文件裁成规定的大小，默认的是裁到当前文件操作标记的位置。如果size比文件的大小还要大，依据系统的不同可能是不改变文件，也可能是用0把文件补到相应的大小，也可能是以一些随机的内容加上去。</p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+&nbsp;</p>
+<p style="margin:10px auto; font-size:14px; color:rgb(51,51,51); font-family:Verdana,Arial,sans-serif,'Lucida Grande'; background-color:rgb(214,211,214)">
+<strong>目录操作：<br>
+os.mkdir(&quot;file&quot;)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 创建目录<br>
+复制文件：<br>
+<strong>shutil.copyfile(&quot;oldfile&quot;,&quot;newfile&quot;)&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oldfile和newfile都只能是文件<br>
+<strong>shutil.copy(&quot;oldfile&quot;,&quot;newfile&quot;)&nbsp;&nbsp;&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oldfile只能是文件夹，newfile可以是文件，也可以是目标目录<br>
+复制文件夹：<br>
+<strong>shutil.copytree(&quot;olddir&quot;,&quot;newdir&quot;)&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; olddir和newdir都只能是目录，且newdir必须不存在<br>
+重命名文件（目录）<br>
+<strong>os.rename(&quot;oldname&quot;,&quot;newname&quot;)&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 文件或目录都是使用这条命令<br>
+移动文件（目录）<br>
+<strong>shutil.move(&quot;oldpos&quot;,&quot;newpos&quot;) &nbsp;&nbsp;</strong><br>
+删除文件<br>
+<strong>os.remove(&quot;file&quot;)</strong><br>
+删除目录<br>
+<strong>os.rmdir(&quot;dir&quot;)</strong>只能删除空目录<br>
+<strong>shutil.rmtree(&quot;dir&quot;) &nbsp;</strong>&nbsp; 空目录、有内容的目录都可以删<br>
+转换目录<br>
+<strong>os.chdir(&quot;path&quot;) &nbsp;&nbsp;</strong>换路径</p>
+<br>
+<br>
+<br>
+
+</div>
+
+
+
+
+<!-- Baidu Button BEGIN -->
+
+<div class="bdsharebuttonbox" style="float: right;">
+<a href="#" class="bds_more" data-cmd="more" style="background-position:0 0 !important; background-image: url(http://bdimg.share.baidu.com/static/api/img/share/icons_0_16.png?v=d754dcc0.png) !important"></a>
+<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"  style="background-position:0 -52px !important"></a>
+<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"style="background-position:0 -104px !important"></a>
+<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"style="background-position:0 -260px !important"></a>
+<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"style="background-position:0 -208px !important"></a>
+<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"style="background-position:0 -1612px !important" ></a>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+<!-- Baidu Button END -->
+
+<!--192.168.100.35-->
+<ul class="article_next_prev">
+            <li class="prev_article"><span  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian']);location.href='/jeffreynicole/article/details/8271030';">上一篇</span><a href="/jeffreynicole/article/details/8271030" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian'])">hello world ！</a></li>
+            <li class="next_article"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian']);location.href='/jeffreynicole/article/details/8280358';">下一篇</span><a href="/jeffreynicole/article/details/8280358" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian'])">Centos 5.x 升级 python2.7，安装setuptools、mysqldb 完整记录</a></li>
+</ul>
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1536434" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+
+</div>
+      <dl class="blog-associat-tag">
+        <dt>主题推荐</dt>
+        <dd>
+                <a href="http://www.csdn.net/tag/python" target="_blank" class="blog-tage-red" >python</a> 
+                <a href="http://www.csdn.net/tag/二进制" target="_blank" class="blog-tage-red" >二进制</a> 
+                <a href="http://www.csdn.net/tag/windows" target="_blank" class="blog-tage-red" >windows</a> 
+                <a href="http://www.csdn.net/tag/工作" target="_blank" class="blog-tage-red" >工作</a> 
+                <a href="http://www.csdn.net/tag/string" target="_blank" class="blog-tage-red" >string</a> 
+        </dd>
+    </dl> 
+
+
+<dl class="blog-ass-articl tracking-ad"  data-mod="popu_36" id="res-relatived"> 
+     <dt><span>猜你在找</span></dt>    
+</dl>
+
+<script type="text/javascript">
+    var searchtitletags = '用python作个简单文件拷贝操作' + ',' + 'python,二进制,windows,工作,string';
+    searchService({
+        index: 'blog',
+        query: searchtitletags,
+        from: 10,
+        size: 10,
+        appendTo: '#res-relatived',
+        url: 'recommend',
+        his: 2,
+        client: "blog_cf_enhance",
+        tmpl: '<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="#{ url }" title="#{ title }" strategy="#{ strategy }">#{ title }</a></dd>'
+    });
+
+ </script>   
+
+
+    <div id="ad_cen">
+   
+          <script type="text/javascript">
+              new Ad(4, 'ad_cen');
+          </script>
+    </div>
+<div class="comment_class">
+    <div id="comment_title" class="panel_head">
+        <span class="see_comment">查看评论</span><a name="comments"></a></div>
+    <div id="comment_list">
+    </div>
+    <div id="comment_bar">
+    </div>
+    <div id="comment_form">
+    </div>
+
+    <div class="announce">
+        * 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场<a name="reply"></a><a name="quote"></a></div>
+</div>
+
+<script type="text/javascript">
+    var fileName = '8271097';
+    var commentscount = 0;
+    var islock = false
+</script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/comment.js"></script>
+    <div id="ad_bot">
+    </div>
+    <script type="text/javascript">
+    new Ad(5, 'ad_bot');
+    </script>
+<div id="report_dialog">
+</div>
+
+<div id="d-top"  style="bottom:60px;">
+        <a id="quick-reply" class="btn btn-top q-reply" title="快速回复" style="display:none;">
+            <img src="http://static.blog.csdn.net/images/blog-icon-reply.png" alt="快速回复">
+        </a>    
+
+    <a id="d-top-a" class="btn btn-top backtop"  style="display: none;" title="返回顶部" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_huidaodingbu'])" style="">         
+         <img src="http://static.blog.csdn.net/images/top.png" alt="TOP">
+    </a>
+</div>
+<script type="text/javascript">
+    $(function ()
+    {
+        $("#ad_frm_0").height("90px");
+        
+        setTimeout(function(){
+            $("#ad_frm_2").height("200px");
+        },1000);
+        
+        /*
+        if($("#comment_content").length>0)
+        {
+            $("#quick-reply").show();
+
+            $("#quick-reply").click(function(){
+                setEditorFocus();
+            });
+        }       
+     
+        var d_top = $('#d-top-a');
+
+        document.onscroll = function ()
+        {
+            var scrTop = (document.body.scrollTop || document.documentElement.scrollTop);
+            if (scrTop > 500)
+            {
+                d_top.show();
+            } else
+            {
+                d_top.hide();
+            }
+        }
+        $('#d-top-a').click(function ()
+        {
+            scrollTo(0, 0);
+            this.blur();
+            return false;
+        });
+        */
+    });
+  
+</script>
+<style type="text/css">
+    .tag_list
+    {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #D7CBC1;
+        color: #000000;
+        font-size: 12px;
+        line-height: 20px;
+        list-style: none outside none;
+        margin: 10px 2% 0 1%;
+        padding: 1px;
+    }
+    .tag_list h5
+    {
+        background: none repeat scroll 0 0 #E0DBD3;
+        color: #47381C;
+        font-size: 12px;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 5px;
+        margin: 0;
+    }
+    .tag_list h5 a
+    {
+        color: #47381C;
+    }
+    .classify
+    {
+        margin: 10px 0;
+        padding: 4px 12px 8px;
+    }
+    .classify a
+    {
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+</style>
+<div class="tag_list">
+    <h5>
+        <a href="http://www.csdn.net/tag/" target="_blank">核心技术类目</a></h5>
+    <div class="classify">
+<a title="全部主题" href="http://www.csdn.net/tag" target="_blank" onclick="LogClickCount(this,336);">全部主题</a>
+<a title="Hadoop" href="http://g.csdn.net/5272865" target="_blank" onclick="LogClickCount(this,336);">Hadoop</a>
+<a title="AWS" href="http://g.csdn.net/5272866" target="_blank" onclick="LogClickCount(this,336);">AWS</a>
+<a title="移动游戏" href="http://g.csdn.net/5272870" target="_blank" onclick="LogClickCount(this,336);">移动游戏</a>
+<a title="Java" href="http://g.csdn.net/5272871" target="_blank" onclick="LogClickCount(this,336);">Java</a>
+<a title="Android" href="http://g.csdn.net/5272872" target="_blank" onclick="LogClickCount(this,336);">Android</a>
+<a title="iOS" href="http://g.csdn.net/5272873" target="_blank" onclick="LogClickCount(this,336);">iOS</a>
+<a title="Swift" href="http://g.csdn.net/5272868" target="_blank" onclick="LogClickCount(this,336);">Swift</a>
+<a title="智能硬件" href="http://g.csdn.net/5272869" target="_blank" onclick="LogClickCount(this,336);">智能硬件</a>
+<a title="Docker" href="http://g.csdn.net/5272867" target="_blank" onclick="LogClickCount(this,336);">Docker</a>
+<a title="OpenStack" href="http://g.csdn.net/5272925" target="_blank" onclick="LogClickCount(this,336);">OpenStack</a>
+<a title="VPN" href="http://www.csdn.net/tag/vpn" target="_blank" onclick="LogClickCount(this,336);">VPN</a>
+<a title="Spark" href="http://g.csdn.net/5272924" target="_blank" onclick="LogClickCount(this,336);">Spark</a>
+<a title="ERP" href="http://www.csdn.net/tag/erp" target="_blank" onclick="LogClickCount(this,336);">ERP</a>
+<a title="IE10" href="http://www.csdn.net/tag/ie10" target="_blank" onclick="LogClickCount(this,336);">IE10</a>
+<a title="Eclipse" href="http://www.csdn.net/tag/eclipse" target="_blank" onclick="LogClickCount(this,336);">Eclipse</a>
+<a title="CRM" href="http://www.csdn.net/tag/crm" target="_blank" onclick="LogClickCount(this,336);">CRM</a>
+<a title="JavaScript" href="http://www.csdn.net/tag/javascript" target="_blank" onclick="LogClickCount(this,336);">JavaScript</a>
+<a title="数据库" href="http://www.csdn.net/tag/数据库" target="_blank" onclick="LogClickCount(this,336);">数据库</a>
+<a title="Ubuntu" href="http://www.csdn.net/tag/ubuntu" target="_blank" onclick="LogClickCount(this,336);">Ubuntu</a>
+<a title="NFC" href="http://www.csdn.net/tag/nfc" target="_blank" onclick="LogClickCount(this,336);">NFC</a>
+<a title="WAP" href="http://www.csdn.net/tag/wap" target="_blank" onclick="LogClickCount(this,336);">WAP</a>
+<a title="jQuery" href="http://www.csdn.net/tag/jquery" target="_blank" onclick="LogClickCount(this,336);">jQuery</a>
+<a title="BI" href="http://www.csdn.net/tag/bi" target="_blank" onclick="LogClickCount(this,336);">BI</a>
+<a title="HTML5" href="http://www.csdn.net/tag/html5" target="_blank" onclick="LogClickCount(this,336);">HTML5</a>
+<a title="Spring" href="http://www.csdn.net/tag/spring" target="_blank" onclick="LogClickCount(this,336);">Spring</a>
+<a title="Apache" href="http://www.csdn.net/tag/apache" target="_blank" onclick="LogClickCount(this,336);">Apache</a>
+<a title=".NET" href="http://www.csdn.net/tag/.net" target="_blank" onclick="LogClickCount(this,336);">.NET</a>
+<a title="API" href="http://www.csdn.net/tag/api" target="_blank" onclick="LogClickCount(this,336);">API</a>
+<a title="HTML" href="http://www.csdn.net/tag/html" target="_blank" onclick="LogClickCount(this,336);">HTML</a>
+<a title="SDK" href="http://www.csdn.net/tag/sdk" target="_blank" onclick="LogClickCount(this,336);">SDK</a>
+<a title="IIS" href="http://www.csdn.net/tag/iis" target="_blank" onclick="LogClickCount(this,336);">IIS</a>
+<a title="Fedora" href="http://www.csdn.net/tag/fedora" target="_blank" onclick="LogClickCount(this,336);">Fedora</a>
+<a title="XML" href="http://www.csdn.net/tag/xml" target="_blank" onclick="LogClickCount(this,336);">XML</a>
+<a title="LBS" href="http://www.csdn.net/tag/lbs" target="_blank" onclick="LogClickCount(this,336);">LBS</a>
+<a title="Unity" href="http://www.csdn.net/tag/unity" target="_blank" onclick="LogClickCount(this,336);">Unity</a>
+<a title="Splashtop" href="http://www.csdn.net/tag/splashtop" target="_blank" onclick="LogClickCount(this,336);">Splashtop</a>
+<a title="UML" href="http://www.csdn.net/tag/uml" target="_blank" onclick="LogClickCount(this,336);">UML</a>
+<a title="components" href="http://www.csdn.net/tag/components" target="_blank" onclick="LogClickCount(this,336);">components</a>
+<a title="Windows Mobile" href="http://www.csdn.net/tag/windowsmobile" target="_blank" onclick="LogClickCount(this,336);">Windows Mobile</a>
+<a title="Rails" href="http://www.csdn.net/tag/rails" target="_blank" onclick="LogClickCount(this,336);">Rails</a>
+<a title="QEMU" href="http://www.csdn.net/tag/qemu" target="_blank" onclick="LogClickCount(this,336);">QEMU</a>
+<a title="KDE" href="http://www.csdn.net/tag/kde" target="_blank" onclick="LogClickCount(this,336);">KDE</a>
+<a title="Cassandra" href="http://www.csdn.net/tag/cassandra" target="_blank" onclick="LogClickCount(this,336);">Cassandra</a>
+<a title="CloudStack" href="http://www.csdn.net/tag/cloudstack" target="_blank" onclick="LogClickCount(this,336);">CloudStack</a>
+<a title="FTC" href="http://www.csdn.net/tag/ftc" target="_blank" onclick="LogClickCount(this,336);">FTC</a>
+<a title="coremail" href="http://www.csdn.net/tag/coremail" target="_blank" onclick="LogClickCount(this,336);">coremail</a>
+<a title="OPhone " href="http://www.csdn.net/tag/ophone " target="_blank" onclick="LogClickCount(this,336);">OPhone </a>
+<a title="CouchBase" href="http://www.csdn.net/tag/couchbase" target="_blank" onclick="LogClickCount(this,336);">CouchBase</a>
+<a title="云计算" href="http://www.csdn.net/tag/云计算" target="_blank" onclick="LogClickCount(this,336);">云计算</a>
+<a title="iOS6" href="http://www.csdn.net/tag/iOS6" target="_blank" onclick="LogClickCount(this,336);">iOS6</a>
+<a title="Rackspace " href="http://www.csdn.net/tag/rackspace " target="_blank" onclick="LogClickCount(this,336);">Rackspace </a>
+<a title="Web App" href="http://www.csdn.net/tag/webapp" target="_blank" onclick="LogClickCount(this,336);">Web App</a>
+<a title="SpringSide" href="http://www.csdn.net/tag/springside" target="_blank" onclick="LogClickCount(this,336);">SpringSide</a>
+<a title="Maemo" href="http://www.csdn.net/tag/maemo" target="_blank" onclick="LogClickCount(this,336);">Maemo</a>
+<a title="Compuware" href="http://www.csdn.net/tag/compuware" target="_blank" onclick="LogClickCount(this,336);">Compuware</a>
+<a title="大数据" href="http://www.csdn.net/tag/大数据" target="_blank" onclick="LogClickCount(this,336);">大数据</a>
+<a title="aptech" href="http://www.csdn.net/tag/aptech" target="_blank" onclick="LogClickCount(this,336);">aptech</a>
+<a title="Perl" href="http://www.csdn.net/tag/perl" target="_blank" onclick="LogClickCount(this,336);">Perl</a>
+<a title="Tornado" href="http://www.csdn.net/tag/tornado" target="_blank" onclick="LogClickCount(this,336);">Tornado</a>
+<a title="Ruby" href="http://www.csdn.net/tag/ruby" target="_blank" onclick="LogClickCount(this,336);">Ruby</a>
+<a title="Hibernate" href="http://www.csdn.net/hibernate" target="_blank" onclick="LogClickCount(this,336);">Hibernate</a>
+<a title="ThinkPHP" href="http://www.csdn.net/tag/thinkphp" target="_blank" onclick="LogClickCount(this,336);">ThinkPHP</a>
+<a title="HBase" href="http://www.csdn.net/tag/hbase" target="_blank" onclick="LogClickCount(this,336);">HBase</a>
+<a title="Pure" href="http://www.csdn.net/tag/pure" target="_blank" onclick="LogClickCount(this,336);">Pure</a>
+<a title="Solr" href="http://www.csdn.net/tag/solr" target="_blank" onclick="LogClickCount(this,336);">Solr</a>
+<a title="Angular" href="http://www.csdn.net/tag/angular" target="_blank" onclick="LogClickCount(this,336);">Angular</a>
+<a title="Cloud Foundry" href="http://www.csdn.net/tag/cloudfoundry" target="_blank" onclick="LogClickCount(this,336);">Cloud Foundry</a>
+<a title="Redis" href="http://www.csdn.net/tag/redis" target="_blank" onclick="LogClickCount(this,336);">Redis</a>
+<a title="Scala" href="http://www.csdn.net/tag/scala" target="_blank" onclick="LogClickCount(this,336);">Scala</a>
+<a title="Django" href="http://www.csdn.net/tag/django" target="_blank" onclick="LogClickCount(this,336);">Django</a>
+<a title="Bootstrap" href="http://www.csdn.net/tag/bootstrap" target="_blank" onclick="LogClickCount(this,336);">Bootstrap</a>
+    </div>
+</div>
+
+<div id="pop_win" style="display:none ;position: absolute; z-index: 10000; border: 1px solid rgb(220, 220, 220); top: 222.5px; left: 630px; opacity: 1; background: none 0px 0px repeat scroll rgb(255, 255, 255);">
+    
+</div>
+<div id="popup_mask"></div>
+<style>
+    #popup_mask
+    {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        z-index: 9999;
+        left: 0px;
+        top: 0px;
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+        display: none;
+    }
+
+</style>
+
+
+
+
+<script type="text/javascript">
+    $(function(){
+        setTimeout(function(){
+            $(".comment_body:contains('回复')").each(function(index,item){
+                var u=$(this).text().split('：')[0].toString().replace("回复","")
+                var thisComment=$(this);
+                if(u)
+                {
+                    $.getJSON("https://passport.csdn.net/get/nick?callback=?", {users: u}, function(a) {
+                        if(a!=null&&a.data!=null&&a.data.length>0)
+                        {
+                            nick=a.data[0].n; 
+                            if(u!=nick)
+                            {
+                                thisComment.text(thisComment.text().replace(u,nick));  
+                            }
+                        }       
+                    });  
+                }
+            });
+        },200);  
+        
+        setTimeout(function(){
+            $("a img[src='http://js.tongji.linezing.com/stats.gif']").parent().css({"position":"absolute","left":"50%"});
+        },300);
+    });
+
+    function loginbox(){
+        var $logpop=$("#pop_win");
+        $logpop.html('<iframe src="https://passport.csdn.net/account/loginbox?service=http://static.blog.csdn.net/callback.htm" frameborder="0" height="600" width="400" scrolling="no"></iframe>');
+
+        $('#popup_mask').css({
+            opacity: 0.5,
+            width: $( document ).width() + 'px',
+            height:  $( document ).height() + 'px'
+        });
+        $('#popup_mask').css("display","block");
+ 
+        $logpop.css( {
+            top: ($( window ).height() - $logpop.height())/ 2  + $( window 
+       ).scrollTop() + 'px',
+            left:($( window ).width() - $logpop.width())/ 2
+        } );
+ 
+        setTimeout( function () {
+            $logpop.show();
+            $logpop.css( {
+                opacity: 1
+            } );
+        }, 200 );
+ 
+        $('#popup_mask').unbind("click");
+        $('#popup_mask').bind("click", function(){
+            $('#popup_mask').hide();
+            var $clopop = $("#pop_win");
+            $("#common_ask_div_sc").css("display","none");
+            $clopop.css( {
+                opacity: 0
+            } );
+            setTimeout( function () {
+                $clopop.hide();
+            }, 350 );
+            return false;
+        });
+    }    
+
+</script>
+                        <div class="clear">
+                        </div>
+                    </div>                   
+                
+            </div>
+            <div id="side">
+    <div class="side">
+<div id="panel_Profile" class="panel">
+<ul class="panel_head"><span>个人资料</span></ul>
+<ul class="panel_body profile">
+<div id="blog_userface">
+    <a href="http://my.csdn.net/JeffreyNicole" target="_blank">
+    <img src="http://avatar.csdn.net/E/4/9/1_jeffreynicole.jpg" title="访问我的空间" style="max-width:90%"/>
+    </a>
+    <br />
+    <span><a href="http://my.csdn.net/JeffreyNicole" class="user_name" target="_blank">JeffreyNicole</a></span>
+</div>
+<div class="interact">
+<a href="javascript:void(0);" class="attent" id="span_add_follow" title="[加关注]" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_guanzhu'])"></a>
+
+ <a href="javascript:void(0);" class="letter"  title="[发私信]" onclick="window.open('http://msg.csdn.net/letters/model?receiver=JeffreyNicole','_blank','height=350,width=700');_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_sixin'])"></a>  
+</div>
+<div id="blog_medal">
+                <div id="bms_box">
+               </div>
+</div>
+<ul id="blog_rank">
+    <li>访问：<span>15702次</span></li>
+    <li>积分：<span>264</span> </li>    
+    <li >等级： <span style="position:relative;display:inline-block;z-index:1" >
+            <img src="http://csdnimg.cn/jifen/images/xunzhang/jianzhang/blog2.png" alt="" style="vertical-align: middle;" id="leveImg">
+            <div id="smallTittle" style=" position: absolute;  left: -24px;  top: 25px;  text-align: center;  width: 101px;  height: 32px;  background-color: #fff;  line-height: 32px;  border: 2px #DDDDDD solid;  box-shadow: 0px 2px 2px rgba (0,0,0,0.1);  display: none;   z-index: 999;">
+            <div style="left: 42%;  top: -8px;  position: absolute;  width: 0;  height: 0;  border-left: 10px solid transparent;  border-right: 10px solid transparent;  border-bottom: 8px solid #EAEAEA;"></div>
+            积分：264 </div>
+        </span>  </li>
+    <li>排名：<span>千里之外</span></li>
+</ul>
+<ul id="blog_statistics">
+    <li>原创：<span>11篇</span></li>
+    <li>转载：<span>1篇</span></li>
+    <li>译文：<span>0篇</span></li>
+    <li>评论：<span>2条</span></li>
+</ul>
+</ul>
+</div>
+
+
+<div class="panel" id="panel_Search">
+    <ul class="panel_head"><span>文章搜索</span></ul>
+    <ul class="panel_body">
+        <form id="frmSearch" action="http://so.csdn.net/search" class="form_search" target="_blank">
+        <span><input id="inputSearch" type="text" class="blogsearch" title="请输入关键字" /></span>
+        <input id="btnSubmit" type="button" value="搜索" title="search in blog" />
+        <input type="hidden" name="q" id="inputQ" />
+        <input type="hidden" name="t" value="blog" />
+        <a id="btnSearchBlog" target="_blank"></a>
+        </form>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {           
+            search();
+        });
+
+        $("#frmSearch").submit(function () {
+            search();
+            return false;
+        });
+
+        function search()
+        {
+            var url = "http://so.csdn.net/so/search/s.do?q=" + encodeURIComponent($("#inputSearch").val()) + "&u=" + username + "&t=blog";
+            window.location.href = url;
+        }   
+    });
+</script>
+<div id="panel_Category" class="panel">
+<ul class="panel_head"><span>文章分类</span></ul>
+<ul class="panel_body">
+             <li>
+                <a href="http://blog.csdn.net/jeffreynicole/article/category/1299355" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Linux</a><span>(2)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/jeffreynicole/article/category/1299356" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">MySQL</a><span>(3)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/jeffreynicole/article/category/1299357" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Nginx</a><span>(0)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/jeffreynicole/article/category/1299358" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Python</a><span>(3)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/jeffreynicole/article/category/1299359" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Nagios</a><span>(0)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/jeffreynicole/article/category/1299360" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Java</a><span>(0)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/jeffreynicole/article/category/1299361" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Rsync</a><span>(0)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/jeffreynicole/article/category/1299362" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Tomcat</a><span>(0)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/jeffreynicole/article/category/1299363" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Shell</a><span>(0)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/jeffreynicole/article/category/1299364" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Perl</a><span>(0)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/jeffreynicole/article/category/1299365" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">综合</a><span>(4)</span>
+            </li>
+</ul>
+</div><div id="panel_Archive" class="panel">
+<ul class="panel_head"><span>文章存档</span></ul>
+<ul class="panel_body">
+<div id="archive_list">
+<!--归档统计-->
+<li><a href="http://blog.csdn.net/jeffreynicole/article/month/2013/05">2013年05月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/jeffreynicole/article/month/2012/12">2012年12月</a><span>(10)</span></li>
+</div>
+</ul>
+</div>
+<div id="hotarticls" class="panel">
+<ul class="panel_head">
+    <span>       
+阅读排行    </span>
+</ul>
+
+<ul class="panel_body itemlist">
+<li>
+<a href="/jeffreynicole/article/details/8280358" title="Centos 5.x 升级 python2.7，安装setuptools、mysqldb 完整记录">Centos 5.x 升级 python2.7，安装setuptools、mysqldb 完整记录</a><span>(4959)</span>
+</li>
+<li>
+<a href="/jeffreynicole/article/details/8309451" title="MySQL 主主（双主）复制">MySQL 主主（双主）复制</a><span>(3564)</span>
+</li>
+<li>
+<a href="/jeffreynicole/article/details/8271097" title="用python作个简单文件拷贝操作">用python作个简单文件拷贝操作</a><span>(3063)</span>
+</li>
+<li>
+<a href="/jeffreynicole/article/details/8393693" title="使用 ElementTree 读写XML文件">使用 ElementTree 读写XML文件</a><span>(809)</span>
+</li>
+<li>
+<a href="/jeffreynicole/article/details/8976927" title="[开发人员须知的一些运维知识] 1 系统瓶颈的定位">[开发人员须知的一些运维知识] 1 系统瓶颈的定位</a><span>(502)</span>
+</li>
+<li>
+<a href="/jeffreynicole/article/details/8302220" title="修改mysql密码的几种方法">修改mysql密码的几种方法</a><span>(216)</span>
+</li>
+<li>
+<a href="/jeffreynicole/article/details/8299224" title="Vim 常用命令总结">Vim 常用命令总结</a><span>(203)</span>
+</li>
+<li>
+<a href="/jeffreynicole/article/details/8302192" title="MySQL的热备份开源工具XtraBackup">MySQL的热备份开源工具XtraBackup</a><span>(195)</span>
+</li>
+<li>
+<a href="/jeffreynicole/article/details/8976896" title="[开发人员须知的一些运维知识] 0 前言">[开发人员须知的一些运维知识] 0 前言</a><span>(160)</span>
+</li>
+<li>
+<a href="/jeffreynicole/article/details/8271030" title="hello world ！">hello world ！</a><span>(130)</span>
+</li>
+</ul>
+</div>
+<div id="hotarticls2" class="panel">
+<ul class="panel_head"><span>评论排行</span></ul>
+<ul class="panel_body itemlist">
+<li>
+<a href="/jeffreynicole/article/details/8976927" title="[开发人员须知的一些运维知识] 1 系统瓶颈的定位">[开发人员须知的一些运维知识] 1 系统瓶颈的定位</a><span>(1)</span>
+</li>
+<li>
+<a href="/jeffreynicole/article/details/8309451" title="MySQL 主主（双主）复制">MySQL 主主（双主）复制</a><span>(1)</span>
+</li>
+<li>
+<a href="/jeffreynicole/article/details/8280358" title="Centos 5.x 升级 python2.7，安装setuptools、mysqldb 完整记录">Centos 5.x 升级 python2.7，安装setuptools、mysqldb 完整记录</a><span>(0)</span>
+</li>
+<li>
+<a href="/jeffreynicole/article/details/8976896" title="[开发人员须知的一些运维知识] 0 前言">[开发人员须知的一些运维知识] 0 前言</a><span>(0)</span>
+</li>
+<li>
+<a href="/jeffreynicole/article/details/8393719" title="cookie 和 session 的区别详解">cookie 和 session 的区别详解</a><span>(0)</span>
+</li>
+<li>
+<a href="/jeffreynicole/article/details/8393708" title="进程与线程的区别">进程与线程的区别</a><span>(0)</span>
+</li>
+<li>
+<a href="/jeffreynicole/article/details/8393693" title="使用 ElementTree 读写XML文件">使用 ElementTree 读写XML文件</a><span>(0)</span>
+</li>
+<li>
+<a href="/jeffreynicole/article/details/8271097" title="用python作个简单文件拷贝操作">用python作个简单文件拷贝操作</a><span>(0)</span>
+</li>
+<li>
+<a href="/jeffreynicole/article/details/8302220" title="修改mysql密码的几种方法">修改mysql密码的几种方法</a><span>(0)</span>
+</li>
+<li>
+<a href="/jeffreynicole/article/details/8302192" title="MySQL的热备份开源工具XtraBackup">MySQL的热备份开源工具XtraBackup</a><span>(0)</span>
+</li>
+</ul>
+</div>
+<div id="homepageArticles" class="panel tracking-ad" data-mod="popu_4">
+<ul class="panel_head"><span>推荐文章</span></ul>
+<ul class="panel_body" id="ad_commend"></ul>
+</div>
+<script type="text/javascript">
+ new Ad(12, 'ad_commend');
+</script><div id="newcomments" class="panel">
+<ul class="panel_head"><span>最新评论</span></ul>
+<ul class="panel_body itemlist">
+    <li>
+   
+         <a href="/jeffreynicole/article/details/8976927#comments">[开发人员须知的一些运维知识] 1 系统瓶颈的定位</a>
+    <p style="margin:0px;"><a href="/shenxiuwen1989" class="user_name">shenxiuwen1989</a>:
+继续写嘛，我最近搞运维，，，
+    </p>
+    </li>
+    <li>
+   
+         <a href="/jeffreynicole/article/details/8309451#comments">MySQL 主主（双主）复制</a>
+    <p style="margin:0px;"><a href="/jason_teach" class="user_name">jason_teach</a>:
+哥们，双主稳定吗？你线上在跑双主么？ 多个写几点。
+    </p>
+    </li>
+</ul>
+</div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+
+            <div class="clear">
+            </div>
+        </div>
+        
+
+<script type="text/javascript" src="http://csdnimg.cn/rabbit/cnick/cnick.js"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/newblog.min.js"></script>
+
+
+<script type="text/javascript" src="http://medal.blog.csdn.net/showblogmedal.ashx?blogid=1301710"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/JavaScript1.js"></script>
+
+    <script type="text/javascript" src="http://passport.csdn.net/content/loginbox/login.js"></script>
+<script type="text/javascript">document.write("<img src=http://counter.csdn.net/pv.aspx?id=24 border=0 width=0 height=0>");</script>
+<script type="text/javascript" src="http://www.csdn.net/ui/scripts/Csdn/counter.js"></script>
+<script type="text/javascript" src="http://ad.csdn.net/scripts/ad-blog.js"></script>
+<script type="text/javascript" src="http://zz.csdn.net/js/count.js"></script>
+<script type="text/javascript">
+    $(function () {
+        function __get_code_toolbar(snippet_id) {
+            return $("<a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "' target='_blank' title='在CODE上查看代码片' style='text-indent:0;'><img src='https://code.csdn.net/assets/CODE_ico.png' width=12 height=12 alt='在CODE上查看代码片' style='position:relative;top:1px;left:2px;'/></a>"
+                    + "<a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "/fork' target='_blank' title='派生到我的代码片'  style='text-indent:0;'><img src='https://code.csdn.net/assets/ico_fork.svg' width=12 height=12 alt='派生到我的代码片' style='position:relative;top:2px;left:2px;'/></a>");
+        }
+        
+        $("[code_snippet_id]").each(function () {
+            __s_id = $(this).attr("code_snippet_id");
+            if (__s_id != null && __s_id != "" && __s_id != 0 && parseInt(__s_id) > 70020) {
+                __code_tool = __get_code_toolbar(__s_id);
+                $(this).prev().find(".tools").append(__code_tool);
+            }
+        });
+    });
+</script>
+
+    </div>
+      <!--new top-->
+    
+    <script id="csdn-toolbar-id" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" type="text/javascript" src="http://static.csdn.net/public/common/toolbar/js/toolbar.js"></script>     <!--new top-->
+   
+    <link href="http://csdnimg.cn/comm_ask/css/ask_float_block.css" type="text/css" rel="stylesheet" />
+    <script language='JavaScript' type='text/javascript' src='http://csdnimg.cn/comm_ask/js/libs/wmd.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://csdnimg.cn/comm_ask/js/libs/showdown.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://csdnimg.cn/comm_ask/js/libs/prettify.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://csdnimg.cn/comm_ask/js/apps/ask_float_block.js'></script>
+
+</body>
+</html>

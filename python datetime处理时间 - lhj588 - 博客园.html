@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script src="python%20datetime%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%20-%20lhj588%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/analytics.js" async=""></script>
+<meta charset="utf-8">
+<title>python datetime处理时间 - lhj588 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="python%20datetime%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%20-%20lhj588%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="python%20datetime%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%20-%20lhj588%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/bundle-darkgreentrip.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/lhj588/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/lhj588/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/lhj588/wlwmanifest.xml">
+<script src="python%20datetime%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%20-%20lhj588%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/gpt.js" type="text/javascript" async=""></script><script src="python%20datetime%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%20-%20lhj588%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'lhj588', cb_enable_mathjax=true;</script>
+<script src="python%20datetime%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%20-%20lhj588%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/blog-common.js" type="text/javascript"></script>
+<script src="python%20datetime%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%20-%20lhj588%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/pubads_impl_55.js" type="text/javascript" async=""></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><script src="python%20datetime%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%20-%20lhj588%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/osd.js" type="text/javascript"></script></head>
+<body><div style="display: none;" id="MathJax_Message"></div>
+<a name="top"></a>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/lhj588/"><img id="blogLogo" src="python%20datetime%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%20-%20lhj588%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/logo.gif" alt="返回主页"></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/lhj588/">lhj588</a></h1>
+<h2></h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="MyLinks1_HomeLink" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+<li><a id="MyLinks1_MyHomeLink" class="menu" href="http://www.cnblogs.com/lhj588/">首页</a></li>
+<li><a id="MyLinks1_NewPostLink" class="menu" rel="nofollow" href="http://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li><a id="MyLinks1_ContactLink" class="menu" rel="nofollow" href="http://space.cnblogs.com/msg/send/lhj588">联系</a></li>
+<li><a id="MyLinks1_Syndication" class="menu" href="http://www.cnblogs.com/lhj588/rss">订阅</a>
+<!--<a id="MyLinks1_XMLLink" class="aHeaderXML" href="http://www.cnblogs.com/lhj588/rss"><img src="http://www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li><a id="MyLinks1_Admin" class="menu" rel="nofollow" href="http://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			
+<!--done-->
+随笔- 148&nbsp;
+文章- 7&nbsp;
+评论- 55&nbsp;
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/lhj588/archive/2012/04/23/2466653.html">python datetime处理时间</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body"><p><span><a href="http://blog.csdn.net/JGood/archive/2010/04/07/5457284.aspx" target="_blank">http://blog.csdn.net/JGood/archive/2010/04/07/5457284.aspx</a><br class="Apple-interchange-newline">&nbsp;&nbsp;
+ 
+&nbsp;Python提供了多个内置模块用于操作日期时间，像calendar，time，datetime。time模块我在之前的文章已经有所介
+绍，它提供 
+的接口与C标准库time.h基本一致。相比于time模块，datetime模块的接口则更直观、更容易调用。今天就来讲讲datetime模块。</span></p>
+<p><span>&nbsp;&nbsp; 
+&nbsp;datetime模块定义了两个常量：datetime.MINYEAR和datetime.MAXYEAR，分别表示datetime所能
+表示的最 小、最大年份。其中，MINYEAR = 1，MAXYEAR = 9999。（对于偶等玩家，这个范围已经足够用矣~~）</span></p>
+<p><span>&nbsp;&nbsp; &nbsp;datetime模块定义了下面这几个类：</span></p>
+<ul>
+<li><span>datetime.date：表示日期的类。常用的属性有year, month, day；</span></li>
+<li><span>datetime.time：表示时间的类。常用的属性有hour, minute, second, microsecond；</span></li>
+<li><span>datetime.datetime：表示日期时间。</span></li>
+<li><span>datetime.timedelta：表示时间间隔，即两个时间点之间的长度。</span></li>
+<li><span>datetime.tzinfo：与时区有关的相关信息。（这里不详细充分讨论该类，感兴趣的童鞋可以参考python手册）</span></li>
+
+</ul>
+<p><span>&nbsp;&nbsp; &nbsp;<strong>注</strong>&nbsp;：上面这些类型的对象都是不可变（immutable）的。</span></p>
+<p><span>&nbsp;&nbsp; &nbsp;下面详细介绍这些类的使用方式。</span></p>
+<h3><span>date类</span></h3>
+<p><span>&nbsp;&nbsp; &nbsp;date类表示一个日期。日期由年、月、日组成（地球人都知道~~）。date类的构造函数如下：</span></p>
+<p><span>&nbsp;&nbsp; &nbsp;class datetime.date(year, month, day)：参数的意义就不多作解释了，只是有几点要注意一下：</span></p>
+<ul>
+<li><span>year的范围是[MINYEAR, MAXYEAR]，即[1, 9999]；</span></li>
+<li><span>month的范围是[1, 12]。（月份是从1开始的，不是从0开始的~_~）；</span></li>
+<li><span>day的最大值根据给定的year, month参数来决定。例如闰年2月份有29天；</span></li>
+
+</ul>
+<p><span>&nbsp;&nbsp; &nbsp;date类定义了一些常用的类方法与类属性，方便我们操作：</span></p>
+<ul>
+<li><span>date.max、date.min：date对象所能表示的最大、最小日期；</span></li>
+<li><span>date.resolution：date对象表示日期的最小单位。这里是天。</span></li>
+<li><span>date.today()：返回一个表示当前本地日期的date对象；</span></li>
+<li><span>date.fromtimestamp(timestamp)：根据给定的时间戮，返回一个date对象；</span></li>
+<li><span>datetime.fromordinal(ordinal)：将Gregorian日历时间转换为date对象；（<span class="dct-tt">Gregorian Calendar</span>&nbsp;：一种日历表示方法，类似于我国的农历，西方国家使用比较多，此处不详细展开讨论。）</span></li>
+
+</ul>
+<p><span>&nbsp;&nbsp; &nbsp;使用例子：</span></p>
+<div class="dp-highlighter">
+<div class="bar">
+<div class="tools"><span><a href="http://blog.csdn.net/JGood/archive/2010/04/07/5457284.aspx">view plain</a>&nbsp;<a href="http://blog.csdn.net/JGood/archive/2010/04/07/5457284.aspx">copy to clipboard</a>&nbsp;<a href="http://blog.csdn.net/JGood/archive/2010/04/07/5457284.aspx">print</a>&nbsp;<a href="http://blog.csdn.net/JGood/archive/2010/04/07/5457284.aspx">?</a></span></div>
+
+</div>
+<ol class="dp-py">
+<li class="alt"><span><span class="keyword">from</span>&nbsp;&nbsp;datetime&nbsp;&nbsp;<span class="keyword">import</span>&nbsp;&nbsp;*&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">import</span>&nbsp;&nbsp;time&nbsp;&nbsp;</span></li>
+<li class="alt"><span>&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'date.max:'</span>&nbsp;,&nbsp;date.max&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'date.min:'</span>&nbsp;,&nbsp;date.min&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'date.today():'</span>&nbsp;,&nbsp;date.today()&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'date.fromtimestamp():'</span>&nbsp;,&nbsp;date.fromtimestamp(time.time())&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">#&nbsp;#&nbsp;----&nbsp;结果&nbsp;----</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;date.max:&nbsp;9999-12-31</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">#&nbsp;date.min:&nbsp;0001-01-01</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;date.today():&nbsp;2010-04-06</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">#&nbsp;date.fromtimestamp():&nbsp;2010-04-06</span>&nbsp;&nbsp;&nbsp;</span></li>
+
+</ol></div>
+<div id="" class="dp-highlighter">
+<div class="bar">
+<div class="tools">Python代码&nbsp;<object data="python%20datetime%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%20-%20lhj588%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/clipboard_new.swf" type="application/x-shockwave-flash" height="15" width="14"><param name="src" value="http://dmm-star.iteye.com/javascripts/syntaxhighlighter/clipboard_new.swf"><param name="wmode" value="transparent"><param name="flashvars" value="clipboard=from%20datetime%20import%20*%0Aimport%20time%0A%0Aprint%20'date.max%3A'%2C%20date.max%0Aprint%20'date.min%3A'%2C%20date.min%0Aprint%20'date.today()%3A'%2C%20date.today()%0Aprint%20'date.fromtimestamp()%3A'%2C%20date.fromtimestamp(time.time())%0A%0A%23%20%23%20----%20%E7%BB%93%E6%9E%9C%20----%0A%23%20date.max%3A%209999-12-31%0A%23%20date.min%3A%200001-01-01%0A%23%20date.today()%3A%202010-04-06%0A%23%20date.fromtimestamp()%3A%202010-04-06"><param name="quality" value="high"><param name="allowscriptaccess" value="always"><param name="pluginspage" value="http://www.macromedia.com/go/getflashplayer"></object>&nbsp;<a title="收藏这段代码" href="http://dmm-star.iteye.com/blog/1109308"><img class="star" src="python%20datetime%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%20-%20lhj588%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/icon_star.html" alt="收藏代码"></a></div>
+
+</div>
+<ol class="dp-py" start="1">
+<li><span><span class="keyword">from</span>&nbsp;datetime&nbsp;<span class="keyword">import</span>&nbsp;*&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">import</span>&nbsp;time&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'date.max:'</span>,&nbsp;date.max&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'date.min:'</span>,&nbsp;date.min&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'date.today():'</span>,&nbsp;date.today()&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'date.fromtimestamp():'</span>,&nbsp;date.fromtimestamp(time.time())&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;#&nbsp;----&nbsp;结果&nbsp;----</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;date.max:&nbsp;9999-12-31</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;date.min:&nbsp;0001-01-01</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;date.today():&nbsp;2010-04-06</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;date.fromtimestamp():&nbsp;2010-04-06</span>&nbsp;&nbsp;</span></li>
+
+</ol></div>
+<p><span>&nbsp;&nbsp; &nbsp;date提供的实例方法和属性：</span></p>
+<ul>
+<li><span>date.year、date.month、date.day：年、月、日；</span></li>
+<li><span>date.replace(year, month, day)：生成一个新的日期对象，用参数指定的年，月，日代替原有对象中的属性。（原有对象仍保持不变）</span></li>
+<li><span>date.timetuple()：返回日期对应的time.struct_time对象；</span></li>
+<li><span>date.toordinal()：返回日期对应的Gregorian Calendar日期；</span></li>
+<li><span>date.weekday()：返回weekday，如果是星期一，返回0；如果是星期2，返回1，以此类推；</span></li>
+<li><span>data.isoweekday()：返回weekday，如果是星期一，返回1；如果是星期2，返回2，以此类推；</span></li>
+<li><span>date.isocalendar()：返回格式如(year，month，day)的元组；</span></li>
+<li><span>date.isoformat()：返回格式如'YYYY-MM-DD’的字符串；</span></li>
+<li><span>date.strftime(fmt)：自定义格式化字符串。在下面详细讲解。</span></li>
+
+</ul>
+<p><span>&nbsp;&nbsp; &nbsp;使用例子：</span></p>
+<div class="dp-highlighter">
+<div class="bar">
+<div class="tools"><span><a href="http://blog.csdn.net/JGood/archive/2010/04/07/5457284.aspx">view plain</a>&nbsp;<a href="http://blog.csdn.net/JGood/archive/2010/04/07/5457284.aspx">copy to clipboard</a>&nbsp;<a href="http://blog.csdn.net/JGood/archive/2010/04/07/5457284.aspx">print</a>&nbsp;<a href="http://blog.csdn.net/JGood/archive/2010/04/07/5457284.aspx">?</a></span></div>
+
+</div>
+<ol class="dp-py">
+<li class="alt"><span>now&nbsp;=&nbsp;date(&nbsp;<span class="number">2010</span>&nbsp;,&nbsp;&nbsp;<span class="number">04</span>&nbsp;,&nbsp;&nbsp;<span class="number">06</span>&nbsp;)&nbsp;&nbsp;</span></li>
+<li><span>tomorrow&nbsp;=&nbsp;now.replace(day&nbsp;=&nbsp;<span class="number">07</span>&nbsp;)&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'now:'</span>&nbsp;,&nbsp;now,&nbsp;&nbsp;<span class="string">',&nbsp;tomorrow:'</span>&nbsp;,&nbsp;tomorrow&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'timetuple():'</span>&nbsp;,&nbsp;now.timetuple()&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'weekday():'</span>&nbsp;,&nbsp;now.weekday()&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'isoweekday():'</span>&nbsp;,&nbsp;now.isoweekday()&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'isocalendar():'</span>&nbsp;,&nbsp;now.isocalendar()&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'isoformat():'</span>&nbsp;,&nbsp;now.isoformat()&nbsp;&nbsp;</span></li>
+<li class="alt"><span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;#&nbsp;----&nbsp;结果&nbsp;----</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">#&nbsp;now:&nbsp;2010-04-06&nbsp;,&nbsp;tomorrow:&nbsp;2010-04-07</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;timetuple():&nbsp;(2010,&nbsp;4,&nbsp;6,&nbsp;0,&nbsp;0,&nbsp;0,&nbsp;1,&nbsp;96,&nbsp;-1)</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">#&nbsp;weekday():&nbsp;1</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;isoweekday():&nbsp;2</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">#&nbsp;isocalendar():&nbsp;(2010,&nbsp;14,&nbsp;2)</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;isoformat():&nbsp;2010-04-06</span>&nbsp;&nbsp;&nbsp;</span></li>
+
+</ol></div>
+<div id="" class="dp-highlighter">
+<div class="bar">
+<div class="tools">Python代码&nbsp;<object data="python%20datetime%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%20-%20lhj588%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/clipboard_new.swf" type="application/x-shockwave-flash" height="15" width="14"><param name="src" value="http://dmm-star.iteye.com/javascripts/syntaxhighlighter/clipboard_new.swf"><param name="wmode" value="transparent"><param name="flashvars" value="clipboard=now%20%3D%20date(2010%2C%2004%2C%2006)%0Atomorrow%20%3D%20now.replace(day%20%3D%2007)%0Aprint%20'now%3A'%2C%20now%2C%20'%2C%20tomorrow%3A'%2C%20tomorrow%0Aprint%20'timetuple()%3A'%2C%20now.timetuple()%0Aprint%20'weekday()%3A'%2C%20now.weekday()%0Aprint%20'isoweekday()%3A'%2C%20now.isoweekday()%0Aprint%20'isocalendar()%3A'%2C%20now.isocalendar()%0Aprint%20'isoformat()%3A'%2C%20now.isoformat()%0A%0A%23%20%23%20----%20%E7%BB%93%E6%9E%9C%20----%0A%23%20now%3A%202010-04-06%20%2C%20tomorrow%3A%202010-04-07%0A%23%20timetuple()%3A%20(2010%2C%204%2C%206%2C%200%2C%200%2C%200%2C%201%2C%2096%2C%20-1)%0A%23%20weekday()%3A%201%0A%23%20isoweekday()%3A%202%0A%23%20isocalendar()%3A%20(2010%2C%2014%2C%202)%0A%23%20isoformat()%3A%202010-04-06"><param name="quality" value="high"><param name="allowscriptaccess" value="always"><param name="pluginspage" value="http://www.macromedia.com/go/getflashplayer"></object>&nbsp;<a title="收藏这段代码" href="http://dmm-star.iteye.com/blog/1109308"><img class="star" src="python%20datetime%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%20-%20lhj588%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/icon_star.html" alt="收藏代码"></a></div>
+
+</div>
+<ol class="dp-py" start="1">
+<li><span>now&nbsp;=&nbsp;date(<span class="number">2010</span>,&nbsp;<span class="number">04</span>,&nbsp;<span class="number">06</span>)&nbsp;&nbsp;</span></li>
+<li><span>tomorrow&nbsp;=&nbsp;now.replace(day&nbsp;=&nbsp;<span class="number">07</span>)&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'now:'</span>,&nbsp;now,&nbsp;<span class="string">',&nbsp;tomorrow:'</span>,&nbsp;tomorrow&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'timetuple():'</span>,&nbsp;now.timetuple()&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'weekday():'</span>,&nbsp;now.weekday()&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'isoweekday():'</span>,&nbsp;now.isoweekday()&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'isocalendar():'</span>,&nbsp;now.isocalendar()&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'isoformat():'</span>,&nbsp;now.isoformat()&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;#&nbsp;----&nbsp;结果&nbsp;----</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;now:&nbsp;2010-04-06&nbsp;,&nbsp;tomorrow:&nbsp;2010-04-07</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;timetuple():&nbsp;(2010,&nbsp;4,&nbsp;6,&nbsp;0,&nbsp;0,&nbsp;0,&nbsp;1,&nbsp;96,&nbsp;-1)</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;weekday():&nbsp;1</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;isoweekday():&nbsp;2</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;isocalendar():&nbsp;(2010,&nbsp;14,&nbsp;2)</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;isoformat():&nbsp;2010-04-06</span>&nbsp;&nbsp;</span></li>
+
+</ol></div>
+<p><span>&nbsp;&nbsp; &nbsp;date还对某些操作进行了重载，它允许我们对日期进行如下一些操作：</span></p>
+<ul>
+<li><span>date2 = date1 + timedelta &nbsp;# 日期加上一个间隔，返回一个新的日期对象（timedelta将在下面介绍，表示时间间隔）</span></li>
+<li><span>date2 = date1 - timedelta &nbsp; # 日期隔去间隔，返回一个新的日期对象</span></li>
+<li><span>timedelta = date1 - date2 &nbsp; # 两个日期相减，返回一个时间间隔对象</span></li>
+<li><span>date1 &lt; date2 &nbsp;# 两个日期进行比较</span></li>
+
+</ul>
+<p><span>&nbsp;&nbsp;&nbsp;<strong>&nbsp;注：</strong>&nbsp;对日期进行操作时，要防止日期超出它所能表示的范围。</span></p>
+<p><span>&nbsp;&nbsp; &nbsp;使用例子：</span></p>
+<div class="dp-highlighter">
+<div class="bar">
+<div class="tools"><span><a href="http://blog.csdn.net/JGood/archive/2010/04/07/5457284.aspx">view plain</a>&nbsp;<a href="http://blog.csdn.net/JGood/archive/2010/04/07/5457284.aspx">copy to clipboard</a>&nbsp;<a href="http://blog.csdn.net/JGood/archive/2010/04/07/5457284.aspx">print</a>&nbsp;<a href="http://blog.csdn.net/JGood/archive/2010/04/07/5457284.aspx">?</a></span></div>
+
+</div>
+<ol class="dp-py">
+<li class="alt"><span>now&nbsp;=&nbsp;date.today()&nbsp;&nbsp;</span></li>
+<li><span>tomorrow&nbsp;=&nbsp;now.replace(day&nbsp;=&nbsp;<span class="number">7</span>&nbsp;)&nbsp;&nbsp;</span></li>
+<li class="alt"><span>delta&nbsp;=&nbsp;tomorrow&nbsp;-&nbsp;now&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'now:'</span>&nbsp;,&nbsp;now,&nbsp;&nbsp;<span class="string">'&nbsp;tomorrow:'</span>&nbsp;,&nbsp;tomorrow&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'timedelta:'</span>&nbsp;,&nbsp;delta&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;&nbsp;now&nbsp;+&nbsp;delta&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="keyword">print</span>&nbsp;&nbsp;tomorrow&nbsp;&gt;&nbsp;now&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">#&nbsp;#&nbsp;----&nbsp;结果&nbsp;----</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;now:&nbsp;2010-04-06&nbsp;&nbsp;tomorrow:&nbsp;2010-04-07</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">#&nbsp;timedelta:&nbsp;1&nbsp;day,&nbsp;0:00:00</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;2010-04-07</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">#&nbsp;True</span>&nbsp;&nbsp;&nbsp;</span></li>
+
+</ol></div>
+<div id="" class="dp-highlighter">
+<div class="bar">
+<div class="tools">Python代码&nbsp;<object data="python%20datetime%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%20-%20lhj588%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/clipboard_new.swf" type="application/x-shockwave-flash" height="15" width="14"><param name="src" value="http://dmm-star.iteye.com/javascripts/syntaxhighlighter/clipboard_new.swf"><param name="wmode" value="transparent"><param name="flashvars" value="clipboard=now%20%3D%20date.today()%0Atomorrow%20%3D%20now.replace(day%20%3D%207)%0Adelta%20%3D%20tomorrow%20-%20now%0Aprint%20'now%3A'%2C%20now%2C%20'%20tomorrow%3A'%2C%20tomorrow%0Aprint%20'timedelta%3A'%2C%20delta%0Aprint%20now%20%2B%20delta%0Aprint%20tomorrow%20%3E%20now%0A%0A%23%20%23%20----%20%E7%BB%93%E6%9E%9C%20----%0A%23%20now%3A%202010-04-06%20%20tomorrow%3A%202010-04-07%0A%23%20timedelta%3A%201%20day%2C%200%3A00%3A00%0A%23%202010-04-07%0A%23%20True"><param name="quality" value="high"><param name="allowscriptaccess" value="always"><param name="pluginspage" value="http://www.macromedia.com/go/getflashplayer"></object>&nbsp;<a title="收藏这段代码" href="http://dmm-star.iteye.com/blog/1109308"><img class="star" src="python%20datetime%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%20-%20lhj588%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/icon_star.html" alt="收藏代码"></a></div>
+
+</div>
+<ol class="dp-py" start="1">
+<li><span>now&nbsp;=&nbsp;date.today()&nbsp;&nbsp;</span></li>
+<li><span>tomorrow&nbsp;=&nbsp;now.replace(day&nbsp;=&nbsp;<span class="number">7</span>)&nbsp;&nbsp;</span></li>
+<li><span>delta&nbsp;=&nbsp;tomorrow&nbsp;-&nbsp;now&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'now:'</span>,&nbsp;now,&nbsp;<span class="string">'&nbsp;tomorrow:'</span>,&nbsp;tomorrow&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'timedelta:'</span>,&nbsp;delta&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;now&nbsp;+&nbsp;delta&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;tomorrow&nbsp;&gt;&nbsp;now&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;#&nbsp;----&nbsp;结果&nbsp;----</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;now:&nbsp;2010-04-06&nbsp;&nbsp;tomorrow:&nbsp;2010-04-07</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;timedelta:&nbsp;1&nbsp;day,&nbsp;0:00:00</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;2010-04-07</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;True</span>&nbsp;&nbsp;</span></li>
+
+</ol></div>
+<h3><span><strong>Time类</strong></span></h3>
+<p><span>&nbsp;&nbsp; &nbsp;time类表示时间，由时、分、秒以及微秒组成。（我不是从火星来的~~）time类的构造函数如下：</span></p>
+<p><span>&nbsp;&nbsp; &nbsp;class datetime.time(hour<span class="optional">[</span>&nbsp;, minute<span class="optional">[</span>&nbsp;, second<span class="optional">[</span>&nbsp;, microsecond<span class="optional">[</span>&nbsp;, tzinfo<span class="optional">]</span>&nbsp;<span class="optional">]</span>&nbsp;<span class="optional">]</span>&nbsp;<span class="optional">]</span>&nbsp;)
+ ：各参数的意义不作解释，这里留意一下参数tzinfo，它表示时区信息。注意一下各参数的取值范围：hour的范围为[0, 
+24)，minute的范围为[0, 60)，second的范围为[0, 60)，microsecond的范围为[0, 1000000)。</span></p>
+<p><span>&nbsp;&nbsp; &nbsp;time类定义的类属性：</span></p>
+<ul>
+<li><span>time.min、time.max：time类所能表示的最小、最大时间。其中，time.min = time(0, 0, 0, 0)， time.max = time(23, 59, 59, 999999)；</span></li>
+<li><span>time.resolution：时间的最小单位，这里是1微秒；</span></li>
+
+</ul>
+<p><span>&nbsp;&nbsp; &nbsp;time类提供的实例方法和属性：</span></p>
+<ul>
+<li><span>time.hour、time.minute、time.second、time.microsecond：时、分、秒、微秒；</span></li>
+<li><span>time.tzinfo：时区信息；</span></li>
+<li><span>time.replace(<span class="optional">[</span>&nbsp;hour<span class="optional">[</span>&nbsp;, minute<span class="optional">[</span>&nbsp;, second<span class="optional">[</span>&nbsp;, microsecond<span class="optional">[</span>&nbsp;, tzinfo<span class="optional">]</span>&nbsp;<span class="optional">]</span>&nbsp;<span class="optional">]</span>&nbsp;<span class="optional">]</span>&nbsp;<span class="optional">]</span>&nbsp;)：创建一个新的时间对象，用参数指定的时、分、秒、微秒代替原有对象中的属性（原有对象仍保持不变）；</span></li>
+<li><span>time.isoformat()：返回型如"HH:MM:SS"格式的字符串表示；</span></li>
+<li><span>time.strftime(fmt)：返回自定义格式化字符串。在下面详细介绍；</span></li>
+
+</ul>
+<p><span>使用例子：</span></p>
+<div class="dp-highlighter">
+<div class="bar">
+<div class="tools"><span><a href="http://blog.csdn.net/JGood/archive/2010/04/07/5457284.aspx">view plain</a>&nbsp;<a href="http://blog.csdn.net/JGood/archive/2010/04/07/5457284.aspx">copy to clipboard</a>&nbsp;<a href="http://blog.csdn.net/JGood/archive/2010/04/07/5457284.aspx">print</a>&nbsp;<a href="http://blog.csdn.net/JGood/archive/2010/04/07/5457284.aspx">?</a></span></div>
+
+</div>
+<ol class="dp-py">
+<li class="alt"><span><span class="keyword">from</span>&nbsp;&nbsp;datetime&nbsp;&nbsp;<span class="keyword">import</span>&nbsp;&nbsp;*&nbsp;&nbsp;</span></li>
+<li><span>tm&nbsp;=&nbsp;time(<span class="number">23</span>&nbsp;,&nbsp;&nbsp;<span class="number">46</span>&nbsp;,&nbsp;&nbsp;<span class="number">10</span>&nbsp;)&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'tm:'</span>&nbsp;,&nbsp;tm&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'hour:&nbsp;%d,&nbsp;minute:&nbsp;%d,&nbsp;second:&nbsp;%d,&nbsp;microsecond:&nbsp;%d'</span>&nbsp;&nbsp;\&nbsp;&nbsp;</span></li>
+<li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%&nbsp;(tm.hour,&nbsp;tm.minute,&nbsp;tm.second,&nbsp;tm.microsecond)&nbsp;&nbsp;</span></li>
+<li><span>tm1&nbsp;=&nbsp;tm.replace(hour&nbsp;=&nbsp;<span class="number">20</span>&nbsp;)&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'tm1:'</span>&nbsp;,&nbsp;tm1&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'isoformat():'</span>&nbsp;,&nbsp;tm.isoformat()&nbsp;&nbsp;</span></li>
+<li class="alt"><span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;#&nbsp;----&nbsp;结果&nbsp;----</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">#&nbsp;tm:&nbsp;23:46:10</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;hour:&nbsp;23,&nbsp;minute:&nbsp;46,&nbsp;second:&nbsp;10,&nbsp;microsecond:&nbsp;0</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">#&nbsp;tm1:&nbsp;20:46:10</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;isoformat():&nbsp;23:46:10</span>&nbsp;&nbsp;&nbsp;</span></li>
+
+</ol></div>
+<div id="" class="dp-highlighter">
+<div class="bar">
+<div class="tools">Python代码&nbsp;<object data="python%20datetime%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%20-%20lhj588%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/clipboard_new.swf" type="application/x-shockwave-flash" height="15" width="14"><param name="src" value="http://dmm-star.iteye.com/javascripts/syntaxhighlighter/clipboard_new.swf"><param name="wmode" value="transparent"><param name="flashvars" value="clipboard=from%20datetime%20import%20*%0Atm%20%3D%20time(23%2C%2046%2C%2010)%0Aprint%20'tm%3A'%2C%20tm%0Aprint%20'hour%3A%20%25d%2C%20minute%3A%20%25d%2C%20second%3A%20%25d%2C%20microsecond%3A%20%25d'%20%5C%0A%09%09%25%20(tm.hour%2C%20tm.minute%2C%20tm.second%2C%20tm.microsecond)%0Atm1%20%3D%20tm.replace(hour%20%3D%2020)%0Aprint%20'tm1%3A'%2C%20tm1%0Aprint%20'isoformat()%3A'%2C%20tm.isoformat()%0A%0A%23%20%23%20----%20%E7%BB%93%E6%9E%9C%20----%0A%23%20tm%3A%2023%3A46%3A10%0A%23%20hour%3A%2023%2C%20minute%3A%2046%2C%20second%3A%2010%2C%20microsecond%3A%200%0A%23%20tm1%3A%2020%3A46%3A10%0A%23%20isoformat()%3A%2023%3A46%3A10"><param name="quality" value="high"><param name="allowscriptaccess" value="always"><param name="pluginspage" value="http://www.macromedia.com/go/getflashplayer"></object>&nbsp;<a title="收藏这段代码" href="http://dmm-star.iteye.com/blog/1109308"><img class="star" src="python%20datetime%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%20-%20lhj588%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/icon_star.html" alt="收藏代码"></a></div>
+
+</div>
+<ol class="dp-py" start="1">
+<li><span><span class="keyword">from</span>&nbsp;datetime&nbsp;<span class="keyword">import</span>&nbsp;*&nbsp;&nbsp;</span></li>
+<li><span>tm&nbsp;=&nbsp;time(<span class="number">23</span>,&nbsp;<span class="number">46</span>,&nbsp;<span class="number">10</span>)&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'tm:'</span>,&nbsp;tm&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'hour:&nbsp;%d,&nbsp;minute:&nbsp;%d,&nbsp;second:&nbsp;%d,&nbsp;microsecond:&nbsp;%d'</span>&nbsp;\&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%&nbsp;(tm.hour,&nbsp;tm.minute,&nbsp;tm.second,&nbsp;tm.microsecond)&nbsp;&nbsp;</span></li>
+<li><span>tm1&nbsp;=&nbsp;tm.replace(hour&nbsp;=&nbsp;<span class="number">20</span>)&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'tm1:'</span>,&nbsp;tm1&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'isoformat():'</span>,&nbsp;tm.isoformat()&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;#&nbsp;----&nbsp;结果&nbsp;----</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;tm:&nbsp;23:46:10</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;hour:&nbsp;23,&nbsp;minute:&nbsp;46,&nbsp;second:&nbsp;10,&nbsp;microsecond:&nbsp;0</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;tm1:&nbsp;20:46:10</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;isoformat():&nbsp;23:46:10</span>&nbsp;&nbsp;</span></li>
+
+</ol></div>
+<p><span>&nbsp;&nbsp; &nbsp;像date一样，也可以对两个time对象进行比较，或者相减返回一个时间间隔对象。这里就不提供例子了。</span></p>
+<h3><span>datetime类</span></h3>
+<p><span>&nbsp;&nbsp; &nbsp;datetime是date与time的结合体，包括date与time的所有信息。它的构造函数如下：<tt class="descclassname">datetime.</tt><tt class="descname">datetime</tt>&nbsp;(year, month, day<span class="optional">[</span>&nbsp;, hour<span class="optional">[</span>&nbsp;, minute<span class="optional">[</span>&nbsp;, second<span class="optional">[</span>&nbsp;, microsecond<span class="optional">[</span>&nbsp;, tzinfo<span class="optional">]</span>&nbsp;<span class="optional">]</span>&nbsp;<span class="optional">]</span>&nbsp;<span class="optional">]</span>&nbsp;<span class="optional">]</span>&nbsp;)，各参数的含义与date、time的构造函数中的一样，要注意参数值的范围。</span></p>
+<p><span>&nbsp;&nbsp; &nbsp;datetime类定义的类属性与方法：</span></p>
+<ul>
+<li><span>datetime.min、datetime.max：datetime所能表示的最小值与最大值；</span></li>
+<li><span>datetime.resolution：datetime最小单位；</span></li>
+<li><span>datetime.today()：返回一个表示当前本地时间的datetime对象；</span></li>
+<li><span>datetime.now([tz])：返回一个表示当前本地时间的datetime对象，如果提供了参数tz，则获取tz参数所指时区的本地时间；</span></li>
+<li><span>datetime.utcnow()：返回一个当前utc时间的datetime对象；</span></li>
+<li><span>datetime.fromtimestamp(timestamp[, tz])：根据时间戮创建一个datetime对象，参数tz指定时区信息；</span></li>
+<li><span>datetime.utcfromtimestamp(timestamp)：根据时间戮创建一个datetime对象；</span></li>
+<li><span>datetime.combine(date, time)：根据date和time，创建一个datetime对象；</span></li>
+<li><span>datetime.strptime(date_string, format)：将格式字符串转换为datetime对象；</span></li>
+
+</ul>
+<p><span>使用例子：</span></p>
+<div class="dp-highlighter">
+<div class="bar">
+<div class="tools"><span><a href="http://blog.csdn.net/JGood/archive/2010/04/07/5457284.aspx">view plain</a>&nbsp;<a href="http://blog.csdn.net/JGood/archive/2010/04/07/5457284.aspx">copy to clipboard</a>&nbsp;<a href="http://blog.csdn.net/JGood/archive/2010/04/07/5457284.aspx">print</a>&nbsp;<a href="http://blog.csdn.net/JGood/archive/2010/04/07/5457284.aspx">?</a></span></div>
+
+</div>
+<ol class="dp-py">
+<li class="alt"><span><span class="keyword">from</span>&nbsp;&nbsp;datetime&nbsp;&nbsp;<span class="keyword">import</span>&nbsp;&nbsp;*&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">import</span>&nbsp;&nbsp;time&nbsp;&nbsp;</span></li>
+<li class="alt"><span>&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'datetime.max:'</span>&nbsp;,&nbsp;datetime.max&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'datetime.min:'</span>&nbsp;,&nbsp;datetime.min&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'datetime.resolution:'</span>&nbsp;,&nbsp;datetime.resolution&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'today():'</span>&nbsp;,&nbsp;datetime.today()&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'now():'</span>&nbsp;,&nbsp;datetime.now()&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'utcnow():'</span>&nbsp;,&nbsp;datetime.utcnow()&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'fromtimestamp(tmstmp):'</span>&nbsp;,&nbsp;datetime.fromtimestamp(time.time())&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'utcfromtimestamp(tmstmp):'</span>&nbsp;,&nbsp;datetime.utcfromtimestamp(time.time())&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">#&nbsp;----&nbsp;结果&nbsp;----</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;datetime.max:&nbsp;9999-12-31&nbsp;23:59:59.999999</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">#&nbsp;datetime.min:&nbsp;0001-01-01&nbsp;00:00:00</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;datetime.resolution:&nbsp;0:00:00.000001</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">#&nbsp;today():&nbsp;2010-04-07&nbsp;09:48:16.234000</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;now():&nbsp;2010-04-07&nbsp;09:48:16.234000</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">#&nbsp;utcnow():&nbsp;2010-04-07&nbsp;01:48:16.234000&nbsp;&nbsp;#&nbsp;中国位于+8时间，与本地时间相差8</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;fromtimestamp(tmstmp):&nbsp;2010-04-07&nbsp;09:48:16.234000</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">#&nbsp;utcfromtimestamp(tmstmp):&nbsp;2010-04-07&nbsp;01:48:16.234000</span>&nbsp;&nbsp;&nbsp;</span></li>
+
+</ol></div>
+<div id="" class="dp-highlighter">
+<div class="bar">
+<div class="tools">Python代码&nbsp;<object data="python%20datetime%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%20-%20lhj588%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/clipboard_new.swf" type="application/x-shockwave-flash" height="15" width="14"><param name="src" value="http://dmm-star.iteye.com/javascripts/syntaxhighlighter/clipboard_new.swf"><param name="wmode" value="transparent"><param name="flashvars" value="clipboard=from%20datetime%20import%20*%0Aimport%20time%0A%0Aprint%20'datetime.max%3A'%2C%20datetime.max%0Aprint%20'datetime.min%3A'%2C%20datetime.min%0Aprint%20'datetime.resolution%3A'%2C%20datetime.resolution%0Aprint%20'today()%3A'%2C%20datetime.today()%0Aprint%20'now()%3A'%2C%20datetime.now()%0Aprint%20'utcnow()%3A'%2C%20datetime.utcnow()%0Aprint%20'fromtimestamp(tmstmp)%3A'%2C%20datetime.fromtimestamp(time.time())%0Aprint%20'utcfromtimestamp(tmstmp)%3A'%2C%20datetime.utcfromtimestamp(time.time())%0A%0A%23%20----%20%E7%BB%93%E6%9E%9C%20----%0A%23%20datetime.max%3A%209999-12-31%2023%3A59%3A59.999999%0A%23%20datetime.min%3A%200001-01-01%2000%3A00%3A00%0A%23%20datetime.resolution%3A%200%3A00%3A00.000001%0A%23%20today()%3A%202010-04-07%2009%3A48%3A16.234000%0A%23%20now()%3A%202010-04-07%2009%3A48%3A16.234000%0A%23%20utcnow()%3A%202010-04-07%2001%3A48%3A16.234000%20%20%23%20%E4%B8%AD%E5%9B%BD%E4%BD%8D%E4%BA%8E%2B8%E6%97%B6%E9%97%B4%EF%BC%8C%E4%B8%8E%E6%9C%AC%E5%9C%B0%E6%97%B6%E9%97%B4%E7%9B%B8%E5%B7%AE8%0A%23%20fromtimestamp(tmstmp)%3A%202010-04-07%2009%3A48%3A16.234000%0A%23%20utcfromtimestamp(tmstmp)%3A%202010-04-07%2001%3A48%3A16.234000"><param name="quality" value="high"><param name="allowscriptaccess" value="always"><param name="pluginspage" value="http://www.macromedia.com/go/getflashplayer"></object>&nbsp;<a title="收藏这段代码" href="http://dmm-star.iteye.com/blog/1109308"><img class="star" src="python%20datetime%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%20-%20lhj588%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/icon_star.html" alt="收藏代码"></a></div>
+
+</div>
+<ol class="dp-py" start="1">
+<li><span><span class="keyword">from</span>&nbsp;datetime&nbsp;<span class="keyword">import</span>&nbsp;*&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">import</span>&nbsp;time&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'datetime.max:'</span>,&nbsp;datetime.max&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'datetime.min:'</span>,&nbsp;datetime.min&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'datetime.resolution:'</span>,&nbsp;datetime.resolution&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'today():'</span>,&nbsp;datetime.today()&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'now():'</span>,&nbsp;datetime.now()&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'utcnow():'</span>,&nbsp;datetime.utcnow()&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'fromtimestamp(tmstmp):'</span>,&nbsp;datetime.fromtimestamp(time.time())&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'utcfromtimestamp(tmstmp):'</span>,&nbsp;datetime.utcfromtimestamp(time.time())&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;----&nbsp;结果&nbsp;----</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;datetime.max:&nbsp;9999-12-31&nbsp;23:59:59.999999</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;datetime.min:&nbsp;0001-01-01&nbsp;00:00:00</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;datetime.resolution:&nbsp;0:00:00.000001</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;today():&nbsp;2010-04-07&nbsp;09:48:16.234000</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;now():&nbsp;2010-04-07&nbsp;09:48:16.234000</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;utcnow():&nbsp;2010-04-07&nbsp;01:48:16.234000&nbsp;&nbsp;#&nbsp;中国位于+8时间，与本地时间相差8</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;fromtimestamp(tmstmp):&nbsp;2010-04-07&nbsp;09:48:16.234000</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;utcfromtimestamp(tmstmp):&nbsp;2010-04-07&nbsp;01:48:16.234000</span>&nbsp;&nbsp;</span></li>
+
+</ol></div>
+<p><span>&nbsp;&nbsp; &nbsp;datetime类提供的实例方法与属性（很多属性或方法在date和time中已经出现过，在此有类似的意义，这里只罗列这些方法名，具体含义不再逐个展开介绍，可以参考上文对date与time类的讲解。）：</span></p>
+<ul>
+<li><span>datetime.year、month、day、hour、minute、second、microsecond、tzinfo：</span></li>
+<li><span>datetime.date()：获取date对象；</span></li>
+<li><span>datetime.time()：获取time对象；</span></li>
+<li><span><tt class="descclassname">datetime.</tt>&nbsp;<tt class="descname">replace</tt>&nbsp;(<span class="optional">[</span>&nbsp;year<span class="optional">[</span>&nbsp;, month<span class="optional">[</span>&nbsp;, day<span class="optional">[</span>&nbsp;, hour<span class="optional">[</span>&nbsp;, minute<span class="optional">[</span>&nbsp;, second<span class="optional">[</span>&nbsp;, microsecond<span class="optional">[</span>&nbsp;, tzinfo<span class="optional">]</span>&nbsp;<span class="optional">]</span>&nbsp;<span class="optional">]</span>&nbsp;<span class="optional">]</span>&nbsp;<span class="optional">]</span>&nbsp;<span class="optional">]</span>&nbsp;<span class="optional">]</span>&nbsp;<span class="optional">]</span>)：</span></li>
+<li><span><tt class="descclassname">datetime.</tt>&nbsp;<tt class="descname">timetuple</tt>&nbsp;()</span></li>
+<li><span><tt class="descclassname">datetime.</tt>&nbsp;<tt class="descname">utctimetuple</tt>&nbsp;()</span></li>
+<li><span><tt class="descclassname">datetime.</tt>&nbsp;<tt class="descname">toordinal</tt>&nbsp;()</span></li>
+<li><span><tt class="descclassname">datetime.</tt>&nbsp;<tt class="descname">weekday</tt>&nbsp;()</span></li>
+<li><span><tt class="descclassname">datetime.</tt>&nbsp;<tt class="descname">isocalendar</tt>&nbsp;()</span></li>
+<li><span><tt class="descclassname">datetime.</tt>&nbsp;<tt class="descname">isoformat</tt>&nbsp;(<span class="optional">[</span>&nbsp;sep<span class="optional">]</span>&nbsp;)</span></li>
+<li><span><tt class="descclassname">datetime.</tt>&nbsp;<tt class="descname">ctime</tt>&nbsp;()：返回一个日期时间的C格式字符串，等效于time.ctime(time.mktime(dt.timetuple()))；</span></li>
+<li><span><tt class="descclassname">datetime.</tt>&nbsp;<tt class="descname">strftime</tt>&nbsp;(format)</span></li>
+
+</ul>
+<p><span>&nbsp;&nbsp; &nbsp;像date一样，也可以对两个datetime对象进行比较，或者相减返回一个时间间隔对象，或者日期时间加上一个间隔返回一个新的日期时间对象。这里不提供详细的例子，看客自己动手试一下~~</span></p>
+<h3><span>格式字符串</span></h3>
+<p><span>&nbsp;&nbsp; &nbsp;datetime、date、time都提供了strftime()方法，该方法接收一个格式字符串，输出日期时间的字符串表示。下表是从python手册中拉过来的，我对些进行了简单的翻译（翻译的有点噢口~~）。</span></p>
+<p><span>格式字符 &nbsp;意义</span></p>
+<p><span><tt class="docutils literal"><span class="pre">%a</span>&nbsp;</tt>星期的简写。如 星期三为Web<br><tt class="docutils literal"><span class="pre">%A</span>&nbsp;</tt></span><span>星期的全写。如 星期三为Wednesday<br><tt class="docutils literal"><span class="pre">%b</span>&nbsp;</tt></span><span>月份的简写。如4月份为Apr<br><tt class="docutils literal"><span class="pre">%B月份的全写。如4月份为April</span>&nbsp;</tt></span><span><br><tt class="docutils literal"><span class="pre">%c:&nbsp;</span>&nbsp;</tt></span><span>日期时间的字符串表示。（如：&nbsp;04/07/10 10:43:39）<br><tt class="docutils literal"><span class="pre">%d:&nbsp;</span>&nbsp;</tt></span><span>日在这个月中的天数（是这个月的第几天）<br><tt class="docutils literal"><span class="pre">%f:&nbsp;</span>&nbsp;</tt></span><span>微秒（范围[0,999999]）<br><tt class="docutils literal"><span class="pre">%H:&nbsp;</span>&nbsp;</tt></span><span>小时（24小时制，[0, 23]）<br><tt class="docutils literal"><span class="pre">%I:&nbsp;</span>&nbsp;</tt></span><span>小时（12小时制，[0, 11]）<br><tt class="docutils literal"><span class="pre">%j:&nbsp;</span>&nbsp;</tt></span><span>日在年中的天数 [001,366]（是当年的第几天）<br><tt class="docutils literal"><span class="pre">%m:&nbsp;</span>&nbsp;</tt></span><span>月份（[01,12]）<br><tt class="docutils literal"><span class="pre">%M:&nbsp;</span>&nbsp;</tt></span><span>分钟（[00,59]）<br><tt class="docutils literal"><span class="pre">%p:&nbsp;</span>&nbsp;</tt></span><span>AM或者PM<br><tt class="docutils literal"><span class="pre">%S:&nbsp;</span>&nbsp;</tt></span><span>秒（范围为[00,61]，为什么不是[00, 59]，参考python手册~_~）<br><tt class="docutils literal"><span class="pre">%U:&nbsp;</span>&nbsp;</tt></span><span>周在当年的周数当年的第几周），星期天作为周的第一天<br><tt class="docutils literal"><span class="pre">%w:&nbsp;</span>&nbsp;</tt></span><span>今天在这周的天数，范围为[0, 6]，6表示星期天<br><tt class="docutils literal"><span class="pre">%W:&nbsp;</span>&nbsp;</tt></span><span>周在当年的周数（是当年的第几周），星期一作为周的第一天<br><tt class="docutils literal"><span class="pre">%x:&nbsp;</span>&nbsp;</tt></span><span>日期字符串（如：04/07/10）<br><tt class="docutils literal"><span class="pre">%X:&nbsp;</span>&nbsp;</tt></span><span>时间字符串（如：10:43:39）<br><tt class="docutils literal"><span class="pre">%y:&nbsp;</span>&nbsp;</tt></span><span>2个数字表示的年份<br><tt class="docutils literal"><span class="pre">%Y:&nbsp;</span>&nbsp;</tt></span><span>4个数字表示的年份<br><tt class="docutils literal"><span class="pre">%z:&nbsp;</span>&nbsp;</tt></span><span>与utc时间的间隔 （如果是本地时间，返回空字符串）<br><tt class="docutils literal"><span class="pre">%Z:&nbsp;</span>&nbsp;</tt></span><span>时区名称（如果是本地时间，返回空字符串）<br><tt class="docutils literal"><span class="pre">%%:&nbsp;</span>&nbsp;</tt></span><span>%% =&gt; %</span></p>
+<p><span>例子：</span></p>
+<div class="dp-highlighter">
+<div class="bar">
+<div class="tools"><span><a href="http://blog.csdn.net/JGood/archive/2010/04/07/5457284.aspx">view plain</a>&nbsp;<a href="http://blog.csdn.net/JGood/archive/2010/04/07/5457284.aspx">copy to clipboard</a>&nbsp;<a href="http://blog.csdn.net/JGood/archive/2010/04/07/5457284.aspx">print</a>&nbsp;<a href="http://blog.csdn.net/JGood/archive/2010/04/07/5457284.aspx">?</a></span></div>
+
+</div>
+<ol class="dp-py">
+<li class="alt"><span>dt&nbsp;=&nbsp;datetime.now()&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'(%Y-%m-%d&nbsp;%H:%M:%S&nbsp;%f):&nbsp;'</span>&nbsp;,&nbsp;dt.strftime(&nbsp;<span class="string">'%Y-%m-%d&nbsp;%H:%M:%S&nbsp;%f'</span>&nbsp;)&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'(%Y-%m-%d&nbsp;%H:%M:%S&nbsp;%p):&nbsp;'</span>&nbsp;,&nbsp;dt.strftime(&nbsp;<span class="string">'%y-%m-%d&nbsp;%I:%M:%S&nbsp;%p'</span>&nbsp;)&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'%%a:&nbsp;%s&nbsp;'</span>&nbsp;&nbsp;%&nbsp;dt.strftime(&nbsp;<span class="string">'%a'</span>&nbsp;)&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'%%A:&nbsp;%s&nbsp;'</span>&nbsp;&nbsp;%&nbsp;dt.strftime(&nbsp;<span class="string">'%A'</span>&nbsp;)&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'%%b:&nbsp;%s&nbsp;'</span>&nbsp;&nbsp;%&nbsp;dt.strftime(&nbsp;<span class="string">'%b'</span>&nbsp;)&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'%%B:&nbsp;%s&nbsp;'</span>&nbsp;&nbsp;%&nbsp;dt.strftime(&nbsp;<span class="string">'%B'</span>&nbsp;)&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'日期时间%%c:&nbsp;%s&nbsp;'</span>&nbsp;&nbsp;%&nbsp;dt.strftime(&nbsp;<span class="string">'%c'</span>&nbsp;)&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'日期%%x：%s&nbsp;'</span>&nbsp;&nbsp;%&nbsp;dt.strftime(&nbsp;<span class="string">'%x'</span>&nbsp;)&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'时间%%X：%s&nbsp;'</span>&nbsp;&nbsp;%&nbsp;dt.strftime(&nbsp;<span class="string">'%X'</span>&nbsp;)&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'今天是这周的第%s天&nbsp;'</span>&nbsp;&nbsp;%&nbsp;dt.strftime(&nbsp;<span class="string">'%w'</span>&nbsp;)&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'今天是今年的第%s天&nbsp;'</span>&nbsp;&nbsp;%&nbsp;dt.strftime(&nbsp;<span class="string">'%j'</span>&nbsp;)&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="keyword">print</span>&nbsp;&nbsp;&nbsp;<span class="string">'今周是今年的第%s周&nbsp;'</span>&nbsp;&nbsp;%&nbsp;dt.strftime(&nbsp;<span class="string">'%U'</span>&nbsp;)&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">#&nbsp;#&nbsp;----&nbsp;结果&nbsp;----</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;(%Y-%m-%d&nbsp;%H:%M:%S&nbsp;%f):&nbsp;&nbsp;2010-04-07&nbsp;10:52:18&nbsp;937000</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">#&nbsp;(%Y-%m-%d&nbsp;%H:%M:%S&nbsp;%p):&nbsp;&nbsp;10-04-07&nbsp;10:52:18&nbsp;AM</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;%a:&nbsp;Wed&nbsp;</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">#&nbsp;%A:&nbsp;Wednesday&nbsp;</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;%b:&nbsp;Apr&nbsp;</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">#&nbsp;%B:&nbsp;April&nbsp;</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;日期时间%c:&nbsp;04/07/10&nbsp;10:52:18&nbsp;</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">#&nbsp;日期%x：04/07/10&nbsp;</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;时间%X：10:52:18&nbsp;</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">#&nbsp;今天是这周的第3天&nbsp;</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;今天是今年的第097天&nbsp;</span>&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">#&nbsp;今周是今年的第14周</span>&nbsp;&nbsp;&nbsp;</span></li>
+
+</ol></div>
+<div id="" class="dp-highlighter">
+<div class="bar">
+<div class="tools">Python代码&nbsp;<object data="python%20datetime%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%20-%20lhj588%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/clipboard_new.swf" type="application/x-shockwave-flash" height="15" width="14"><param name="src" value="http://dmm-star.iteye.com/javascripts/syntaxhighlighter/clipboard_new.swf"><param name="wmode" value="transparent"><param name="flashvars" value="clipboard=dt%20%3D%20datetime.now()%0Aprint%20'(%25Y-%25m-%25d%20%25H%3A%25M%3A%25S%20%25f)%3A%20'%2C%20dt.strftime('%25Y-%25m-%25d%20%25H%3A%25M%3A%25S%20%25f')%0Aprint%20'(%25Y-%25m-%25d%20%25H%3A%25M%3A%25S%20%25p)%3A%20'%2C%20dt.strftime('%25y-%25m-%25d%20%25I%3A%25M%3A%25S%20%25p')%0Aprint%20'%25%25a%3A%20%25s%20'%20%25%20dt.strftime('%25a')%0Aprint%20'%25%25A%3A%20%25s%20'%20%25%20dt.strftime('%25A')%0Aprint%20'%25%25b%3A%20%25s%20'%20%25%20dt.strftime('%25b')%0Aprint%20'%25%25B%3A%20%25s%20'%20%25%20dt.strftime('%25B')%0Aprint%20'%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4%25%25c%3A%20%25s%20'%20%25%20dt.strftime('%25c')%0Aprint%20'%E6%97%A5%E6%9C%9F%25%25x%EF%BC%9A%25s%20'%20%25%20dt.strftime('%25x')%0Aprint%20'%E6%97%B6%E9%97%B4%25%25X%EF%BC%9A%25s%20'%20%25%20dt.strftime('%25X')%0Aprint%20'%E4%BB%8A%E5%A4%A9%E6%98%AF%E8%BF%99%E5%91%A8%E7%9A%84%E7%AC%AC%25s%E5%A4%A9%20'%20%25%20dt.strftime('%25w')%0Aprint%20'%E4%BB%8A%E5%A4%A9%E6%98%AF%E4%BB%8A%E5%B9%B4%E7%9A%84%E7%AC%AC%25s%E5%A4%A9%20'%20%25%20dt.strftime('%25j')%0Aprint%20'%E4%BB%8A%E5%91%A8%E6%98%AF%E4%BB%8A%E5%B9%B4%E7%9A%84%E7%AC%AC%25s%E5%91%A8%20'%20%25%20dt.strftime('%25U')%0A%0A%23%20%23%20----%20%E7%BB%93%E6%9E%9C%20----%0A%23%20(%25Y-%25m-%25d%20%25H%3A%25M%3A%25S%20%25f)%3A%20%202010-04-07%2010%3A52%3A18%20937000%0A%23%20(%25Y-%25m-%25d%20%25H%3A%25M%3A%25S%20%25p)%3A%20%2010-04-07%2010%3A52%3A18%20AM%0A%23%20%25a%3A%20Wed%20%0A%23%20%25A%3A%20Wednesday%20%0A%23%20%25b%3A%20Apr%20%0A%23%20%25B%3A%20April%20%0A%23%20%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4%25c%3A%2004%2F07%2F10%2010%3A52%3A18%20%0A%23%20%E6%97%A5%E6%9C%9F%25x%EF%BC%9A04%2F07%2F10%20%0A%23%20%E6%97%B6%E9%97%B4%25X%EF%BC%9A10%3A52%3A18%20%0A%23%20%E4%BB%8A%E5%A4%A9%E6%98%AF%E8%BF%99%E5%91%A8%E7%9A%84%E7%AC%AC3%E5%A4%A9%20%0A%23%20%E4%BB%8A%E5%A4%A9%E6%98%AF%E4%BB%8A%E5%B9%B4%E7%9A%84%E7%AC%AC097%E5%A4%A9%20%0A%23%20%E4%BB%8A%E5%91%A8%E6%98%AF%E4%BB%8A%E5%B9%B4%E7%9A%84%E7%AC%AC14%E5%91%A8"><param name="quality" value="high"><param name="allowscriptaccess" value="always"><param name="pluginspage" value="http://www.macromedia.com/go/getflashplayer"></object>&nbsp;<a title="收藏这段代码" href="http://dmm-star.iteye.com/blog/1109308"><img class="star" src="python%20datetime%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%20-%20lhj588%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/icon_star.html" alt="收藏代码"></a></div>
+
+</div>
+<ol class="dp-py" start="1"><ol class="dp-py" start="1">
+<li><span>dt&nbsp;=&nbsp;datetime.now()&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'(%Y-%m-%d&nbsp;%H:%M:%S&nbsp;%f):&nbsp;'</span>,&nbsp;dt.strftime(<span class="string">'%Y-%m-%d&nbsp;%H:%M:%S&nbsp;%f'</span>)&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'(%Y-%m-%d&nbsp;%H:%M:%S&nbsp;%p):&nbsp;'</span>,&nbsp;dt.strftime(<span class="string">'%y-%m-%d&nbsp;%I:%M:%S&nbsp;%p'</span>)&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'%%a:&nbsp;%s&nbsp;'</span>&nbsp;%&nbsp;dt.strftime(<span class="string">'%a'</span>)&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'%%A:&nbsp;%s&nbsp;'</span>&nbsp;%&nbsp;dt.strftime(<span class="string">'%A'</span>)&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'%%b:&nbsp;%s&nbsp;'</span>&nbsp;%&nbsp;dt.strftime(<span class="string">'%b'</span>)&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'%%B:&nbsp;%s&nbsp;'</span>&nbsp;%&nbsp;dt.strftime(<span class="string">'%B'</span>)&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'日期时间%%c:&nbsp;%s&nbsp;'</span>&nbsp;%&nbsp;dt.strftime(<span class="string">'%c'</span>)&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'日期%%x：%s&nbsp;'</span>&nbsp;%&nbsp;dt.strftime(<span class="string">'%x'</span>)&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'时间%%X：%s&nbsp;'</span>&nbsp;%&nbsp;dt.strftime(<span class="string">'%X'</span>)&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'今天是这周的第%s天&nbsp;'</span>&nbsp;%&nbsp;dt.strftime(<span class="string">'%w'</span>)&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'今天是今年的第%s天&nbsp;'</span>&nbsp;%&nbsp;dt.strftime(<span class="string">'%j'</span>)&nbsp;&nbsp;</span></li>
+<li><span><span class="keyword">print</span>&nbsp;<span class="string">'今周是今年的第%s周&nbsp;'</span>&nbsp;%&nbsp;dt.strftime(<span class="string">'%U'</span>)&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;#&nbsp;----&nbsp;结果&nbsp;----</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;(%Y-%m-%d&nbsp;%H:%M:%S&nbsp;%f):&nbsp;&nbsp;2010-04-07&nbsp;10:52:18&nbsp;937000</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;(%Y-%m-%d&nbsp;%H:%M:%S&nbsp;%p):&nbsp;&nbsp;10-04-07&nbsp;10:52:18&nbsp;AM</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;%a:&nbsp;Wed&nbsp;</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;%A:&nbsp;Wednesday&nbsp;</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;%b:&nbsp;Apr&nbsp;</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;%B:&nbsp;April&nbsp;</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;日期时间%c:&nbsp;04/07/10&nbsp;10:52:18&nbsp;</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;日期%x：04/07/10&nbsp;</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;时间%X：10:52:18&nbsp;</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;今天是这周的第3天&nbsp;</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;今天是今年的第097天&nbsp;</span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">#&nbsp;今周是今年的第14周</span>&nbsp;&nbsp;</span></li>
+
+</ol></ol></div></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info"><div id="green_channel">
+绿色通道：
+<a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(2466653,cb_blogId,1);green_channel_success(this,'谢谢推荐！');">好文要顶</a>
+<a id="green_channel_follow" onclick="c_follow();" href="javascript:void(0);">关注我</a>
+<a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a><a id="green_channel_contact" href="http://space.cnblogs.com/msg/send/lhj588" target="_blank">与我联系</a>
+<a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="python%20datetime%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%20-%20lhj588%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/icon_weibo_24.png" alt=""></a>
+</div>
+<div id="author_profile">
+<div id="author_profile_info" class="author_profile_info">
+<a href="http://home.cnblogs.com/u/lhj588/" target="_blank"><img src="python%20datetime%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%20-%20lhj588%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/u128587.jpeg" class="author_avatar" alt=""></a>
+<div id="author_profile_detail" class="author_profile_info">
+<a href="http://home.cnblogs.com/u/lhj588/">lhj588</a><br>
+<a href="http://home.cnblogs.com/u/lhj588/followees">关注 - 7</a><br>
+<a href="http://home.cnblogs.com/u/lhj588/followers">粉丝 - 47</a>
+</div>
+</div>
+<div class="clear"></div>
+<div id="author_profile_honor"></div>
+<div id="author_profile_follow">
+    <a href="javascript:void(0);" onclick="c_follow();return false;">+加关注</a>
+</div>
+</div>
+<div id="div_digg">										
+    <div class="diggit" onclick="votePost(2466653,'Digg')">
+        <span class="diggnum" id="digg_count">3</span>
+    </div>
+	<div class="buryit" onclick="votePost(2466653,'Bury')"> 
+		<span class="burynum" id="bury_count">0</span>
+	</div>
+	<div class="clear"></div>	
+	<div class="diggword" id="digg_tips">
+    (请您对文章做出评价)
+    </div>	
+</div>
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/lhj588/archive/2012/04/18/2455323.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/lhj588/archive/2012/04/18/2455323.html" title="发布于2012-04-18 15:05">Linux中cp直接覆盖不提示的方法</a><br><a href="http://www.cnblogs.com/lhj588/archive/2012/04/25/2470223.html" class="p_n_p_prefix">» </a> 下一篇：<a href="http://www.cnblogs.com/lhj588/archive/2012/04/25/2470223.html" title="发布于2012-04-25 18:00">python list排序</a><br></div>
+</div>
+
+
+		</div>
+		<div class="postDesc">posted @ <span id="post-date">2012-04-23 16:35</span> <a href="http://www.cnblogs.com/lhj588/">lhj588</a> 阅读(<span id="post_view_count">37785</span>) 评论(<span id="post_comment_count">3</span>)  <a href="http://i.cnblogs.com/EditPosts.aspx?postid=2466653" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(2466653);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,isLogined=false,cb_blogId=90036,cb_entryId=2466653,cb_blogApp=currentBlogApp,cb_blogUserGuid='93934771-a04e-df11-ba8f-001cf0cd104b',cb_entryCreatedDate='2012/4/23 16:35:00';loadViewCount(cb_entryId);</script>
+	
+</div><!--end: topics 文章、评论容器-->
+<a name="!comments"></a><div id="blog-comments-placeholder"><div id="comments_pager_top"></div>
+<br>
+<div class="feedback_area_title">评论列表</div>
+<div class="feedbackNoItems"></div>	
+
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#2825972" class="layer">#1楼</a><a name="2825972" id="comment_anchor_2825972"></a>  <span class="comment_date">2013-11-28 11:05</span> <a id="a_comment_author_2825972" href="http://www.cnblogs.com/johnwonder/" target="_blank">john23.net</a> <a href="http://msg.cnblogs.com/msg/send/john23.net" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_2825972" class="blog_comment_body">感谢分享</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2825972,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2825972,'Bury',this)">反对(0)</a></div><span id="comment_2825972_avatar" style="display:none;">http://pic.cnitblog.com/face/u64521.jpg</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#2938862" class="layer">#2楼</a><a name="2938862" id="comment_anchor_2938862"></a>  <span class="comment_date">2014-05-14 16:27</span> <a id="a_comment_author_2938862" href="http://www.cnblogs.com/metasequoia/" target="_blank">metasequoia</a> <a href="http://msg.cnblogs.com/msg/send/metasequoia" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_2938862" class="blog_comment_body">感谢分享</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2938862,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2938862,'Bury',this)">反对(0)</a></div><span id="comment_2938862_avatar" style="display:none;">http://pic.cnitblog.com/face/630821/20140506114428.png</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#3070406" class="layer">#3楼</a><a name="3070406" id="comment_anchor_3070406"></a><span id="comment-maxId" style="display:none;">3070406</span><span id="comment-maxDate" style="display:none;">2014/11/24 12:02:41</span>  <span class="comment_date">2014-11-24 12:02</span> <a id="a_comment_author_3070406" href="http://www.cnblogs.com/aoplee/" target="_blank">yuanmouren1hao</a> <a href="http://msg.cnblogs.com/msg/send/yuanmouren1hao" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3070406" class="blog_comment_body">谢谢分享</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3070406,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3070406,'Bury',this)">反对(0)</a></div><span id="comment_3070406_avatar" style="display:none;">http://pic.cnitblog.com/face/470299/20131107145015.png</span>
+			</div>
+		</div>
+	<div id="comments_pager_bottom"></div></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" id="lnk_RefreshComments" onclick="return RefreshCommentList();">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login('commentform');">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="site_nav_under"><a href="http://www.imooc.com/view/126?from=cnblogs" target="_blank"><b>【免费课程】系列：Android系统Root原理初探</b></a><br><a href="http://www.ucancode.com/index.htm" target="_blank">【推荐】50万行VC++源码: 大型组态工控、电力仿真CAD与GIS源码库</a><br><a href="http://www.rongcloud.cn/promotion" target="_blank">融云，免费为你的App加入IM功能——让你的App“聊”起来！！</a><br><a href="http://www.cnblogs.com/cmt/p/tingyun.html" target="_blank">写“听云”原创博文，赢取iPhone 6超级大奖</a><br><a href="http://amazeui.org/" target="_blank">【推荐】最懂中文的 H5 开源前端框架</a><br><a href="http://www.cnblogs.com/cmt/p/4168231.html" target="_blank">【活动】加班一整年了，程序员们，你们还好吗？</a></div>
+<div id="opt_under_post"></div>
+<script type="text/javascript">
+    var enableGoogleAd = canShowAdsense(); var googletag = googletag || {}; googletag.cmd = googletag.cmd || [];
+    fixPostBodyFormat();
+</script>
+<div id="ad_under_post_holder">
+<script type="text/javascript">
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function () {
+        if (enableGoogleAd) {
+            var gads = document.createElement('script');
+            gads.async = true;
+            gads.type = 'text/javascript';
+            var useSSL = 'https:' == document.location.protocol;
+            gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+            var node = document.getElementsByTagName('script')[0];
+            node.parentNode.insertBefore(gads, node);
+        }
+    })();
+</script>
+<script type="text/javascript">
+    try {
+        if (enableGoogleAd) {
+            googletag.cmd.push(function () {
+                googletag.defineSlot('/1090369/cnblogs_blogpost_C1_sitehome', [300, 250], 'div-gpt-ad-1346480159711-0').addService(googletag.pubads());
+                googletag.defineSlot('/1090369/cnblogs_blogpost_C2', [468, 60], 'div-gpt-ad-1410860226396-0').addService(googletag.pubads());
+                googletag.pubads().enableSingleRequest();
+                googletag.enableServices();
+            });
+        };
+    } catch (e) { }
+</script>
+<div id="google_ad_c1" class="c_ad_block">
+    <div id="div-gpt-ad-1346480159711-0" style="width: 300px; height: 250px;">
+    <script type="text/javascript">
+        try {
+            if (enableGoogleAd) {
+                googletag.cmd.push(function () { googletag.display('div-gpt-ad-1346480159711-0'); });            
+            } else {
+                $('#div-gpt-ad-1346480159711-0').hide();
+            }
+    } catch (e) { }
+    </script>
+    <div style="border: 0pt none;" id="google_ads_iframe_/1090369/cnblogs_blogpost_C1_sitehome_0__container__"><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px none; vertical-align: bottom;" marginheight="0" marginwidth="0" scrolling="no" name="google_ads_iframe_/1090369/cnblogs_blogpost_C1_sitehome_0" id="google_ads_iframe_/1090369/cnblogs_blogpost_C1_sitehome_0" frameborder="0" height="250" width="300"></iframe></div><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px none; vertical-align: bottom; visibility: hidden; display: none;" marginheight="0" marginwidth="0" scrolling="no" name="google_ads_iframe_/1090369/cnblogs_blogpost_C1_sitehome_0__hidden__" id="google_ads_iframe_/1090369/cnblogs_blogpost_C1_sitehome_0__hidden__" frameborder="0" height="0" width="0"></iframe></div>
+</div>
+</div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="http://news.cnblogs.com/n/511194/" target="_blank">移动电源60批次产品无一合格 三星小米等上黑榜</a><br> ·  <a href="http://news.cnblogs.com/n/511193/" target="_blank">在45岁生日的第二天，雷军跟大家聊了些什么</a><br> ·  <a href="http://news.cnblogs.com/n/511192/" target="_blank">近五分之一欧洲人未使用过互联网</a><br> ·  <a href="http://news.cnblogs.com/n/511191/" target="_blank">飞利浦12亿美元收购美医疗设备厂商Volcano</a><br> ·  <a href="http://news.cnblogs.com/n/511190/" target="_blank">苹果移动支付渐成气候</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="google_ad_c2" class="c_ad_block">
+<div id="div-gpt-ad-1410860226396-0" style="width: 468px; height: 60px;">
+<script type="text/javascript">
+try {
+    if (enableGoogleAd) {
+        googletag.cmd.push(function () { googletag.display('div-gpt-ad-1410860226396-0'); });
+    } else {
+        $('#div-gpt-ad-1346480159711-0').hide();
+    }
+} catch (e) { }
+</script>
+<div style="border: 0pt none;" id="google_ads_iframe_/1090369/cnblogs_blogpost_C2_0__container__"><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px none; vertical-align: bottom;" marginheight="0" marginwidth="0" scrolling="no" name="google_ads_iframe_/1090369/cnblogs_blogpost_C2_0" id="google_ads_iframe_/1090369/cnblogs_blogpost_C2_0" frameborder="0" height="60" width="468"></iframe></div></div>
+</div>
+<div id="under_post_kb"><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/511156/" target="_blank">代码的体格</a><br> ·  <a href="http://kb.cnblogs.com/page/510538/" target="_blank">Linkedin工程师是如何优化他们的Java代码的</a><br> ·  <a href="http://kb.cnblogs.com/page/503631/" target="_blank">做一个网站多少钱？</a><br> ·  <a href="http://kb.cnblogs.com/page/510698/" target="_blank">对SOA架构思想的一些说明</a><br> ·  <a href="http://kb.cnblogs.com/page/510356/" target="_blank">为什么社交网络中数据翻页技术复杂</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+$(function () {
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 200);
+});
+</script>
+</div>
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"><div id="profile_block">昵称：<a href="http://home.cnblogs.com/u/lhj588/">lhj588</a><br>园龄：<a href="http://home.cnblogs.com/u/lhj588/" title="入园时间：2010-04-23">4年7个月</a><br>粉丝：<a href="http://home.cnblogs.com/u/lhj588/followers/">47</a><br>关注：<a href="http://home.cnblogs.com/u/lhj588/followees/">7</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="cnblogs.UserManager.FollowBlogger('93934771-a04e-df11-ba8f-001cf0cd104b')">+加关注</a></div></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" title="日历" cellpadding="0" cellspacing="0">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar('2012/03/01');return false;">&lt;</a></td><td align="center">2012年4月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar('2012/05/01');return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" abbr="日" scope="col" align="center">日</th><th class="CalDayHeader" abbr="一" scope="col" align="center">一</th><th class="CalDayHeader" abbr="二" scope="col" align="center">二</th><th class="CalDayHeader" abbr="三" scope="col" align="center">三</th><th class="CalDayHeader" abbr="四" scope="col" align="center">四</th><th class="CalDayHeader" abbr="五" scope="col" align="center">五</th><th class="CalDayHeader" abbr="六" scope="col" align="center">六</th></tr><tr><td class="CalOtherMonthDay" align="center">25</td><td class="CalOtherMonthDay" align="center">26</td><td class="CalOtherMonthDay" align="center">27</td><td class="CalOtherMonthDay" align="center">28</td><td class="CalOtherMonthDay" align="center">29</td><td class="CalOtherMonthDay" align="center">30</td><td class="CalOtherMonthDay" align="center">31</td></tr><tr><td class="CalWeekendDay" align="center">1</td><td align="center">2</td><td align="center">3</td><td align="center">4</td><td align="center">5</td><td align="center">6</td><td class="CalWeekendDay" align="center">7</td></tr><tr><td class="CalWeekendDay" align="center">8</td><td align="center">9</td><td align="center">10</td><td align="center">11</td><td align="center"><a href="http://www.cnblogs.com/lhj588/archive/2012/04/12.html"><u>12</u></a></td><td align="center"><a href="http://www.cnblogs.com/lhj588/archive/2012/04/13.html"><u>13</u></a></td><td class="CalWeekendDay" align="center">14</td></tr><tr><td class="CalWeekendDay" align="center">15</td><td align="center">16</td><td align="center">17</td><td align="center"><a href="http://www.cnblogs.com/lhj588/archive/2012/04/18.html"><u>18</u></a></td><td align="center">19</td><td align="center">20</td><td class="CalWeekendDay" align="center">21</td></tr><tr><td class="CalWeekendDay" align="center">22</td><td align="center"><a href="http://www.cnblogs.com/lhj588/archive/2012/04/23.html"><u>23</u></a></td><td align="center">24</td><td align="center"><a href="http://www.cnblogs.com/lhj588/archive/2012/04/25.html"><u>25</u></a></td><td align="center">26</td><td align="center">27</td><td class="CalWeekendDay" align="center">28</td></tr><tr><td class="CalWeekendDay" align="center">29</td><td align="center">30</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn">
+<div class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="widget_my_zzk" class="div_my_zzk"><input id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk" type="text">&nbsp;<input onclick="zzk_go()" value="找找看" id="btnZzk" class="btn_my_zzk" type="button"></div>
+<div id="widget_my_google" class="div_my_zzk"><input name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk" type="text">&nbsp;<input onclick="google_go()" value="谷歌搜索" class="btn_my_zzk" type="button"></div>
+</div>
+
+
+<div class="catListLink">
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/lhj588/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="http://www.cnblogs.com/lhj588/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="http://www.cnblogs.com/lhj588/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="http://www.cnblogs.com/lhj588/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="http://www.cnblogs.com/lhj588/tag/" title="我的博客的标签列表">我的标签</a></li>
+<li><a id="itemListLink" onclick="this.blur();WarpClass('itemListLink', 'itemListLin_con');return false;" href="#">更多链接</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+<ul>
+
+</ul>
+</div>
+</div>
+<div class="catListEssay">
+<h3 class="catListTitle">最新随笔</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/lhj588/p/3805285.html">1. CDN技术分享</a></li><li><a href="http://www.cnblogs.com/lhj588/p/3805268.html">2. 怎么在阿里云服务器部署多个tomcat</a></li><li><a href="http://www.cnblogs.com/lhj588/p/3790244.html">3. nginx模块开发篇 (阿里著作)</a></li><li><a href="http://www.cnblogs.com/lhj588/p/3790240.html">4. Nginx开发从入门到精通  学习目录分享学习  (阿里著作)</a></li><li><a href="http://www.cnblogs.com/lhj588/p/3777041.html">5. 阿里云 通过YUM源安装nginx</a></li><li><a href="http://www.cnblogs.com/lhj588/articles/3773923.html">6. Android 使用  com.j256.ormlite 简单使用 【1】</a></li><li><a href="http://www.cnblogs.com/lhj588/articles/3696078.html">7. 云服务器技术分享PPT--阿里云</a></li><li><a href="http://www.cnblogs.com/lhj588/articles/3670880.html">8. 阿里云服务器 部署Apache Tomcat 后遇到自动Tomcat停止</a></li><li><a href="http://www.cnblogs.com/lhj588/p/3622260.html">9. Java 模板引擎 jetbrick-template</a></li><li><a href="http://www.cnblogs.com/lhj588/p/3622234.html">10. 七天学会NodeJS</a></li>
+</ul>
+</div>
+
+<div class="catListTag">
+<h3 class="catListTitle">我的标签</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/lhj588/tag/php/">php</a>(2)</li><li><a href="http://www.cnblogs.com/lhj588/tag/Python%20GUI/">Python GUI</a>(2)</li><li><a href="http://www.cnblogs.com/lhj588/tag/SQL%E4%BC%98%E5%8C%96/">SQL优化</a>(1)</li><li><a href="http://www.cnblogs.com/lhj588/tag/pyQt4/">pyQt4</a>(1)</li><li><a href="http://www.cnblogs.com/lhj588/tag/Jquery/">Jquery</a>(1)</li><li><a href="http://www.cnblogs.com/lhj588/tag/Lucene/">Lucene</a>(1)</li>
+</ul>
+</div>
+<div class="catListPostCategory">
+<h3 class="catListTitle">随笔分类<span style="font-size:11px;font-weight:normal">(52)</span></h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_0_Link_0" href="http://www.cnblogs.com/lhj588/category/382937.html">Django(11)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_1" href="http://www.cnblogs.com/lhj588/category/490412.html">IOS(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_2" href="http://www.cnblogs.com/lhj588/category/438656.html">Java(11)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_3" href="http://www.cnblogs.com/lhj588/category/382938.html">Linux(7)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_4" href="http://www.cnblogs.com/lhj588/category/438655.html">mybatis(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_5" href="http://www.cnblogs.com/lhj588/category/386142.html">MySql(8)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_6" href="http://www.cnblogs.com/lhj588/category/332315.html">NET Error</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_7" href="http://www.cnblogs.com/lhj588/category/383900.html">Python(7)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_8" href="http://www.cnblogs.com/lhj588/category/332314.html">python Error(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_9" href="http://www.cnblogs.com/lhj588/category/441363.html">Quartz(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_10" href="http://www.cnblogs.com/lhj588/category/383231.html">Ruby(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_11" href="http://www.cnblogs.com/lhj588/category/403337.html">SQL Server(1)</a> </li>
+
+</ul>
+
+</div>
+
+<div class="catListPostArchive">
+<h3 class="catListTitle">随笔档案<span style="font-size:11px;font-weight:normal">(148)</span></h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_1_Link_0" href="http://www.cnblogs.com/lhj588/archive/2014/12.html">2014年12月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_1" href="http://www.cnblogs.com/lhj588/archive/2014/06.html">2014年6月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_2" href="http://www.cnblogs.com/lhj588/archive/2014/03.html">2014年3月 (8)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_3" href="http://www.cnblogs.com/lhj588/archive/2014/02.html">2014年2月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_4" href="http://www.cnblogs.com/lhj588/archive/2014/01.html">2014年1月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_5" href="http://www.cnblogs.com/lhj588/archive/2013/10.html">2013年10月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_6" href="http://www.cnblogs.com/lhj588/archive/2013/09.html">2013年9月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_7" href="http://www.cnblogs.com/lhj588/archive/2013/08.html">2013年8月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_8" href="http://www.cnblogs.com/lhj588/archive/2013/07.html">2013年7月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_9" href="http://www.cnblogs.com/lhj588/archive/2013/06.html">2013年6月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_10" href="http://www.cnblogs.com/lhj588/archive/2013/05.html">2013年5月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_11" href="http://www.cnblogs.com/lhj588/archive/2013/04.html">2013年4月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_12" href="http://www.cnblogs.com/lhj588/archive/2013/03.html">2013年3月 (7)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_13" href="http://www.cnblogs.com/lhj588/archive/2013/02.html">2013年2月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_14" href="http://www.cnblogs.com/lhj588/archive/2013/01.html">2013年1月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_15" href="http://www.cnblogs.com/lhj588/archive/2012/12.html">2012年12月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_16" href="http://www.cnblogs.com/lhj588/archive/2012/11.html">2012年11月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_17" href="http://www.cnblogs.com/lhj588/archive/2012/10.html">2012年10月 (9)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_18" href="http://www.cnblogs.com/lhj588/archive/2012/08.html">2012年8月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_19" href="http://www.cnblogs.com/lhj588/archive/2012/07.html">2012年7月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_20" href="http://www.cnblogs.com/lhj588/archive/2012/06.html">2012年6月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_21" href="http://www.cnblogs.com/lhj588/archive/2012/05.html">2012年5月 (22)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_22" href="http://www.cnblogs.com/lhj588/archive/2012/04.html">2012年4月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_23" href="http://www.cnblogs.com/lhj588/archive/2012/03.html">2012年3月 (14)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_24" href="http://www.cnblogs.com/lhj588/archive/2012/02.html">2012年2月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_25" href="http://www.cnblogs.com/lhj588/archive/2012/01.html">2012年1月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_26" href="http://www.cnblogs.com/lhj588/archive/2011/12.html">2011年12月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_27" href="http://www.cnblogs.com/lhj588/archive/2011/11.html">2011年11月 (10)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_28" href="http://www.cnblogs.com/lhj588/archive/2011/10.html">2011年10月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_29" href="http://www.cnblogs.com/lhj588/archive/2011/06.html">2011年6月 (5)</a> </li>
+
+</ul>
+
+</div>
+
+<div class="catListArticleCategory">
+<h3 class="catListTitle">文章分类</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_2_Link_0" href="http://www.cnblogs.com/lhj588/category/331764.html">Django Web</a> </li>
+
+</ul>
+
+</div>
+
+<div class="catListArticleArchive">
+<h3 class="catListTitle">文章档案<span style="font-size:11px;font-weight:normal">(5)</span></h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_3_Link_0" href="http://www.cnblogs.com/lhj588/archives/2014/06.html" rel="nofollow">2014年6月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_3_Link_1" href="http://www.cnblogs.com/lhj588/archives/2014/04.html" rel="nofollow">2014年4月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_3_Link_2" href="http://www.cnblogs.com/lhj588/archives/2011/10.html" rel="nofollow">2011年10月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_3_Link_3" href="http://www.cnblogs.com/lhj588/archives/2011/09.html" rel="nofollow">2011年9月 (1)</a> </li>
+
+</ul>
+
+</div>
+
+
+<div class="catListBlogRank">
+<h3 class="catListTitle">积分与排名</h3>
+<ul>
+	<li class="liScore">
+		积分 -	111611
+	</li>
+	<li class="liRank">
+		排名 -	1298
+	</li>
+</ul>
+</div>
+
+
+<div id="recent_comments_wrap">
+<div class="catListComment">
+<h3 class="catListTitle">最新评论</h3>
+
+	<div id="RecentCommentsBlock"><ul>
+    <li class="recent_comment_title"><a href="http://www.cnblogs.com/lhj588/p/3315876.html#3078151">1. Re:Mysql  列转行统计查询  、行转列统计查询</a></li>
+    <li class="recent_comment_body">请教下，在mysql下如果我想实现以下情况如何写：数据库内容如下：姓名 扣点 金额张三 0.5 1500张三 0.8 1800张三 0.9 2500李四 0.8 2000李四 0.7 2200我想显示结果为：姓名 ......</li>
+    <li class="recent_comment_author">--L&amp;amp;G.J</li>
+    <li class="recent_comment_title"><a href="http://www.cnblogs.com/lhj588/archive/2012/04/23/2466653.html#3070406">2. Re:python datetime处理时间</a></li>
+    <li class="recent_comment_body">谢谢分享</li>
+    <li class="recent_comment_author">--yuanmouren1hao</li>
+    <li class="recent_comment_title"><a href="http://www.cnblogs.com/lhj588/p/3315876.html#3061186">3. Re:Mysql  列转行统计查询  、行转列统计查询</a></li>
+    <li class="recent_comment_body">非常好，但是这个系列如果遇到大数据的时候，查询怎么优化？请帮下忙</li>
+    <li class="recent_comment_author">--ikasa007</li>
+    <li class="recent_comment_title"><a href="http://www.cnblogs.com/lhj588/archive/2012/06/15/2550392.html#3061183">4. Re:Mysql行转换为列</a></li>
+    <li class="recent_comment_body">亲,能把你的文章北京颜色改改吗？根本看不清</li>
+    <li class="recent_comment_author">--ikasa007</li>
+    <li class="recent_comment_title"><a href="http://www.cnblogs.com/lhj588/archive/2012/01/06/2314181.html#3034518">5. Re:python操作Excel读写--使用xlrd</a></li>
+    <li class="recent_comment_body">嗨，如果要实现跨行跨列应该如何实现的呢？</li>
+    <li class="recent_comment_author">--包菜兄</li>
+</ul>
+</div>
+</div>
+</div><div id="topview_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock"><ul><li><a href="http://www.cnblogs.com/lhj588/archive/2012/01/06/2314181.html">1. python操作Excel读写--使用xlrd(73699)</a></li><li><a href="http://www.cnblogs.com/lhj588/archive/2012/04/23/2466653.html">2. python datetime处理时间(37785)</a></li><li><a href="http://www.cnblogs.com/lhj588/archive/2012/05/15/2501007.html">3. linux如何查看系统信息(24273)</a></li><li><a href="http://www.cnblogs.com/lhj588/archive/2012/02/15/2353139.html">4. CentOS 查看IP,端口 修改IP,打开端口生效(23534)</a></li><li><a href="http://www.cnblogs.com/lhj588/archive/2011/10/03/2198472.html">5. python+PyQT+Eric安装配置(18604)</a></li></ul></div>
+</div>
+</div><div id="topfeedback_posts_wrap">
+<div class="catListFeedback">
+<h3 class="catListTitle">评论排行榜</h3>
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="http://www.cnblogs.com/lhj588/archive/2011/10/03/2198472.html">1. python+PyQT+Eric安装配置(13)</a></li><li><a href="http://www.cnblogs.com/lhj588/p/3805285.html">2. CDN技术分享(6)</a></li><li><a href="http://www.cnblogs.com/lhj588/archive/2012/01/06/2314181.html">3. python操作Excel读写--使用xlrd(5)</a></li><li><a href="http://www.cnblogs.com/lhj588/archive/2011/06/20/2085549.html">4. 图解 PHP运行环境配置和开发环境的配置(4)</a></li><li><a href="http://www.cnblogs.com/lhj588/archive/2011/06/02/2067575.html">5. Jquery调用 新浪微博API 用户资料(3)</a></li></ul></div>
+</div>
+</div><div id="topdigg_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div id="TopDiggPostsBlock"><ul><li><a href="http://www.cnblogs.com/lhj588/p/3805285.html">1. CDN技术分享(6)</a></li><li><a href="http://www.cnblogs.com/lhj588/archive/2012/01/06/2314181.html">2. python操作Excel读写--使用xlrd(5)</a></li><li><a href="http://www.cnblogs.com/lhj588/archive/2012/04/23/2466653.html">3. python datetime处理时间(3)</a></li><li><a href="http://www.cnblogs.com/lhj588/archive/2011/10/03/2198472.html">4. python+PyQT+Eric安装配置(3)</a></li><li><a href="http://www.cnblogs.com/lhj588/archive/2011/11/17/2253355.html">5. pytnon FTP编程-- ftplib 模块(2)</a></li></ul></div>
+</div></div></div><script type="text/javascript">loadBlogSideColumn();</script><iframe style="visibility: hidden; display: none;" src="python%20datetime%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%20-%20lhj588%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/container.html"></iframe>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright ©2014 lhj588
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+<iframe style="display: none; width: 0px; height: 0px;" name="google_osd_static_frame" id="google_osd_static_frame_4197849431723"></iframe></body></html>

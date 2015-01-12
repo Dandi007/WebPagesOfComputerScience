@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>CSDN Ad</title>
+    <style type="text/css">
+        body { margin:0px; padding:0px;}
+    </style>
+     <script src="Java%20%E6%8E%A5%E5%8F%A3%E5%92%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%8C%BA%E5%88%AB%20-%20xwdreamer%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/jquery.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="div1"><style type="text/css">
+ul { margin:0px; padding:0 4px 0 0; }
+ul, x:-moz-any-link, x:default { width:90%; }
+ul li { padding:3px 0px;}
+a { font-size:12px; text-decoration:none; color:#006699; }
+a:hover { color:#000; }
+</style>
+
+<ul>
+
+<li><a href="http://blog.csdn.net/luoweifu/article/details/42472303" target="_blank">* 编程思想之迭代器</a></li>
+
+<li><a href="http://blog.csdn.net/yuanzeyao/article/details/42418977" target="_blank">* Android framework层JNI的使用浅析</a></li>
+
+<li><a href="http://blog.csdn.net/qinyuanpei/article/details/42394949" target="_blank">* Unity3D游戏开发之塔防游戏项目讲解(上)</a></li>
+
+<li><a href="http://blog.csdn.net/qiujuer/article/details/42471119" target="_blank">* 打造极致Material Design动画风格Button</a></li>
+
+
+<li><a href="http://blog.csdn.net/a396901990/article/details/42362097" target="_blank">* 3D语音天气球——在Unity中使用Android语音服务</a></li>
+
+
+
+<li><a href="http://blog.csdn.net/dawanganban/article/details/42399953" target="_blank">* 深入理解Android（1）——理解Android中的JNI（上）</a></li>
+
+
+</ul></div>
+<script type="text/javascript">
+    window.onload = function () {
+        if (document.domain != 'blog.csdn.net') {
+            document.domain = "csdn.net";
+        }
+        //这种给广告区域赋值的方式，对于有些JS广告不能完美的显示
+        //top.document.getElementById('ad_commend').innerHTML = document.getElementById('div1').innerHTML;
+
+        var h = document.body.offsetHeight + 2;
+        setTimeout(function () {
+            if (h > 800) h = document.getElementById('div1').offsetHeight + 4;
+            try { top.document.getElementById('ad_frm_2').style.height = h + 'px'; }
+            catch (err) { }
+        }, 100);
+    };
+    $(function() {
+        $("#div1 a").click(function() {
+            top._gaq.push(['_trackEvent', 'function', 'onclick', 'blog_articles_tuijianwenzhang']);
+        });
+    });
+</script>
+
+
+</body></html>

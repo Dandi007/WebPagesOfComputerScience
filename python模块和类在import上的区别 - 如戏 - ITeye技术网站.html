@@ -1,0 +1,492 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" dir="ltr"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>python模块和类在import上的区别 - 如戏 - ITeye技术网站</title>
+    <meta name="description" content="1、类属于模块的一部分。当我们要建立一个类时，通常我们新建一个py文件，例如新建立cn.py,这个cn便成为我们的模块。  2、然后在cn里面建立自己的类：  	  '''Created on 2011-11-1    @author: dudong0726  '''    class Person:      '''      classdocs      '''      Count = 0   ...">
+    <meta name="keywords" content="python, 模块, 类, import python模块和类在import上的区别">
+    <link rel="shortcut icon" href="http://dudong0726.iteye.com/images/favicon.ico" type="image/x-icon">
+    <link rel="search" type="application/opensearchdescription+xml" href="http://dudong0726.iteye.com/open_search.xml" title="ITeye">
+    <link href="http://dudong0726.iteye.com/rss" rel="alternate" title="如戏" type="application/rss+xml">
+    <link href="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/blog.css" media="screen" rel="stylesheet" type="text/css">
+<link href="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/black.css" media="screen" rel="stylesheet" type="text/css">
+    <script src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/ga.js" async="" type="text/javascript"></script><script src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/application.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-535605-1']);
+  _gaq.push(['_setDomainName', 'iteye.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+      <link href="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/SyntaxHighlighter.css" media="screen" rel="stylesheet" type="text/css">
+  <script src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/shCoreCommon.js" type="text/javascript"></script>
+<script src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/hotkey.js" type="text/javascript"></script>
+  <script src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/code_favorites.js" type="text/javascript"></script>
+<script src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/weiboshare.js" type="text/javascript"></script>
+  <style type="text/css">.dp-py .builtins { color: #ff1493; }.dp-py .magicmethods { color: #808080; }.dp-py .exceptions { color: brown; }.dp-py .types { color: brown; font-style: italic; }.dp-py .commonlibs { color: #8A2BE2; font-style: italic; }</style><style type="text/css">.dp-py .builtins { color: #ff1493; }.dp-py .magicmethods { color: #808080; }.dp-py .exceptions { color: brown; }.dp-py .types { color: brown; font-style: italic; }.dp-py .commonlibs { color: #8A2BE2; font-style: italic; }</style><style type="text/css">.dp-py .builtins { color: #ff1493; }.dp-py .magicmethods { color: #808080; }.dp-py .exceptions { color: brown; }.dp-py .types { color: brown; font-style: italic; }.dp-py .commonlibs { color: #8A2BE2; font-style: italic; }</style><style type="text/css">.dp-py .builtins { color: #ff1493; }.dp-py .magicmethods { color: #808080; }.dp-py .exceptions { color: brown; }.dp-py .types { color: brown; font-style: italic; }.dp-py .commonlibs { color: #8A2BE2; font-style: italic; }</style><style type="text/css">.dp-py .builtins { color: #ff1493; }.dp-py .magicmethods { color: #808080; }.dp-py .exceptions { color: brown; }.dp-py .types { color: brown; font-style: italic; }.dp-py .commonlibs { color: #8A2BE2; font-style: italic; }</style><style type="text/css">.dp-py .builtins { color: #ff1493; }.dp-py .magicmethods { color: #808080; }.dp-py .exceptions { color: brown; }.dp-py .types { color: brown; font-style: italic; }.dp-py .commonlibs { color: #8A2BE2; font-style: italic; }</style></head>
+  <body>
+    <div id="header">
+      <div id="blog_site_nav">
+  <a href="http://www.iteye.com/" class="homepage">首页</a>
+  <a href="http://www.iteye.com/news">资讯</a>
+  <a href="http://www.iteye.com/magazines">精华</a>
+  <a href="http://www.iteye.com/forums">论坛</a>
+  <a href="http://www.iteye.com/ask">问答</a>
+  <a href="http://www.iteye.com/blogs">博客</a>
+  <a href="http://www.iteye.com/blogs/subjects">专栏</a>
+  <a href="http://www.iteye.com/groups">群组</a>
+  <a href="#" onclick="return false;" id="msna"><u>更多</u> <small>▼</small></a>
+  <div class="quick_menu" style="display:none;">
+    <a target="_blank" href="http://job.iteye.com/iteye">招聘</a>
+    <a href="http://www.iteye.com/search">搜索</a>
+  </div>
+</div>
+
+      <div id="user_nav">
+      <a href="http://dudong0726.iteye.com/login" class="welcome" title="登录">您还未登录 !</a>
+    <a href="http://dudong0726.iteye.com/login">登录</a>
+    <a href="http://dudong0726.iteye.com/signup" class="nobg">注册</a>
+  </div>
+
+    </div>
+
+    <div id="page">
+      <div id="branding" class="clearfix">
+        <div id="blog_name">
+          <h1><a href="http://dudong0726.iteye.com/">如戏</a></h1>
+        </div>
+        <div id="fd"></div>
+        <div id="blog_navbar">
+          <ul>
+            <li class="blog_navbar_for"><a href="http://dudong0726.iteye.com/"><strong>博客</strong></a></li>
+            <li><a href="http://dudong0726.iteye.com/weibo">微博</a></li>
+            <li><a href="http://dudong0726.iteye.com/album">相册</a></li>
+            <li><a href="http://dudong0726.iteye.com/link">收藏</a></li>
+            <li><a href="http://dudong0726.iteye.com/blog/guest_book">留言</a></li>
+            <li><a href="http://dudong0726.iteye.com/blog/profile">关于我</a></li>
+          </ul>
+    
+          <div class="search">
+            <form action="/blog/search" method="get">
+              <input class="search_text" id="query" name="query" style="margin-left: 10px;width: 110px;" type="text">
+              <input class="submit_search" value="" type="submit">
+            </form>
+          </div> 
+          <div id="fd"></div>         
+        </div>
+      </div>
+      
+      <div id="content" class="clearfix">
+        <div id="main">
+          
+
+
+
+          
+
+
+<div class="h-entry" style="display:none">
+  <a href="http://dudong0726.iteye.com/" class="p-author" target="_blank">dudong0726</a>
+</div>
+
+
+<div class="blog_main">
+  <div class="blog_title">
+    <h3>
+      <a href="http://dudong0726.iteye.com/blog/1226907">python模块和类在import上的区别</a>
+      <em class="actions">      </em>
+    </h3>
+    <ul class="blog_categories"><strong>博客分类：</strong> <li><a href="http://dudong0726.iteye.com/category/179851">Python</a></li> </ul>
+        <div class="news_tag"><a href="http://www.iteye.com/blogs/tag/python">python</a><a href="http://www.iteye.com/blogs/tag/%E6%A8%A1%E5%9D%97">模块</a><a href="http://www.iteye.com/blogs/tag/%E7%B1%BB">类</a><a href="http://www.iteye.com/blogs/tag/import">import</a>&nbsp;</div>
+  </div>
+
+  <div id="blog_content" class="blog_content">
+    <p>1、类属于模块的一部分。当我们要建立一个类时，通常我们新建一个py文件，例如新建立cn.py,这个cn便成为我们的模块。</p>
+<p>2、然后在cn里面建立自己的类：</p>
+<p><span style="white-space: pre;">	</span></p>
+<div id="" class="dp-highlighter"><div class="bar"><div class="tools">Python代码 <embed wmode="transparent" src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/clipboard_new.swf" flashvars="clipboard='''Created%20on%202011-11-1%0A%0A%40author%3A%20dudong0726%0A'''%0A%0Aclass%20Person%3A%0A%20%20%20%20'''%0A%20%20%20%20classdocs%0A%20%20%20%20'''%0A%20%20%20%20Count%20%3D%200%0A%0A%20%20%20%20def%20__init__(self%2Cname%2Cage)%3A%0A%20%20%20%20%20%20%20%20'''%0A%20%20%20%20%20%20%20%20Constructor%0A%20%20%20%20%20%20%20%20%40param%3A%20name%20the%20name%20of%20this%20person%0A%20%20%20%20%20%20%20%20%40param%3A%20age%20the%20age%20of%20this%20person%20%20%0A%20%20%20%20%20%20%20%20'''%0A%20%20%20%20%20%20%20%20self.name%20%3D%20name%0A%20%20%20%20%20%20%20%20self.age%20%3D%20age%0A%20%20%20%20%20%20%20%20Person.Count%20%2B%3D%201%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20def%20detail(self)%3A%0A%20%20%20%20%20%20%20%20'''%0A%20%20%20%20%20%20%20%20%20the%20detail%20infomation%20of%20this%20person%0A%20%20%20%20%20%20%20%20'''%0A%20%20%20%20%20%20%20%20print('name%20is%20'%2Cself.name)%0A%20%20%20%20%20%20%20%20print('age%20is%20'%2Cself.age)%0A%20%20%20%20%20%20%20%20print('there%20are%20'%2Bstr(Person.Count)%2B%22%20person%20in%20the%20class%22)%20%0A%20%20%20%20%20%20%20%20" quality="high" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" height="15" width="14">&nbsp;<a href="javascript:void()" title="收藏这段代码" onclick="code_favorites_do_favorite(this);return false;"><img class="star" src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/icon_star.png" alt="收藏代码"><img class="spinner" src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/spinner.gif" style="display:none"></a></div></div><ol class="dp-py" start="1"><li><span><span class="string">''</span><span class="comment">'''Created&nbsp;on&nbsp;2011-11-1</span>&nbsp;</span></li><li><span><span class="comment"></span>&nbsp;</span></li><li><span><span class="comment">@author:&nbsp;dudong0726</span>&nbsp;</span></li><li><span><span class="comment">'''</span><span>&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;</span></li><li><span><span class="keyword">class</span><span>&nbsp;Person:&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">''</span><span class="comment">'''</span>&nbsp;</span></li><li><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;classdocs</span>&nbsp;</span></li><li><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;'''</span><span>&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;Count&nbsp;=&nbsp;<span class="number">0</span><span>&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">def</span><span>&nbsp;__init__(</span><span class="special">self</span><span>,name,age):&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">''</span><span class="comment">'''</span>&nbsp;</span></li><li><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constructor</span>&nbsp;</span></li><li><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@param:&nbsp;name&nbsp;the&nbsp;name&nbsp;of&nbsp;this&nbsp;person</span>&nbsp;</span></li><li><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@param:&nbsp;age&nbsp;the&nbsp;age&nbsp;of&nbsp;this&nbsp;person&nbsp;&nbsp;</span>&nbsp;</span></li><li><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'''</span><span>&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="special">self</span><span>.name&nbsp;=&nbsp;name&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="special">self</span><span>.age&nbsp;=&nbsp;age&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Person.Count&nbsp;+=&nbsp;<span class="number">1</span><span>&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">def</span><span>&nbsp;detail(</span><span class="special">self</span><span>):&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">''</span><span class="comment">'''</span>&nbsp;</span></li><li><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;detail&nbsp;infomation&nbsp;of&nbsp;this&nbsp;person</span>&nbsp;</span></li><li><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'''</span><span>&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span><span>(</span><span class="string">'name&nbsp;is&nbsp;'</span><span>,</span><span class="special">self</span><span>.name)&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span><span>(</span><span class="string">'age&nbsp;is&nbsp;'</span><span>,</span><span class="special">self</span><span>.age)&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span><span>(</span><span class="string">'there&nbsp;are&nbsp;'</span><span>+str(Person.Count)+</span><span class="string">"&nbsp;person&nbsp;in&nbsp;the&nbsp;class"</span><span>)&nbsp;&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li></ol></div><pre title="python模块和类在import上的区别" pre_index="0" source_url="http://dudong0726.iteye.com/blog/1226907" codeable_type="Blog" codeable_id="1226907" style="display: none;" class="python" name="code">'''Created on 2011-11-1
+
+@author: dudong0726
+'''
+
+class Person:
+    '''
+    classdocs
+    '''
+    Count = 0
+
+    def __init__(self,name,age):
+        '''
+        Constructor
+        @param: name the name of this person
+        @param: age the age of this person  
+        '''
+        self.name = name
+        self.age = age
+        Person.Count += 1
+        
+    def detail(self):
+        '''
+         the detail infomation of this person
+        '''
+        print('name is ',self.name)
+        print('age is ',self.age)
+        print('there are '+str(Person.Count)+" person in the class") 
+        </pre>
+<p>3、我们需要在另一个模块中使用这个类，有两种导入方式</p>
+<p>&nbsp; &nbsp; &nbsp;1）from cn import * 也就是从cn模块中把所有的东西都导入进来</p>
+<p>&nbsp;</p>
+<div id="" class="dp-highlighter"><div class="bar"><div class="tools">Python代码 <embed wmode="transparent" src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/clipboard_new.swf" flashvars="clipboard='''Created%20on%202011-11-1%0A%0A%40author%3A%20dudong0726%0A'''%0Afrom%20cn%20import%20*%0A%0Aif%20__name__%20%3D%3D%20'__main__'%3A%0A%20%20%20%20p%20%3D%20Person('marry'%2C21)%0A%20%20%20%20p.detail()%0A%20%20%20%20%0A%20%20%20%20q%20%3D%20Person('kevin'%2C24)%0A%20%20%20%20q.detail()" quality="high" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" height="15" width="14">&nbsp;<a href="javascript:void()" title="收藏这段代码" onclick="code_favorites_do_favorite(this);return false;"><img class="star" src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/icon_star.png" alt="收藏代码"><img class="spinner" src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/spinner.gif" style="display:none"></a></div></div><ol class="dp-py" start="1"><li><span><span class="string">''</span><span class="comment">'''Created&nbsp;on&nbsp;2011-11-1</span>&nbsp;</span></li><li><span><span class="comment"></span>&nbsp;</span></li><li><span><span class="comment">@author:&nbsp;dudong0726</span>&nbsp;</span></li><li><span><span class="comment">'''</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="keyword">from</span><span>&nbsp;cn&nbsp;</span><span class="keyword">import</span><span>&nbsp;*&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;</span></li><li><span><span class="keyword">if</span><span>&nbsp;__name__&nbsp;==&nbsp;</span><span class="string">'__main__'</span><span>:&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;p&nbsp;=&nbsp;Person(<span class="string">'marry'</span><span>,</span><span class="number">21</span><span>)&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;p.detail()&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;q&nbsp;=&nbsp;Person(<span class="string">'kevin'</span><span>,</span><span class="number">24</span><span>)&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;q.detail()&nbsp;&nbsp;</span></li></ol></div><pre title="python模块和类在import上的区别" pre_index="1" source_url="http://dudong0726.iteye.com/blog/1226907" codeable_type="Blog" codeable_id="1226907" style="display: none;" class="python" name="code">'''Created on 2011-11-1
+
+@author: dudong0726
+'''
+from cn import *
+
+if __name__ == '__main__':
+    p = Person('marry',21)
+    p.detail()
+    
+    q = Person('kevin',24)
+    q.detail()</pre>
+<p>&nbsp; 2）import cn 告诉python我们将要使用这个模块的东西，当我们使用时要在前面加上cn.来指明来自cn这个模块</p>
+<p>&nbsp;</p>
+<div id="" class="dp-highlighter"><div class="bar"><div class="tools">Python代码 <embed wmode="transparent" src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/clipboard_new.swf" flashvars="clipboard='''%0ACreated%20on%202011-11-1%0A%0A%40author%3A%20dudong0726%0A'''%0Aimport%20cn%0A%0Aif%20__name__%20%3D%3D%20'__main__'%3A%0A%20%20%20%20p%20%3D%20cn.Person('marry'%2C21)%0A%20%20%20%20p.detail()%0A%20%20%20%20q%20%3D%20cn.Person('kevin'%2C24)%0A%20%20%20%20q.detail()" quality="high" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" height="15" width="14">&nbsp;<a href="javascript:void()" title="收藏这段代码" onclick="code_favorites_do_favorite(this);return false;"><img class="star" src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/icon_star.png" alt="收藏代码"><img class="spinner" src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/spinner.gif" style="display:none"></a></div></div><ol class="dp-py" start="1"><li><span><span class="string">''</span><span class="comment">'''</span>&nbsp;</span></li><li><span><span class="comment">Created&nbsp;on&nbsp;2011-11-1</span>&nbsp;</span></li><li><span><span class="comment"></span>&nbsp;</span></li><li><span><span class="comment">@author:&nbsp;dudong0726</span>&nbsp;</span></li><li><span><span class="comment">'''</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="keyword">import</span><span>&nbsp;cn&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;</span></li><li><span><span class="keyword">if</span><span>&nbsp;__name__&nbsp;==&nbsp;</span><span class="string">'__main__'</span><span>:&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;p&nbsp;=&nbsp;cn.Person(<span class="string">'marry'</span><span>,</span><span class="number">21</span><span>)&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;p.detail()&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;q&nbsp;=&nbsp;cn.Person(<span class="string">'kevin'</span><span>,</span><span class="number">24</span><span>)&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;q.detail()&nbsp;&nbsp;</span></li></ol></div><pre title="python模块和类在import上的区别" pre_index="2" source_url="http://dudong0726.iteye.com/blog/1226907" codeable_type="Blog" codeable_id="1226907" style="display: none;" class="python" name="code">'''
+Created on 2011-11-1
+
+@author: dudong0726
+'''
+import cn
+
+if __name__ == '__main__':
+    p = cn.Person('marry',21)
+    p.detail()
+    q = cn.Person('kevin',24)
+    q.detail()</pre>
+&nbsp;
+<p><span style="white-space: pre;">4、我们可以在cn模块中建立一个函数</span></p>
+<p>&nbsp;</p>
+<div id="" class="dp-highlighter"><div class="bar"><div class="tools">Python代码 <embed wmode="transparent" src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/clipboard_new.swf" flashvars="clipboard='''%0ACreated%20on%202011-11-1%0A%0A%40author%3A%20dudong0726%0A'''%0Adef%20say(word)%3A%0A%20%20%20%20print(word)%0A%0Aclass%20Person%3A%0A%20%20%20%20'''%0A%20%20%20%20classdocs%0A%20%20%20%20'''%0A%20%20%20%20Count%20%3D%200%0A%0A%20%20%20%20def%20__init__(self%2Cname%2Cage)%3A%0A%20%20%20%20%20%20%20%20'''%0A%20%20%20%20%20%20%20%20Constructor%0A%20%20%20%20%20%20%20%20%40param%3A%20name%20the%20name%20of%20this%20person%0A%20%20%20%20%20%20%20%20%40param%3A%20age%20the%20age%20of%20this%20person%20%20%0A%20%20%20%20%20%20%20%20'''%0A%20%20%20%20%20%20%20%20self.name%20%3D%20name%0A%20%20%20%20%20%20%20%20self.age%20%3D%20age%0A%20%20%20%20%20%20%20%20Person.Count%20%2B%3D%201%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20def%20detail(self)%3A%0A%20%20%20%20%20%20%20%20'''%0A%20%20%20%20%20%20%20%20%20the%20detail%20infomation%20of%20this%20person%0A%20%20%20%20%20%20%20%20'''%0A%20%20%20%20%20%20%20%20print('name%20is%20'%2Cself.name)%0A%20%20%20%20%20%20%20%20print('age%20is%20'%2Cself.age)%0A%20%20%20%20%20%20%20%20print('there%20are%20'%2Bstr(Person.Count)%2B%22%20person%20in%20the%20class%22)%20%0A%20%20%20%20%20%20%20%20" quality="high" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" height="15" width="14">&nbsp;<a href="javascript:void()" title="收藏这段代码" onclick="code_favorites_do_favorite(this);return false;"><img class="star" src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/icon_star.png" alt="收藏代码"><img class="spinner" src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/spinner.gif" style="display:none"></a></div></div><ol class="dp-py" start="1"><li><span><span class="string">''</span><span class="comment">'''</span>&nbsp;</span></li><li><span><span class="comment">Created&nbsp;on&nbsp;2011-11-1</span>&nbsp;</span></li><li><span><span class="comment"></span>&nbsp;</span></li><li><span><span class="comment">@author:&nbsp;dudong0726</span>&nbsp;</span></li><li><span><span class="comment">'''</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="keyword">def</span><span>&nbsp;say(word):&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span><span>(word)&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;</span></li><li><span><span class="keyword">class</span><span>&nbsp;Person:&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">''</span><span class="comment">'''</span>&nbsp;</span></li><li><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;classdocs</span>&nbsp;</span></li><li><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;'''</span><span>&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;Count&nbsp;=&nbsp;<span class="number">0</span><span>&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">def</span><span>&nbsp;__init__(</span><span class="special">self</span><span>,name,age):&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">''</span><span class="comment">'''</span>&nbsp;</span></li><li><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constructor</span>&nbsp;</span></li><li><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@param:&nbsp;name&nbsp;the&nbsp;name&nbsp;of&nbsp;this&nbsp;person</span>&nbsp;</span></li><li><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@param:&nbsp;age&nbsp;the&nbsp;age&nbsp;of&nbsp;this&nbsp;person&nbsp;&nbsp;</span>&nbsp;</span></li><li><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'''</span><span>&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="special">self</span><span>.name&nbsp;=&nbsp;name&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="special">self</span><span>.age&nbsp;=&nbsp;age&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Person.Count&nbsp;+=&nbsp;<span class="number">1</span><span>&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">def</span><span>&nbsp;detail(</span><span class="special">self</span><span>):&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">''</span><span class="comment">'''</span>&nbsp;</span></li><li><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;detail&nbsp;infomation&nbsp;of&nbsp;this&nbsp;person</span>&nbsp;</span></li><li><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'''</span><span>&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span><span>(</span><span class="string">'name&nbsp;is&nbsp;'</span><span>,</span><span class="special">self</span><span>.name)&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span><span>(</span><span class="string">'age&nbsp;is&nbsp;'</span><span>,</span><span class="special">self</span><span>.age)&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span><span>(</span><span class="string">'there&nbsp;are&nbsp;'</span><span>+str(Person.Count)+</span><span class="string">"&nbsp;person&nbsp;in&nbsp;the&nbsp;class"</span><span>)&nbsp;&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li></ol></div><pre title="python模块和类在import上的区别" pre_index="3" source_url="http://dudong0726.iteye.com/blog/1226907" codeable_type="Blog" codeable_id="1226907" style="display: none;" class="python" name="code">'''
+Created on 2011-11-1
+
+@author: dudong0726
+'''
+def say(word):
+    print(word)
+
+class Person:
+    '''
+    classdocs
+    '''
+    Count = 0
+
+    def __init__(self,name,age):
+        '''
+        Constructor
+        @param: name the name of this person
+        @param: age the age of this person  
+        '''
+        self.name = name
+        self.age = age
+        Person.Count += 1
+        
+    def detail(self):
+        '''
+         the detail infomation of this person
+        '''
+        print('name is ',self.name)
+        print('age is ',self.age)
+        print('there are '+str(Person.Count)+" person in the class") 
+        </pre>
+&nbsp;
+&nbsp;
+<p><span style="white-space: pre;">5、在另外的模块中调用这个函数</span></p>
+<p><span style="white-space: pre;">&nbsp;   你可以这样调用：</span></p>
+<p>&nbsp;</p>
+<div id="" class="dp-highlighter"><div class="bar"><div class="tools">Python代码 <embed wmode="transparent" src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/clipboard_new.swf" flashvars="clipboard='''%0ACreated%20on%202011-11-1%0A%0A%40author%3A%20dudong0726%0A'''%0Afrom%20cn%20import%20*%0A%0Aif%20__name__%20%3D%3D%20'__main__'%3A%0A%20%20%20%20p%20%3D%20Person('marry'%2C21)%0A%20%20%20%20p.detail()%0A%20%20%20%20q%20%3D%20Person('kevin'%2C24)%0A%20%20%20%20q.detail()%0A%20%20%20%20%0A%20%20%20%20say(%22hello%20world%22)%0A" quality="high" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" height="15" width="14">&nbsp;<a href="javascript:void()" title="收藏这段代码" onclick="code_favorites_do_favorite(this);return false;"><img class="star" src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/icon_star.png" alt="收藏代码"><img class="spinner" src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/spinner.gif" style="display:none"></a></div></div><ol class="dp-py" start="1"><li><span><span class="string">''</span><span class="comment">'''</span>&nbsp;</span></li><li><span><span class="comment">Created&nbsp;on&nbsp;2011-11-1</span>&nbsp;</span></li><li><span><span class="comment"></span>&nbsp;</span></li><li><span><span class="comment">@author:&nbsp;dudong0726</span>&nbsp;</span></li><li><span><span class="comment">'''</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="keyword">from</span><span>&nbsp;cn&nbsp;</span><span class="keyword">import</span><span>&nbsp;*&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;</span></li><li><span><span class="keyword">if</span><span>&nbsp;__name__&nbsp;==&nbsp;</span><span class="string">'__main__'</span><span>:&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;p&nbsp;=&nbsp;Person(<span class="string">'marry'</span><span>,</span><span class="number">21</span><span>)&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;p.detail()&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;q&nbsp;=&nbsp;Person(<span class="string">'kevin'</span><span>,</span><span class="number">24</span><span>)&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;q.detail()&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;say(<span class="string">"hello&nbsp;world"</span><span>)&nbsp;&nbsp;</span></span></li></ol></div><pre title="python模块和类在import上的区别" pre_index="4" source_url="http://dudong0726.iteye.com/blog/1226907" codeable_type="Blog" codeable_id="1226907" style="display: none;" class="python" name="code">'''
+Created on 2011-11-1
+
+@author: dudong0726
+'''
+from cn import *
+
+if __name__ == '__main__':
+    p = Person('marry',21)
+    p.detail()
+    q = Person('kevin',24)
+    q.detail()
+    
+    say("hello world")
+</pre>
+&nbsp;
+<p>&nbsp;</p>
+<p>&nbsp; &nbsp; 当然也可以这样：</p>
+<div id="" class="dp-highlighter"><div class="bar"><div class="tools">Python代码 <embed wmode="transparent" src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/clipboard_new.swf" flashvars="clipboard='''%0ACreated%20on%202011-11-1%0A%0A%40author%3A%20dudong0726%0A'''%0Aimport%20cn%0A%0Aif%20__name__%20%3D%3D%20'__main__'%3A%0A%20%20%20%20p%20%3D%20cn.Person('marry'%2C21)%0A%20%20%20%20p.detail()%0A%20%20%20%20q%20%3D%20cn.Person('kevin'%2C24)%0A%20%20%20%20q.detail()%0A%20%20%20%20%0A%20%20%20%20cn.say(%22hello%20world%22)%0A" quality="high" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" height="15" width="14">&nbsp;<a href="javascript:void()" title="收藏这段代码" onclick="code_favorites_do_favorite(this);return false;"><img class="star" src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/icon_star.png" alt="收藏代码"><img class="spinner" src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/spinner.gif" style="display:none"></a></div></div><ol class="dp-py" start="1"><li><span><span class="string">''</span><span class="comment">'''</span>&nbsp;</span></li><li><span><span class="comment">Created&nbsp;on&nbsp;2011-11-1</span>&nbsp;</span></li><li><span><span class="comment"></span>&nbsp;</span></li><li><span><span class="comment">@author:&nbsp;dudong0726</span>&nbsp;</span></li><li><span><span class="comment">'''</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="keyword">import</span><span>&nbsp;cn&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;</span></li><li><span><span class="keyword">if</span><span>&nbsp;__name__&nbsp;==&nbsp;</span><span class="string">'__main__'</span><span>:&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;p&nbsp;=&nbsp;cn.Person(<span class="string">'marry'</span><span>,</span><span class="number">21</span><span>)&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;p.detail()&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;q&nbsp;=&nbsp;cn.Person(<span class="string">'kevin'</span><span>,</span><span class="number">24</span><span>)&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;q.detail()&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;cn.say(<span class="string">"hello&nbsp;world"</span><span>)&nbsp;&nbsp;</span></span></li></ol></div><pre title="python模块和类在import上的区别" pre_index="5" source_url="http://dudong0726.iteye.com/blog/1226907" codeable_type="Blog" codeable_id="1226907" style="display: none;" class="python" name="code">'''
+Created on 2011-11-1
+
+@author: dudong0726
+'''
+import cn
+
+if __name__ == '__main__':
+    p = cn.Person('marry',21)
+    p.detail()
+    q = cn.Person('kevin',24)
+    q.detail()
+    
+    cn.say("hello world")
+</pre>
+  </div>
+
+  
+
+  
+  
+  <iframe src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/794.html" scrolling="no" frameborder="0" height="60" width="468"></iframe>
+  
+  <div id="bottoms" class="clearfix">
+    
+    <div id="share_weibo">分享到：
+      <a data-type="sina" href="javascript:;" title="分享到新浪微博"><img src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/sina.jpg"></a>
+      <a data-type="qq" href="javascript:;" title="分享到腾讯微博"><img src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/tec.jpg"></a>
+    </div>
+  </div>
+
+  <div class="blog_nav">
+    <div class="pre_next">
+      <a href="http://dudong0726.iteye.com/blog/1230096" class="next" title="Python的集成">Python的集成</a>
+      |
+      <a href="http://dudong0726.iteye.com/blog/1226789" class="pre" title="Python序列切片操作">Python序列切片操作</a>
+    </div>
+  </div>
+  <div class="blog_bottom">
+    <ul>
+      <li>2011-11-01 17:17</li>
+      <li>浏览 4373</li>
+      <li><a href="#comments">评论(0)</a></li>
+      
+      
+      <li>分类:<a href="http://www.iteye.com/blogs/category/language">编程语言</a></li>      
+      <li class="last"><a href="http://www.iteye.com/wiki/blog/1226907" target="_blank" class="more">相关推荐</a></li>
+    </ul>
+  </div>
+
+  <div class="blog_comment">
+    <h5>评论</h5>
+    <a id="comments" name="comments"></a>
+    
+    
+    
+  </div>
+
+  <div class="blog_comment">
+    <h5>发表评论</h5>
+            <p style="text-align:center; margin-top:30px;margin-bottom:0px;"><a href="http://dudong0726.iteye.com/login" style="background-color:white;"> <img src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/login_icon.png" style="vertical-align:middle; margin-right: 10px;"></a><a href="http://dudong0726.iteye.com/login">  您还没有登录,请您登录后再发表评论 </a></p>
+      </div>
+</div>
+
+
+<script type="text/javascript">
+  dp.SyntaxHighlighter.HighlightAll('code', true, true);
+
+  $$('#main .blog_content pre[name=code]').each(function(pre, index){ // blog content
+    var post_id = 1226907;
+    var location = window.location;
+    source_url = location.protocol + "//" + location.host + location.pathname + location.search;
+    pre.writeAttribute('codeable_id', post_id);
+    pre.writeAttribute('codeable_type', "Blog");
+    pre.writeAttribute('source_url', source_url);
+    pre.writeAttribute('pre_index', index);
+    pre.writeAttribute('title', 'python模块和类在import上的区别');
+  });
+
+  fix_image_size($$('div.blog_content img'), 700);
+
+  function processComment() {
+    $$('#main .blog_comment > div').each(function(comment){// comment
+      var post_id = comment.id.substr(2);
+      $$("#"+comment.id+" pre[name=code]").each(function(pre, index){
+        var location = window.location;
+        source_url = location.protocol + "//" + location.host + location.pathname + location.search;
+        source_url += "#" + comment.id;
+        pre.writeAttribute('codeable_id', post_id);
+        pre.writeAttribute('codeable_type', "BlogComment");
+        pre.writeAttribute('source_url', source_url);
+        pre.writeAttribute('pre_index', index);
+        pre.writeAttribute('title', 'python模块和类在import上的区别');
+      });
+    });
+  }
+
+  function quote_comment(id) {
+    new Ajax.Request('/editor/quote', {
+      parameters: {'id':id, 'type':'BlogComment'},
+      onSuccess:function(response){editor.bbcode_editor.textarea.insertAfterSelection(response.responseText);
+        Element.scrollTo(editor.bbcode_editor.textarea.element);}
+    });
+  }
+
+  code_favorites_init();
+  processComment();
+  new WeiboShare({share_buttons: $('share_weibo'), img_scope: $('blog_content')});
+</script>
+
+
+
+
+        </div>
+
+        <div id="local">
+          <div class="local_top"></div>
+          <div id="blog_owner">
+  <div id="blog_owner_logo"><a href="http://dudong0726.iteye.com/"><img alt="dudong0726的博客" class="logo" src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/58668770-70e2-3b69-87c8-4e5f862b4881.jpg" title="dudong0726的博客: 如戏" width=""></a></div>
+  <div id="blog_owner_name">dudong0726</div>
+</div>
+
+          <div id="blog_actions">
+            <ul>
+              <li>浏览: 34065 次</li>
+              <li>性别: <img alt="Icon_minigender_1" src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/icon_minigender_1.gif" title="男"></li>
+              <li>来自: 火星</li>
+              <li><img src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/offline.gif"></li>
+              
+            </ul>
+          </div>
+          <div id="user_visits" class="clearfix">
+            <h5>最近访客 <span style="font-weight:normal;font-size:12px;padding-left:30px;"><a href="http://dudong0726.iteye.com/blog/user_visits">更多访客&gt;&gt;</a></span></h5>
+            
+              <div class="user_visit">
+                <div class="logo"><a href="http://dylinshi126.iteye.com/" target="_blank"><img alt="dylinshi126的博客" class="logo" src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/user-logo-thumb.gif" title="dylinshi126的博客: " width="48px"></a></div>
+                <div class="left"><a href="http://dylinshi126.iteye.com/" target="_blank" title="dylinshi126">dylinshi126</a></div>
+              </div>
+            
+              <div class="user_visit">
+                <div class="logo"><a href="http://cryfor918-163-com.iteye.com/" target="_blank"><img alt="gis的博客" class="logo" src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/user-logo-thumb.gif" title="gis的博客: " width="48px"></a></div>
+                <div class="left"><a href="http://cryfor918-163-com.iteye.com/" target="_blank" title="gis">gis</a></div>
+              </div>
+            
+              <div class="user_visit">
+                <div class="logo"><a href="http://lcy19871213.iteye.com/" target="_blank"><img alt="lcy19871213的博客" class="logo" src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/user-logo-thumb.gif" title="lcy19871213的博客: " width="48px"></a></div>
+                <div class="left"><a href="http://lcy19871213.iteye.com/" target="_blank" title="lcy19871213">lcy19871213</a></div>
+              </div>
+            
+              <div class="user_visit">
+                <div class="logo"><a href="http://w-longjie.iteye.com/" target="_blank"><img alt="Andy先生的博客" class="logo" src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/user-logo-thumb.gif" title="Andy先生的博客: " width="48px"></a></div>
+                <div class="left"><a href="http://w-longjie.iteye.com/" target="_blank" title="Andy先生">Andy先生</a></div>
+              </div>
+            
+          </div>
+
+          
+
+                      <div id="blog_menu">
+              <h5>文章分类</h5>
+              <ul>
+                <li><a href="http://dudong0726.iteye.com/">全部博客 (50)</a></li>
+                
+                  <li><a href="http://dudong0726.iteye.com/category/179845">Java (4)</a></li>
+                
+                  <li><a href="http://dudong0726.iteye.com/category/179842">Flex (21)</a></li>
+                
+                  <li><a href="http://dudong0726.iteye.com/category/179846">Hibernate (8)</a></li>
+                
+                  <li><a href="http://dudong0726.iteye.com/category/179847">Spring (0)</a></li>
+                
+                  <li><a href="http://dudong0726.iteye.com/category/179844">Sql (1)</a></li>
+                
+                  <li><a href="http://dudong0726.iteye.com/category/179848">Struts (0)</a></li>
+                
+                  <li><a href="http://dudong0726.iteye.com/category/179849">Jsp (3)</a></li>
+                
+                  <li><a href="http://dudong0726.iteye.com/category/179850">Groovy (1)</a></li>
+                
+                  <li><a href="http://dudong0726.iteye.com/category/179851">Python (6)</a></li>
+                
+                  <li><a href="http://dudong0726.iteye.com/category/180232">JavaScript (4)</a></li>
+                
+                  <li><a href="http://dudong0726.iteye.com/category/200951">Code (3)</a></li>
+                
+              </ul>
+            </div>
+            <div id="month_blogs">
+              <h5>社区版块</h5>
+              <ul>
+                <li><a href="http://dudong0726.iteye.com/blog/news">我的资讯</a> (0)</li>
+                <li>
+                  <a href="http://dudong0726.iteye.com/blog/post">我的论坛</a> (21)
+                </li>
+                <li><a href="http://dudong0726.iteye.com/blog/answered_problems">我的问答</a> (0)</li>
+              </ul>
+            </div>
+            <div id="month_blogs">
+              <h5>存档分类</h5>
+              <ul>
+                
+                  <li><a href="http://dudong0726.iteye.com/blog/monthblog/2014-06">2014-06</a> (2)</li>
+                
+                  <li><a href="http://dudong0726.iteye.com/blog/monthblog/2012-10">2012-10</a> (1)</li>
+                
+                  <li><a href="http://dudong0726.iteye.com/blog/monthblog/2012-01">2012-01</a> (1)</li>
+                
+                <li><a href="http://dudong0726.iteye.com/blog/monthblog_more">更多存档...</a></li>
+              </ul>
+            </div>
+            
+            
+
+            <div id="guest_books">
+              <h5>最新评论</h5>
+              <ul>
+                
+                <li>
+                  <a href="http://zhzczyc.iteye.com/" target="_blank" title="zhzczyc">zhzczyc</a>： 
+                  试了一下 还是不管用。。<br>
+                  <a href="http://dudong0726.iteye.com/blog/1329330#bc2328512">Flex AdvancedDataGrid 子节点渲染器展开式混乱问题</a>
+                </li>
+                
+                <li>
+                  <a href="http://zhzczyc.iteye.com/" target="_blank" title="zhzczyc">zhzczyc</a>： 
+                  博主 可方便贴出完整代码？<br>
+                  <a href="http://dudong0726.iteye.com/blog/1329330#bc2328501">Flex AdvancedDataGrid 子节点渲染器展开式混乱问题</a>
+                </li>
+                
+                <li>
+                  <a href="http://xiaoranchenxi.iteye.com/" target="_blank" title="xiaoranchenxi">xiaoranchenxi</a>： 
+                  _allot 是个啥东东？<br>
+                  <a href="http://dudong0726.iteye.com/blog/1329330#bc2291356">Flex AdvancedDataGrid 子节点渲染器展开式混乱问题</a>
+                </li>
+                
+              </ul>
+            </div>
+
+            <div class="local_bottom"></div>
+          
+        </div>
+      </div>
+
+      <div id="footer" class="clearfix">
+        <div id="copyright">
+          <hr>
+          声明：ITeye文章版权属于作者，受法律保护。没有作者书面许可不得转载。若作者同意转载，必须以超链接形式标明文章原始出处和作者。<br>
+          © 2003-2014 ITeye.com.   All rights reserved.  [ 京ICP证110151号  京公网安备110105010620 ]
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+  document.write("<img src='http://stat.iteye.com/?url="+ encodeURIComponent(document.location.href) + "&referrer=" + encodeURIComponent(document.referrer) + "&user_id=' width='0' height='0' />");
+</script><img src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/a.gif" height="0" width="0">
+
+<script src="python%E6%A8%A1%E5%9D%97%E5%92%8C%E7%B1%BB%E5%9C%A8import%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%20-%20%E5%A6%82%E6%88%8F%20-%20ITeye%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99_files/tracking.js" type="text/javascript"></script>
+
+    
+    
+  
+
+</body></html>
