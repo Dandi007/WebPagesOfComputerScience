@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>CSDN Ad</title>
+    <style type="text/css">
+        body { margin:0px; padding:0px;}
+    </style>
+     <script src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/jquery.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="div1"><style type="text/css">
+ul { margin:0px; padding:0 4px 0 0; }
+ul, x:-moz-any-link, x:default { width:90%; }
+ul li { padding:3px 0px;}
+a { font-size:12px; text-decoration:none; color:#006699; }
+a:hover { color:#000; }
+</style>
+
+<ul>
+
+<li><a href="http://blog.csdn.net/whqet/article/details/43758285" target="_blank">* CSS变量试玩儿</a></li>
+
+<li><a href="http://blog.csdn.net/zhaokaiqiang1992/article/details/43699257" target="_blank">* 【Android开发经验】兼容不同的屏幕大小</a></li>
+
+<li><a href="http://blog.csdn.net/hitwhylz/article/details/43672649" target="_blank">* Cocoa Core Competencies_1_Accessibility</a></li>
+
+<li><a href="http://blog.csdn.net/foruok/article/details/43560437" target="_blank">* QtAndroid详解(3)：startActivity实战Android拍照功能</a></li>
+
+
+<li><a href="http://blog.csdn.net/siren0203/article/details/43561015" target="_blank">* PHPer都应该关注的服务端性能问题–听云Server试用笔记</a></li>
+
+
+
+<li><a href="http://blog.csdn.net/cloud_castle/article/details/43490767" target="_blank">* Qt5官方demo解析集34——Concentric Circles Example</a></li>
+
+
+</ul></div>
+<script type="text/javascript">
+    window.onload = function () {
+        if (document.domain != 'blog.csdn.net') {
+            document.domain = "csdn.net";
+        }
+        //这种给广告区域赋值的方式，对于有些JS广告不能完美的显示
+        //top.document.getElementById('ad_commend').innerHTML = document.getElementById('div1').innerHTML;
+
+        var h = document.body.offsetHeight + 2;
+        setTimeout(function () {
+            if (h > 800) h = document.getElementById('div1').offsetHeight + 4;
+            try { top.document.getElementById('ad_frm_2').style.height = h + 'px'; }
+            catch (err) { }
+        }, 100);
+    };
+    $(function() {
+        $("#div1 a").click(function() {
+            top._gaq.push(['_trackEvent', 'function', 'onclick', 'blog_articles_tuijianwenzhang']);
+        });
+    });
+</script>
+
+
+</body></html>

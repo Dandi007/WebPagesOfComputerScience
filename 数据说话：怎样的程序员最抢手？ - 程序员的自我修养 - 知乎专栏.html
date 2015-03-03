@@ -1,0 +1,2159 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-touch"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>数据说话：怎样的程序员最抢手？ - 程序员的自我修养 - 知乎专栏</title>
+    <!-- base href="http://zhuanlan.zhihu.com/" -->
+    <meta name="fragment" content="!">
+    <meta name="description" content="知乎专栏">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!--[if lt IE 9]>
+      <script src="http://z1.zhimg.com/components/es5-shim/es5-shim.js"></script>
+      <script src="http://z1.zhimg.com/components/html5shiv/dist/html5shiv.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+      <script src="http://z1.zhimg.com/components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+    <script src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/ga.js"></script><script>document.documentElement.className += ('ontouchstart' in window) ? ' touch' : ' no-touch'</script>
+    <link rel="stylesheet" href="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/d2f93073.css">
+  </head>
+  <body class="ng-scope" ng-app="columnWebApp" ng-controller="AppCtrl" ng-class="pageClass">
+    <!--[if lt IE 8]>
+    <p class="browsehappy">
+      你正在使用一个<strong>过时</strong>的浏览器。请<a class="link" href="http://browsehappy.com">升级你的浏览器</a>以查看此页面。</p>
+    </p>
+    <![endif]-->
+
+    <div id="header-holder">
+        <!-- ngInclude: navbarTemplateUrl --><div class="ng-scope" ng-include="navbarTemplateUrl">
+<header id="header" class="navbar ng-scope" ng-controller="NavbarCtrl">
+  <div class="receptacle">
+
+    <div class="navbar-logo-container">
+      <a href="http://www.zhihu.com/" target="_blank" class="logo icon icon-navbar-logo"></a>
+    </div>
+
+    <!-- ngIf: !me.authed() && me.$resolved -->
+
+    <!-- ngIf: me.authed() && !me.beta --><div ui-menu-button="" ng-if="me.authed() &amp;&amp; !me.beta" ng-transclude="" class="navbar-menu-container ui-menu-button ng-scope" ng-class="{ true: 'open', false: 'close' }[open]">
+      <a href="javascript:;" class="menu-button ng-scope">
+        <i class="icon icon-navbar-menu"></i><span class="hide-text">菜单</span>
+      </a>
+      <menu tabindex="0" class="menu navbar-menu ng-scope">
+        <a tabindex="0" class="menu-item dd-logout" href="http://www.zhihu.com/logout">
+          <i class="icon icon-dd-logout"></i>退出帐号</a>
+      </menu>
+    </div><!-- end ngIf: me.authed() && !me.beta -->
+
+    <!-- ngIf: me.beta -->
+
+    <!-- ngIf: me.beta -->
+
+    <!-- ngIf: me.beta -->
+
+    <div class="navbar-content">
+      <ul class="breadcrumb clearfix">
+        <!-- ngIf: column && column.name && !columnSelectOnly --><li class="breadcrumb-item column-name ng-scope" ng-if="column &amp;&amp; column.name &amp;&amp; !columnSelectOnly">
+          <a class="link" href="http://zhuanlan.zhihu.com/100offer">
+            <!-- ngIf: me.slug != column.creator.slug --><button ng-click="toggleFollow(column, $event)" class="btn normal ng-binding ng-scope btn-grey" ng-class="{ true: 'btn-grey', false: 'btn-dark-green' }[column.following]" ng-if="me.slug != column.creator.slug">取消关注</button><!-- end ngIf: me.slug != column.creator.slug -->
+            <span class="name ng-binding" title="程序员的自我修养">程序员的自我修养</span>
+          </a>
+        </li><!-- end ngIf: column && column.name && !columnSelectOnly -->
+        <!-- ngIf: columnSelectOnly -->
+        <!-- ngIf: column && pageTitle || columnSelectOnly -->
+        <li class="breadcrumb-item">
+          <span class="name ng-binding" ng-bind="pageTitle"></span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</header>
+</div>
+    </div>
+
+    <div data-alert="globalAlert" data-align="bottom" data-target="#header-holder" ui-alertbar="" ui-sticky="" class="ui-alertbar info ng-hide" ng-show="alert.message">
+  <div class="receptacle ng-binding">
+    <i class="icon icon-alertbar-info"></i>
+    
+  </div>
+</div>
+
+    <!-- Add your site or application content here -->
+    <!-- ngView:  --><main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+
+  <article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+    <header>
+      <!-- ngIf: post.titleImage --><div class="entry-title-image ng-scope" ng-if="post.titleImage">
+        <!-- <span class="img-captions">我的摄影作品</span> -->
+        <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/de7a3ae53994ad0d0a0e9ee310cd1884_b.jpg" ng-src="http://pic1.zhimg.com/de7a3ae53994ad0d0a0e9ee310cd1884_b.jpg">
+      </div><!-- end ngIf: post.titleImage -->
+
+      <!-- ngIf: post.sourceUrl -->
+
+      <h1 class="entry-title ng-binding">数据说话：怎样的程序员最抢手？</h1>
+
+      <div class="entry-meta">
+        <a target="_blank" href="http://www.zhihu.com/people/luckystar" class="author name ng-binding">
+          <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/e76f976d02743ca44e80c3097fff5828_s.jpg" ng-src="http://pic2.zhimg.com/e76f976d02743ca44e80c3097fff5828_s.jpg" alt="" class="avatar-small">luckystar</a>
+        <span class="bull">·</span>
+        <time ui-time="" datetime="2015-03-02T17:50:01+08:00" class="published ng-binding ng-isolate-scope" title="2015年3月2日星期一下午5点50分">17 小时前</time>
+      </div>
+    </header>
+
+    <!-- ngIf: isCensoring -->
+
+    <section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">Hi，这是一个新的专栏「程序员的自我修养」。 我在 <a href="http://100offer.com/" class=" wrap external" target="_blank" rel="nofollow noreferrer">100offer程序员拍卖平台<i class="icon-external"></i></a>，日常的工作内容就是帮程序员跳槽拿 offer。这个专栏用来记录程序员职业成长的那些事儿，大家觉得有用可以关注和点赞，你们的赞同是我贡献更多内容最大的动力。<p>今天的文章是根据 100offer 去年 10 月份的数据整理的《怎样的程序员最抢手？》。</p><img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/de7a3ae53994ad0d0a0e9ee310cd1884_b.jpg" data-rawwidth="640" data-rawheight="320" class="origin_image zh-lightbox-thumb" data-original="http://pic1.zhimg.com/de7a3ae53994ad0d0a0e9ee310cd1884_r.jpg" width="640"><p>下文主要探讨三个部分：<br></p><p>1、怎样的程序员最抢手？</p><p>2、互联网公司怎样吸引优秀程序员加盟？</p><p>3、程序员跳槽中的一些典型案例。</p><img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/1a3b59067fe885d443632db93af40429_b.jpg" data-rawwidth="640" data-rawheight="320" class="origin_image zh-lightbox-thumb" data-original="http://pic2.zhimg.com/1a3b59067fe885d443632db93af40429_r.jpg" width="640"><h2><b>一、什么样的程序员最受青睐？</b></h2><p>我们分为两点探讨，首先，我们来看影响程序员涨薪的因素。</p><p><b>1.1 什么样的程序员跳槽涨薪最高？</b></p><img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/d68918d46a4e7af55215fb6aaffd6a9a_b.jpg" data-rawwidth="640" data-rawheight="684" class="origin_image zh-lightbox-thumb" data-original="http://pic3.zhimg.com/d68918d46a4e7af55215fb6aaffd6a9a_r.jpg" width="640"><img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/2b827c3736d25e82434540bbe6ae53cb_b.jpg" data-rawwidth="640" data-rawheight="647" class="origin_image zh-lightbox-thumb" data-original="http://pic4.zhimg.com/2b827c3736d25e82434540bbe6ae53cb_r.jpg" width="640"><img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/8d7e225dddfb08ce86d8b1bbe728efca_b.jpg" data-rawwidth="640" data-rawheight="1047" class="origin_image zh-lightbox-thumb" data-original="http://pic3.zhimg.com/8d7e225dddfb08ce86d8b1bbe728efca_r.jpg" width="640"><p><img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/f832d14929e1ff32b9cfb329c098336f_b.jpg" data-rawwidth="700" data-rawheight="463" class="origin_image zh-lightbox-thumb" data-original="http://pic4.zhimg.com/f832d14929e1ff32b9cfb329c098336f_r.jpg" width="700">安卓、iOS、Web前端薪资涨幅都较其他语言要高。对单个程序员来说,想要获得较高的薪资涨幅,选定热门的语言与工作地是成功的基石。<br></p><p><img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/6ee9d615c0dd08dceee6a62e2820dbde_b.jpg" data-rawwidth="700" data-rawheight="462" class="origin_image zh-lightbox-thumb" data-original="http://pic3.zhimg.com/6ee9d615c0dd08dceee6a62e2820dbde_r.jpg" width="700"><br>工作城市对程序员跳槽涨薪的影响还是不小的。<br><br></p><p><b>1.2 什么样的程序员能获得最多的面试邀请？</b></p><img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/1e194d5246e658f7be8a8df88ab5f624_b.jpg" data-rawwidth="700" data-rawheight="456" class="origin_image zh-lightbox-thumb" data-original="http://pic1.zhimg.com/1e194d5246e658f7be8a8df88ab5f624_r.jpg" width="700"><p>最直接相关的两个因素是:使用的编程语言与工作的城市。</p><p>移动开发与Web前端的需求量很大，所以这一类程序员能拿到更多的面试邀请。<img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/44d19f2ab3329c7929374d59e6b87ebe_b.jpg" data-rawwidth="700" data-rawheight="450" class="origin_image zh-lightbox-thumb" data-original="http://pic3.zhimg.com/44d19f2ab3329c7929374d59e6b87ebe_r.jpg" width="700">而北京互联网行业更加发达，所以北京的程序员也更加抢手。负相关的两个因素是:工作年限与求职的主动性。</p><img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/714b6c5bb097adf960508e019445d599_b.jpg" data-rawwidth="700" data-rawheight="473" class="origin_image zh-lightbox-thumb" data-original="http://pic2.zhimg.com/714b6c5bb097adf960508e019445d599_r.jpg" width="700"><p>每个主动求职者平均收到5.6个面试offer，被动求职者则为8.4个，说明被动求职者正是因为具有市场上更为紧缺的技能所以不会急于换工作。 <br></p><p><img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/87d9d451fccf9b57fb5ac5c48c1ed8d5_b.jpg" data-rawwidth="700" data-rawheight="450" class="origin_image zh-lightbox-thumb" data-original="http://pic2.zhimg.com/87d9d451fccf9b57fb5ac5c48c1ed8d5_r.jpg" width="700">工作年限在5年以上的程序员收到的面试邀请没有刚工作2年左右的程序员多。我觉得这主要是因为适合有丰富工作经验的程序员的工作机会更少。<br></p><br><br><h2><b>二、互联网公司怎么更好的招聘人才？</b></h2><b>首先看看薪资这个因素：</b><br><p>1、
+最有效的薪资涨幅应该在10%-60%间，这个区间的offer程序员很容易接受;同时,程序员对&gt;60%的薪资涨幅并没有表现出相应明显更高的接
+受率。可能的原因是,此类offer多由金融或传统行业中的土豪转型互联网后开出,程序员未必感冒。 土豪们要加油了。</p><p>下图为<b>面试邀请</b>接受率与offer薪资的关系：<br></p><p><img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/6eda037fea4b8d943aaeff4cbaf1dd90_b.jpg" data-rawwidth="700" data-rawheight="448" class="origin_image zh-lightbox-thumb" data-original="http://pic1.zhimg.com/6eda037fea4b8d943aaeff4cbaf1dd90_r.jpg" width="700">备注：图中「横坐标0.6 ~ 2」表示offer 薪资与目前薪资的比例，即 0.6 表示offer 薪资是目前薪资的0.6倍。<br></p><p>2、从面试邀请的分布来看,还是较符合正态分布的。</p><p><img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/671b5d10618411a1f60c3426719ed4e1_b.jpg" data-rawwidth="700" data-rawheight="430" class="origin_image zh-lightbox-thumb" data-original="http://pic2.zhimg.com/671b5d10618411a1f60c3426719ed4e1_r.jpg" width="700"><b>其次，公司需要至少考虑两个问题：</b><br></p><ul><li><b>谁来发offer ？</b>专业的HR，还是上级工程师，亦或是CEO、CTO亲自上场？</li><li><b>怎样发offer？</b>面试邀请写些什么内容呢，以情动人，还是拿钱砸人？</li></ul><img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/32b905eb119e1713b137d7a1b5b0abe8_b.jpg" data-rawwidth="700" data-rawheight="454" class="origin_image zh-lightbox-thumb" data-original="http://pic1.zhimg.com/32b905eb119e1713b137d7a1b5b0abe8_r.jpg" width="700"><p>从结果看，个性的面试邀约与合适的薪资是影响最大的因素。个性的面试邀请，既能完美展现公司的实力，又体现了对对方的足够重视和强烈的需求。</p><p>比较令人吃惊的是,来自工程师/co-founder发出的面试邀请居然是负面影响的,能想到的唯一理由是,很多CEO或CTO还处于初创无助期,So sad...</p><br><p><b>最后，就是程序员拒绝的理由：</b></p><p>最多的拒绝理由与钱无关!</p><img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/bbd21494df5783ba92e6b2cc758af358_b.jpg" data-rawwidth="700" data-rawheight="480" class="origin_image zh-lightbox-thumb" data-original="http://pic1.zhimg.com/bbd21494df5783ba92e6b2cc758af358_r.jpg" width="700"><p>最多的拒绝理由是对产品不感兴趣,工作地点不合适、薪资不满意分别排在第二第三。<br></p><h2><b>三、程序员跳槽中的一些典型案例</b></h2><p>去年10月份我们从约2000名程序员申请者中选出了200名进行拍卖,其中30%以上是一线互联网公司的程序员,参与拍卖的公司有Nice、Strikingly这样的极客型创业公司以及百度、网易、点评这样的大公司。 </p><p><b>参与拍卖的人与公司的分布</b></p><img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/c53e24e0424b685b7637f346222217db_b.jpg" data-rawwidth="700" data-rawheight="366" class="origin_image zh-lightbox-thumb" data-original="http://pic4.zhimg.com/c53e24e0424b685b7637f346222217db_r.jpg" width="700"><p>200个候选人与面试邀请数的关系<br></p><p><img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/ba8378f2255a61c887b2c43a89070af3_b.jpg" data-rawwidth="700" data-rawheight="485" class="origin_image zh-lightbox-thumb" data-original="http://pic4.zhimg.com/ba8378f2255a61c887b2c43a89070af3_r.jpg" width="700">去年10月份拍卖200个程序员中189个收到过至少一个面试邀请，可惜的是仍有11个程序员没有通过100offer收到过面试邀请。<br></p><br><p>空说无真相，举两个真实栗子：</p><ul><li><b>最受欢迎的程序员</b></li></ul><p><b>收获了47份offer的G先生，是单期拍卖获得offer数量最多的候选人！</b></p><p>扔出橄榄枝的47家企业都在北京，包括一线互联网行业和各种阶段的创业公司。</p><p>G先生国内名牌大学毕业，拥有5年工作经验，目前是国内一线互联网公司的团队负责人。</p><p>G先生不仅拥有过硬的技术背景，他的求职态度更是完美体现了「一个程序员的自我修养」：</p><ul><li>希望能和牛人一起进步，做一些改变世界的事。</li></ul><p>如此，G先生受到众多公司的青睐也是实至名归。</p><br><ul><li><b>金额最高的offer</b></li></ul><p><b>在硅谷一线知名企业工作的小D获得了最高薪的offer：年薪97w</b>——略小于小D目前在美国的薪水。</p><p>开出如此高报酬的公司是国内某创业公司M，据说获得千万美金风投的M公司现在风头正劲，专注的市场领域和小D的硅谷公司领域相同，正需要小D这样的技术型人才。无怪乎M公司CEO亲自上阵发出了情真意切的邀请信。</p><p>去年 10 月份，我们的产品上线不久，现在的用户数比之当初翻了 n 倍，并且仍在高速增长中。正值跳槽季，想换工作的程序员不妨试试 <a href="http://100offer.com/" class=" wrap external" target="_blank" rel="nofollow noreferrer">100offer<i class="icon-external"></i></a> 。</p></section>
+
+    <footer>
+      <div class="entry-controls clearfix">
+        <div class="right-section">
+          <!-- <span class="control-item read-counts">
+            <i class="icon icon-eye"></i>13 人读过
+          </span> -->
+          <!-- ngIf: !isCensoring --><div ui-menu-button="" onbeforeopen="beforeShareMenuOpen()" ng-if="!isCensoring" ng-transclude="" class="post-share-button post-menu-button ui-menu-button ng-scope" ng-class="{ true: 'open', false: 'close' }[open]">
+            <a href="javascript:;" class="menu-button control-item share ng-scope"><i class="icon icon-share"></i>分享</a>
+            <menu tabindex="0" class="menu ng-scope">
+              <!-- ngRepeat: item in shareMenuItems --><div tabindex="0" ng-click="item.action()" class="menu-item ng-binding ng-scope" ng-repeat="item in shareMenuItems">
+                <i class="icon icon-share-sina"></i>新浪微博
+              </div><!-- end ngRepeat: item in shareMenuItems --><div tabindex="0" ng-click="item.action()" class="menu-item ng-binding ng-scope" ng-repeat="item in shareMenuItems">
+                <i class="icon icon-share-qq"></i>腾讯微博
+              </div><!-- end ngRepeat: item in shareMenuItems --><div tabindex="0" ng-click="item.action()" class="menu-item ng-binding ng-scope" ng-repeat="item in shareMenuItems">
+                <i class="icon icon-share-twitter"></i>Twitter
+              </div><!-- end ngRepeat: item in shareMenuItems --><div tabindex="0" ng-click="item.action()" class="menu-item ng-binding ng-scope" ng-repeat="item in shareMenuItems">
+                <i class="icon icon-share-douban"></i>豆瓣
+              </div><!-- end ngRepeat: item in shareMenuItems -->
+            </menu>
+          </div><!-- end ngIf: !isCensoring -->
+
+          <!-- ngIf: ownPost(post) -->
+
+          <div ng-show="ownPost(post)" ui-menu-button="" ng-transclude="" class="post-options-button post-menu-button ui-menu-button ng-scope ng-hide" ng-class="{ true: 'open', false: 'close' }[open]">
+            <a href="javascript:;" class="menu-button control-item options ng-scope">
+              <i class="icon icon-settings"></i><span class="hide-text">设置</span>
+            </a>
+            <menu tabindex="0" class="menu ng-scope">
+              <div tabindex="0" ng-click="removePost()" class="menu-item"><i class="icon icon-del-big"></i>删除</div>
+            </menu>
+          </div>
+
+          <!-- ngIf: !ownPost(post) && !isCensoring --><a ng-if="!ownPost(post) &amp;&amp; !isCensoring" ng-click="report(post)" href="javascript:;" class="control-item report ng-scope"><i class="icon icon-comment-report"></i>举报</a><!-- end ngIf: !ownPost(post) && !isCensoring -->
+
+        </div>
+
+        <!-- ngIf: !isCensoring --><div class="left-section ng-scope" ng-if="!isCensoring">
+          <div class="vote-section-wrapper clearfix">
+            <span class="vote-section" ng-show="!ownPost(post)">
+              <a ng-click="post.toggleLike()" href="javascript:;" class="voteup ng-binding" ng-class="{ active: post.rating == 'like' }"><i class="icon icon-voteup"></i>268 赞</a>
+              <a ng-click="post.toggleDislike()" href="javascript:;" class="votedown" ng-class="{ active: post.rating == 'dislike' }"><i class="icon icon-votedown"></i></a>
+            </span>
+            <span class="vote-num ng-binding ng-hide" ng-show="ownPost(post)">268 赞</span>
+          </div>
+
+          <!-- ngIf: post.lastestLikers.length && !likers --><div class="voters clearfix ng-scope" ng-if="post.lastestLikers.length &amp;&amp; !likers">
+            <!-- ngRepeat: user in post.lastestLikers --><a href="http://www.zhihu.com/people/xh-wang" target="_blank" title="xh Wang" class="voter ng-scope" ng-repeat="user in post.lastestLikers">
+              <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/c3e555fe2_s.jpg" ng-src="http://pic2.zhimg.com/c3e555fe2_s.jpg" alt="xh Wang" class="avatar-small">
+            </a><!-- end ngRepeat: user in post.lastestLikers --><a href="http://www.zhihu.com/people/xiao-qing-man" target="_blank" title="小青蛮" class="voter ng-scope" ng-repeat="user in post.lastestLikers">
+              <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/f98fb07dd_s.jpg" ng-src="http://pic2.zhimg.com/f98fb07dd_s.jpg" alt="小青蛮" class="avatar-small">
+            </a><!-- end ngRepeat: user in post.lastestLikers --><a href="http://www.zhihu.com/people/miao-si-ji" target="_blank" title="淼斯基" class="voter ng-scope" ng-repeat="user in post.lastestLikers">
+              <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/eb951cbd7_s.jpg" ng-src="http://pic1.zhimg.com/eb951cbd7_s.jpg" alt="淼斯基" class="avatar-small">
+            </a><!-- end ngRepeat: user in post.lastestLikers --><a href="http://www.zhihu.com/people/sun-hyun" target="_blank" title="sun hyun" class="voter ng-scope" ng-repeat="user in post.lastestLikers">
+              <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/da8e974dc_s.jpg" ng-src="http://pic4.zhimg.com/da8e974dc_s.jpg" alt="sun hyun" class="avatar-small">
+            </a><!-- end ngRepeat: user in post.lastestLikers --><a href="http://www.zhihu.com/people/xinyu-chen" target="_blank" title="Xinyu Chen" class="voter ng-scope" ng-repeat="user in post.lastestLikers">
+              <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/bb700dd04_s.jpg" ng-src="http://pic4.zhimg.com/bb700dd04_s.jpg" alt="Xinyu Chen" class="avatar-small">
+            </a><!-- end ngRepeat: user in post.lastestLikers -->
+            <!-- ngIf: post.lastestLikers.length < post.likesCount && !fetchLikersPending --><a href="javascript:;" title="查看全部" class="more-voters ng-scope" ng-click="fetchAllLikers()" ng-if="post.lastestLikers.length &lt; post.likesCount &amp;&amp; !fetchLikersPending">
+              <i class="icon icon-more-voters"></i>
+            </a><!-- end ngIf: post.lastestLikers.length < post.likesCount && !fetchLikersPending -->
+            <!-- ngIf: fetchLikersPending -->
+          </div><!-- end ngIf: post.lastestLikers.length && !likers -->
+
+          <!-- ngIf: likers -->
+        </div><!-- end ngIf: !isCensoring -->
+
+      </div>
+
+      <!-- <a ng-click="collect(post)" href="javascript:;" class="collect"><i class="icon icon-collect"></i>收藏</a> -->
+
+      <!-- ngIf: post.meta.previous || post.meta.next --><div class="posts-navigator ng-scope" ng-if="post.meta.previous || post.meta.next">
+        <div class="posts-nav one" ng-class="{one: !post.meta.previous || !post.meta.next}">
+          <a class="prev post-link" href="http://zhuanlan.zhihu.com/100offer/19788061" ng-show="post.meta.previous">
+            <i class="icon icon-prev-post"></i>
+            <strong class="title ng-binding">【推荐软件】自从用了 f.lux，再也不用担心被高色温渣屏蓝瞎眼了</strong>
+          </a>
+          <a class="next post-link ng-hide" href="" ng-show="post.meta.next">
+            <i class="icon icon-next-post"></i>
+            <strong class="title ng-binding"></strong>
+          </a>
+        </div>
+      </div><!-- end ngIf: post.meta.previous || post.meta.next -->
+
+      <!-- ngIf: !isCensoring --><div id="comments" ui-post-comments="" comments-href="post.links.comments" comments-expanded="true" comments-post-owner="post.author" comments-status="commentsStatus" ng-if="!isCensoring" class="entry-comments comment-box ng-isolate-scope" ng-show="expanded" ng-class="{ empty: !pending &amp;&amp; !comments.length }" ng-switch="pending" ng-init="warningMessageShow = !status.canComment &amp;&amp; status.permission != 'anyone'">
+
+  <div class="box-header">
+    <span class="counter">
+      <i class="icon icon-comment"></i><span class="ng-binding">22 条评论</span>
+    </span>
+    <a href="http://zhuanlan.zhihu.com/100offer/settings#permission" class="comment-options ng-hide" ng-show="$parent.column.creator.slug == me.slug" title="评论设置">
+      <i class="icon icon-settings"></i>
+    </a>
+  </div>
+
+  <!-- ngSwitchWhen: true -->
+
+  <!-- ngSwitchWhen: false --><div class="ng-scope" ng-switch-when="false">
+
+    <ul class="comment-list">
+      <!-- ngRepeat: comment in comments | orderBy:'id' track by comment.id --><li class="comment-item ng-scope" ng-repeat="comment in comments | orderBy:'id' track by comment.id" id="comment-70835012" ui-events="{focusin: 'focusin = true', focusout: 'focusin = false'}" ng-class="{focusin:focusin}">
+
+        <a ui-hovercard="" target="_blank" class="avatar-link" title="竹夭王令" href="http://www.zhihu.com/people/zhu-yao-wang-ling-28" tabindex="-1">
+          <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/4d3efba72a62ae6f854fe72d82e3a99e_xs.jpg" ng-src="http://pic2.zhimg.com/4d3efba72a62ae6f854fe72d82e3a99e_xs.jpg" class="avatar">
+        </a>
+
+        <div class="comment-body" ng-init="reply = {content: '', hidden: true}">
+          <div class="comment-hd">
+            <a class="ng-binding" href="http://www.zhihu.com/people/zhu-yao-wang-ling-28" target="_blank">竹夭王令</a><!-- ngIf: isPostOwner(comment.author) -->
+            <span class="in-reply-to ng-hide" ng-show="comment.inReplyToUser">
+              回复 <a class="ng-binding" href=""></a><!-- ngIf: isPostOwner(comment.inReplyToUser) -->
+            </span>
+          </div>
+
+          <div class="comment-content ng-binding" ng-bind-html="comment.content">歪个楼，长得好看并且单身的∩__∩</div>
+
+          <div class="comment-ft clearfix">
+            <time ui-time="" datetime="2015-03-02T18:11:03+08:00" class="date ng-binding ng-isolate-scope" title="2015年3月2日星期一晚上6点11分">17 小时前</time>
+
+            <span class="like-num liked" title="2 人觉得这个很赞"><span class="ng-binding">2</span> <span>赞</span></span>
+
+            <!-- ngIf: canRemove(comment) -->
+
+            <!-- ngIf: canReply(comment) --><a ng-if="canReply(comment)" ng-click="toggleReplyForm(reply)" href="javascript:;" class="reply op-link ng-scope"><i class="icon icon-comment-reply"></i>回复</a><!-- end ngIf: canReply(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="like(comment)" href="javascript:;" class="like op-link"><i class="icon icon-comment-like"></i>赞</a><!-- end ngIf: !ownComment(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="report(comment)" href="javascript:;" class="report op-link ng-scope"><i class="icon icon-comment-report"></i>举报</a><!-- end ngIf: !ownComment(comment) -->
+
+          </div>
+
+          <!-- ngIf: canReply(comment) --><form name="replyForm" class="comment-form comment-reply-form expanded hidden ng-scope ng-invalid ng-invalid-content-required ng-dirty" ng-if="canReply(comment)" ng-class="{hidden: reply.hidden}">
+            <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/d78766f4d_xs.jpg" class="avatar" ng-src="http://pic3.zhimg.com/d78766f4d_xs.jpg">
+            <div class="editable ng-invalid ng-invalid-content-required ng-dirty" ui-focus-me="!reply.hidden" ui-ctrl-enter="replyComment(comment, reply, replyForm)" ui-scraper="" scraper-options="scraperOptions" ui-mention="" ui-clean-paste="" content-required="" ng-model="reply.content" holdertext="写下你的评论…" contenteditable="true"><span holdertext="1" class="holdertext" contenteditable="false">写下你的评论…</span></div>
+            <!-- ngIf: me.authed() --><div class="command clearfix ng-scope" ng-if="me.authed()">
+              <button disabled="disabled" ng-disabled="reply.pending || !reply.content" ng-click="replyComment(comment, reply, replyForm)" class="save btn-blue">评论</button>
+              <button ng-click="reply.hidden = true" class="cancel btn-link">取消</button>
+            </div><!-- end ngIf: me.authed() -->
+          </form><!-- end ngIf: canReply(comment) -->
+
+        </div>
+      </li><!-- end ngRepeat: comment in comments | orderBy:'id' track by comment.id --><li class="comment-item ng-scope" ng-repeat="comment in comments | orderBy:'id' track by comment.id" id="comment-70835657" ui-events="{focusin: 'focusin = true', focusout: 'focusin = false'}" ng-class="{focusin:focusin}">
+
+        <a ui-hovercard="" target="_blank" class="avatar-link" title="胖哒" href="http://www.zhihu.com/people/pang-da-50" tabindex="-1">
+          <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/69f8538f38587f3d7fdd3419eec395c1_xs.jpg" ng-src="http://pic2.zhimg.com/69f8538f38587f3d7fdd3419eec395c1_xs.jpg" class="avatar">
+        </a>
+
+        <div class="comment-body" ng-init="reply = {content: '', hidden: true}">
+          <div class="comment-hd">
+            <a class="ng-binding" href="http://www.zhihu.com/people/pang-da-50" target="_blank">胖哒</a><!-- ngIf: isPostOwner(comment.author) -->
+            <span class="in-reply-to ng-hide" ng-show="comment.inReplyToUser">
+              回复 <a class="ng-binding" href=""></a><!-- ngIf: isPostOwner(comment.inReplyToUser) -->
+            </span>
+          </div>
+
+          <div class="comment-content ng-binding" ng-bind-html="comment.content">看完全篇，发觉鄙人全部处于“其他”类型。哈哈</div>
+
+          <div class="comment-ft clearfix">
+            <time ui-time="" datetime="2015-03-02T18:20:34+08:00" class="date ng-binding ng-isolate-scope" title="2015年3月2日星期一晚上6点20分">17 小时前</time>
+
+            <span class="like-num liked" title="5 人觉得这个很赞"><span class="ng-binding">5</span> <span>赞</span></span>
+
+            <!-- ngIf: canRemove(comment) -->
+
+            <!-- ngIf: canReply(comment) --><a ng-if="canReply(comment)" ng-click="toggleReplyForm(reply)" href="javascript:;" class="reply op-link ng-scope"><i class="icon icon-comment-reply"></i>回复</a><!-- end ngIf: canReply(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="like(comment)" href="javascript:;" class="like op-link"><i class="icon icon-comment-like"></i>赞</a><!-- end ngIf: !ownComment(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="report(comment)" href="javascript:;" class="report op-link ng-scope"><i class="icon icon-comment-report"></i>举报</a><!-- end ngIf: !ownComment(comment) -->
+
+          </div>
+
+          <!-- ngIf: canReply(comment) --><form name="replyForm" class="comment-form comment-reply-form expanded hidden ng-scope ng-invalid ng-invalid-content-required ng-dirty" ng-if="canReply(comment)" ng-class="{hidden: reply.hidden}">
+            <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/d78766f4d_xs.jpg" class="avatar" ng-src="http://pic3.zhimg.com/d78766f4d_xs.jpg">
+            <div class="editable ng-invalid ng-invalid-content-required ng-dirty" ui-focus-me="!reply.hidden" ui-ctrl-enter="replyComment(comment, reply, replyForm)" ui-scraper="" scraper-options="scraperOptions" ui-mention="" ui-clean-paste="" content-required="" ng-model="reply.content" holdertext="写下你的评论…" contenteditable="true"><span holdertext="1" class="holdertext" contenteditable="false">写下你的评论…</span></div>
+            <!-- ngIf: me.authed() --><div class="command clearfix ng-scope" ng-if="me.authed()">
+              <button disabled="disabled" ng-disabled="reply.pending || !reply.content" ng-click="replyComment(comment, reply, replyForm)" class="save btn-blue">评论</button>
+              <button ng-click="reply.hidden = true" class="cancel btn-link">取消</button>
+            </div><!-- end ngIf: me.authed() -->
+          </form><!-- end ngIf: canReply(comment) -->
+
+        </div>
+      </li><!-- end ngRepeat: comment in comments | orderBy:'id' track by comment.id --><li class="comment-item ng-scope" ng-repeat="comment in comments | orderBy:'id' track by comment.id" id="comment-70837125" ui-events="{focusin: 'focusin = true', focusout: 'focusin = false'}" ng-class="{focusin:focusin}">
+
+        <a ui-hovercard="" target="_blank" class="avatar-link" title="桀骜Joy" href="http://www.zhihu.com/people/jie-ao-joy" tabindex="-1">
+          <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/6e64b3936_xs.jpg" ng-src="http://pic3.zhimg.com/6e64b3936_xs.jpg" class="avatar">
+        </a>
+
+        <div class="comment-body" ng-init="reply = {content: '', hidden: true}">
+          <div class="comment-hd">
+            <a class="ng-binding" href="http://www.zhihu.com/people/jie-ao-joy" target="_blank">桀骜Joy</a><!-- ngIf: isPostOwner(comment.author) -->
+            <span class="in-reply-to ng-hide" ng-show="comment.inReplyToUser">
+              回复 <a class="ng-binding" href=""></a><!-- ngIf: isPostOwner(comment.inReplyToUser) -->
+            </span>
+          </div>
+
+          <div class="comment-content ng-binding" ng-bind-html="comment.content">学习鸟！</div>
+
+          <div class="comment-ft clearfix">
+            <time ui-time="" datetime="2015-03-02T18:42:30+08:00" class="date ng-binding ng-isolate-scope" title="2015年3月2日星期一晚上6点42分">16 小时前</time>
+
+            <span class="like-num nil" title="0 人觉得这个很赞"><span class="ng-binding">0</span> <span>赞</span></span>
+
+            <!-- ngIf: canRemove(comment) -->
+
+            <!-- ngIf: canReply(comment) --><a ng-if="canReply(comment)" ng-click="toggleReplyForm(reply)" href="javascript:;" class="reply op-link ng-scope"><i class="icon icon-comment-reply"></i>回复</a><!-- end ngIf: canReply(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="like(comment)" href="javascript:;" class="like op-link"><i class="icon icon-comment-like"></i>赞</a><!-- end ngIf: !ownComment(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="report(comment)" href="javascript:;" class="report op-link ng-scope"><i class="icon icon-comment-report"></i>举报</a><!-- end ngIf: !ownComment(comment) -->
+
+          </div>
+
+          <!-- ngIf: canReply(comment) --><form name="replyForm" class="comment-form comment-reply-form expanded hidden ng-scope ng-invalid ng-invalid-content-required ng-dirty" ng-if="canReply(comment)" ng-class="{hidden: reply.hidden}">
+            <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/d78766f4d_xs.jpg" class="avatar" ng-src="http://pic3.zhimg.com/d78766f4d_xs.jpg">
+            <div class="editable ng-invalid ng-invalid-content-required ng-dirty" ui-focus-me="!reply.hidden" ui-ctrl-enter="replyComment(comment, reply, replyForm)" ui-scraper="" scraper-options="scraperOptions" ui-mention="" ui-clean-paste="" content-required="" ng-model="reply.content" holdertext="写下你的评论…" contenteditable="true"><span holdertext="1" class="holdertext" contenteditable="false">写下你的评论…</span></div>
+            <!-- ngIf: me.authed() --><div class="command clearfix ng-scope" ng-if="me.authed()">
+              <button disabled="disabled" ng-disabled="reply.pending || !reply.content" ng-click="replyComment(comment, reply, replyForm)" class="save btn-blue">评论</button>
+              <button ng-click="reply.hidden = true" class="cancel btn-link">取消</button>
+            </div><!-- end ngIf: me.authed() -->
+          </form><!-- end ngIf: canReply(comment) -->
+
+        </div>
+      </li><!-- end ngRepeat: comment in comments | orderBy:'id' track by comment.id --><li class="comment-item ng-scope" ng-repeat="comment in comments | orderBy:'id' track by comment.id" id="comment-70838389" ui-events="{focusin: 'focusin = true', focusout: 'focusin = false'}" ng-class="{focusin:focusin}">
+
+        <a ui-hovercard="" target="_blank" class="avatar-link" title="小时了了" href="http://www.zhihu.com/people/xiaoshiliaoliao" tabindex="-1">
+          <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/da8e974dc_xs_003.jpg" ng-src="http://pic4.zhimg.com/da8e974dc_xs.jpg" class="avatar">
+        </a>
+
+        <div class="comment-body" ng-init="reply = {content: '', hidden: true}">
+          <div class="comment-hd">
+            <a class="ng-binding" href="http://www.zhihu.com/people/xiaoshiliaoliao" target="_blank">小时了了</a><!-- ngIf: isPostOwner(comment.author) -->
+            <span class="in-reply-to ng-hide" ng-show="comment.inReplyToUser">
+              回复 <a class="ng-binding" href=""></a><!-- ngIf: isPostOwner(comment.inReplyToUser) -->
+            </span>
+          </div>
+
+          <div class="comment-content ng-binding" ng-bind-html="comment.content">C++程序员泪奔</div>
+
+          <div class="comment-ft clearfix">
+            <time ui-time="" datetime="2015-03-02T19:01:09+08:00" class="date ng-binding ng-isolate-scope" title="2015年3月2日星期一晚上7点01分">16 小时前</time>
+
+            <span class="like-num liked" title="5 人觉得这个很赞"><span class="ng-binding">5</span> <span>赞</span></span>
+
+            <!-- ngIf: canRemove(comment) -->
+
+            <!-- ngIf: canReply(comment) --><a ng-if="canReply(comment)" ng-click="toggleReplyForm(reply)" href="javascript:;" class="reply op-link ng-scope"><i class="icon icon-comment-reply"></i>回复</a><!-- end ngIf: canReply(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="like(comment)" href="javascript:;" class="like op-link"><i class="icon icon-comment-like"></i>赞</a><!-- end ngIf: !ownComment(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="report(comment)" href="javascript:;" class="report op-link ng-scope"><i class="icon icon-comment-report"></i>举报</a><!-- end ngIf: !ownComment(comment) -->
+
+          </div>
+
+          <!-- ngIf: canReply(comment) --><form name="replyForm" class="comment-form comment-reply-form expanded hidden ng-scope ng-invalid ng-invalid-content-required ng-dirty" ng-if="canReply(comment)" ng-class="{hidden: reply.hidden}">
+            <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/d78766f4d_xs.jpg" class="avatar" ng-src="http://pic3.zhimg.com/d78766f4d_xs.jpg">
+            <div class="editable ng-invalid ng-invalid-content-required ng-dirty" ui-focus-me="!reply.hidden" ui-ctrl-enter="replyComment(comment, reply, replyForm)" ui-scraper="" scraper-options="scraperOptions" ui-mention="" ui-clean-paste="" content-required="" ng-model="reply.content" holdertext="写下你的评论…" contenteditable="true"><span holdertext="1" class="holdertext" contenteditable="false">写下你的评论…</span></div>
+            <!-- ngIf: me.authed() --><div class="command clearfix ng-scope" ng-if="me.authed()">
+              <button disabled="disabled" ng-disabled="reply.pending || !reply.content" ng-click="replyComment(comment, reply, replyForm)" class="save btn-blue">评论</button>
+              <button ng-click="reply.hidden = true" class="cancel btn-link">取消</button>
+            </div><!-- end ngIf: me.authed() -->
+          </form><!-- end ngIf: canReply(comment) -->
+
+        </div>
+      </li><!-- end ngRepeat: comment in comments | orderBy:'id' track by comment.id --><li class="comment-item ng-scope" ng-repeat="comment in comments | orderBy:'id' track by comment.id" id="comment-70838432" ui-events="{focusin: 'focusin = true', focusout: 'focusin = false'}" ng-class="{focusin:focusin}">
+
+        <a ui-hovercard="" target="_blank" class="avatar-link" title="陈超天" href="http://www.zhihu.com/people/chen-chao-tian" tabindex="-1">
+          <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/b0eb1d6976b17b1f58365de211327957_xs.jpg" ng-src="http://pic4.zhimg.com/b0eb1d6976b17b1f58365de211327957_xs.jpg" class="avatar">
+        </a>
+
+        <div class="comment-body" ng-init="reply = {content: '', hidden: true}">
+          <div class="comment-hd">
+            <a class="ng-binding" href="http://www.zhihu.com/people/chen-chao-tian" target="_blank">陈超天</a><!-- ngIf: isPostOwner(comment.author) -->
+            <span class="in-reply-to ng-hide" ng-show="comment.inReplyToUser">
+              回复 <a class="ng-binding" href=""></a><!-- ngIf: isPostOwner(comment.inReplyToUser) -->
+            </span>
+          </div>
+
+          <div class="comment-content ng-binding" ng-bind-html="comment.content">已关注！～</div>
+
+          <div class="comment-ft clearfix">
+            <time ui-time="" datetime="2015-03-02T19:01:45+08:00" class="date ng-binding ng-isolate-scope" title="2015年3月2日星期一晚上7点01分">16 小时前</time>
+
+            <span class="like-num nil" title="0 人觉得这个很赞"><span class="ng-binding">0</span> <span>赞</span></span>
+
+            <!-- ngIf: canRemove(comment) -->
+
+            <!-- ngIf: canReply(comment) --><a ng-if="canReply(comment)" ng-click="toggleReplyForm(reply)" href="javascript:;" class="reply op-link ng-scope"><i class="icon icon-comment-reply"></i>回复</a><!-- end ngIf: canReply(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="like(comment)" href="javascript:;" class="like op-link"><i class="icon icon-comment-like"></i>赞</a><!-- end ngIf: !ownComment(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="report(comment)" href="javascript:;" class="report op-link ng-scope"><i class="icon icon-comment-report"></i>举报</a><!-- end ngIf: !ownComment(comment) -->
+
+          </div>
+
+          <!-- ngIf: canReply(comment) --><form name="replyForm" class="comment-form comment-reply-form expanded hidden ng-scope ng-invalid ng-invalid-content-required ng-dirty" ng-if="canReply(comment)" ng-class="{hidden: reply.hidden}">
+            <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/d78766f4d_xs.jpg" class="avatar" ng-src="http://pic3.zhimg.com/d78766f4d_xs.jpg">
+            <div class="editable ng-invalid ng-invalid-content-required ng-dirty" ui-focus-me="!reply.hidden" ui-ctrl-enter="replyComment(comment, reply, replyForm)" ui-scraper="" scraper-options="scraperOptions" ui-mention="" ui-clean-paste="" content-required="" ng-model="reply.content" holdertext="写下你的评论…" contenteditable="true"><span holdertext="1" class="holdertext" contenteditable="false">写下你的评论…</span></div>
+            <!-- ngIf: me.authed() --><div class="command clearfix ng-scope" ng-if="me.authed()">
+              <button disabled="disabled" ng-disabled="reply.pending || !reply.content" ng-click="replyComment(comment, reply, replyForm)" class="save btn-blue">评论</button>
+              <button ng-click="reply.hidden = true" class="cancel btn-link">取消</button>
+            </div><!-- end ngIf: me.authed() -->
+          </form><!-- end ngIf: canReply(comment) -->
+
+        </div>
+      </li><!-- end ngRepeat: comment in comments | orderBy:'id' track by comment.id --><li class="comment-item ng-scope" ng-repeat="comment in comments | orderBy:'id' track by comment.id" id="comment-70838454" ui-events="{focusin: 'focusin = true', focusout: 'focusin = false'}" ng-class="{focusin:focusin}">
+
+        <a ui-hovercard="" target="_blank" class="avatar-link" title="苏沐秋" href="http://www.zhihu.com/people/dominus" tabindex="-1">
+          <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/d460e4662_xs.jpg" ng-src="http://pic2.zhimg.com/d460e4662_xs.jpg" class="avatar">
+        </a>
+
+        <div class="comment-body" ng-init="reply = {content: '', hidden: true}">
+          <div class="comment-hd">
+            <a class="ng-binding" href="http://www.zhihu.com/people/dominus" target="_blank">苏沐秋</a><!-- ngIf: isPostOwner(comment.author) -->
+            <span class="in-reply-to ng-hide" ng-show="comment.inReplyToUser">
+              回复 <a class="ng-binding" href=""></a><!-- ngIf: isPostOwner(comment.inReplyToUser) -->
+            </span>
+          </div>
+
+          <div class="comment-content ng-binding" ng-bind-html="comment.content">程序员不等于互联网行业程序员。</div>
+
+          <div class="comment-ft clearfix">
+            <time ui-time="" datetime="2015-03-02T19:02:00+08:00" class="date ng-binding ng-isolate-scope" title="2015年3月2日星期一晚上7点02分">16 小时前</time>
+
+            <span class="like-num nil" title="0 人觉得这个很赞"><span class="ng-binding">0</span> <span>赞</span></span>
+
+            <!-- ngIf: canRemove(comment) -->
+
+            <!-- ngIf: canReply(comment) --><a ng-if="canReply(comment)" ng-click="toggleReplyForm(reply)" href="javascript:;" class="reply op-link ng-scope"><i class="icon icon-comment-reply"></i>回复</a><!-- end ngIf: canReply(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="like(comment)" href="javascript:;" class="like op-link"><i class="icon icon-comment-like"></i>赞</a><!-- end ngIf: !ownComment(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="report(comment)" href="javascript:;" class="report op-link ng-scope"><i class="icon icon-comment-report"></i>举报</a><!-- end ngIf: !ownComment(comment) -->
+
+          </div>
+
+          <!-- ngIf: canReply(comment) --><form name="replyForm" class="comment-form comment-reply-form expanded hidden ng-scope ng-invalid ng-invalid-content-required ng-dirty" ng-if="canReply(comment)" ng-class="{hidden: reply.hidden}">
+            <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/d78766f4d_xs.jpg" class="avatar" ng-src="http://pic3.zhimg.com/d78766f4d_xs.jpg">
+            <div class="editable ng-invalid ng-invalid-content-required ng-dirty" ui-focus-me="!reply.hidden" ui-ctrl-enter="replyComment(comment, reply, replyForm)" ui-scraper="" scraper-options="scraperOptions" ui-mention="" ui-clean-paste="" content-required="" ng-model="reply.content" holdertext="写下你的评论…" contenteditable="true"><span holdertext="1" class="holdertext" contenteditable="false">写下你的评论…</span></div>
+            <!-- ngIf: me.authed() --><div class="command clearfix ng-scope" ng-if="me.authed()">
+              <button disabled="disabled" ng-disabled="reply.pending || !reply.content" ng-click="replyComment(comment, reply, replyForm)" class="save btn-blue">评论</button>
+              <button ng-click="reply.hidden = true" class="cancel btn-link">取消</button>
+            </div><!-- end ngIf: me.authed() -->
+          </form><!-- end ngIf: canReply(comment) -->
+
+        </div>
+      </li><!-- end ngRepeat: comment in comments | orderBy:'id' track by comment.id --><li class="comment-item ng-scope" ng-repeat="comment in comments | orderBy:'id' track by comment.id" id="comment-70838657" ui-events="{focusin: 'focusin = true', focusout: 'focusin = false'}" ng-class="{focusin:focusin}">
+
+        <a ui-hovercard="" target="_blank" class="avatar-link" title="小时了了" href="http://www.zhihu.com/people/xiaoshiliaoliao" tabindex="-1">
+          <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/da8e974dc_xs_003.jpg" ng-src="http://pic4.zhimg.com/da8e974dc_xs.jpg" class="avatar">
+        </a>
+
+        <div class="comment-body" ng-init="reply = {content: '', hidden: true}">
+          <div class="comment-hd">
+            <a class="ng-binding" href="http://www.zhihu.com/people/xiaoshiliaoliao" target="_blank">小时了了</a><!-- ngIf: isPostOwner(comment.author) -->
+            <span class="in-reply-to" ng-show="comment.inReplyToUser">
+              回复 <a class="ng-binding" href="http://www.zhihu.com/people/pang-da-50">胖哒</a><!-- ngIf: isPostOwner(comment.inReplyToUser) -->
+            </span>
+          </div>
+
+          <div class="comment-content ng-binding" ng-bind-html="comment.content">下意识的就点了你的头像</div>
+
+          <div class="comment-ft clearfix">
+            <time ui-time="" datetime="2015-03-02T19:05:43+08:00" class="date ng-binding ng-isolate-scope" title="2015年3月2日星期一晚上7点05分">16 小时前</time>
+
+            <span class="like-num nil" title="0 人觉得这个很赞"><span class="ng-binding">0</span> <span>赞</span></span>
+
+            <!-- ngIf: canRemove(comment) -->
+
+            <!-- ngIf: canReply(comment) --><a ng-if="canReply(comment)" ng-click="toggleReplyForm(reply)" href="javascript:;" class="reply op-link ng-scope"><i class="icon icon-comment-reply"></i>回复</a><!-- end ngIf: canReply(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="like(comment)" href="javascript:;" class="like op-link"><i class="icon icon-comment-like"></i>赞</a><!-- end ngIf: !ownComment(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="report(comment)" href="javascript:;" class="report op-link ng-scope"><i class="icon icon-comment-report"></i>举报</a><!-- end ngIf: !ownComment(comment) -->
+
+          </div>
+
+          <!-- ngIf: canReply(comment) --><form name="replyForm" class="comment-form comment-reply-form expanded hidden ng-scope ng-invalid ng-invalid-content-required ng-dirty" ng-if="canReply(comment)" ng-class="{hidden: reply.hidden}">
+            <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/d78766f4d_xs.jpg" class="avatar" ng-src="http://pic3.zhimg.com/d78766f4d_xs.jpg">
+            <div class="editable ng-invalid ng-invalid-content-required ng-dirty" ui-focus-me="!reply.hidden" ui-ctrl-enter="replyComment(comment, reply, replyForm)" ui-scraper="" scraper-options="scraperOptions" ui-mention="" ui-clean-paste="" content-required="" ng-model="reply.content" holdertext="写下你的评论…" contenteditable="true"><span holdertext="1" class="holdertext" contenteditable="false">写下你的评论…</span></div>
+            <!-- ngIf: me.authed() --><div class="command clearfix ng-scope" ng-if="me.authed()">
+              <button disabled="disabled" ng-disabled="reply.pending || !reply.content" ng-click="replyComment(comment, reply, replyForm)" class="save btn-blue">评论</button>
+              <button ng-click="reply.hidden = true" class="cancel btn-link">取消</button>
+            </div><!-- end ngIf: me.authed() -->
+          </form><!-- end ngIf: canReply(comment) -->
+
+        </div>
+      </li><!-- end ngRepeat: comment in comments | orderBy:'id' track by comment.id --><li class="comment-item ng-scope" ng-repeat="comment in comments | orderBy:'id' track by comment.id" id="comment-70843439" ui-events="{focusin: 'focusin = true', focusout: 'focusin = false'}" ng-class="{focusin:focusin}">
+
+        <a ui-hovercard="" target="_blank" class="avatar-link" title="金智超" href="http://www.zhihu.com/people/jin-zhi-chao-23" tabindex="-1">
+          <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/c0bd29e99_xs.jpg" ng-src="http://pic4.zhimg.com/c0bd29e99_xs.jpg" class="avatar">
+        </a>
+
+        <div class="comment-body" ng-init="reply = {content: '', hidden: true}">
+          <div class="comment-hd">
+            <a class="ng-binding" href="http://www.zhihu.com/people/jin-zhi-chao-23" target="_blank">金智超</a><!-- ngIf: isPostOwner(comment.author) -->
+            <span class="in-reply-to ng-hide" ng-show="comment.inReplyToUser">
+              回复 <a class="ng-binding" href=""></a><!-- ngIf: isPostOwner(comment.inReplyToUser) -->
+            </span>
+          </div>
+
+          <div class="comment-content ng-binding" ng-bind-html="comment.content">程序员的薪资真心高啊_(:_」∠)_</div>
+
+          <div class="comment-ft clearfix">
+            <time ui-time="" datetime="2015-03-02T20:15:06+08:00" class="date ng-binding ng-isolate-scope" title="2015年3月2日星期一晚上8点15分">15 小时前</time>
+
+            <span class="like-num nil" title="0 人觉得这个很赞"><span class="ng-binding">0</span> <span>赞</span></span>
+
+            <!-- ngIf: canRemove(comment) -->
+
+            <!-- ngIf: canReply(comment) --><a ng-if="canReply(comment)" ng-click="toggleReplyForm(reply)" href="javascript:;" class="reply op-link ng-scope"><i class="icon icon-comment-reply"></i>回复</a><!-- end ngIf: canReply(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="like(comment)" href="javascript:;" class="like op-link"><i class="icon icon-comment-like"></i>赞</a><!-- end ngIf: !ownComment(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="report(comment)" href="javascript:;" class="report op-link ng-scope"><i class="icon icon-comment-report"></i>举报</a><!-- end ngIf: !ownComment(comment) -->
+
+          </div>
+
+          <!-- ngIf: canReply(comment) --><form name="replyForm" class="comment-form comment-reply-form expanded hidden ng-scope ng-invalid ng-invalid-content-required ng-dirty" ng-if="canReply(comment)" ng-class="{hidden: reply.hidden}">
+            <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/d78766f4d_xs.jpg" class="avatar" ng-src="http://pic3.zhimg.com/d78766f4d_xs.jpg">
+            <div class="editable ng-invalid ng-invalid-content-required ng-dirty" ui-focus-me="!reply.hidden" ui-ctrl-enter="replyComment(comment, reply, replyForm)" ui-scraper="" scraper-options="scraperOptions" ui-mention="" ui-clean-paste="" content-required="" ng-model="reply.content" holdertext="写下你的评论…" contenteditable="true"><span holdertext="1" class="holdertext" contenteditable="false">写下你的评论…</span></div>
+            <!-- ngIf: me.authed() --><div class="command clearfix ng-scope" ng-if="me.authed()">
+              <button disabled="disabled" ng-disabled="reply.pending || !reply.content" ng-click="replyComment(comment, reply, replyForm)" class="save btn-blue">评论</button>
+              <button ng-click="reply.hidden = true" class="cancel btn-link">取消</button>
+            </div><!-- end ngIf: me.authed() -->
+          </form><!-- end ngIf: canReply(comment) -->
+
+        </div>
+      </li><!-- end ngRepeat: comment in comments | orderBy:'id' track by comment.id --><li class="comment-item ng-scope" ng-repeat="comment in comments | orderBy:'id' track by comment.id" id="comment-70846198" ui-events="{focusin: 'focusin = true', focusout: 'focusin = false'}" ng-class="{focusin:focusin}">
+
+        <a ui-hovercard="" target="_blank" class="avatar-link" title="Cherlies Wang" href="http://www.zhihu.com/people/cherlies-wang" tabindex="-1">
+          <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/70b7cd422398f9732c27e549d6fea64e_xs.jpg" ng-src="http://pic2.zhimg.com/70b7cd422398f9732c27e549d6fea64e_xs.jpg" class="avatar">
+        </a>
+
+        <div class="comment-body" ng-init="reply = {content: '', hidden: true}">
+          <div class="comment-hd">
+            <a class="ng-binding" href="http://www.zhihu.com/people/cherlies-wang" target="_blank">Cherlies Wang</a><!-- ngIf: isPostOwner(comment.author) -->
+            <span class="in-reply-to ng-hide" ng-show="comment.inReplyToUser">
+              回复 <a class="ng-binding" href=""></a><!-- ngIf: isPostOwner(comment.inReplyToUser) -->
+            </span>
+          </div>
+
+          <div class="comment-content ng-binding" ng-bind-html="comment.content">C#程序员表示泪奔</div>
+
+          <div class="comment-ft clearfix">
+            <time ui-time="" datetime="2015-03-02T20:52:07+08:00" class="date ng-binding ng-isolate-scope" title="2015年3月2日星期一晚上8点52分">14 小时前</time>
+
+            <span class="like-num nil" title="0 人觉得这个很赞"><span class="ng-binding">0</span> <span>赞</span></span>
+
+            <!-- ngIf: canRemove(comment) -->
+
+            <!-- ngIf: canReply(comment) --><a ng-if="canReply(comment)" ng-click="toggleReplyForm(reply)" href="javascript:;" class="reply op-link ng-scope"><i class="icon icon-comment-reply"></i>回复</a><!-- end ngIf: canReply(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="like(comment)" href="javascript:;" class="like op-link"><i class="icon icon-comment-like"></i>赞</a><!-- end ngIf: !ownComment(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="report(comment)" href="javascript:;" class="report op-link ng-scope"><i class="icon icon-comment-report"></i>举报</a><!-- end ngIf: !ownComment(comment) -->
+
+          </div>
+
+          <!-- ngIf: canReply(comment) --><form name="replyForm" class="comment-form comment-reply-form expanded hidden ng-scope ng-invalid ng-invalid-content-required ng-dirty" ng-if="canReply(comment)" ng-class="{hidden: reply.hidden}">
+            <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/d78766f4d_xs.jpg" class="avatar" ng-src="http://pic3.zhimg.com/d78766f4d_xs.jpg">
+            <div class="editable ng-invalid ng-invalid-content-required ng-dirty" ui-focus-me="!reply.hidden" ui-ctrl-enter="replyComment(comment, reply, replyForm)" ui-scraper="" scraper-options="scraperOptions" ui-mention="" ui-clean-paste="" content-required="" ng-model="reply.content" holdertext="写下你的评论…" contenteditable="true"><span holdertext="1" class="holdertext" contenteditable="false">写下你的评论…</span></div>
+            <!-- ngIf: me.authed() --><div class="command clearfix ng-scope" ng-if="me.authed()">
+              <button disabled="disabled" ng-disabled="reply.pending || !reply.content" ng-click="replyComment(comment, reply, replyForm)" class="save btn-blue">评论</button>
+              <button ng-click="reply.hidden = true" class="cancel btn-link">取消</button>
+            </div><!-- end ngIf: me.authed() -->
+          </form><!-- end ngIf: canReply(comment) -->
+
+        </div>
+      </li><!-- end ngRepeat: comment in comments | orderBy:'id' track by comment.id --><li class="comment-item ng-scope" ng-repeat="comment in comments | orderBy:'id' track by comment.id" id="comment-70847748" ui-events="{focusin: 'focusin = true', focusout: 'focusin = false'}" ng-class="{focusin:focusin}">
+
+        <a ui-hovercard="" target="_blank" class="avatar-link" title="林飞" href="http://www.zhihu.com/people/lin-fei-52" tabindex="-1">
+          <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/1f61025b3_xs.jpg" ng-src="http://pic3.zhimg.com/1f61025b3_xs.jpg" class="avatar">
+        </a>
+
+        <div class="comment-body" ng-init="reply = {content: '', hidden: true}">
+          <div class="comment-hd">
+            <a class="ng-binding" href="http://www.zhihu.com/people/lin-fei-52" target="_blank">林飞</a><!-- ngIf: isPostOwner(comment.author) -->
+            <span class="in-reply-to ng-hide" ng-show="comment.inReplyToUser">
+              回复 <a class="ng-binding" href=""></a><!-- ngIf: isPostOwner(comment.inReplyToUser) -->
+            </span>
+          </div>
+
+          <div class="comment-content ng-binding" ng-bind-html="comment.content">C++狗准备好哭了</div>
+
+          <div class="comment-ft clearfix">
+            <time ui-time="" datetime="2015-03-02T21:12:16+08:00" class="date ng-binding ng-isolate-scope" title="2015年3月2日星期一晚上9点12分">14 小时前</time>
+
+            <span class="like-num liked" title="1 人觉得这个很赞"><span class="ng-binding">1</span> <span>赞</span></span>
+
+            <!-- ngIf: canRemove(comment) -->
+
+            <!-- ngIf: canReply(comment) --><a ng-if="canReply(comment)" ng-click="toggleReplyForm(reply)" href="javascript:;" class="reply op-link ng-scope"><i class="icon icon-comment-reply"></i>回复</a><!-- end ngIf: canReply(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="like(comment)" href="javascript:;" class="like op-link"><i class="icon icon-comment-like"></i>赞</a><!-- end ngIf: !ownComment(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="report(comment)" href="javascript:;" class="report op-link ng-scope"><i class="icon icon-comment-report"></i>举报</a><!-- end ngIf: !ownComment(comment) -->
+
+          </div>
+
+          <!-- ngIf: canReply(comment) --><form name="replyForm" class="comment-form comment-reply-form expanded hidden ng-scope ng-invalid ng-invalid-content-required ng-dirty" ng-if="canReply(comment)" ng-class="{hidden: reply.hidden}">
+            <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/d78766f4d_xs.jpg" class="avatar" ng-src="http://pic3.zhimg.com/d78766f4d_xs.jpg">
+            <div class="editable ng-invalid ng-invalid-content-required ng-dirty" ui-focus-me="!reply.hidden" ui-ctrl-enter="replyComment(comment, reply, replyForm)" ui-scraper="" scraper-options="scraperOptions" ui-mention="" ui-clean-paste="" content-required="" ng-model="reply.content" holdertext="写下你的评论…" contenteditable="true"><span holdertext="1" class="holdertext" contenteditable="false">写下你的评论…</span></div>
+            <!-- ngIf: me.authed() --><div class="command clearfix ng-scope" ng-if="me.authed()">
+              <button disabled="disabled" ng-disabled="reply.pending || !reply.content" ng-click="replyComment(comment, reply, replyForm)" class="save btn-blue">评论</button>
+              <button ng-click="reply.hidden = true" class="cancel btn-link">取消</button>
+            </div><!-- end ngIf: me.authed() -->
+          </form><!-- end ngIf: canReply(comment) -->
+
+        </div>
+      </li><!-- end ngRepeat: comment in comments | orderBy:'id' track by comment.id --><li class="comment-item ng-scope" ng-repeat="comment in comments | orderBy:'id' track by comment.id" id="comment-70848078" ui-events="{focusin: 'focusin = true', focusout: 'focusin = false'}" ng-class="{focusin:focusin}">
+
+        <a ui-hovercard="" target="_blank" class="avatar-link" title="qi peter" href="http://www.zhihu.com/people/qi-peter" tabindex="-1">
+          <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/d80ac82be4713db4556e3d7a1478ea33_xs.jpg" ng-src="http://pic2.zhimg.com/d80ac82be4713db4556e3d7a1478ea33_xs.jpg" class="avatar">
+        </a>
+
+        <div class="comment-body" ng-init="reply = {content: '', hidden: true}">
+          <div class="comment-hd">
+            <a class="ng-binding" href="http://www.zhihu.com/people/qi-peter" target="_blank">qi peter</a><!-- ngIf: isPostOwner(comment.author) -->
+            <span class="in-reply-to ng-hide" ng-show="comment.inReplyToUser">
+              回复 <a class="ng-binding" href=""></a><!-- ngIf: isPostOwner(comment.inReplyToUser) -->
+            </span>
+          </div>
+
+          <div class="comment-content ng-binding" ng-bind-html="comment.content">.NET程序员都归类到其它了</div>
+
+          <div class="comment-ft clearfix">
+            <time ui-time="" datetime="2015-03-02T21:16:35+08:00" class="date ng-binding ng-isolate-scope" title="2015年3月2日星期一晚上9点16分">14 小时前</time>
+
+            <span class="like-num liked" title="1 人觉得这个很赞"><span class="ng-binding">1</span> <span>赞</span></span>
+
+            <!-- ngIf: canRemove(comment) -->
+
+            <!-- ngIf: canReply(comment) --><a ng-if="canReply(comment)" ng-click="toggleReplyForm(reply)" href="javascript:;" class="reply op-link ng-scope"><i class="icon icon-comment-reply"></i>回复</a><!-- end ngIf: canReply(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="like(comment)" href="javascript:;" class="like op-link"><i class="icon icon-comment-like"></i>赞</a><!-- end ngIf: !ownComment(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="report(comment)" href="javascript:;" class="report op-link ng-scope"><i class="icon icon-comment-report"></i>举报</a><!-- end ngIf: !ownComment(comment) -->
+
+          </div>
+
+          <!-- ngIf: canReply(comment) --><form name="replyForm" class="comment-form comment-reply-form expanded hidden ng-scope ng-invalid ng-invalid-content-required ng-dirty" ng-if="canReply(comment)" ng-class="{hidden: reply.hidden}">
+            <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/d78766f4d_xs.jpg" class="avatar" ng-src="http://pic3.zhimg.com/d78766f4d_xs.jpg">
+            <div class="editable ng-invalid ng-invalid-content-required ng-dirty" ui-focus-me="!reply.hidden" ui-ctrl-enter="replyComment(comment, reply, replyForm)" ui-scraper="" scraper-options="scraperOptions" ui-mention="" ui-clean-paste="" content-required="" ng-model="reply.content" holdertext="写下你的评论…" contenteditable="true"><span holdertext="1" class="holdertext" contenteditable="false">写下你的评论…</span></div>
+            <!-- ngIf: me.authed() --><div class="command clearfix ng-scope" ng-if="me.authed()">
+              <button disabled="disabled" ng-disabled="reply.pending || !reply.content" ng-click="replyComment(comment, reply, replyForm)" class="save btn-blue">评论</button>
+              <button ng-click="reply.hidden = true" class="cancel btn-link">取消</button>
+            </div><!-- end ngIf: me.authed() -->
+          </form><!-- end ngIf: canReply(comment) -->
+
+        </div>
+      </li><!-- end ngRepeat: comment in comments | orderBy:'id' track by comment.id --><li class="comment-item ng-scope" ng-repeat="comment in comments | orderBy:'id' track by comment.id" id="comment-70849205" ui-events="{focusin: 'focusin = true', focusout: 'focusin = false'}" ng-class="{focusin:focusin}">
+
+        <a ui-hovercard="" target="_blank" class="avatar-link" title="少恭" href="http://www.zhihu.com/people/yangfuchao" tabindex="-1">
+          <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/5ef5153b8c9571bcd2674f472a72fb22_xs.jpg" ng-src="http://pic3.zhimg.com/5ef5153b8c9571bcd2674f472a72fb22_xs.jpg" class="avatar">
+        </a>
+
+        <div class="comment-body" ng-init="reply = {content: '', hidden: true}">
+          <div class="comment-hd">
+            <a class="ng-binding" href="http://www.zhihu.com/people/yangfuchao" target="_blank">少恭</a><!-- ngIf: isPostOwner(comment.author) -->
+            <span class="in-reply-to ng-hide" ng-show="comment.inReplyToUser">
+              回复 <a class="ng-binding" href=""></a><!-- ngIf: isPostOwner(comment.inReplyToUser) -->
+            </span>
+          </div>
+
+          <div class="comment-content ng-binding" ng-bind-html="comment.content">ios应该很安卓差不多吧</div>
+
+          <div class="comment-ft clearfix">
+            <time ui-time="" datetime="2015-03-02T21:31:25+08:00" class="date ng-binding ng-isolate-scope" title="2015年3月2日星期一晚上9点31分">14 小时前</time>
+
+            <span class="like-num nil" title="0 人觉得这个很赞"><span class="ng-binding">0</span> <span>赞</span></span>
+
+            <!-- ngIf: canRemove(comment) -->
+
+            <!-- ngIf: canReply(comment) --><a ng-if="canReply(comment)" ng-click="toggleReplyForm(reply)" href="javascript:;" class="reply op-link ng-scope"><i class="icon icon-comment-reply"></i>回复</a><!-- end ngIf: canReply(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="like(comment)" href="javascript:;" class="like op-link"><i class="icon icon-comment-like"></i>赞</a><!-- end ngIf: !ownComment(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="report(comment)" href="javascript:;" class="report op-link ng-scope"><i class="icon icon-comment-report"></i>举报</a><!-- end ngIf: !ownComment(comment) -->
+
+          </div>
+
+          <!-- ngIf: canReply(comment) --><form name="replyForm" class="comment-form comment-reply-form expanded hidden ng-scope ng-invalid ng-invalid-content-required ng-dirty" ng-if="canReply(comment)" ng-class="{hidden: reply.hidden}">
+            <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/d78766f4d_xs.jpg" class="avatar" ng-src="http://pic3.zhimg.com/d78766f4d_xs.jpg">
+            <div class="editable ng-invalid ng-invalid-content-required ng-dirty" ui-focus-me="!reply.hidden" ui-ctrl-enter="replyComment(comment, reply, replyForm)" ui-scraper="" scraper-options="scraperOptions" ui-mention="" ui-clean-paste="" content-required="" ng-model="reply.content" holdertext="写下你的评论…" contenteditable="true"><span holdertext="1" class="holdertext" contenteditable="false">写下你的评论…</span></div>
+            <!-- ngIf: me.authed() --><div class="command clearfix ng-scope" ng-if="me.authed()">
+              <button disabled="disabled" ng-disabled="reply.pending || !reply.content" ng-click="replyComment(comment, reply, replyForm)" class="save btn-blue">评论</button>
+              <button ng-click="reply.hidden = true" class="cancel btn-link">取消</button>
+            </div><!-- end ngIf: me.authed() -->
+          </form><!-- end ngIf: canReply(comment) -->
+
+        </div>
+      </li><!-- end ngRepeat: comment in comments | orderBy:'id' track by comment.id --><li class="comment-item ng-scope" ng-repeat="comment in comments | orderBy:'id' track by comment.id" id="comment-70852786" ui-events="{focusin: 'focusin = true', focusout: 'focusin = false'}" ng-class="{focusin:focusin}">
+
+        <a ui-hovercard="" target="_blank" class="avatar-link" title="WeiCun Wong" href="http://www.zhihu.com/people/weicun-wong" tabindex="-1">
+          <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/a7bb43da4_xs.jpg" ng-src="http://pic3.zhimg.com/a7bb43da4_xs.jpg" class="avatar">
+        </a>
+
+        <div class="comment-body" ng-init="reply = {content: '', hidden: true}">
+          <div class="comment-hd">
+            <a class="ng-binding" href="http://www.zhihu.com/people/weicun-wong" target="_blank">WeiCun Wong</a><!-- ngIf: isPostOwner(comment.author) -->
+            <span class="in-reply-to ng-hide" ng-show="comment.inReplyToUser">
+              回复 <a class="ng-binding" href=""></a><!-- ngIf: isPostOwner(comment.inReplyToUser) -->
+            </span>
+          </div>
+
+          <div class="comment-content ng-binding" ng-bind-html="comment.content">拒绝理由只有一条，钱不够。只要钱够，什么产品感兴趣，工作地方都是可以接受</div>
+
+          <div class="comment-ft clearfix">
+            <time ui-time="" datetime="2015-03-02T22:18:51+08:00" class="date ng-binding ng-isolate-scope" title="2015年3月2日星期一晚上10点18分">13 小时前</time>
+
+            <span class="like-num nil" title="0 人觉得这个很赞"><span class="ng-binding">0</span> <span>赞</span></span>
+
+            <!-- ngIf: canRemove(comment) -->
+
+            <!-- ngIf: canReply(comment) --><a ng-if="canReply(comment)" ng-click="toggleReplyForm(reply)" href="javascript:;" class="reply op-link ng-scope"><i class="icon icon-comment-reply"></i>回复</a><!-- end ngIf: canReply(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="like(comment)" href="javascript:;" class="like op-link"><i class="icon icon-comment-like"></i>赞</a><!-- end ngIf: !ownComment(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="report(comment)" href="javascript:;" class="report op-link ng-scope"><i class="icon icon-comment-report"></i>举报</a><!-- end ngIf: !ownComment(comment) -->
+
+          </div>
+
+          <!-- ngIf: canReply(comment) --><form name="replyForm" class="comment-form comment-reply-form expanded hidden ng-scope ng-invalid ng-invalid-content-required ng-dirty" ng-if="canReply(comment)" ng-class="{hidden: reply.hidden}">
+            <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/d78766f4d_xs.jpg" class="avatar" ng-src="http://pic3.zhimg.com/d78766f4d_xs.jpg">
+            <div class="editable ng-invalid ng-invalid-content-required ng-dirty" ui-focus-me="!reply.hidden" ui-ctrl-enter="replyComment(comment, reply, replyForm)" ui-scraper="" scraper-options="scraperOptions" ui-mention="" ui-clean-paste="" content-required="" ng-model="reply.content" holdertext="写下你的评论…" contenteditable="true"><span holdertext="1" class="holdertext" contenteditable="false">写下你的评论…</span></div>
+            <!-- ngIf: me.authed() --><div class="command clearfix ng-scope" ng-if="me.authed()">
+              <button disabled="disabled" ng-disabled="reply.pending || !reply.content" ng-click="replyComment(comment, reply, replyForm)" class="save btn-blue">评论</button>
+              <button ng-click="reply.hidden = true" class="cancel btn-link">取消</button>
+            </div><!-- end ngIf: me.authed() -->
+          </form><!-- end ngIf: canReply(comment) -->
+
+        </div>
+      </li><!-- end ngRepeat: comment in comments | orderBy:'id' track by comment.id --><li class="comment-item ng-scope" ng-repeat="comment in comments | orderBy:'id' track by comment.id" id="comment-70856127" ui-events="{focusin: 'focusin = true', focusout: 'focusin = false'}" ng-class="{focusin:focusin}">
+
+        <a ui-hovercard="" target="_blank" class="avatar-link" title="肖潇" href="http://www.zhihu.com/people/xiao-xiao-53-92" tabindex="-1">
+          <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/a220f9988ce216134a995ab0ff111a25_xs.jpg" ng-src="http://pic1.zhimg.com/a220f9988ce216134a995ab0ff111a25_xs.jpg" class="avatar">
+        </a>
+
+        <div class="comment-body" ng-init="reply = {content: '', hidden: true}">
+          <div class="comment-hd">
+            <a class="ng-binding" href="http://www.zhihu.com/people/xiao-xiao-53-92" target="_blank">肖潇</a><!-- ngIf: isPostOwner(comment.author) -->
+            <span class="in-reply-to ng-hide" ng-show="comment.inReplyToUser">
+              回复 <a class="ng-binding" href=""></a><!-- ngIf: isPostOwner(comment.inReplyToUser) -->
+            </span>
+          </div>
+
+          <div class="comment-content ng-binding" ng-bind-html="comment.content">插播下，跳槽来我们公司吧~互联网金融A轮公司坐标北京，产品有女性理财社区“她理财”、财富管理服务“好规划网”、app“TiMi时光记账”。高大上的讲我们的产品有互联网金融入口的性质可以“改变世界”，接地气的讲互联网金融=壕。程序员们，约吗？私信下？</div>
+
+          <div class="comment-ft clearfix">
+            <time ui-time="" datetime="2015-03-02T23:11:09+08:00" class="date ng-binding ng-isolate-scope" title="2015年3月2日星期一晚上11点11分">12 小时前</time>
+
+            <span class="like-num nil" title="0 人觉得这个很赞"><span class="ng-binding">0</span> <span>赞</span></span>
+
+            <!-- ngIf: canRemove(comment) -->
+
+            <!-- ngIf: canReply(comment) --><a ng-if="canReply(comment)" ng-click="toggleReplyForm(reply)" href="javascript:;" class="reply op-link ng-scope"><i class="icon icon-comment-reply"></i>回复</a><!-- end ngIf: canReply(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="like(comment)" href="javascript:;" class="like op-link"><i class="icon icon-comment-like"></i>赞</a><!-- end ngIf: !ownComment(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="report(comment)" href="javascript:;" class="report op-link ng-scope"><i class="icon icon-comment-report"></i>举报</a><!-- end ngIf: !ownComment(comment) -->
+
+          </div>
+
+          <!-- ngIf: canReply(comment) --><form name="replyForm" class="comment-form comment-reply-form expanded hidden ng-scope ng-invalid ng-invalid-content-required ng-dirty" ng-if="canReply(comment)" ng-class="{hidden: reply.hidden}">
+            <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/d78766f4d_xs.jpg" class="avatar" ng-src="http://pic3.zhimg.com/d78766f4d_xs.jpg">
+            <div class="editable ng-invalid ng-invalid-content-required ng-dirty" ui-focus-me="!reply.hidden" ui-ctrl-enter="replyComment(comment, reply, replyForm)" ui-scraper="" scraper-options="scraperOptions" ui-mention="" ui-clean-paste="" content-required="" ng-model="reply.content" holdertext="写下你的评论…" contenteditable="true"><span holdertext="1" class="holdertext" contenteditable="false">写下你的评论…</span></div>
+            <!-- ngIf: me.authed() --><div class="command clearfix ng-scope" ng-if="me.authed()">
+              <button disabled="disabled" ng-disabled="reply.pending || !reply.content" ng-click="replyComment(comment, reply, replyForm)" class="save btn-blue">评论</button>
+              <button ng-click="reply.hidden = true" class="cancel btn-link">取消</button>
+            </div><!-- end ngIf: me.authed() -->
+          </form><!-- end ngIf: canReply(comment) -->
+
+        </div>
+      </li><!-- end ngRepeat: comment in comments | orderBy:'id' track by comment.id --><li class="comment-item ng-scope" ng-repeat="comment in comments | orderBy:'id' track by comment.id" id="comment-70857361" ui-events="{focusin: 'focusin = true', focusout: 'focusin = false'}" ng-class="{focusin:focusin}">
+
+        <a ui-hovercard="" target="_blank" class="avatar-link" title="欧诺里拉问" href="http://www.zhihu.com/people/----------" tabindex="-1">
+          <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/307e8848e_xs.jpg" ng-src="http://pic1.zhimg.com/307e8848e_xs.jpg" class="avatar">
+        </a>
+
+        <div class="comment-body" ng-init="reply = {content: '', hidden: true}">
+          <div class="comment-hd">
+            <a class="ng-binding" href="http://www.zhihu.com/people/----------" target="_blank">欧诺里拉问</a><!-- ngIf: isPostOwner(comment.author) -->
+            <span class="in-reply-to ng-hide" ng-show="comment.inReplyToUser">
+              回复 <a class="ng-binding" href=""></a><!-- ngIf: isPostOwner(comment.inReplyToUser) -->
+            </span>
+          </div>
+
+          <div class="comment-content ng-binding" ng-bind-html="comment.content">web前端也分语言吧。.net web前端算是其他？</div>
+
+          <div class="comment-ft clearfix">
+            <time ui-time="" datetime="2015-03-02T23:30:34+08:00" class="date ng-binding ng-isolate-scope" title="2015年3月2日星期一晚上11点30分">12 小时前</time>
+
+            <span class="like-num nil" title="0 人觉得这个很赞"><span class="ng-binding">0</span> <span>赞</span></span>
+
+            <!-- ngIf: canRemove(comment) -->
+
+            <!-- ngIf: canReply(comment) --><a ng-if="canReply(comment)" ng-click="toggleReplyForm(reply)" href="javascript:;" class="reply op-link ng-scope"><i class="icon icon-comment-reply"></i>回复</a><!-- end ngIf: canReply(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="like(comment)" href="javascript:;" class="like op-link"><i class="icon icon-comment-like"></i>赞</a><!-- end ngIf: !ownComment(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="report(comment)" href="javascript:;" class="report op-link ng-scope"><i class="icon icon-comment-report"></i>举报</a><!-- end ngIf: !ownComment(comment) -->
+
+          </div>
+
+          <!-- ngIf: canReply(comment) --><form name="replyForm" class="comment-form comment-reply-form expanded hidden ng-scope ng-invalid ng-invalid-content-required ng-dirty" ng-if="canReply(comment)" ng-class="{hidden: reply.hidden}">
+            <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/d78766f4d_xs.jpg" class="avatar" ng-src="http://pic3.zhimg.com/d78766f4d_xs.jpg">
+            <div class="editable ng-invalid ng-invalid-content-required ng-dirty" ui-focus-me="!reply.hidden" ui-ctrl-enter="replyComment(comment, reply, replyForm)" ui-scraper="" scraper-options="scraperOptions" ui-mention="" ui-clean-paste="" content-required="" ng-model="reply.content" holdertext="写下你的评论…" contenteditable="true"><span holdertext="1" class="holdertext" contenteditable="false">写下你的评论…</span></div>
+            <!-- ngIf: me.authed() --><div class="command clearfix ng-scope" ng-if="me.authed()">
+              <button disabled="disabled" ng-disabled="reply.pending || !reply.content" ng-click="replyComment(comment, reply, replyForm)" class="save btn-blue">评论</button>
+              <button ng-click="reply.hidden = true" class="cancel btn-link">取消</button>
+            </div><!-- end ngIf: me.authed() -->
+          </form><!-- end ngIf: canReply(comment) -->
+
+        </div>
+      </li><!-- end ngRepeat: comment in comments | orderBy:'id' track by comment.id --><li class="comment-item ng-scope" ng-repeat="comment in comments | orderBy:'id' track by comment.id" id="comment-70857840" ui-events="{focusin: 'focusin = true', focusout: 'focusin = false'}" ng-class="{focusin:focusin}">
+
+        <a ui-hovercard="" target="_blank" class="avatar-link" title="back Jason" href="http://www.zhihu.com/people/nosiycat" tabindex="-1">
+          <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/67fcb6d6c9fa62f3c46c8ffbe532364e_xs.jpg" ng-src="http://pic3.zhimg.com/67fcb6d6c9fa62f3c46c8ffbe532364e_xs.jpg" class="avatar">
+        </a>
+
+        <div class="comment-body" ng-init="reply = {content: '', hidden: true}">
+          <div class="comment-hd">
+            <a class="ng-binding" href="http://www.zhihu.com/people/nosiycat" target="_blank">back Jason</a><!-- ngIf: isPostOwner(comment.author) -->
+            <span class="in-reply-to ng-hide" ng-show="comment.inReplyToUser">
+              回复 <a class="ng-binding" href=""></a><!-- ngIf: isPostOwner(comment.inReplyToUser) -->
+            </span>
+          </div>
+
+          <div class="comment-content ng-binding" ng-bind-html="comment.content">感觉对咱们完全不使用啊</div>
+
+          <div class="comment-ft clearfix">
+            <time ui-time="" datetime="2015-03-02T23:38:12+08:00" class="date ng-binding ng-isolate-scope" title="2015年3月2日星期一晚上11点38分">11 小时前</time>
+
+            <span class="like-num liked" title="1 人觉得这个很赞"><span class="ng-binding">1</span> <span>赞</span></span>
+
+            <!-- ngIf: canRemove(comment) -->
+
+            <!-- ngIf: canReply(comment) --><a ng-if="canReply(comment)" ng-click="toggleReplyForm(reply)" href="javascript:;" class="reply op-link ng-scope"><i class="icon icon-comment-reply"></i>回复</a><!-- end ngIf: canReply(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="like(comment)" href="javascript:;" class="like op-link"><i class="icon icon-comment-like"></i>赞</a><!-- end ngIf: !ownComment(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="report(comment)" href="javascript:;" class="report op-link ng-scope"><i class="icon icon-comment-report"></i>举报</a><!-- end ngIf: !ownComment(comment) -->
+
+          </div>
+
+          <!-- ngIf: canReply(comment) --><form name="replyForm" class="comment-form comment-reply-form expanded hidden ng-scope ng-invalid ng-invalid-content-required ng-dirty" ng-if="canReply(comment)" ng-class="{hidden: reply.hidden}">
+            <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/d78766f4d_xs.jpg" class="avatar" ng-src="http://pic3.zhimg.com/d78766f4d_xs.jpg">
+            <div class="editable ng-invalid ng-invalid-content-required ng-dirty" ui-focus-me="!reply.hidden" ui-ctrl-enter="replyComment(comment, reply, replyForm)" ui-scraper="" scraper-options="scraperOptions" ui-mention="" ui-clean-paste="" content-required="" ng-model="reply.content" holdertext="写下你的评论…" contenteditable="true"><span holdertext="1" class="holdertext" contenteditable="false">写下你的评论…</span></div>
+            <!-- ngIf: me.authed() --><div class="command clearfix ng-scope" ng-if="me.authed()">
+              <button disabled="disabled" ng-disabled="reply.pending || !reply.content" ng-click="replyComment(comment, reply, replyForm)" class="save btn-blue">评论</button>
+              <button ng-click="reply.hidden = true" class="cancel btn-link">取消</button>
+            </div><!-- end ngIf: me.authed() -->
+          </form><!-- end ngIf: canReply(comment) -->
+
+        </div>
+      </li><!-- end ngRepeat: comment in comments | orderBy:'id' track by comment.id --><li class="comment-item ng-scope" ng-repeat="comment in comments | orderBy:'id' track by comment.id" id="comment-70862217" ui-events="{focusin: 'focusin = true', focusout: 'focusin = false'}" ng-class="{focusin:focusin}">
+
+        <a ui-hovercard="" target="_blank" class="avatar-link" title="盖伦" href="http://www.zhihu.com/people/gai-lun-65" tabindex="-1">
+          <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/b72517071_xs.jpg" ng-src="http://pic3.zhimg.com/b72517071_xs.jpg" class="avatar">
+        </a>
+
+        <div class="comment-body" ng-init="reply = {content: '', hidden: true}">
+          <div class="comment-hd">
+            <a class="ng-binding" href="http://www.zhihu.com/people/gai-lun-65" target="_blank">盖伦</a><!-- ngIf: isPostOwner(comment.author) -->
+            <span class="in-reply-to ng-hide" ng-show="comment.inReplyToUser">
+              回复 <a class="ng-binding" href=""></a><!-- ngIf: isPostOwner(comment.inReplyToUser) -->
+            </span>
+          </div>
+
+          <div class="comment-content ng-binding" ng-bind-html="comment.content">幸存者偏差，太不严谨</div>
+
+          <div class="comment-ft clearfix">
+            <time ui-time="" datetime="2015-03-03T00:51:47+08:00" class="date ng-binding ng-isolate-scope" title="2015年3月3日星期二早上12点51分">10 小时前</time>
+
+            <span class="like-num liked" title="1 人觉得这个很赞"><span class="ng-binding">1</span> <span>赞</span></span>
+
+            <!-- ngIf: canRemove(comment) -->
+
+            <!-- ngIf: canReply(comment) --><a ng-if="canReply(comment)" ng-click="toggleReplyForm(reply)" href="javascript:;" class="reply op-link ng-scope"><i class="icon icon-comment-reply"></i>回复</a><!-- end ngIf: canReply(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="like(comment)" href="javascript:;" class="like op-link"><i class="icon icon-comment-like"></i>赞</a><!-- end ngIf: !ownComment(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="report(comment)" href="javascript:;" class="report op-link ng-scope"><i class="icon icon-comment-report"></i>举报</a><!-- end ngIf: !ownComment(comment) -->
+
+          </div>
+
+          <!-- ngIf: canReply(comment) --><form name="replyForm" class="comment-form comment-reply-form expanded hidden ng-scope ng-invalid ng-invalid-content-required ng-dirty" ng-if="canReply(comment)" ng-class="{hidden: reply.hidden}">
+            <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/d78766f4d_xs.jpg" class="avatar" ng-src="http://pic3.zhimg.com/d78766f4d_xs.jpg">
+            <div class="editable ng-invalid ng-invalid-content-required ng-dirty" ui-focus-me="!reply.hidden" ui-ctrl-enter="replyComment(comment, reply, replyForm)" ui-scraper="" scraper-options="scraperOptions" ui-mention="" ui-clean-paste="" content-required="" ng-model="reply.content" holdertext="写下你的评论…" contenteditable="true"><span holdertext="1" class="holdertext" contenteditable="false">写下你的评论…</span></div>
+            <!-- ngIf: me.authed() --><div class="command clearfix ng-scope" ng-if="me.authed()">
+              <button disabled="disabled" ng-disabled="reply.pending || !reply.content" ng-click="replyComment(comment, reply, replyForm)" class="save btn-blue">评论</button>
+              <button ng-click="reply.hidden = true" class="cancel btn-link">取消</button>
+            </div><!-- end ngIf: me.authed() -->
+          </form><!-- end ngIf: canReply(comment) -->
+
+        </div>
+      </li><!-- end ngRepeat: comment in comments | orderBy:'id' track by comment.id --><li class="comment-item ng-scope" ng-repeat="comment in comments | orderBy:'id' track by comment.id" id="comment-70872615" ui-events="{focusin: 'focusin = true', focusout: 'focusin = false'}" ng-class="{focusin:focusin}">
+
+        <a ui-hovercard="" target="_blank" class="avatar-link" title="马加西亚" href="http://www.zhihu.com/people/ma-yan-lu" tabindex="-1">
+          <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/da8e974dc_xs.jpg" ng-src="http://pic3.zhimg.com/da8e974dc_xs.jpg" class="avatar">
+        </a>
+
+        <div class="comment-body" ng-init="reply = {content: '', hidden: true}">
+          <div class="comment-hd">
+            <a class="ng-binding" href="http://www.zhihu.com/people/ma-yan-lu" target="_blank">马加西亚</a><!-- ngIf: isPostOwner(comment.author) -->
+            <span class="in-reply-to ng-hide" ng-show="comment.inReplyToUser">
+              回复 <a class="ng-binding" href=""></a><!-- ngIf: isPostOwner(comment.inReplyToUser) -->
+            </span>
+          </div>
+
+          <div class="comment-content ng-binding" ng-bind-html="comment.content">仅仅给互联网程序猿提供服务未免局限了吧</div>
+
+          <div class="comment-ft clearfix">
+            <time ui-time="" datetime="2015-03-03T08:54:07+08:00" class="date ng-binding ng-isolate-scope" title="2015年3月3日星期二早上8点54分">2 小时前</time>
+
+            <span class="like-num liked" title="1 人觉得这个很赞"><span class="ng-binding">1</span> <span>赞</span></span>
+
+            <!-- ngIf: canRemove(comment) -->
+
+            <!-- ngIf: canReply(comment) --><a ng-if="canReply(comment)" ng-click="toggleReplyForm(reply)" href="javascript:;" class="reply op-link ng-scope"><i class="icon icon-comment-reply"></i>回复</a><!-- end ngIf: canReply(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="like(comment)" href="javascript:;" class="like op-link"><i class="icon icon-comment-like"></i>赞</a><!-- end ngIf: !ownComment(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="report(comment)" href="javascript:;" class="report op-link ng-scope"><i class="icon icon-comment-report"></i>举报</a><!-- end ngIf: !ownComment(comment) -->
+
+          </div>
+
+          <!-- ngIf: canReply(comment) --><form name="replyForm" class="comment-form comment-reply-form expanded hidden ng-scope ng-invalid ng-invalid-content-required ng-dirty" ng-if="canReply(comment)" ng-class="{hidden: reply.hidden}">
+            <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/d78766f4d_xs.jpg" class="avatar" ng-src="http://pic3.zhimg.com/d78766f4d_xs.jpg">
+            <div class="editable ng-invalid ng-invalid-content-required ng-dirty" ui-focus-me="!reply.hidden" ui-ctrl-enter="replyComment(comment, reply, replyForm)" ui-scraper="" scraper-options="scraperOptions" ui-mention="" ui-clean-paste="" content-required="" ng-model="reply.content" holdertext="写下你的评论…" contenteditable="true"><span holdertext="1" class="holdertext" contenteditable="false">写下你的评论…</span></div>
+            <!-- ngIf: me.authed() --><div class="command clearfix ng-scope" ng-if="me.authed()">
+              <button disabled="disabled" ng-disabled="reply.pending || !reply.content" ng-click="replyComment(comment, reply, replyForm)" class="save btn-blue">评论</button>
+              <button ng-click="reply.hidden = true" class="cancel btn-link">取消</button>
+            </div><!-- end ngIf: me.authed() -->
+          </form><!-- end ngIf: canReply(comment) -->
+
+        </div>
+      </li><!-- end ngRepeat: comment in comments | orderBy:'id' track by comment.id --><li class="comment-item ng-scope" ng-repeat="comment in comments | orderBy:'id' track by comment.id" id="comment-70876922" ui-events="{focusin: 'focusin = true', focusout: 'focusin = false'}" ng-class="{focusin:focusin}">
+
+        <a ui-hovercard="" target="_blank" class="avatar-link" title="胖哒" href="http://www.zhihu.com/people/pang-da-50" tabindex="-1">
+          <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/69f8538f38587f3d7fdd3419eec395c1_xs.jpg" ng-src="http://pic2.zhimg.com/69f8538f38587f3d7fdd3419eec395c1_xs.jpg" class="avatar">
+        </a>
+
+        <div class="comment-body" ng-init="reply = {content: '', hidden: true}">
+          <div class="comment-hd">
+            <a class="ng-binding" href="http://www.zhihu.com/people/pang-da-50" target="_blank">胖哒</a><!-- ngIf: isPostOwner(comment.author) -->
+            <span class="in-reply-to" ng-show="comment.inReplyToUser">
+              回复 <a class="ng-binding" href="http://www.zhihu.com/people/xiaoshiliaoliao">小时了了</a><!-- ngIf: isPostOwner(comment.inReplyToUser) -->
+            </span>
+          </div>
+
+          <div class="comment-content ng-binding" ng-bind-html="comment.content">哈哈哈哈哈</div>
+
+          <div class="comment-ft clearfix">
+            <time ui-time="" datetime="2015-03-03T09:52:32+08:00" class="date ng-binding ng-isolate-scope" title="2015年3月3日星期二下午9点52分">1 小时前</time>
+
+            <span class="like-num nil" title="0 人觉得这个很赞"><span class="ng-binding">0</span> <span>赞</span></span>
+
+            <!-- ngIf: canRemove(comment) -->
+
+            <!-- ngIf: canReply(comment) --><a ng-if="canReply(comment)" ng-click="toggleReplyForm(reply)" href="javascript:;" class="reply op-link ng-scope"><i class="icon icon-comment-reply"></i>回复</a><!-- end ngIf: canReply(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="like(comment)" href="javascript:;" class="like op-link"><i class="icon icon-comment-like"></i>赞</a><!-- end ngIf: !ownComment(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="report(comment)" href="javascript:;" class="report op-link ng-scope"><i class="icon icon-comment-report"></i>举报</a><!-- end ngIf: !ownComment(comment) -->
+
+          </div>
+
+          <!-- ngIf: canReply(comment) --><form name="replyForm" class="comment-form comment-reply-form expanded hidden ng-scope ng-invalid ng-invalid-content-required ng-dirty" ng-if="canReply(comment)" ng-class="{hidden: reply.hidden}">
+            <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/d78766f4d_xs.jpg" class="avatar" ng-src="http://pic3.zhimg.com/d78766f4d_xs.jpg">
+            <div class="editable ng-invalid ng-invalid-content-required ng-dirty" ui-focus-me="!reply.hidden" ui-ctrl-enter="replyComment(comment, reply, replyForm)" ui-scraper="" scraper-options="scraperOptions" ui-mention="" ui-clean-paste="" content-required="" ng-model="reply.content" holdertext="写下你的评论…" contenteditable="true"><span holdertext="1" class="holdertext" contenteditable="false">写下你的评论…</span></div>
+            <!-- ngIf: me.authed() --><div class="command clearfix ng-scope" ng-if="me.authed()">
+              <button disabled="disabled" ng-disabled="reply.pending || !reply.content" ng-click="replyComment(comment, reply, replyForm)" class="save btn-blue">评论</button>
+              <button ng-click="reply.hidden = true" class="cancel btn-link">取消</button>
+            </div><!-- end ngIf: me.authed() -->
+          </form><!-- end ngIf: canReply(comment) -->
+
+        </div>
+      </li><!-- end ngRepeat: comment in comments | orderBy:'id' track by comment.id --><li class="comment-item ng-scope" ng-repeat="comment in comments | orderBy:'id' track by comment.id" id="comment-70877973" ui-events="{focusin: 'focusin = true', focusout: 'focusin = false'}" ng-class="{focusin:focusin}">
+
+        <a ui-hovercard="" target="_blank" class="avatar-link" title="林风" href="http://www.zhihu.com/people/lin-feng-13-31" tabindex="-1">
+          <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/da8e974dc_xs_002.jpg" ng-src="http://pic2.zhimg.com/da8e974dc_xs.jpg" class="avatar">
+        </a>
+
+        <div class="comment-body" ng-init="reply = {content: '', hidden: true}">
+          <div class="comment-hd">
+            <a class="ng-binding" href="http://www.zhihu.com/people/lin-feng-13-31" target="_blank">林风</a><!-- ngIf: isPostOwner(comment.author) -->
+            <span class="in-reply-to ng-hide" ng-show="comment.inReplyToUser">
+              回复 <a class="ng-binding" href=""></a><!-- ngIf: isPostOwner(comment.inReplyToUser) -->
+            </span>
+          </div>
+
+          <div class="comment-content ng-binding" ng-bind-html="comment.content">PHP程序员平均年薪24.3万？没搞错吧？</div>
+
+          <div class="comment-ft clearfix">
+            <time ui-time="" datetime="2015-03-03T10:06:02+08:00" class="date ng-binding ng-isolate-scope" title="2015年3月3日星期二上午10点06分">1 小时前</time>
+
+            <span class="like-num nil" title="0 人觉得这个很赞"><span class="ng-binding">0</span> <span>赞</span></span>
+
+            <!-- ngIf: canRemove(comment) -->
+
+            <!-- ngIf: canReply(comment) --><a ng-if="canReply(comment)" ng-click="toggleReplyForm(reply)" href="javascript:;" class="reply op-link ng-scope"><i class="icon icon-comment-reply"></i>回复</a><!-- end ngIf: canReply(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="like(comment)" href="javascript:;" class="like op-link"><i class="icon icon-comment-like"></i>赞</a><!-- end ngIf: !ownComment(comment) -->
+
+            <!-- ngIf: !ownComment(comment) --><a ng-if="!ownComment(comment)" ng-click="report(comment)" href="javascript:;" class="report op-link ng-scope"><i class="icon icon-comment-report"></i>举报</a><!-- end ngIf: !ownComment(comment) -->
+
+          </div>
+
+          <!-- ngIf: canReply(comment) --><form name="replyForm" class="comment-form comment-reply-form expanded hidden ng-scope ng-invalid ng-invalid-content-required ng-dirty" ng-if="canReply(comment)" ng-class="{hidden: reply.hidden}">
+            <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/d78766f4d_xs.jpg" class="avatar" ng-src="http://pic3.zhimg.com/d78766f4d_xs.jpg">
+            <div class="editable ng-invalid ng-invalid-content-required ng-dirty" ui-focus-me="!reply.hidden" ui-ctrl-enter="replyComment(comment, reply, replyForm)" ui-scraper="" scraper-options="scraperOptions" ui-mention="" ui-clean-paste="" content-required="" ng-model="reply.content" holdertext="写下你的评论…" contenteditable="true"><span holdertext="1" class="holdertext" contenteditable="false">写下你的评论…</span></div>
+            <!-- ngIf: me.authed() --><div class="command clearfix ng-scope" ng-if="me.authed()">
+              <button disabled="disabled" ng-disabled="reply.pending || !reply.content" ng-click="replyComment(comment, reply, replyForm)" class="save btn-blue">评论</button>
+              <button ng-click="reply.hidden = true" class="cancel btn-link">取消</button>
+            </div><!-- end ngIf: me.authed() -->
+          </form><!-- end ngIf: canReply(comment) -->
+
+        </div>
+      </li><!-- end ngRepeat: comment in comments | orderBy:'id' track by comment.id -->
+    </ul>
+
+    <!-- ngIf: !source.completed --><div class="load-more ng-scope" ng-if="!source.completed" ng-switch="" on="source.pending">
+      <!-- ngSwitchWhen: false --><a class="ng-scope" ng-switch-when="false" href="javascript:;" ng-click="source.fetch()">显示更多评论</a>
+      <!-- ngSwitchWhen: true -->
+    </div><!-- end ngIf: !source.completed -->
+
+    <!-- ngIf: warningMessageShow -->
+
+    <!-- ngIf: !warningMessageShow --><form class="comment-form comment-box-ft ng-scope ng-invalid ng-invalid-content-required ng-dirty" ng-class="{ 'expanded': formExpanded }" name="commentForm" ng-if="!warningMessageShow">
+      <!-- ngIf: me.authed() --><img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/d78766f4d_xs.jpg" class="avatar ng-scope" ng-src="http://pic3.zhimg.com/d78766f4d_xs.jpg" ng-if="me.authed()"><!-- end ngIf: me.authed() -->
+      <div class="editable ng-invalid ng-invalid-content-required ng-dirty" ui-scraper="" scraper-options="scraperOptions" ui-mention="" ui-clean-paste="" ui-events="{focus:'expandForm(true)'}" ui-ctrl-enter="addComment()" content-required="" ng-model="editingComment.content" holdertext="写下你的评论…" name="content" contenteditable="true"><span holdertext="1" class="holdertext" contenteditable="false">写下你的评论…</span></div>
+      <!-- ngIf: me.authed() --><div class="command clearfix ng-scope" ng-if="me.authed()">
+        <button ng-disabled="savePending" ng-click="addComment()" class="save btn-blue">评论</button>
+        <button ng-click="expandForm(false, $event)" class="cancel btn-link">取消</button>
+      </div><!-- end ngIf: me.authed() -->
+    </form><!-- end ngIf: !warningMessageShow -->
+
+  </div>
+
+</div><!-- end ngIf: !isCensoring -->
+    </footer>
+  <div ng-show="zoomed" ng-animate="{show: 'in', hide: 'out'}" class="lightbox-overlay ng-scope ng-hide"></div></article>
+
+  <aside class="sidebar">
+
+    <div class="block column-about">
+      <a href="http://zhuanlan.zhihu.com/100offer" class="avatar-link">
+        <img src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/73fd7a52fb1a90f2459838b8d9ee831f_l.jpg" class="avatar-big" ng-src="http://pic4.zhimg.com/73fd7a52fb1a90f2459838b8d9ee831f_l.jpg">
+      </a>
+      <a href="http://zhuanlan.zhihu.com/100offer" class="title ng-binding">程序员的自我修养</a>
+      <!-- ngIf: column.creator.slug == me.slug -->
+      <div class="followers" ng-switch="" on="!!column.followersCount">
+        <!-- ngSwitchWhen: true --><a class="ng-binding ng-scope" ng-switch-when="true" href="http://zhuanlan.zhihu.com/100offer/followers">1435 人关注</a>
+        <!-- ngSwitchWhen: false -->
+      </div>
+      <div class="description ng-binding" ng-bind-html="column.description | linky">作者的工作是帮程序员跳槽，这个专栏用来记录程序员职业成长的那些事儿</div>
+    </div>
+
+    <div class="block rel-topics ng-hide" ng-show="!isCensoring &amp;&amp; (post.topics.length || ownPost(post))">
+      <!-- ngIf: post.topics.length -->
+      <!-- ngIf: ownPost(post) -->
+    </div>
+
+  </aside>
+
+</div>
+</main>
+
+    <div style="display: none; opacity: 0.5;" class="modal-dialog-bg"></div><div role="dialog" aria-labelledby=":0" style="display: none;" data-show="navColumnsSelectorShow" data-href="me.links.columns" data-title="我的专栏" ui-columns-selector="" onselect="navToColumn(column)" class="modal-dialog columns-selector ng-isolate-scope " ui-dialog="" tabindex="-1" open="show">
+  <div id=":0" class="modal-dialog-title modal-dialog-title-draggable">
+    <span class="modal-dialog-title-text ng-binding">我的专栏</span>
+    <span class="modal-dialog-title-close"></span>
+  </div>
+
+  <div class="modal-dialog-content">
+    <div class="column-list ng-hide" ng-show="columns.length">
+        <!-- ngRepeat: column in columns -->
+        <!-- ngIf: mode != 'selectonly' --><a href="javascript:;" ng-click="create()" class="column-item create-column ng-scope" ng-if="mode != 'selectonly'">
+          <i class="icon icon-create-column"></i>
+          <div class="text">创建专栏</div>
+          <i class="icon icon-go"></i>
+        </a><!-- end ngIf: mode != 'selectonly' -->
+    </div>
+  </div>
+<div class="modal-dialog-buttons"></div></div><span tabindex="0" style="display: none; position: absolute;"></span>
+
+    <div style="display: none; opacity: 0.5;" class="modal-dialog-bg"></div><div role="dialog" aria-labelledby=":1" style="display: none;" data-show="writeColumnsSelectorShow" data-href="me.links.columns" data-title="请选择一个专栏" ui-columns-selector="" onselect="writePostFor(column)" class="modal-dialog columns-selector ng-isolate-scope " ui-dialog="" tabindex="-1" open="show">
+  <div id=":1" class="modal-dialog-title modal-dialog-title-draggable">
+    <span class="modal-dialog-title-text ng-binding">请选择一个专栏</span>
+    <span class="modal-dialog-title-close"></span>
+  </div>
+
+  <div class="modal-dialog-content">
+    <div class="column-list ng-hide" ng-show="columns.length">
+        <!-- ngRepeat: column in columns -->
+        <!-- ngIf: mode != 'selectonly' --><a href="javascript:;" ng-click="create()" class="column-item create-column ng-scope" ng-if="mode != 'selectonly'">
+          <i class="icon icon-create-column"></i>
+          <div class="text">创建专栏</div>
+          <i class="icon icon-go"></i>
+        </a><!-- end ngIf: mode != 'selectonly' -->
+    </div>
+  </div>
+<div class="modal-dialog-buttons"></div></div><span tabindex="0" style="display: none; position: absolute;"></span>
+
+    <script src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/812da43d.js"></script>
+
+    
+    <script src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/55b0cba8.js"></script>
+    
+    <script src="%E6%95%B0%E6%8D%AE%E8%AF%B4%E8%AF%9D%EF%BC%9A%E6%80%8E%E6%A0%B7%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E6%8A%A2%E6%89%8B%EF%BC%9F%20-%20%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F_files/42e39560.js"></script>
+
+    <script>
+      var _gaq= [
+        ['_setAccount','UA-20961733-1'],
+        ['_setDomainName', 'zhihu.com'],
+        ['_trackPageview']
+      ];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+
+  
+
+<!-- Begin Templates -->
+<script type="text/ng-template" id="/scripts/auth/dialog-activate.html">
+<div class="modal-dialog activate-dialog">
+  <div class="modal-dialog-title">
+    <span class="modal-dialog-title-text">激活帐号</span>
+    <span class="modal-dialog-title-close"></span>
+  </div>
+
+  <div class="modal-dialog-content">
+    <div class="activate-form">
+      <p class="message">为了正常使用知乎专栏，请前往您的邮箱激活帐号。</p>
+      <p class="center">
+        <a href="http://{{ me.email.split('@').slice(-1)[0] }}" class="btn-blue">前往邮箱</a>
+      </p>
+      <hr>
+      <p class="actions">
+        <span class="mute">您的邮箱：{{ me.email }}</span>
+        <a href="{{ accountSettingsUrl }}">修改</a>
+        <ng-switch on="sent">
+          <a ng-switch-when="false" href="#" ng-click="resend($event)">重新发送激活邮件</a>
+          <span ng-switch-when="true" class="mute">已发送
+        </span></ng-switch>
+      </p>
+    </div>
+  </div>
+</div>
+</script>
+
+<script type="text/ng-template" id="/scripts/auth/dialog.html">
+<div class="modal-dialog login-dialog">
+  <div class="modal-dialog-title">
+    <span class="modal-dialog-title-text">请登录以继续操作</span>
+    <span class="modal-dialog-title-close"></span>
+  </div>
+
+  <div class="modal-dialog-content">
+    <div class="login-form-wrapper">
+      <a href="{{loginUrls.mail()}}" class="login-button btn-blue"><i class="icon icon-mail"></i>知乎帐号登录</a>
+      <a href="javascript:;" ng-click="weiboLogin()" class="login-button btn-red"><i class="icon icon-weibo"></i>新浪微博登录</a>
+    </div>
+    <a href="http://www.zhihu.com/" class="signup">没有知乎帐号？现在注册 →</a>
+  </div>
+</div>
+</script>
+
+<script type="text/ng-template" id="/scripts/avatar/avatar-editor.html">
+<div class="modal-dialog avatar-editor-dialog" ui-dialog="" tabindex="-1" open="show">
+  <div class="modal-dialog-title">
+    <span class="modal-dialog-title-text">头像裁剪</span>
+    <span class="modal-dialog-title-close"></span>
+  </div>
+
+  <div class="modal-dialog-content"></div>
+
+  <div class="modal-dialog-buttons">
+    <button name="cancel">取消</button>
+    <button name="yes" ng-click="submit($event)">确认</button>
+  </div>
+</div>
+</script>
+
+<script type="text/ng-template" id="/scripts/recommend/dialog-recommend.html">
+<div class="modal-dialog" tabindex="-1">
+    <div class="modal-dialog-title">
+        <span class="modal-dialog-title-text">推荐到知乎日报</span>
+        <span class="modal-dialog-title-close"></span>
+    </div>
+
+    <div class="modal-dialog-content share-dialog-content">
+        <div class="share-dialog-section">
+            {{title}}
+        </div>
+        <div class="share-dialog-section">
+            <textarea class="share-dialog-textarea" placeholder="推荐理由、备注或其他（选填）" ng-model="reason" autofocus=""></textarea>
+        </div>
+    </div>
+
+    <div class="modal-dialog-buttons">
+        <button name="cancel">取消</button>
+        <button name="yes" ng-click="submit()">推荐</button>
+    </div>
+</div>
+</script>
+
+<script type="text/ng-template" id="/scripts/report/dialog-report.html">
+<div class="modal-dialog report-dialog" tabindex="-1">
+  <div class="modal-dialog-title">
+    <span class="modal-dialog-title-text">{{config.title}}</span>
+    <span class="modal-dialog-title-close"></span>
+  </div>
+
+  <div class="modal-dialog-content">
+    <form class="report-form" name="reportForm">
+      <ul class="options clearfix">
+        <li ng-repeat="code in config.reasons">
+          <label><input ng-model="formData.reason" required="" value="{{code}}" name="reason" type="radio">{{Reasons[code]}}</label>
+        </li>
+      </ul>
+      <p class="input-container" ng-show="formData.reason == '0'">
+        <input ng-model="formData.detail" placeholder="举报理由" type="text" name="detail" class="reason-text basic-input" ng-minlength="2" ng-maxlength="100" ng-required="formData.reason == '0'">
+      </p>
+      <p class="error-container" ng-if="errorShow && reportForm.$invalid">
+        <span ng-if="reportForm.reason.$invalid" class="error">请选择举报理由</span>
+        <span ng-if="reportForm.detail.$invalid" class="error">举报理由为 2-100 字</span>
+      </p>
+      <p class="footnote"></p>
+    </form>
+  </div>
+
+  <div class="modal-dialog-buttons">
+    <button name="cancel">取消</button>
+    <button name="yes" ng-click="submit($event)">确认</button>
+  </div>
+</div>
+</script>
+
+<script type="text/ng-template" id="/views/404.html">
+<div class="server-error-container">
+  <i class="icon icon-error-404"></i>
+  没有找到该页面
+</div>
+</script>
+
+<script type="text/ng-template" id="/views/500.html">
+<div class="server-error-container">
+  <i class="icon icon-error-500"></i>
+  {{message || '抱歉，程序出了些问题'}}
+</div>
+</script>
+
+<script type="text/ng-template" id="/views/column-authors-edit.html">
+<div class="invite-authors setting-sec" ng-controller="ColumnAuthorsEditCtrl">
+  <div class="form-title with-margin">邀请作者</div>
+  <div class="form-content">
+
+    <div class="invite-authors-wrapper">
+      <i class="icon icon-magnify"></i>
+      <input ui-suggest="" suggest-options="suggestOptions" class="basic-input" placeholder="搜索你想邀请的人">
+    </div>
+
+    <ul class="invited-list clearfix">
+      <li class="author" ng-repeat="author in authors | filter:notMe | limitTo:100">
+        <a href="{{author.profileUrl}}" class="author-link" target="_blank">
+          <img class="avatar" ng-src="{{author.avatar | avatarUrl:25}}"><span class="name">{{author.name}}</span>
+        </a>
+        <a ng-click="removeAuthor(author)" href="javascript:;" class="remove" title="移除"><i class="icon icon-remove-link"></i></a>
+      </li>
+    </ul>
+
+    <!-- <div class="list-title">尚未接受邀请：</div>
+
+    <ul class="invited-but-not-in-list clearfix">
+      <li class="author" ng-repeat="author in authors | filter:notMe | limitTo:100">
+        <a href="{{author.profileUrl}}" class="author-link" target="_blank">
+          <img class="avatar" ng-src="{{author.avatar | avatarUrl:25}}"></img><span class="name">{{author.name}}</span>
+        </a>
+        <a ng-click="removeAuthor(author)" href="javascript:;" class="remove" title="移除"><i class="icon icon-remove-link"></i></a>
+      </li>
+    </ul> -->
+
+
+  </div>
+</div>
+</script>
+
+<script type="text/ng-template" id="/views/column-create.html">
+<div class="main receptacle column-settings" ng-switch="" on="betaStatus">
+  <div ng-switch-when="available">
+    <div ng-switch="" on="canCreateColumn">
+      <div ng-switch-when="true">
+        <div ng-include="'/views/column-edit.html'"></div>
+      </div>
+      <div class="server-error-container" ng-switch-when="false">
+        <i class="icon icon-error-500"></i>
+        <p>你好！目前专栏处于内测期<br>暂时仅提供一人开通一个专栏的服务，感谢你的理解：）</p>
+      </div>
+    </div>
+  </div>
+  <div class="server-error-container" ng-switch-when="unavailable">
+    <i class="icon icon-error-500"></i>
+    <p>你还没有收到专栏测试邀请，请耐心等待</p>
+  </div>
+  <div class="server-error-container" ng-switch-when="expired">
+    <i class="icon icon-error-500"></i>
+    <p>你收到的专栏测试邀请超过 90 天没有启用，已经失效<br>请耐心等待下一次邀请通知，非常感谢</p>
+  </div>
+</div>
+</script>
+
+<script type="text/ng-template" id="/views/column-edit.html">
+<div class="column-form" ng-form="columnForm" novalidate="" ng-controller="ColumnEditCtrl">
+
+  <!-- when there is no column -->
+  <!--
+  <div class="create-self-column setting-sec" style="display: none;">
+    <img class="avatar" src="http://p1.zhimg.com/49/3b/493b133d5_l.jpg" alt="薛天禄">
+    <a href="" class="create-self-column-btn">直接开通「薛天禄的专栏」<i class="icon icon-create-column-next"></i></a>
+    <div class="devider">
+      <span class="text">或自行填写资料</span>
+    </div>
+  </div> -->
+
+  <div class="avatar-editing setting-sec">
+    <div class="upload-controls fileinput-button" data-file-upload="fileuploadOptions" ng-class="{progressing: active()}">
+      <div class="ui-progress centered fx-fade" ng-class="{'with-avatar': column.avatar.id}" ng-if="active()">
+        <div class="bar" ng-style="{width: num + '%'}" data-file-upload-progress="progress()"></div>
+      </div>
+
+      <div ng-switch="" on="!!column.avatar.id">
+        <!-- when there is no column avatar -->
+        <div class="without-avatar" ng-switch-when="false">
+          <div class="avatar-preview">
+            <i class="icon icon-upload-avatar"></i>
+            <div class="tip">上传专栏头像</div>
+          </div>
+        </div>
+        <!-- when there is a column avatar -->
+        <div class="with-avatar" ng-switch-when="true">
+          <div class="avatar-preview">
+            <img ng-src="{{column.avatar | avatarUrl:200}}" class="avatar">
+          </div>
+          <div class="upload">
+            <span class="change-avatar">修改专栏头像</span>
+          </div>
+        </div>
+      </div>
+
+      <input type="file" accept="image/*" name="picture">
+    </div>
+  </div>
+
+  <div class="basic-info setting-sec">
+    <div class="form-title with-margin">专栏名</div>
+    <div class="form-content">
+      <div class="name">
+        <input required="" ng-model="column.name" name="name" class="basic-input" placeholder="起个名字">
+        <div class="error" ng-show="validatorEnabled && columnForm.name.$error.required">
+          <i class="icon icon-error"></i>
+          <span>必须填写专栏名</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="basic-info setting-sec">
+    <div class="form-title with-margin">专栏主题</div>
+    <div class="form-content">
+      <div class="topics">
+        <div class="topics-input" ui-tag-input="" ng-model="column.topics" name="topics" holdertext="搜索添加合适的专栏主题" min-tags="1" max-tags="3"></div>
+        <div class="error" ng-show="validatorEnabled && columnForm.topics.$invalid">
+          <i class="icon icon-error"></i>
+          <span ng-if="columnForm.topics.$error.minTags">最少选择一个主题</span>
+          <span ng-if="columnForm.topics.$error.maxTags">最多选择三个主题</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="desc setting-sec">
+    <div class="form-title with-margin">简介</div>
+    <div class="form-content input-container">
+      <textarea ui-textarea-autogrow="" ng-model="column.description" class="basic-input" placeholder="写一段介绍（选填）"></textarea>
+    </div>
+  </div>
+
+  <div class="url setting-sec">
+    <div class="form-title with-margin">域名</div>
+    <div class="form-content">
+      <span class="url-spine">zhuanlan.zhihu.com/</span>
+      <span class="input-container">
+        <input required="" ng-model="column.slug" name="slug" class="basic-input" placeholder="填写自定义域名" ng-minlength="5" ng-pattern="/^[-a-zA-Z0-9]+$/" unique-column-slug="">
+      </span>
+      <div class="error" ng-show="validatorEnabled && columnForm.slug.$invalid">
+        <i class="icon icon-error"></i>
+        <span ng-if="columnForm.slug.$error.required">必须填写自定义域名</span>
+        <span ng-if="columnForm.slug.$error.minlength">长度至少为五个字符</span>
+        <span ng-if="columnForm.slug.$error.pattern">只能使用字母、数字和短横线</span>
+        <span ng-if="columnForm.slug.$error.uniqueColumnSlug">此域名已经被占用</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="comments setting-sec" id="permission">
+    <div class="form-title">评论</div>
+    <div class="form-content">
+      <label class="radio-label">
+        <input checked="checked" type="radio" name="permission" ng-model="column.commentPermission" value="anyone"> 所有人都能在专栏文章下评论
+      </label>
+      <label class="radio-label">
+        <input type="radio" name="permission" ng-model="column.commentPermission" value="friends"> 只有作者关注的人能在其专栏文章下评论
+      </label>
+      <label class="radio-label">
+        <input type="radio" name="permission" ng-model="column.commentPermission" value="none"> 关闭评论
+      </label>
+    </div>
+  </div>
+
+  <!-- <div class="binding setting-sec">
+    <div class="form-title with-margin">账号连接</div>
+    <div class="form-content">
+      <button class="weibo btn-red"><i class="icon icon-weibo"></i>绑定新浪微博帐号</button>
+      <button class="weixin btn-dark-green"><i class="icon icon-weixin"></i>绑定微信公共帐号</button>
+    </div>
+  </div> -->
+
+  <!-- <div class="submission setting-sec">
+    <div class="form-title">投稿</div>
+    <div class="form-content">
+      <label class="checkbox-label">
+        <input ng-model="column.acceptSubmission" type="checkbox" class="submission">允许投稿<i></i>
+      </label>
+    </div>
+  </div> -->
+
+  <div class="create-column setting-sec" ng-switch="editMode">
+
+    <div ng-switch-when="true">
+      <div class="form-title">
+        <button ui-confirm="remove(column)" confirm-message="你确定要删除这个专栏吗？" class="remove-button btn-link">删除专栏</button>
+      </div>
+      <button ng-disabled="validatorEnabled && !columnForm.$valid" class="btn-blue" ng-click="edit(column)">保存设置</button>
+      <a href="/{{column.slug}}" class="cancel-button">取消</a>
+    </div>
+
+    <div ng-switch-when="false">
+      <button ng-disabled="validatorEnabled && !columnForm.$valid" class="btn-blue" ng-click="create(column)">完成创建</button>
+      <a href="javascript:" ng-click="back()" class="cancel-button">取消</a>
+    </div>
+
+  </div>
+</div>
+</script>
+
+<script type="text/ng-template" id="/views/column-followers.html">
+<div class="main receptacle column-followers-main">
+
+  <h2 class="pape-title">{{column.followersCount}} 人关注该专栏</h2>
+
+  <div ui-infinite="" data-source="source">
+
+    <p class="items-empty" ng-show="!source.pending && !followers.length">
+      <i class="icon" ng-class="{true: 'icon-error-500', false: 'icon-no-article'}[source.error]"></i>
+      {{source.error && '抱歉，程序出了些问题' || '还没有关注者'}}
+    </p>
+
+    <ul class="column-followers clearfix">
+      <li class="follower" ng-repeat="user in followers">
+        <a href="{{user.profileUrl}}" target="_blank">
+          <img class="avatar avatar-mid" ng-src="{{user.avatar | avatarUrl:50}}" alt="">
+          <strong>{{user.name}}</strong>
+          <span class="bio">{{user.bio}}</span>
+        </a>
+      </li>
+    </ul>
+
+  </div>
+
+</div>
+</script>
+
+<script type="text/ng-template" id="/views/column-settings-authors.html">
+<div class="main receptacle column-settings">
+
+  <div class="tabs">
+    <div class="tabs-nav clearfix">
+      <a href="{{column.url}}/settings" class="tabs-anchor">设置</a>
+      <span class="tabs-anchor active">作者</span>
+    </div>
+    <div>
+      <div ng-include="'/views/column-authors-edit.html'"></div>
+    </div>
+  </div>
+
+</div>
+</script>
+
+<script type="text/ng-template" id="/views/column-settings.html">
+<div class="main receptacle column-settings">
+
+  <div class="tabs">
+    <div class="tabs-nav clearfix">
+      <span class="tabs-anchor active">设置</span>
+      <a href="{{column.url}}/settings/authors" class="tabs-anchor">作者</a>
+    </div>
+    <div>
+      <div ng-include="'/views/column-edit.html'"></div>
+    </div>
+  </div>
+
+</div>
+</script>
+
+<script type="text/ng-template" id="/views/columns-selector.html">
+<div class="modal-dialog columns-selector" ui-dialog="" tabindex="-1" open="show">
+  <div class="modal-dialog-title">
+    <span class="modal-dialog-title-text">{{title}}</span>
+    <span class="modal-dialog-title-close"></span>
+  </div>
+
+  <div class="modal-dialog-content">
+    <div class="column-list" ng-show="columns.length">
+        <a href="/{{column.slug}}" ng-click="select(column, $event)" class="column-item clearfix" ng-repeat="column in columns">
+          <img class="avatar" ng-src="{{column.avatar | avatarUrl:50}}">
+          <div class="column-content">
+            <div class="column-title ellipsis">{{column.name}}</div>
+            <div class="article-count">{{column.postsCount || 0}} 篇文章</div>
+          </div>
+          <i class="icon icon-go"></i>
+        </a>
+        <a href="javascript:;" ng-click="create()" class="column-item create-column" ng-if="mode != 'selectonly'">
+          <i class="icon icon-create-column"></i>
+          <div class="text">创建专栏</div>
+          <i class="icon icon-go"></i>
+        </a>
+    </div>
+  </div>
+</div>
+</script>
+
+<script type="text/ng-template" id="/views/draft-list.html">
+<div class="main receptacle">
+  <div class="items-container" ui-infinite="" data-source="draftsSource">
+    <h2 class="pape-title ng-binding" ng-show="draftsSource.count">
+      <a href="javascript:;" ui-confirm="removeAllDrafts()" confirm-message="你确认要删除全部草稿吗？" class="delete-draft">删除全部</a>
+      <span class="counter">{{draftsSource.count}} 篇草稿</span>
+    </h2>
+    <p class="items-empty" ng-if="!animating && !draftsSource.pending && !drafts.length">
+      <i class="icon" ng-class="{true: 'icon-error-500', false: 'icon-no-article'}[draftsSource.error]"></i>
+      {{draftsSource.error && '抱歉，程序出了些问题' || '还没有任何草稿'}}
+    </p>
+    <ul class="items draft-list" ng-show="drafts.length">
+      <li class="item fx-draft-item-fade" ng-repeat="draft in drafts">
+        <article class="hentry">
+          <header>
+            <h1 class="entry-title"><a href="/drafts/{{draft.id}}">{{draft.title || '无标题'}}</a></h1>
+            <div class="entry-meta">
+              <a href="/{{draft.column.slug}}" ng-if="draft.column.name" class="author name">{{draft.column.name}}</a>
+              <span class="bull" ng-if="draft.column.name">·</span>
+              <time ui-time="" datetime="{{draft.updatedTime}}" class="updated"></time>
+              <span class="bull" ng-if="draft.state == 'censoring'">·</span>
+              <span class="censoring" ng-if="draft.state == 'censoring'">审核中</span>
+              <a href="javascript:;" class="delete" title="删除草稿" ui-confirm="removeDraft(draft, $index)" confirm-message="你确定要删除这篇草稿吗？">
+                <i class="icon icon-del"></i>
+              </a>
+            </div>
+          </header>
+          <!-- <section class="entry-summary" ng-bind-html="draft.summary"></section> -->
+          <section class="entry-summary">
+            <a href="/drafts/{{draft.id}}">
+              {{draft.content | truncateHtml}}
+            </a>
+          </section>
+        </article>
+      </li>
+    </ul>
+
+    <div class="posts-end" ng-show="drafts.length && draftsSource.completed"><i class="icon icon-posts-end"></i></div>
+  </div>
+</div>
+</script>
+
+<script type="text/ng-template" id="/views/home.html">
+<div class="top">
+	<div class="logo hide-text">知乎 - 无需提问，也能回答</div>
+</div>
+<div class="bottom">
+	<div class="teaser hide-text">新功能即将推出</div>
+</div>
+</script>
+
+<script type="text/ng-template" id="/views/ie.html">
+<div class="server-error-container">
+  <i class="icon icon-error-500"></i>
+  抱歉，暂不支持低版本 Internet Explorer 网页浏览器，请升级：
+  <ul style="text-align:center;list-style:none">
+    <li>
+      <a target="_blank" href="https://www.google.com/chrome">Google Chrome</a>
+    </li>
+    <li>
+      <a target="_blank" href="http://se.360.cn">360安全浏览器</a>
+    </li>
+    <li>
+      <a target="_blank" href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie">Internet Explorer 10</a>
+    </li>
+  </ul>
+</div>
+</script>
+
+<script type="text/ng-template" id="/views/main.html">
+<div class="main receptacle home-view">
+
+  <div class="rec-section posts">
+    <h1 class="rec-title">推荐文章</h1>
+    <p class="items-empty" ng-show="!loading && !posts.length">
+      还没有任何文章
+    </p>
+    <ul class="items" ng-show="posts.length">
+      <li class="item" ng-repeat="post in posts">
+        <article class="hentry" ng-controller="EntryCtrl">
+          <header>
+            <a ng-click="toggleLike(post)" href="javascript:;" class="vote-num">{{post.likesCount}}</a>
+            <h2 class="entry-title"><a href="/{{post.column.slug}}/{{post.slug}}">{{post.title}}</a></h2>
+            <div class="entry-meta">
+              <a href="{{post.author.profileUrl}}" class="author name">{{post.author.name}}</a>
+              <span class="bull">·</span>
+              <time ui-time="" datetime="{{post.publishedTime}}" class="published"></time>
+              <a href="/{{post.column.slug}}/{{post.slug}}#comments" class="comment"><i class="icon icon-comment"></i>{{post.commentsCount && (post.commentsCount + ' 条评论') || '还没有评论'}}</a>
+            </div>
+          </header>
+
+          <section class="entry-summary">{{post.content | truncateHtml}}</section>
+        </article>
+      </li>
+    </ul>
+  </div>
+
+  <aside class="sidebar">
+    <div class="rec-section columns">
+      <h2 class="rec-title">推荐专栏</h2>
+      <div class="block author-block" ng-repeat="column in columns">
+        <a href="{{column.slug}}" class="link column">
+          <img class="avatar" ng-src="{{column.image}}">
+          <span class="name">{{column.name}}</span>
+        </a>
+        <div class="desc">{{column.description}}</div>
+      </div>
+    </div>
+  </aside>
+
+</div>
+</script>
+
+<script type="text/ng-template" id="/views/maintenance.html">
+<div class="server-error-container">
+  <i class="icon icon-error-404"></i>
+  抱歉，正在抢修程序中
+</div>
+</script>
+
+<script type="text/ng-template" id="/views/navbar.html">
+<header id="header" class="navbar" ng-controller="NavbarCtrl" ng-cloak="">
+  <div class="receptacle">
+
+    <div class="navbar-logo-container">
+      <a href="//www.zhihu.com" target="_blank" class="logo icon icon-navbar-logo"></a>
+    </div>
+
+    <a href="javascript:;" class="navbar-login" ng-click="showLoginDialog()" ng-if="!me.authed() && me.$resolved">
+      <i class="icon icon-navbar-login"></i>
+      登录
+    </a>
+
+    <div class="navbar-menu-container" ui-menu-button="" ng-if="me.authed() && !me.beta">
+      <a href="javascript:;" class="menu-button">
+        <i class="icon icon-navbar-menu"></i><span class="hide-text">菜单</span>
+      </a>
+      <menu class="menu navbar-menu">
+        <a class="menu-item dd-logout" href="//www.zhihu.com/logout">
+          <i class="icon icon-dd-logout"></i>退出帐号</a>
+      </menu>
+    </div>
+
+    <div class="navbar-menu-container" ui-menu-button="" ng-if="me.beta">
+      <a href="javascript:;" class="menu-button">
+        <i class="icon icon-navbar-menu"></i><span class="hide-text">菜单</span>
+      </a>
+      <menu class="menu navbar-menu">
+        <a class="menu-item my-column" href="{{column.url}}" ng-repeat="column in me.columns | limitTo:minColumnsDisplay">
+          <img class="avatar" ng-src="{{column.avatar | avatarUrl:25}}">{{column.name}}</a>
+        <a class="menu-item dd-my-columns" href="javascript:;" ng-click="showNavColumnsSelector()" ng-if="me.columns.length > minColumnsDisplay">
+          <i class="icon icon-dd-columns"></i>全部专栏</a>
+        <a class="menu-item dd-create-column" href="/create" ng-if="me.columns.length < maxColumn">
+          <i class="icon icon-dd-create"></i>创建专栏</a>
+        <a class="menu-item dd-logout" href="//www.zhihu.com/logout">
+          <i class="icon icon-dd-logout"></i>退出帐号</a>
+      </menu>
+    </div>
+
+    <div class="navbar-drafts-container" ng-if="me.beta">
+      <a href="/drafts">
+        <i class="icon icon-navbar-drafts"></i><span class="hide-text">我的草稿</span>
+      </a>
+    </div>
+
+    <div class="navbar-write-container" ng-if="me.beta">
+      <a href="{{ me.columns.length ? '/write' : '/create'}}" ng-click="column.canPost && writePostFor(column)">
+        <i class="icon icon-navbar-write"></i><span class="hide-text">创作</span>
+      </a>
+    </div>
+
+    <div class="navbar-content">
+      <ul class="breadcrumb clearfix">
+        <li class="breadcrumb-item column-name" ng-if="column && column.name && !columnSelectOnly">
+          <a class="link" href="/{{column.slug}}">
+            <button ng-click="toggleFollow(column, $event)" class="btn normal" ng-class="{ true: 'btn-grey', false: 'btn-dark-green' }[column.following]" ng-if="me.slug != column.creator.slug">{{column.following && '取消关注' || '关注专栏'}}</button>
+            <span class="name" title="{{column.name}}">{{column.name}}</span>
+          </a>
+        </li>
+        <li class="breadcrumb-item" ng-if="columnSelectOnly">
+          <a class="link column-selector" href="/{{selectedColumn.slug}}" ng-click="selectColumn(selectedColumn, $event)">
+            <span class="name" ng-class="{'warn': !selectedColumn.name}">{{selectedColumn.name || '尚未选择专栏'}}</span>
+            <i class="icon icon-navbar-select"></i>
+          </a>
+        </li>
+        <li class="breadcrumb-devider" ng-if="column && pageTitle || columnSelectOnly"></li>
+        <li class="breadcrumb-item">
+          <span class="name" ng-bind="pageTitle"></span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</header>
+</script>
+
+<script type="text/ng-template" id="/views/post-comments.html">
+<div class="comment-box" ng-show="expanded" ng-class="{ empty: !pending && !comments.length }" ng-switch="pending" ng-init="warningMessageShow = !status.canComment && status.permission != 'anyone'">
+
+  <div class="box-header">
+    <span class="counter">
+      <i class="icon icon-comment"></i><span>{{status.count && (status.count + ' 条评论') || '还没有评论'}}</span>
+    </span>
+    <a href="{{$parent.column.url}}/settings#permission" class="comment-options" ng-show="$parent.column.creator.slug == me.slug" title="评论设置">
+      <i class="icon icon-settings"></i>
+    </a>
+  </div>
+
+  <span ng-switch-when="true"><div ui-spinner="" class="small"></div></span>
+
+  <div ng-switch-when="false">
+
+    <ul class="comment-list">
+      <li class="comment-item" ng-repeat="comment in comments | orderBy:'id' track by comment.id" id="comment-{{comment.id}}" ui-events="{focusin: 'focusin = true', focusout: 'focusin = false'}" ng-class="{focusin:focusin}">
+
+        <a ui-hovercard="" target="_blank" class="avatar-link" title="{{comment.author.name}}" href="{{comment.author.profileUrl}}" tabindex="-1">
+          <img ng-src="{{comment.author.avatar | avatarUrl:50}}" class="avatar">
+        </a>
+
+        <div class="comment-body" ng-init="reply = {content: '', hidden: true}">
+          <div class="comment-hd">
+            <a href="{{comment.author.profileUrl}}" target="_blank">{{comment.author.name}}</a><span ng-if="isPostOwner(comment.author)">（作者）</span>
+            <span class="in-reply-to" ng-show="comment.inReplyToUser">
+              回复 <a href="{{comment.inReplyToUser.profileUrl}}">{{comment.inReplyToUser.name}}</a><span ng-if="isPostOwner(comment.inReplyToUser)">（作者）</span>
+            </span>
+          </div>
+
+          <div class="comment-content" ng-bind-html="comment.content"></div>
+
+          <div class="comment-ft clearfix">
+            <time ui-time="" datetime="{{comment.createdTime}}" class="date"></time>
+
+            <span class="like-num {{comment.likesCount && 'liked' || 'nil'}}" title="{{comment.likesCount}} 人觉得这个很赞"><span>{{comment.likesCount}}</span> <span>赞</span></span>
+
+            <a ng-if="canRemove(comment)" ng-click="remove(comment)" href="javascript:;" class="remove op-link"><i class="icon icon-comment-remove"></i>删除</a>
+
+            <a ng-if="canReply(comment)" ng-click="toggleReplyForm(reply)" href="javascript:;" class="reply op-link"><i class="icon icon-comment-reply"></i>回复</a>
+
+            <a ng-if="!ownComment(comment)" ng-click="like(comment)" href="javascript:;" class="like op-link {{comment.liked && 'liked' || ''}}"><i class="icon icon-comment-like"></i>{{comment.liked && '取消赞' || '赞'}}</a>
+
+            <a ng-if="!ownComment(comment)" ng-click="report(comment)" href="javascript:;" class="report op-link"><i class="icon icon-comment-report"></i>举报</a>
+
+          </div>
+
+          <form name="replyForm" class="comment-form comment-reply-form expanded hidden" ng-if="canReply(comment)" ng-class="{hidden: reply.hidden}">
+            <img class="avatar" ng-src="{{me.avatar | avatarUrl:50}}">
+            <div class="editable" ui-focus-me="!reply.hidden" ui-ctrl-enter="replyComment(comment, reply, replyForm)" ui-scraper="" scraper-options="scraperOptions" ui-mention="" ui-clean-paste="" contenteditable="true" content-required="" ng-model="reply.content" holdertext="写下你的评论…"></div>
+            <div class="command clearfix" ng-if="me.authed()">
+              <button ng-disabled="reply.pending || !reply.content" ng-click="replyComment(comment, reply, replyForm)" class="save btn-blue">评论</button>
+              <button ng-click="reply.hidden = true" class="cancel btn-link">取消</button>
+            </div>
+          </form>
+
+        </div>
+      </li>
+    </ul>
+
+    <div class="load-more" ng-if="!source.completed" ng-switch="" on="source.pending">
+      <a ng-switch-when="false" href="javascript:;" ng-click="source.fetch()">显示更多评论</a>
+      <span ng-switch-when="true"><div ui-spinner="" class="small"></div></span>
+    </div>
+
+    <div class="message" ng-if="warningMessageShow" ng-switch="status.permission">
+      <span ng-switch-when="denied">对方已将你屏蔽，你无法在这里评论</span>
+      <span ng-switch-when="friends">只有作者关注的人才能在这里评论</span>
+      <span ng-switch-when="none">评论已关闭</span>
+    </div>
+
+    <form class="comment-form comment-box-ft" ng-class="{ 'expanded': formExpanded }" name="commentForm" ng-if="!warningMessageShow">
+      <img class="avatar" ng-src="{{me.avatar | avatarUrl:50}}" ng-if="me.authed()">
+      <div class="editable" ui-scraper="" scraper-options="scraperOptions" ui-mention="" ui-clean-paste="" ui-events="{focus:'expandForm(true)'}" ui-ctrl-enter="addComment()" contenteditable="true" content-required="" ng-model="editingComment.content" holdertext="写下你的评论…" name="content"></div>
+      <div class="command clearfix" ng-if="me.authed()">
+        <button ng-disabled="savePending" ng-click="addComment()" class="save btn-blue">评论</button>
+        <button ng-click="expandForm(false, $event)" class="cancel btn-link">取消</button>
+      </div>
+    </form>
+
+  </div>
+
+</div>
+</script>
+
+<script type="text/ng-template" id="/views/post-list.html">
+<div class="column-actions" ng-if="!column.canPost && column.activateAuthorRequested">
+  <div class="receptacle clearfix">
+    <a class="action-link invite" ng-click="activateAuthor(column)" href="javascript:;">
+      <i class="icon icon-panel-invite"></i>您被邀请成为作者，点此接受
+    </a>
+  </div>
+</div>
+
+<div class="main receptacle">
+  <div class="items-container" ui-infinite="" data-source="postsSource">
+    <p class="items-empty" ng-show="!postsSource.pending && !posts.length">
+      <i class="icon" ng-class="{true: 'icon-error-500', false: 'icon-no-article'}[postsSource.error]"></i>
+      {{postsSource.error && '抱歉，程序出了些问题' || '尚未发布过文章'}}
+    </p>
+
+    <ul class="items" ng-show="posts.length">
+      <li class="item" ng-repeat="post in posts" ng-class="{'item-with-title-img': titleImageShow}" ng-init="titleImageShow = post.titleImage && supportsBackgroundSize">
+        <article class="hentry" ng-controller="EntryCtrl" ui-in-view="" oninviewonce="post.touch()">
+          <header>
+
+            <div ng-if="post.sourceUrl" class="linked-post-link-wrapper">
+              <a class="link" href="{{post.sourceUrl}}" target="_blank">
+                <i class="icon icon-linked-post"></i>{{post.sourceUrl | linkDomain}}
+              </a>
+            </div>
+
+            <a href="/{{post.column.slug}}/{{post.slug}}" href="javascript:;" class="vote-num" ng-show="post.likesCount"><i class="icon icon-voteup"></i>{{post.likesCount}}<span class="hide-on-mobile"> 赞</span></a>
+
+            <h1 class="entry-title">
+              <a href="/{{post.column.slug}}/{{post.slug}}">{{post.title}}</a>
+            </h1>
+
+            <div class="entry-meta">
+              <a target="_blank" href="{{post.author.profileUrl}}" class="author name">{{post.author.name}}</a>
+              <span class="bull" ng-click="test()">·</span>
+              <time ui-time="" datetime="{{post.publishedTime}}" class="published"></time>
+              <a href="/{{post.column.slug}}/{{post.slug}}#comments" class="comment" ng-show="post.commentsCount"><i class="icon icon-comment"></i>{{post.commentsCount}}<span class="hide-on-mobile"> 条评论</span></a>
+            </div>
+
+            <a href="/{{post.column.slug}}/{{post.slug}}" class="entry-link" ng-if="titleImageShow"></a>
+            <div class="title-img-preview" ng-style="{'background-image': 'url(' + post.titleImage + ')' || {}}" ng-if="titleImageShow"></div>
+            <div ui-spinner="" ng-if="titleImageShow"></div>
+          </header>
+
+          <section class="entry-summary" ng-if="!titleImageShow">
+            <a href="/{{post.column.slug}}/{{post.slug}}">
+              <p ui-summary="post.content">
+                <span class="read-all">继续阅读<i class="icon icon-read-all"></i></span>
+              </p>
+            </a>
+          </section>
+        </article>
+      </li>
+    </ul>
+
+    <div class="posts-end" ng-show="posts.length && postsSource.completed"><i class="icon icon-posts-end"></i></div>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="block column-about">
+      <div class="avatar-link">
+        <img class="avatar-big" ng-src="{{column.avatar | avatarUrl:100}}">
+      </div>
+      <div href="/{{column.slug}}" class="title">{{column.name}}</div>
+      <a class="btn-white mid" ng-if="column.creator.slug == me.slug" href="/{{column.slug}}/settings"><i class="icon icon-settings"></i>设置</a>
+      <div class="followers" ng-switch="" on="!!column.followersCount">
+        <a ng-switch-when="true" href="/{{column.slug}}/followers">{{column.followersCount}} 人关注</a>
+        <span ng-switch-when="false">还没有人关注</span>
+      </div>
+      <div class="description" ng-bind-html="column.description | linky"></div>
+    </div>
+
+  </aside>
+
+</div>
+</script>
+
+<script type="text/ng-template" id="/views/post-view.html">
+<div class="main receptacle post-view">
+
+  <article class="entry" ng-controller="EntryCtrl" ui-lightbox="">
+    <header>
+      <div class="entry-title-image" ng-if="post.titleImage">
+        <!-- <span class="img-captions">我的摄影作品</span> -->
+        <img ng-src="{{post.titleImage}}">
+      </div>
+
+      <div ng-if="post.sourceUrl" class="linked-post-link-wrapper">
+        <a class="link" href="{{post.sourceUrl}}" target="_blank">
+          <i class="icon icon-linked-post"></i>{{post.sourceUrl | linkDomain}}
+        </a>
+      </div>
+
+      <h1 class="entry-title">{{post.title}}</h1>
+
+      <div class="entry-meta">
+        <a target="_blank" href="{{post.author.profileUrl}}" class="author name">
+          <img ng-src="{{post.author.avatar | avatarUrl:25}}" alt="{{author.name}}" class="avatar-small">{{post.author.name}}</a>
+        <span class="bull">·</span>
+        <time ui-time="" datetime="{{post.publishedTime}}" class="published"></time>
+      </div>
+    </header>
+
+    <div class="entry-warning" ng-if="isCensoring" ng-class="{'with-arrow': ownPost(post)}">
+      <div>
+        <a href="http://www.zhihu.com/question/24752645" target="_blank" class="pull-right icon-help"></a>
+        {{post.stateText}}
+      </div>
+      <div class="text-muted" ng-switch="ownPost(post)">
+        <span ng-switch-when="true">建议修改期间，文章内容对其他用户不可见。修改提交后会自动进入评估状态。</span>
+        <span ng-switch-when="false">作者修改内容通过后，文章会重新显示。</span>
+      </div>
+    </div>
+
+    <section class="entry-content" ng-bind-html="postContentTrustedHtml"></section>
+
+    <footer>
+      <div class="entry-controls clearfix">
+        <div class="right-section">
+          <!-- <span class="control-item read-counts">
+            <i class="icon icon-eye"></i>13 人读过
+          </span> -->
+          <span class="post-share-button post-menu-button" ui-menu-button="" onbeforeopen="beforeShareMenuOpen()" ng-if="!isCensoring">
+            <a href="javascript:;" class="menu-button control-item share"><i class="icon icon-share"></i>分享</a>
+            <menu class="menu">
+              <div ng-click="item.action()" class="menu-item" ng-repeat="item in shareMenuItems">
+                <i class="icon {{item.icon}}"></i>{{item.label}}
+              </div>
+            </menu>
+          </span>
+
+          <a href="{{post.url}}/edit" class="control-item post-edit-button" ng-if="ownPost(post)">
+            <i class="icon icon-edit"></i>编辑
+          </a>
+
+          <span class="post-options-button post-menu-button" ng-show="ownPost(post)" ui-menu-button="">
+            <a href="javascript:;" class="menu-button control-item options">
+              <i class="icon icon-settings"></i><span class="hide-text">设置</span>
+            </a>
+            <menu class="menu">
+              <div ng-click="removePost()" class="menu-item"><i class="icon icon-del-big"></i>删除</div>
+            </menu>
+          </span>
+
+          <a ng-if="!ownPost(post) && !isCensoring" ng-click="report(post)" href="javascript:;" class="control-item report"><i class="icon icon-comment-report"></i>举报</a>
+
+        </div>
+
+        <div class="left-section" ng-if="!isCensoring">
+          <div class="vote-section-wrapper clearfix">
+            <span class="vote-section" ng-show="!ownPost(post)">
+              <a ng-click="post.toggleLike()" href="javascript:;" class="voteup" ng-class="{ active: post.rating == 'like' }"><i class="icon icon-voteup"></i>{{post.likesCount && (post.likesCount + ' 赞') || '赞'}}</a>
+              <a ng-click="post.toggleDislike()" href="javascript:;" class="votedown" ng-class="{ active: post.rating == 'dislike' }"><i class="icon icon-votedown"></i></a>
+            </span>
+            <span class="vote-num" ng-show="ownPost(post)">{{post.likesCount && (post.likesCount + ' 赞') || '还没有赞'}}</span>
+          </div>
+
+          <div class="voters clearfix" ng-if="post.lastestLikers.length && !likers">
+            <a href="{{user.profileUrl}}" target="_blank" title="{{user.name}}" class="voter" ng-repeat="user in post.lastestLikers">
+              <img ng-src="{{user.avatar | avatarUrl:25}}" alt="{{user.name}}" class="avatar-small">
+            </a>
+            <a href="javascript:;" title="查看全部" class="more-voters" ng-click="fetchAllLikers()" ng-if="post.lastestLikers.length < post.likesCount && !fetchLikersPending">
+              <i class="icon icon-more-voters"></i>
+            </a>
+            <a class="more-voters" ng-if="fetchLikersPending">
+              <div ui-spinner="" class="half"></div>
+            </a>
+          </div>
+
+          <div class="voters clearfix" ng-if="likers">
+            <a href="{{user.profileUrl}}" target="_blank" title="{{user.name}}" class="voter" ng-repeat="user in likers">
+              <img ng-src="{{user.avatar | avatarUrl:25}}" alt="{{user.name}}" class="avatar-small">
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- <a ng-click="collect(post)" href="javascript:;" class="collect"><i class="icon icon-collect"></i>收藏</a> -->
+
+      <div class="posts-navigator" ng-if="post.meta.previous || post.meta.next">
+        <div class="posts-nav" ng-class="{one: !post.meta.previous || !post.meta.next}">
+          <a class="prev post-link" href="{{post.meta.previous.url}}" ng-show="post.meta.previous">
+            <i class="icon icon-prev-post"></i>
+            <strong class="title">{{post.meta.previous.title}}</strong>
+          </a>
+          <a class="next post-link" href="{{post.meta.next.url}}" ng-show="post.meta.next">
+            <i class="icon icon-next-post"></i>
+            <strong class="title">{{post.meta.next.title}}</strong>
+          </a>
+        </div>
+      </div>
+
+      <div id="comments" class="entry-comments" ui-post-comments="" comments-href="post.links.comments" comments-expanded="true" comments-post-owner="post.author" comments-status="commentsStatus" ng-if="!isCensoring"></div>
+    </footer>
+  </article>
+
+  <aside class="sidebar">
+
+    <div class="block column-about">
+      <a href="/{{column.slug}}" class="avatar-link">
+        <img class="avatar-big" ng-src="{{column.avatar | avatarUrl:100}}">
+      </a>
+      <a href="/{{column.slug}}" class="title">{{column.name}}</a>
+      <a class="btn-white mid" ng-if="column.creator.slug == me.slug" href="/{{column.slug}}/settings"><i class="icon icon-settings"></i>设置</a>
+      <div class="followers" ng-switch="" on="!!column.followersCount">
+        <a ng-switch-when="true" href="/{{column.slug}}/followers">{{column.followersCount}} 人关注</a>
+        <span ng-switch-when="false">还没有人关注</span>
+      </div>
+      <div class="description" ng-bind-html="column.description | linky"></div>
+    </div>
+
+    <div class="block rel-topics" ng-show="!isCensoring && (post.topics.length || ownPost(post))">
+      <ul class="clearfix" ng-if="post.topics.length">
+        <li class="topic" ng-repeat="topic in post.topics" ng-class="{ canedit: ownPost(post) }">
+          <span class="topic-inner-wrapper">
+            <a href="{{topic.url}}" class="topic-link">{{topic.name}}</a>
+            <a ng-click="unbindTopic(topic, $index)" class="remove-topic" ng-show="ownPost(post)"><i class="icon icon-remove-topic"></i></a>
+          </span>
+        </li>
+      </ul>
+      <div class="add-topic" ng-if="ownPost(post)">
+        <i class="icon icon-magnify"></i>
+        <input ui-suggest="" suggest-options="suggestOptions" placeholder="添加话题">
+      </div>
+    </div>
+
+  </aside>
+
+</div>
+</script>
+
+<script type="text/ng-template" id="/views/post-write.html">
+<div class="main post-write" ng-form="postForm">
+  <section class="receptacle">
+
+  <div id="js-title-img" class="title-img" ui-droppable="">
+    <span ng-if="!draft.titleImage" class="hover-tip">添加题图（可选）</span>
+
+    <div class="upload-controls" data-file-upload="fileuploadOptions">
+      <div class="preview-wrapper fileinput-button" ng-show="!active()">
+        <i ng-if="!draft.titleImage" class="icon icon-add-titleimg"></i>
+        <img ng-show="draft.titleImage" class="preview" ng-src="{{draft.titleImage}}">
+        <input type="file" accept="image/*" name="upload_file" id="js-title-img-input">
+      </div>
+
+      <div class="ui-progress centered" ng-if="active()">
+        <div class="bar" ng-style="{width: num + '%'}" data-file-upload-progress="progress()"></div>
+      </div>
+
+      <div class="img-edit-options" ng-show="!active() && draft.titleImage">
+        <!-- <a class="caption">
+          <i class="icon icon-img-caption"></i>
+          <span class="hidden">注解</span>
+          <input type="text" class="caption-input" placeholder="注解">
+
+          <input type="text" class="caption-input with-content" placeholder="注解" value="我的摄影作品">
+        </a> -->
+        <button class="action-button change fileinput-button" onclick="angular.element('#js-title-img-input').click()">
+          <i class="icon icon-img-change"></i>
+          <span class="hidden">更换</span>
+        </button>
+        <button class="action-button delete" ui-confirm="draft.titleImage=''" confirm-message="你确定要删除这张题图吗？">
+          <i class="icon icon-img-delete"></i>
+          <span class="hidden">删除</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="js-editor-toolbar" class="toolbar-holder" ui-sticky="" data-align="bottom" data-target="#js-title-img"></div>
+
+  <div class="title-input-container" ng-init="titleScraping = false">
+    <div class="title-scraper-preview linked-post-link-wrapper" ng-show="titleScraping || draft.sourceUrl">
+      <a href="{{draft.sourceUrl}}" target="_blank" class="link" ng-show="draft.sourceUrl">
+        <i class="icon icon-linked-post"></i>{{draft.sourceUrl}}
+      </a>
+      <a class="remove-button" title="删除" ng-click="draft.sourceUrl = ''" ng-show="draft.sourceUrl">
+        <i class="icon icon-remove-link"></i>
+      </a>
+      <i ui-spinner="" class="small" ng-show="titleScraping"></i>
+    </div>
+    <textarea ui-textarea-autogrow="" required="" ng-model="draft.title" name="title" class="title" placeholder="标题" ui-title-scraper="" ng-disabled="titleScraping" onscrapesuccess="draft.sourceUrl = link.url" onscrapestart="titleScraping = true" onscrapeend="titleScraping = false" ui-tab-trigger="" autofocus=""></textarea>
+  </div>
+
+  </section>
+
+  <div class="editable-container">
+    <div id="js-entry-content" class="entry-content editable" ng-model="draft.content" name="content" contenteditable="true" holdertext="正文" content-required="" ui-clean-paste="" ui-scraper="" ui-mention="" ui-events="{input:'onContentChange($event)'}" ui-editor="" editor-toolbar="js-editor-toolbar"></div>
+    <div ui-popover="" popover-options="{container:'#js-entry-content', selector: 'img:not([eeimg])'}">
+      <div class="img-edit-options">
+        <button class="action-button delete" ui-confirm="removeAnchor()" confirm-message="你确定要删除这张图片吗？">
+          <i class="icon icon-img-delete"></i>
+          <span class="hidden">删除</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="publish-section right-bottom-corner">
+  <span class="draft-control">
+    <button class="btn-link" ui-confirm="removeDraft(draft)" title="删除草稿" confirm-message="你确定要删除这篇草稿吗？" ng-show="draft.id"><i class="icon icon-del-big"></i></button>
+    <span class="hint error" ng-show="errorHint">{{ errorHint }}</span>
+    <span class="hint" ng-show="!errorHint">{{ (draftSaving || draftCreating) && '保存中...' || '已保存' }}</span>
+  </span>
+  <button ng-click="back()" class="cancel-publish btn-hollow">关闭</button>
+  <button ng-click="publish()" class="publish btn-blue">{{ (draft.state == 'censoring') && '修改' || '发布' }}</button>
+</div>
+
+<div ui-columns-selector="" data-show="columnsSelectorShow" data-href="me.links.columns" data-title="选择专栏" onselect="selectColumn(column)"></div>
+</script>
+<!-- End Templates -->
+
+
+<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><style>html.lightbox-zoomin body {padding-right: 13px;}</style></body></html>

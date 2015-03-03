@@ -1,0 +1,1098 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>    
+    <script src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript" src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/tracking.js" charset="utf-8"></script>  
+
+    <script type="text/javascript">
+        var protocol = window.location.protocol;
+        document.write('<script type="text/javascript" src="' + protocol + '//csdnimg.cn/pubfooter/js/repoAddr2.js?v=' + Math.random() + '"></' + 'script>');
+    </script><script type="text/javascript" src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/repoAddr2.js"></script>
+
+
+    <script id="allmobilize" charset="utf-8" src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/allmobilize.js"></script><style type="text/css"></style>
+ <meta http-equiv="Cache-Control" content="no-siteapp"><link rel="alternate" media="handheld" href="#">
+
+    <title>Linux下Tomcat的安装配置 - 小菜鸟的天地
+        - 博客频道 - CSDN.NET</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Linux下Tomcat的安装配置一.下载安装对应的jdk,并配置Java环境。官网下载地址：http://www.oracle.com/technetwork/java/javase/downloads/jdk-6u26-download-400750.html">
+    <script src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript" src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ad.js"></script>
+        <!--new top-->
+       
+        <link rel="stylesheet" href="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/index.css">
+        <!--new top-->
+
+    <link rel="Stylesheet" type="text/css" href="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/style.css">
+    <link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="http://blog.csdn.net/zhuying_linux/rss/list">
+    <link rel="shortcut icon" href="http://csdnimg.cn/public/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/default.css">
+ 
+
+
+<script src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/share.js"></script><link href="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/job_reco.css" type="text/css" rel="stylesheet"><script src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/main_002.js" charset="utf-8" type="text/javascript"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><link type="text/css" rel="stylesheet" href="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/bdsstyle.css"><script async="" src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/sm.js" charset="utf-8"></script><link rel="stylesheet" type="text/css" href="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/style_002.css"><link href="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/style_003.css" rel="stylesheet" type="text/css"><script src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/logger.js"></script><link href="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/share_style0_16.css" rel="stylesheet"></head>
+<body><iframe style="display: none;" frameborder="0"></iframe><div style="display: none;" id="MathJax_Message"></div>
+    
+   
+      <!--new top-->
+    <script id="toolbar-tpl-scriptId" fixed="true" prod="blog" skin="black" src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/html.js" type="text/javascript"></script><div class="csdn-toolbar csdn-toolbar-skin-black ">        <div class="container row center-block ">          <div class="col-md-3 pull-left logo clearfix"><a href="http://www.csdn.net/?ref=toolbar" title="CSDN首页" target="_blank" class="icon"></a><a title="频道首页" href="http://blog.csdn.net/?ref=toolbar_logo" target="_blank" class="img blog-icon"></a></div>          <div class="pull-right login-wrap unlogin">            <ul class="btns">              <li class="loginlink"><a href="https://passport.csdn.net/account/login?ref=toolbar" target="_top">登录&nbsp;</a>|<a target="_top" href="https://passport.csdn.net/account/register?ref=toolbar">&nbsp;注册</a></li>              <li class="search">                <div class="icon on-search-icon">                  <div class="wrap">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <form action="http://so.csdn.net/search" method="get" target="_blank">                      <input value="toolbar" name="ref" accesskey="2" type="hidden">                      <div class="border">                        <input placeholder="搜索" name="q" accesskey="2" type="text"><span class="icon-enter-sm"></span>                      </div>                    </form>                  </div>                </div>              </li>              <li class="favor">                <div class="icon on-favor-icon">                  <div class="wrap">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <div style="display:none;" class="favor-success"><span class="msg">收藏成功</span>                      <div class="btns"><span class="btn btn-primary ok">确定</span></div>                    </div>                    <div style="display:none;" class="favor-failed"><span class="icon-danger-lg"></span><span class="msg">收藏失败，请重新收藏</span>                      <div class="btns"><span class="btn btn-primary ok">确定</span></div>                    </div>                    <form role="form" class="form-horizontal favor-form">                      <div class="form-group">                        <div class="clearfix">                          <label for="input-title" class="col-sm-2 control-label">标题</label>                          <div class="col-sm-10">                            <input value="Linux下Tomcat的安装配置 - 小菜鸟的天地 - 博客频道 - CSDN.NET" id="inputTitle" placeholder="" class="title form-control" type="text">                          </div>                        </div>                        <div class="alert alert-danger"><strong></strong>标题不能为空</div>                      </div>                      <div class="form-group">                        <label for="input-url" class="col-sm-2 control-label">网址</label>                        <div class="col-sm-10">                          <input value="http://blog.csdn.net/zhuying_linux/article/details/6583096/" id="input-url" placeholder="" class="url form-control" type="text">                        </div>                      </div>                      <div class="form-group">                        <label for="input-tag" class="col-sm-2 tag control-label">标签</label>                        <div class="col-sm-10">                          <input id="input-tag" class="form-control tag" type="text">                        </div>                      </div>                      <div class="form-group">                        <label for="input-description" class="description col-sm-2 control-label">摘要</label>                        <div class="col-sm-10">                          <textarea id="input-description" class="form-control description"></textarea>                        </div>                      </div>                      <div class="form-group">                        <div class="col-sm-offset-2 col-sm-10 ft">                          <div class="col-sm-4 pull-left">                            <div class="checkbox">                              <label>                                <input name="share" checked="checked" class="share" type="checkbox">公开                              </label>                            </div>                          </div>                          <div class="col-sm-8 pull-right favor-btns">                            <button type="button" class="cancel btn btn-default">取消</button>                            <button type="submit" class="submit btn btn-primary">收藏</button>                          </div>                        </div>                      </div>                    </form>                  </div>                </div>              </li>              <li class="notify">                <div style="display:none" class="number"></div>                <div style="display:none" class="icon-hasnotes-sm"></div>                <div id="header_notice_num"></div>                <div class="icon on-notify-icon">                  <div class="wrap">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <div id="note1" class="csdn_note">                      <div class="box"></div>                    <iframe src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/a.html" allowtransparency="true" style="z-index:-1;position:absolute;top:0;left:0;width:100%;height:100%;background:transparent" frameborder="0"></iframe></div>                  </div>                </div>              </li>              <li class="ugc">                <div class="icon on-ugc-icon">                  <div class="wrap clearfix">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <dl>                      <dt><a href="http://geek.csdn.net/news/expert?ref=toolbar" target="_blank" class="p-news clearfix"><em class="icon"></em><span>分享资讯</span></a></dt>                      <dt><a href="http://share.csdn.net/slides/new?ref=toolbar" target="_blank" class="p-doc clearfix"><em class="icon"></em><span>传PPT/文档</span></a></dt>                      <dt><a href="http://bbs.csdn.net/topics/new?ref=toolbar" target="_blank" class="p-ask clearfix"><em class="icon"></em><span>提问题</span></a></dt>                      <dt><a href="http://write.blog.csdn.net/postedit?ref=toolbar" target="_blank" class="p-blog clearfix"><em class="icon"></em><span>写博客</span></a></dt>                      <dt><a href="http://u.download.csdn.net/upload?ref=toolbar" target="_blank" class="p-src clearfix"><em class="icon"></em><span>传资源</span></a></dt>                      <dt><a href="https://code.csdn.net/projects/new?ref=toolbar" target="_blank" class="c-obj clearfix"><em class="icon"></em><span>创建项目</span></a></dt>                      <dt><a href="https://code.csdn.net/snippets/new?ref=toolbar" target="_blank" class="c-code clearfix"><em class="icon"></em><span>创建代码片</span></a></dt>                    </dl>                  </div>                </div>              </li>              <li class="profile">                <div class="icon on-profile-icon"><img src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/100x100.jpg" class="curr-icon-img">                  <div class="wrap clearfix">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <div class="bd">                      <dl class="clearfix">                        <dt class="pull-left img"><a target="_blank" href="http://my.csdn.net/?ref=toolbar" class="avatar"><img src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/100x100.jpg"></a></dt>                        <dd class="info" style="border: none;"><a target="_blank" href="http://my.csdn.net/?ref=toolbar" class="nickname"></a><a class="set-nick" href="https://passport.csdn.net/account/profile">设置昵称<span class="write-icon"></span></a><span class="dec"><a class="fill-dec" href="http://my.csdn.net/" target="_blank">编辑自我介绍，让更多人了解你<span class="write-icon"></span></a></span></dd>                      </dl>                    </div>                    <div class="ft clearfix"><a target="_blank" href="http://my.csdn.net/my/account/changepwd?ref=toolbar" class="pull-left"><span class="icon-cog"></span>帐号设置</a><a href="https://passport.csdn.net/account/logout?ref=toolbar" target="_top" class="pull-left" style="margin-left:132px; width:18px; height:27px; white-space:nowrap; overflow:hidden;"><span class="icon-signout"></span><span class="out">退出</span></a></div>                  </div>                </div>              </li>              <li class="apps">                <div id="chasnew123" class="hasnew"></div>                <div id="cappsarea123" class="icon on-apps-icon">                  <div class="wrap clearfix">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                  <div class="detail">                    <dl>                      <dt>                        <h5>社区</h5>                      </dt>                      <dd> <a href="http://blog.csdn.net/?ref=toolbar" target="_blank">博客</a></dd>                      <dd> <a href="http://bbs.csdn.net/?ref=toolbar" target="_blank">论坛</a></dd>                      <dd> <a href="http://download.csdn.net/?ref=toolbar" target="_blank">下载</a></dd>                      <dd><a href="http://ask.csdn.net/?ref=toolbar" target="_blank">技术问答</a></dd>                      <dd><a href="http://geek.csdn.net/?ref=toolbar" target="_blank">极客头条</a></dd>                      <dd> <a href="http://hero.csdn.net/?ref=toolbar" target="_blank">英雄会</a></dd>                    </dl>                  </div>                  <div class="detail">                    <dl>                      <dt>                        <h5>服务</h5>                      </dt>                      <dd> <a href="http://job.csdn.net/?ref=toolbar" target="_blank">招聘<img src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/new.gif" style="margin-top: -26px; width: 23px;"></a></dd>                      <dd> <a href="http://edu.csdn.net/?ref=toolbar" target="_blank">学院<img src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/new.gif" style="margin-top: -26px; width: 23px;"></a></dd>                      <dd> <a href="https://code.csdn.net/?ref=toolbar" target="_blank">CODE</a></dd>                      <dd> <a href="http://huiyi.csdn.net/?ref=toolbar" target="_blank">活动</a></dd>                      <dd> <a href="http://www.csto.com/?ref=toolbar" target="_blank">CSTO</a></dd>                      <dd> <a href="http://mall.csdn.net/?ref=toolbar" target="_blank">C币兑换<img src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/new.gif" style="margin-top: -26px; width: 23px;"></a></dd>                    </dl>                  </div>                  <div class="detail last">                    <dl>                      <dt>                        <h5>俱乐部</h5>                      </dt>                      <dd> <a href="http://cto.csdn.net/?ref=toolbar" target="_blank">CTO俱乐部</a></dd>                      <dd> <a href="http://student.csdn.net/?ref=toolbar" target="_blank">高校俱乐部</a></dd>                    </dl>                  </div>                </div>              </div>            </li>            </ul>          </div>        </div>    </div>
+     <!--new top-->
+    <div id="container">
+        <div id="header">
+    <div class="header">
+        <div id="blog_title">
+            <h2>
+                <a href="http://blog.csdn.net/zhuying_linux">小菜鸟的天地</a></h2>
+            <h3>心有多高，路就有多远...</h3>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div id="navigator">
+    <div class="navigator_bg">
+    </div>
+    <div class="navigator">
+        <ul>
+            
+                <li id="btnContents"><a href="http://blog.csdn.net/zhuying_linux?viewmode=contents"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_mulu'])">
+                    <img src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ico_list.gif">目录视图</span></a></li>
+                <li id="btnView"><a href="http://blog.csdn.net/zhuying_linux?viewmode=list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_zhaiyao'])">
+                    <img src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ico_summary.gif">摘要视图</span></a></li>
+                <li id="btnRss"><a href="http://blog.csdn.net/zhuying_linux/rss/list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_RSS'])">
+                    <img src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ico_rss.gif">订阅</span></a></li>                
+
+            </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var username = "zhuying_linux";
+    var _blogger = username;
+    var blog_address = "http://blog.csdn.net/zhuying_linux";
+    var static_host = "http://static.blog.csdn.net";
+    var currentUserName = "";  
+</script>
+
+        <div id="body">
+            <div id="main">
+                <div class="main">
+                        <div class="ad_class">
+<div class="notice tracking-ad" data-mod="popu_3"> 
+
+
+<a target="_blank" href="http://blog.csdn.net/csdnproduct/article/details/43561659">
+<font color="blue">博客Markdown编辑器上线啦</font></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a target="_blank" href="http://blog.csdn.net/blogdevteam/article/details/42918959">
+<font color="red">那些年我们追过的Wrox精品红皮计算机图书
+</font></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a target="_blank" href="http://edu.csdn.net/lecturer/lecturer_detail?lecturer_id=95">
+<font color="blue">PMBOK第五版精讲视频教程
+</font></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a target="_blank" href="http://edu.csdn.net/course/detail/443">
+<font color="red">火星人敏捷开发1001问
+</font></a>
+
+
+</div>                        </div>
+                        
+
+  
+<link href="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/comment1.css" type="text/css" rel="stylesheet">
+<link href="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/style1.css" type="text/css" rel="stylesheet">
+<script language="JavaScript" type="text/javascript" src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/jquery_002.js"></script>
+<script type="text/javascript" src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/main.js"></script>
+
+
+<link rel="stylesheet" href="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/markdown_views.css">
+
+<script type="text/javascript" src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/MathJax.js"></script>
+
+
+
+
+
+
+
+
+
+  <script type="text/ecmascript">
+      window.quickReplyflag = true;
+    </script>
+<div id="article_details" class="details">
+    <div class="article_title">   
+         <span class="ico ico_type_Original"></span>
+
+
+    <h1>
+        <span class="link_title"><a href="http://blog.csdn.net/zhuying_linux/article/details/6583096">
+        Linux下Tomcat的安装配置
+        </a></span>
+    </h1>
+</div>
+
+    <div class="article_manage">
+        <span class="link_categories">
+        分类：
+            <a href="http://blog.csdn.net/zhuying_linux/article/category/837957" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_fenlei']);">中间件</a> 
+        </span>
+    <span class="link_postdate">2011-07-04 11:19</span>
+    <span class="link_view" title="阅读次数">68557人阅读</span>
+    <span class="link_comments" title="评论次数"><a href="#comments" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_pinglun'])">评论</a>(8)</span>
+    <span class="link_collect"><a href="javascript:void(0);" onclick="javascript:_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shoucang']);collectArticle('Linux下Tomcat的安装配置','6583096');return false;" title="收藏">收藏</a></span>
+    <span class="link_report"><a href="#report" onclick="javascript:_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_jubao']);report(6583096,2);return false;" title="举报">举报</a></span>
+    
+</div>
+<div class="tag2box"><a href="http://www.csdn.net/tag/tomcat" target="_blank" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">tomcat</a><a href="http://www.csdn.net/tag/linux" target="_blank" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">linux</a><a href="http://www.csdn.net/tag/java" target="_blank" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">java</a><a href="http://www.csdn.net/tag/%e6%b5%8b%e8%af%95" target="_blank" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">测试</a><a href="http://www.csdn.net/tag/jdk" target="_blank" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">jdk</a><a href="http://www.csdn.net/tag/%e6%9c%8d%e5%8a%a1%e5%99%a8" target="_blank" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">服务器</a></div>
+
+  
+    
+<div id="article_content" class="article_content">
+
+&nbsp;
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Linux下Tomcat的安装配置</strong></p>
+<p>一.下载安装对应的jdk,并配置Java环境。</p>
+<p>官网下载地址：</p>
+<p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk-6u26-download-400750.html">http://www.oracle.com/technetwork/java/javase/downloads/jdk-6u26-download-400750.html</a></p>
+<p>下载将jdk加压后放到/usr/local目录下：</p>
+<p>&nbsp;[root@master ~]#chmod 755 jdk-6u5-linux-x64.bin</p>
+<p>[root@master ~]# ./jdk-6u5-linux-x64.bin</p>
+<p>[root@master ~]#mv jdk1.6.0_05 /usr/local</p>
+<p>&nbsp;</p>
+<p><strong>建立/usr/local/下的jdk软连接方便以后版本升级 ：</strong></p>
+<p>&nbsp;[root@master ~]# ln -s /usr/local/jdk1.6.0_05/ /usr/local/jdk</p>
+<p>&nbsp;</p>
+<p><strong><span style="color:#33ff33; background-color:#666666">配置环境变量：</span></strong></p>
+<p><strong>在 /etc/profile 中加入以下内容：</strong></p>
+<p><strong><span style="color:#000000; background-color:#ccffff">JAVA_HOME=/usr/local/jdk1.6.0_05</span></strong></p>
+<p><strong><span style="color:#000000; background-color:#ccffff">JAVA_BIN=/usr/local/jdk1.6.0_05/bin</span></strong></p>
+<p><strong><span style="color:#000000; background-color:#ccffff">PATH=$PATH:$JAVA_BIN</span></strong></p>
+<p><strong><span style="color:#000000; background-color:#ccffff">CLASSPATH=$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span></strong></p>
+<p><strong><span style="color:#000000; background-color:#ccffff">export JAVA_HOME JAVA_BIN PATH CLASSPATH</span></strong></p>
+<p>保存退出</p>
+<p>[root@master ~]source /etc/profile</p>
+<p>&nbsp;</p>
+<p>查看java环境变量是否生效 </p>
+<p>[root@master ~]# java -version</p>
+<p>java version "1.6.0_05"</p>
+<p>Java(TM) SE Runtime Environment (build 1.6.0_05-b13)</p>
+<p>Java HotSpot(TM) 64-Bit Server VM (build 10.0-b19, mixed mode)</p>
+<p>测试成功</p>
+<p><strong>二．下载安装tomcat</strong>（<a href="http://tomcat.apache.org/" target="_blank">http://tomcat.apache.org/</a>）</p>
+<p>[root@master ~]# unzip apache-tomcat-6.0.30.zip</p>
+<p>[root@master ~]# mv apache-tomcat-6.0.30/ /usr/local/</p>
+<p>[root@master ~]cd /usr/local/</p>
+<p>[root@master local]# ln -s /usr/local/apache-tomcat-6.0.30/ /usr/local/tomcat</p>
+<p>[root@master local]# cd tomcat/bin/</p>
+<p>[root@master bin]#ls</p>
+<p>[root@master bin]#vim catalina.sh</p>
+<p><strong>添加以下内容：</strong></p>
+<p><strong><span style="color:#ff0000; background-color:#ffff00">CATALINA_HOME=/usr/local/apache-tomcat-6.0.30/</span></strong></p>
+<p>[root@master local]#<strong>chmod +x *.sh</strong></p>
+<p><strong>三．启动tomcat服务器</strong></p>
+<p><span style="color:#000000; background-color:#ffffff">[root@master tomcat]# <strong>
+/usr/local/tomcat /bin/catalina.sh start</strong></span></p>
+<p><strong><span style="color:#33ff33; background-color:#666666">Using CATALINA_BASE:&nbsp;&nbsp; /usr/local/apache-tomcat-6.0.30/</span></strong></p>
+<p><strong><span style="color:#33ff33; background-color:#666666">Using CATALINA_HOME:&nbsp;&nbsp; /usr/local/apache-tomcat-6.0.30/</span></strong></p>
+<p><strong><span style="color:#33ff33; background-color:#666666">Using CATALINA_TMPDIR: /usr/local/apache-tomcat-6.0.30//temp</span></strong></p>
+<p><strong><span style="color:#33ff33; background-color:#666666">Using JRE_HOME:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /usr/local/jdk1.6.0_05</span></strong></p>
+<p><strong><span style="color:#33ff33; background-color:#666666">Using CLASSPATH:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /usr/local/apache-tomcat-6.0.30//bin/bootstrap.jar</span></strong></p>
+<p>[root@master logs]# cd /usr/local/tomcat/logs/</p>
+<p>[root@master logs]# tail -f catalina.out</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at 
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at java.lang.reflect.Method.invoke(Method.java:597)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:289)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:414)</p>
+<p>Jul 4, 2011 11:06:57 AM org.apache.coyote.http11.Http11Protocol pause</p>
+<p>INFO: Pausing Coyote HTTP/1.1 on http-8080</p>
+<p>Jul 4, 2011 11:06:58 AM org.apache.catalina.core.StandardService stop</p>
+<p>INFO: Stopping service Catalina</p>
+<p>Jul 4, 2011 11:06:58 AM org.apache.coyote.http11.Http11Protocol destroy</p>
+<p>INFO: Stopping Coyote HTTP/1.1 on http-8080</p>
+<p><strong>四．在浏览器中输入</strong></p>
+<p><strong><a href="http://localhost:8080/" target="_blank">http://localhost:8080/</a>（如果不是本机，则输入对应的ip地址）</strong></p>
+<p>测试出现tomcat页面则测试成功</p>
+<p><strong><span style="font-size:16px; background-color:#99ff99">ps：需要说明的是tomcat的默认测试页面是放在webapps下面，这个其实是在<span style="background-color:#ffff00">server.xml文件</span>中配置的，如下所示：</span></strong></p>
+<p><span style="background-color:#ffffcc">&lt;Host name="localhost"&nbsp; appBase="webapps"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unpackWARs="true" autoDeploy="true"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xmlValidation="false" xmlNamespaceAware="false"&gt;</span></p>
+<p><span style="background-color:#ffffcc"><strong><span style="background-color:#ffff33">[root@SOR_SYS apache-tomcat-6.0.30]# ls<br>
+LICENSE&nbsp; NOTICE&nbsp; RELEASE-NOTES&nbsp; RUNNING.txt&nbsp; 
+bin&nbsp; conf&nbsp; lib&nbsp; logs&nbsp; temp&nbsp; webapps&nbsp; work</span></strong></span></p>
+<span style="background-color:#ffffcc"></span>
+<div><span style="background-color:#99ffff"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></span><strong><span style="background-color:#99ffff">&nbsp; 1)webapps文件夹主要用于web应用程序部署，比如你可以把你的应用程序包，如war文件拷到该目录下，容器会<span style="background-color:#ffff33">自动部署</span>。<br>
+　　2)conf文件夹下主要是放置tomcat的服务器的相关配置文件<br>
+</span></strong></div>
+<p><span style="background-color:#ff99ff"></span>&nbsp;</p>
+<p><strong>五。添加应用，再次进行测试</strong></p>
+<p>在webapps目录下放测试包（<strong><span style="color:#33ff33">注意：webaapps目录下面主要是放应用包的.war在tomcat重启访问后会自动解压</span></strong>）</p>
+<p><strong>[root@master webapps]# pwd<br>
+/usr/local/tomcat/webapps</strong></p>
+<p><strong><strong>[root@master webapps]# tar -zxvf moni2.tar.gz </strong></strong></p>
+<p><strong>[root@master webapps]# ls<br>
+docs&nbsp; examples&nbsp; host-manager&nbsp; manager</strong><span style="color:#3366ff">&nbsp; <strong>
+moni2</strong></span><strong>&nbsp; moni2.tar.gz&nbsp; ROOT</strong></p>
+<p><strong>[root@master webapps]# <span style="color:#ff0000">/usr/local/tomcat/bin/catalina.sh start（重启tomcat）</span><br>
+Using CATALINA_BASE:&nbsp;&nbsp; /usr/local/apache-tomcat-6.0.30/<br>
+Using CATALINA_HOME:&nbsp;&nbsp; /usr/local/apache-tomcat-6.0.30/<br>
+Using CATALINA_TMPDIR: /usr/local/apache-tomcat-6.0.30//temp<br>
+Using JRE_HOME:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /usr/local/jdk1.6.0_05<br>
+Using CLASSPATH:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /usr/local/apache-tomcat-6.0.30//bin/bootstrap.jar</strong></p>
+<p><strong><span style="color:#33ff33">在浏览器中输入如下地址：</span></strong></p>
+<p><strong><a href="http://192.168.55.229:8080/moni2/">http://192.168.55.229:8080/<span style="color:#ff0000">moni2/</span></a></strong></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><img alt="" src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/0_13097606880n90.gif"></p>
+<p><strong></strong>&nbsp;六。修改tomcat的监听端口</p>
+<p>[root@master ~]#&nbsp; cd &nbsp;/usr/local/tomcat/conf</p>
+<p>[root@master ~]#&nbsp;ls</p>
+<p>[root@master ~]#&nbsp;vim server.xml</p>
+<p><strong>&lt;Server port="8005" shutdown="SHUTDOWN"&gt;<span style="color:#33ff33">【</span><span style="color:#33ff33">停止tomcat时的端口】</span></strong></p>
+<p><strong>&nbsp;&lt;Connector port="<span style="color:#ff0000">8081</span>" protocol="HTTP/1.1"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; connectionTimeout="20000"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; redirectPort="8443" /&gt; <span style="color:#6600cc">【tomcat默认的监听端口是8080，现在改成8081】</span></strong></p>
+<p>&nbsp;&lt;Connector port="8009" protocol="AJP/1.3" redirectPort="8443" /&gt;<span style="color:#3333ff">【<strong>apache+tomcat模式时访问tomcat的端口】</strong></span></p>
+<p><strong><span style="color:#3333ff"><span style="color:#ff0000">现在重启tomcat。访问</span><strong><a href="http://192.168.55.229:8080/moni2/"><span style="color:#3333ff">http://192.168.55.229:8081</span><span style="color:#33ff33; background-color:#ffff00"></span>/<span style="color:#ff0000; background-color:#3366ff">moni2/</span></a><span style="color:#33ff33">【<span style="color:#ff0000">注意：</span>这时就需要修改端口了，嘿嘿。。。】</span></strong></span></strong></p>
+<p><strong><span style="color:#33ff33"></span></strong>&nbsp;</p>
+<p><img alt="" src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/0_1309764727dztl.gif"></p>
+<p>&nbsp;</p>
+<p>&nbsp;七。创建tomcat实例</p>
+<p>假如我们现在使用的地址是：192..168.55.229，假如我们想在该机器上面创建tomcat实例，但是我们创建实例的脚本在服务器192.168.55.233上面上线，那么我们需要怎么做呢，请看以下步骤：</p>
+<p>[root@master ~]# <strong><span style="color:#ff0000">mount -t nfs 192.168.55.233:/opt/nfs /nfs【挂载目录】</span></strong></p>
+<p><span style="color:#ff0000"><span style="color:#000000">[root@master ~]# cd /nfs/</span></span></p>
+<p>[root@master nfs]# ls<br>
+tcfile</p>
+<p>[root@master nfs]# cd tcfile/<br>
+[root@master tcfile]# ls<br>
+backupfile&nbsp; deployfile&nbsp; <strong><span style="color:#33ff33; background-color:#666666">instancefile</span></strong></p>
+<p>[root@master instancefile]# ls<br>
+tomcatTemplate&nbsp; tomcatTemplate.zip</p>
+<p>[root@master instancefile]# cd tomcatTemplate<br>
+[root@master tomcatTemplate]# ls<br>
+bin&nbsp; conf&nbsp; lib&nbsp; LICENSE&nbsp; logs&nbsp; NOTICE&nbsp; 
+RELEASE-NOTES&nbsp; RUNNING.txt&nbsp; temp&nbsp; webapps&nbsp; work</p>
+<p>[root@master tomcatTemplate]# cd <strong><span style="color:#ff0000; background-color:#33ff33">bin<br>
+</span></strong>[root@master bin]# ls<br>
+bootstrap.jar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+commons-daemon.jar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ createResource.sh&nbsp; resource.properties&nbsp; 
+startup.bat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+tool-wrapper.sh<br>
+c3p0.template&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+commons-daemon-native.tar.gz&nbsp; 
+digest.bat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+setclasspath.bat&nbsp;&nbsp;&nbsp;&nbsp; 
+startup.sh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ version.bat<br>
+catalina.bat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+cpappend.bat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ digest.sh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+setclasspath.sh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+tomcat-juli.jar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; version.sh<br>
+catalina.sh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#33ff33; background-color:#000000">createInstance.sh</span></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ encrypt.bat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+shutdown.bat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+tomcat-native.tar.gz<br>
+catalina-tasks.xml&nbsp; 
+createInstance.sh.bak&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+encrypt.sh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+shutdown.sh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+tool-wrapper.bat</p>
+<p>[root@master bin]# <strong><span style="color:#ff0000; background-color:#ffff00">sh createInstance.sh tomcatServer229-1<span style="color:#33ff33; background-color:#000000">【创建实例】</span></span></strong><br>
+/nfs/tcfile/instancefile/tomcatTemplate<br>
+New instance tomcatServer229-1 has successfully builded, and <br>
+shutdown.port=10001<br>
+ajp.port=8011<br>
+http.port=8081<br>
+https.port=8041<br>
+jmx.port=6901</p>
+<p><br>
+[root@master bin]# <strong><span style="color:#33ff33; background-color:#000000">cd /opt/oracle/tomcat/<span style="color:#ffff00; background-color:#ff0000">【可以在这个目录下面进行查看】</span></span></strong><br>
+[root@master tomcat]# ls<br>
+<span style="color:#3333ff"><strong>tomcatServer229-1<span style="background-color:#999999">【命名规则，默认都是<span style="color:#33ff33">tomcat名字</span><span style="color:#ff0000">+-n</span>表示<span style="color:#33ff33">第几个</span>实例;<span style="font-size:24px; color:#ff0000; background-color:#99ff99">实际上是脚本中规定有格式】</span></span></strong></span><br>
+[root@master tomcat]# </p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+
+
+
+
+<!-- Baidu Button BEGIN -->
+
+<div data-bd-bind="1425350408875" class="bdsharebuttonbox bdshare-button-style0-16" style="float: right;">
+<a href="#" class="bds_more" data-cmd="more" style="background-position:0 0 !important; background-image: url(http://bdimg.share.baidu.com/static/api/img/share/icons_0_16.png?v=d754dcc0.png) !important"></a>
+<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间" style="background-position:0 -52px !important"></a>
+<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博" style="background-position:0 -104px !important"></a>
+<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博" style="background-position:0 -260px !important"></a>
+<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网" style="background-position:0 -208px !important"></a>
+<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信" style="background-position:0 -1612px !important"></a>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+<!-- Baidu Button END -->
+
+<!--192.168.100.35-->
+<ul class="article_next_prev">
+            <li class="prev_article"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian']);location.href='/zhuying_linux/article/details/6573327';">上一篇</span><a href="http://blog.csdn.net/zhuying_linux/article/details/6573327" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian'])">Red Hat Enterprise5.4下cacti的安装和配置</a></li>
+            <li class="next_article"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian']);location.href='/zhuying_linux/article/details/6587814';">下一篇</span><a href="http://blog.csdn.net/zhuying_linux/article/details/6587814" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian'])">Apache +Tomcat的负载均衡与集群配置</a></li>
+</ul>
+
+<!-- Baidu Button BEGIN -->
+<script src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/bds_s_v2.js" type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1536434"></script>
+
+<script type="text/javascript">
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+
+        <div id="digg" articleid="6583096">
+            <dl id="btnDigg" class="digg digg_disable">
+                <dt onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_ding'])">顶</dt>
+                <dd>15</dd>
+            </dl>
+            <dl id="btnBury" class="digg digg_disable">
+                <dt onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_cai'])">踩</dt>
+                <dd>0</dd>
+            </dl>
+        </div>
+</div>
+      <dl class="blog-associat-tag">
+        <dt>主题推荐</dt>
+        <dd>
+                <a href="http://www.csdn.net/tag/tomcat" target="_blank" class="blog-tage-red">tomcat</a> 
+                <a href="http://www.csdn.net/tag/linux" target="_blank" class="blog-tage-red">linux</a> 
+                <a href="http://www.csdn.net/tag/web%E5%BA%94%E7%94%A8" target="_blank" class="blog-tage-red">web应用</a> 
+                <a href="http://www.csdn.net/tag/%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F" target="_blank" class="blog-tage-red">应用程序</a> 
+                <a href="http://www.csdn.net/tag/%E6%9C%8D%E5%8A%A1%E5%99%A8" target="_blank" class="blog-tage-red">服务器</a> 
+        </dd>
+    </dl> 
+
+
+<dl class="blog-ass-articl tracking-ad" data-mod="popu_36" id="res-relatived"> 
+     <dt><span>猜你在找</span></dt>    
+<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a target="_blank" href="http://blog.csdn.net/ibiswang/article/details/619869" title="Java Web应用产品安装程序制作方案" strategy="SearchAlgorithm">Java Web应用产品安装程序制作方案</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a target="_blank" href="http://blog.csdn.net/lianqiangjava/article/details/15809475" title="linux 下整合apache和tomcat" strategy="SearchAlgorithm">linux 下整合apache和tomcat</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a target="_blank" href="http://blog.csdn.net/passportandy/article/details/7313184" title="tomcat的安装与配置" strategy="SearchAlgorithm">tomcat的安装与配置</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a target="_blank" href="http://blog.csdn.net/wandong01/article/details/24974807" title="WEB应用程序及IIS WEB 服务器介绍" strategy="SearchAlgorithm">WEB应用程序及IIS WEB 服务器介绍</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a target="_blank" href="http://blog.csdn.net/tolixiaohui/article/details/93407" title="Tomcat配置全攻略" strategy="SearchAlgorithm">Tomcat配置全攻略</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a target="_blank" href="http://blog.csdn.net/toto1297488504/article/details/8546305" title="Web服务器和应用服务器" strategy="SearchAlgorithm">Web服务器和应用服务器</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a target="_blank" href="http://blog.csdn.net/gztoby/article/details/102710" title="Tomcat配置全攻略" strategy="SearchAlgorithm">Tomcat配置全攻略</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a target="_blank" href="http://blog.csdn.net/cqf7174/article/details/3969438" title="Tomcat应用文档" strategy="SearchAlgorithm">Tomcat应用文档</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a target="_blank" href="http://blog.csdn.net/alle170257702/article/details/4637358" title="Tomcat使用中必须了解的１０个配置" strategy="SearchAlgorithm">Tomcat使用中必须了解的１０个配置</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a target="_blank" href="http://blog.csdn.net/hurtmanzc/article/details/780018" title="WEB应用程序及IIS WEB 服务器介绍" strategy="SearchAlgorithm">WEB应用程序及IIS WEB 服务器介绍</a></dd></dl>
+<div id="job_blog_reco"><dl class="blog-ass-articl tracking-ad" data-mod="popu_72"><dt><span>准备好了么？&nbsp;<label class="po_blg_detail_tiao">跳</label><label class="po_blg_detail_ba">吧</label><label class="po_blg_detail_th">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;！</label></span><a href="http://job.csdn.net/" target="_blank" class="po_blg_more">更多职位尽在&nbsp;<label class="po_blg_detail_csdn">CSDN JOB</label></a></dt><dd class="po_blg_dd"><div class="po_blg_po"><a href="http://job.csdn.net/Job/Index?jobID=81776" title="SOFTWARE CONFIGURATION MANAGEMENT ENGINEER配置管理工程师" strategy="DetailRecommend" target="_blank">SOFTWARE CONFIGURATION MANAGEMENT ENGINEER配置管理工程师</a></div><div class="po_blg_company"><a href="http://pr.csdn.net/enterprise/ent_home?orgid=309432" title="金雅拓" target="_blank">金雅拓</a></div><label class="po_blg_separator">|</label><div class="po_blg_salary"><a href="http://job.csdn.net/Job/Index?jobID=81776" target="_blank">10-15K/月</a></div><a class="po_blg_iwant" href="http://job.csdn.net/Job/Index?jobID=81776" target="_blank">我要跳槽</a></dd><dd class="po_blg_dd"><div class="po_blg_po"><a href="http://job.csdn.net/Job/Index?jobID=81528" title="配置管理" strategy="DetailRecommend" target="_blank">配置管理</a></div><div class="po_blg_company"><a href="http://pr.csdn.net/enterprise/ent_home?orgid=213221" title="畅捷通信息技术股份有限公司" target="_blank">畅捷通信息技术股份有限公司</a></div><label class="po_blg_separator">|</label><div class="po_blg_salary"><a href="http://job.csdn.net/Job/Index?jobID=81528" target="_blank">10-20K/月</a></div><a class="po_blg_iwant" href="http://job.csdn.net/Job/Index?jobID=81528" target="_blank">我要跳槽</a></dd><dd class="po_blg_dd"><div class="po_blg_po"><a href="http://job.csdn.net/Job/Index?jobID=82077" title="Linux运营维护" strategy="DetailRecommend" target="_blank">Linux运营维护</a></div><div class="po_blg_company"><a href="http://pr.csdn.net/enterprise/ent_home?orgid=286209" title="杭州安恒信息技术有限公司" target="_blank">杭州安恒信息技术有限公司</a></div><label class="po_blg_separator">|</label><div class="po_blg_salary"><a href="http://job.csdn.net/Job/Index?jobID=82077" target="_blank">5-8K/月</a></div><a class="po_blg_iwant" href="http://job.csdn.net/Job/Index?jobID=82077" target="_blank">我要跳槽</a></dd><dd class="po_blg_dd"><div class="po_blg_po"><a href="http://job.csdn.net/Job/Index?jobID=82046" title="Linux资深开发工程师" strategy="DetailRecommend" target="_blank">Linux资深开发工程师</a></div><div class="po_blg_company"><a href="http://pr.csdn.net/enterprise/ent_home?orgid=213920" title="恒安嘉新（北京）科技有限公司" target="_blank">恒安嘉新（北京）科技有限公司</a></div><label class="po_blg_separator">|</label><div class="po_blg_salary"><a href="http://job.csdn.net/Job/Index?jobID=82046" target="_blank">6-20K/月</a></div><a class="po_blg_iwant" href="http://job.csdn.net/Job/Index?jobID=82046" target="_blank">我要跳槽</a></dd></dl></div>
+
+<script type="text/javascript">
+    var searchtitletags = 'Linux下Tomcat的安装配置' + ',' + 'tomcat,linux,web应用,应用程序,服务器';
+    searchService({
+        index: 'blog',
+        query: searchtitletags,
+        from: 10,
+        size: 10,
+        appendTo: '#res-relatived',
+        url: 'recommend',
+        his: 2,
+        client: "blog_cf_enhance",
+        tmpl: '<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="#{ url }" title="#{ title }" strategy="#{ strategy }">#{ title }</a></dd>'
+    });
+
+ </script>   
+
+
+
+    <div id="ad_cen">
+   
+          <script type="text/javascript">
+              new Ad(4, 'ad_cen');
+          </script>
+    <iframe src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ad.html" style="border-width: 0px; overflow: hidden; width: 746px; height: 90px;" scrolling="no" id="ad_frm_0" frameborder="0"></iframe></div>
+<div class="comment_class">
+    <div id="comment_title" class="panel_head">
+        <span class="see_comment">查看评论</span><a name="comments"></a></div>
+    <div id="comment_list">
+    </div>
+    <div id="comment_bar">
+    </div>
+    <div id="comment_form"><div class="guest_link">您还没有登录,请<a href="javascript:void(0);" onclick="javascript:loginbox();">[登录]</a>或<a href="http://passport.csdn.net/account/register?from=http%3A%2F%2Fblog.csdn.net%2Fzhuying_linux%2Farticle%2Fdetails%2F6583096%2F">[注册]</a></div></div>
+
+    <div class="announce">
+        * 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场<a name="reply"></a><a name="quote"></a></div>
+</div>
+
+<script type="text/javascript">
+    var fileName = '6583096';
+    var commentscount = 8;
+    var islock = false
+</script>
+<script type="text/javascript" src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/comment.js"></script>
+    <div id="ad_bot">
+    <iframe src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ad_002.html" style="border-width: 0px; overflow: hidden; width: 746px; height: 0px;" scrolling="no" id="ad_frm_1" frameborder="0"></iframe></div>
+    <script type="text/javascript">
+    new Ad(5, 'ad_bot');
+    </script>
+<div id="report_dialog">
+</div>
+
+<div id="d-top" style="bottom:60px;">
+        <a id="quick-reply" class="btn btn-top q-reply" title="快速回复" style="display:none;">
+            <img src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/blog-icon-reply.png" alt="快速回复">
+        </a>    
+
+    <a id="d-top-a" class="btn btn-top backtop" style="display: none;" title="返回顶部" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_huidaodingbu'])">         
+         <img src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/top.png" alt="TOP">
+    </a>
+</div>
+<script type="text/javascript">
+    $(function ()
+    {
+        $("#ad_frm_0").height("90px");
+        
+        setTimeout(function(){
+            $("#ad_frm_2").height("200px");
+        },1000);
+        
+        /*
+        if($("#comment_content").length>0)
+        {
+            $("#quick-reply").show();
+
+            $("#quick-reply").click(function(){
+                setEditorFocus();
+            });
+        }       
+     
+        var d_top = $('#d-top-a');
+
+        document.onscroll = function ()
+        {
+            var scrTop = (document.body.scrollTop || document.documentElement.scrollTop);
+            if (scrTop > 500)
+            {
+                d_top.show();
+            } else
+            {
+                d_top.hide();
+            }
+        }
+        $('#d-top-a').click(function ()
+        {
+            scrollTo(0, 0);
+            this.blur();
+            return false;
+        });
+        */
+    });
+  
+</script>
+<style type="text/css">
+    .tag_list
+    {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #D7CBC1;
+        color: #000000;
+        font-size: 12px;
+        line-height: 20px;
+        list-style: none outside none;
+        margin: 10px 2% 0 1%;
+        padding: 1px;
+    }
+    .tag_list h5
+    {
+        background: none repeat scroll 0 0 #E0DBD3;
+        color: #47381C;
+        font-size: 12px;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 5px;
+        margin: 0;
+    }
+    .tag_list h5 a
+    {
+        color: #47381C;
+    }
+    .classify
+    {
+        margin: 10px 0;
+        padding: 4px 12px 8px;
+    }
+    .classify a
+    {
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+</style>
+<div class="tag_list">
+    <h5>
+        <a href="http://www.csdn.net/tag/" target="_blank">核心技术类目</a></h5>
+    <div class="classify">
+<a title="全部主题" href="http://www.csdn.net/tag" target="_blank" onclick="LogClickCount(this,336);">全部主题</a>
+<a title="Hadoop" href="http://g.csdn.net/5272865" target="_blank" onclick="LogClickCount(this,336);">Hadoop</a>
+<a title="AWS" href="http://g.csdn.net/5272866" target="_blank" onclick="LogClickCount(this,336);">AWS</a>
+<a title="移动游戏" href="http://g.csdn.net/5272870" target="_blank" onclick="LogClickCount(this,336);">移动游戏</a>
+<a title="Java" href="http://g.csdn.net/5272871" target="_blank" onclick="LogClickCount(this,336);">Java</a>
+<a title="Android" href="http://g.csdn.net/5272872" target="_blank" onclick="LogClickCount(this,336);">Android</a>
+<a title="iOS" href="http://g.csdn.net/5272873" target="_blank" onclick="LogClickCount(this,336);">iOS</a>
+<a title="Swift" href="http://g.csdn.net/5272868" target="_blank" onclick="LogClickCount(this,336);">Swift</a>
+<a title="智能硬件" href="http://g.csdn.net/5272869" target="_blank" onclick="LogClickCount(this,336);">智能硬件</a>
+<a title="Docker" href="http://g.csdn.net/5272867" target="_blank" onclick="LogClickCount(this,336);">Docker</a>
+<a title="OpenStack" href="http://g.csdn.net/5272925" target="_blank" onclick="LogClickCount(this,336);">OpenStack</a>
+<a title="VPN" href="http://www.csdn.net/tag/vpn" target="_blank" onclick="LogClickCount(this,336);">VPN</a>
+<a title="Spark" href="http://g.csdn.net/5272924" target="_blank" onclick="LogClickCount(this,336);">Spark</a>
+<a title="ERP" href="http://www.csdn.net/tag/erp" target="_blank" onclick="LogClickCount(this,336);">ERP</a>
+<a title="IE10" href="http://www.csdn.net/tag/ie10" target="_blank" onclick="LogClickCount(this,336);">IE10</a>
+<a title="Eclipse" href="http://www.csdn.net/tag/eclipse" target="_blank" onclick="LogClickCount(this,336);">Eclipse</a>
+<a title="CRM" href="http://www.csdn.net/tag/crm" target="_blank" onclick="LogClickCount(this,336);">CRM</a>
+<a title="JavaScript" href="http://www.csdn.net/tag/javascript" target="_blank" onclick="LogClickCount(this,336);">JavaScript</a>
+<a title="数据库" href="http://www.csdn.net/tag/%E6%95%B0%E6%8D%AE%E5%BA%93" target="_blank" onclick="LogClickCount(this,336);">数据库</a>
+<a title="Ubuntu" href="http://www.csdn.net/tag/ubuntu" target="_blank" onclick="LogClickCount(this,336);">Ubuntu</a>
+<a title="NFC" href="http://www.csdn.net/tag/nfc" target="_blank" onclick="LogClickCount(this,336);">NFC</a>
+<a title="WAP" href="http://www.csdn.net/tag/wap" target="_blank" onclick="LogClickCount(this,336);">WAP</a>
+<a title="jQuery" href="http://www.csdn.net/tag/jquery" target="_blank" onclick="LogClickCount(this,336);">jQuery</a>
+<a title="BI" href="http://www.csdn.net/tag/bi" target="_blank" onclick="LogClickCount(this,336);">BI</a>
+<a title="HTML5" href="http://www.csdn.net/tag/html5" target="_blank" onclick="LogClickCount(this,336);">HTML5</a>
+<a title="Spring" href="http://www.csdn.net/tag/spring" target="_blank" onclick="LogClickCount(this,336);">Spring</a>
+<a title="Apache" href="http://www.csdn.net/tag/apache" target="_blank" onclick="LogClickCount(this,336);">Apache</a>
+<a title=".NET" href="http://www.csdn.net/tag/.net" target="_blank" onclick="LogClickCount(this,336);">.NET</a>
+<a title="API" href="http://www.csdn.net/tag/api" target="_blank" onclick="LogClickCount(this,336);">API</a>
+<a title="HTML" href="http://www.csdn.net/tag/html" target="_blank" onclick="LogClickCount(this,336);">HTML</a>
+<a title="SDK" href="http://www.csdn.net/tag/sdk" target="_blank" onclick="LogClickCount(this,336);">SDK</a>
+<a title="IIS" href="http://www.csdn.net/tag/iis" target="_blank" onclick="LogClickCount(this,336);">IIS</a>
+<a title="Fedora" href="http://www.csdn.net/tag/fedora" target="_blank" onclick="LogClickCount(this,336);">Fedora</a>
+<a title="XML" href="http://www.csdn.net/tag/xml" target="_blank" onclick="LogClickCount(this,336);">XML</a>
+<a title="LBS" href="http://www.csdn.net/tag/lbs" target="_blank" onclick="LogClickCount(this,336);">LBS</a>
+<a title="Unity" href="http://www.csdn.net/tag/unity" target="_blank" onclick="LogClickCount(this,336);">Unity</a>
+<a title="Splashtop" href="http://www.csdn.net/tag/splashtop" target="_blank" onclick="LogClickCount(this,336);">Splashtop</a>
+<a title="UML" href="http://www.csdn.net/tag/uml" target="_blank" onclick="LogClickCount(this,336);">UML</a>
+<a title="components" href="http://www.csdn.net/tag/components" target="_blank" onclick="LogClickCount(this,336);">components</a>
+<a title="Windows Mobile" href="http://www.csdn.net/tag/windowsmobile" target="_blank" onclick="LogClickCount(this,336);">Windows Mobile</a>
+<a title="Rails" href="http://www.csdn.net/tag/rails" target="_blank" onclick="LogClickCount(this,336);">Rails</a>
+<a title="QEMU" href="http://www.csdn.net/tag/qemu" target="_blank" onclick="LogClickCount(this,336);">QEMU</a>
+<a title="KDE" href="http://www.csdn.net/tag/kde" target="_blank" onclick="LogClickCount(this,336);">KDE</a>
+<a title="Cassandra" href="http://www.csdn.net/tag/cassandra" target="_blank" onclick="LogClickCount(this,336);">Cassandra</a>
+<a title="CloudStack" href="http://www.csdn.net/tag/cloudstack" target="_blank" onclick="LogClickCount(this,336);">CloudStack</a>
+<a title="FTC" href="http://www.csdn.net/tag/ftc" target="_blank" onclick="LogClickCount(this,336);">FTC</a>
+<a title="coremail" href="http://www.csdn.net/tag/coremail" target="_blank" onclick="LogClickCount(this,336);">coremail</a>
+<a title="OPhone " href="http://www.csdn.net/tag/ophone" target="_blank" onclick="LogClickCount(this,336);">OPhone </a>
+<a title="CouchBase" href="http://www.csdn.net/tag/couchbase" target="_blank" onclick="LogClickCount(this,336);">CouchBase</a>
+<a title="云计算" href="http://www.csdn.net/tag/%E4%BA%91%E8%AE%A1%E7%AE%97" target="_blank" onclick="LogClickCount(this,336);">云计算</a>
+<a title="iOS6" href="http://www.csdn.net/tag/iOS6" target="_blank" onclick="LogClickCount(this,336);">iOS6</a>
+<a title="Rackspace " href="http://www.csdn.net/tag/rackspace" target="_blank" onclick="LogClickCount(this,336);">Rackspace </a>
+<a title="Web App" href="http://www.csdn.net/tag/webapp" target="_blank" onclick="LogClickCount(this,336);">Web App</a>
+<a title="SpringSide" href="http://www.csdn.net/tag/springside" target="_blank" onclick="LogClickCount(this,336);">SpringSide</a>
+<a title="Maemo" href="http://www.csdn.net/tag/maemo" target="_blank" onclick="LogClickCount(this,336);">Maemo</a>
+<a title="Compuware" href="http://www.csdn.net/tag/compuware" target="_blank" onclick="LogClickCount(this,336);">Compuware</a>
+<a title="大数据" href="http://www.csdn.net/tag/%E5%A4%A7%E6%95%B0%E6%8D%AE" target="_blank" onclick="LogClickCount(this,336);">大数据</a>
+<a title="aptech" href="http://www.csdn.net/tag/aptech" target="_blank" onclick="LogClickCount(this,336);">aptech</a>
+<a title="Perl" href="http://www.csdn.net/tag/perl" target="_blank" onclick="LogClickCount(this,336);">Perl</a>
+<a title="Tornado" href="http://www.csdn.net/tag/tornado" target="_blank" onclick="LogClickCount(this,336);">Tornado</a>
+<a title="Ruby" href="http://www.csdn.net/tag/ruby" target="_blank" onclick="LogClickCount(this,336);">Ruby</a>
+<a title="Hibernate" href="http://www.csdn.net/hibernate" target="_blank" onclick="LogClickCount(this,336);">Hibernate</a>
+<a title="ThinkPHP" href="http://www.csdn.net/tag/thinkphp" target="_blank" onclick="LogClickCount(this,336);">ThinkPHP</a>
+<a title="HBase" href="http://www.csdn.net/tag/hbase" target="_blank" onclick="LogClickCount(this,336);">HBase</a>
+<a title="Pure" href="http://www.csdn.net/tag/pure" target="_blank" onclick="LogClickCount(this,336);">Pure</a>
+<a title="Solr" href="http://www.csdn.net/tag/solr" target="_blank" onclick="LogClickCount(this,336);">Solr</a>
+<a title="Angular" href="http://www.csdn.net/tag/angular" target="_blank" onclick="LogClickCount(this,336);">Angular</a>
+<a title="Cloud Foundry" href="http://www.csdn.net/tag/cloudfoundry" target="_blank" onclick="LogClickCount(this,336);">Cloud Foundry</a>
+<a title="Redis" href="http://www.csdn.net/tag/redis" target="_blank" onclick="LogClickCount(this,336);">Redis</a>
+<a title="Scala" href="http://www.csdn.net/tag/scala" target="_blank" onclick="LogClickCount(this,336);">Scala</a>
+<a title="Django" href="http://www.csdn.net/tag/django" target="_blank" onclick="LogClickCount(this,336);">Django</a>
+<a title="Bootstrap" href="http://www.csdn.net/tag/bootstrap" target="_blank" onclick="LogClickCount(this,336);">Bootstrap</a>
+    </div>
+</div>
+
+<div id="pop_win" style="display:none ;position: absolute; z-index: 10000; border: 1px solid rgb(220, 220, 220); top: 222.5px; left: 630px; opacity: 1; background: none 0px 0px repeat scroll rgb(255, 255, 255);">
+    
+</div>
+<div id="popup_mask"></div>
+<style>
+    #popup_mask
+    {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        z-index: 9999;
+        left: 0px;
+        top: 0px;
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+        display: none;
+    }
+
+</style>
+
+
+
+
+<script type="text/javascript">
+    $(function(){
+        setTimeout(function(){
+            $(".comment_body:contains('回复')").each(function(index,item){
+                var u=$(this).text().split('：')[0].toString().replace("回复","")
+                var thisComment=$(this);
+                if(u)
+                {
+                    $.getJSON("https://passport.csdn.net/get/nick?callback=?", {users: u}, function(a) {
+                        if(a!=null&&a.data!=null&&a.data.length>0)
+                        {
+                            nick=a.data[0].n; 
+                            if(u!=nick)
+                            {
+                                thisComment.text(thisComment.text().replace(u,nick));  
+                            }
+                        }       
+                    });  
+                }
+            });
+        },200);  
+        
+        setTimeout(function(){
+            $("a img[src='http://js.tongji.linezing.com/stats.gif']").parent().css({"position":"absolute","left":"50%"});
+        },300);
+    });
+
+    function loginbox(){
+        var $logpop=$("#pop_win");
+        $logpop.html('<iframe src="https://passport.csdn.net/account/loginbox?service=http://static.blog.csdn.net/callback.htm" frameborder="0" height="600" width="400" scrolling="no"></iframe>');
+
+        $('#popup_mask').css({
+            opacity: 0.5,
+            width: $( document ).width() + 'px',
+            height:  $( document ).height() + 'px'
+        });
+        $('#popup_mask').css("display","block");
+ 
+        $logpop.css( {
+            top: ($( window ).height() - $logpop.height())/ 2  + $( window 
+       ).scrollTop() + 'px',
+            left:($( window ).width() - $logpop.width())/ 2
+        } );
+ 
+        setTimeout( function () {
+            $logpop.show();
+            $logpop.css( {
+                opacity: 1
+            } );
+        }, 200 );
+ 
+        $('#popup_mask').unbind("click");
+        $('#popup_mask').bind("click", function(){
+            $('#popup_mask').hide();
+            var $clopop = $("#pop_win");
+            $("#common_ask_div_sc").css("display","none");
+            $clopop.css( {
+                opacity: 0
+            } );
+            setTimeout( function () {
+                $clopop.hide();
+            }, 350 );
+            return false;
+        });
+    }    
+
+</script>
+                        <div class="clear">
+                        </div>
+                    </div>                   
+                
+            </div>
+            <div id="side">
+    <div class="side">
+<div id="panel_Profile" class="panel">
+<ul class="panel_head"><span>个人资料</span></ul>
+<ul class="panel_body profile">
+<div id="blog_userface">
+    <a href="http://my.csdn.net/zhuying_linux" target="_blank">
+    <img src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/1_zhuying_linux.jpg" title="访问我的空间" style="max-width:90%">
+    </a>
+    <br>
+    <span><a href="http://my.csdn.net/zhuying_linux" class="user_name" target="_blank">紫颖</a></span>
+</div>
+<div class="interact">
+<a href="javascript:void(0);" class="attent" id="span_add_follow" title="[加关注]" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_guanzhu'])"></a>
+
+ <a href="javascript:void(0);" class="letter" title="[发私信]" onclick="window.open('http://msg.csdn.net/letters/model?receiver=zhuying_linux','_blank','height=350,width=700');_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_sixin'])"></a>  
+</div>
+<div id="blog_medal">
+                <div id="bms_box">
+               </div>
+</div>
+<ul id="blog_rank">
+    <li>访问：<span>1014396次</span></li>
+    <li>积分：<span>12008</span> </li>    
+    <li>等级： <span style="position:relative;display:inline-block;z-index:1">
+            <img src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/blog7.png" alt="" style="vertical-align: middle;" id="leveImg">
+            <div id="smallTittle" style=" position: absolute;  left: -24px;  top: 25px;  text-align: center;  width: 101px;  height: 32px;  background-color: #fff;  line-height: 32px;  border: 2px #DDDDDD solid;  box-shadow: 0px 2px 2px rgba (0,0,0,0.1);  display: none;   z-index: 999;">
+            <div style="left: 42%;  top: -8px;  position: absolute;  width: 0;  height: 0;  border-left: 10px solid transparent;  border-right: 10px solid transparent;  border-bottom: 8px solid #EAEAEA;"></div>
+            积分：12008 </div>
+        </span>  </li>
+    <li>排名：<span>第396名</span></li>
+</ul>
+<ul id="blog_statistics">
+    <li>原创：<span>240篇</span></li>
+    <li>转载：<span>80篇</span></li>
+    <li>译文：<span>3篇</span></li>
+    <li>评论：<span>391条</span></li>
+</ul>
+</ul>
+</div>
+
+
+<div class="panel" id="panel_Search">
+    <ul class="panel_head"><span>文章搜索</span></ul>
+    <ul class="panel_body">
+        <form id="frmSearch" action="http://so.csdn.net/search" class="form_search" target="_blank">
+        <span><input id="inputSearch" class="blogsearch" title="请输入关键字" type="text"></span>
+        <input id="btnSubmit" value="搜索" title="search in blog" type="button">
+        <input name="q" id="inputQ" type="hidden">
+        <input name="t" value="blog" type="hidden">
+        <a id="btnSearchBlog" target="_blank"></a>
+        </form>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {           
+            search();
+        });
+
+        $("#frmSearch").submit(function () {
+            search();
+            return false;
+        });
+
+        function search()
+        {
+            var url = "http://so.csdn.net/so/search/s.do?q=" + encodeURIComponent($("#inputSearch").val()) + "&u=" + username + "&t=blog";
+            window.location.href = url;
+        }   
+    });
+</script>
+<div id="panel_Category" class="panel">
+<ul class="panel_head"><span>文章分类</span></ul>
+<ul class="panel_body">
+             <li>
+                <a href="http://blog.csdn.net/zhuying_linux/article/category/700050" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Linux 知识小结</a><span>(36)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/zhuying_linux/article/category/672790" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Linux中的shell脚本/编程</a><span>(60)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/zhuying_linux/article/category/845640" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">点点滴滴</a><span>(61)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/zhuying_linux/article/category/655480" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">专题小结</a><span>(34)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/zhuying_linux/article/category/837957" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">中间件</a><span>(25)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/zhuying_linux/article/category/956274" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Java基础</a><span>(22)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/zhuying_linux/article/category/700814" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">名医小诊所</a><span>(21)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/zhuying_linux/article/category/1095449" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">系统性能</a><span>(6)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/zhuying_linux/article/category/658122" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Linux中常用的几种服务</a><span>(7)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/zhuying_linux/article/category/652117" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Linux实验专题</a><span>(7)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/zhuying_linux/article/category/829876" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">电脑/网络/协议小知识</a><span>(23)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/zhuying_linux/article/category/700555" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">搜索-转载</a><span>(11)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/zhuying_linux/article/category/672791" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Linux集群</a><span>(2)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/zhuying_linux/article/category/665083" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">数据库</a><span>(8)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/zhuying_linux/article/category/672787" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">网络监控工具</a><span>(5)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/zhuying_linux/article/category/886909" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">日志类/apache配置类</a><span>(9)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/zhuying_linux/article/category/672785" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">邮件服务器</a><span>(3)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/zhuying_linux/article/category/672782" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">操作系统/驱动</a><span>(3)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/zhuying_linux/article/category/656122" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">文摘/生活感想</a><span>(15)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/zhuying_linux/article/category/872237" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">英语</a><span>(6)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/zhuying_linux/article/category/851486" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">智力测试</a><span>(5)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/zhuying_linux/article/category/1277774" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">python</a><span>(1)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/zhuying_linux/article/category/1805167" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">淘宝店铺装修</a><span>(2)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/zhuying_linux/article/category/1504383" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">销售类文章/感悟</a><span>(0)</span>
+            </li>
+</ul>
+</div><div id="panel_Archive" class="panel">
+<ul class="panel_head"><span>文章存档</span></ul>
+<ul class="panel_body">
+<div id="archive_list"><li><a href="http://blog.csdn.net/zhuying_linux/article/month/2014/07">2014年07月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/zhuying_linux/article/month/2013/12">2013年12月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/zhuying_linux/article/month/2012/11">2012年11月</a><span>(3)</span></li><li><a href="http://blog.csdn.net/zhuying_linux/article/month/2012/10">2012年10月</a><span>(3)</span></li><li><a href="http://blog.csdn.net/zhuying_linux/article/month/2012/09">2012年09月</a><span>(1)</span></li><span class="hidelist" style="display:none;"><li><a href="http://blog.csdn.net/zhuying_linux/article/month/2012/08">2012年08月</a><span>(3)</span></li><li><a href="http://blog.csdn.net/zhuying_linux/article/month/2012/07">2012年07月</a><span>(9)</span></li><li><a href="http://blog.csdn.net/zhuying_linux/article/month/2012/06">2012年06月</a><span>(5)</span></li><li><a href="http://blog.csdn.net/zhuying_linux/article/month/2012/05">2012年05月</a><span>(10)</span></li><li><a href="http://blog.csdn.net/zhuying_linux/article/month/2012/04">2012年04月</a><span>(5)</span></li><li><a href="http://blog.csdn.net/zhuying_linux/article/month/2012/03">2012年03月</a><span>(9)</span></li><li><a href="http://blog.csdn.net/zhuying_linux/article/month/2012/02">2012年02月</a><span>(15)</span></li><li><a href="http://blog.csdn.net/zhuying_linux/article/month/2012/01">2012年01月</a><span>(25)</span></li><li><a href="http://blog.csdn.net/zhuying_linux/article/month/2011/12">2011年12月</a><span>(43)</span></li><li><a href="http://blog.csdn.net/zhuying_linux/article/month/2011/11">2011年11月</a><span>(25)</span></li><li><a href="http://blog.csdn.net/zhuying_linux/article/month/2011/10">2011年10月</a><span>(13)</span></li><li><a href="http://blog.csdn.net/zhuying_linux/article/month/2011/09">2011年09月</a><span>(26)</span></li><li><a href="http://blog.csdn.net/zhuying_linux/article/month/2011/08">2011年08月</a><span>(42)</span></li><li><a href="http://blog.csdn.net/zhuying_linux/article/month/2011/07">2011年07月</a><span>(27)</span></li><li><a href="http://blog.csdn.net/zhuying_linux/article/month/2011/06">2011年06月</a><span>(8)</span></li><li><a href="http://blog.csdn.net/zhuying_linux/article/month/2011/05">2011年05月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/zhuying_linux/article/month/2011/02">2011年02月</a><span>(10)</span></li><li><a href="http://blog.csdn.net/zhuying_linux/article/month/2010/08">2010年08月</a><span>(5)</span></li><li><a href="http://blog.csdn.net/zhuying_linux/article/month/2010/07">2010年07月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/zhuying_linux/article/month/2010/06">2010年06月</a><span>(4)</span></li><li><a href="http://blog.csdn.net/zhuying_linux/article/month/2010/04">2010年04月</a><span>(10)</span></li><li><a href="http://blog.csdn.net/zhuying_linux/article/month/2010/03">2010年03月</a><span>(6)</span></li><li><a href="http://blog.csdn.net/zhuying_linux/article/month/2010/02">2010年02月</a><span>(10)</span></li></span><div id="archive_list_button" class="list_closed">展开</div></div>
+</ul>
+</div>
+<div id="hotarticls" class="panel">
+<ul class="panel_head">
+    <span>       
+阅读排行    </span>
+</ul>
+
+<ul class="panel_body itemlist">
+<li>
+<a href="http://blog.csdn.net/zhuying_linux/article/details/6859286" title="查看linux系统版本命令">查看linux系统版本命令</a><span>(193940)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/zhuying_linux/article/details/6583096" title="Linux下Tomcat的安装配置">Linux下Tomcat的安装配置</a><span>(68537)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/zhuying_linux/article/details/6597510" title="Jetty的安装和配置">Jetty的安装和配置</a><span>(24015)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/zhuying_linux/article/details/6798083" title="shell脚本中printf小节">shell脚本中printf小节</a><span>(20448)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/zhuying_linux/article/details/7336662" title="如何查看并杀死僵尸进程？">如何查看并杀死僵尸进程？</a><span>(19471)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/zhuying_linux/article/details/6902135" title="shell expect的简单用法">shell expect的简单用法</a><span>(15786)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/zhuying_linux/article/details/6753211" title="linux和windows下分别如何查看电脑是32位的还是64位？">linux和windows下分别如何查看电脑是32位的还是64位？</a><span>(14409)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/zhuying_linux/article/details/7810752" title="解决Mysql错误Too many connections的方法">解决Mysql错误Too many connections的方法</a><span>(14223)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/zhuying_linux/article/details/7860712" title="sshd由于登录失败而无法启动--cygwin安装过程">sshd由于登录失败而无法启动--cygwin安装过程</a><span>(14056)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/zhuying_linux/article/details/6881728" title="在linux命令下如何访问一个url？">在linux命令下如何访问一个url？</a><span>(12369)</span>
+</li>
+</ul>
+</div>
+<div id="hotarticls2" class="panel">
+<ul class="panel_head"><span>评论排行</span></ul>
+<ul class="panel_body itemlist">
+<li>
+<a href="http://blog.csdn.net/zhuying_linux/article/details/6753081" title="测测你的IQ加分析能力">测测你的IQ加分析能力</a><span>(22)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/zhuying_linux/article/details/6627570" title="小明一家如何过桥？">小明一家如何过桥？</a><span>(19)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/zhuying_linux/article/details/6625525" title="如何分取金条？">如何分取金条？</a><span>(17)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/zhuying_linux/article/details/7336662" title="如何查看并杀死僵尸进程？">如何查看并杀死僵尸进程？</a><span>(13)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/zhuying_linux/article/details/6711397" title="一个0123456789的测试，大家来玩一把！">一个0123456789的测试，大家来玩一把！</a><span>(13)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/zhuying_linux/article/details/7860712" title="sshd由于登录失败而无法启动--cygwin安装过程">sshd由于登录失败而无法启动--cygwin安装过程</a><span>(12)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/zhuying_linux/article/details/6634502" title="有多少人戴着黑帽子？">有多少人戴着黑帽子？</a><span>(11)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/zhuying_linux/article/details/7326489" title="《我的2012》----纪念青春">《我的2012》----纪念青春</a><span>(9)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/zhuying_linux/article/details/7238446" title="许单单奋斗记：没有人比我更曲折">许单单奋斗记：没有人比我更曲折</a><span>(8)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/zhuying_linux/article/details/6583096" title="Linux下Tomcat的安装配置">Linux下Tomcat的安装配置</a><span>(8)</span>
+</li>
+</ul>
+</div>
+<div id="homepageArticles" class="panel tracking-ad" data-mod="popu_4">
+<ul class="panel_head"><span>推荐文章</span></ul>
+<ul class="panel_body" id="ad_commend"><iframe src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ad_003.html" style="border-width: 0px; overflow: hidden; width: 182px; height: 200px;" scrolling="no" id="ad_frm_2" frameborder="0"></iframe></ul>
+</div>
+<script type="text/javascript">
+ new Ad(12, 'ad_commend');
+</script><div id="newcomments" class="panel">
+<ul class="panel_head"><span>最新评论</span></ul>
+<ul class="panel_body itemlist">
+    <li>
+   
+         <a href="http://blog.csdn.net/zhuying_linux/article/details/7860712#comments">sshd由于登录失败而无法启动--cygwin安装过程</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/qichangleixin" class="user_name">是夜色太荒芜</a>:
+大神  执行 ssh localhost  会报一下错误104  sshd 9500 C:\cygw...
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/zhuying_linux/article/details/7336662#comments">如何查看并杀死僵尸进程？</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/rhb51" class="user_name">rhb51</a>:
+如果父进程是init 那
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/zhuying_linux/article/details/6902135#comments">shell expect的简单用法</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/zhan0903" class="user_name">nick</a>:
+赞
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/zhuying_linux/article/details/6902135#comments">如何查看并杀死僵尸进程？</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/yanshan3" class="user_name">yanshan3</a>:
+僵尸进程采用kill -9都杀不掉，这样子只能是重启机器么？
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/zhuying_linux/article/details/6627570#comments">小明一家如何过桥？</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/nanjiyinan2006" class="user_name">nanjiyinan2006</a>:
+@lizepeng201021:我说你怎么只要25秒，弟弟压根之前没过桥，怎么回来接小明？最快的答案...
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/zhuying_linux/article/details/6711397#comments">一个0123456789的测试，大家来玩一把！</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/keke_cao" class="user_name">keke_cao</a>:
+8100000000
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/zhuying_linux/article/details/6583096#comments">Linux下Tomcat的安装配置</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/u011998015" class="user_name">忆雨林枫</a>:
+good
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/zhuying_linux/article/details/5465256#comments">VNC服务的配置</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/boise" class="user_name">boise</a>:
+好！！！！！
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/zhuying_linux/article/details/5465256#comments">如何查看并杀死僵尸进程？</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/ramboww" class="user_name">ramboww</a>:
+grep 时怎么保留标题行啊。楼主。
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/zhuying_linux/article/details/6900805#comments">expect基础及实例</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/XiaoHanfeizi" class="user_name">XiaoHanfeizi</a>:
+非常好，看到受益匪浅
+    </p>
+    </li>
+</ul>
+</div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+
+            <div class="clear">
+            </div>
+        </div>
+        
+
+<script type="text/javascript" src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/cnick.js"></script>
+<script type="text/javascript" src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/newblog.js"></script>
+
+
+<script type="text/javascript" src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/showblogmedal.js"></script>
+<script type="text/javascript" src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/JavaScript1.js"></script><link rel="stylesheet" type="text/css" href="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/pub_footer_2014.css"><div class="pub_fo"><div id="pub_footerall" class="pub_footer_new"><dl><dt></dt> <dd class="foot_sub_menu"><a href="http://www.csdn.net/company/about.html" target="_blank">公司简介</a><span>|</span><a href="http://www.csdn.net/company/recruit.html" target="_blank">招贤纳士</a><span>|</span><a href="http://www.csdn.net/company/marketing.html" target="_blank">广告服务</a><span>|</span><a href="http://www.csdn.net/company/account.html" target="_blank">银行汇款帐号</a><span>|</span><a href="http://www.csdn.net/company/contact.html" target="_blank">联系方式</a><span>|</span><a href="http://www.csdn.net/company/statement.html" target="_blank">版权声明</a><span>|</span><a href="http://www.csdn.net/company/layer.html" target="_blank">法律顾问</a><span>|</span><a href="mailto:webmaster@csdn.net">问题报告</a><span>|</span><a target="_blank" href="http://www.csdn.net/friendlink.html">合作伙伴</a><span>|</span><a href="http://bbs.csdn.net/forums/Service" target="_blank">论坛反馈</a></dd><dd class="foot_contact"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2355263776&amp;site=qq&amp;menu=yes" target="_blank" class="qq">网站客服</a><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2251809102&amp;site=qq&amp;menu=yes" target="_blank" class="qq">杂志客服</a><a href="http://e.weibo.com/csdnsupport/profile" target="_blank" class="weibo">微博客服</a><a href="mailto:webmaster@csdn.net" class="email" title="联系邮箱">webmaster@csdn.net</a><span class="phone" title="服务热线">400-600-2320</span><span class="interval">|</span><span>北京创新乐知信息技术有限公司 版权所有</span><span class="interval">|</span><span>江苏乐知网络技术有限公司 提供商务支持</span></dd><dd class="foot_copyright"><span>京&nbsp;ICP&nbsp;证&nbsp;070598&nbsp;号</span><span class="interval">|</span><span>Copyright © 1999-2014, CSDN.NET, All Rights Reserved&nbsp;</span><a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202001032100010" target="_blank"><img src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/gongshang_logos.gif" alt="GongshangLogo" title=""></a></dd></dl></div></div><div id="note1" class="csdn_note" style="display:none; position:absolute; z-index:9999; width:440px">  <span class="notice_top_arrow"><span class="inner"></span></span>  <div class="box"></div></div><div class="csdn_notice_tip" style="display:none; position:absolute; z-index:9990; width:170px">  <iframe src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/a_002.html" scrolling="no" style="z-index:-1;position:absolute;top:0;left:0;width:100%;height:100%;background:transparent" frameborder="0"></iframe>  <div class="tip_text">您有<strong>0</strong>条新通知</div>  <a href="javascript:void%200" class="close2"></a></div><script id="noticeScript" type="text/javascript" btnid="header_notice_num" wrapid="note1" count="5" subcount="5" src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/notify.js"></script>
+
+    <script type="text/javascript" src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/login.js"></script>
+<script type="text/javascript">document.write("<img src=http://counter.csdn.net/pv.aspx?id=24 border=0 width=0 height=0>");</script><img src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/pv.asc" height="0" width="0" border="0">
+<script type="text/javascript" src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/counter.js"></script><script type="text/javascript" charset="UTF-8" src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/msg.js"></script>
+<script type="text/javascript" src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ad-blog.js"></script><script type="text/javascript" src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ad-ms1217.js"></script>
+<script type="text/javascript" src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ad-js1220_2.js"></script>
+
+<script type="text/javascript" src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/count.js"></script><iframe src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/logs.html" frameborder="0" height="0" width="0"></iframe>
+<script type="text/javascript">
+    $(function () {
+        function __get_code_toolbar(snippet_id) {
+            return $("<a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "' target='_blank' title='在CODE上查看代码片' style='text-indent:0;'><img src='https://code.csdn.net/assets/CODE_ico.png' width=12 height=12 alt='在CODE上查看代码片' style='position:relative;top:1px;left:2px;'/></a>"
+                    + "<a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "/fork' target='_blank' title='派生到我的代码片'  style='text-indent:0;'><img src='https://code.csdn.net/assets/ico_fork.svg' width=12 height=12 alt='派生到我的代码片' style='position:relative;top:2px;left:2px;'/></a>");
+        }
+        
+        $("[code_snippet_id]").each(function () {
+            __s_id = $(this).attr("code_snippet_id");
+            if (__s_id != null && __s_id != "" && __s_id != 0 && parseInt(__s_id) > 70020) {
+                __code_tool = __get_code_toolbar(__s_id);
+                $(this).prev().find(".tools").append(__code_tool);
+            }
+        });
+    });
+</script>
+
+    </div><input id="aa_g_data_ids" type="hidden">
+      <!--new top-->
+    
+    <script id="csdn-toolbar-id" btnid="header_notice_num" wrapid="note1" count="5" subcount="5" type="text/javascript" src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/toolbar.js"></script>
+     <!--new top-->
+   
+    <link href="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ask_float_block.css" type="text/css" rel="stylesheet">
+    <script language="JavaScript" type="text/javascript" src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/wmd.js"></script>
+    <script language="JavaScript" type="text/javascript" src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/showdown.js"></script>
+    <script language="JavaScript" type="text/javascript" src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/prettify.js"></script>
+    <script language="JavaScript" type="text/javascript" src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ask_float_block.js"></script>
+
+
+
+<div style="display: block;" id="tag-suggest-pop">
+  <div class="relative">
+    <div class="close"></div>
+    <div class="content"><div><span>更多相关资源：</span><a href="http://www.csdn.net/tag/tomcat" title="关于 tomcat 的主题" target="_blank">tomcat</a><a href="http://www.csdn.net/tag/linux" title="关于 linux 的主题" target="_blank">linux</a></div></div>
+  </div>
+</div><link rel="stylesheet" type="text/css" media="screen" href="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ask_float_fonts_css-6b30a53970eb5c3a2a045e3df585b475.css"><div data-mod="popu_64" class="tracking-ad" chg-blk="0"><a id="com-ask-float-block" title="提问按钮" style="top:356px"></a><a id="com-quick-reply" title="快速回复" style="top:397px"></a><a id="com-d-top-a" style="top: 438px; display: inline;" title="返回顶部" onclick=""></a> </div><div class="pop_edit ask_second comm_ask_second"><h3>提问</h3><span class="ask_float_span">您的问题将会被发布在“<a class="ask_float_channel" href="http://ask.csdn.net/" target="_blank" style="cursor:pointer">技术问答</a>”频道</span><a href="#" nodetype="close" class="close">×</a><div class="context"><div class="err_div"><span class="err_ico"></span><span class="err_txt">该问题已存在，请勿重复提问</span></div><div class="input_div"><input id="askInputSecond" style="font-size:14px;" placeholder="问题标题" type="text"></div><div class="cm_box"><div class="cm_dialog"></div> <div class="pop_cm cm_add_link"><input placeholder="链接内容" id="af_cm_link_txt" type="text"><input placeholder="链接地址" id="af_cm_link_url" type="text"><input placeholder="链接提示" id="af_cm_link_tit" type="text"><div class="text-right"><span class="btn btn-default btn-sm" id="add_link_btn">插入链接</span> </div> </div><div class="pop_cm cm_add_img"><div class="nav-tabs"><a class="img_tab active" href="#tab_upload">本地上传</a><a class="img_tab" href="#tab_weburl">网络图片</a></div><div class="tab_panel active" id="tab_upload"><div class="set_img"><iframe src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/upload.html"></iframe></div></div><div class="tab_panel" id="tab_weburl"><input placeholder="图片地址" id="af_cm_img_url" type="text"><input placeholder="图片说明" id="af_cm_img_alt" type="text"><div class="text-right"><span class="btn btn-default btn-sm" id="add_img_btn">插入图片</span> </div></div> </div></div> <textarea style="display: none;" id="editor_all" rows="8"></textarea><div class="editor-toolbar"><i class="separator">|</i><a title="标题一（Ctrl+Alt+1）" class="icon-headline"></a><a title="标题二（Ctrl+Alt+2）" class="icon-heading"></a><a title="粗体（Ctrl+B）" class="icon-bold"></a><a title="斜体（Ctrl+I）" class="icon-italic"></a><i class="separator">|</i><a title="引用（Ctrl+’）" class="icon-quote-left"></a><a title="插入代码片（Ctrl+,）" class="icon-code"></a><a title="无序列表（Ctrl+L）" class="icon-list-ul"></a><a title="有序列表（Ctrl+Alt+L）" class="icon-list-ol"></a><i class="separator">|</i><a title="添加链接（Ctrl+K）" class="icon-link"></a><a title="添加图片（Ctrl+Alt+I）" class="icon-picture"></a><i class="separator">|</i><a title="撤退（Ctrl+Z）" class="icon-reply"></a><a title="前进（Ctrl+Shift+Z）" class="icon-share-alt"></a><i class="separator">|</i><a title="markdown语法参考" target="_blank" href="http://ask.csdn.net/pages/markdown" class="icon-info"></a><a title="预览" class="icon-preview"></a><i class="separator">|</i></div><div class="CodeMirror cm-s-paper CodeMirror-focused"><div style="overflow: hidden; position: relative; width: 3px; height: 0px;"><textarea tabindex="0" spellcheck="false" autocapitalize="off" autocorrect="off" wrap="off" style="position: absolute; padding: 0px; width: 1px; height: 1em; outline: medium none; font-size: 4px;"></textarea></div><div class="CodeMirror-hscrollbar"><div style="height: 1px;"></div></div><div class="CodeMirror-vscrollbar"><div style="width: 1px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-gutter-filler"></div><div draggable="true" tabindex="-1" class="CodeMirror-scroll"><div style="min-width: 33px;" class="CodeMirror-sizer"><div style="position: relative;"><div class="CodeMirror-lines"><div style="position: relative; outline: medium none;"><div class="CodeMirror-measure"><pre>&nbsp;<span style="display: inline-block; width: 1px; margin-right: -1px;">&nbsp;</span></pre></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code"></div><div style="visibility: hidden;" class="CodeMirror-cursor">&nbsp;</div><div style="visibility: hidden;" class="CodeMirror-cursor CodeMirror-secondarycursor">&nbsp;</div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px;"></div><div style="display: none;" class="CodeMirror-gutters"></div></div></div><div class="editor-statusbar"><span class="lines">0</span><span class="words">0</span><span class="cursor">0:0</span></div><div class="div_tags clearfix"><div id="divSearchTags" class="tags_con"><input type="text"></div><input name="txtSearchTags" type="hidden"></div><div id="ask2_tagRecomm_div" class="drt_tagRecomm tracking-ad" data-mod="popu_73"><span class="drt_tit">推荐标签：</span></div></div><div class="success"><div class="left_area"><input id="chk_cb" type="checkbox"><span class="wyxs">我要悬赏</span><input id="cb_num" class="cb_num" readonly="true"><span class="phib_rii"><span> 币</span></span></div><a href="#" nodetype="cancel" class="cancel">取消</a><a href="#" nodetype="ok" class="ok">发布</a></div></div><div id="common_ask_div_sc" class="searchContainer"><div class="sTitle">可能存在类似的问题：</div><div class="sFooter"><a class="sFirstNewAsk">我想提一个新问题</a></div></div><iframe src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/log.swf" style="width: 1px; height: 1px; position: absolute; visibility: hidden;"></iframe><iframe src="Linux%E4%B8%8BTomcat%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%20-%20%E5%B0%8F%E8%8F%9C%E9%B8%9F%E7%9A%84%E5%A4%A9%E5%9C%B0%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/log.html" style="width: 1px; height: 1px; position: absolute; visibility: hidden;"></iframe></body></html>

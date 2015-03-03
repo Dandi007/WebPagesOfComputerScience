@@ -1,0 +1,1 @@
+﻿document.writeln("<script type=\"text\/javascript\">document.write(unescape(\'%3Cdiv id=\"bdcs\"%3E%3C\/div%3E%3Cscript charset=\"utf-8\" src=\"http:\/\/rp.baidu.com\/rp3w\/3w.js?sid=6547409854000425422\') + \'&t=\' + (Math.ceil(new Date()\/3600000)) + unescape(\'\"%3E%3C\/script%3E\'));<\/script>")

@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script src="Git%E4%B8%AD%E7%9A%84AutoCRLF%E4%B8%8ESafeCRLF%E6%8D%A2%E8%A1%8C%E7%AC%A6%E9%97%AE%E9%A2%98%20-%20%E8%87%B3%E5%B0%8A%E7%8E%8B%E8%80%85%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/analytics.js" async=""></script>
+<meta charset="utf-8">
+<title>Git中的AutoCRLF与SafeCRLF换行符问题 - 至尊王者 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="Git%E4%B8%AD%E7%9A%84AutoCRLF%E4%B8%8ESafeCRLF%E6%8D%A2%E8%A1%8C%E7%AC%A6%E9%97%AE%E9%A2%98%20-%20%E8%87%B3%E5%B0%8A%E7%8E%8B%E8%80%85%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="Git%E4%B8%AD%E7%9A%84AutoCRLF%E4%B8%8ESafeCRLF%E6%8D%A2%E8%A1%8C%E7%AC%A6%E9%97%AE%E9%A2%98%20-%20%E8%87%B3%E5%B0%8A%E7%8E%8B%E8%80%85%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/bundle-BlackLowKey.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/flying_bat/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/flying_bat/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/flying_bat/wlwmanifest.xml">
+<script src="Git%E4%B8%AD%E7%9A%84AutoCRLF%E4%B8%8ESafeCRLF%E6%8D%A2%E8%A1%8C%E7%AC%A6%E9%97%AE%E9%A2%98%20-%20%E8%87%B3%E5%B0%8A%E7%8E%8B%E8%80%85%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/gpt.js" type="text/javascript" async=""></script><script src="Git%E4%B8%AD%E7%9A%84AutoCRLF%E4%B8%8ESafeCRLF%E6%8D%A2%E8%A1%8C%E7%AC%A6%E9%97%AE%E9%A2%98%20-%20%E8%87%B3%E5%B0%8A%E7%8E%8B%E8%80%85%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'flying_bat', cb_enable_mathjax=false;</script>
+<script src="Git%E4%B8%AD%E7%9A%84AutoCRLF%E4%B8%8ESafeCRLF%E6%8D%A2%E8%A1%8C%E7%AC%A6%E9%97%AE%E9%A2%98%20-%20%E8%87%B3%E5%B0%8A%E7%8E%8B%E8%80%85%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/blog-common.js" type="text/javascript"></script>
+<script src="Git%E4%B8%AD%E7%9A%84AutoCRLF%E4%B8%8ESafeCRLF%E6%8D%A2%E8%A1%8C%E7%AC%A6%E9%97%AE%E9%A2%98%20-%20%E8%87%B3%E5%B0%8A%E7%8E%8B%E8%80%85%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/pubads_impl_57.js" type="text/javascript" async=""></script><script src="Git%E4%B8%AD%E7%9A%84AutoCRLF%E4%B8%8ESafeCRLF%E6%8D%A2%E8%A1%8C%E7%AC%A6%E9%97%AE%E9%A2%98%20-%20%E8%87%B3%E5%B0%8A%E7%8E%8B%E8%80%85%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/expansion_embed.js"></script><script src="Git%E4%B8%AD%E7%9A%84AutoCRLF%E4%B8%8ESafeCRLF%E6%8D%A2%E8%A1%8C%E7%AC%A6%E9%97%AE%E9%A2%98%20-%20%E8%87%B3%E5%B0%8A%E7%8E%8B%E8%80%85%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/osd.js" type="text/javascript"></script></head>
+<body>
+<a name="top"></a>
+<!--PageBeginHtml Block Begin-->
+
+
+
+
+<!--标题党-->
+<!--
+
+-->
+<!--PageBeginHtml Block End-->
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/flying_bat/"><img id="blogLogo" src="Git%E4%B8%AD%E7%9A%84AutoCRLF%E4%B8%8ESafeCRLF%E6%8D%A2%E8%A1%8C%E7%AC%A6%E9%97%AE%E9%A2%98%20-%20%E8%87%B3%E5%B0%8A%E7%8E%8B%E8%80%85%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/logo.gif" alt="返回主页"></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/flying_bat/">飞扬天下</a></h1>
+<h2></h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="MyLinks1_HomeLink" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+<li><a id="MyLinks1_MyHomeLink" class="menu" href="http://www.cnblogs.com/flying_bat/">首页</a></li>
+<li><a id="MyLinks1_NewPostLink" class="menu" rel="nofollow" href="http://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li><a id="MyLinks1_ContactLink" class="menu" rel="nofollow" href="http://space.cnblogs.com/msg/send/%e8%87%b3%e5%b0%8a%e7%8e%8b%e8%80%85">联系</a></li>
+<li><a id="MyLinks1_Syndication" class="menu" href="http://www.cnblogs.com/flying_bat/rss">订阅</a>
+<!--<a id="MyLinks1_XMLLink" class="aHeaderXML" href="http://www.cnblogs.com/flying_bat/rss"><img src="http://www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li><a id="MyLinks1_Admin" class="menu" rel="nofollow" href="http://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			
+<!--done-->
+随笔- 589&nbsp;
+文章- 1&nbsp;
+评论- 336&nbsp;
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/flying_bat/p/3324769.html">Git中的AutoCRLF与SafeCRLF换行符问题</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body"><pre class="wp-code-highlight prettyprint prettyprinted"><span class="pln">最近在使用GitHub，发现不时没有修改过的文件要提交，对比发现文件全部修改，但找不到不一样的地方。<br>想可能是换行符的问题，因为Windows和Linux的换行符不一样，而Git默认应该是Linux的，今天Bing了下，果然是这个问题。<br><br>CR</span><span class="pun">回车</span><span class="pln"> LF</span><span class="pun">换行</span><span class="typ">Windows</span><span class="pun">/</span><span class="typ">Dos</span><span class="pln"> CRLF \r\n
+</span><span class="typ">Linux</span><span class="pun">/</span><span class="typ">Unix</span><span class="pln"> LF \n
+</span><span class="typ">MacOS</span><span class="pln"> CR \r<br></span></pre>
+<pre class="wp-code-highlight prettyprint prettyprinted"><span class="pln">解决方法是：打开命令行，进行设置，如果你是在Windows下开发，建议<span class="pln">设置</span><span class="pln">autocrlf为</span><span class="kwd">true</span>。<br>2014/08/20 补充：如果你文件编码是UTF8并且包含中文文字，那还是把<span class="pln"><span class="pln">autocrlf</span></span>设置为false，并且把所有文件转换为Linux编码（即LF\n），开启<span class="pln">safecrlf</span>检查。<br></span></pre>
+<pre class="wp-code-highlight prettyprint prettyprinted"><span class="pln"><br></span><span style="color: green;"><strong>一、AutoCRLF</strong></span></pre>
+<pre class="wp-code-highlight prettyprint prettyprinted"><span class="com">#提交时转换为LF，检出时转换为CRLF</span><span class="pln">
+git config </span><span class="pun">--</span><span class="kwd">global</span><span class="pln"> core</span><span class="pun">.</span><span class="pln">autocrlf </span><span class="kwd">true</span><span class="pln"> &nbsp; 
+
+</span><span class="com">#提交时转换为LF，检出时不转换</span><span class="pln">
+git config </span><span class="pun">--</span><span class="kwd">global</span><span class="pln"> core</span><span class="pun">.</span><span class="pln">autocrlf input &nbsp; 
+
+</span><span class="com">#提交检出均不转换</span><span class="pln">
+git config </span><span class="pun">--</span><span class="kwd">global</span><span class="pln"> core</span><span class="pun">.</span><span class="pln">autocrlf </span><span class="kwd">false</span></pre>
+<p><span style="color: green;"><strong>二、SafeCRLF</strong></span></p>
+<pre class="wp-code-highlight prettyprint prettyprinted"><span class="com">#拒绝提交包含混合换行符的文件</span><span class="pln">
+git config </span><span class="pun">--</span><span class="kwd">global</span><span class="pln"> core</span><span class="pun">.</span><span class="pln">safecrlf </span><span class="kwd">true</span><span class="pln"> &nbsp; 
+
+</span><span class="com">#允许提交包含混合换行符的文件</span><span class="pln">
+git config </span><span class="pun">--</span><span class="kwd">global</span><span class="pln"> core</span><span class="pun">.</span><span class="pln">safecrlf </span><span class="kwd">false</span><span class="pln"> &nbsp; 
+
+</span><span class="com">#提交包含混合换行符的文件时给出警告</span><span class="pln">
+git config </span><span class="pun">--</span><span class="kwd">global</span><span class="pln"> core</span><span class="pun">.</span><span class="pln">safecrlf warn</span></pre>
+<pre class="wp-code-highlight prettyprint prettyprinted"><span class="pln">&nbsp;</span></pre></div><div style="display: block;" id="MySignature"><font style="color: #0000ff" face="Verdana">我最擅长从零开始创造世界，所以从来不怕失败，它最多也就让我一无所有。</font>
+</div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory">分类: <a href="http://www.cnblogs.com/flying_bat/category/11176.html">游戏开发</a></div>
+<div id="EntryTag">标签: <a href="http://www.cnblogs.com/flying_bat/tag/Git/">Git</a>, <a href="http://www.cnblogs.com/flying_bat/tag/%E6%8D%A2%E8%A1%8C%E7%AC%A6/">换行符</a></div>
+<div id="blog_post_info"><div id="green_channel">
+绿色通道：
+<a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(3324769,cb_blogId,1);green_channel_success(this,'谢谢推荐！');">好文要顶</a>
+<a id="green_channel_follow" onclick="c_follow();" href="javascript:void(0);">关注我</a>
+<a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a><a id="green_channel_contact" href="http://space.cnblogs.com/msg/send/%e8%87%b3%e5%b0%8a%e7%8e%8b%e8%80%85" target="_blank">与我联系</a>
+<a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="Git%E4%B8%AD%E7%9A%84AutoCRLF%E4%B8%8ESafeCRLF%E6%8D%A2%E8%A1%8C%E7%AC%A6%E9%97%AE%E9%A2%98%20-%20%E8%87%B3%E5%B0%8A%E7%8E%8B%E8%80%85%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/icon_weibo_24.png" alt=""></a>
+</div>
+<div id="author_profile">
+<div id="author_profile_info" class="author_profile_info">
+<a href="http://home.cnblogs.com/u/flying_bat/" target="_blank"><img src="Git%E4%B8%AD%E7%9A%84AutoCRLF%E4%B8%8ESafeCRLF%E6%8D%A2%E8%A1%8C%E7%AC%A6%E9%97%AE%E9%A2%98%20-%20%E8%87%B3%E5%B0%8A%E7%8E%8B%E8%80%85%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20130202105121.jpeg" class="author_avatar" alt=""></a>
+<div id="author_profile_detail" class="author_profile_info">
+<a href="http://home.cnblogs.com/u/flying_bat/">至尊王者</a><br>
+<a href="http://home.cnblogs.com/u/flying_bat/followees">关注 - 0</a><br>
+<a href="http://home.cnblogs.com/u/flying_bat/followers">粉丝 - 112</a>
+</div>
+</div>
+<div class="clear"></div>
+<div id="author_profile_honor"></div>
+<div id="author_profile_follow">
+    <a href="javascript:void(0);" onclick="c_follow();return false;">+加关注</a>
+</div>
+</div>
+<div id="div_digg">										
+    <div class="diggit" onclick="votePost(3324769,'Digg')">
+        <span class="diggnum" id="digg_count">1</span>
+    </div>
+	<div class="buryit" onclick="votePost(3324769,'Bury')"> 
+		<span class="burynum" id="bury_count">0</span>
+	</div>
+	<div class="clear"></div>	
+	<div class="diggword" id="digg_tips">
+    (请您对文章做出评价)
+    </div>	
+</div>
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/flying_bat/p/3318159.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/flying_bat/p/3318159.html" title="发布于2013-09-12 22:58">DOTA2参数收集</a><br><a href="http://www.cnblogs.com/flying_bat/p/3324793.html" class="p_n_p_prefix">» </a> 下一篇：<a href="http://www.cnblogs.com/flying_bat/p/3324793.html" title="发布于2013-09-16 18:38">PHP导出数据库方法</a><br></div>
+</div>
+
+
+		</div>
+		<div class="postDesc">posted @ <span id="post-date">2013-09-16 18:20</span> <a href="http://www.cnblogs.com/flying_bat/">至尊王者</a> 阅读(<span id="post_view_count">3240</span>) 评论(<span id="post_comment_count">0</span>)  <a href="http://i.cnblogs.com/EditPosts.aspx?postid=3324769" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(3324769);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,isLogined=false,cb_blogId=5363,cb_entryId=3324769,cb_blogApp=currentBlogApp,cb_blogUserGuid='a086310b-63cf-dd11-9e4d-001cf0cd104b',cb_entryCreatedDate='2013/9/16 18:20:00';loadViewCount(cb_entryId);</script>
+	
+</div><!--end: topics 文章、评论容器-->
+<a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" id="lnk_RefreshComments" onclick="return RefreshCommentList();">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login('commentform');">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="site_nav_under"><a href="http://www.imooc.com/view/5?from=cnblogs" target="_blank"><b>【免费课程】案例：圆角水晶按钮制作</b></a><br><a href="http://www.ucancode.com/index.htm" target="_blank">【推荐】50万行VC++源码: 大型组态工控、电力仿真CAD与GIS源码库</a><br><a href="http://www.rongcloud.cn/promotion" target="_blank">融云，免费为你的App加入IM功能——让你的App“聊”起来！！</a></div>
+<div id="opt_under_post"></div>
+<script type="text/javascript">
+    var enableGoogleAd = canShowAdsense(); var googletag = googletag || {}; googletag.cmd = googletag.cmd || [];
+    fixPostBodyFormat();
+</script>
+<div id="ad_under_post_holder">
+<script type="text/javascript">
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function () {
+        if (enableGoogleAd) {
+            var gads = document.createElement('script');
+            gads.async = true;
+            gads.type = 'text/javascript';
+            var useSSL = 'https:' == document.location.protocol;
+            gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+            var node = document.getElementsByTagName('script')[0];
+            node.parentNode.insertBefore(gads, node);
+        }
+    })();
+</script>
+<script type="text/javascript">
+    try {
+        if (enableGoogleAd) {
+            googletag.cmd.push(function () {
+                googletag.defineSlot('/1090369/cnblogs_blogpost_C1_sitehome', [300, 250], 'div-gpt-ad-1346480159711-0').addService(googletag.pubads());
+                googletag.defineSlot('/1090369/cnblogs_blogpost_C2', [468, 60], 'div-gpt-ad-1410860226396-0').addService(googletag.pubads());
+                googletag.pubads().enableSingleRequest();
+                googletag.enableServices();
+            });
+        };
+    } catch (e) { }
+</script>
+<div id="google_ad_c1" class="c_ad_block">
+    <div id="div-gpt-ad-1346480159711-0" style="width: 300px; height: 250px;">
+    <script type="text/javascript">
+        try {
+            if (enableGoogleAd) {
+                googletag.cmd.push(function () { googletag.display('div-gpt-ad-1346480159711-0'); });            
+            } else {
+                $('#div-gpt-ad-1346480159711-0').hide();
+            }
+    } catch (e) { }
+    </script>
+    <div style="border: 0pt none; display: inline-block; width: 300px; height: 250px;" id="google_ads_iframe_/1090369/cnblogs_blogpost_C1_sitehome_0__container__"><iframe data-is-safeframe="true" marginheight="0" marginwidth="0" scrolling="no" name="1-0-2;18823;&lt;!doctype html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;&lt;!--
+a:link { color: #ffffff }a:visited { color: #ffffff }a:hover { color: #ffffff }a:active { color: #ffffff }  --&gt;&lt;/style&gt;&lt;script&gt;&lt;!--
+(function(){window.ss=function(){};})();(function(){var c=function(a,e,h){var b=document;b.addEventListener?b.addEventListener(a,e,h||!1):b.attachEvent&amp;&amp;b.attachEvent(&quot;on&quot;+a,e)};var d,f=!1,g=!1;c(&quot;mousedown&quot;,function(){f=!0});c(&quot;keydown&quot;,function(){g=!0});document.addEventListener&amp;&amp;c(&quot;click&quot;,function(a){d=a},!0);window.accbk=function(){var a=d?d:window.event;return a?f||g?!1:(a.preventDefault?a.preventDefault():a.returnValue=!1,!0):!1};})();function st(id) {var a = document.getElementById(id);if (a) {}}function ha(a,x){  if (accbk()) return;}function ia(a,e,x) {if (accbk()) return;}function ja(a,x) {if (accbk()) return;}function ga(o,e,x) {if (document.getElementById) {var a=o.id.substring(1),p=&quot;&quot;,r=&quot;&quot;,g=e.target,t,f,h;if (g) {t=g.id;f=g.parentNode;if (f) {p=f.id;h=f.parentNode;if (h)r=h.id;}} else {h=e.srcElement;f=h.parentNode;if (f)p=f.id;t=h.id;}if (t==a||p==a||r==a)return true;ia(a,e,x);window.open(document.getElementById(a).href);}}
+//--&gt;
+&lt;/script&gt;&lt;/head&gt;&lt;body leftMargin=&quot;0&quot; topMargin=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; style=&quot;background:transparent&quot;&gt;
+&lt;div id=&quot;google_flash_inline_div&quot; style=&quot;position:relative;z-index:1001;width:300px&quot;&gt;&lt;div id=&quot;google_flash_div&quot; style=&quot;position:absolute;left:0px;z-index:1001&quot;&gt;&lt;OBJECT classid=&quot;clsid:D27CDB6E-AE6D-11cf-96B8-444553540000&quot; id=&quot;google_flash_obj&quot; codebase=&quot;//download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0&quot; WIDTH=&quot;300&quot; HEIGHT=&quot;250&quot;&gt;&lt;PARAM NAME=movie VALUE=&quot;http://static.googleadsserving.cn/pagead/imgad?id=CICAgKCTsNb5YxCsAhj6ATIILhWluRKpTlU&quot;&gt;&lt;PARAM NAME=quality VALUE=high&gt;&lt;PARAM NAME=&quot;AllowScriptAccess&quot; VALUE=&quot;never&quot;&gt;&lt;PARAM NAME=&quot;wmode&quot; VALUE=&quot;opaque&quot;&gt;&lt;PARAM NAME=&quot;FlashVars&quot; VALUE=&quot;clickTAG=http://www.googleadservices.com/pagead/aclk%3Fsa%3DL%26ai%3DC4fkI-R71VLKIEtKH8gXz2oDQDa2E2a8Gza-QjbkB-KeB3SIQASC3tpYCYJ3Z0IGUBaABu8ve0gPIAQTgAgCoAwGqBNkBT9B4yi-UkniqW_S_RqkIrm-LXsw1wiuGzHVp6zQTIxvWJ5_USCebBk1F80tSrBgTVsdcrHNVzMtR63saWftZ1wQGlWmgLoCPyZHtU5oYZWRh41DE-7iL7mdZTg1wD_3ueMHYCtyoGErpeH9apSrHa9AI1KBOp2NYvkAW9WBe1JYFGCYXMEI_bymQGAPepDe3Cq9712YRPtl7e8jralggfm9Ik6r2NzYXb1HkbDpE0Kan7yueUTSbg2-EFSdt_qA2rC7Be4-3b6bzC_oVMe47jIBInAJ9xKXSsuAEAYgGAaAGBIAHrbShLdgHAA%26num%3D1%26cid%3D5GjHmIenjX78Ku7N5A8O1lp_%26sig%3DAOD64_1abmi9iFkIH4T-H8Qh6ukCzxzcgQ%26client%3Dca-pub-4210569241504288%26adurl%3Dhttp://www.trading212.com/zh/%2525E5%252585%25258D%2525E8%2525B4%2525B9%2525E7%25259A%252584%2525E5%2525A4%252596%2525E6%2525B1%252587%2525E7%2525BB%252583%2525E4%2525B9%2525A0%2525E8%2525B4%2525A6%2525E6%252588%2525B7/&quot;&gt;&lt;object data=&quot;http://static.googleadsserving.cn/pagead/imgad?id=CICAgKCTsNb5YxCsAhj6ATIILhWluRKpTlU&quot; id=&quot;google_flash_embed&quot; WIDTH=&quot;300&quot; HEIGHT=&quot;250&quot; WMODE=&quot;opaque&quot; FlashVars=&quot;clickTAG=http://www.googleadservices.com/pagead/aclk%3Fsa%3DL%26ai%3DC4fkI-R71VLKIEtKH8gXz2oDQDa2E2a8Gza-QjbkB-KeB3SIQASC3tpYCYJ3Z0IGUBaABu8ve0gPIAQTgAgCoAwGqBNkBT9B4yi-UkniqW_S_RqkIrm-LXsw1wiuGzHVp6zQTIxvWJ5_USCebBk1F80tSrBgTVsdcrHNVzMtR63saWftZ1wQGlWmgLoCPyZHtU5oYZWRh41DE-7iL7mdZTg1wD_3ueMHYCtyoGErpeH9apSrHa9AI1KBOp2NYvkAW9WBe1JYFGCYXMEI_bymQGAPepDe3Cq9712YRPtl7e8jralggfm9Ik6r2NzYXb1HkbDpE0Kan7yueUTSbg2-EFSdt_qA2rC7Be4-3b6bzC_oVMe47jIBInAJ9xKXSsuAEAYgGAaAGBIAHrbShLdgHAA%26num%3D1%26cid%3D5GjHmIenjX78Ku7N5A8O1lp_%26sig%3DAOD64_1abmi9iFkIH4T-H8Qh6ukCzxzcgQ%26client%3Dca-pub-4210569241504288%26adurl%3Dhttp://www.trading212.com/zh/%2525E5%252585%25258D%2525E8%2525B4%2525B9%2525E7%25259A%252584%2525E5%2525A4%252596%2525E6%2525B1%252587%2525E7%2525BB%252583%2525E4%2525B9%2525A0%2525E8%2525B4%2525A6%2525E6%252588%2525B7/&quot; TYPE=&quot;application/x-shockwave-flash&quot; AllowScriptAccess=&quot;never&quot; &gt;&lt;/object&gt;&lt;/OBJECT&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;position:relative;width:300px;height:250px;z-index:1000&quot;&gt;&lt;/div&gt;&lt;!--[if IE]&gt;&lt;script language=&quot;javascript&quot; src=&quot;http://pagead2.googlesyndication.com/pagead/inject_object_div.js&quot;&gt; &lt;/script&gt;&lt;![endif]--&gt;&lt;style&gt;div,ul,li{margin:0;padding:0;}#abgc{height:15px;position:absolute;right:0px;text-rendering:geometricPrecision;top:0;width:15px;z-index:9010;}#abgb{height:100%;}#abgc img{display:block;}#abgc svg{display:block;}#abgs{display:none;height:100%;}#abgl{text-decoration:none;}&lt;/style&gt;&lt;div id=abgc&gt;&lt;div id=abgb&gt;&lt;/div&gt;&lt;div id=abgs&gt;&lt;a id=abgl href=&quot;https://www.google.com/url?ct=abg&amp;amp;q=https://www.google.com/adsense/support/bin/request.py%3Fcontact%3Dabg_afc%26url%3Dhttp://www.cnblogs.com/flying_bat/archive/2013/09/16/3324769.html%26gl%3DCN%26hl%3Dzh%26client%3Dca-pub-4210569241504288%26ai0%3DC4fkI-R71VLKIEtKH8gXz2oDQDa2E2a8Gza-QjbkB-KeB3SIQASC3tpYCYJ3Z0IGUBaABu8ve0gPIAQTgAgCoAwGqBNkBT9B4yi-UkniqW_S_RqkIrm-LXsw1wiuGzHVp6zQTIxvWJ5_USCebBk1F80tSrBgTVsdcrHNVzMtR63saWftZ1wQGlWmgLoCPyZHtU5oYZWRh41DE-7iL7mdZTg1wD_3ueMHYCtyoGErpeH9apSrHa9AI1KBOp2NYvkAW9WBe1JYFGCYXMEI_bymQGAPepDe3Cq9712YRPtl7e8jralggfm9Ik6r2NzYXb1HkbDpE0Kan7yueUTSbg2-EFSdt_qA2rC7Be4-3b6bzC_oVMe47jIBInAJ9xKXSsuAEAYgGAaAGBIAHrbShLdgHAA&amp;amp;usg=AFQjCNHpJ8b7Gl11Mvr8uwIXZqlmUp2TMw&quot; target=_blank&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;script&gt;var abgp={el:document.getElementById('abgc'),ael:document.getElementById('abgs'),iel:document.getElementById('abgb'),hw:15,sw:111,hh:15,sh:15,himg:'http://static.googleadsserving.cn'+'/pagead/images/abg/icon.png',simg:'http://static.googleadsserving.cn/pagead/images/abg/zh_cn.png',alt:'Ads by Google',t:'Google',tw:38,t2:'提供的广告',t2w:49,tbo:0,att:'adsbygoogle',ff:'',halign:'right',fe:false,fnb:false,iba:false,uic:false,icd:undefined};&lt;/script&gt;&lt;script src=&quot;http://static.googleadsserving.cn/pagead/js/r20150225/r20110914/abg.js&quot;&gt;&lt;/script&gt;&lt;iframe frameborder=0 height=0 width=0 src=&quot;http://googleads.g.doubleclick.net/pagead/drt/s?v=r20120211&quot; style=&quot;position:absolute&quot;&gt;&lt;/iframe&gt;&lt;script type=&quot;text/javascript&quot;&gt;(function(){var h=this,aa=function(a){var b=typeof a;if(&quot;object&quot;==b)if(a){if(a instanceof Array)return&quot;array&quot;;if(a instanceof Object)return b;var c=Object.prototype.toString.call(a);if(&quot;[object Window]&quot;==c)return&quot;object&quot;;if(&quot;[object Array]&quot;==c||&quot;number&quot;==typeof a.length&amp;&amp;&quot;undefined&quot;!=typeof a.splice&amp;&amp;&quot;undefined&quot;!=typeof a.propertyIsEnumerable&amp;&amp;!a.propertyIsEnumerable(&quot;splice&quot;))return&quot;array&quot;;if(&quot;[object Function]&quot;==c||&quot;undefined&quot;!=typeof a.call&amp;&amp;&quot;undefined&quot;!=typeof a.propertyIsEnumerable&amp;&amp;!a.propertyIsEnumerable(&quot;call&quot;))return&quot;function&quot;}else return&quot;null&quot;;else if(&quot;function&quot;==b&amp;&amp;&quot;undefined&quot;==typeof a.call)return&quot;object&quot;;return b},l=function(a){return&quot;string&quot;==typeof a},ba=function(a,b){var c=Array.prototype.slice.call(arguments,1);return function(){var b=c.slice();b.push.apply(b,arguments);return a.apply(this,b)}},n=Date.now||function(){return+new Date},p=function(a,b){var c=a.split(&quot;.&quot;),d=h;c[0]in d||!d.execScript||d.execScript(&quot;var &quot;+c[0]);for(var e;c.length&amp;&amp;(e=c.shift());)c.length||void 0===b?d=d[e]?d[e]:d[e]={}:d[e]=b};var r=function(a,b,c,d,e){if(e)c=a+(&quot;&amp;&quot;+b+&quot;=&quot;+c);else{var f=&quot;&amp;&quot;+b+&quot;=&quot;,g=a.indexOf(f);0&gt;g?c=a+f+c:(g+=f.length,f=a.indexOf(&quot;&amp;&quot;,g),c=0&lt;=f?a.substring(0,g)+c+a.substring(f):a.substring(0,g)+c)}return 2E3&lt;c.length?void 0!==d?r(a,b,d,void 0,e):a:c};var ca=function(){var a=/[&amp;\?]exk=([^&amp; ]+)/.exec(u.location.href);return a&amp;&amp;2==a.length?a[1]:null};var da=function(a,b,c,d){a.addEventListener?a.addEventListener(b,c,d||!1):a.attachEvent&amp;&amp;a.attachEvent(&quot;on&quot;+b,c)};var ea=function(a){var b=a.toString();a.name&amp;&amp;-1==b.indexOf(a.name)&amp;&amp;(b+=&quot;: &quot;+a.name);a.message&amp;&amp;-1==b.indexOf(a.message)&amp;&amp;(b+=&quot;: &quot;+a.message);if(a.stack){a=a.stack;var c=b;try{-1==a.indexOf(c)&amp;&amp;(a=c+&quot;\n&quot;+a);for(var d;a!=d;)d=a,a=a.replace(/((https?:\/..*\/)[^\/:]*:\d+(?:.|\n)*)\2/,&quot;$1&quot;);b=a.replace(/\n */g,&quot;\n&quot;)}catch(e){b=c}}return b},v=function(a,b,c){a.google_image_requests||(a.google_image_requests=[]);var d=a.document.createElement(&quot;img&quot;);if(c){var e=function(a){c(a);a=e;d.removeEventListener?d.removeEventListener(&quot;load&quot;,a,!1):d.detachEvent&amp;&amp;d.detachEvent(&quot;onload&quot;,a);a=e;d.removeEventListener?d.removeEventListener(&quot;error&quot;,a,!1):d.detachEvent&amp;&amp;d.detachEvent(&quot;onerror&quot;,a)};da(d,&quot;load&quot;,e);da(d,&quot;error&quot;,e)}d.src=b;a.google_image_requests.push(d)};var w=document,u=window;var fa=String.prototype.trim?function(a){return a.trim()}:function(a){return a.replace(/^[\s\xa0]+|[\s\xa0]+$/g,&quot;&quot;)},ga=function(a,b){return a&lt;b?-1:a&gt;b?1:0};var x=null,ha=function(a,b){for(var c in a)Object.prototype.hasOwnProperty.call(a,c)&amp;&amp;b.call(null,a[c],c,a)};function z(a){return&quot;function&quot;==typeof encodeURIComponent?encodeURIComponent(a):escape(a)}var ia=function(){if(!w.body)return!1;if(!x){var a=w.createElement(&quot;iframe&quot;);a.style.display=&quot;none&quot;;a.id=&quot;anonIframe&quot;;x=a;w.body.appendChild(a)}return!0},ja={};var ka=!0,la={},oa=function(a,b,c,d){var e=ma,f,g=ka;try{f=b()}catch(k){try{var t=ea(k);b=&quot;&quot;;k.fileName&amp;&amp;(b=k.fileName);var y=-1;k.lineNumber&amp;&amp;(y=k.lineNumber);g=e(a,t,b,y,c)}catch(q){try{var m=ea(q);a=&quot;&quot;;q.fileName&amp;&amp;(a=q.fileName);c=-1;q.lineNumber&amp;&amp;(c=q.lineNumber);ma(&quot;pAR&quot;,m,a,c,void 0,void 0)}catch(Aa){na({context:&quot;mRE&quot;,msg:Aa.toString()+&quot;\n&quot;+(Aa.stack||&quot;&quot;)},void 0)}}if(!g)throw k;}finally{if(d)try{d()}catch(pb){}}return f},ma=function(a,b,c,d,e,f){var g={};if(e)try{e(g)}catch(k){}g.context=a;g.msg=b.substring(0,512);c&amp;&amp;(g.file=c);0&lt;d&amp;&amp;(g.line=d.toString());g.url=w.URL.substring(0,512);g.ref=w.referrer.substring(0,512);pa(g);na(g,f);return ka},na=function(a,b){try{if(Math.random()&lt;(b||.01)){var c=&quot;/pagead/gen_204?id=jserror&quot;+qa(a),d=&quot;http&quot;+(&quot;http:&quot;==u.location.protocol?&quot;&quot;:&quot;s&quot;)+&quot;://pagead2.googlesyndication.com&quot;+c,d=d.substring(0,2E3);v(u,d,void 0)}}catch(e){}},pa=function(a){var b=a||{};ha(la,function(a,d){b[d]=u[a]})},A=function(a,b,c,d,e){return function(){var f=arguments;return oa(a,function(){return b.apply(c,f)},d,e)}},ra=function(a,b){return A(a,b,void 0,void 0,void 0)},qa=function(a){var b=&quot;&quot;;ha(a,function(a,d){if(0===a||a)b+=&quot;&amp;&quot;+d+&quot;=&quot;+z(a)});return b};var B=Array.prototype,sa=B.indexOf?function(a,b,c){return B.indexOf.call(a,b,c)}:function(a,b,c){c=null==c?0:0&gt;c?Math.max(0,a.length+c):c;if(l(a))return l(b)&amp;&amp;1==b.length?a.indexOf(b,c):-1;for(;c&lt;a.length;c++)if(c in a&amp;&amp;a[c]===b)return c;return-1},ta=B.map?function(a,b,c){return B.map.call(a,b,c)}:function(a,b,c){for(var d=a.length,e=Array(d),f=l(a)?a.split(&quot;&quot;):a,g=0;g&lt;d;g++)g in f&amp;&amp;(e[g]=b.call(c,f[g],g,a));return e};var ua=function(a,b){for(var c in a)b.call(void 0,a[c],c,a)},C=function(a){var b=arguments.length;if(1==b&amp;&amp;&quot;array&quot;==aa(arguments[0]))return C.apply(null,arguments[0]);for(var c={},d=0;d&lt;b;d++)c[arguments[d]]=!0;return c};var D;r:{var va=h.navigator;if(va){var wa=va.userAgent;if(wa){D=wa;break r}}D=&quot;&quot;};var E=function(){return-1!=D.indexOf(&quot;Edge&quot;)};var xa=-1!=D.indexOf(&quot;Opera&quot;)||-1!=D.indexOf(&quot;OPR&quot;),F=-1!=D.indexOf(&quot;Edge&quot;)||-1!=D.indexOf(&quot;Trident&quot;)||-1!=D.indexOf(&quot;MSIE&quot;),ya=-1!=D.indexOf(&quot;Gecko&quot;)&amp;&amp;!(-1!=D.toLowerCase().indexOf(&quot;webkit&quot;)&amp;&amp;!E())&amp;&amp;!(-1!=D.indexOf(&quot;Trident&quot;)||-1!=D.indexOf(&quot;MSIE&quot;))&amp;&amp;!E(),za=-1!=D.toLowerCase().indexOf(&quot;webkit&quot;)&amp;&amp;!E(),Ba=function(){var a=D;if(ya)return/rv\:([^\);]+)(\)|;)/.exec(a);if(F&amp;&amp;E())return/Edge\/([\d\.]+)/.exec(a);if(F)return/\b(?:MSIE|rv)[: ]([^\);]+)(\)|;)/.exec(a);if(za)return/WebKit\/(\S+)/.exec(a)},Ca=function(){var a=h.document;return a?a.documentMode:void 0},Da=function(){if(xa&amp;&amp;h.opera){var a=h.opera.version;return&quot;function&quot;==aa(a)?a():a}var a=&quot;&quot;,b=Ba();b&amp;&amp;(a=b?b[1]:&quot;&quot;);return F&amp;&amp;!E()&amp;&amp;(b=Ca(),b&gt;parseFloat(a))?String(b):a}(),Ea={},Fa=function(a){if(!Ea[a]){for(var b=0,c=fa(String(Da)).split(&quot;.&quot;),d=fa(String(a)).split(&quot;.&quot;),e=Math.max(c.length,d.length),f=0;0==b&amp;&amp;f&lt;e;f++){var g=c[f]||&quot;&quot;,k=d[f]||&quot;&quot;,t=RegExp(&quot;(\\d*)(\\D*)&quot;,&quot;g&quot;),y=RegExp(&quot;(\\d*)(\\D*)&quot;,&quot;g&quot;);do{var q=t.exec(g)||[&quot;&quot;,&quot;&quot;,&quot;&quot;],m=y.exec(k)||[&quot;&quot;,&quot;&quot;,&quot;&quot;];if(0==q[0].length&amp;&amp;0==m[0].length)break;b=ga(0==q[1].length?0:parseInt(q[1],10),0==m[1].length?0:parseInt(m[1],10))||ga(0==q[2].length,0==m[2].length)||ga(q[2],m[2])}while(0==b)}Ea[a]=0&lt;=b}},Ga=h.document,Ha=Ca(),Ia=!Ga||!F||!Ha&amp;&amp;E()?void 0:Ha||(&quot;CSS1Compat&quot;==Ga.compatMode?parseInt(Da,10):5);var Ja={e:947190538,f:947190541,g:947190542,c:79463068,d:79463069};if(w&amp;&amp;w.URL)var Ka=w.URL,ka=!(Ka&amp;&amp;(0&lt;Ka.indexOf(&quot;?google_debug&quot;)||0&lt;Ka.indexOf(&quot;&amp;google_debug&quot;)));var G=function(a,b,c,d){da(a,b,A(d||&quot;osd_or_lidar::&quot;+b,c,void 0,void 0,void 0),void 0)},La=function(a){var b=0,c=function(){a();b++;10&gt;b&amp;&amp;u.setTimeout(ra(&quot;osd_listener::ldcl_int&quot;,c),100)};c()};var Ma=function(){try{u.localStorage.setItem(&quot;__sak&quot;,&quot;1&quot;);var a=u.localStorage.__sak;u.localStorage.removeItem(&quot;__sak&quot;);return&quot;1&quot;==a}catch(b){return!1}},Na=function(a,b,c){a.google_image_requests||(a.google_image_requests=[]);var d=a.document.createElement(&quot;img&quot;);G(d,&quot;load&quot;,c,&quot;osd::ls_img::load&quot;);d.src=b;a.google_image_requests.push(d)};var H=function(a,b){this.b=a||0;this.a=b||&quot;&quot;},Oa=function(a,b){a.b&amp;&amp;(b[4]=a.b);a.a&amp;&amp;(b[12]=a.a)};H.prototype.match=function(a){return(this.b||this.a)&amp;&amp;(a.b||a.a)?this.a||a.a?this.a==a.a:this.b||a.b?this.b==a.b:!1:!1};H.prototype.toString=function(){var a=&quot;&quot;+this.b;this.a&amp;&amp;(a+=&quot;-&quot;+this.a);return a};var Pa=function(){var a=I,b=[];a.b&amp;&amp;b.push(&quot;adk=&quot;+a.b);a.a&amp;&amp;b.push(&quot;exk=&quot;+a.a);return b},Qa=function(a){var b=[];ua(a,function(a,d){var e=z(d),f=a;l(f)&amp;&amp;(f=z(f));b.push(e+&quot;=&quot;+f)});return b.join(&quot;\n&quot;)},J=0,Ra=0,Sa=function(a){var b=0,c=u;if(c&amp;&amp;c.Goog_AdSense_getAdAdapterInstance)return c;try{for(;c&amp;&amp;5&gt;b;){if(c.google_osd_static_frame)return c;if(c.aswift_0&amp;&amp;(!a||c.aswift_0.google_osd_static_frame))return c.aswift_0;b++;c=c!=c.parent?c.parent:null}}catch(d){}return null},Ta=function(a,b,c,d){if(10&lt;Ra)u.clearInterval(J);else if(++Ra,u.postMessage&amp;&amp;(b.b||b.a)){var e=Sa(!0);if(e){var f={};Oa(b,f);f[0]=&quot;goog_request_monitoring&quot;;f[6]=a;f[16]=c;d&amp;&amp;d.length&amp;&amp;(f[17]=d.join(&quot;,&quot;));try{var g=Qa(f);e.postMessage(g,&quot;*&quot;)}catch(k){}}}};C(&quot;area base br col command embed hr img input keygen link meta param source track wbr&quot;.split(&quot; &quot;));C(&quot;action&quot;,&quot;cite&quot;,&quot;data&quot;,&quot;formaction&quot;,&quot;href&quot;,&quot;manifest&quot;,&quot;poster&quot;,&quot;src&quot;);C(&quot;embed&quot;,&quot;iframe&quot;,&quot;link&quot;,&quot;object&quot;,&quot;script&quot;,&quot;style&quot;,&quot;template&quot;);var Ua;if(!(Ua=!ya&amp;&amp;!F)){var Va;if(Va=F)Va=F&amp;&amp;9&lt;=Ia;Ua=Va}Ua||ya&amp;&amp;Fa(&quot;1.9.1&quot;);F&amp;&amp;Fa(&quot;9&quot;);var Wa,K=0,L=&quot;&quot;,M=!1,N=!1,O=!1,Xa=!0,Ya=!1,Za=[],I=null,P=&quot;&quot;,$a=[],ab=[],bb=!1,Q=&quot;&quot;,R=&quot;&quot;,cb=(new Date).getTime(),db=[&quot;1&quot;,&quot;0&quot;,&quot;3&quot;],S=0,T=!1,U=!1,V=&quot;&quot;,eb=null,W=0,X=0,fb=0,gb=function(a,b,c){M&amp;&amp;(Xa||3!=(c||3))&amp;&amp;Y(a,b,!0);(O||N&amp;&amp;Ya)&amp;&amp;Y(a,b)},hb=function(a,b){if(T){var c=V;try{a.localStorage[c]=b+&quot;&amp;timestamp=&quot;+n()+&quot;&amp;send&quot;}catch(d){}}},Y=function(a,b,c){if((b=b||P)&amp;&amp;!bb&amp;&amp;(2==X||c)){var d=ib(b,c);!c&amp;&amp;U?(U=!1,eb&amp;&amp;(a.clearInterval(eb),eb=null),hb(a,d),5!=S&amp;&amp;Na(a,d,function(){a.localStorage.removeItem(V)})):c||!T||7!=S&amp;&amp;6!=S?v(a,d,void 0):(b=function(b){b&amp;&amp;&quot;error&quot;==b.type&amp;&amp;hb(a,d)},void 0===a.navigator.onLine||a.navigator.onLine?v(a,d,b):hb(a,d));c?M=!1:bb=!0}},ib=function(a,b){var c;c=b?&quot;osdim&quot;:O?&quot;osd2&quot;:&quot;osdtos&quot;;var d=[&quot;//pagead2.googlesyndication.com/activeview&quot;,&quot;?id=&quot;,c];&quot;osd2&quot;==c&amp;&amp;N&amp;&amp;Ya&amp;&amp;d.push(&quot;&amp;ts=1&quot;);L&amp;&amp;d.push(&quot;&amp;avi=&quot;,L);Wa&amp;&amp;d.push(&quot;&amp;cid=&quot;,Wa);0!=S&amp;&amp;d.push(&quot;&amp;lsid=&quot;,S);U&amp;&amp;d.push(&quot;&amp;cwls=1&quot;);d.push(&quot;&amp;ti=1&quot;);d.push(&quot;&amp;&quot;,a);d.push(&quot;&amp;uc=&quot;+fb);c=d.join(&quot;&quot;);for(d=0;d&lt;$a.length;d++){try{var e=$a[d]()}catch(f){}var g=&quot;max_length&quot;;2&lt;=e.length&amp;&amp;(3==e.length&amp;&amp;(g=e[2]),c=r(c,z(e[0]),z(e[1]),g))}2E3&lt;c.length&amp;&amp;(c=c.substring(0,2E3));return c},Z=function(a,b){if(Q){try{var c=r(Q,&quot;vi&quot;,a);ia()&amp;&amp;v(x.contentWindow,c,void 0)}catch(d){}0&lt;=sa(db,a)&amp;&amp;(Q=&quot;&quot;);var c=b||P,e;e=r(&quot;//pagead2.googlesyndication.com/pagead/gen_204?id=sldb&quot;,&quot;avi&quot;,L);e=r(e,&quot;vi&quot;,a);c&amp;&amp;(e+=&quot;&amp;&quot;+c);try{v(u,e,void 0)}catch(f){}}},jb=function(){Z(&quot;-1&quot;)},lb=function(a){if(a&amp;&amp;a.data&amp;&amp;l(a.data)){var b;var c=a.data;if(l(c)){b={};for(var c=c.split(&quot;\n&quot;),d=0;d&lt;c.length;d++){var e=c[d].indexOf(&quot;=&quot;);if(!(0&gt;=e)){var f=Number(c[d].substr(0,e)),e=c[d].substr(e+1);switch(f){case 5:case 8:case 11:case 15:case 16:e=&quot;true&quot;==e;break;case 4:case 7:case 6:case 14:e=Number(e);break;case 3:if(&quot;function&quot;==aa(decodeURIComponent))try{e=decodeURIComponent(e)}catch(g){throw Error(&quot;Error: URI malformed: &quot;+e);}break;case 17:e=ta(decodeURIComponent(e).split(&quot;,&quot;),Number)}b[f]=e}}b=b[0]?b:null}else b=null;if(b&amp;&amp;(c=new H(b[4],b[12]),I&amp;&amp;I.match(c))){for(c=0;c&lt;ab.length;c++)ab[c](b);c=b[0];if(&quot;goog_acknowledge_monitoring&quot;==c)u.clearInterval(J),W=2;else if(&quot;goog_get_mode&quot;==c){W=1;d={};I&amp;&amp;Oa(I,d);d[0]=&quot;goog_provide_mode&quot;;d[6]=X;try{var k=Qa(d);a.source.postMessage(k,a.origin)}catch(t){}u.clearInterval(J);W=2}else if(&quot;goog_update_data&quot;==c){if(a=u,P=b[3],++fb,U){k=V;d=ib(P);try{a.localStorage[k]=kb(d)}catch(y){}}}else&quot;goog_image_request&quot;==c&amp;&amp;(gb(u,b[3]),b[5]||b[11]||Z(&quot;0&quot;,b[3]));if(&quot;goog_update_data&quot;==c||&quot;goog_image_request&quot;==c)(1==X||2==X||M)&amp;&amp;b[5]&amp;&amp;(a=1==b[15]&amp;&amp;&quot;goog_update_data&quot;==c,Ya=!0,Z(&quot;1&quot;),R&amp;&amp;(k=R,ia()&amp;&amp;v(x.contentWindow,k,void 0),R=&quot;&quot;),M&amp;&amp;!a&amp;&amp;Y(u,void 0,!0),1==X?bb=!0:(2==S||4==S||5==S&amp;&amp;!U||7==S)&amp;&amp;Y(u)),(1==X||2==X||M)&amp;&amp;b[11]&amp;&amp;(N=!1,Z(&quot;3&quot;),M&amp;&amp;Y(u,void 0,!0),(2==S||4==S||5==S&amp;&amp;!U||7==S)&amp;&amp;Y(u))}}},mb=function(){gb(u);Z(&quot;0&quot;);if(2&gt;W&amp;&amp;2==X){var a=u,b=&quot;//pagead2.googlesyndication.com/pagead/gen_204?id=osd2&amp;&quot;,c=[];c.push(&quot;ovr_value=&quot;+K);c.push(&quot;avi=&quot;+L);I&amp;&amp;(c=c.concat(Pa()));c.push(&quot;tt=&quot;+((new Date).getTime()-cb));a.document&amp;&amp;a.document.referrer&amp;&amp;c.push(&quot;ref=&quot;+z(a.document.referrer));c.push(&quot;hs=&quot;+W);b+=c.join(&quot;&amp;&quot;);try{v(a,b,void 0)}catch(d){}}},kb=function(a){var b=a.match(/^(.*&amp;timestamp=)\d+$/);return b?b[1]+n():a+&quot;&amp;timestamp=&quot;+n()},nb=function(){var a={};Oa(I,a);a[0]=&quot;goog_dom_content_loaded&quot;;var b=Qa(a);La(function(){var a=Sa(!1),d=!a;!a&amp;&amp;u&amp;&amp;(a=u.parent);if(a&amp;&amp;a.postMessage)try{a.postMessage(b,&quot;*&quot;),d&amp;&amp;u.postMessage(b,&quot;*&quot;)}catch(e){}})},ob=function(a){if(l(a)){a=a.split(&quot;&amp;&quot;);for(var b=0;b&lt;a.length;b++)&quot;ud=1&quot;==a[b]&amp;&amp;(Xa=!1)}};p(&quot;osdlfm&quot;,A(&quot;osd_listener::init&quot;,function(a,b,c,d,e,f,g,k,t,y,q){K=a;Q=b;R=d;M=f;S=y||0;Wa=q;k&amp;&amp;ob(k);N=g&amp;&amp;f;1!=t&amp;&amp;2!=t&amp;&amp;3!=t||Za.push(Ja[&quot;MRC_TEST_&quot;+t]);I=new H(e,ca());G(u,&quot;load&quot;,jb,&quot;osd_listener::load&quot;);G(u,&quot;message&quot;,lb,&quot;osd_listener::message&quot;);L=c||&quot;&quot;;G(u,&quot;unload&quot;,mb,&quot;osd_listener::unload&quot;);var m=u.document;!m.readyState||&quot;complete&quot;!=m.readyState&amp;&amp;&quot;loaded&quot;!=m.readyState?(&quot;msie&quot;in ja?ja.msie:ja.msie=-1!=navigator.userAgent.toLowerCase().indexOf(&quot;msie&quot;))&amp;&amp;!window.opera?G(m,&quot;readystatechange&quot;,function(){&quot;complete&quot;!=m.readyState&amp;&amp;&quot;loaded&quot;!=m.readyState||nb()},&quot;osd_listener::rsc&quot;):G(m,&quot;DOMContentLoaded&quot;,nb,&quot;osd_listener::dcl&quot;):nb();-1==K?X=f?3:1:-2==K?X=3:0&lt;K&amp;&amp;(X=2,O=!0);N&amp;&amp;!O&amp;&amp;(X=2);(T=!!u.location.hostname.match(/doubleclick\.net/)&amp;&amp;Ma()&amp;&amp;1E3&gt;u.localStorage.length)&amp;&amp;(V=&quot;LSPNGS-&quot;+I.toString()+&quot;-&quot;+(&quot;&quot;+Math.random()).split(&quot;.&quot;)[1]+n());2!=X||!T||3!=S&amp;&amp;4!=S&amp;&amp;5!=S||(U=!0,eb=u.setInterval(ra(&quot;osd_listener::ls_int&quot;,function(){var a=u,b=V,c=a.localStorage[b];if(c)try{a.localStorage[b]=kb(c)}catch(d){}}),1E3));I&amp;&amp;(I.b||I.a)&amp;&amp;(W=1,J=u.setInterval(ra(&quot;osd_proto::reqm_int&quot;,ba(Ta,X,I,N,Za)),500))}));p(&quot;osdlac&quot;,A(&quot;osd_listener::lac_ex&quot;,function(a){$a.push(a)}));p(&quot;osdlamrc&quot;,A(&quot;osd_listener::lamrc_ex&quot;,function(a){ab.push(a)}));p(&quot;osdsir&quot;,A(&quot;osd_listener::sir_ex&quot;,gb));})();osdlfm(-1,'','BdDKg-R71VLKIEtKH8gXz2oDQDQDNr5CNuQEAABABOAHIAQTgAgDgBAGgBgTCEwMQgAE','',1707953772,true,false,'',0,0,'');&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;{&quot;uid&quot;:1,&quot;hostPeerName&quot;:&quot;http://www.cnblogs.com&quot;,&quot;initialGeometry&quot;:&quot;{\&quot;windowCoords_t\&quot;:24,\&quot;windowCoords_r\&quot;:1236,\&quot;windowCoords_b\&quot;:720,\&quot;windowCoords_l\&quot;:65,\&quot;frameCoords_t\&quot;:1491.699951171875,\&quot;frameCoords_r\&quot;:478,\&quot;frameCoords_b\&quot;:1741.699951171875,\&quot;frameCoords_l\&quot;:178,\&quot;styleZIndex\&quot;:\&quot;auto\&quot;,\&quot;allowedExpansion_t\&quot;:0,\&quot;allowedExpansion_r\&quot;:0,\&quot;allowedExpansion_b\&quot;:0,\&quot;allowedExpansion_l\&quot;:0,\&quot;xInView\&quot;:0,\&quot;yInView\&quot;:0}&quot;,&quot;permissions&quot;:&quot;{\&quot;expandByOverlay\&quot;:true,\&quot;expandByPush\&quot;:false,\&quot;readCookie\&quot;:false,\&quot;writeCookie\&quot;:false}&quot;,&quot;metadata&quot;:&quot;{\&quot;shared\&quot;:{\&quot;sf_ver\&quot;:\&quot;1-0-2\&quot;,\&quot;ck_on\&quot;:1,\&quot;flash_ver\&quot;:\&quot;11.2.202\&quot;}}&quot;,&quot;reportCreativeGeometry&quot;:false}" id="google_ads_iframe_/1090369/cnblogs_blogpost_C1_sitehome_0" src="Git%E4%B8%AD%E7%9A%84AutoCRLF%E4%B8%8ESafeCRLF%E6%8D%A2%E8%A1%8C%E7%AC%A6%E9%97%AE%E9%A2%98%20-%20%E8%87%B3%E5%B0%8A%E7%8E%8B%E8%80%85%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/container.html" style="border: 0px none; vertical-align: bottom;" frameborder="0" height="250" width="300"></iframe></div><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px none; vertical-align: bottom; visibility: hidden; display: none;" marginheight="0" marginwidth="0" scrolling="no" name="google_ads_iframe_/1090369/cnblogs_blogpost_C1_sitehome_0__hidden__" id="google_ads_iframe_/1090369/cnblogs_blogpost_C1_sitehome_0__hidden__" frameborder="0" height="0" width="0"></iframe></div>
+</div>
+</div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="http://news.cnblogs.com/n/516017/" target="_blank">苹果手表4月首发不是美国专属 中国极有可能在列</a><br> ·  <a href="http://news.cnblogs.com/n/516016/" target="_blank">周鸿祎演讲：手机是人类长出的一个新器官</a><br> ·  <a href="http://news.cnblogs.com/n/516015/" target="_blank">中国移动与日韩运营商签署5G合作联合声明</a><br> ·  <a href="http://news.cnblogs.com/n/516014/" target="_blank">苹果与IBM发布三款应用，进军企业级移动市场</a><br> ·  <a href="http://news.cnblogs.com/n/516013/" target="_blank">原来，我们的时间这样被科技巨头们瓜分</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="google_ad_c2" class="c_ad_block">
+<div id="div-gpt-ad-1410860226396-0" style="width: 468px; height: 60px;">
+<script type="text/javascript">
+try {
+    if (enableGoogleAd) {
+        googletag.cmd.push(function () { googletag.display('div-gpt-ad-1410860226396-0'); });
+    } else {
+        $('#div-gpt-ad-1346480159711-0').hide();
+    }
+} catch (e) { }
+</script>
+<div style="border: 0pt none;" id="google_ads_iframe_/1090369/cnblogs_blogpost_C2_0__container__"><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px none; vertical-align: bottom;" marginheight="0" marginwidth="0" scrolling="no" name="google_ads_iframe_/1090369/cnblogs_blogpost_C2_0" id="google_ads_iframe_/1090369/cnblogs_blogpost_C2_0" frameborder="0" height="60" width="468"></iframe></div></div>
+</div>
+<div id="under_post_kb"><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/515942/" target="_blank">软件专家的对话模式（第一部分）</a><br> ·  <a href="http://kb.cnblogs.com/page/515844/" target="_blank">从商业角度探讨API设计</a><br> ·  <a href="http://kb.cnblogs.com/page/514944/" target="_blank">迁云架构实践</a><br> ·  <a href="http://kb.cnblogs.com/page/503180/" target="_blank">影响架构决策的非功能性需求</a><br> ·  <a href="http://kb.cnblogs.com/page/515381/" target="_blank">在线数据迁移经验：如何为正在飞行的飞机更换引擎</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+$(function () {
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 200);
+});
+</script>
+</div>
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"><!--<img title="这只是张图片" alt="" src="http://images.cnblogs.com/cnblogs_com/flying_bat/10967/r_mvpteam.gif" /><br />
+--><font face="Tahoma"><span style="color: #0000ff"><font face="Tahoma">从矩阵到锡安，我们携手同行，一起追寻生命的真实。 <br>
+灵魂，也只不过是一套程序而已。</font> </span></font><br>
+<a href="http://www2.clustrmaps.com/user/3f687418"><img src="Git%E4%B8%AD%E7%9A%84AutoCRLF%E4%B8%8ESafeCRLF%E6%8D%A2%E8%A1%8C%E7%AC%A6%E9%97%AE%E9%A2%98%20-%20%E8%87%B3%E5%B0%8A%E7%8E%8B%E8%80%85%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/www.jpg" alt="Locations of visitors to this page">
+</a><br>
+<a href="https://github.com/rise-worlds">我的GitHub</a><div id="profile_block">昵称：<a href="http://home.cnblogs.com/u/flying_bat/">至尊王者</a><br>园龄：<a href="http://home.cnblogs.com/u/flying_bat/" title="入园时间：2004-08-18">10年6个月</a><br>粉丝：<a href="http://home.cnblogs.com/u/flying_bat/followers/">112</a><br>关注：<a href="http://home.cnblogs.com/u/flying_bat/followees/">0</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="cnblogs.UserManager.FollowBlogger('a086310b-63cf-dd11-9e4d-001cf0cd104b')">+加关注</a></div></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" title="日历" cellpadding="0" cellspacing="0">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar('2015/02/01');return false;">&lt;</a></td><td align="center">2015年3月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar('2015/04/01');return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" abbr="日" scope="col" align="center">日</th><th class="CalDayHeader" abbr="一" scope="col" align="center">一</th><th class="CalDayHeader" abbr="二" scope="col" align="center">二</th><th class="CalDayHeader" abbr="三" scope="col" align="center">三</th><th class="CalDayHeader" abbr="四" scope="col" align="center">四</th><th class="CalDayHeader" abbr="五" scope="col" align="center">五</th><th class="CalDayHeader" abbr="六" scope="col" align="center">六</th></tr><tr><td class="CalOtherMonthDay" align="center">22</td><td class="CalOtherMonthDay" align="center">23</td><td class="CalOtherMonthDay" align="center">24</td><td class="CalOtherMonthDay" align="center">25</td><td class="CalOtherMonthDay" align="center">26</td><td class="CalOtherMonthDay" align="center">27</td><td class="CalOtherMonthDay" align="center">28</td></tr><tr><td class="CalWeekendDay" align="center">1</td><td align="center">2</td><td class="CalTodayDay" align="center">3</td><td align="center">4</td><td align="center">5</td><td align="center">6</td><td class="CalWeekendDay" align="center">7</td></tr><tr><td class="CalWeekendDay" align="center">8</td><td align="center">9</td><td align="center">10</td><td align="center">11</td><td align="center">12</td><td align="center">13</td><td class="CalWeekendDay" align="center">14</td></tr><tr><td class="CalWeekendDay" align="center">15</td><td align="center">16</td><td align="center">17</td><td align="center">18</td><td align="center">19</td><td align="center">20</td><td class="CalWeekendDay" align="center">21</td></tr><tr><td class="CalWeekendDay" align="center">22</td><td align="center">23</td><td align="center">24</td><td align="center">25</td><td align="center">26</td><td align="center">27</td><td class="CalWeekendDay" align="center">28</td></tr><tr><td class="CalWeekendDay" align="center">29</td><td align="center">30</td><td align="center">31</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn">
+<div class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="widget_my_zzk" class="div_my_zzk"><input id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk" type="text">&nbsp;<input onclick="zzk_go()" value="找找看" id="btnZzk" class="btn_my_zzk" type="button"></div>
+<div id="widget_my_google" class="div_my_zzk"><input name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk" type="text">&nbsp;<input onclick="google_go()" value="谷歌搜索" class="btn_my_zzk" type="button"></div>
+</div>
+
+
+<div class="catListTag">
+<h3 class="catListTitle">我的标签</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/flying_bat/tag/Git/">Git</a>(3)</li><li><a href="http://www.cnblogs.com/flying_bat/tag/Flash/">Flash</a>(2)</li><li><a href="http://www.cnblogs.com/flying_bat/tag/PHP/">PHP</a>(2)</li><li><a href="http://www.cnblogs.com/flying_bat/tag/Zune/">Zune</a>(2)</li><li><a href="http://www.cnblogs.com/flying_bat/tag/DOTA2/">DOTA2</a>(2)</li><li><a href="http://www.cnblogs.com/flying_bat/tag/Firefox/">Firefox</a>(1)</li><li><a href="http://www.cnblogs.com/flying_bat/tag/%E5%B4%A9%E6%BA%83/">崩溃</a>(1)</li><li><a href="http://www.cnblogs.com/flying_bat/tag/%E7%A6%8F%E5%B7%9E%E5%A4%A9%E8%B6%A3/">福州天趣</a>(1)</li><li><a href="http://www.cnblogs.com/flying_bat/tag/%E7%A6%8F%E5%B7%9E%E4%B8%87%E5%9F%8E/">福州万城</a>(1)</li><li><a href="http://www.cnblogs.com/flying_bat/tag/%E6%8D%A2%E8%A1%8C%E7%AC%A6/">换行符</a>(1)</li><li><a href="http://www.cnblogs.com/flying_bat/tag/">更多</a></li>
+</ul>
+</div>
+<div class="catListPostCategory">
+<h3 class="catListTitle">随笔分类<span style="font-size:11px;font-weight:normal">(583)</span></h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_0_Link_0" href="http://www.cnblogs.com/flying_bat/category/94492.html">.NET(C#)(7)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_1" href="http://www.cnblogs.com/flying_bat/category/503182.html">AS3(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_2" href="http://www.cnblogs.com/flying_bat/category/106512.html">Chinese kungfu(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_3" href="http://www.cnblogs.com/flying_bat/category/105880.html">Linux(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_4" href="http://www.cnblogs.com/flying_bat/category/11177.html">Win32&amp;MFC(113)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_5" href="http://www.cnblogs.com/flying_bat/category/128026.html">XML(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_6" href="http://www.cnblogs.com/flying_bat/category/128842.html">安全&amp;驱动(22)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_7" href="http://www.cnblogs.com/flying_bat/category/96810.html">程序员的灯下黑(37)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_8" href="http://www.cnblogs.com/flying_bat/category/12433.html">企业管理(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_9" href="http://www.cnblogs.com/flying_bat/category/11175.html">网络(16)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_10" href="http://www.cnblogs.com/flying_bat/category/12401.html">想写啥就写啥(156)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_11" href="http://www.cnblogs.com/flying_bat/category/104189.html">医学(19)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_12" href="http://www.cnblogs.com/flying_bat/category/94493.html">游戏(20)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_13" href="http://www.cnblogs.com/flying_bat/category/11176.html">游戏开发(172)</a> </li>
+
+</ul>
+
+</div>
+
+<div class="catListPostArchive">
+<h3 class="catListTitle">随笔档案<span style="font-size:11px;font-weight:normal">(589)</span></h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_1_Link_0" href="http://www.cnblogs.com/flying_bat/archive/2014/12.html">2014年12月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_1" href="http://www.cnblogs.com/flying_bat/archive/2014/09.html">2014年9月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_2" href="http://www.cnblogs.com/flying_bat/archive/2014/08.html">2014年8月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_3" href="http://www.cnblogs.com/flying_bat/archive/2014/07.html">2014年7月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_4" href="http://www.cnblogs.com/flying_bat/archive/2014/04.html">2014年4月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_5" href="http://www.cnblogs.com/flying_bat/archive/2014/01.html">2014年1月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_6" href="http://www.cnblogs.com/flying_bat/archive/2013/12.html">2013年12月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_7" href="http://www.cnblogs.com/flying_bat/archive/2013/11.html">2013年11月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_8" href="http://www.cnblogs.com/flying_bat/archive/2013/10.html">2013年10月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_9" href="http://www.cnblogs.com/flying_bat/archive/2013/09.html">2013年9月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_10" href="http://www.cnblogs.com/flying_bat/archive/2013/08.html">2013年8月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_11" href="http://www.cnblogs.com/flying_bat/archive/2013/07.html">2013年7月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_12" href="http://www.cnblogs.com/flying_bat/archive/2013/06.html">2013年6月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_13" href="http://www.cnblogs.com/flying_bat/archive/2013/05.html">2013年5月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_14" href="http://www.cnblogs.com/flying_bat/archive/2013/04.html">2013年4月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_15" href="http://www.cnblogs.com/flying_bat/archive/2013/02.html">2013年2月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_16" href="http://www.cnblogs.com/flying_bat/archive/2011/11.html">2011年11月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_17" href="http://www.cnblogs.com/flying_bat/archive/2011/06.html">2011年6月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_18" href="http://www.cnblogs.com/flying_bat/archive/2011/02.html">2011年2月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_19" href="http://www.cnblogs.com/flying_bat/archive/2010/11.html">2010年11月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_20" href="http://www.cnblogs.com/flying_bat/archive/2010/10.html">2010年10月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_21" href="http://www.cnblogs.com/flying_bat/archive/2010/08.html">2010年8月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_22" href="http://www.cnblogs.com/flying_bat/archive/2010/07.html">2010年7月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_23" href="http://www.cnblogs.com/flying_bat/archive/2010/06.html">2010年6月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_24" href="http://www.cnblogs.com/flying_bat/archive/2010/05.html">2010年5月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_25" href="http://www.cnblogs.com/flying_bat/archive/2010/04.html">2010年4月 (11)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_26" href="http://www.cnblogs.com/flying_bat/archive/2010/03.html">2010年3月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_27" href="http://www.cnblogs.com/flying_bat/archive/2010/02.html">2010年2月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_28" href="http://www.cnblogs.com/flying_bat/archive/2010/01.html">2010年1月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_29" href="http://www.cnblogs.com/flying_bat/archive/2009/12.html">2009年12月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_30" href="http://www.cnblogs.com/flying_bat/archive/2009/11.html">2009年11月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_31" href="http://www.cnblogs.com/flying_bat/archive/2009/09.html">2009年9月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_32" href="http://www.cnblogs.com/flying_bat/archive/2009/08.html">2009年8月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_33" href="http://www.cnblogs.com/flying_bat/archive/2009/07.html">2009年7月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_34" href="http://www.cnblogs.com/flying_bat/archive/2009/06.html">2009年6月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_35" href="http://www.cnblogs.com/flying_bat/archive/2009/05.html">2009年5月 (7)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_36" href="http://www.cnblogs.com/flying_bat/archive/2009/04.html">2009年4月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_37" href="http://www.cnblogs.com/flying_bat/archive/2009/03.html">2009年3月 (9)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_38" href="http://www.cnblogs.com/flying_bat/archive/2009/01.html">2009年1月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_39" href="http://www.cnblogs.com/flying_bat/archive/2008/12.html">2008年12月 (16)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_40" href="http://www.cnblogs.com/flying_bat/archive/2008/11.html">2008年11月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_41" href="http://www.cnblogs.com/flying_bat/archive/2008/10.html">2008年10月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_42" href="http://www.cnblogs.com/flying_bat/archive/2008/09.html">2008年9月 (7)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_43" href="http://www.cnblogs.com/flying_bat/archive/2008/08.html">2008年8月 (11)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_44" href="http://www.cnblogs.com/flying_bat/archive/2008/07.html">2008年7月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_45" href="http://www.cnblogs.com/flying_bat/archive/2008/06.html">2008年6月 (11)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_46" href="http://www.cnblogs.com/flying_bat/archive/2008/05.html">2008年5月 (20)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_47" href="http://www.cnblogs.com/flying_bat/archive/2008/04.html">2008年4月 (22)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_48" href="http://www.cnblogs.com/flying_bat/archive/2008/03.html">2008年3月 (50)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_49" href="http://www.cnblogs.com/flying_bat/archive/2008/01.html">2008年1月 (16)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_50" href="http://www.cnblogs.com/flying_bat/archive/2007/12.html">2007年12月 (15)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_51" href="http://www.cnblogs.com/flying_bat/archive/2007/11.html">2007年11月 (35)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_52" href="http://www.cnblogs.com/flying_bat/archive/2007/10.html">2007年10月 (33)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_53" href="http://www.cnblogs.com/flying_bat/archive/2007/09.html">2007年9月 (43)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_54" href="http://www.cnblogs.com/flying_bat/archive/2007/08.html">2007年8月 (48)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_55" href="http://www.cnblogs.com/flying_bat/archive/2007/07.html">2007年7月 (28)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_56" href="http://www.cnblogs.com/flying_bat/archive/2007/06.html">2007年6月 (11)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_57" href="http://www.cnblogs.com/flying_bat/archive/2007/05.html">2007年5月 (18)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_58" href="http://www.cnblogs.com/flying_bat/archive/2007/04.html">2007年4月 (9)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_59" href="http://www.cnblogs.com/flying_bat/archive/2007/03.html">2007年3月 (14)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_60" href="http://www.cnblogs.com/flying_bat/archive/2007/02.html">2007年2月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_61" href="http://www.cnblogs.com/flying_bat/archive/2007/01.html">2007年1月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_62" href="http://www.cnblogs.com/flying_bat/archive/2006/12.html">2006年12月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_63" href="http://www.cnblogs.com/flying_bat/archive/2006/11.html">2006年11月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_64" href="http://www.cnblogs.com/flying_bat/archive/2006/10.html">2006年10月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_65" href="http://www.cnblogs.com/flying_bat/archive/2006/09.html">2006年9月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_66" href="http://www.cnblogs.com/flying_bat/archive/2006/06.html">2006年6月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_67" href="http://www.cnblogs.com/flying_bat/archive/2006/03.html">2006年3月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_68" href="http://www.cnblogs.com/flying_bat/archive/2006/01.html">2006年1月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_69" href="http://www.cnblogs.com/flying_bat/archive/2005/12.html">2005年12月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_70" href="http://www.cnblogs.com/flying_bat/archive/2005/11.html">2005年11月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_71" href="http://www.cnblogs.com/flying_bat/archive/2005/10.html">2005年10月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_72" href="http://www.cnblogs.com/flying_bat/archive/2005/08.html">2005年8月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_73" href="http://www.cnblogs.com/flying_bat/archive/2005/07.html">2005年7月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_74" href="http://www.cnblogs.com/flying_bat/archive/2005/06.html">2005年6月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_75" href="http://www.cnblogs.com/flying_bat/archive/2005/05.html">2005年5月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_76" href="http://www.cnblogs.com/flying_bat/archive/2005/04.html">2005年4月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_77" href="http://www.cnblogs.com/flying_bat/archive/2004/11.html">2004年11月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_78" href="http://www.cnblogs.com/flying_bat/archive/2004/10.html">2004年10月 (16)</a> </li>
+
+</ul>
+
+</div>
+
+<div class="catListhttp://www.cplusplus.com/">
+<h3 class="catListTitle">编程</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_2_Link_0" href="http://www.antiprotect.com/" rel="nofollow" target="_blank">Anti Protect</a> </li>
+
+<li><a id="CatList_LinkList_2_Link_1" href="http://bbs.etalking.org/" rel="nofollow">CS作弊器</a> </li>
+
+<li><a id="CatList_LinkList_2_Link_2" href="http://iwinphone7.com/" rel="nofollow" target="_blank">iWinPhone7.com Windows Phone 7</a> </li>
+
+<li><a id="CatList_LinkList_2_Link_3" href="http://www.microsoft.com/MSDN" rel="nofollow" target="_blank">MSDN</a> </li>
+
+<li><a id="CatList_LinkList_2_Link_4" href="http://www.microsoft.com/china/msdn/" rel="nofollow" target="_blank">MSDN 中文网站</a> </li>
+
+<li><a id="CatList_LinkList_2_Link_5" href="http://www.cplusplus.com/" rel="nofollow" target="_blank">plusplus</a> </li>
+
+<li><a id="CatList_LinkList_2_Link_6" href="http://www.vchelp.net/" rel="nofollow" target="_blank">VCHELP</a> </li>
+
+<li><a id="CatList_LinkList_2_Link_7" href="http://www.vckbase.net/" rel="nofollow" target="_blank">VC知识库</a> </li>
+
+<li><a id="CatList_LinkList_2_Link_8" href="http://www.darkst.com/bbs/?fromuid=62636" rel="nofollow" target="_blank">暗组论坛</a> </li>
+
+<li><a id="CatList_LinkList_2_Link_9" href="http://www.cnblogs.com/" rel="nofollow" target="_blank">博客园</a> </li>
+
+<li><a id="CatList_LinkList_2_Link_10" href="http://jjhou.csdn.net/" rel="nofollow" target="_blank">侯捷网站</a> </li>
+
+<li><a id="CatList_LinkList_2_Link_11" href="https://forum.eviloctal.com/?a=flying_bat" rel="nofollow" target="_blank">邪恶八进制信息安全团队</a> </li>
+
+</ul>
+
+</div>
+
+<div class="catList">
+<h3 class="catListTitle">好友们的blogs</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_3_Link_0" href="http://blog.csdn.net/flyingbat2/" rel="nofollow" target="_blank">flyingbat2</a> </li>
+
+<li><a id="CatList_LinkList_3_Link_1" href="http://blog.csdn.net/liflag888" rel="nofollow" target="_blank">liflag888的专栏</a> </li>
+
+<li><a id="CatList_LinkList_3_Link_2" href="http://rise-studio.blog.sohu.com/" rel="nofollow" target="_blank">rise studio</a> </li>
+
+<li><a id="CatList_LinkList_3_Link_3" href="http://blog.csdn.net/zdl1016" rel="nofollow" target="_blank">zdl1016的专栏</a> </li>
+
+<li><a id="CatList_LinkList_3_Link_4" href="http://hi.baidu.com/superxman" rel="nofollow" target="_blank">暴走小鸡</a> </li>
+
+<li><a id="CatList_LinkList_3_Link_5" href="http://blog.sina.com.cn/u/1415544254" rel="nofollow" target="_blank">李蔚的心情驿站</a> </li>
+
+<li><a id="CatList_LinkList_3_Link_6" href="http://blog.csdn.net/lyxiaoya/" rel="nofollow" target="_blank">迷糊小亚的专栏</a> </li>
+
+<li><a id="CatList_LinkList_3_Link_7" href="http://blog.sina.com.cn/u/1261898521" rel="nofollow" target="_blank">森的BLOG</a> </li>
+
+<li><a id="CatList_LinkList_3_Link_8" href="http://www.cnblogs.com/suiyingjie/" rel="nofollow" target="_blank">天外飞仙的博客</a> </li>
+
+</ul>
+
+</div>
+
+<div class="catList下载网站">
+<h3 class="catListTitle">下载</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_4_Link_0" href="http://www.netyi.net/in.asp?id=flying_bat" rel="nofollow" target="_blank">netYi专业电脑电子书库</a> </li>
+
+<li><a id="CatList_LinkList_4_Link_1" href="http://www.feiq18.com/?fromuser=flying_bat" rel="nofollow" target="_blank">飞秋工作室</a> </li>
+
+<li><a id="CatList_LinkList_4_Link_2" href="http://www.onlinedown.net/index.htm" rel="nofollow">华军软件园 </a> </li>
+
+<li><a id="CatList_LinkList_4_Link_3" href="http://bbs.deepin.org/?a=flying_bat" rel="nofollow" target="_blank">深度论坛</a> </li>
+
+<li><a id="CatList_LinkList_4_Link_4" href="http://www.skycn.com/index.html" rel="nofollow" target="_blank">天空软件站</a> </li>
+
+</ul>
+
+</div>
+
+<div class="catList">
+<h3 class="catListTitle">游戏</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_5_Link_0" href="http://war3.replays.net/bbs/?a=flying_bat" rel="nofollow" target="_blank">Replays.Net</a> </li>
+
+</ul>
+
+</div>
+
+
+<div class="catListBlogRank">
+<h3 class="catListTitle">积分与排名</h3>
+<ul>
+	<li class="liScore">
+		积分 -	385362
+	</li>
+	<li class="liRank">
+		排名 -	230
+	</li>
+</ul>
+</div>
+
+
+<div id="topview_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock"><ul><li><a href="http://www.cnblogs.com/flying_bat/archive/2008/01/18/1044693.html">1. do...while(0)的妙用(41989)</a></li><li><a href="http://www.cnblogs.com/flying_bat/archive/2010/04/14/1711641.html">2. VS2010 Ultimate英文版下载(21534)</a></li><li><a href="http://www.cnblogs.com/flying_bat/archive/2006/09/29/517987.html">3. 理解I/O Completion Port(完成端口)(19795)</a></li><li><a href="http://www.cnblogs.com/flying_bat/archive/2008/03/25/1121261.html">4. 教你快速下载fs2you.com网盘的文件(18901)</a></li><li><a href="http://www.cnblogs.com/flying_bat/archive/2007/09/25/905133.html">5. MD5算法的C++实现 (18371)</a></li><li><a href="http://www.cnblogs.com/flying_bat/archive/2006/01/04/310659.html">6. Windows任务管理器不显示用户名的解决方法(15542)</a></li><li><a href="http://www.cnblogs.com/flying_bat/archive/2004/10/29/58238.html">7. 人物分析：宋江/刘备/唐僧的无能之能(11584)</a></li><li><a href="http://www.cnblogs.com/flying_bat/archive/2008/06/17/1224178.html">8. C++位运算(10853)</a></li><li><a href="http://www.cnblogs.com/flying_bat/archive/2008/04/23/1167640.html">9. #pragma 用法(7478)</a></li><li><a href="http://www.cnblogs.com/flying_bat/archive/2007/09/06/884858.html">10. 使用VMware虚拟磁盘管理工具调整磁盘大小(7439)</a></li><li><a href="http://www.cnblogs.com/flying_bat/archive/2006/10/27/541665.html">11. Windows调试器及不同平台符号包下载地址(收集)(7189)</a></li><li><a href="http://www.cnblogs.com/flying_bat/archive/2004/10/10/50611.html">12. 何编写网络监视器(6805)</a></li><li><a href="http://www.cnblogs.com/flying_bat/archive/2007/10/31/943957.html">13. 一些游戏编程的书[转](6372)</a></li><li><a href="http://www.cnblogs.com/flying_bat/archive/2007/09/17/895560.html">14. 如何集中注意力(6179)</a></li><li><a href="http://www.cnblogs.com/flying_bat/archive/2007/08/06/844401.html">15. DirectX9.0教程之ID3DXSprite篇[转载](5910)</a></li><li><a href="http://www.cnblogs.com/flying_bat/archive/2007/11/10/955327.html">16. TinyXML中文文档(5726)</a></li><li><a href="http://www.cnblogs.com/flying_bat/archive/2010/04/28/1722648.html">17. Visual Studio 2010中C++项目升级指南(5720)</a></li><li><a href="http://www.cnblogs.com/flying_bat/archive/2008/04/18/1159996.html">18. 微软研究院Detour开发包之API拦截技术(5570)</a></li><li><a href="http://www.cnblogs.com/flying_bat/archive/2008/04/11/1148042.html">19. GB2312转unicode程序(5568)</a></li><li><a href="http://www.cnblogs.com/flying_bat/archive/2008/06/17/1224168.html">20. GetAsyncKeyState()与GetKeyboardState()(5461)</a></li></ul></div>
+</div>
+</div></div><script type="text/javascript">loadBlogSideColumn();</script><iframe style="visibility: hidden; display: none;" src="Git%E4%B8%AD%E7%9A%84AutoCRLF%E4%B8%8ESafeCRLF%E6%8D%A2%E8%A1%8C%E7%AC%A6%E9%97%AE%E9%A2%98%20-%20%E8%87%B3%E5%B0%8A%E7%8E%8B%E8%80%85%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/container_002.html"></iframe>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright ©2015 至尊王者
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+<iframe style="display: none; width: 0px; height: 0px;" name="google_osd_static_frame" id="google_osd_static_frame_8089719504294"></iframe></body></html>
