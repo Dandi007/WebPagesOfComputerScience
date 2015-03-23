@@ -1,0 +1,432 @@
+@charset "gb2312";
+/* CSS Document */
+body, div, dl, dt, dd, ul, ol, li,
+h1, h2, h3, h4, h5, h6, pre, code,
+form, fieldset, legend, input, button,
+textarea, p, blockquote, th, td {
+	margin: 0;
+	padding: 0;
+}
+img {
+	border: 0;
+}
+:focus {
+	outline: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+input, button, textarea,
+select, optgroup, option {
+	font-family: inherit;
+	font-size: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+}
+body {
+	line-height:1.5;
+}
+ol, ul {
+	list-style:none;
+}
+
+:link, :visited , ins {
+	text-decoration: none;
+}
+/*Reset end*/
+body{
+    color:#5f5f5f;
+	font:12px/1.5 "宋体",Arial;
+}
+a,a:link,a:visited{
+	 color:#2F3A30;
+}
+a:hover{
+	text-decoration:none;
+	color:#ff5800;
+	cursor:pointer;
+	text-decoration:underline;
+}
+a:active{
+	color:#666;
+}
+/*蓝色链接*/
+.bluea a,.bluea a:link,.bluea a:visited{
+    color:#2F688C;
+}
+.bluea a:hover{
+	text-decoration:none;
+	color:#ff5800;
+	cursor:pointer;
+}
+.bluea a:active{
+	color:#666;
+}
+/*绿色链接*/
+.greena a,.greena a:link,.greena a:visited{
+    color:#093;
+}
+.greena a:hover{
+	text-decoration:none;
+	color:#ff5800;
+	cursor:pointer;
+}
+.greena a:active{
+	color:#666;
+}
+.clear{clear:both;line-height:0; height:0; font-size:0;overflow:hidden; }
+/*font*/
+.font12-bold,.font12-normal,.font14-bold,h2,h3{
+	font:bold 12px/1.5 "微软雅黑","宋体";
+}
+.font12-normal{
+	font-weight:normal;
+}
+.font14-bold,h2,h3{
+	font-size:14px;
+}
+a.focus{
+	color:#093;
+}
+/*列表样式 */
+.text-list-green li,.text-list-grey li{
+		height:21px;
+		line-height:21px;
+		padding-left:15px;
+		overflow:hidden;
+		background:url(/style/images/liststyle-fire.png) no-repeat 0 6px;
+	}
+.text-list-grey li{
+        background:url(/style/images/liststyle-fire.png) no-repeat 0 -30px;
+}
+.text-list-grey li span{padding-left:15px;}
+/*带日期*/
+.time-list li{
+	font-size:14px;
+	line-height:24px;
+	padding-left:15px;
+	background:url(/style/images/liststyle-fire.png) no-repeat 0 -27px;
+}
+.time-list .span_r{
+	float:right;
+}
+/*带分类、日期*/
+/* <li><span class="span_r">日期</span>[<a href="/" class="catalog">分类名称</a>]<a href="/">带分类和日期的列表示例文本</a></li> */
+.catalog-time-list li{
+	font-size:14px;
+	line-height:24px;
+}
+	.catalog-time-list li a{
+		margin-left:5px;
+	}
+	.catalog-time-list li a.catalog{
+		margin-left:0;
+	}
+	.catalog-time-list .span_r{
+		float:right;
+	}
+/*带图标列表*/
+/* <li><img src="/style/images/icon.jpg" class="icon"><a href="/">带图标列表示例文本</a></li> */
+.icon-list li{
+		_float:left;
+		height:36px;
+		margin:5px 0 0 ;
+		_display:inline;
+		overflow:hidden;
+	}
+	.icon-list li img{
+		float:left;
+		height:32px;
+		width:32px;
+		margin-top:2px;
+		*vertical-align:middle;
+	}
+	.icon-list li a{
+		float:left;
+		display:block;
+		height:25px;
+		overflow:hidden;
+		white-space:nowrap;
+		padding-top:6px;
+		margin-left:8px;
+		border-bottom:1px dashed #ededed;
+	}
+/*带副标题图标列表*/
+/*  <li><img src="/style/images/icon.jpg" ><div class="a-box"><a href="/">带副标题图标列表示例文本</a><p>副标题示例</p></div></li> */
+.icon-list-p li{
+	    width:280px;
+		height:36px;
+		overflow:hidden;
+		margin-top:10px;
+		padding-bottom:8px;
+		border-bottom:1px dashed #d8d8d8;
+	}
+		.icon-list-p li img{
+			float:left;
+			height:32px;
+			width:32px;
+			margin-top:2px;
+		}
+		.icon-list-p li .a-box{ 
+			overflow:hidden;
+			white-space:nowrap; 
+			height:36px;
+			width:19em;
+			margin-left:45px;
+		}
+/*图文*/
+.txpic{
+	overflow:hidden;
+}
+.txpic li{
+	  float:left;
+	  width:130px;
+	  text-align:center;
+	  margin:10px 0 0 12px;
+	  display:inline;
+}
+	  .txpic li img{
+		  width:124px;
+		  height:78px;
+		  vertical-align:middle;
+		  padding:2px;
+		  border:1px solid #d8d8d8;
+	  }
+	  .txpic li img:hover{
+		  border-color:#ff5800;
+	  }
+	   .txpic li p{
+		  line-height:28px;
+		  overflow:hidden;
+		  white-space:nowrap;
+		  width:130px;
+	   }
+/*排行*/
+.rank-list{
+	    padding:10px 9px 5px;
+		background:url(/style/images/rank.png) no-repeat 10px 11px;
+	}
+	.rank-list li{
+		height:25px;
+		line-height:25px;
+		text-indent:25px;
+		overflow:hidden;
+	}
+/*tab*/
+.tabTitle{
+	height:30px;
+}
+	.tabTitle li{
+		font:14px/30px "微软雅黑","宋体";
+		float:left;
+		height:30px;
+		text-align:center;
+		cursor:pointer;
+	}
+/*顶部导航开始*/
+#topNavC{
+	background-color:#f9f9f9;
+	padding-bottom:2px;
+	border-bottom:1px solid #e6e6e6;
+}
+#topNav{
+	    width:960px;
+		margin:0 auto;
+		padding-top:3px;
+		overflow:hidden;
+	    }
+		#topNav ul{
+			float:right;
+		}
+		#topNav li{
+			float:left;
+			color:#d8d8d8;
+		}
+		#topNav li a{
+			margin:0 10px;
+		}
+/*layout*/
+#container{
+	width:970px;
+	margin:0 auto;
+}
+	.box-bottom{
+		height:5px;
+		overflow:hidden;
+	}
+/* CSS Document */
+#top-menu,#header{
+	width:960px;
+	overflow:hidden;
+	margin:0 5px;
+}
+.box-top{
+	height:5px;
+	overflow:hidden;
+	margin-top:10px;
+	background:url(/style/images/topic.png) no-repeat
+}
+#top-menu .box-bottom{
+	height:5px;
+	overflow:hidden;
+	margin-bottom:10px;
+	background:url(/style/images/topic.png) no-repeat 0 -75px;
+}
+#top-menu .content{
+	width:958px;
+	overflow:hidden;
+    border-left:1px solid #c4c4c4;
+    border-right:1px solid #c4c4c4;
+}
+    #top-menu div.n{
+		float:left;
+		height:21px;
+	}
+	#top-menu div.n a{
+		margin:0 6px;
+		line-height:21px;
+	}
+	#top-menu div.n strong{
+		margin-left:15px;
+		color:#118d00;
+		font:bold 12px/21px "微软雅黑","宋体";
+	}
+	    #top-menu div.n a.win7{
+			color:#2CA0D7;
+		}
+#logo{
+	float:left;
+}
+	#fast-nav{
+		height:18px;
+		width:500px;
+		overflow:hidden;
+		white-space:nowrap;
+		float:left;
+		margin:12px 0 0 10px;
+	}
+#minisearch{
+		float:right;
+		width:300px;
+		height:30px;
+		background:url(/style/images/miniser.png) no-repeat;
+	}
+	    #minisearch #searchbox{
+			float:left;
+			font-size:14px;
+			color:#ccc;
+			border:none;
+			background:none;
+			padding-top:3px;
+			height:24px;
+			line-height:24px;
+			width:215px;
+			margin-left:15px;
+		}
+		#minisearch #submits{
+			float:left;
+			cursor:pointer;
+			border:0;
+			background:none;;
+			outline:none;
+			width:60px;
+			height:24px;
+			margin:3px 0 0 5px;
+		}
+/*内容主体*/
+#mainBody{
+	clear:both;
+	width:960px;
+	overflow:hidden;
+	margin:10px 5px;
+}
+#content{
+	width:650px;
+	float:left;
+}
+#sidebar{
+	width:300px;
+	float:right;
+	margin-top:0;
+}
+    #sidebar .ad{		
+		overflow:hidden;
+		margin:0;
+	}
+	#sidebar #tuwen li{
+		margin:10px 5px 0;
+	}
+/*侧边栏*/
+.imgArea-side,.side-box .title,.tab_2{
+		background:url(/style/images/downinfo/sidebar_bg.png) no-repeat 0 -45px;
+	}	
+.side-box{
+	width:300px;
+	height:auto;
+	margin-bottom:10px;
+}
+    .side-box .title h2{
+		color:#093;
+		font:14px/30px "微软雅黑","宋体";
+		height:30px;
+		text-indent:30px;
+	}
+    .side-box ul{
+		width:280px;
+		padding:5px 9px;
+		overflow:hidden;
+		border:1px solid #d8d8d8;
+		border-top:0;
+	}
+  #sidebar .tabTitle{
+		width:300px;
+		padding:0;
+		border:0;
+		background-position:0 -80px;
+	}
+		#sidebar .tabTitle li h3{
+			color:#3e3e3e;
+			width:150px;
+			font:14px/30px "微软雅黑","宋体";
+			float:left;
+			height:30px;
+			text-align:center;
+			cursor:pointer;
+		}
+		#sidebar .tabTitle li.tab_2{
+			background-position:0 -115px;
+		}
+		#sidebar .tabTitle li.tab_2 h3{
+					color:#118d00;
+		}
+	#rank .rank-list{
+		padding:10px 9px 3px;
+	}
+#footer{
+	width:960px;
+	margin:0 5px;
+	padding-top:10px;
+	border-top:1px solid #c4c4c4;
+	text-align:center;
+}
+	#footer a{
+		margin:0 15px;
+	}
+	#footer p{
+		margin:5px;
+	}
+	#footer span{
+		color:#369;
+		font-weight:bold;
+	}
+	
+/*投票*/
+.vote-wrap{ width:90%;margin:50px auto; }
+.vote-tit{ color:#000; font-weight:bold; font-size:14px;}
+.vote-itemName{ float:left; width:30%; height:36px; overflow:hidden; text-align:right;}
+#vote li{width:100%;height:36px;line-height:36px; overflow:hidden; }
+#vote em {float:left; display:inline;width:40%; height:12px; margin-top:12px; margin-left:5px; background:#f1f1f1; line-height:12px;}
+#vote b{ float:left; display:inline; margin-left:20px; margin-right:15px; height:36px; color:#f60;}
+#vote .check{ float:left; margin-top:12px;*margin-top:6px;}
+.vote-submit{ padding-left:30%; margin-top:10px;font-size:12px;}

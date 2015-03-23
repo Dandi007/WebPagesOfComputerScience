@@ -1,0 +1,357 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+.ifrmsgstyle *{
+	margin:0px;
+	padding:0px;
+	font-size:12px;	
+	color:#3b3b3b;	
+	text-decoration:none;
+	}
+img {border:0px;}
+ul{ list-style-type:none; padding:0px; margin:0px;}
+
+
+.left{ float:left;}
+.right{ float:right;}
+.both{ clear:both;}
+
+.big_d{
+	width:540px;
+	height: 506px;
+	border:#d4d4d4 1px solid;
+	box-shadow:0px 0px 8px #b6b6b6;
+	
+
+border-radius: 6px 6px 6px 6px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    background-color:#ffffff;
+	}
+.big2{
+
+	float:left;
+	width:525px;
+	height: 506px;	
+	border:#d4d4d4 1px solid;
+	}
+.shang_tou{
+	height:5px;
+	
+	background:url(http://pubimage.360doc.com/chat/shang.png) repeat-x;
+	
+	}
+.zuo_tou{
+	width:5px;
+	height:508px;
+	background:url(http://pubimage.360doc.com/chat/zuo.png) repeat-y;
+	}
+.xia_tou{
+
+	height:5px;
+	
+	background: url(http://pubimage.360doc.com/chat/xia.png) repeat-x;
+	
+	}
+.you_tou{
+	width:5px;
+	height:508px;
+	background:url(http://pubimage.360doc.com/chat/you.png) repeat-y;}
+
+.zsj_l {
+    width:5px; height:5px;
+    background:url(http://pubimage.360doc.com/chat/zsj.png);
+}
+.ysj_l {
+    width:5px; height:5px;
+    background:url(http://pubimage.360doc.com/chat/ysj.png);
+}
+.zxj_l {
+    width:5px; height:5px;
+    background:url(http://pubimage.360doc.com/chat/zxj.png);
+}
+
+.yxj_l {
+    width:5px; height:5px;
+    background:url(http://pubimage.360doc.com/chat/yxj.png);
+}
+.shang_d{
+
+	height:36px;
+	background: url(http://pubimage.360doc.com/chat/1.gif) repeat-x;
+	}
+.biaoti_d {
+	color:#1c1c1c;
+	font-weight:bold;
+	margin-left:10px;
+	height:35px;
+	line-height:35px;	
+	}
+.cha_d{
+	background:url(http://pubimage.360doc.com/chat/cha.gif) no-repeat;	
+	width:10px;
+	height:9px;
+	margin:12px 15px 5px 5px;
+   
+	}
+.liebiao{
+	width:130px;
+	background-color:#f1f1f1;
+	
+	}
+.luo{
+	background: url(http://pubimage.360doc.com/chat/bg-n.gif) no-repeat;
+	margin-left:-9px;
+	width:127px;
+	height:49px;
+	}
+.luo2 {
+
+    background: url(http://pubimage.360doc.com/chat/bg_ns.gif) no-repeat;
+	margin-left:-9px;
+	width:127px;
+	height:49px;
+}
+.zjlxr{height:325px;
+background:url(http://pubimage.360doc.com/chat/duihua.gif) repeat-y right;}
+
+.zjlxr ul li{
+	
+	
+	padding-left:12px;
+	height:46px;
+	line-height:46px;
+	position: relative;
+    cursor:pointer;
+	}
+.zjlxr ul li:hover{
+	background : url(http://pubimage.360doc.com/chat/huashang2.gif) no-repeat;
+	
+	
+	}
+.newtip {
+    background : url(http://pubimage.360doc.com/chat/shan2.gif) no-repeat;
+	
+}
+.xtx{
+position: absolute;
+	left:24px;
+	top:7px;	
+	}
+.xialabao{
+	height:145px;
+	background:url(http://pubimage.360doc.com/chat/duihua.gif) repeat-y right;}
+.xialabao img{
+	margin-top: 115px;
+	margin-left: 53px;
+
+	}
+.zhanshi{
+	width:410px;
+	height:300px;
+	background-color:#fff;
+	}
+.mage table{
+	border:0px;
+	margin:0px;
+	padding:0px;
+	}
+.gongneng{
+	height:29px;
+	width:410px;
+	background-color:#f6f6f6;
+	border-bottom:#d6d6d6 1px   solid;
+	border-top:#d6d6d6 1px   solid;
+	}
+.shuru textarea{
+	width:405px;
+	height:72px;
+	border:0px;
+	padding: 5px 0px 0px 5px;
+}
+.fasong{
+	width:410px;
+	height:36px;
+	background-color:#f6f6f6;
+	border-top:#d6d6d6 1px   solid;
+	
+	}
+.fsan{
+	float:right;
+	margin-right:13px;
+	margin-top:3px;
+	width:67px;
+	height:28px;
+	background-image:url(http://pubimage.360doc.com/chat/fasongbt.gif);	
+	}
+.fsan:hover {
+	background-image:url(http://pubimage.360doc.com/chat/fasonga.gif);	
+	}
+.dht {
+	width:370px;
+	margin-top:10px;
+	margin-left:20px;
+	height:44px;
+	}
+
+
+
+.cloudContent{    padding: 7px 10px;
+        padding-top: 7px;
+        padding-right-value: 10px;
+        padding-bottom: 7px;
+        padding-left-value: 10px;
+        padding-left-ltr-source: physical;
+        padding-left-rtl-source: physical;
+        padding-right-ltr-source: physical;
+        padding-right-rtl-source: physical;
+    color: #030303;
+    border-top: 1px solid #FFF;
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-top-color: #FFF;
+    border-bottom: 1px solid #F2F2F2;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: #F2F2F2;
+    border-right: 1px solid #F2F2F2;
+        border-right-width-value: 1px;
+        border-right-style-value: solid;
+        border-right-color-value: #F2F2F2;
+        border-right-width-ltr-source: physical;
+        border-right-width-rtl-source: physical;
+        border-right-style-ltr-source: physical;
+        border-right-style-rtl-source: physical;
+        border-right-color-ltr-source: physical;
+        border-right-color-rtl-source: physical;
+    background-image: -moz-linear-gradient(center top , #F3F3F3 10%, #F1F1F1 30%, #ECECEC 50%, #E9E9E9 70%, #E6E6E6 90%, #E5E5E5 100%);}
+
+.cloudContent {
+    border-radius: 5px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+    text-shadow: none;
+}
+.cloudContent {
+    text-align: left;
+    font-weight: normal;
+    font-size: 14px;
+    min-height: 20px;
+    word-wrap: break-word;
+} 
+.renming{
+	line-height:46px;
+	color:#64852d;
+	margin-left:9px;}
+.touxiang{
+	margin:12px 0px 0px 0px;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	.newmiscenav {
+	WIDTH:385px; FLOAT: left; padding-left:5px;
+}
+.newmiscenav_li SPAN {
+	BORDER-BOTTOM: 0px; TEXT-ALIGN: center; BORDER-LEFT: #ffe3be 1px solid; LINE-HEIGHT: 21px; WIDTH: 75px; BACKGROUND: #fff8e5; FLOAT: left; HEIGHT: 21px; COLOR: #4d4d4d; MARGIN-LEFT: 8px; BORDER-TOP: #ffe3be 1px solid; CURSOR: pointer; BORDER-RIGHT: #ffe3be 1px solid; TEXT-DECORATION: none;
+}
+.newmiscenav_li SPAN.checked {
+	BORDER-BOTTOM: 0px; POSITION: relative; BACKGROUND: #ffffff; color:#4d4d4d;TEXT-DECORATION: none;WIDTH: 75px;TEXT-ALIGN: center; 
+}
+.newmiscemokuai_li {
+	min-height:350px; float:left;
+	width:390px;
+	margin-top:-1px;
+	border-top: #ffe3be 1px solid;
+	text-align:left;
+}
+.zrdhrm{
+	color:#619d2c;}
+.zrdhrm a:link{
+	color:#619d2c;
+	}
+
+.zrdhrm a:hover{
+	color:#619d2c;
+	
+	}
+.zrdhrm a:visited{
+	color:#619d2c;
+	}
+.luo_li{
+	height: 45px;
+	width:190px;
+	_width:170px;
+	margin-top:15px;
+	float:left;
+	margin-left:5px;}
+
+
+.serchch{
+	background-image: url(http://pubimage.360doc.com/index/sy-21.gif);
+	background-repeat: no-repeat; width:187px; height:25px;
+	float:left; 
+}
+.serchptch{text-align:left; height:16px;background-color: #fff;font-size:12px;line-height:16px; border:1px solid #fff; padding:2px 2px;width:173px; color:#b2b2b2; margin:1px 0px 0px 2px;
+}
+
+.ssuoch{width:37px; height:25px; float:left;}
+.ssuoch a:link,.ssuoch a:visited{
+	display:block;
+	width:37px; height:25px;
+	background-image: url(http://pubimage.360doc.com/newsite/sousuo.gif);
+	background-repeat: no-repeat;
+}
+.ssuoch a:hover{display:block;
+	width:37px; height:25px;
+	background-image: url(http://pubimage.360doc.com/newsite/sousuo_a.gif);
+	background-repeat: no-repeat;
+	}	
+	
+
+.yema_li{ text-align:center; padding-top:20px; color:#2763ad; height:35px; clear:both;}
+.yema_li span{ padding:0px 2px;color:#2763ad;}
+.yema_li A:link {
+	COLOR: #909090; TEXT-DECORATION: none
+}
+.yema_li A:visited {
+	COLOR: #909090; TEXT-DECORATION: none
+}
+.yema_li A:hover {
+	COLOR: #2763ad; TEXT-DECORATION: none;
+}
+
+.yemabt{
+	background-image: url(http://pubimage.360doc.com/myindexnew/go.gif);
+	background-repeat: no-repeat;
+	width:45px;
+	height:23px;
+	color:#909090;
+	cursor:pointer;
+	line-height:23px;
+	text-align:center;
+}
+.yemabta{
+	background-image: url(http://pubimage.360doc.com/myindexnew/go2.gif);
+	background-repeat: no-repeat; width:45px; height:23px;color:#fff;cursor:pointer;line-height:23px; text-align:center;
+}
+.chattishi
+{
+    padding-top:15px;
+    padding-left:10px;
+    color:#adadad;
+}
+.mage .chacha{position: absolute;
+	left:113px;
+	top:17px;	}

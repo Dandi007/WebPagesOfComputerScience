@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+<title>彻底解决mysql中文乱码的办法 _pc6资讯</title>
+<meta name="keywords" content="mysql">
+<meta name="description" content=",彻底解决mysql中文乱码的办法">
+<link rel="Shortcut icon" href="http://www.pc6.com/style/image/favicon.ico" type="image/x-icon">
+<script src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/hm.asc"></script><script src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/hm.asc"></script><script src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/core.js" charset="utf-8" async="" type="text/javascript"></script><script type="text/javascript" src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/jquery-1.js"></script>
+<link href="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/new-all.css" type="text/css" rel="stylesheet">
+<link href="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/newInfo.css" type="text/css" rel="stylesheet">
+<link href="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/xq.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/Function.js"></script><script src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/sj.js" type="text/javascript"></script>
+
+<link type="text/css" rel="stylesheet" href="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/bdsstyle.css"><script src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/logger.js"></script></head>
+
+<body><div style="position: absolute; left: -1px; bottom: -1px; z-index: 0; width: 0px; height: 0px; overflow: hidden; visibility: hidden; display: none;" id="BAIDU_DUP_fp_wrapper"><iframe style="width: 0px; height: 0px; visibility: hidden; display: none;" src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/o.html" id="BAIDU_DUP_fp_iframe"></iframe></div><iframe style="display: none;" frameborder="0"></iframe><div style="display: block;" id="bdshare_s"><iframe id="bdsIfr" style="position:absolute;display:none;z-index:9999;" frameborder="0"></iframe><div style="display: none;" id="bdshare_l"><div id="bdshare_l_c"><h6>分享到</h6><ul><li><a href="#" class="bds_mshare mshare">一键分享</a></li><li><a href="#" class="bds_qzone qqkj">QQ空间</a></li><li><a href="#" class="bds_tsina xlwb">新浪微博</a></li><li><a href="#" class="bds_bdysc bdysc">百度云收藏</a></li><li><a href="#" class="bds_renren rrw">人人网</a></li><li><a href="#" class="bds_tqq txwb">腾讯微博</a></li><li><a href="#" class="bds_bdxc bdxc">百度相册</a></li><li><a href="#" class="bds_kaixin001 kxw">开心网</a></li><li><a href="#" class="bds_tqf txpy">腾讯朋友</a></li><li><a href="#" class="bds_tieba bdtb">百度贴吧</a></li><li><a href="#" class="bds_douban db">豆瓣网</a></li><li><a href="#" class="bds_tsohu shwb">搜狐微博</a></li><li><a href="#" class="bds_bdhome bdhome">百度新首页</a></li><li><a href="#" class="bds_sqq sqq">QQ好友</a></li><li><a href="#" class="bds_thx thx">和讯微博</a></li><li><a href="#" class="bds_more">更多...</a></li></ul><p><a href="#" class="goWebsite">百度分享</a></p></div></div></div>
+<div id="topNavC">
+                   <div id="topNav">
+                         <strong>彻底解决mysql中文乱码的办法</strong>
+                         <ul> 
+       <li><a href="http://www.pc6.com/SoftList/News_0_1.html">最近更新</a>|</li> 
+       <li><a href="http://www.pc6.com/SoftList/Soft_Category.html">软件分类</a>|</li> 
+       <li><a href="http://www.pc6.com/luntan.asp" class="focus">论坛转帖</a>|</li> 
+       <li><a href="http://www.pc6.com/qq.html" class="focus">QQ下载</a>|</li>  
+       <li><a href="http://www.pc6.com/shadu.html">杀毒软件</a></li> 
+</ul>
+                   </div>
+</div><!--end #topNavC -->
+<div id="cproIframe2002holder" style="padding: 0px; display: block; visibility: visible; border: medium none; background: none repeat scroll 0% 0% transparent; float: none; overflow: hidden; position: fixed; z-index: 2147483646; width: 130px; height: 300px; right: 4px; top: 150px;"><div style="position: absolute; top: 275px; left: 0px; cursor: pointer; width: 130px; height: 28px; z-index: 100; opacity: 0; background-color: rgb(153, 153, 153);" id="cproIframe2002CloseBtnWrap"></div><div style="position: absolute; width: 130px; height: 20px; top: 280px; left: 0px; cursor: pointer; background-color: rgb(153, 153, 153); color: rgb(255, 255, 255); font-size: 12px; font-family: 微软雅黑; text-align: center; line-height: 20px;" id="cproIframe2002CloseBtn">关闭</div><div style="width: 120px; height: 270px; overflow: hidden; padding: 4px; border: 1px solid rgb(172, 172, 172);"><div style="display:none">-</div><iframe id="cproIframe2002" src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/acom.html" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="true" align="center,center" frameborder="0" height="270" width="120"></iframe></div></div><div id="cproIframe2001holder" style="padding: 0px; display: block; visibility: visible; border: medium none; background: none repeat scroll 0% 0% transparent; float: none; overflow: hidden; position: fixed; z-index: 2147483646; width: 130px; height: 300px; left: 4px; top: 150px;"><div style="position: absolute; top: 275px; left: 0px; cursor: pointer; width: 130px; height: 28px; z-index: 100; opacity: 0; background-color: rgb(153, 153, 153);" id="cproIframe2001CloseBtnWrap"></div><div style="position: absolute; width: 130px; height: 20px; top: 280px; left: 0px; cursor: pointer; background-color: rgb(153, 153, 153); color: rgb(255, 255, 255); font-size: 12px; font-family: 微软雅黑; text-align: center; line-height: 20px;" id="cproIframe2001CloseBtn">关闭</div><div style="width: 120px; height: 270px; overflow: hidden; padding: 4px; border: 1px solid rgb(172, 172, 172);"><div style="display:none">-</div><iframe id="cproIframe2001" src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/acom_002.html" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="true" align="center,center" frameborder="0" height="270" width="120"></iframe></div></div><div id="container">
+           <div id="top-menu">
+                         <div class="box-top"></div>
+                         <div class="content">
+                                   <div class="n">
+                                        <strong>新闻</strong>
+                                        <a href="http://www.pc6.com/infoList/Catalog_10001_1.html">软件</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_10006_1.html">硬件</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_10039_1.html">网络</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_10041_1.html">报道</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_10042_1.html">综合</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_10042_1.html">IT人物</a>
+                                        <strong>办公</strong>
+                                        <a href="http://www.pc6.com/infoList/Catalog_60001_1.html">Word</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_60003_1.html">Excel</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_60005_1.html">Wps</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_60004_1.html">Powerpoint</a>
+                                        <strong>系统 </strong>
+                                        <a href="http://www.pc6.com/infoList/Catalog_40002_1.html">XP</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_120031_1.html">Vista</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_40001_1.html">Win2003</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_120057_1.html">win7</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_120099_1.html">win2008</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_40006_1.html">Linux</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_120097_1.html">谷歌</a>
+                                  </div>
+                                  <div class="n n2">
+                                        <strong>学院</strong>
+                                        <a href="http://www.pc6.com/infoList/Catalog_20001_1.html">Photoshop</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_20002_1.html">CorelDraw</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_70001_1.html">3DMAX</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_110001_1.html">.Net</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_110002_1.html">ASP</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_110003_1.html">JSP</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_110004_1.html">PHP</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_110005_1.html">SQL</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_110006_1.html">XML</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_80008_1.html">免费资源</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_110013_1.html">数据库</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_120058_1.html">非主流</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_30004_1.html">黑客</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_30010_1.html">学上网</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_80003_1.html">菜鸟必读</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_120003_1.html">QQ</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_120021_1.html">股票</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_120033_1.html">女性</a>
+                                        <a href="http://www.pc6.com/infoList/Catalog_120101_1.html">影视</a>
+                                  </div>
+                         </div><!--#content -->
+                         <div class="box-bottom"></div>
+           </div><!--#top-menu -->   
+           <div style="margin: -5px 0px 5px 5px;" id="topbanner"><iframe id="cproIframe1" src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/info-top.html" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="true" align="center,center" frameborder="0" height="90" width="960"></iframe></div> 
+        
+  <div id="header">
+                  <div id="logo"><a href="http://www.pc6.com/default_study.html"><img src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/minilogo.png" alt="软件资讯" border="0"></a></div>
+                  <div id="fast-nav" class="bluea"> <a href="http://www.pc6.com/default_study.html">首页</a>  → <a href="http://www.pc6.com/infolist/Catalog_11_1.html">技术开发</a> → <a href="http://www.pc6.com/infolist/Catalog_110014_1.html">数据库技巧</a> → 彻底解决mysql中文乱码的办法</div>
+                   <div id="minisearch">
+                                    <form name="searchform" method="get" action="/search.asp">
+                                            
+  <input name="searchType" value="cms" id="searchbox" type="hidden"> 
+                                               <input id="searchmode" name="searchmode" value="1" class="alingmid" type="hidden">
+                                               <input name="keyword" id="searchbox" onfocus="this.value='';" size="50" maxlength="100" type="text">
+                                               <div id="sugAutoComplete" onselectstart="return false"></div>
+                                               <input value="" id="submits" type="submit">
+			                          </form>
+                   </div><!--end #search -->
+           </div><!--end #header -->
+           
+           <div id="mainBody">
+                  <div id="content">  
+                             <div id="newsContent">
+                                     <div id="titBar">
+                                          <h1>彻底解决mysql中文乱码的办法</h1>
+                                          <div class="info greena">
+                                                <span class="newsTime">2013/9/24 18:06:44</span><span class="newsWhere">来源：<a href="http://www.pc6.com/" target="_blank">www.pc6.com</a></span><span>作者：gm</span><a href="#comment" target="_self">我要评论</a><span class="totalcomt">（0）</span>  
+                                          </div> 
+                                     </div>
+ <div id="contentBox"> 
+                                             <div class="ad" id="newinfo-ad1" style="width: 265px;float: left;">
+                                                  <script src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/newinfo1.js"></script><script type="text/javascript">
+/*250*250，创建于 2014-08-03 pc6文章 新画中画*/
+var cpro_id = "u1642730";
+</script>
+<script src="info-top_data/c.js" type="text/javascript"></script><div id="BAIDU_DUP_wrapper_u1642730_0"><iframe id="cproIframe_u1642730_1" src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/acom_003.html" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="true" align="center,center" frameborder="0" height="250" width="250"></iframe></div><script charset="utf-8" src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/acom"></script>
+
+                                            </div>
+                                            <p><strong>MySQL会出现中文乱码的原因不外乎下列几点：<br>1.server本身设定问题，例如还停留在latin1<br>2.table的语系设定问题(包含character与collation)<br>3.客户端程式(例如php)的连线语系设定问题<br>强烈建议使用utf8!!!!<br>utf8可以兼容世界上所有字符!!!!</strong></p><p><strong><span style="font-size:18px;color:#ff0000;">Linux下Mysql插入中文显示乱码解决方案</span></strong></p><p><strong>mysql -uroot -p 回车输入密码</strong></p><p>进入mysql查看状态如下：</p><p align="center"><img alt="" src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/2013092418001398644.png"></p><p align="center">mysql不能插入中文</p><p>默认的是客户端和服务器都用了latin1，所以会乱码。</p><p><strong>解决方案:</strong></p><p>mysql&gt;user mydb;</p><p>mysql&gt;alter database mydb &nbsp;character set utf8;!</p><p><strong>另一种方法是直接修改默认的Mysql配置文件</strong></p><p><strong><span style="font-size:18px;color:#ff0000;">在debian环境下，彻底解决mysql无法插入中文和中文乱码的办法</span></strong></p><p>上
+面提到了用临时方法更改数据库的字符集设置，显示中文，但是后来发现在有的系统下并不能成功，比如我用的debian 
+7.0，找了好久终于找到一个适合debian系统的解决方案，debian 
+7.0下测试成功，其他诸如修改client和mysql加入default-character-set=utf8的方法之类的，只适用与5.5以前的
+系统！</p><p><strong><span style="font-size:18px;color:#009900;">终极决绝方案，一劳永逸：</span></strong></p><p>debian下mysql的字符串修改为utf8(参考:rainysia的专栏)</p><p>一、进入mysql(mysql -uroot -p),查看当前数据库字符集(status;)</p><p>二、查看当前系统版本(lsb_release -a)</p><p align="center"><img alt="" src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/2013092417524218363.jpg"></p><p>Mysql不能插入中文</p><p>三、#vim /etc/mysql/my.cnf 。<strong><span style="color:#ff0000;">(5.5以前系统</span><span style="color:#ff0000;">)</span></strong>在【client】下面加入&nbsp;default-character-set=utf8</p><p>在【mysqld】下面加入default-character-set=utf8</p><p>Notice：注意 如果修改后不能启动报错试试把default-character-set=utf8改为character_set_server=utf8，仅仅加入到mysqld下面的.client就不需要加了</p><p>四、#vim /etc/mysql/my.cnf 。<strong><span style="color:#ff0000;">(5.5以后系统)如下修改：</span></strong></p><p>[client]<br>default-character-set=utf8</p><p>[mysqld]<br>default-storage-engine=INNODB<br>character-set-server=utf8<br>collation-server=utf8_general_ci</p><p>五、重启mysql(/etc/init.d/mysql stop &nbsp; /etc/init.d/mysql &nbsp;start)</p><p>六、修成成功，进入mysql查看字符集(mysql&gt;show variables like ‘character_set_%’;)</p><p align="center"><img alt="" src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/2013092417524235452.png"></p><p align="center">Mysql无法插入中文</p><p align="left">一、避免创建数据库及表出现中文乱码和查看编码方法<br>1、创建数据库的时候：CREATE DATABASE `test`<br>CHARACTER SET 'utf8'<br>COLLATE 'utf8_general_ci';<br>2、建表的时候 CREATE TABLE `database_user` (<br>`ID` varchar(40) NOT NULL default '',<br>`UserID` varchar(40) NOT NULL default '',<br>) ENGINE=InnoDB DEFAULT CHARSET=utf8;<br><br>这3个设置好了，基本就不会出问题了,即建库和建表时都使用相同的编码格式。<br>但是如果你已经建了库和表可以通过以下方式进行查询。<br>1.查看默认的编码格式:<br>mysql&gt; show variables like "%char%";<br>+--------------------------+---------------+<br>| Variable_name | Value |<br>+--------------------------+---------------+<br>| character_set_client | gbk |<br>| character_set_connection | gbk |<br>| character_set_database | utf8 |<br>| character_set_filesystem | binary |<br>| character_set_results | gbk |<br>| character_set_server | utf8 |<br>| character_set_system | utf8 |<br>+--------------------------+-------------+<br>注：以前2个来确定,可以使用set names utf8,set names gbk设置默认的编码格式;<br><br>执行SET NAMES utf8的效果等同于同时设定如下：<br>SET character_set_client='utf8';<br>SET character_set_connection='utf8';<br>SET character_set_results='utf8';<br><br>2.查看test数据库的编码格式:<br>mysql&gt; show create database test;<br>+------------+------------------------------------------------------------------------------------------------+<br>| Database | Create Database |<br>+------------+------------------------------------------------------------------------------------------------+<br>| test | CREATE DATABASE `test` /*!40100 DEFAULT CHARACTER SET gbk */ |<br>+------------+------------------------------------------------------------------------------------------------+<br><br>3.查看yjdb数据库的编码格式:<br>mysql&gt; show create table yjdb;<br>| yjdb | CREATE TABLE `yjdb` (<br>`sn` int(5) NOT NULL AUTO_INCREMENT,<br>`type` varchar(10) NOT NULL,<br>`brc` varchar(6) NOT NULL,<br>`teller` int(6) NOT NULL,<br>`telname` varchar(10) NOT NULL,<br>`date` int(10) NOT NULL,<br>`count` int(6) NOT NULL,<br>`back` int(10) NOT NULL,<br>PRIMARY KEY (`sn`),<br>UNIQUE KEY `sn` (`sn`),<br>UNIQUE KEY `sn_2` (`sn`)<br>) ENGINE=MyISAM AUTO_INCREMENT=1826 DEFAULT CHARSET=gbk ROW_FORMAT=DYNAMIC |<br><br>二、避免导入数据有中文乱码的问题<br>1:将数据编码格式保存为utf-8<br>设置默认编码为utf8：<br>set names utf8;<br>设置数据库db_name默认为utf8:<br>ALTER DATABASE `db_name` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;<br>设置表tb_name默认编码为utf8:<br>ALTER TABLE `tb_name` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;<br>导入：<br>LOAD DATA LOCAL INFILE 'C:\\utf8.txt' INTO TABLE yjdb;<br>2:将数据编码格式保存为ansi(即GBK或GB2312)<br>设置默认编码为gbk：<br>set names gbk;<br>设置数据库db_name默认编码为gbk:<br>ALTER DATABASE `db_name` DEFAULT CHARACTER SET gbk COLLATE gbk_chinese_ci;<br>设置表tb_name默认编码为gbk:<br>ALTER TABLE `tb_name` DEFAULT CHARACTER SET gbk COLLATE gbk_chinese_ci;<br>导入：<br>LOAD DATA LOCAL INFILE 'C:\\gbk.txt' INTO TABLE yjdb;<br><br>注：1.UTF8不要导入gbk，gbk不要导入UTF8;<br>2.dos下不支持UTF8的显示;<br>三、解决网页中乱码的问题<br><br>将网站编码设为 utf-8,这样可以兼容世界上所有字符。<br>　　如果网站已经运作了好久,已有很多旧数据,不能再更改简体中文的设定,那么建议将页面的编码设为 GBK, GBK与GB2312的区别就在于:GBK能比GB2312显示更多的字符,要显示简体码的繁体字,就只能用GBK。<br>1.编辑/etc/my.cnf　,在[mysql]段加入default_character_set=utf8;<br>2.在编写Connection URL时，加上?useUnicode=true&amp;characterEncoding=utf-8参;<br>3.在网页代码中加上一个"set names utf8"或者"set names gbk"的指令，告诉MySQL连线内容都要使用<br>utf8或者gbk;<br></p>
+                                            
+                                     </div>
+                                     <div class="ad" id="newinfo-ad2">
+                                           <script src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/newinfo2.js"></script><!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+<a href="#" title="分享到QQ空间" class="bds_qzone"></a>
+<a href="#" title="分享到新浪微博" class="bds_tsina"></a>
+<a href="#" title="分享到腾讯微博" class="bds_tqq"></a>
+<a href="#" title="分享到人人网" class="bds_renren"></a>
+<a href="#" title="分享到网易微博" class="bds_t163"></a>
+<span class="bds_more"></span>
+<a title="累计分享7次" href="#" class="shareCount">7</a>
+</div>
+<script src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/bds_s_v2.js" type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=39728"></script>
+
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+                                     </div>
+                                    <!--显示心情列表-->
+ <div id="ListMood">
+
+ <h3> 阅读本文后您有什么感想? 已有 
+   <label>1031</label> 
+   人给出评价!</h3>
+  <ul>
+<li><b>817</b><span><img style="display: block; height: 79%;" src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/array.gif" width="18"></span> <em style="cursor: pointer;" name="1"><img src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/1_002.gif" alt="囧" width="45"> <br>&nbsp;&nbsp;囧</em></li>
+
+<li><b>36</b><span><img style="display: block; height: 3%;" src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/array.gif" width="18"></span> <em style="cursor: pointer;" name="2"><img src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/2_002.gif" alt="恶心" width="45"><br>&nbsp;&nbsp;恶心</em></li>
+
+<li><b>44</b><span><img style="display: block; height: 4%;" src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/array.gif" width="18"></span> <em style="cursor: pointer;" name="3"><img src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/3.gif" alt="期待" width="45"><br>&nbsp;&nbsp;期待</em></li>
+
+<li><b>67</b><span><img style="display: block; height: 6%;" src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/array.gif" width="18"></span> <em style="cursor: pointer;" name="4"><img src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/4_002.gif" 难过"="" width="45  alt="><br>&nbsp;&nbsp;难过</em></li>
+
+<li><b>20</b><span><img style="display: block; height: 1%;" src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/array.gif" width="18"></span> <em style="cursor: pointer;" name="5"><img src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/5_002.gif" alt="不错" width="45"><br>&nbsp;&nbsp;不错</em></li>
+
+<li><b>47</b><span><img style="display: block; height: 4%;" src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/array.gif" width="18"></span> <em style="cursor: pointer;" name="6"><img src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/6_002.gif" alt="关注" width="45"><br>&nbsp;&nbsp;关注</em></li>
+  </ul>
+ </div>
+                                     <div id="relate-read">
+                                             <div class="title">相关阅读</div>
+                                             <ul class="text-list-grey bluea">                                                 
+ <li><a href="http://www.pc6.com/infoview/Article_391.html">用phpmyadmin备份MYSQL数据库</a><span>04-10-08</span></li><li><a href="http://www.pc6.com/infoview/Article_372.html">mysql 运行权限</a><span>04-10-07</span></li><li><a href="http://www.pc6.com/infoview/Article_761.html">怎么使Mysql数据同步</a><span>04-10-07</span></li><li><a href="http://www.pc6.com/infoview/Article_763.html">PHP4与MySQL 数据库操作函数详解</a><span>04-10-07</span></li><li><a href="http://www.pc6.com/infoview/Article_695.html">MYSQL入门教程</a><span>04-10-07</span></li><li><a href="http://www.pc6.com/infoview/Article_353.html">win2k平台下mysql的默认设置的脆弱性</a><span>04-10-07</span></li><li><a href="http://www.pc6.com/infoview/Article_348.html">Mysql的常用命令</a><span>04-10-07</span></li><li><a href="http://www.pc6.com/infoview/Article_692.html">MySQL修改密码方法总结</a><span>04-10-07</span></li>
+                                           </ul>
+                                     </div>
+                             </div>     <!--end #newsContent --> 
+
+                              <!--用户评论开始 -->
+                               <div id="comment" class="content-box">
+    <div class="title" id="comment-2011">
+              <ul id="comment-tab">
+                 <li onclick="onSelect(this,'comment')" class="tab_2">最新评论</li><li onclick="onSelect(this,'comment')" class="tab_1">热门评论</li>   
+              </ul>
+              <span class="comment-num">共有评论（<span class="totalcomt">0</span>）条 <a href="http://www.pc6.com/comment_63586_1.html">查看全部评论</a></span>
+    </div>
+    <div class="content">
+            <div id="comment_0" class="comment-list">
+               <dl>
+                  
+               </dl>
+            </div>
+            <div id="comment_1" class="comment-list" style="display:none;">
+                  <dl>
+                    
+                  </dl>
+            </div>
+            <form action="" id="zt_ly" onkeydown="submitForm()"> 
+            <div class="username">
+                  <input name="UserName" id="UserName" value="PC6网友" type="text">
+                  <input name="ly_id" id="ly_id" value="63586" type="hidden">
+                  <input name="CommentTpye" id="ztid" value="1" type="hidden">
+            </div>
+            <div class="smile">
+                  <img src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/1.gif" alt="高兴" onclick="insFace(1,'ly_content')"> 
+                  <img src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/2.gif" alt="可" onclick="insFace(2,'ly_content')">  
+                  <img src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/3_002.gif" alt="汗" onclick="insFace(3,'ly_content')">  
+                  <img src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/4.gif" alt="我不要" onclick="insFace(4,'ly_content')">  
+                  <img src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/5.gif" alt="害羞" onclick="insFace(5,'ly_content')"> 
+                  <img src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/6.gif" alt="好" onclick="insFace(6,'ly_content')">  
+                  <img src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/7.gif" alt="下下下" onclick="insFace(7,'ly_content')">  
+                  <img src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/8.gif" alt="送花" onclick="insFace(8,'ly_content')">  
+                  <img src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/9.gif" alt="屎" onclick="insFace(9,'ly_content')">  
+                  <img src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/10.gif" alt="亲亲" onclick="insFace(10,'ly_content')"> 
+            </div>
+            <textarea name="ly_content" onkeyup="countLyNum(this,'ly_num')" id="ly_content"></textarea>
+                      <div class="fabiao"><p>注：您的评论需要经过审核才会显示出来</p><input value="" onclick="submitComment()" id="tijiao" type="button"></div>
+            </form> 
+    </div>
+</div>
+                              <!--用户评论结束 -->
+                  </div><!--end #content -->
+                  <div id="sidebar">
+                            <div class="ad side-box"> 
+                                           <script src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/newinfo3.js"></script><script type="text/javascript">
+/*120*270，2014-08-03 pc6文章 新*/
+var cpro_id = "u1642727";
+</script>
+<script src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/f.js" type="text/javascript"></script><iframe src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/new300.html" marginheight="0" marginwidth="0" scrolling="no" style="margin-bottom:10px;" frameborder="0" height="250" width="300"></iframe><div id="BAIDU_DUP_wrapper_u1642727_0"></div><script charset="utf-8" src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/acom_002"></script>
+<script src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/sj-sofe.js" type="text/javascript"></script>
+
+                            </div>
+                            <div id="tuwen" class="side-box">
+                                           <div class="title"><h2>热点图文</h2></div>
+                                           <ul class="txpic">
+    没有查询到任何记录。
+
+                                           </ul>
+                            </div>
+                           <div id="rank" class="side-box">
+                                          <ul class="tabTitle imgArea-side">
+                                                        <li onclick="onSelect(this,'tabRank')" class="tab_2"><h3>本类资讯排行</h3></li>
+                                                        <li onclick="onSelect(this,'tabRank')" class="tab_1"><h3>资讯总排行</h3></li>
+                                          </ul>
+                                          <ul class="tabContent rank-list" id="tabRank_0">
+                                                <li><a href="http://www.pc6.com/infoview/Article_46195.html" title=".bak备份文件如何恢复">.bak备份文件如何恢复</a></li><li><a href="http://www.pc6.com/infoview/Article_50191.html" title="如何将txt的文本数据导入SQL server 2005呢?">如何将txt的文本数据导入SQL server 2005呢</a></li><li><a href="http://www.pc6.com/infoview/Article_30468.html" title=" SQL Server中查询时显示行号的方法"> SQL Server中查询时显示行号的方法</a></li><li><a href="http://www.pc6.com/infoview/Article_57987.html" title="Oracle错误代码大全">Oracle错误代码大全</a></li><li><a href="http://www.pc6.com/infoview/Article_35759.html" title="Microsoft JET Database Engine 错误 '80040e14'">Microsoft JET Database Engine 错误 '8004</a></li><li><a href="http://www.pc6.com/infoview/Article_30465.html" title="Sql server中时间查询的一个比较快的语句">Sql server中时间查询的一个比较快的语句</a></li><li><a href="http://www.pc6.com/infoview/Article_30473.html" title=" select用存储过程返回的表"> select用存储过程返回的表</a></li><li><a href="http://www.pc6.com/infoview/Article_30454.html" title="Sql数据库MDF数据文件数据库恢复">Sql数据库MDF数据文件数据库恢复</a></li><li><a href="http://www.pc6.com/infoview/Article_51603.html" title="提高SQL查询性能的7个方法">提高SQL查询性能的7个方法</a></li><li><a href="http://www.pc6.com/infoview/Article_51732.html" title="SQL2000自动备份数据库并发送邮件报告数据库自动备份情况">SQL2000自动备份数据库并发送邮件报告数据库</a></li>
+                                          </ul>
+                                          <ul class="tabContent rank-list" id="tabRank_1" style="display:none;">
+                                                <li><a href="http://www.pc6.com/infoview/Article_54903.html" title="安卓模拟器BlueStacks安装使用教程">安卓模拟器BlueStacks安装使用教程</a></li><li><a href="http://www.pc6.com/infoview/Article_53811.html" title="无线网络密码破解WPA/WPA2教程(包教包会)">无线网络密码破解WPA/WPA2教程(包教包会)</a></li><li><a href="http://www.pc6.com/infoview/Article_54123.html" title="ipad3和ipad2的8大区别">ipad3和ipad2的8大区别</a></li><li><a href="http://www.pc6.com/edu/54610.html" title="无法连接到 itunes store问题解决">无法连接到 itunes store问题解决</a></li><li><a href="http://www.pc6.com/infoview/Article_52451.html" title="NTFS格式分区是什么意思？如何转换？">NTFS格式分区是什么意思？如何转换？</a></li><li><a href="http://www.pc6.com/infoview/Article_53604.html" title="无尽之剑2的通关完全攻略（史诗级别）图文">无尽之剑2的通关完全攻略（史诗级别）图文</a></li><li><a href="http://www.pc6.com/infoview/Article_55934.html" title="御龙在天银枪技能属性加点图及装备介绍！">御龙在天银枪技能属性加点图及装备介绍！</a></li><li><a href="http://www.pc6.com/infoview/Article_31764.html" title="崔健个人资料">崔健个人资料</a></li><li><a href="http://www.pc6.com/infoview/Article_31765.html" title="池诚个人资料">池诚个人资料</a></li><li><a href="http://www.pc6.com/edu/54223.html" title="iPhone4S插件推荐,最完整的iPhone4越狱后插件常用插件">iPhone4S插件推荐,最完整的iPhone4越狱后插</a></li>
+                                          </ul>
+                           </div>   
+                            <div id="relate-news" class="side-box">
+                                           <div class="title"><h2>热门软件教程</h2></div>
+                                           <ul class="text-list-green">
+                                           <li><a href="http://www.pc6.com/infoview/Article_63586.html" title="彻底解决mysql中文乱码的办法">彻底解决mysql中文乱码的办法</a></li><li><a href="http://www.pc6.com/infoview/Article_63286.html" title="Dos远程登录mysql数据库详细图文教程">Dos远程登录mysql数据库详细图文教程</a></li><li><a href="http://www.pc6.com/infoview/Article_63285.html" title="mysql怎么开启远程登录功能">mysql怎么开启远程登录功能</a></li><li><a href="http://www.pc6.com/infoview/Article_62793.html" title="Oracle PRKC-1002错误原因和解决方案">Oracle PRKC-1002错误原因和解决方案</a></li><li><a href="http://www.pc6.com/infoview/Article_59987.html" title="oracle10g安装图解(win7)">oracle10g安装图解(win7)</a></li><li><a href="http://www.pc6.com/infoview/Article_58964.html" title="SQL SERVER数据库日志清空图文教程">SQL SERVER数据库日志清空图文教程</a></li><li><a href="http://www.pc6.com/infoview/Article_58811.html" title="php输出内容乱码解决方法">php输出内容乱码解决方法</a></li><li><a href="http://www.pc6.com/infoview/Article_58437.html" title="win2003计算机改名后sql server 2005 本地复制不能使用解决方法">win2003计算机改名后sql server 2005 本地复</a></li><li><a href="http://www.pc6.com/infoview/Article_57990.html" title="DB2错误信息码大全">DB2错误信息码大全</a></li><li><a href="http://www.pc6.com/infoview/Article_57987.html" title="Oracle错误代码大全">Oracle错误代码大全</a></li>
+                                           </ul>
+                            </div>
+                            <div class="ad side-box">
+                            </div>
+                  </div><!--end #sidebar -->
+  </div><!--end #mainBody -->      
+   <script type="text/javascript">
+ var pageClass=7;
+  //读取文章人气
+ ViewCmsHits('hits',63586);
+ SetMoon(63586,'ListMood'); //心情
+
+  </script> 
+<script type="text/javascript" src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/jquery-1.js"></script>
+<script language="JavaScript" type="text/javascript"> 
+
+BindDing("#comment_0 > dl > dd > p ,#comment_1 > dl > dd > p",63586,1);//顶
+
+</script>                 
+ <div id="footer">
+        <div class="bottomText greena">
+            <a href="http://www.pc6.com/about.asp">关于本站</a> ｜ 
+            <a href="http://www.pc6.com/help.asp">网站帮助</a> ｜ 
+            <a href="http://www.pc6.com/contract.asp">广告合作</a> ｜ 
+            <a href="http://www.pc6.com/bcinfo.asp">下载声明</a> ｜ 
+            <a href="http://www.pc6.com/link.html">友情连接</a> ｜ 
+            <a href="http://www.pc6.com/map/map_1.html">网站地图</a>
+        </div>         
+            <p>Copyright &#169; 2004-2013 <span>PC6下载(www.pc6.com)</span>.All Rights Reserved</p>
+            <p>备案编号:湘ICP备10204221号</p>   
+</div>
+</div>
+<!--#container -->
+<script type="text/javascript" src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/tab.js"></script><script src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/h.asc" type="text/javascript"></script><script src="%E5%BD%BB%E5%BA%95%E8%A7%A3%E5%86%B3mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E5%8A%9E%E6%B3%95%20_pc6%E8%B5%84%E8%AE%AF_files/c.js" language="JavaScript"></script>
+
+
+
+</body></html>

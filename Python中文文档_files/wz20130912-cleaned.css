@@ -1,0 +1,913 @@
+
+body{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	background-color: #ffffff;
+	text-align:center;
+	padding:0px;
+	margin:0px;
+   
+}
+/** 覆盖百度的css**/
+.share-bar-btn td{ border-bottom:1px solid #f2f2f2;}
+	.share-bar-btn a{
+	float:left;
+	display:block;
+	width:90px!important;
+	height:16px!important; line-height:16px; font-size:12px;
+	margin:0!important;
+	padding:0!important; 
+	background: url("http://pubimage.360doc.com/wz/sharepic1.gif") no-repeat scroll 0% 0% transparent !important;
+}
+.share-bar-btn a{ color:#3d6ba7;}
+.share-bar-btn a.active{color:#3d6ba7;}
+.share-bar-btn a:hover{color:#3d6ba7;}
+.share-bar-btn span{float:left;line-height:28px; color:#999999;}
+.share-bar-btn .bds_qzone{background-position:0 0!important;}
+	.share-bar-btn a.bds_qzone:hover{background-position:0 0!important;opacity:1.0!important;filter:alpha(opacity=100)!important;}
+	.share-bar-btn .bds_tsina{background-position:0 -16px!important;}
+	.share-bar-btn a.bds_tsina:hover{background-position:0 -16px!important;opacity:1.0!important;filter:alpha(opacity=100)!important;}
+	.share-bar-btn .bds_tqq{background-position:0 -32px!important;}
+	.share-bar-btn a.bds_tqq:hover{background-position:0 -32px!important;opacity:1.0!important;filter:alpha(opacity=100)!important;}
+	.share-bar-btn .bds_renren{background-position:0 -48px!important;}
+	.share-bar-btn a.bds_renren:hover{background-position:0 -48px!important;opacity:1.0!important;filter:alpha(opacity=100)!important;}
+	.share-bar-btn .bds_kaixin001{background-position:0 -64px!important;}
+	.share-bar-btn a.bds_kaixin001:hover{background-position:0 -64px!important;opacity:1.0!important;filter:alpha(opacity=100)!important;}
+	.share-bar-btn .bds_tsohu{background-position:0 -80px!important;}
+	.share-bar-btn a.bds_tsohu:hover{background-position:0 -80px!important;opacity:1.0!important;filter:alpha(opacity=100)!important;}
+	
+	.share-bar-btn .bds_py{background: url("http://pubimage.360doc.com/wz/sharepic1.gif") no-repeat scroll 0% 0% transparent !important; width:90px; height:16px; background-position:0 -96px!important;line-height:16px;font-size:12px;}background-position:0 -96px!important;
+	.share-bar-btn a.bds_py:hover{opacity:1.0!important;filter:alpha(opacity=100)!important;}
+	.share-bar-btn .bds_jubao{background: url("http://pubimage.360doc.com/wz/sharepic1.gif") no-repeat scroll 0% 0% transparent !important; width:90px; height:16px; line-height:16px;font-size:12px;background-position:0 -112px!important;}
+	.share-bar-btn a.bds_jubao:hover{background-position:0 -112px!important;opacity:1.0!important;filter:alpha(opacity=100)!important;}
+
+	.share-bar-btn2 a{
+	float:left;
+	display:block;
+	width:22px!important;
+	height:16px!important;
+	margin:0!important;
+	padding:0!important;
+	
+	background: url("http://pubimage.360doc.com/wz/sharepic1a.gif") no-repeat scroll 0% 0% transparent  !important;
+}
+	.share-bar-btn2 span{float:left;line-height:28px; color:#999999;}
+	.share-bar-btn2 .bds_qzone{background-position:0 0!important;}
+	.share-bar-btn2 a.bds_qzone:hover{background-position:0 0!important;opacity:1.0!important;filter:alpha(opacity=100)!important;}
+	.share-bar-btn2 .bds_tsina{background-position:0 -16px!important;}
+	.share-bar-btn2 a.bds_tsina:hover{background-position:0 -16px!important;opacity:1.0!important;filter:alpha(opacity=100)!important;}
+	.share-bar-btn2 .bds_tqq{background-position:0 -32px!important;}
+	.share-bar-btn2 a.bds_tqq:hover{background-position:0 -32px!important;opacity:1.0!important;filter:alpha(opacity=100)!important;}
+	
+.share-bar-btn2 .bds_renren{background-position:0 -48px!important;}
+	.share-bar-btn2 a.bds_renren:hover{background-position:0 -48px!important;opacity:1.0!important;filter:alpha(opacity=100)!important;}
+	.share-bar-btn2 .bds_kaixin001{background-position:0 -64px!important;}
+	.share-bar-btn2 .bds_tsohu{background-position:0 -80px!important;}
+	.share-bar-btn2 a.bds_tsohu:hover{background-position:0 -80px!important;opacity:1.0!important;filter:alpha(opacity=100)!important;}
+
+/** 覆盖百度的css**/
+
+img {border:0px;}
+ul{ list-style-type:none; padding:0px; margin:0px;}
+li{ padding:0px; margin:0px;}
+.lf360{ float:left;}
+.rt360{ float:right;}
+.both{ clear:both;}
+A:link {
+	COLOR: #3d6ba7; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #3d6ba7; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #3d6ba7; TEXT-DECORATION: underline
+} 
+
+.list {
+	
+}
+.list A:link {
+	COLOR: #3b6ea7; TEXT-DECORATION: none
+}
+.list A:visited {
+	COLOR: #3b6ea7; TEXT-DECORATION: none
+}
+.list A:hover {
+	COLOR: #3b6ea7; TEXT-DECORATION: underline
+}
+
+.mainbj{background-color:#fff; width:100%;}
+.mainbj1{background-color:#e7f4fd;width:100%;}
+.mainbj2{background-color:#f5f1e6;width:100%;}
+.mainbj3{background-color:#eae8f6;width:100%;}
+.mainbj4{background-color:#fef5f0;width:100%;}
+.mainbj5{background-color:#ebf4ef;width:100%;}
+.wz1{ font-size:14px;}
+.wz2{ font-size:16px;}
+.wz3{ font-size:18px;}
+.lswzbox{padding:0px 26px; padding-top:5px; width:670px;}
+.mainzt {MARGIN: 0px auto; WIDTH: 997px; }
+.biaoti{ color:#3d6ba7; padding-top:30px; padding-bottom:22px;padding-left:26px; padding-right:26px;}
+.biaoti2{font-size:22px; font-weight: bold; }
+.wenzhangcss {PADDING-BOTTOM: 0px; LINE-HEIGHT: 1.5; MIN-HEIGHT: 245px; PADDING-LEFT: 26px; PADDING-RIGHT: 26px; HEIGHT: auto !important; FONT-SIZE: 16px; PADDING-TOP: 0px; color:#444; word-wrap: break-word;_word-wrap:normal;
+}
+.xiantao{height:2px;_height:2px; line-height:0px; font: 0px Arial;background-color:#dee7e2; width:100%;}
+.xianhua{
+	height:39px;
+	color:#333333;
+	font-weight:bold;
+	line-height:39px;
+	font-size:12px;
+
+}
+.shangyp{ height:24px; clear:both; text-align:left;}
+.modlist{text-align:left; font-size:14px; padding-top:3px;}
+.modlist ul{padding:0px; margin:0px;}
+.modlist2{text-align:left; font-size:14px; padding-top:10px;}
+.modlist2 ul{padding:0px; margin:0px;}
+.modlist2 li{
+	clear:both;
+	padding:0px;
+	margin:0px;
+	height:26px;
+	line-height: 26px;
+	padding-left:12px;
+	background-image: url(http://pubimage.360doc.com/wz/wz14.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 12px; width:280px;text-overflow : ellipsis;
+white-space : nowrap;
+overflow : hidden; 
+}
+.modlist3{text-align:left; font-size:12px; padding-top:10px;}
+.modlist3 ul{padding:0px; margin:0px;}
+.modlist3 li{
+	clear:both;
+	padding:0px;
+	margin:0px;
+	height:24px;
+	line-height: 24px;
+	padding-left:12px;
+	background-image: url(http://pubimage.360doc.com/wz/wz14.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 10px;
+}
+.titwx1{ color:#525252; font-weight:bold; font-size:14px; height:22px; position:absolute;border-bottom:1px solid #ff7800; padding:0px 2px; }
+.titwx {
+    color: #464646;
+    font-size: 14px;
+    font-weight: bold;
+    height: 20px;
+}
+.pageqh {TEXT-ALIGN: left; width:248px; border-left: #e4e4e4 1px solid; border-right: #e4e4e4 1px solid;border-bottom: #e4e4e4 1px solid;border-top:none; height:215px; background-color:#fbfbfb;
+}
+.pageqh .nav {
+	width:248px; FLOAT: left; font-size:14px;
+}
+.pageqh .nav SPAN {
+	BORDER-BOTTOM: 0px; TEXT-ALIGN: center; LINE-HEIGHT: 34px; BACKGROUND: #fbfbfb; FLOAT: left; HEIGHT: 34px; COLOR: #2c3437; CURSOR: pointer; TEXT-DECORATION: none;BORDER-top: #e4e4e4 1px solid;
+}
+.pageqh .nav SPAN.checked {
+	BORDER-BOTTOM: 0px; POSITION: relative; BACKGROUND: #ffffff; FONT-WEIGHT: bold; TEXT-DECORATION: none;BORDER-top: #ff7c12 2px solid;
+}
+
+.pageqh .mokuaicontent {
+MARGIN-TOP: -1px; width:248px;FLOAT: left; BORDER-TOP: #e4e4e4 1px solid; height:1px; line-height:0px; 
+}
+.plbox{width:670px;height:175px; background-color:#fafafa; }
+.plmain{ padding:15px 20px;}
+.deluwx{color:#626262; height:70px; text-align:center; font-size:14px; padding-top:32px;}
+.deluwx span{ font-weight:bold;}
+.wenzhang_pl_box
+{
+	width: 655px;
+	text-align: left;
+	margin: 5px 0px 20px 0px;
+	clear: both;
+}
+.wenzhang_pl_right
+{
+	float: left;
+	text-align: left;
+	width: 588px;
+}
+.timewenzi{ color:#848484;padding-left:7px;}
+.pl_con
+{
+	line-height: 25px;
+	margin: 5px 0px 0px 8px;
+	word-wrap: break-word;
+	padding-top: 7px; padding-bottom: 7px; font-size: 14px; width: 580px; clear:both;
+}
+
+.revlace{ color:#2d7ead; padding-top:3px; vertical-align:top; padding-left:8px; height:20px;}
+.iehight{ height:7px;_height:0px;}
+.plskuai{height:26px; background-color:#fafafa; line-height:26px; padding-left:8px;}
+
+.yeschu{ color:#2c9900;font-weight:bold;}
+.nochu{ color:#cd4700;font-weight:bold;}
+
+.pl_consmall
+{
+	line-height: 25px;
+	margin: 5px 0px 0px 8px;
+	word-wrap: break-word;
+	padding-top: 7px; padding-bottom: 7px; font-size: 14px;clear:both;
+}
+.pingrig{ padding-right:15px;}
+.pltit{height:36px;}
+
+.sharelink {
+	
+}
+.sharelink A:link {
+	COLOR: #6a6a6a; TEXT-DECORATION: none;
+}
+.sharelink A:visited {
+	COLOR: #6a6a6a; TEXT-DECORATION: none;
+}
+.sharelink A:hover {
+	COLOR: #3b6ba9; TEXT-DECORATION: none;	
+}
+
+.fenxiang{ position: absolute;border: 1px solid #cbcbcb; text-align:left; background-color:#fff; margin-top:9px; margin-left:-40px; font-size:12px;height:150px; width:108px;}
+
+.fenxiang ul{}
+.fenxiang li{ padding-left:12px; height:29px;border-bottom: 1px solid #f2f2f2;}
+
+.fenxiang img{ vertical-align: text-bottom; padding-right:5px;}
+.biaoqin{ width:248px; height:180px; BORDER: #d6d6d6 1px solid;background-color:#fff; margin-top:30px; margin-left:0px;*margin-left:-23px!important}
+.biaoqinpic{ clear:both; padding-top:10px; padding-left:10px;}
+.biaoqinpic ul{padding:0px; margin:0px;}
+.biaoqinpic li{ padding:0px; margin:0px; height:32px; background-image:none;}
+.biaoqinpic img{padding:2px; margin:0px;}
+.guanbiwz2{ padding-top:9px; *padding-top:11px !important; padding-right:14px;}
+.guanbiwz3{ font-size:12px; font-weight:bold;color:#4d4d4d; float:left;}
+.faxin{
+	overflow-y:auto;
+	height:161px;
+	width:328px;
+	color:#000;
+	font-size:12px; line-height:16px;
+	background-color:#fff;
+	border: 1px solid #c9c9c9; 
+}
+.guanbiwz111{ font-size:12px; font-weight:bold;color:#4d4d4d; float:left;padding-top:9px; *padding-top:11px !important;padding-left:16px;}
+
+.highlight {
+	FONT-STYLE: normal; BACKGROUND: #ffff00
+}
+.sticky {
+	FONT-STYLE: normal; BACKGROUND: #e3edf8; COLOR: #466ea6; TEXT-DECORATION: underline
+}
+
+.closedivdragenable {
+	BACKGROUND-IMAGE: url(http://pubimage.360doc.com/lay_bg.gif); TEXT-ALIGN: left; TEXT-INDENT: 10px; WIDTH: 312px; HEIGHT: 16px; PADDING-TOP: 10px
+}
+.stickyitem {
+	WIDTH: 310px; HEIGHT: 20px
+}
+
+.stickytext {
+	WIDTH: 310px
+}
+
+.box_1 {
+	BORDER-BOTTOM: #a1c0df 1px solid; BORDER-LEFT: #a1c0df 1px solid; BACKGROUND-COLOR: #e7f3fb; BORDER-TOP: #a1c0df 1px solid; BORDER-RIGHT: #a1c0df 1px solid
+}
+.box_6 {
+	BORDER-BOTTOM: #a9a9a9 1px solid; BORDER-LEFT: #a9a9a9 1px solid; BACKGROUND-COLOR: #ffffff; BORDER-TOP: #a9a9a9 1px solid; BORDER-RIGHT: #a9a9a9 1px solid
+}
+
+.wenzhang_pl_left {
+	WIDTH: 57px; text-align:left; HEIGHT: 70px
+}
+
+.index_main {
+	MARGIN: 0px auto; padding-top:10px;
+}
+.login_box_font {
+	TEXT-ALIGN: left; COLOR: #808000; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+.spanCgCgLink {
+	COLOR: #1848b5
+}
+.spanCgCgLinkOnMouseOver {
+	COLOR: #1848b5; CURSOR: pointer; TEXT-DECORATION: underline
+}
+.spanCgCgLinkOnMouseOut {
+	COLOR: #1848b5; TEXT-DECORATION: none
+}
+
+#divemail TD {
+	LINE-HEIGHT: 26px; FONT-SIZE: 14px
+}
+.mzbodl {
+	FONT-WEIGHT: bold
+}
+
+.revlace A:link {
+	COLOR: #3d6ba7; TEXT-DECORATION: none
+}
+.revlace A:visited {
+	COLOR: #3d6ba7; TEXT-DECORATION: none
+}
+.revlace A:hover {
+	COLOR: #3d6ba7; TEXT-DECORATION: underline
+}
+
+.wenzhang_pl_boxsmall {
+	TEXT-ALIGN: left; MARGIN: 26px 0px 15px; WIDTH: 580px; CLEAR: both; padding-left:16px;
+}
+.wenzhang_pl_rightsmall {
+	TEXT-ALIGN: left; PADDING-LEFT: 8px; WIDTH: 512px; FLOAT: left
+}
+
+.revacediv {
+	TEXT-ALIGN: left; WIDTH: 597px; CLEAR: both
+}
+.revacextdiv {
+	 WIDTH: 597px; HEIGHT: 2px
+}
+
+#fullbg {
+	Z-INDEX: 3; POSITION: absolute; FILTER: Alpha(Opacity=30); BACKGROUND-COLOR: gray; DISPLAY: none; TOP: 0px; LEFT: 0px; -moz-opacity: 0.4; opacity: 0.4
+}
+#dialog {
+	Z-INDEX: 10000; POSITION: absolute; WIDTH: 500px; DISPLAY: none; HEIGHT: 310px
+}
+.loginnewdiv {PADDING-LEFT: 16px; WIDTH: 351px;COLOR: #6d6d6d; }
+.guanbi {
+	WIDTH: 48px; FLOAT: right
+}
+.guanbidiv {
+	HEIGHT: 38px; PADDING-TOP: 9px
+}
+
+.backgroundDivIe {
+	Z-INDEX: 9; POSITION: absolute; FILTER: Alpha(Opacity=0, Style=0); BACKGROUND-COLOR: #000; opacity: 0.30
+}
+.paixucssright {
+	PADDING-LEFT: 4px; FLOAT: left; PADDING-TOP: 8px
+}
+.bjyellow2 {
+	LINE-HEIGHT: 26px; BACKGROUND-COLOR: #fef9d1; PADDING-LEFT: 6px; CURSOR: pointer
+}
+.bjwhite2 {
+	LINE-HEIGHT: 26px; BACKGROUND-COLOR: #fffff7; PADDING-LEFT: 6px; CURSOR: pointer
+}
+
+.logininputanew {
+	BORDER: #eeeeee 1px solid;PADDING-BOTTOM: 8px; LINE-HEIGHT: 24px; PADDING-LEFT: 5px; WIDTH: 198px; PADDING-RIGHT: 5px; HEIGHT: 18px; COLOR: #b2b2b2; FONT-SIZE: 12px;  PADDING-TOP: 8px;
+}
+
+.ggwz{padding-left: 3px; padding-right:2px; position:absolute; margin-top:-15px; background-color:#9a9a9a; color:#fff;}
+.ggwz A:link {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+.ggwz A:visited {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+.ggwz A:hover {
+	COLOR: #fff; TEXT-DECORATION:none;
+}
+.zcbutton{position:absolute; margin-left:30px; margin-top:-10px;}
+
+.addtionone
+ {
+	 position:absolute; color:#cc4f4f; margin-left:50px; margin-top:-62px;*margin-left:-28px !important; *margin-top:-37px; !important;font-size:22px; font-weight:bold;display:none;
+}
+
+#goTop2 {
+    bottom: 30px;
+    position: fixed;
+    _position:absolute;
+    right: 0;
+    width: 50px;
+    z-index: 10;
+}
+
+#goTop #go_top, #goTop #go_top:hover {
+     background-image:url(http://pubimage.360doc.com/wz/wz26.gif);
+    cursor: pointer;
+    float: left;
+    overflow: hidden;
+}
+#goTop #go_top {
+    height:50px;
+    width:50px;
+}
+#goTop #go_top:hover {
+    background-image:url(http://pubimage.360doc.com/wz/wzgo1.gif);
+}
+
+#goTop1 #go_top1, #goTop1 #go_top1:hover {
+     background-image:url(http://pubimage.360doc.com/wz/wzgo3.gif);
+    cursor: pointer;
+    float: left;
+    overflow: hidden;
+}
+#goTop1 #go_top1 {
+    height:49px;
+    width:50px;
+}
+#goTop1 #go_top1:hover {
+    background-image:url(http://pubimage.360doc.com/wz/wzgo3.gif);
+}
+
+
+
+#goTop3 #go_top3, #goTop3 #go_top3:hover {
+     background-image:url(http://pubimage.360doc.com/wz/wzgo2.gif);
+    cursor: pointer;
+    float: left;
+    overflow: hidden;
+}
+#goTop3 #go_top3 {
+    height:49px;
+    width:50px;
+}
+#goTop3 #go_top3:hover {
+    background-image:url(http://pubimage.360doc.com/wz/wzgo2.gif);
+}
+
+
+
+
+.lswz{width:330px; height:287px; background-color:#fafafa;}
+.lstwtop{padding-top:13px; padding-left:19px; padding-right:13px;}
+.lswztit{border-bottom:1px solid #dcdcdc; height:22px; position:relative;}
+.twentit{line-height:18px; padding-top:4px; width:114px;}
+.huifuxt{
+	width:584px;
+	height:148px;
+	background-image: url(http://pubimage.360doc.com/wz/wz17.gif);
+	background-repeat: repeat-x;
+	background-position: top; background-color:#fafafa; margin-left:8px;
+}
+.remenwz{width:247px; border:1px solid #e4e4e4; border-top:none; background-color:#fbfbfb; height:358px;}
+.rementop{height:34px;border-top:2px solid #ff7c10; background-color:#fff;}
+.sekuaibox{position:absolute; width:146px; border:1px solid #cbcbcb; height:35px; background-color:#fff; margin-left:60px; margin-top:5px;}
+.sekuaibox img{ padding-left:6px;}
+.wztopxx{width:670px; height:35px; padding-left:26px; color:#777b7a;}
+.btzctsg{padding-left:10px; padding-right:6px;}
+.danxunbt{padding-left:8px;}
+.danxunwz{padding-top:2px;}
+
+
+
+.checkbox{vertical-align:middle; margin-top:0;}
+.dlinputwz{padding-top:9px; padding-left:10px; width:60px;}
+.hezuodiv{padding-left:78px; padding-top:18px;}
+.zddenglu{padding-top:9px; padding-left:13px;}
+
+.gzbt1{width:48px; height:22px;}
+.gzbt1 a:link,.gzbt1 a:visited{
+	display:block;
+	width:48px; height:22px;
+	background-image: url(http://pubimage.360doc.com/wz/wz19.gif);
+	background-repeat: no-repeat;
+}
+.gzbt1 a:hover{display:block;
+	width:48px; height:22px;
+	background-image: url(http://pubimage.360doc.com/wz/wz19a.gif);
+	background-repeat: no-repeat;}
+	
+.gzbt2{width:48px; height:22px;}
+.gzbt2 a:link,.gzbt2 a:visited{
+	display:block;
+	width:48px; height:22px;
+	background-image: url(http://pubimage.360doc.com/wz/wz20.gif);
+	background-repeat: no-repeat;
+}
+.gzbt2 a:hover{display:block;
+	width:48px; height:22px;
+	background-image: url(http://pubimage.360doc.com/wz/wz20a.gif);
+	background-repeat: no-repeat;}
+
+.zscbt{width:152px; height:39px; }
+.zscbt a:link,.zscbt a:visited{
+	display:block;
+	width:152px; height:39px;
+	background-image: url(http://pubimage.360doc.com/wz/wzsavebg.gif);
+	background-repeat: no-repeat;
+    TEXT-DECORATION: none;cursor:pointer;
+}
+.zscbt a:hover{display:block;
+	width:152px; height:39px;
+	background-image: url(http://pubimage.360doc.com/wz/wzsavebga.gif);
+	background-repeat: no-repeat; TEXT-DECORATION: none;cursor:pointer;}
+
+
+.xianhua2{
+	
+	color:#fff;
+	font-weight:bold;
+
+	height:39px;
+	line-height:39px;
+	font-size:12px;
+}
+.huifubt{width:81px; height:28px; float:right; }
+.huifubt a:link,.huifubt a:visited{
+	display:block;
+	width:81px; height:28px;
+	background-image: url(http://pubimage.360doc.com/wz/wz18.gif);
+	background-repeat: no-repeat;
+}
+.huifubt a:hover{display:block;
+	width:81px; height:28px;
+	background-image: url(http://pubimage.360doc.com/wz/wz18a.gif);
+	background-repeat: no-repeat;}
+	.huifubt2{width:81px; height:28px; float:right; }
+.huifubt2 a:link,.huifubt2 a:visited{
+	display:block;
+	width:81px; height:28px;
+	background-image: url(http://pubimage.360doc.com/wz/wz24.gif);
+	background-repeat: no-repeat;
+}
+.huifubt2 a:hover{display:block;
+	width:81px; height:28px;
+	background-image: url(http://pubimage.360doc.com/wz/wz24a.gif);
+	background-repeat: no-repeat;}
+	
+	
+.zswdbt{width:111px; height:22px; }
+.zswdbt a:link,.zswdbt a:visited{
+	display:block;
+	width:111px; height:22px;
+	background-image: url(http://pubimage.360doc.com/wz/zcbt.gif);
+	background-repeat: no-repeat;
+}
+.zswdbt a:hover{display:block;
+	width:111px; height:22px;
+	background-image: url(http://pubimage.360doc.com/wz/zcbta.gif);
+	background-repeat: no-repeat;}
+	
+
+	
+.denglubt{width:104px; height:36px; }
+.denglubt a:link,.denglubt a:visited{
+	display:block;
+	width:104px; height:36px;
+	background-image: url(http://pubimage.360doc.com/wz/wz21.gif);
+	background-repeat: no-repeat;
+}
+.denglubt a:hover{display:block;
+	width:104px; height:36px;
+	background-image: url(http://pubimage.360doc.com/wz/wz21a.gif);
+	background-repeat: no-repeat;}
+
+	.gzbt2{width:48px; height:22px; }
+.gzbt2 a:link,.gzbt2 a:visited{
+	display:block;
+	width:48px; height:22px;
+	background-image: url(http://pubimage.360doc.com/wz/wz20.gif);
+	background-repeat: no-repeat;
+}
+.xiugai{width:56px; height:22px; }
+.xiugai a:link,.xiugai a:visited{
+	display:block;
+	width:56px; height:22px;
+	background-image: url(http://pubimage.360doc.com/wz/xiugai.gif);
+	background-repeat: no-repeat;
+}
+.xiugai a:hover{display:block;
+	width:56px; height:22px;
+	background-image: url(http://pubimage.360doc.com/wz/xiugaia.gif);
+	background-repeat: no-repeat;}
+.txtbox{ width:100%; height:157px; border:1px solid #d4d4d4; overflow:auto; line-height:20px; font-size:14px;}
+.quding{
+	background-image: url(http://pubimage.360doc.com/wz/button1.gif);
+	background-repeat: no-repeat; width:80px; height:30px; line-height:30px; text-align:center; color:#fff; cursor:pointer;
+}
+.xuxiao{
+	background-image: url(http://pubimage.360doc.com/wz/button2.gif);
+	background-repeat: no-repeat; width:80px; height:30px; line-height:30px; text-align:center; color:#555555;cursor:pointer;
+}
+.txtinput{border:1px solid #d4d4d4; height:18px; line-height:18px; color:#747474; padding:5px 10px; width:297px; font-size:14px;}
+.sinputwz{padding-top:6px; color:#b1b1b1; font-size:12px; height:37px;}
+.pizhu{
+	background-image: url(http://pubimage.360doc.com/wz/biaozhubg1.png);
+	background-repeat: no-repeat; width:116px ; height:112px; text-align:center; color:#1c1c1c; padding:5px;
+}
+.bjbiaoji1{height:30px; margin-top:1px; line-height:30px;cursor:pointer;}
+.bjbiaoji2{height:30px; line-height:30px; cursor:pointer;}
+.pizhu2{
+	background-image: url(http://pubimage.360doc.com/wz/biaozhubg2.png);
+	background-repeat: no-repeat; width:116px ; height:61px; text-align:center; color:#1c1c1c; padding:4px;
+}
+.pop_content3{
+	BACKGROUND-IMAGE: url(http://pubimage.360doc.com/wz/wz23.gif);
+	TEXT-ALIGN: left;
+	WIDTH: 304px;
+	BACKGROUND-REPEAT: repeat-x;
+	border:4px solid #8e8e8e;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px; 
+	background-color:#fff;
+	Z-INDEX: 200; 
+	 POSITION: absolute;
+}
+.puzhusmll{height:20px; padding-top:8px;}
+.pizhucool{padding:0px 9px; color:#414141;}
+.pizhudt{padding-left:4px; border-top:1px solid #efefef; padding-top:12px;}
+.pizhbot{height:34px; background-color:#f8f8f8; padding-top:6px;}
+.tjpz{BACKGROUND-IMAGE: url(http://pubimage.360doc.com/wz/wz23.gif);BACKGROUND-REPEAT: repeat-x; height:26px; padding-top:7px; border-top:1px solid #d8d8d8;}
+.pztxtbox{width:284px; padding:5px 10px; overflow:auto; border:none; height:102px; line-height:18px; color:#a2a2a2; font-size:12px;}
+.tjpzsl{WIDTH: 67px; FLOAT: right;}
+
+.qudinga{
+	background-image: url(http://pubimage.360doc.com/wz/button1a.gif);
+	background-repeat: no-repeat; width:80px; height:30px; line-height:30px; text-align:center; color:#fff; cursor:pointer;
+}
+.xuxiaoa{
+	background-image: url(http://pubimage.360doc.com/wz/button2a.gif);
+	background-repeat: no-repeat; width:80px; height:30px; line-height:30px; text-align:center; color:#555555;cursor:pointer;
+}
+.pop_content2 {TEXT-ALIGN: left;width:620px; height:378px;background-color:#f8f8f8;border:1px solid #d8d8d8; }
+.tcengtop{ height:60px; padding-top:17px; padding-left:20px; padding-right:15px;}
+.tcengmid{padding-top:26px; height:26px; text-align:center;}
+.titwx3{ color:#525252; font-weight:bold; font-size:14px; height:22px; padding-left:7px;padding-top:4px; }
+
+.xhmainbox{ width:100px; height:39px;	background-image: url(http://pubimage.360doc.com/wz/wzxiahuabeijing.gif);
+	background-repeat: no-repeat;}
+	.xhmainboxa{ width:100px; height:39px;	background-image: url(http://pubimage.360doc.com/wz/wzxiahuabeijinga.gif);
+	background-repeat: no-repeat;}
+
+	.pizhu3{
+	background-image: url(http://pubimage.360doc.com/wz/biaozhubg3.png);
+	background-repeat: no-repeat; width:114px ; height:33px; text-align:center; color:#1c1c1c; padding:5px;
+
+}
+.share-bar-btn .bds_weixin {
+    background: url("http://pubimage.360doc.com/wz/weixin.gif") no-repeat;
+    width: 90px;
+    height: 16px;
+    line-height: 16px;
+    font-size: 12px;
+}
+
+
+.bds_weixin1 {
+    background: url("http://pubimage.360doc.com/wz/weixin.gif") no-repeat;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    font-size: 12px;
+}
+.share-bar-btn2 .bds_weixin{background-position:0 -128px!important;}
+.share-bar-btn2 a.bds_weixin:hover{background-position:0 -128px!important;opacity:1.0!important;filter:alpha(opacity=100)!important;}
+
+    
+.weixinbox{width:459px; height:347px; background-color:#fff;	-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;}
+.chacha{padding-top:15px; padding-right:19px; height:27px; text-align:right;}
+.weixinwz{font-size:14px; font-weight:bold; color:#8c8c8c; text-align:center;}
+.chaa a:link,.chaa a:visited{
+	display:block;
+	width:14px; height:14px;
+	background-image: url(http://pubimage.360doc.com/wz/cha2.gif);
+	background-repeat: no-repeat;
+}
+.chaa a:hover{display:block;
+	width:14px; height:14px;
+	background-image: url(http://pubimage.360doc.com/wz/cha1a.gif);
+	background-repeat: no-repeat;}
+.tuijianpy{width:370px; height:354px; background-color:#fff;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px; text-align:left;border:4px solid #8e8e8e;}
+	.cengbj{
+	height:33px;
+	background-image: url(http://pubimage.360doc.com/cengbj.gif);
+	background-repeat: repeat-x;
+}
+.cengleft{font-size:14px; color:#4d4d4d; padding-left:16px; line-height:32px; font-weight:bold; float:left;}
+.chas a:link,.chas a:visited{
+	display:block;
+	width:10px;
+	height:9px;
+	background-image: url(http://pubimage.360doc.com/chas.gif);
+	background-repeat: no-repeat;
+}
+.chas a:hover{display:block;
+	width:10px; height:9px;
+	background-image: url(http://pubimage.360doc.com/chasa.gif);
+	background-repeat: no-repeat;}
+.loginnew {
+	TEXT-ALIGN: left; PADDING-LEFT: 57px; WIDTH: 280px; FLOAT: left; padding-top:8px;
+}
+
+	
+.newwddivtop {
+    text-align: left;
+    padding-left: 4px;
+    height: 55px;
+    color: rgb(82, 82, 82);
+    font-size: 14px;
+    padding-top: 13px;
+}
+
+
+.newwdleft {
+    width: 459px;
+    float: left;
+    padding-top: 13px;
+}
+
+.newwdfont {
+    padding-left: 9px;
+    font-weight: bold;
+}
+
+.newwdwz2 {
+    color: rgb(252, 91, 0);
+    font-size: 12px;
+}
+
+.newwdwz1 {
+    color: rgb(0, 0, 0);
+    font-size: 12px;
+    padding-top: 5px;
+}
+
+.sharelink A:link {
+	COLOR: #6a6a6a; TEXT-DECORATION: none;
+}
+.sharelink A:visited {
+	COLOR: #6a6a6a; TEXT-DECORATION: none;
+}
+.sharelink A:hover {
+	COLOR: #3b6ba9; TEXT-DECORATION: none;	
+}
+.sharelink {
+line-height:29px;
+}
+.biaoti3{font-size:18px;color:#5d9d23; font-weight:normal; }
+.fxwxbt{width:121px; height:39px; }
+.fxwxbt a:link,.fxwxbt a:visited{
+	display:block;
+	width:121px;
+	height:39px;
+	background-image: url(http://pubimage.360doc.com/wz/wzweixinbg.gif);
+	background-repeat: no-repeat;TEXT-DECORATION: none;cursor:pointer;
+}
+.fxwxbt a:hover{display:block;
+	width:121px; height:39px;
+	background-image: url(http://pubimage.360doc.com/wz/wzweixinbga.gif);
+	background-repeat: no-repeat;TEXT-DECORATION: none;cursor:pointer;}
+
+
+
+.fxwx2bt{width:106px; height:27px;  }
+.fxwx2bt a:link,.fxwx2bt a:visited{
+	display:block;
+	width:106px; height:27px;
+	background-image: url(http://pubimage.360doc.com/wz/fenxiangweixin.gif);
+	background-repeat: no-repeat;
+}
+.fxwx2bt a:hover{display:block;
+	width:94px; height:27px;
+	background-image: url(http://pubimage.360doc.com/wz/fenxiangwenxin_a.gif);
+	background-repeat: no-repeat;}
+
+.zswdbtn1{width:133px; height:27px; }
+.zswdbtn1 a:link,.zswdbtn1 a:visited{
+	display:block;
+	width:133px; height:27px;
+	background-image: url(http://pubimage.360doc.com/wz/zhuanc.gif);
+	background-repeat: no-repeat;
+}
+.zswdbtn1 a:hover{display:block;
+	width:133px; height:27px;
+	background-image: url(http://pubimage.360doc.com/wz/zhuanc_a.gif);
+	background-repeat: no-repeat;}
+.xiugai2{width:65px; height:27px; }
+.xiugai2 a:link,.xiugai2 a:visited{
+	display:block;
+	width:65px; height:27px;
+	background-image: url(http://pubimage.360doc.com/wz/xiugai2.gif);
+	background-repeat: no-repeat;
+}
+.xiugai2 a:hover{display:block;
+	width:65px; height:27px;
+	background-image: url(http://pubimage.360doc.com/wz/xiugai2_a.gif);
+	background-repeat: no-repeat;}
+.shangtishi_pt
+{
+     width:300px;
+     height:48px;
+      margin-top:30px;
+      line-height:24px;
+	  text-align:center;}
+	 
+.erjibt_li {
+    background-image: url(http://pubimage.360doc.com/wz/xianbg.gif);
+    background-repeat: no-repeat;
+    width: 86px;
+    height: 28px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+.erjibta_li {
+    background-image: url(http://pubimage.360doc.com/wz/xianbga.gif);
+    background-repeat: no-repeat;
+    width: 86px;
+    height: 28px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+.erjibtgray_li {
+    
+   
+  
+   
+    cursor: pointer;
+}
+.erjibtgraya_li {
+   
+   
+  
+    cursor: pointer;
+}
+
+.tishi-box1{color:#494949; padding-left:30px;font-size:14px;}
+.tishi-wz1{clear: both;   color:#2a2a2a;   }
+.btwz {
+    text-align: center;
+    line-height: 28px;
+    font-size: 12px;
+	color:#666;
+
+}
+
+
+.ywzwbt{width:121px; height:39px; }
+.ywzwbt a:link,.ywzwbt a:visited{
+	display:block;
+	width:121px;
+	height:39px;
+	background-image: url(http://pubimage.360doc.com/wz/wzsearchbg.gif);
+	background-repeat: no-repeat;TEXT-DECORATION: none;cursor:pointer;
+}
+.ywzwbt a:hover{display:block;
+	width:121px; height:39px;
+	background-image: url(http://pubimage.360doc.com/wz/wzsearchbga.gif);
+	background-repeat: no-repeat;TEXT-DECORATION: none;cursor:pointer;}
+
+
+.ytdh1{width:81px; height:22px;}
+.ytdh1 a:link,.ytdh1 a:visited
+{
+	display:block;
+	width:81px; height:22px;
+	background-image: url(http://pubimage.360doc.com/wz/yutaduihua.gif);
+	background-repeat: no-repeat;
+}
+.ytdh1 a:hover
+{   display:block;
+	width:81px; height:22px;
+	background-image: url(http://pubimage.360doc.com/wz/yutaduihua_a.gif);
+	background-repeat: no-repeat;
+
+}
+	
+
+
+.modlist2_re {
+    text-align: left;
+    padding-top: 17px;
+    font-size: 14px;
+}
+
+.paixu_big {
+    width: 298px;
+    height: 30px;
+    text-align: left;
+    vertical-align: top;
+    color: #3B6EA7;
+    overflow: hidden;
+}
+
+
+.paixu_li {
+    float: left;
+    width: 14px;
+    height: 14px;
+    background: #f58220;
+    font-size: 12px;
+    text-align: center;
+    color: #FFF;
+}
+
+.paixu_li2 {
+    float: left;
+    width: 14px;
+    height: 14px;
+    background: #d3d3d3;
+    font-size: 12px;
+    text-align: center;
+    color: #FFF;
+}
+
+.paixu_info {
+    float: left;
+    width: 268px;
+    height: 14px;
+    text-align: left;
+    margin-left: 5px;
+}

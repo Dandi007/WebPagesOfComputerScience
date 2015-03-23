@@ -1,0 +1,752 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta content="360doc" name="classification">
+    
+    <link rel="alternate" media="only screen and (max-width: 640px)" href="http://www.360doc.cn/article/7821_119149.html">
+    <meta content="python,文档,图书" name="keywords">
+    <meta content="Python中文文档" name="description">
+    <meta name="mobile-agent" content="format=html5;url=http://www.360doc.cn/article/7821_119149.html">
+
+    <meta content="www.360doc.com" name="author">
+
+    <title>
+        Python中文文档
+    </title>
+    <link href="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/bdsstyle.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/jquery.js"></script>
+    <script type="text/javascript" src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/jQuery.js"></script>
+    
+    <script type="text/javascript" language="javascript">
+        window.onerror = ignoreError;
+        function ignoreError() {
+            return true;
+        }
+    </script>
+
+    <link href="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/wzhead-cleaned.css" rel="stylesheet" type="text/css">
+    <link href="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/wz20130912-cleaned.css" rel="stylesheet" type="text/css">
+
+
+    
+
+    <script type="text/javascript" src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/indexhead.js"></script><script src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/chat.js" type="text/javascript"></script><script src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/chatuserlist.js" type="text/javascript"></script><link href="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/chat.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/showarticlefollow20130912.js"></script>
+<link type="text/css" rel="stylesheet" href="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/bdsstyle_002.css"><script src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/EssayforIE120425.js" type="text/javascript"></script></head>
+<body style="font-family: Arial, Helvetica, sans-serif;" onmouseup="setDragEnd()" onmousemove="DragDiv();" onclick="delAllDiv(event)"><div style="position: absolute; left: -1px; bottom: -1px; z-index: 0; width: 0px; height: 0px; overflow: hidden; visibility: hidden; display: none;" id="BAIDU_DUP_fp_wrapper"><iframe style="width: 0px; height: 0px; visibility: hidden; display: none;" src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/o.html" id="BAIDU_DUP_fp_iframe"></iframe></div><iframe style="display: none;" frameborder="0"></iframe><div style="display: block;" id="bdshare_s"><iframe id="bdsIfr" style="position:absolute;display:none;z-index:9999;" frameborder="0"></iframe><div style="display: none;" id="bdshare_l"><div id="bdshare_l_c"><h6>分享到</h6><ul><li><a href="#" class="bds_mshare mshare">一键分享</a></li><li><a href="#" class="bds_qzone qqkj">QQ空间</a></li><li><a href="#" class="bds_tsina xlwb">新浪微博</a></li><li><a href="#" class="bds_bdysc bdysc">百度云收藏</a></li><li><a href="#" class="bds_renren rrw">人人网</a></li><li><a href="#" class="bds_tqq txwb">腾讯微博</a></li><li><a href="#" class="bds_bdxc bdxc">百度相册</a></li><li><a href="#" class="bds_kaixin001 kxw">开心网</a></li><li><a href="#" class="bds_tqf txpy">腾讯朋友</a></li><li><a href="#" class="bds_tieba bdtb">百度贴吧</a></li><li><a href="#" class="bds_douban db">豆瓣网</a></li><li><a href="#" class="bds_tsohu shwb">搜狐微博</a></li><li><a href="#" class="bds_bdhome bdhome">百度新首页</a></li><li><a href="#" class="bds_sqq sqq">QQ好友</a></li><li><a href="#" class="bds_thx thx">和讯微博</a></li><li><a href="#" class="bds_more">更多...</a></li></ul><p><a href="#" class="goWebsite">百度分享</a></p></div></div></div>
+
+
+    <span id="LayerLogin"></span>
+    <div style="position: fixed; width: 100%; z-index: 1000;">
+        <div class="mainnav">
+            <div class="mainnav1">
+                <div class="lf360" style="padding-left: 5px;">
+                    <img src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/logoo.gif">
+                </div>
+                <div style="width: 625px; padding-top: 0px; padding-left: 4px; position: absolute;">
+                    <table height="34" border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr id="daohangtr">
+                                <td style="width: 185px; _width: 0px; *width: 0px !important;"></td>
+                                <td class="navwz1" width="95">
+                                    <a href="http://www.360doc.com/index.html">首&nbsp;页</a>
+                                </td>
+                                <td class="  navwz1" width="100">
+                                    <a href="http://www.360doc.com/readroom.html">阅览室</a>
+                                </td>
+                                <td class="  navwz1" width="88">
+                                    <a href="http://www.360doc.com/weekstar.html">馆友</a>
+                                </td>
+                                <td class="  navwz1" width="132">
+                                    <a href="http://www.360doc.com/my360doc.aspx">我的图书馆</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="rt360" style="padding-top: 6px; width: 133px; padding-left: 38px;" id="outerdiv"><div class="denglbj lan2"><div style=" width:43px; float:left; text-align:center;" onmouseover="this.style.backgroundColor='#e5e5e5';this.parentNode.className='denglbj2 lan2'" onmouseout="this.style.backgroundColor='#fcfcfc';this.parentNode.className='denglbj lan2'"><a href="javascript:void(0)" onclick="loginnew()">登录</a></div><div style=" width:1px; float:left; "></div><div style="width:46px; float:left;text-align:center; margin-left:1px;*margin-left:0px;" onmouseover="this.style.backgroundColor='#e5e5e5';this.parentNode.className='denglbj3 lan2'" onmouseout="this.style.backgroundColor='#fcfcfc';this.parentNode.className='denglbj lan2'" id="regdiv"><a href="http://www.360doc.com/register.aspx?refer=80" target="_blank">注册</a></div><div class="boxwid xinngdui" id="bfdiv"><a href="#"><img id="imgbfabc" src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/5.gif"></a></div><div style=" position: absolute; margin-left:35px; *margin-left:-95px;_margin-left:-93px; width:96px;display:none;z-index:200;" id="func"><div class="tugduo3" id="divfunc" style="cursor:pointer;float:right; width:41px;"><div style=" height:26px; width:39px; border:1px solid #d4d4d4; border-bottom:none; background-color:#fff;"></div></div><div class="tipzhu3  right hui2" id="layerdiv"><ul><li><a href="http://www.360doc.com/advice.html" target="_blank">留言交流</a></li><li><a href="http://www.360doc.com/helpnew.html" target="_blank">网文摘手</a></li><li><a href="http://www.360doc.com/mobilapp.htm" target="_blank">手机客户端</a></li><li style=" border:none;"><a href="http://www.360doc.com/help.html" target="_blank">帮助</a></li></ul></div></div></div></div>
+                <div class=" rt360" style="padding-top: 6px; padding-right: 0px;">
+                    <div class="lf360 serch">
+                        <input name="input2" class="serchpt" id="txtSearchword" onkeydown="ongosearch()" onkeyup="showIntelliSense()" onfocus="if(this.value=='搜文章 找馆友') this.value='';this.style.color='#272727'" onblur="if(!this.value) {this.value='搜文章 找馆友';this.style.color='#b2b2b2';}" onpaste="showIntelliSense1()" value="搜文章 找馆友" type="text">
+                    </div>
+                    <div class="lf360 ssuo">
+                        <a id="searchlinkid" href="javascript:gosearch();"></a>
+                    </div>
+                    <div id="divsearch" style="margin-top: 25px; margin-left: 1px; display: none; position: absolute; z-index: 100;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navxt">
+        </div>
+    </div>
+    <div style="height: 44px; _height: 0px; width: 100%;"></div>
+
+    <div class="both">
+    </div>
+    <div style="width: 1047px;" id="docTotalInfo" class="mainzt">
+        <table class="index_main" border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td align="left" valign="top" width="727px">
+                        <div id="ADAboveArtContent"><iframe marginwidth="0" marginheight="0" scrolling="no" src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/aboveConentAD.html" frameborder="0" height="90" width="728"></iframe></div>
+                        <div style="height: 7px;">
+                        </div>
+                        <table class="mainbj6" id="docArtClass" border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <table style="width: 100%; text-align: center;" border="0" cellpadding="0" cellspacing="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <table style="width: 100%; text-align: left;" border="0" cellpadding="0" cellspacing="0">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="biaoti">
+                                                                        <div class="biaoti2 lf360">
+                                                                            Python中文文档
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="height: 32px;">
+
+
+                                                                        <div style="width: 670px; height: 28px; padding-left: 26px; color: #777b7a;">
+                                                                            <table>
+                                                                                <tbody><tr>
+                                                                                    <td>收藏人：<span class="name" onclick="wzhitnew(1);"><a href="http://www.360doc.com/userhome/7821" target="_blank">xiaochong</a></span>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="btzctsg" id="spanfollowstatus"><div class="gzbt1"><a onclick="gzuser(7821);wzhitnew(2);" href="javascript:void(0)"></a></div></div>
+                                                                                        <script>isfollow(7821);</script>
+
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="ytdh1"><a onclick="doctalk();wzhitnew(106);" href="javascript:void(0)"></a></div>
+
+                                                                                    </td>
+
+                                                                                </tr>
+                                                                            </tbody></table>
+                                                                        </div>
+
+
+
+
+                                                                        <div class="wztopxx">
+                                                                            <div style="float: left; height: 28px; padding-top: 7px;">
+                                                                                <table style="position: relative; z-index: 4" cellpadding="0" cellspacing="0">
+                                                                                    <tbody>
+                                                                                        <tr>
+
+                                                                                            <td>
+                                                                                                2006-05-20&nbsp;|&nbsp;阅：<span id="360doc_Readnum">5770</span>&nbsp;&nbsp;<span style="position: relative;">转：<span onclick="wzhitnew(3)" id="360doc_saverNum"><span style="cursor:pointer;" onclick="javascript:ShowSaverUser();">12</span></span><span id="360doc_saverUser"><div id="sameArtOuter" style="display:none;position: absolute; height:305px;width:144px;left:0px;margin-top:15px;z-index:100000;"><div id="sameArt" style=" overflow-y: auto;  height:300px;overflow-x: hidden; z-index: 100;right:0px;margin-top:-10px;" onclick="event.cancelBubble=true;"></div></div></span></span>&nbsp;&nbsp;
+
+
+
+                                                                                            </td>
+
+                                                                                            <td>
+                                                                                                <div style="position: relative;">
+                                                                                                    &nbsp;|&nbsp;<span id="docsource">&nbsp;&nbsp;<a onclick="wzhitnew(14);" href="http://wiki.woodpecker.org.cn/moin/PythonZhDoc" target="_blank">来源</a></span>
+                                                                                                </div>
+                                                                                                <div class="sekuaibox" style="display: none; margin-left: 48px;" id="zihaoboxID">
+                                                                                                    <div style="padding-top: 10px; padding-left: 5px;">
+                                                                                                        <div class="lf360 danxunbt">
+                                                                                                            <input id="artdocfont3" onclick="ChangeArtSize(3, this); wzhitnew(15); " name="radio" value="1" type="radio">
+                                                                                                        </div>
+                                                                                                        <div class="lf360 danxunwz" onclick="ChangeArtSize(3,this);wzhitnew(15); " style="cursor: pointer;">
+                                                                                                            大
+                                                                                                        </div>
+                                                                                                        <div class="lf360 danxunbt">
+                                                                                                            <input id="artdocfont2" onclick="ChangeArtSize(2, this); wzhitnew(16); " name="radio" value="2" type="radio">
+                                                                                                        </div>
+                                                                                                        <div class="lf360 danxunwz" onclick="ChangeArtSize(2,this);wzhitnew(16); " style="cursor: pointer;">
+                                                                                                            中
+                                                                                                        </div>
+                                                                                                        <div class="lf360 danxunbt">
+                                                                                                            <input id="artdocfont1" onclick="ChangeArtSize(1, this); wzhitnew(17); " name="radio" value="3" type="radio">
+                                                                                                        </div>
+                                                                                                        <div class="lf360 danxunwz" onclick="ChangeArtSize(1,this);wzhitnew(17); " style="cursor: pointer;">
+                                                                                                            小
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="sekuaibox" style="margin-left: 76px; display: none;" id="sekuaiboxID">
+                                                                                                    <div style="padding-top: 10px; padding-left: 5px;">
+                                                                                                        <img src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/cr1.gif" id="docArtC1" onclick="ChangeArtClass(1,this);wzhitnew(18);" style="cursor: pointer;"><img src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/cr2.gif" id="docArtC2" onclick="ChangeArtClass(2,this);wzhitnew(19);" style="cursor: pointer;"><img src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/cr3.gif" id="docArtC3" onclick="ChangeArtClass(3,this);wzhitnew(20);" style="cursor: pointer;"><img src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/cr4.gif" id="docArtC4" onclick="ChangeArtClass(4,this);wzhitnew(21);" style="cursor: pointer;"><img src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/cr5.gif" id="docArtC5" onclick="ChangeArtClass(5,this);wzhitnew(22);" style="cursor: pointer;"><img src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/cr6-1.gif" id="docArtC6" onclick="ChangeArtClass(6,this);wzhitnew(23);" style="cursor: pointer;">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                <div style="padding-left: 10px;">
+                                                                                                    <a href="javascript:void(0)">
+                                                                                                        <img onmouseover="changedivdisplay(1);" src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/wz1.gif"></a>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                <div style="padding-left: 10px;" onmouseover="changedivdisplay(2);">
+                                                                                                    <a href="javascript:void(0)">
+                                                                                                        <img src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/wz2.gif"></a>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" onclick=" setTimeout(showShareLayer, 10);wzhitnew(4);">分享</a>&nbsp;</td>
+                                                                                            <td>
+                                                                                                <a href="#" onclick="  setTimeout(showShareLayer, 10);wzhitnew(5);">
+                                                                                                    <img style="cursor: pointer;" src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/tb10.gif"></a><div class="fenxiang" id="fenxiangLayer" style="display: none; border: none; width: 110px; margin-left: -28px; _margin-left: -40px;"><div style="border:1px solid #cbcbcb; height:240px; width:108px;"><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare share-bar-btn"><table style=" background-color:#fff; " width="108" cellpadding="0" cellspacing="0"><tbody><tr><td width="12"></td><td onclick="wzhitnew(6);" height="29"><a class="bds_qzone" href="javascript:void(0);" title="分享到QQ空间">&nbsp;&nbsp;&nbsp;&nbsp;腾讯空间</a></td></tr><tr><td width="12"></td><td onclick="wzhitnew(9);" height="29"><a class="bds_tsina" href="javascript:void(0);" title="分享到新浪微博">&nbsp;&nbsp;&nbsp;&nbsp;新浪微博</a></td></tr><tr><td width="12"></td><td onclick="wzhitnew(10);" height="29"><a class="bds_tqq" href="javascript:void(0);" title="分享到腾讯微博">&nbsp;&nbsp;&nbsp;&nbsp;腾讯微博</a></td></tr><tr><td width="12"></td><td onclick="wzhitnew(7);" height="29"><a class="bds_renren" href="javascript:void(0);" title="分享到人人网">&nbsp;&nbsp;&nbsp;&nbsp;人人网</a></td></tr><tr><td width="12"></td><td onclick="wzhitnew(8);" height="29"><a class="bds_kaixin001" href="javascript:void(0);" title="分享到开心网">&nbsp;&nbsp;&nbsp;&nbsp;开心网</a></td></tr><tr><td width="12"></td><td onclick="wzhitnew(11);" height="29"><a class="bds_tsohu" href="javascript:void(0);" title="分享到搜狐微博">&nbsp;&nbsp;&nbsp;&nbsp;搜狐微博</a></td></tr><tr><td width="12"></td><td height="29"><a href="javascript:void(0);" onclick="showdivemail();wzhitnew(12);"><div class="bds_py">&nbsp;&nbsp;&nbsp;&nbsp;推荐给朋友</div></a></td></tr><tr><td width="12"></td><td height="29"><a href="javascript:void(0);"><div class="bds_jubao" onclick="showAlertLayer();wzhitnew(13);">&nbsp;&nbsp;&nbsp;&nbsp;举报</div></a></td></tr></tbody></table></div></div></div>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                            <div id="resavelayer1" class="rt360"><div class="zswdbtn1"><a href="javascript:void(0);" onclick="SaveArt();wzhitnew(24);"></a></div><div style="position: absolute;display:none;z-index:100000;" id="fuzhitishidiv"></div></div>
+
+
+                                                                            <div id="shareweixinabove" class="rt360"> <div class="fxwx2bt"><a href="javascript:void(0);" onclick="shareWeixin();wzhitnew(65);"></a></div></div>
+
+
+                                                                            <table style="text-align: center; margin: 0px auto;" cellpadding="0" cellspacing="0">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <div id="AlertArt1" style="display: none; position: absolute;">
+                                                                                            </div>
+                                                                                            <div id="SendToFriends1" style="display: none; position: absolute; z-index: 100;">
+                                                                                            </div>
+                                                                                            <div class="lf360 zcbutton" style="margin-left: 100px;">
+                                                                                            </div>
+                                                                                            <div class="lf360">
+                                                                                                &nbsp;&nbsp;
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        
+                                                        <table class="wenzhangcss" width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="xiantao">
+                                                                        </div>
+
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="height: 200px;" align="left" valign="top" width="670px">
+                                                                        <span id="articlecontent" onmousedown="newhighlight = true;" onmouseup="NewHighlight(event)">
+                                                                            <table>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td style="position: relative;" width="670px">
+
+                                                                                            <p class="line874"><span class="anchor" id="line-2"></span><strong>教学类图书</strong> <span class="anchor" id="line-3"></span>
+</p><ul>
+    <li>
+    <p class="line891"><strong><a href="http://wiki.woodpecker.org.cn/moin/OpenBookProject">OpenBookProject</a> -- 开放图书计划！</strong>使用<a href="http://wiki.woodpecker.org.cn/moin/DocBook">DocBook</a> 标准化的生产/维护/创建/推广好书！ <a href="http://wiki.woodpecker.org.cn/moin/OsmondLiang">OsmondLiang</a>创立 <a href="http://wiki.woodpecker.org.cn/moin/CDBE">CDBE</a> 作者 <span class="anchor" id="line-4"></span>
+    </p><ul>
+        <li>
+        <p class="line891"><strong><a href="http://wiki.woodpecker.org.cn/moin/PyProgFaq">PyProgFaq</a></strong> -- 《Python编程FAQ》-- 由liqust翻译 <span class="anchor" id="line-5"></span>
+        </p><ul>
+            <li>
+            <p class="line891"><strong><a href="http://wiki.woodpecker.org.cn/moin/PyFaqDict">PyFaqDict</a></strong> -- 总是要回答的基础的不能再基础的一些概念词典！ <span class="anchor" id="line-6"></span></p>
+            </li>
+        </ul>
+        </li><li>
+        <p class="line891"><strong><a href="http://wiki.woodpecker.org.cn/moin/PyIAQ">PyIAQ</a></strong> -- Python 罕见问题集！ <span class="anchor" id="line-7"></span></p>
+        </li><li>
+        <p class="line891"><strong><a href="http://wiki.woodpecker.org.cn/moin/PySourceCode">PySourceCode</a> -- 从Python源码中来，到Python应用中去</strong> <span class="anchor" id="line-8"></span></p>
+        </li><li>
+        <p class="line891"><a href="http://wiki.woodpecker.org.cn/moin/PyCookbook">PyCookbook</a> - Python 食谱 <span class="anchor" id="line-9"></span></p>
+        </li><li>
+        <p class="line891"><strong><a href="http://wiki.woodpecker.org.cn/moin/DiveIntoPythonZh">DiveIntoPythonZh</a> -- 《深入Python》中文翻译项目</strong> <span class="anchor" id="line-10"></span>
+        </p><ul>
+            <li>好书不常有，好书常更新，我们读好书，好书要常读，常读常更新，永远是好书！ <span class="anchor" id="line-11"></span></li>
+        </ul>
+        </li><li>
+        <p class="line891"><a href="http://wiki.woodpecker.org.cn/moin/TPiP">TPiP</a> - Py 的文本处理 <span class="anchor" id="line-12"></span></p>
+        </li><li>
+        <p class="line891"><strong><a href="http://wiki.woodpecker.org.cn/moin/PyTwisted">PyTwisted</a> - Twisted 一个功能丰富的高性能socket开发框架</strong> <span class="anchor" id="line-13"></span>
+        </p><ul>
+            <li>
+            <p class="line891"><a href="http://wiki.woodpecker.org.cn/moin/TwistedStudyRecord">TwistedStudyRecord</a> -- Twisted学习笔记 汇集大家的体验 <span class="anchor" id="line-14"></span></p>
+            </li>
+        </ul>
+        </li><li>
+        <p class="line891"><strong><a class="interwiki" title="self" href="http://wiki.woodpecker.org.cn/moin/PythonCodingRule">Python开发编码规范</a></strong> --- hoxide dreamingk 贡献 <span class="anchor" id="line-15"></span></p>
+        </li><li>
+        <p class="line891"><strong><a class="interwiki" title="self" href="http://wiki.woodpecker.org.cn/moin/rockety/2005-10-21">编程艺术简介</a></strong> <span class="anchor" id="line-16"></span><span class="anchor" id="line-17"></span><span class="anchor" id="line-18"></span><span class="anchor" id="line-19"></span></p>
+        </li>
+    </ul>
+    </li>
+</ul>
+<p class="line867">
+</p><hr>
+<p class="line874"><span class="anchor" id="line-20"></span><strong>API类手册</strong> <span class="anchor" id="line-21"></span>
+</p><ul>
+    <li>
+    <p class="line891"><strong><a href="http://wiki.woodpecker.org.cn/moin/Zope3Book">Zope3Book</a></strong> -- Zope X3 开发者手册！ <span class="anchor" id="line-22"></span></p>
+    </li><li>
+    <p class="line891"><a href="http://wiki.woodpecker.org.cn/moin/ModPythonBestPractices">ModPythonBestPractices</a> Mod_python 最佳实践 <span class="anchor" id="line-23"></span></p>
+    </li><li>
+    <p class="line891"><a href="http://wiki.woodpecker.org.cn/moin/Python_Network_Programming">Python Network Programming</a> - Python网络编程简介 <span class="anchor" id="line-24"></span></p>
+    </li><li>
+    <p class="line891"><a href="http://wiki.woodpecker.org.cn/moin/wxPython_API">wxPython API</a> - wxPython API参考 <span class="anchor" id="line-25"></span></p>
+    </li><li>
+    <p class="line891"><a href="http://wiki.woodpecker.org.cn/moin/modpythoncn">modpythoncn</a> mod_python文档 <span class="anchor" id="line-26"></span></p>
+    </li>
+</ul>
+<p class="line867">
+</p><hr>
+<p class="line874"><span class="anchor" id="line-27"></span><strong>精读类</strong> <span class="anchor" id="line-28"></span>
+</p><div id="Include_PythonPeruse" dir="ltr" lang="en"><span class="anchor" id="top_Include_PythonPeruse"></span><span class="anchor" id="line-1"></span>
+<ul>
+    <li>
+    <p class="line862">Django中文文档:<a class="http" href="http://www.woodpecker.org.cn/obp/django/django-faq/TableOfContents.html">http://www.woodpecker.org.cn/obp/django/django-faq/TableOfContents.html</a> <span class="anchor" id="line-2"></span></p>
+    </li><li>
+    <p class="line891"><strong><a href="http://wiki.woodpecker.org.cn/moin/RemovingTheMagic">Django: Removing The Magic</a></strong> <span class="anchor" id="line-3"></span></p>
+    </li><li>
+    <p class="line891"><strong><a href="http://wiki.woodpecker.org.cn/moin/PyNewStyleClass">《Python In a Netshell(2003)》5.2 Python中的新型类及其实例详解</a></strong> <span class="anchor" id="line-4"></span></p>
+    </li><li>
+    <p class="line891"><strong><a href="http://wiki.woodpecker.org.cn/moin/MetaClassInPython">《Python In a Netshell(2003)》5.4 Python中的元类(metaclass)</a></strong> <span class="anchor" id="line-5"></span></p>
+    </li><li>
+    <p class="line891"><strong><a href="http://wiki.woodpecker.org.cn/moin/RegExpInPython">《Python In a Netshell(2003)》9.7 Python中的正则表达式及 re 模块</a></strong> <span class="anchor" id="line-6"></span></p>
+    </li><li>
+    <p class="line891"><strong><a href="http://wiki.woodpecker.org.cn/moin/PyDBAPI2">《Python In a Netshell(2003)》11.4 Python DBAPI 2.0</a></strong> <span class="anchor" id="line-7"></span></p>
+    </li><li>
+    <p class="line891"><strong><a href="http://wiki.woodpecker.org.cn/moin/WeiZhong/DecoratorsInPython24">Python2.4中的新东西(1):函数和方法的修饰符</a></strong> <span class="anchor" id="line-8"></span></p>
+    </li><li>
+    <p class="line891"><strong><a href="http://wiki.woodpecker.org.cn/moin/WeiZhong/WhatsNewOfPython25">Python2.5中的新东西</a></strong> <span class="anchor" id="line-9"></span></p>
+    </li><li>
+    <p class="line891"><strong>Python 精要参考（第二版） 译者：Feather <a href="http://wiki.woodpecker.org.cn/moin/WeiZhong">WeiZhong</a> （排名字母序)</strong> <span class="anchor" id="line-10"></span>
+    </p><ul>
+        <li style="LIST-STYLE-TYPE: none">
+        <p class="line891"><a href="http://wiki.woodpecker.org.cn/moin/WeiZhong/2006-01-17">第一章 Python快速入门</a> <span class="anchor" id="line-11"></span><span class="anchor" id="line-12"></span>
+        </p><p class="line891"><a href="http://wiki.woodpecker.org.cn/moin/WeiZhong/2006-01-18">第二章 代码约定及语法</a> <span class="anchor" id="line-13"></span><span class="anchor" id="line-14"></span>
+        </p><p class="line891"><a href="http://wiki.woodpecker.org.cn/moin/PythonEssentialRef3">第三章 类型及对象</a> <span class="anchor" id="line-15"></span><span class="anchor" id="line-16"></span>
+        </p><p class="line891"><a href="http://wiki.woodpecker.org.cn/moin/PythonEssentialRef4">第四章 运算符及表达式</a> <span class="anchor" id="line-17"></span><span class="anchor" id="line-18"></span>
+        </p><p class="line891"><a href="http://wiki.woodpecker.org.cn/moin/PythonEssentialRef5">第五章 控制流</a> <span class="anchor" id="line-19"></span><span class="anchor" id="line-20"></span>
+        </p><p class="line891"><a href="http://wiki.woodpecker.org.cn/moin/PythonEssentialRef6">第六章 函数及函数编程</a> <span class="anchor" id="line-21"></span><span class="anchor" id="line-22"></span>
+        </p><p class="line891"><a href="http://wiki.woodpecker.org.cn/moin/PythonEssentialRef7">第七章 类、面向对象编程</a> <span class="anchor" id="line-23"></span><span class="anchor" id="line-24"></span>
+        </p><p class="line891"><a href="http://wiki.woodpecker.org.cn/moin/PythonEssentialRef8">第八章 模块与包</a> <span class="anchor" id="line-25"></span><span class="anchor" id="line-26"></span>
+        </p><p class="line891"><a href="http://wiki.woodpecker.org.cn/moin/PythonEssentialRef9">第九章 输入输出</a> <span class="anchor" id="line-27"></span><span class="anchor" id="line-28"></span>
+        </p><p class="line891"><a href="http://wiki.woodpecker.org.cn/moin/PythonEssentialRef10">第十章 执行环境</a> <span class="anchor" id="line-29"></span><span class="anchor" id="line-30"></span></p>
+        </li>
+    </ul>
+    </li>
+</ul>
+<span class="anchor" id="bottom_Include_PythonPeruse"></span></div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                            <div id="viewerPlaceHolder" style="width: 717px; height: 700px; display: none;">
+                                                                            </div>
+                                                                        </span>
+                                                                        <table>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td></td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="left">
+                                                                        <a name="anchordoc1" id="anchordoc1"></a>
+                                                                        <div style="height: 28px">
+                                                                            <div style="font-size: 14px; color: #797b7a; float: left;">
+                                                                                来自：<span class="name" onclick="wzhitnew(59)"><a href="http://www.360doc.com/userhome/7821" target="_blank">xiaochong</a></span>&nbsp;&gt;&nbsp;<span id="cname" onclick="wzhitnew(60)"><a href="http://www.360doc.com/userhome.aspx?userid=7821&amp;cid=4" target="_blank">《Python》</a></span>
+                                                                            </div>
+                                                                            <div style="float: left;">
+                                                                                <div class="btzctsg" id="spanfollowstatus1"><div class="gzbt1"><a onclick="gzuser(7821);wzhitnew(61);" href="javascript:void(0)"></a></div></div>
+                                                                                <script>isfollow(7821);</script>
+
+                                                                            </div>
+                                                                            <div style="float: left;">
+                                                                                <div class="ytdh1"><a onclick="doctalk();wzhitnew(107);" href="javascript:void(0)"></a></div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div>
+                                                                            <div class="modlist lf360 list" style="padding-top: 0px;">
+                                                                                <ul>
+                                                                                    <div id="lastart"><div class="shangyp">上一篇：<a href="http://www.360doc.com/content/06/0520/14/7821_119070.shtml" target="_blank" onclick="wzhitnew(57);">Python 手册</a></div></div>
+                                                                                    <div id="nextart">下一篇：<a href="http://www.360doc.com/content/08/0721/00/7821_1451748.shtml" target="_blank" onclick="wzhitnew(58);">Python Unit Testing Framework</a></div>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="left">
+                                                                        <div style="padding-top: 12px;">
+                                                                            <script type="text/javascript">
+                                                                                /*文章页正文下方标签云，2013-8-21*/
+                                                                                var cpro_id = "u1350774";
+                                                                            </script>
+                                                                            <script src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/c_002.js" type="text/javascript"></script><div id="BAIDU_DUP_wrapper_u1350774_0"><iframe id="cproIframe_u1350774_1" src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/acom.html" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="true" align="center,center" frameborder="0" height="120" width="650"></iframe></div><script charset="utf-8" src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/acom"></script>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align: left;">
+                                                                        <div style="padding-top: 15px; width: 670px;">
+                                                                            <table style="width: 670px;" cellpadding="0" cellspacing="0">
+                                                                                <tbody>
+                                                                                    <tr>
+
+                                                                                        <td style="width: 530px;">
+                                                                                            <div class=" lf360" style="cursor: pointer" onmouseover="ChangeBtnStyle(1);" onmouseout="ChangeBtnStyle(2);">
+                                                                                                <div class="zscbt">
+                                                                                                    <a href="javascript:void(0);" onclick="SaveArt();wzhitnew(26);">
+                                                                                                        <div id="zscbtword" class="lf360 xianhua" style="padding-left: 38px;">
+                                                                                                            转藏到我的图书馆
+                                                                                                        </div>
+                                                                                                    </a>
+                                                                                                </div>
+                                                                                            </div>
+
+                                                                                            <div style="margin-left: 10px; cursor: pointer;" class="lf360 xhmainbox" id="sendflowerdiv" onclick='Showflowerlayer("sendedLayer1");wzhitnew(27)' onmouseover="ChangeFlowerBtnStyle(1);" onmouseout="ChangeFlowerBtnStyle(2);">
+
+                                                                                                <div id="flowimg2" class="lf360">
+                                                                                                    <div style="padding-left: 10px; padding-top: 10px;">
+                                                                                                        <img id="flowimg3" src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/huahuanew.gif">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div id="flowimg5" class=" lf360 xianhua">
+                                                                                                    献花(<span id="articleflowernum">0</span>)<div id="flowernumadd" class="addtionone">
+                                                                                                        +1
+                                                                                                    </div>
+                                                                                                </div>
+
+                                                                                            </div>
+
+
+
+
+                                                                                            <div class="lf360" style="cursor: pointer; padding-left: 10px;" onmouseover="ChangeBtnStyle(3);" onmouseout="ChangeBtnStyle(4);">
+                                                                                                <div class="fxwxbt">
+
+                                                                                                    <a href="javascript:void(0);" onclick="shareWeixin();wzhitnew(64);">
+                                                                                                        <div id="fxwxword" class="lf360 xianhua" style="padding-left: 38px;">
+                                                                                                            分享到微信
+                                                                                                        </div>
+                                                                                                    </a>
+                                                                                                </div>
+                                                                                            </div>
+
+
+
+
+
+                                                                                            <div class="lf360" style="cursor: pointer; padding-left: 10px;" onmouseover="ChangeBtnStyle(5);" onmouseout="ChangeBtnStyle(6);">
+                                                                                                <div class="ywzwbt">
+
+                                                                                                    <a id="ywzwa" href="http://www.baidu.com/s?wd=python+%e6%96%87%e6%a1%a3+%e5%9b%be%e4%b9%a6&amp;tn=SE_hldp01010_6r0gix1f" onclick="wzhitnew(100);" target="_blank">
+                                                                                                        <div id="ywzwword" class="lf360 xianhua" style="padding-left: 44px;">
+                                                                                                            以文找文
+                                                                                                        </div>
+                                                                                                    </a>
+
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td style="vertical-align: bottom; font-size: 12px;" width="140">
+                                                                                            <div class="rt360" id="sharediv2"><table style=" vertical-align: text-bottom;" border="0" cellpadding="0" cellspacing="0"> <tbody><tr><td><div style="height:20px; width:105px;"><div style="float:left;"><span style="font-size:12px; line-height:16px; color:#959595;">分享：</span></div><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare share-bar-btn2" style="float:left;"><span onclick="wzhitnew(28);"><a class="bds_qzone" title="分享到QQ空间" href="javascript:void(0);"></a></span><span onclick="wzhitnew(31);"><a class="bds_tsina" title="分享到新浪微博" href="javascript:void(0);"></a></span><span onclick="wzhitnew(32);"><a class="bds_tqq" title="分享到腾讯微博" href="javascript:void(0);"></a></span></div></div></td><td width="24"><a><img style="cursor:pointer;" src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/tb10.gif" onclick="setTimeout(showShareLayer2, 10);wzhitnew(34);"></a><div id="fenxiangLayer1" class="fenxiang" style=" margin-left:-100px;*margin-left:-120px!important; margin-top:5px;*margin-top:16px!important;display:none;z-index:1000;"><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare share-bar-btn"><table style=" background-color:#fff; " width="108" cellpadding="0" cellspacing="0"><tbody><tr><td width="12"></td><td onclick="wzhitnew(29);" height="29"><a class="bds_renren" href="javascript:void(0);" title="分享到人人网">&nbsp;&nbsp;&nbsp;&nbsp;人人网</a></td></tr><tr><td width="12"></td><td onclick="wzhitnew(30);" height="29"><a class="bds_kaixin001" href="javascript:void(0);" title="分享到开心网">&nbsp;&nbsp;&nbsp;&nbsp;开心网</a></td></tr><tr><td width="12"></td><td onclick="wzhitnew(33);" height="29"><a class="bds_tsohu" href="javascript:void(0);" title="分享到搜狐微博">&nbsp;&nbsp;&nbsp;&nbsp;搜狐微博</a></td></tr><tr><td width="12"></td><td height="29"><a href="javascript:void(0);" onclick="showdivemail1();wzhitnew(35);"><div class="bds_py">&nbsp;&nbsp;&nbsp;&nbsp;推荐给朋友</div></a></td></tr><tr><td width="12"></td><td height="29"><a href="javascript:void(0);"><div class="bds_jubao" onclick="showAlertLayer1();wzhitnew(36);">&nbsp;&nbsp;&nbsp;&nbsp;举报</div></a></td></tr></tbody></table></div></div></td></tr></tbody></table><div id="AlertArt2" style="display:none; position:absolute;"></div><div id="SendToFriends2" style="display:none;position:absolute;z-index:1000;"></div></div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td height="10"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="lswzbox" style="padding-top: 10px;">
+                            <div>
+                                <table cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top" width="330">
+                                                <div class="lswz" style="height: 300px;">
+                                                    <div class="lstwtop">
+                                                        <div class="lswztit">
+                                                            <div class=" lf360">
+                                                                <div class="titwx1">
+                                                                    类似文章
+                                                                </div>
+                                                            </div>
+                                                            <div class="rt360" style="padding-top: 5px; padding-right: 9px;">
+                                                                <a href="http://www.360doc.com/relevant/119149_more.shtml" target="_blank" onclick="wzhitnew(38)">更多</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modlist2 list">
+                                                            <ul>
+                                                                
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href="http://www.360doc.com/content/13/0125/13/3046928_262317581.shtml" target="_blank" onclick="wzhitnew(37)">关于Python的一些介绍和资源</a></span></li>
+                                                                    
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href="http://www.360doc.com/content/11/0413/22/4825484_109435462.shtml" target="_blank" onclick="wzhitnew(37)">[Python]Pytho WEB 编程的学习方法</a></span></li>
+                                                                    
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href="http://www.360doc.com/content/11/1110/02/68824_163210393.shtml" target="_blank" onclick="wzhitnew(37)">Python文档工具快速上手指南 | 李三火</a></span></li>
+                                                                    
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href="http://www.360doc.com/content/06/1229/14/16915_311930.shtml" target="_blank" onclick="wzhitnew(37)">开发人员常用在线文档</a></span></li>
+                                                                    
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href="http://www.360doc.com/content/07/0515/22/1523_502050.shtml" target="_blank" onclick="wzhitnew(37)">看图识Plone</a></span></li>
+                                                                    
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href="http://www.360doc.com/content/11/0410/20/4825484_108673321.shtml" target="_blank" onclick="wzhitnew(37)">[Python]Python中文全攻略</a></span></li>
+                                                                    
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href="http://www.360doc.com/content/14/0120/09/13247663_346570205.shtml" target="_blank" onclick="wzhitnew(37)">39个jQvery免豆资料地址汇总</a></span></li>
+                                                                    
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href="http://www.360doc.com/content/12/1125/15/1474122_250129768.shtml" target="_blank" onclick="wzhitnew(37)">80个Python经典资料（教程+源码+工具）汇....</a></span></li>
+                                                                    
+                                                            </ul>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td valign="top" width="330">
+                                                <div class="lswz" style="margin-left: 9px; height: 300px;">
+                                                    <div class="lstwtop">
+                                                        <div class="lswztit">
+                                                            <div class=" lf360">
+                                                                <div class="titwx1">
+                                                                    热搜文章
+                                                                </div>
+                                                            </div>
+                                                            <div class="rt360" style="padding-top: 5px; padding-right: 9px;">
+                                                            </div>
+                                                        </div>
+                                                        <div class="modlist2 list">
+                                                            <ul> <li style="height: 30px; line-height: 30px;"><span><a href="http://www.baidu.com/s?wd=%e8%b5%b0%ef%bc%8c%e5%8e%bb%e5%af%bb%e6%89%be%e4%bd%a0%e4%ba%ba%e7%94%9f%e7%9a%84%e8%90%8c%e8%b4%a7%ef%bc%81&amp;tn=SE_hldp01010_6r0gix1f" target="_blank" onclick="wzhitnew(106)">走，去寻找你人生的萌货！</a></span></li> <li style="height: 30px; line-height: 30px;"><span><a href="http://www.baidu.com/s?wd=%e4%b8%80%e5%bc%a0%e5%9b%be%e5%91%8a%e8%af%89%e4%bd%a0%3a%e4%b8%ad%e3%80%81%e8%8b%b1%e3%80%81%e6%97%a5%e3%80%81%e7%be%8e%e5%9b%9b%e5%9b%bd%e5%b0%8f%e5%ad%a6%e7%94%9f%e5%ae%88%e5%88%99%e4%b9%8b%e5%8c%ba%e5%88%ab&amp;tn=SE_hldp01010_6r0gix1f" target="_blank" onclick="wzhitnew(106)" title="一张图告诉你:中、英、日、美四国小学生守则之区别">一张图告诉你:中、英、日、美四国小学生守...</a></span></li> <li style="height: 30px; line-height: 30px;"><span><a href="http://www.baidu.com/s?wd=%e5%85%a8%e5%9b%bd%e9%aa%91%e8%a1%8c%e7%ba%bf%e8%b7%af%e5%9b%be%3a%e5%b8%a6%e4%b8%8aTA%e4%b8%80%e8%b5%b7%e5%8e%bb%e6%97%85%e8%a1%8c%e5%90%a7&amp;tn=SE_hldp01010_6r0gix1f" target="_blank" onclick="wzhitnew(106)">全国骑行线路图:带上TA一起去旅行吧</a></span></li> <li style="height: 30px; line-height: 30px;"><span><a href="http://www.baidu.com/s?wd=%e4%ba%b2%e5%ad%90%e6%95%99%e8%82%b2%ef%bc%9a%e5%85%bb%e5%ad%a9%e5%ad%90%e6%9c%80%e5%ae%b9%e6%98%93%e7%8a%af%e7%9a%84%e9%94%99%e8%af%af%ef%bc%8c%e5%be%88%e5%a4%9a%e4%b9%8b%e5%89%8d%e4%b8%8d%e7%9f%a5%e9%81%93%ef%bc%8c%e8%b6%85%e5%ae%9e%e7%94%a8%ef%bc%81&amp;tn=SE_hldp01010_6r0gix1f" target="_blank" onclick="wzhitnew(106)" title="亲子教育：养孩子最容易犯的错误，很多之前不知道，超实用！">亲子教育：养孩子最容易犯的错误，很多之...</a></span></li> <li style="height: 30px; line-height: 30px;"><span><a href="http://www.baidu.com/s?wd=%e7%be%8e%e5%88%b0%e6%9e%81%e8%87%b4%e7%9a%84%e6%83%85%e6%84%9f%e5%9b%be%e6%96%87&amp;tn=SE_hldp01010_6r0gix1f" target="_blank" onclick="wzhitnew(106)">美到极致的情感图文</a></span></li> <li style="height: 30px; line-height: 30px;"><span><a href="http://www.baidu.com/s?wd=%e4%bd%a0%e7%9a%84%e7%94%9f%e6%b4%bb%2c%e5%b7%b2%e7%bb%8f%e8%a2%ab%e8%81%aa%e6%98%8e%e4%ba%ba%e5%8c%85%e5%9b%b4%3a%e5%91%86%e7%93%9c%e5%a6%82%e4%bd%95%e5%9c%a8%e8%81%aa%e6%98%8e%e4%ba%ba%e7%9a%84%e4%b8%96%e7%95%8c%e9%87%8c%e7%94%9f%e5%ad%98&amp;tn=SE_hldp01010_6r0gix1f" target="_blank" onclick="wzhitnew(106)" title="你的生活,已经被聪明人包围:呆瓜如何在聪明人的世界里生存">你的生活,已经被聪明人包围:呆瓜如何在聪...</a></span></li> <li style="height: 30px; line-height: 30px;"><span><a href="http://www.baidu.com/s?wd=%e6%88%91%e4%ba%ba%e7%94%9f%e4%b8%ad%e6%9c%891%e7%a7%92%e9%92%9f%e7%9a%84%e6%97%b6%e9%97%b4%ef%bc%8c%e6%8e%a5%e8%bf%91%e8%bf%87%e4%bd%a01%2f100%e7%9a%84%e7%97%9b%e8%8b%a6&amp;tn=SE_hldp01010_6r0gix1f" target="_blank" onclick="wzhitnew(106)" title="我人生中有1秒钟的时间，接近过你1/100的痛苦">我人生中有1秒钟的时间，接近过你1/100的...</a></span></li> <li style="height: 30px; line-height: 30px;"><span><a href="http://www.baidu.com/s?wd=%e6%9c%ba%e5%9c%ba%e7%88%86%e7%82%b8%e6%a1%88%3a%e4%b8%80%e4%b8%aa%e4%ba%ba%e7%9a%84%e6%81%90%e6%80%96%e4%b8%bb%e4%b9%89%e5%a6%82%e4%bd%95%e8%a7%a3%3f%e6%88%91%e4%bb%ac%e5%ba%94%e8%af%a5%e5%a5%bd%e5%a5%bd%e6%b7%b1%e6%80%9d&amp;tn=SE_hldp01010_6r0gix1f" target="_blank" onclick="wzhitnew(106)" title="机场爆炸案:一个人的恐怖主义如何解?我们应该好好深思">机场爆炸案:一个人的恐怖主义如何解?我们...</a></span></li></ul>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div style="background-color: #fafafa; width: 670px; height: 317px; margin-top: 10px;">
+                                    <div style=" padding-top:7px; padding-left:12px; height:182px;"> <div style=" height:30px;"><div class="titwx3 lf360">猜你喜欢</div><div class=" rt360" style=" padding-right:18px;"><img onclick='changefiveart("19999","19999");wzhitnew(62);' src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/hyz.gif" onmouseover='this.src="http://pubimage.360doc.com/wz/hyza.gif"' onmouseout='this.src="http://pubimage.360doc.com/wz/hyz.gif"' style="cursor:pointer;" height="24" width="76"></div></div><table cellpadding="0" cellspacing="0"><tbody><tr id="fivearttdid"><td valign="top" width="131"><div><a onclick="wzhitnew(39);" href="http://www.360doc.com/content/14/0211/12/2028407_351588369.shtml" target="_blank"><img src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/2028407_201402180010220234.jpg" height="86" width="114"></a></div><div class="lan twentit"><a onclick="wzhitnew(40);" href="http://www.360doc.com/content/14/0211/12/2028407_351588369.shtml" target="_blank">中国各种十大排名</a></div></td><td valign="top" width="131"><div><a onclick="wzhitnew(39);" href="http://www.360doc.com/content/14/0324/03/7858166_363186077.shtml" target="_blank"><img src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/363186077_201404031702430229.jpg" height="86" width="114"></a></div><div class="lan twentit"><a onclick="wzhitnew(40);" href="http://www.360doc.com/content/14/0324/03/7858166_363186077.shtml" target="_blank">灸法秘传《应灸七十症》</a></div></td><td valign="top" width="131"><div><a onclick="wzhitnew(39);" href="http://www.360doc.com/content/14/0421/16/8176916_370878871.shtml" target="_blank"><img src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/8176916_201405020010210183.jpg" height="86" width="114"></a></div><div class="lan twentit"><a onclick="wzhitnew(40);" href="http://www.360doc.com/content/14/0421/16/8176916_370878871.shtml" target="_blank">简单易懂：12种果树嫁接法演示图</a></div></td><td valign="top" width="131"><div><a onclick="wzhitnew(39);" href="http://www.360doc.com/content/13/0615/10/501086_292990825.shtml" target="_blank"><img src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/501086_201309021144050106.jpg" height="86" width="114"></a></div><div class="lan twentit"><a onclick="wzhitnew(40);" href="http://www.360doc.com/content/13/0615/10/501086_292990825.shtml" target="_blank">解读十类单身女人</a></div></td><td valign="top" width="131"><div><a onclick="wzhitnew(39);" href="http://www.360doc.com/content/14/1029/19/1894035_420958489.shtml" target="_blank"><img src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/420958489_201411092009180491.jpg" height="86" width="114"></a></div><div class="lan twentit"><a onclick="wzhitnew(40);" href="http://www.360doc.com/content/14/1029/19/1894035_420958489.shtml" target="_blank">常吃红薯的13个好处</a></div></td></tr></tbody></table></div>
+                                    <div style="padding-left: 12px;">
+                                        <iframe marginwidth="0" marginheight="0" scrolling="no" src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/artadali4.html" frameborder="0" height="100" width="650"></iframe>
+                                    </div>
+                                    <div style="display: none;" id="adabtest">
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                                <div id="Reflction" style="padding-top: 15px; padding-left: 15px;">
+                                    <div style="display: none;" id="360docRefTN"></div>
+                                    <div id="360docRefCT"></div>
+                                    <div style="display: none;" id="360docRefPB" align="center"></div>
+                                </div>
+                                <a name="sf"></a>
+                                
+                                <div id="ReflectionPart"><div style=" height:206px; margin:0px 0px;"><div class="plbox"><div class="plmain"><div class="titwx" style=" height:23px;">发表评论：</div><div class="deluwx">您好，请&nbsp;<span><a href="javascript:void(0);" onclick="ReflectionLoginform();wzhitnew(45);">登录</a></span>&nbsp;或者&nbsp;<span><a href="http://www.360doc.com/register.aspx?refer=53&amp;reurl=showweb/0/0/119149.aspx" onclick="InsertLogData(4);wzhitnew(46);">注册</a></span>&nbsp;后再进行评论 </div><div class=" rt360"><div style=" float:left; color:#959595; width:90px; "><div style="padding-top:4px;">其它帐号登录：</div></div><div style=" float:left ; width:70px;"><img onclick="toSNSLogin('smb');wzhitnew(47);" style="cursor:pointer;" src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/tb25.gif">&nbsp;&nbsp;&nbsp;<img onclick="toSNSLogin('qq');wzhitnew(48);" style="cursor:pointer;" src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/tb26.gif">&nbsp;&nbsp;&nbsp;<img onclick="toSNSLogin('rr');wzhitnew(49);" style="cursor:pointer;" src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/tb27.gif"></div> </div> </div></div></div></div>
+                            </div>
+                        </div>
+                    </td>
+                    <td align="center" valign="top" width="18px"></td>
+                    <td align="left" valign="top" width="252px">
+                        
+
+
+<div style="height: 98px" id="artrightad1"><iframe marginwidth="0" id="Iframeadabtest" marginheight="0" scrolling="no" src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/ad1_300.html" allowtransparency="true" frameborder="0" height="90" width="300"></iframe></div>
+
+
+    <div id="artrightnewarticle" class="remenwz" style="height: 219px; width: 300px;"><div class="rementop"><div class="titwx" style=" padding-top:10px; padding-left:24px;">最新文章</div></div><div class="modlist3 list" style=" padding-left:15px;"><ul><li><span><a href="http://www.360doc.com/content/10/0722/12/7821_40633487.shtml" target="_blank" onclick="wzhitnew(51)">Key Differences between HTTP/1.0 an...</a></span></li><li><span><a href="http://www.360doc.com/content/10/0405/00/7821_21626173.shtml" target="_blank" onclick="wzhitnew(51)">HTTP Made Really Easy</a></span></li><li><span><a href="http://www.360doc.com/content/10/0206/23/7821_15324526.shtml" target="_blank" onclick="wzhitnew(51)">Demystifying The Restrict Keyword</a></span></li><li><span><a href="http://www.360doc.com/content/10/0109/21/7821_13114117.shtml" target="_blank" onclick="wzhitnew(51)">如何编写可移植的Linux内核驱动程序</a></span></li><li><span><a href="http://www.360doc.com/content/10/0109/21/7821_13113726.shtml" target="_blank" onclick="wzhitnew(51)">Raid的学习和基础知识详解</a></span></li><li><span><a href="http://www.360doc.com/content/08/1112/08/7821_1908107.shtml" target="_blank" onclick="wzhitnew(51)">RPM Guide</a></span></li></ul> <div class=" rt360" style=" padding-right:23px;"><a href="http://www.360doc.com/userhome/7821" target="_blank" onclick="wzhitnew(52);">更多</a></div></div></div>
+
+
+<div class="both" style="padding-top: 10px; height: 260px;">
+   <iframe src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/ad2_300.html" id="ifartad1" scrolling="no" frameborder="0" height="250px" width="300px"></iframe>
+    <div style="height: 10px;">
+    </div>
+</div>
+
+<div style="width: 300px;" class="remenwz" id="artrighthotarticle">
+    <div class="rementop">
+        <div class="titwx" style="padding-top: 10px; padding-left: 24px;">
+            热门文章</div>
+    </div>
+    <div class="modlist3 list" style="padding-left: 15px;">
+        <ul>
+            
+                    <li><span>
+                        <a href="http://www.360doc.com/content/14/0303/13/0_357323982.shtml" target="_blank" onclick="wzhitnew(55)">教你怎样破解无线路由密码</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/13/1018/17/0_322390902.shtml" target="_blank" onclick="wzhitnew(55)">【学习经验】一位清华学生的完美学习...</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/14/0414/19/0_368879249.shtml" target="_blank" onclick="wzhitnew(55)">一张图告诉你自制极品酸菜鱼</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/14/0730/14/0_398128056.shtml" target="_blank" onclick="wzhitnew(55)">女人给男人的十句悄悄话</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/14/0629/22/0_390828548.shtml" target="_blank" onclick="wzhitnew(55)">唯美高清的风景与动物</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/14/1008/18/0_415314370.shtml" target="_blank" onclick="wzhitnew(55)">这样的素描，你说赞不赞？</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/14/0924/13/0_411986751.shtml" target="_blank" onclick="wzhitnew(55)">失眠秘方有效率100%</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/14/0309/10/0_358966285.shtml" target="_blank" onclick="wzhitnew(55)">很好的糖尿病偏方</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/14/0427/07/0_372557779.shtml" target="_blank" onclick="wzhitnew(55)">【可口诱人】土豆的九种高档做法</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/13/1016/06/0_321768661.shtml" target="_blank" onclick="wzhitnew(55)">棒针技巧----巧收机器边</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/13/1226/20/0_340357726.shtml" target="_blank" onclick="wzhitnew(55)">读《胡雪岩的启示和智慧（大全集）》...</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/14/0512/18/0_377019394.shtml" target="_blank" onclick="wzhitnew(55)">学会了保你5年内买车买房</a></span></li>
+                
+        </ul>
+        <div class=" rt360" style="padding-right: 23px;">
+            <a href="http://www.360doc.com/readroom.html" target="_blank" onclick="wzhitnew(56)">更多&gt;&gt;</a></div>
+    </div>
+</div>
+
+<div class="both" style="padding-top: 10px;">
+    <iframe src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/ad3_300.html" id="ifartad2" scrolling="no" frameborder="0" height="250px" width="300px"></iframe>
+</div>
+<br>
+
+<script type="text/javascript">
+    var sogou_ad_id = 261623;
+    var sogou_ad_height = 328;
+    var sogou_ad_width = 250;
+</script>
+<script language="JavaScript" type="text/javascript" src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/c.js"></script><script type="text/javascript" charset="utf-8" src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/ask.asc"></script><div style="display:none">-</div> <div id="starIframe_wrapper_1" style="height:328px;"><iframe id="starIframe1" onload="document.sogou_ads1_loaded=true;" src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/ct.html" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="true" align="center,center" frameborder="0" height="328" width="250"></iframe></div>
+<script>
+    function change(pro_name, i) {
+        var pro = document.getElementById(pro_name); 
+        var pro_arr = pro.getElementsByTagName("span");
+
+        for (var m = 0; m < pro_arr.length; m++) {
+            pro_arr[m].className = "unclecked link_black";
+        }
+        pro_arr[i].className = "checked link_bai";
+
+        if (i == 1) {
+            document.getElementById("qh_ul_1").style.display = "";
+            document.getElementById("qh_ul_0").style.display = "none";
+        }
+        else if (i == 0) {
+            document.getElementById("qh_ul_1").style.display = "none";
+            document.getElementById("qh_ul_0").style.display = "";
+        }
+    }
+</script>
+
+                        <div class="both" id="divad5" style="padding-top: 11px;">
+                            <div id="divad4" style="">
+                                <div>
+                                    <iframe src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/ad4_300.html" id="ifartad" scrolling="no" frameborder="0" height="250px" width="300px"></iframe>
+                                </div>
+                                <div class="ggwz">
+                                    <a href="javascript:void(0);" onclick="closead(2);">关闭</a>
+                                </div>
+                                <div style="height: 13px;">
+                                </div>
+                            </div>
+                            <div style="clear: both;" id="divad6">
+                                <div id="adfloatbaidu">
+                                    <iframe src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/ad5_300.html" id="ifartadfloadbaidu" scrolling="no" frameborder="0" height="250px" width="300px"></iframe>
+                                </div>
+                                <div class="ggwz">
+                                    <a href="javascript:void(0);" onclick="closead(3);">关闭</a>
+                                </div>
+                                <div style="height: 13px;">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <input id="docarttitle" value="Python%e4%b8%ad%e6%96%87%e6%96%87%e6%a1%a3" type="hidden">
+    <input id="artreadroomid" value="0" type="hidden">
+    <script>var asw='python+%e6%96%87%e6%a1%a3+%e5%9b%be%e4%b9%a6'</script>
+    <div id="docdiviframe"></div>
+
+
+    <script language="javascript" type="text/javascript">
+        var appName = navigator.appName.toLowerCase();
+        if (appName.indexOf("microsoft internet explorer") > -1) {
+            document.write("<scr" + "ipt type='text/javascript' src='http://www.360doc.com/js/StickySystemIE20130911.js?t=2015012902'></sc" + "ript>");
+        }
+        else {
+
+            document.write("<scr" + "ipt type='text/javascript' src='http://www.360doc.com/js/StickySystemOther20130911.js?t=2015012903'></sc" + "ript>");
+        }
+    </script><script type="text/javascript" src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/StickySystemOther20130911.js"></script>
+
+    <script>GerLookingUserInfo(1,7821,1,0,'-1',-1,10,0);OutputSource('http%3a%2f%2fwiki.woodpecker.org.cn%2fmoin%2fPythonZhDoc');OutputCategory(7821,4,'%e3%80%8aPython%e3%80%8b');OutputLastNextArt('Python+%e6%89%8b%e5%86%8c','http://www.360doc.com/content/06/0520/14/7821_119070.shtml',0);OutputLastNextArt('Python+Unit+Testing+Framework','http://www.360doc.com/content/08/0721/00/7821_1451748.shtml',1);</script>
+
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd86954201130d615136257dde062a503' type='text/javascript'%3E%3C/script%3E"));
+    </script><script src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/h.asc" type="text/javascript"></script>
+
+    <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6857724" src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/bds_s_v2.js"></script>
+
+    <script type="text/javascript">
+        document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date() / 3600000);
+    </script>
+    <!-- Baidu Button END -->
+    <script src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/logger.js"></script>
+
+
+
+
+<div style="left: 1184px; display: block;" id="goTop2"><div id="goTop"><a href="#" id="go_top"></a></div><div id="goTop1"><a href="javascript:void(0);" id="go_top1"></a></div><div><div id="artweixinDiv" style="position: relative;display:none;"><div style="position: absolute; z-index: 2001;margin-left:-220px;*margin-left:-244px;!important;margin-top:-34px;*margin-top:-134px;!important;"><img src="Python%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3_files/wzweixin.gif"></div></div><div id="goTop3" onmouseover="document.getElementById('artweixinDiv').style.display='';" onmouseout="document.getElementById('artweixinDiv').style.display='none';"><a href="javascript:void(0);" id="go_top3"></a></div></div></div></body></html>

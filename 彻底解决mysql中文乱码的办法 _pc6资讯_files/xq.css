@@ -1,0 +1,78 @@
+/*文章心情*/
+#ListMood {
+	overflow: hidden;
+	border: 1px solid #CCC;
+	margin-top:10px;
+}
+
+#ListMood label {
+	overflow: hidden;
+	color: #390;
+}
+
+#ListMood ul {
+	margin: 0px;
+	padding: 0px;
+	clear: both;
+}
+#ListMood h3 {
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 22px;
+	color: #F30;
+	margin: 0px;
+	padding: 0px;
+	text-indent: 10px;
+}
+
+#ListMood ul li {
+	float: left;
+	width: 94px;
+	list-style-type: none;
+	margin-left: 1px;
+	margin-top: 1px;
+	overflow: hidden;
+}
+#ListMood ul li span {
+	display: block;
+	height: 50px;
+	width: 18px;
+	border: 1px solid #060;
+	overflow: hidden;
+	margin-left: 40px;
+	margin-bottom: 0px;
+	position: relative;
+}
+#ListMood ul li em {
+	display: block;
+	text-align: center;
+        font-style:normal;
+       
+}
+
+
+#ListMood ul li em img{
+	margin-left: 20px;
+}
+
+#ListMood ul li b {
+	display: block;
+margin-left: 20px;
+	text-align: center;
+	color: #F30;
+	font-size: 12px;
+	line-height: 20px;
+}
+#ListMood ul li span img {
+	position: absolute;
+	clip: rect(auto,auto,auto,auto);
+	bottom: 0px;
+}
+
+/*文章心情 End */
+
+
+#cms_info_1_1 h2 span {
+	color: #F30;
+	font-weight: bold;
+}

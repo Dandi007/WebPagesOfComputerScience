@@ -1,0 +1,864 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- base href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2011/1208/27301.html" -->
+<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+<title>ubuntu mysql 命令,ubuntu 启动mysql方法_生活安全网</title>
+<meta name="keywords" content="ubuntu mysql ,命令,ubuntu, 启动,my">
+<meta name="description" content="ubuntu mysql 命令,ubuntu 启动mysql方法： 1.终端启动MySQL：/etc/init.d/mysql start； 2.登录MySQL：mysql -uroot -p (用root账户登录),然后输入密码； 3.查看所有的数据库名字：show databases; 4.选择一个数据库操作： use database_name; 5.查看当前数据库下所有">
+<link href="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/dedecms.css" rel="stylesheet" media="screen" type="text/css">
+<link rel="stylesheet" href="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/dedecms_skins_0.css" type="text/css" id="cssfile">
+<script language="javascript" type="text/javascript" src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/j.js"></script><script async="" src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/a"></script>
+<script language="javascript" type="text/javascript" src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/changeSkin.js"></script>
+<script language="javascript" type="text/javascript" src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/dedeajax2.js"></script>
+<script language="javascript" type="text/javascript">
+<!--
+function CheckLogin(){
+	  var taget_obj = document.getElementById('_ajax_feedback');
+	  myajax = new DedeAjax(taget_obj,false,false,'','','');
+	  myajax.SendGet2("/member/ajax_feedback.php");
+	  DedeXHTTP = null;
+}
+function postBadGood(ftype,fid)
+{
+	var taget_obj = document.getElementById(ftype+fid);
+	var saveid = GetCookie('badgoodid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==fid && hasid) continue;
+			else {
+				if(saveids[i]==fid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==10 && hasid) break;
+				if(j==9 && !hasid) break;
+			}
+		}
+		if(hasid) { alert('您刚才已表决过了喔！'); return false;}
+		else saveid += ','+fid;
+		SetCookie('badgoodid',saveid,1);
+	}
+	else
+	{
+		SetCookie('badgoodid',fid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/feedback.php?aid="+fid+"&action="+ftype+"&fid="+fid);
+}
+function postDigg(ftype,aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	var saveid = GetCookie('diggid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==aid && hasid) continue;
+			else {
+				if(saveids[i]==aid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==20 && hasid) break;
+				if(j==19 && !hasid) break;
+			}
+		}
+		if(hasid) { alert("您已经顶过该帖，请不要重复顶帖 ！"); return; }
+		else saveid += ','+aid;
+		SetCookie('diggid',saveid,1);
+	}
+	else
+	{
+		SetCookie('diggid',aid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	var url = "/plus/digg_ajax.php?action="+ftype+"&id="+aid;
+	myajax.SendGet2(url);
+}
+function getDigg(aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/digg_ajax.php?id="+aid);
+	DedeXHTTP = null;
+}
+function check(){
+		if(document.formsearch.searchtype.value=="")
+		document.formsearch.action="http://www.google.cn/custom"
+		else
+		document.formsearch.action="/plus/search.php"
+	} 
+-->
+</script>
+<style></style><script src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/share.js"></script><link href="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/share_style0_24.css" rel="stylesheet"></head>
+<body class="articleview">
+<div class="header">
+
+  <script language="javascript" type="text/javascript">
+	window.onload=function (){
+		setInterval("document.getElementById('time').innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
+	}
+  </script>
+    <div class="header_top w960">     
+     <ul id="dedecms_skins">
+      <script src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ad_js_004.html" language="javascript"></script>  
+      </ul>
+     <span id="time" class="time">2015/3/16 上午11:13:34 星期一</span>
+     <div class="toplinks"><a href="http://www.anquanweb.com/plus/heightsearch.php" target="_blank">高级搜索</a>|<a href="http://www.anquanweb.com/sitemap.xml" target="_blank">网站地图</a>|<a href="http://www.anquanweb.com/tags.php">TAG标签</a>|<a href="http://www.anquanweb.com/wap.php">手机访问</a><span>[<a href="" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.anquanweb.com');">设为首页</a>] [<a href="javascript:window.external.AddFavorite('http://www.anquanweb.com','%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91')">加入收藏</a>]</span></div>
+    </div>
+	<div class="top w960 center">
+      <div class="title">
+      <h1><a href="http://www.anquanweb.com/"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/logo.gif" alt="生活安全网" height="80" width="200"></a> </h1>
+      </div>
+      <div class="banner"><script src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ad_js_008.html" language="javascript"></script><script type="text/javascript">
+var sogou_ad_id=395543;
+var sogou_ad_height=90;
+var sogou_ad_width=720;
+</script>
+<script type="text/javascript" src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/l.js"></script><script type="text/javascript" charset="utf-8" src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ask_003.asc"></script><div style="display:none">-</div> <div id="starIframe_wrapper_1" style="height:90px;"><iframe id="starIframe1" onload="document.sogou_ads1_loaded=true;" src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/kwd.html" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="true" align="center,center" frameborder="0" height="90" width="720"></iframe></div>
+ </div>
+     
+	</div><!-- //top -->
+	<!-- //菜单 -->
+	<div class="module blue mT10 wrapper w963">
+  	<div class="top">
+    	<div class="t_l"></div>
+    	<div class="t_r"></div>
+    	<!-- //如果不使用currentstyle，可以在channel标签加入 cacheid='channeltoplist' 属性提升性能 -->
+    <div id="navMenu">
+    	<ul>
+      	<li><a href="http://www.anquanweb.com/"><span>首页</span></a></li>
+      	<li class="hover"><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/" rel="dropmenu8"><span>学校安全</span></a></li>
+      	<li><a href="http://www.anquanweb.com/anquan/jiatinganquan/" rel="dropmenu13"><span>家庭安全</span></a></li>
+      	
+      	<li><a href="http://www.anquanweb.com/anquan/jiaotonganquan/" rel="dropmenu26"><span>交通安全</span></a></li>
+      	
+      	<li><a href="http://www.anquanweb.com/anquan/xiaofanganquan/" rel="dropmenu34"><span>消防安全</span></a></li>
+      	
+      	<li><a href="http://www.anquanweb.com/anquan/shipinanquan/" rel="dropmenu33"><span>食品安全</span></a></li>
+      	
+      	<li><a href="http://www.anquanweb.com/anquan/yiwaishanghai/" rel="dropmenu32"><span>安全管理</span></a></li>
+      	
+      	<li><a href="http://www.anquanweb.com/anquan/jingyanjiaoxun/" rel="dropmenu40"><span>安全教育</span></a></li>
+      	
+      	<li><a href="http://www.anquanweb.com/anquan/zaihaianquan/" rel="dropmenu35"><span>灾害安全</span></a></li>
+      	
+      	<li><a href="http://www.anquanweb.com/anquan/zongheanquan/" rel="dropmenu27"><span>安全生产</span></a></li>
+      	
+      	<li><a href="http://www.anquanweb.com/anquan/yuleanquan/" rel="dropmenu19"><span>综合安全</span></a></li>
+      	
+      	<li><a href="http://www.anquanweb.com/anquan/anquandongtai/" rel="dropmenu44"><span>安全事故</span></a></li>
+      	
+      	<li><a href="http://www.anquanweb.com/anquan/jingyanjiaoxun/anlifenxi/" rel="dropmenu48"><span>安全知识</span></a></li>
+      	
+      	<li><a href="http://anquanweb.com/ask"><span>安全问答</span></a></li>
+      	
+    	</ul>  
+    </div>	
+    <div class="search">
+      <form name="formsearch" action="" onsubmit="check();">
+      <input name="domains" value="http://anquanweb.com" type="hidden">
+        <div class="form">
+          <h4>搜索</h4>
+           <input name="kwtype" value="0" type="hidden">
+           <input name="q" class="search-keyword" id="search-keyword" value="输入查找的内容" onfocus="if(this.value=='输入查找的内容'){this.value='';}" onblur="if(this.value==''){this.value='输入查找的内容';}" type="text">
+           <select name="searchtype" class="search-option" id="search-option">
+             <option selected="selected" value="titlekeyword">站内搜索</option>
+           </select>
+          <button type="submit" class="search-submit">开始搜索</button>
+        </div>
+        <input name="client" value="pub-9280232748837488" type="hidden">
+        <input name="forid" value="1" type="hidden">
+    	<input name="ie" value="GB2312" type="hidden">
+    	<input name="oe" value="GB2312" type="hidden">
+    	<input name="safe" value="active" type="hidden">
+    	<input name="cof" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1" type="hidden">
+    	<input name="hl" value="zh-CN" type="hidden">
+         </form>
+        <div class="tags">
+          <h4>Tags:</h4>
+          <ul>
+          
+            <li><a href="http://www.anquanweb.com/tags.php?/ubuntu/">ubuntu</a></li>
+          
+            <li><a href="http://www.anquanweb.com/tags.php?/%C3%FC%C1%EE/">命令</a></li>
+          
+            <li><a href="http://www.anquanweb.com/tags.php?/%C6%F4%B6%AF/">启动</a></li>
+          
+          </ul>
+        </div>
+    </div><!-- //search -->
+ 		</div>
+	</div>
+</div><!-- //header -->
+<!-- /header -->
+<div class="w960 center clear mt1">
+       
+	<div class="pleft">
+		<div class="place"> 
+			<strong>当前位置:</strong> <a href="http://www.anquanweb.com/">首页</a> &gt; <a href="http://www.anquanweb.com/anquan/xiaoyuananquan/">学校安全</a> &gt; <a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/">大学安全</a> &gt;  		</div><!-- /place -->
+		<div class="viewbox">
+
+
+			<div class="title">  
+
+				<h2>ubuntu mysql 命令,ubuntu 启动mysql方法</h2>
+
+
+     
+			</div><!-- /title -->
+<div class="info">
+				<small>作者:</small>飞龙大雪 <small>点击:</small><script src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/count.html" type="text/javascript" language="javascript"></script>2009次</div><!-- /info -->
+            	  <div class="content"> 
+<script src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ad_js_015.html" language="javascript"></script>
+
+<script type="text/javascript">
+var sogou_ad_id=395545;
+var sogou_ad_height=90;
+var sogou_ad_width=700;
+</script>
+<script type="text/javascript" src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/l.js"></script><script type="text/javascript" charset="utf-8" src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ask.asc"></script><div style="display:none">-</div> <div id="starIframe_wrapper_2" style="height:90px;"><iframe id="starIframe2" onload="document.sogou_ads2_loaded=true;" src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/kwd_002.html" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="true" align="center,center" frameborder="0" height="90" width="700"></iframe></div>
+
+<br>
+
+
+
+		<table width="99%">
+		<tbody><tr><td><div style="text-align: center">&nbsp;</div>
+<div style="text-align: center"><a target="_blank" href="http://anquanweb.com/uploads/userup/1089/1323313617-3053.jpg"><img alt="ubuntu mysql 命令,ubuntu 启动mysql方法" style="width: 352px; height: 242px" src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/1323313617-3053.jpg" height="375" width="469" border="0"></a></div>
+<div style="text-align: center">&nbsp;</div>
+<p>ubuntu mysql 命令</p>
+<p>1.终端<a href="http://www.anquanweb.com/anquan/jingyanjiaoxun/anlifenxi/2011/0708/12078.html"><u>启动</u></a>MySQL：/etc/init.d/mysql start；<br>
+2.登录MySQL：mysql -uroot -p (用root账户登录),然后输入密码；<br>
+3.查看所有的数据库名字：show databases;<br>
+4.选择一个数据库操作： use database_name;<br>
+5.查看当前数据库下所有的表名：show tables;<br>
+6.创建一个数据库：create database database_name;<br>
+7.删除一个数据库：drop database database_name;<br>
+8.创建一个表: create table mytest( uid bigint(20) not null, uname varchar(20) not null);<br>
+9.删除一个表: drop table mytest;<br>
+10.SQL插入语句：insert into table_name(col1,col2) values(value1,value2);<br>
+11.SQL更新语句：update table_name set col1='value1',col2='value2' where where_definition;<br>
+12.SQL查询语句：select * from table_name where.......(最复杂的语句)<br>
+13.SQL删除语句：delete from table_name where...<br>
+14.增加表结构的字段：alert table table_name add column field1 date ,add column field2 time...<br>
+15.删除表结构的字段：alert table table_name drop field1;<br>
+16.查看表的结构：show columns from table_name;<br>
+17.limit 的使用：select * from table_name limit 3；//每页只显示3行<br>
+select * from table_name limit 3,4 //从查询结果的第三个开始，显示四项结果。<br>
+此处可很好的用来作分页处理。<br>
+18.对查询结果进行排序: select * from table_name order by field1,orderby field2;多重排序<br>
+19.退出MySQL:exit; <br>
+&nbsp;</p>
+<p>ubuntu 启动mysql方法</p>
+<p>环境两台Ubuntu8.10服务器，分别为：<br>
+mysql1: 192.201.0.61<br>
+mysql2: 192.201.0.62<br>
+其中mysql1作为管理节点+数据节点1+mysql节点1，mysql2作为数据节点1+mysql节点2<br>
+首先分别在各个节点上安装软件<br>
+sudo apt-get install mysql-server<br>
+然后配置管理节点mysql1<br>
+sudo vi /etc/mysql/ndb_mgmd.cnf<br>
+[NDBD DEFAULT]<br>
+NoOfReplicas=2 #这里有mysql1和mysql2两个数据节点<br>
+DataMemory=250M<br>
+IndexMemory=100M<br>
+[TCP DEFAULT]<br>
+portnumber=2202<br>
+#管理节点<br>
+[NDB_MGMD]<br>
+id=1<br>
+hostname=192.201.0.61<br>
+datadir=/home/hankjin/mysql-cluster<br>
+#数据节点1<br>
+[NDBD]<br>
+id=2<br>
+hostname=192.201.0.61<br>
+datadir=/home/hankjin/mysql/data<br>
+#数据节点2<br>
+[NDBD]<br>
+id=3<br>
+hostname=192.201.0.62<br>
+datadir=/home/hankjin/mysql/data<br>
+#mysql节点1<br>
+[MYSQLD]<br>
+hostname=192.201.0.61<br>
+#mysql节点2<br>
+[MYSQLD]<br>
+hostname=192.201.0.62<br>
+然后修改各个节点的配置文件<br>
+sudo vi /etc/mysql/my.cnf<br>
+找到[mysqld]，然后在这一行的下面添加两行<br>
+ndbcluster<br>
+ndb-connectstring=192.201.0.61 #管理节点<br>
+然后找到CLUSTER，并取消注释<br>
+[MYSQL_CLUSTER]<br>
+ndb-connectstring=192.201.0.61 #管理节点</p>
+<p>然后开始启动CLUSTER，<br>
+首先启动管理节点<br>
+sudo /etc/init.d/mysql-ndb-mgm start<br>
+然后分别启动两个数据节点,第一次启动的时候用start-initial，以后就可以直接用start<br>
+sudo /etc/init.d/mysql-ndb start-initial<br>
+最后启动mysql节点<br>
+sudo /etc/init.d/mysql start</p>
+<p>测试管理节点<br>
+ndb_mgm<br>
+&gt;&gt;show<br>
+测试cluster<br>
+在mysql1的mysql节点上<br>
+create database test;<br>
+use test;<br>
+create table t(name varchar(20)) engine=ndb;<br>
+insert into t values('hank');<br>
+然后在mysql2的mysql节点上<br>
+create database test;<br>
+use test;<br>
+show tables;<br>
+#可以直接看到t，但是数据库test必须手工创建<br>
+select * from t;<br>
+#在节点1上插入的数据在这里也可以看到，这里插入的数据在节点1上也可以看到。<br>
+insert into t values('hjz');<br>
+从管理节点关闭cluster<br>
+ndb_mgm<br>
+&gt;&gt;shutdown</p><font color="#ff0000">请记住本站网址：www.anquanweb.com</font><br>
+
+</td></tr>
+			 </tbody></table> 
+
+			</div>
+<!-- /content --><script src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ad_js.html" language="javascript"></script><br>
+<script src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ad_js_006.html" language="javascript"></script><a href="http://www.yztz.com/?u=751462" target="_blank"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/728_90.gif" border="0"></a><br>
+						<div class="dede_pages">
+				<ul class="pagelist">
+          
+				</ul>
+			</div><!-- /pages -->
+<!-- //顶踩 -->
+  <div class="newdigg" id="newdigg"><div class="diggbox digg_good" onmousemove="this.style.backgroundPosition='left bottom';" onmouseout="this.style.backgroundPosition='left top';" onclick="postDigg('good',27301)">
+			<div class="digg_act">好评</div>
+			<div class="digg_num">(1)</div>
+			<div class="digg_percent">
+				<div class="digg_percent_bar"><span style="width:100.00%"></span></div>
+				<div class="digg_percent_num">100.00%</div>
+			</div>
+		</div>
+		<div class="diggbox digg_bad" onmousemove="this.style.backgroundPosition='right bottom';" onmouseout="this.style.backgroundPosition='right top';" onclick="postDigg('bad',27301)">
+			<div class="digg_act">差评</div>
+			<div class="digg_num">(0)</div>
+			<div class="digg_percent">
+				<div class="digg_percent_bar"><span style="width:0.00%"></span></div>
+				<div class="digg_percent_num">0.00%</div>
+			</div>
+		</div></div>
+  <script language="javascript" type="text/javascript">getDigg(27301);</script>
+  <!-- //顶踩部份的源码结束 -->
+
+<script>document.write(unescape('%3Cdiv id="hm_t_29286"%3E%3C/div%3E%3Cscript charset="utf-8" src="http://crs.baidu.com/t.js?siteId=ff51b6e767de05e2054c5c99e232919a&planId=29286&async=0&referer=') + encodeURIComponent(document.referrer) + '&title=' + encodeURIComponent(document.title) + '&rnd=' + (+new Date) + unescape('"%3E%3C/script%3E'));</script><div id="hm_t_29286"><div style="display: block; margin: 0px; padding: 0px; float: none; clear: none; overflow: hidden; position: relative; border: 0px none; background: none repeat scroll 0% 0% transparent; max-width: none; max-height: none; border-radius: 0px; box-shadow: none; transition: none 0s ease 0s ; text-align: left; box-sizing: content-box; width: 702px; height: 503px;"><iframe style="display: block; margin: 0px; padding: 0px; float: none; clear: none; overflow: hidden; position: relative; border: 0px none; background: none repeat scroll 0% 0% transparent; max-width: none; max-height: none; border-radius: 0px; box-shadow: none; transition: none 0s ease 0s ; text-align: left; box-sizing: content-box; width: 100%; height: 100%;" scrolling="no" frameborder="0"></iframe></div></div><script charset="utf-8" src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/t.js"></script>
+	<script src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ad_js_013.html" language="javascript"></script>一键分享到：<div data-bd-bind="1426475602109" class="bdsharebuttonbox bdshare-button-style0-24"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a><a href="#" class="bds_bdhome" data-cmd="bdhome" title="分享到百度新首页"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_hi" data-cmd="hi" title="分享到百度空间"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script><br>
+					
+	<script language="javascript">
+function g(formname)	{
+var url = "http://www.baidu.com/baidu";
+if (formname.s[1].checked) {
+	formname.ct.value = "2097152";
+}
+else {
+	formname.ct.value = "0";
+}
+formname.action = url;
+return true;
+}
+</script>
+<form name="f1" onsubmit="return g(this)">
+<table style="font-size:9pt;" bgcolor="#FFFFFF">
+<tbody><tr height="60"><td valign="top"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/logo-137px.gif" alt="baidu" border="0"></td>
+<td>
+<input name="word" size="30" maxlength="100">
+<input value="百度搜索" type="submit"><br>
+<input name="tn" value="bds" type="hidden">
+<input name="cl" value="3" type="hidden">
+<input name="ct" type="hidden">
+<input name="si" value="www.anquanweb.com" type="hidden">
+<input name="s" type="radio"> 互联网
+<input name="s" checked="checked" type="radio"> www.anquanweb.com
+</td></tr></tbody></table>
+</form>
+                                    <br>		
+<script src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ad_js_003.html" language="javascript"></script><div class="boxoff">
+
+				<strong>------分隔线----------------------------</strong>
+			</div>
+			<div class="handle">
+				<div class="context">
+					<ul> <p><font size="3">上一篇：<a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2011/1208/27285.html">ubuntu 分辨率设置,ubuntu 开机画面设置</a> </font></p> <br>
+                                                          <p><font size="3">下一篇：<a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2011/1208/27307.html">ubuntu 卸载 mysql方法,ubuntu mysql客户端安装教程</a> </font></p> </ul>
+				</div><!-- /context -->
+				<div class="actbox">
+					<ul>
+						<li id="act-fav"><a href="http://www.anquanweb.com/plus/stow.php?aid=27301" target="_blank">收藏</a></li>
+						<li id="act-err"><a href="http://www.anquanweb.com/plus/erraddsave.php?aid=27301&amp;title=ubuntu%20mysql%20%C3%FC%C1%EE,ubuntu%20%C6%F4%B6%AFmysql%B7%BD%B7%A8" target="_blank">挑错
+
+</a></li>
+						<li id="act-pus"><a href="http://www.anquanweb.com/plus/recommend.php?aid=27301" target="_blank">推荐</a></li>
+						<li id="act-pnt"><a href="#" onclick="window.print();">打印</a></li>
+					</ul>
+
+				
+</div>
+	
+
+				<!-- /actbox -->
+			</div><!-- /handle -->
+		</div><!-- /viewbox -->
+
+<!-- //AJAX评论区 --><strong>相关内容：</strong>
+<p><font size="2"></font></p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+	<td width="50%">
+·<a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/">大学安全</a> <a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2011/0528/9625.html">大学生暑假社会实践论文范文_大学暑假</a> <br>
+	</td>
+	<td width="50%">
+·<a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/">大学安全</a> <a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2011/0405/6812.html">summary怎么写？summary范文模板格式及</a> <br>
+	</td>
+	</tr>
+<tr>
+	<td width="50%">
+·<a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/">大学安全</a> <a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2011/0924/14585.html">农行k宝密码忘了怎么办？如何修改k宝密</a> <br>
+	</td>
+	<td width="50%">
+·<a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/">大学安全</a> <a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2012/0321/38653.html">研究生专业介绍,研究生专业目录,研究生</a> <br>
+	</td>
+	</tr>
+<tr>
+	<td width="50%">
+·<a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/">大学安全</a> <a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2012/0311/38133.html">加拿大高中留学费用,加拿大高中留学签</a> <br>
+	</td>
+	<td width="50%">
+·<a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/">大学安全</a> <a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2012/0308/37959.html">低碳生活从我做起方案,低碳生活从我做</a> <br>
+	</td>
+	</tr>
+<tr>
+	<td width="50%">
+·<a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/">大学安全</a> <a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2012/0305/37907.html">低碳生活宣传海报,低碳生活宣传图片</a> <br>
+	</td>
+	<td width="50%">
+·<a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/">大学安全</a> <a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2012/0115/37533.html">什么是英雄双行体?英雄双行体的产生</a> <br>
+	</td>
+	</tr>
+	</tbody></table><font size="2">
+<br></font><p></p> 
+
+<br>
+其他朋友在看：<br><br>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+	<td width="25%">
+<table width="98%" border="0" cellpadding="0" cellspacing="2">
+   <tbody><tr><td align="center"><a href="http://www.anquanweb.com/anquan/gerenjingcui/tupian/2013/0726/46651.html"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/1-130H61P649-51.jpg" alt="中国甜清纯美女图片大全" height="120" width="120" border="0"></a></td></tr>
+   <tr><td align="center"><a href="http://www.anquanweb.com/anquan/gerenjingcui/tupian/2013/0726/46651.html">中国甜清纯美女图片大全</a></td></tr>
+</tbody></table>
+	</td>
+	<td width="25%">
+<table width="98%" border="0" cellpadding="0" cellspacing="2">
+   <tbody><tr><td align="center"><a href="http://www.anquanweb.com/anquan/jiaotonganquan/jiaotonganquantupian/2012/0605/41950.html"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/1-120605235209-lp.jpg" alt="最贵的布加迪威龙图片黄金布加迪威龙图片" height="120" width="120" border="0"></a></td></tr>
+   <tr><td align="center"><a href="http://www.anquanweb.com/anquan/jiaotonganquan/jiaotonganquantupian/2012/0605/41950.html">最贵的布加迪威龙图片黄金</a></td></tr>
+</tbody></table>
+	</td>
+	<td width="25%">
+<table width="98%" border="0" cellpadding="0" cellspacing="2">
+   <tbody><tr><td align="center"><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/anquanjiaoyuzhishi/2010/1225/2415.html"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/38_12251631126209.jpg" alt="冬季校园安全板报  安全无小事，平安是大事" height="120" width="120" border="0"></a></td></tr>
+   <tr><td align="center"><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/anquanjiaoyuzhishi/2010/1225/2415.html">冬季校园安全板报  安全无</a></td></tr>
+</tbody></table>
+	</td>
+	<td width="25%">
+<table width="98%" border="0" cellpadding="0" cellspacing="2">
+   <tbody><tr><td align="center"><a href="http://www.anquanweb.com/anquan/tuantituijian/2014/0528/48596.html"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/1_140528070245_1-lp.jpg" alt="最值得看的十部电影" height="120" width="120" border="0"></a></td></tr>
+   <tr><td align="center"><a href="http://www.anquanweb.com/anquan/tuantituijian/2014/0528/48596.html">最值得看的十部电影</a></td></tr>
+</tbody></table>
+	</td>
+	</tr>
+	</tbody></table>
+<br>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+	<td width="25%">
+<table width="98%" border="0" cellpadding="1" cellspacing="2">
+   <tbody><tr><td align="center"><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2010/1229/2627.html"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/1_122922550M329.jpg" alt="安全教育主题班会总结" height="120" width="120" border="0"></a></td></tr>
+   <tr><td align="center"><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2010/1229/2627.html">安全教育主题班会总结</a></td></tr>
+</tbody></table><br>
+	</td>
+	<td width="25%">
+<table width="98%" border="0" cellpadding="1" cellspacing="2">
+   <tbody><tr><td align="center"><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2010/1223/2211.html"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/1_12231534344X8.jpg" alt="大学宿舍安全问题及其安全措施" height="120" width="120" border="0"></a></td></tr>
+   <tr><td align="center"><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2010/1223/2211.html">大学宿舍安全问题及其安全措</a></td></tr>
+</tbody></table><br>
+	</td>
+	<td width="25%">
+<table width="98%" border="0" cellpadding="1" cellspacing="2">
+   <tbody><tr><td align="center"><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2010/1223/2212.html"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/1_122315412423E.jpg" alt="大学宿舍安全知识" height="120" width="120" border="0"></a></td></tr>
+   <tr><td align="center"><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2010/1223/2212.html">大学宿舍安全知识</a></td></tr>
+</tbody></table><br>
+	</td>
+	<td width="25%">
+<table width="98%" border="0" cellpadding="1" cellspacing="2">
+   <tbody><tr><td align="center"><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2014/0524/48530.html"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/38_052423033I335.jpg" alt="安全技术管理专业就业前景，安全技术管理专业就业方向" height="120" width="120" border="0"></a></td></tr>
+   <tr><td align="center"><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2014/0524/48530.html">安全技术管理专业就业前景，</a></td></tr>
+</tbody></table><br>
+	</td>
+	</tr>
+	</tbody></table>
+
+
+<script language="javascript" type="text/javascript" src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/dedeajax2.js"></script>
+ 
+<!-- //主模板必须要引入/include/dedeajax2.js -->
+<a name="postform"></a>
+<div class="mt1">
+		<dl class="tbox">
+			<dt>
+				<strong>发表评论</strong>
+				<span class="more"></span>
+			</dt>
+			<dd>
+				<div class="dede_comment_post">
+          <form action="#" method="post" name="feedback">
+          <input name="dopost" value="send" type="hidden">
+          <input name="comtype" value="comments" type="hidden">
+          <input name="aid" value="27301" type="hidden">
+          <input name="fid" id="feedbackfid" value="0" type="hidden">
+          <div class="dcmp-title">
+						<small>请自觉遵守互联网相关的政策法规，严禁发布色情、暴力、反动的言论。</small>
+					</div><!-- /dcmp-title -->
+					<div class="dcmp-stand">
+						<strong>评价:</strong>
+							<input name="feedbacktype" checked="checked" value="feedback" id="dcmp-stand-neu" type="radio"><label for="dcmp-stand-neu"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/cmt-neu.gif">中立</label>
+							<input name="feedbacktype" value="good" id="dcmp-stand-good" type="radio"><label for="dcmp-stand-good"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/cmt-good.gif">好评</label>
+							<input name="feedbacktype" value="bad" id="dcmp-stand-bad" type="radio"><label for="dcmp-stand-bad"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/cmt-bad.gif">差评</label>
+					</div><!-- /dcmp-stand -->
+                    <div class="clr"></div>
+                    <div class="dcmp-mood">
+						<strong>表情:</strong>
+						<ul>                               
+                                <li><input name="face" value="1" checked="checked" type="radio"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ico-mood-1.gif"></li>
+                                <li><input name="face" value="2" type="radio"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ico-mood-2.gif"></li>
+                                <li><input name="face" value="3" type="radio"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ico-mood-3.gif"></li>
+                                <li><input name="face" value="4" type="radio"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ico-mood-4.gif"></li>
+                                <li><input name="face" value="5" type="radio"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ico-mood-5.gif"></li>
+                                <li><input name="face" value="6" type="radio"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ico-mood-6.gif"></li>
+                                <li><input name="face" value="7" type="radio"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ico-mood-7.gif"></li>
+                                <li><input name="face" value="8" type="radio"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ico-mood-8.gif"></li> 
+                                <li><input name="face" value="9" type="radio"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ico-mood-9.gif"></li>
+                                <li><input name="face" value="10" type="radio"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ico-mood-10.gif"></li>
+                                <li><input name="face" value="11" type="radio"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ico-mood-11.gif"></li> 
+                                <li><input name="face" value="12" type="radio"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ico-mood-12.gif"></li>
+						</ul>
+					</div><!-- /dcmp-mood -->
+					<div class="dcmp-content">
+						<textarea cols="60" name="msg" rows="5" class="ipt-txt"></textarea>
+					</div><!-- /dcmp-content -->
+					<div class="dcmp-post"><!--未登陆-->
+							<div class="dcmp-userinfo" id="_ajax_feedback">
+								用户名:<input name="username" size="16" class="ipt-txt" type="text">
+                                验证码:<input name="validate" size="4" class="ipt-txt" style="text-transform:uppercase;" type="text"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/vdimgck.jpeg" id="validateimg" style="cursor:pointer" onclick="this.src=this.src+'?'" title="点击我更换图片" alt="点击我更换图片" height="24" width="60">
+                <input name="notuser" id="dcmp-submit-guest" type="checkbox"><label for="dcmp-submit-guest">匿名? </label>
+							</div>
+              <script language="javascript" type="text/javascript">CheckLogin();</script>
+							<div class="dcmp-submit">
+								<button type="button" onclick="PostComment()">发表评论</button>
+							</div>
+						</div>
+        </form>
+				</div>
+			</dd>
+		</dl>
+	</div><!-- //评论表单区结束 -->
+
+<!-- //评论内容区 -->
+	<a name="commettop"></a>
+	<div class="mt1">
+			<dl class="tbox">
+				<dt>
+					<strong>最新评论</strong>
+					<span class="more"><a href="http://www.anquanweb.com/plus/feedback.php?aid=27301">进入详细评论页&gt;&gt;</a></span>
+				</dt>
+				<!-- //这两个ID的区块必须存在，否则JS会出错 -->
+				<dd id="commetcontentNew"></dd>
+				<dd id="commetcontent"></dd>
+			</dl>
+	</div>
+<!--
+//由于评论载入时使用异步传输，因此必须在最后一步加载（DIGG和评论框须放在评论内容前面）
+//如果一定需要提前的把myajax.SendGet改为myajax.SendGet2，但可能会引起页面阻滞
+-->
+<script language="javascript">
+function LoadCommets(page)
+{
+		var taget_obj = document.getElementById('commetcontent');
+		var waithtml = "<div style='line-height:50px'><img src='/images/loadinglit.gif' />评论加载中...</div>";
+		var myajax = new DedeAjax(taget_obj, true, true, '', 'x', waithtml);
+		myajax.SendGet2("/plus/feedback_ajax.php?dopost=getlist&aid=27301&page="+page);
+		DedeXHTTP = null;
+}
+function PostComment()
+{
+		var f = document.feedback;
+		var nface = '6';
+		var nfeedbacktype = 'feedback';
+		var nvalidate = '';
+		var nnotuser = '';
+		var nusername = '';
+		var npwd = '';
+		var taget_obj = $DE('commetcontentNew');
+		var waithtml = "<div style='line-height:30px'><img src='/images/loadinglit.gif' />正在发送中...</div>";
+		if(f.msg.value=='')
+		{
+			alert("评论内容不能为空！");
+			return;
+		}
+		if(f.validate)
+		{
+			if(f.validate.value=='') {
+				alert("请填写验证码！");
+				return;
+			}
+			else {
+				nvalidate = f.validate.value;
+			}
+		}
+		if(f.msg.value.length > 500)
+		{
+			alert("你的评论是不是太长了？请填写500字以内的评论。");
+			return;
+		}
+		if(f.feedbacktype) {
+			for(var i=0; i < f.feedbacktype.length; i++)
+				if(f.feedbacktype[i].checked) nfeedbacktype = f.feedbacktype[i].value;
+		}
+		if(f.face) {
+			for(var j=0; j < f.face.length; j++)
+				if(f.face[j].checked) nface = f.face[j].value;
+		}
+		if(f.notuser.checked) nnotuser = '1';
+		if(f.username) nusername = f.username.value;
+		if(f.pwd) npwd = f.pwd.value;
+		
+		var myajax = new DedeAjax(taget_obj, false, true, '', '', waithtml);
+		myajax.sendlang = 'gb2312';
+		myajax.AddKeyN('dopost', 'send');
+		myajax.AddKeyN('aid', '27301');
+		myajax.AddKeyN('fid', f.fid.value);
+		myajax.AddKeyN('face', nface);
+		myajax.AddKeyN('feedbacktype', nfeedbacktype);
+		myajax.AddKeyN('validate', nvalidate);
+		myajax.AddKeyN('notuser', nnotuser);
+		myajax.AddKeyN('username', nusername);
+		myajax.AddKeyN('pwd', npwd);
+		myajax.AddKeyN('msg', f.msg.value);
+		myajax.SendPost2('/plus/feedback_ajax.php');
+		f.msg.value = '';
+		f.fid.value = 0;
+		if(f.validate)
+		{
+			if($DE('validateimg')) $DE('validateimg').src = "/include/vdimgck.php?"+f.validate.value;
+			f.validate.value = '';
+		}
+}
+function quoteCommet(fid)
+{
+	document.feedback.fid.value = fid;
+}
+LoadCommets(1);
+</script><!-- //评论内容区结束 -->
+ 
+
+
+
+
+
+
+</div><!-- //左边内容结束 -->
+
+<!-- //右边内容开始 -->
+<div class="pright">
+ 		
+		
+		<div class="pright"><script src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ad_js_002.html" language="javascript"></script><a href="http://www.yztz.com/?u=751462" target="_blank"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/250_250.gif" border="0"></a><br>
+        <div>
+          <dl class="tbox">
+				<dt><strong>栏目列表</strong></dt>
+				<dd> 
+					<ul class="d6">
+                      
+		<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/youeryuananquan/">幼儿园安全</a></li>
+		<li><a href="http://www.anquanweb.com/anquan/zongheanquan/fangnishui/">防溺水</a></li>
+		<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/jiaoyutupian/">教育图片</a></li>
+		<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/xiaoxueanquan/">小学安全</a></li>
+		<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/zhongxueanquan/">中学安全</a></li><li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/" class="thisclass">大学安全</a></li>
+		<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/zhutibanhuijiaoan/">主题班会教案</a></li>
+		<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/anquanjiaoyuzuowen/">安全教育作文</a></li>
+		<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/anquanjiaoyushouchaobao/">安全教育手抄报</a></li>
+		<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/anquanbiaozhiyujingshi/">安全标志与警示</a></li>
+		<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/xuexiaoanquanbiaoyu/">学校安全标语</a></li>
+					</ul>
+				</dd>
+			</dl>
+        </div>   
+		
+		<div class="commend mt1"><script src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ad_js_012.html" language="javascript"></script><script type="text/javascript">
+var sogou_ad_id=384981;
+var sogou_ad_height=600;
+var sogou_ad_width=238;
+</script>
+<script type="text/javascript" src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/l.js"></script><script type="text/javascript" charset="utf-8" src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ask_002.asc"></script><div style="display:none">-</div> <div id="starIframe_wrapper_3" style="height:600px;"><iframe id="starIframe3" onload="document.sogou_ads3_loaded=true;" src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/kwd_003.html" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="true" align="center,center" frameborder="0" height="600" width="238"></iframe></div>
+<br>
+
+			<dl class="tbox light">
+				<dt class="light"><strong>推荐内容</strong></dt>
+				<dd class="light">
+		<ul class="c1 ico1">
+            <li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2011/0924/14585.html">农行k宝密码忘了怎么办？如何修</a>
+            	<p>农行k宝密码忘了怎么办 有两个方法可以解决： 1、先不要动，等段时间，说不定就能想到...</p>
+            </li>
+<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2011/1221/35600.html">2012事业单位工资改革,最新事业</a>
+            	<p>2012事业单位工资改革,最新事业单位绩效工资最新消息：国务院法制办近日就《事业单位...</p>
+            </li>
+<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2011/1221/35595.html">事业单位退休工资标准,2012事业</a>
+            	<p>事业单位退休工资标准,2012事业单位退休改革最新消息： 1、公务员退休后的退休费按本...</p>
+            </li>
+<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2011/1112/18224.html">怎么查我现在的位置?我现在的位</a>
+            	<p>怎么查我现在的位置?我现在的位置地图查询方法： 一、手机地图的客户端版和WAP版均可...</p>
+            </li>
+<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2011/1221/35596.html">最新消息事业单位工资改革方案,2</a>
+            	<p>最新消息事业单位工资改革方案,2012事业单位工资调整方案：临近年末，一度踯躅不前的...</p>
+            </li>
+<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2011/0405/6812.html">summary怎么写？summary范文模板</a>
+            	<p>summary怎么写？summary范文模板格式及写法： SUMMARY的最常见格式是总分总.开头笼统...</p>
+            </li>
+<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2011/1221/35607.html">事业单位退休年龄改革,事业单位</a>
+            	<p>事业单位退休年龄改革,事业单位退休待遇改革最新消息： 日前，人社部副部长王晓初在一...</p>
+            </li>
+<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2011/1221/35609.html">事业单位改革提前退休,上海事业</a>
+            	<p>事业单位改革提前退休,上海事业单位改革退休最新消息： 昨天，人社部中国人事科学研究...</p>
+            </li>
+<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2011/1221/35590.html">最新事业单位工资标准,事业单位</a>
+            	<p>最新事业单位工资标准,事业单位收入分配改革最新消息： 事业单位专业技术人员工资标准...</p>
+            </li>
+<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2011/1224/35871.html">99朵玫瑰花图片,999朵蓝玫瑰花大</a>
+            	<p>99朵玫瑰花图片,999朵蓝玫瑰花大图片大全：九十九朵玫瑰花图片、 9999朵玫瑰花图片、 ...</p>
+            </li>
+<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2011/1203/24333.html">cf搞笑图片大图,穿越火线cf搞笑</a>
+            	<p>cf搞笑图片大图,穿越火线cf搞笑图片：搞笑cf图、cf搞笑视频、cf搞笑图片、cf搞笑图片...</p>
+            </li>
+<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2011/1223/35775.html">最简单的玫瑰花折纸方法,折纸玫</a>
+            	<p>最简单的玫瑰花折纸方法,折纸玫瑰花的步骤： 肉丁教过大家很多折玫瑰的做法了，今天这...</p>
+            </li>
+
+					</ul>
+				</dd>
+			</dl>
+		</div><!-- /commend -->
+
+		<div class="hot mt1"><script src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ad_js_017.html" language="javascript"></script>
+
+<script type="text/javascript">
+var sogou_ad_id=327272;
+var sogou_ad_height=90;
+var sogou_ad_width=200;
+</script>
+<script type="text/javascript" src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/l.js"></script><script type="text/javascript" charset="utf-8" src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ask_004.asc"></script><div style="display:none">-</div> <div id="starIframe_wrapper_4" style="height:90px;"><iframe id="starIframe4" onload="document.sogou_ads4_loaded=true;" src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/kwd_004.html" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="true" align="center,center" frameborder="0" height="90" width="200"></iframe></div>
+<br>
+
+			<dl class="tbox light">
+				<dt class="light"><strong>热点内容</strong></dt>
+				<dd class="light">
+					<ul class="c1 ico2">
+             <li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2011/0924/14585.html">农行k宝密码忘了怎么办？如何修</a></li>
+<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2011/1221/35600.html">2012事业单位工资改革,最新事业</a></li>
+<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2011/1221/35595.html">事业单位退休工资标准,2012事业</a></li>
+<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2011/1112/18224.html">怎么查我现在的位置?我现在的位</a></li>
+<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2011/1221/35596.html">最新消息事业单位工资改革方案,2</a></li>
+<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2011/0405/6812.html">summary怎么写？summary范文模板</a></li>
+<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2011/1221/35607.html">事业单位退休年龄改革,事业单位</a></li>
+<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2011/1221/35609.html">事业单位改革提前退休,上海事业</a></li>
+<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2011/1221/35590.html">最新事业单位工资标准,事业单位</a></li>
+<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2011/1224/35871.html">99朵玫瑰花图片,999朵蓝玫瑰花大</a></li>
+<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2011/1203/24333.html">cf搞笑图片大图,穿越火线cf搞笑</a></li>
+<li><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2011/1223/35775.html">最简单的玫瑰花折纸方法,折纸玫</a></li>
+
+					</ul><br>
+您是不是要找这类内容<br><br>
+
+<table width="90%" border="0" cellpadding="0" cellspacing="2">
+   <tbody><tr><td align="center"><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2014/1021/49528.html"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/38_141021224305_1-lp.jpg" alt="大学生暑假支教策划书" height="120" width="120" border="0"></a></td></tr>
+   <tr><td align="center"><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2014/1021/49528.html">大学生暑假支教策划书</a></td></tr>
+</tbody></table><br>
+<table width="90%" border="0" cellpadding="0" cellspacing="2">
+   <tbody><tr><td align="center"><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2014/1005/49442.html"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/38_141005225751_1-lp.jpg" alt="大学生暑假实习报告" height="120" width="120" border="0"></a></td></tr>
+   <tr><td align="center"><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2014/1005/49442.html">大学生暑假实习报告</a></td></tr>
+</tbody></table><br>
+<table width="90%" border="0" cellpadding="0" cellspacing="2">
+   <tbody><tr><td align="center"><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2014/0524/48530.html"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/38_052423033I335.jpg" alt="安全技术管理专业就业前景，安全技术管理专业就业方向" height="120" width="120" border="0"></a></td></tr>
+   <tr><td align="center"><a href="http://www.anquanweb.com/anquan/xiaoyuananquan/daxueanquan/2014/0524/48530.html">安全技术管理专业就业前景，</a></td></tr>
+</tbody></table><br>
+
+
+				</dd>
+			</dl>
+
+		</div><script src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ad_js_005.html" language="javascript"></script>
+
+
+	</div>
+<!-- /pright -->
+</div>
+
+
+<!-- //底部模板 --> 
+<div class="footer w960 center mt1 clear">
+<script src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ad_js_011.html" language="javascript"></script><br>
+<script src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ad_js_009.html" language="javascript"></script><br>
+<script src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ad_js_014.html" language="javascript"></script> <center> <p><a href="http://www.anquanweb.com/anquan/zaihaianquan/qita/2011/1111/18114.html">申请专栏</a>&nbsp; 
+<a href="http://www.anquanweb.com/anquan/zaihaianquan/qita/2011/1111/18049.html">投稿指南</a>&nbsp; 
+<a href="http://www.anquanweb.com/anquan/zaihaianquan/qita/2011/1111/18025.html">关于我们</a>&nbsp; 
+<a href="http://www.anquanweb.com/anquan/zaihaianquan/qita/2011/1111/18037.html">服务条款</a>&nbsp; 
+<a href="http://www.anquanweb.com/anquan/zaihaianquan/qita/2011/1111/18034.html">版权隐私</a>&nbsp; 
+<a href="http://www.anquanweb.com/anquan/zaihaianquan/qita/2011/1111/17997.html">联系方式</a>&nbsp; 
+<a href="http://www.anquanweb.com/anquan/zaihaianquan/qita/2011/1111/18000.html">广告投放</a>&nbsp; 
+<a href="http://www.anquanweb.com/anquan/zaihaianquan/qita/2011/1111/18042.html">投资合作</a>&nbsp; 
+<a href="http://www.anquanweb.com/anquan/zaihaianquan/qita/2011/1111/18041.html">职位招聘</a></p></center> <br>
+Copyright &#169; 2010- www.anquanweb.com. 生活安全网 版权所有 QQ：1317991989 赣ICP备10200952号-7<br>
+
+	<!-- 
+		!
+	-->
+    <div class="footer_left"></div>
+    <div class="footer_body"><br>
+
+
+	<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fff51b6e767de05e2054c5c99e232919a' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/h.asc" type="text/javascript"></script><a href="http://tongji.baidu.com/hm-web/welcome/ico?s=ff51b6e767de05e2054c5c99e232919a" target="_blank"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/25.gif" height="20" width="20" border="0"></a>
+
+
+<!-- /powered --><script src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ad_js_010.html" language="javascript"></script><script src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ad_js_016.html" language="javascript"></script><div id="left_layer" style="position:fixed; bottom:10px; right:0px;"> <script src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/ad_js_007.html" language="javascript"></script><a href="http://www.yztz.com/?u=751462" target="_blank"><img src="ubuntu%20mysql%20%E5%91%BD%E4%BB%A4,ubuntu%20%E5%90%AF%E5%8A%A8mysql%E6%96%B9%E6%B3%95_%E7%94%9F%E6%B4%BB%E5%AE%89%E5%85%A8%E7%BD%91_files/250_250.gif" border="0"></a>
+ <br>  <a href="javascript:;" onclick="javascript:document.getElementById('left_layer').style.display='none';"><p>关闭</p></a><p><a href="javascript:;" onclick="javascript:document.getElementById('left_layer').style.display='none';"></a></p></div>
+
+
+   </div>
+   <div class="footer_right"></div>
+</div>
+<!-- /footer -->
+
+
+</div></body></html>

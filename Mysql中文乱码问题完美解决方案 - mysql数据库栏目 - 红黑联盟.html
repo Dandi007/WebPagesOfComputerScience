@@ -1,0 +1,636 @@
+<!DOCTYPE html PUBLIC "-//W3C//dtD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/dtD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><link href="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/changyan2-floatCbox.css" rel="stylesheet" type="text/css"><link href="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/changyan2-floatCbox-frame.css" rel="stylesheet" type="text/css"><script src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/timestat" charset="utf-8" type="text/javascript"></script><script src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/changyan.js" charset="utf-8" type="text/javascript"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+<link rel="stylesheet" href="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/article.css" type="text/css">
+
+<link href="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/dialog.css" rel="stylesheet" type="text/css">
+<title>Mysql中文乱码问题完美解决方案 - mysql数据库栏目 - 红黑联盟</title>
+<meta name="keywords" content="乱码问题">
+<meta name="description" content="MySQL会出现中文乱码的原因不外乎下列几点：1.server本身设定问题，例如还停留在latin12.table的语系设定问题(包含character与collation)3.客户端程式(例如php)的连线语系设定问题强烈建议使用utf8!!!!utf8可以兼...">
+<script type="text/javascript" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/jquery.js"></script>
+<script type="text/javascript" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/jquery_002.js"></script>
+<script type="text/javascript" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/search_common.js"></script>
+<script type="text/javascript" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/m.js"></script>
+<script type="text/javascript" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/json.js"></script><script src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/share.js"></script><script src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/version.js" charset="UTF-8" type="text/javascript"></script><script src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/cookie" charset="UTF-8" type="text/javascript"></script><script src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/cookie_003" charset="UTF-8" type="text/javascript"></script><script src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/cookie_002" charset="UTF-8" type="text/javascript"></script><script src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/cyrBEfE7C" charset="UTF-8" type="text/javascript"></script><script src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/event" charset="UTF-8" type="text/javascript"></script><script src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/sea.js" charset="UTF-8" type="text/javascript"></script><script src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/app-build.js" charset="UTF-8" type="text/javascript"></script><link href="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/share_style0_24.css" rel="stylesheet"><style id="changyanCss">#SOHUCS{clear:both;min-height:320;_height:320px;overflow:visible;}#SOHUCS iframe{width:100%;min-height:320px;_height:320px;}</style><link href="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/changyan2.css" rel="stylesheet" charset="utf-8"><link href="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/default.css" rel="stylesheet" charset="utf-8"></head><body><div class="" style="display: none; position: absolute;"><div class="aui_outer"><table class="aui_border"><tbody><tr><td class="aui_nw"></td><td class="aui_n"></td><td class="aui_ne"></td></tr><tr><td class="aui_w"></td><td class="aui_c"><div class="aui_inner"><table class="aui_dialog"><tbody><tr><td colspan="2" class="aui_header"><div class="aui_titleBar"><div style="cursor: move; display: block;" class="aui_title"></div><a style="display: block;" class="aui_close" href="javascript:/*artDialog*/;">×</a></div></td></tr><tr><td style="display: none;" class="aui_icon"><div style="background: none repeat scroll 0% 0% transparent;" class="aui_iconBg"></div></td><td style="width: auto; height: auto;" class="aui_main"><div style="padding: 20px 25px;" class="aui_content"></div></td></tr><tr><td colspan="2" class="aui_footer"><div style="display: none;" class="aui_buttons"></div></td></tr></tbody></table></div></td><td class="aui_e"></td></tr><tr><td class="aui_sw"></td><td class="aui_s"></td><td style="cursor: se-resize;" class="aui_se"></td></tr></tbody></table></div></div><div style="position: absolute; left: -1px; bottom: -1px; z-index: 0; width: 0px; height: 0px; overflow: hidden; visibility: hidden; display: none;" id="BAIDU_DUP_fp_wrapper"><iframe style="width: 0px; height: 0px; visibility: hidden; display: none;" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/o.html" id="BAIDU_DUP_fp_iframe"></iframe></div><div id="BAIDU_DUP_wrapper_745777_0"></div><script charset="utf-8" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/ecom_007"></script><script charset="utf-8" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/fixed7o.js"></script><div class="side_bar_2345">
+  <div style="text-align:right;" onclick="this.parentNode.style.display='none'"><img src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/ad_close.gif"></div>
+  <a href="http://js.50bang.org/?formType=7585" target="_blank"><img src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/2345-122.jpg" data-baiduimageplus-ignore="" height="210" width="300"></a>
+</div>
+
+
+<script language="javascript" type="text/javascript" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/dialog.js"></script>
+<script language="javascript" type="text/javascript" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/syntaxhighlighter.js"></script><script type="text/javascript" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/XRegExp.js"></script><script type="text/javascript" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/shCore.js"></script><script type="text/javascript" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/shBrushBash.js"></script><script type="text/javascript" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/shBrushCpp.js"></script><script type="text/javascript" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/shBrushCSharp.js"></script><script type="text/javascript" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/shBrushCss.js"></script><script type="text/javascript" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/shBrushDelphi.js"></script><script type="text/javascript" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/shBrushDiff.js"></script><script type="text/javascript" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/shBrushGroovy.js"></script><script type="text/javascript" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/shBrushJava.js"></script><script type="text/javascript" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/shBrushJScript.js"></script><script type="text/javascript" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/shBrushPhp.js"></script><script type="text/javascript" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/shBrushPlain.js"></script><script type="text/javascript" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/shBrushPython.js"></script><script type="text/javascript" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/shBrushRuby.js"></script><script type="text/javascript" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/shBrushScala.js"></script><script type="text/javascript" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/shBrushSql.js"></script><script type="text/javascript" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/shBrushVb.js"></script><script type="text/javascript" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/shBrushXml.js"></script><script type="text/javascript" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/shBrushPerl.js"></script>
+<link type="text/css" rel="stylesheet" href="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/shCore.css">
+<link type="text/css" rel="stylesheet" href="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/shThemeDefault.css">
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+
+
+
+
+<div class="line_top_box">
+	<dl class="top_box_left">
+		<dd class="left_logo"><a href="http://www.2cto.com/"></a></dd>
+		<dd class="left_menu_link">
+																<a class="Channel" href="http://www.2cto.com/News/">资讯</a>&nbsp;|&nbsp;
+													<a class="Channel" href="http://www.2cto.com/Article/">安全</a>&nbsp;|&nbsp;
+													<a class="Channel" href="http://bbs.2cto.com/">论坛</a>&nbsp;|&nbsp;
+													<a class="Channel" href="http://www.2cto.com/Soft/">下载</a>&nbsp;|&nbsp;
+													<a class="Channel" href="http://book.2cto.com/">读书</a>&nbsp;|&nbsp;
+													<a class="Channel" href="http://www.2cto.com/kf/">程序开发</a>&nbsp;|&nbsp;
+													<a class="Channel" href="http://www.2cto.com/database/">数据库</a>&nbsp;|&nbsp;
+													<a class="Channel" href="http://www.2cto.com/os/">系统</a>&nbsp;|&nbsp;
+													<a class="Channel" href="http://www.2cto.com/net/">网络</a>&nbsp;|&nbsp;
+													<a class="Channel" href="http://www.2cto.com/ebook/">电子书</a>&nbsp;|&nbsp;
+													<a class="Channel" href="http://www.2cto.com/weixin/">微信学院</a>&nbsp;|&nbsp;
+													<a class="Channel" href="http://zz.2cto.com/">站长学院</a>&nbsp;|&nbsp;
+													<a class="Channel" href="http://www.2cto.com/ym/">源码</a>&nbsp;|&nbsp;
+													<a class="Channel" href="http://www.2cto.com/QQ/">QQ</a>&nbsp;|&nbsp;
+													<a class="Channel" href="http://space.2cto.com/">专栏</a>&nbsp;|&nbsp;
+													<a class="Channel" href="http://www.2cto.com/px/">考试</a>&nbsp;|&nbsp;
+														</dd>
+	</dl>
+</div>
+<div class="line_top_lmbox">
+	<dl class="lmpic"></dl>
+	<dl class="lmlinkbox"><dd>
+										<a class="Channel" href="http://www.2cto.com/database/mssql/">SQL Server</a>|
+							<a class="Channel" href="http://www.2cto.com/database/MySQL/">MySQL</a>|
+							<a class="Channel" href="http://www.2cto.com/database/Oracle/">Oracle</a>|
+							<a class="Channel" href="http://www.2cto.com/database/DB2/">DB2</a>|
+							<a class="Channel" href="http://www.2cto.com/database/Sybase/">Sybase</a>|
+							<a class="Channel" href="http://www.2cto.com/database/qita/">其他综合</a>|
+								</dd></dl>
+	<dl class="LoginBox"><dd><script type="text/javascript">document.write('<iframe src="http://www.2cto.com/index.php?m=member&c=index&a=mini&forward='+encodeURIComponent(location.href)+'&siteid=1" allowTransparency="true"  width="150" height="32" frameborder="0" scrolling="no"></iframe>')</script><iframe src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/index.html" allowtransparency="true" scrolling="no" frameborder="0" height="32" width="150"></iframe></dd></dl>
+</div>
+<div class="divline8"></div>
+<div class="tadv">
+
+<a target="_blank" href="http://vip.2cto.com/"><img src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/980-80.gif" height="90" width="980"></a>
+<!-- 广告位：顶部banner -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("298612");</script><div id="BAIDU_DUP_wrapper_298612_0"></div><script charset="utf-8" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/ecom_010"></script><div style="padding-top:0px;width:980px;margin:auto;padding-bottom:0px;clear:both;overflow:hidden">
+<a target="_blank" href="http://vip.2cto.com/yh/"><img src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/youhui15.gif" height="80" width="980"></a>
+</div>
+
+</div>
+
+
+<div class="divline8"></div>
+<div class="it165_box">
+	<div class="box_left">
+		
+		<dl class="box_p">
+			<dd class="pRight"><a href="http://www.2cto.com/">首页</a><span> &gt; </span><a href="http://www.2cto.com/database/">数据库</a> &gt; <a href="http://www.2cto.com/database/MySQL/">MySQL</a> &gt;  正文</dd>
+			<script type="text/javascript">BAIDU_CLB_fillSlot("703722");</script><div id="BAIDU_DUP_wrapper_703722_0"></div><script charset="utf-8" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/ecom_011"></script><form action="http://so.2cto.com/cse/search" target="_blank">
+<dd class="pRSearch">
+<input name="s" value="11831876334997631217" type="hidden">
+<input value=" " type="submit"></dd>
+<dd class="pRKeyWork"><input id="Keyword" name="q" type="text"></dd>
+</form>
+			</dl>
+		<dl class="box_t"><dd>Mysql中文乱码问题完美解决方案</dd></dl>
+																										<dl class="box_INFO">
+			<dd class="frinfo line_blue">2011-08-22  &nbsp;&nbsp;&nbsp;&nbsp;
+<a style="font-weight:bold;padding:5px 0px 5px 20px;background:url('http://www.2cto.com/statics/images/icon/user_comment.png') left center no-repeat" href="#SOHUCS" id="changyan_count_unit">0</a><a href="#SOHUCS">&nbsp;个评论</a>
+<script type="text/javascript" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/plugins.js"></script>
+
+
+&nbsp;&nbsp;  &nbsp;&nbsp;  </dd>
+			<dd class="frsize line_blue">
+			<span id="favorite">
+				<a href="javascript:;" onclick="add_favorite('Mysql中文乱码问题完美解决方案');" class="t6">收藏</a>
+			</span>&nbsp;&nbsp;
+				<a target="_blank" href="http://www.2cto.com/index.php?m=member&amp;c=content&amp;a=publish&amp;modid=1&amp;siteid=1"><img src="index_data/dl.jpg" border="0">我要投稿</a>
+			</dd>
+			
+		</dl>
+		<dl class="box_body" id="fontzoom"><dd id="Article">
+		<p>
+	MySQL会出现中文乱码的原因不外乎下列几点：<br>
+	1.server本身设定问题，例如还停留在latin1<br>
+	2.table的语系设定问题(包含character与collation)<br>
+	3.客户端程式(例如php)的连线语系设定问题<br>
+	强烈建议使用utf8!!!!<br>
+	utf8可以兼容世界上所有字符!!!!<br>
+	一、避免创建<a href="http://www.2cto.com/database/" target="_blank" class="keylink">数据库</a>及表出现中文乱码和查看编码方法<br>
+	1、创建数据库的时候：CREATE DATABASE `test`<br>
+	CHARACTER SET 'utf8'<br>
+	COLLATE 'utf8_general_ci';<br>
+	2、建表的时候 CREATE TABLE `database_user` (<br>
+	`ID` varchar(40) NOT NULL default '',<br>
+	`UserID` varchar(40) NOT NULL default '',<br>
+	) ENGINE=InnoDB DEFAULT CHARSET=utf8;</p>
+<p>
+	这3个设置好了，基本就不会出问题了,即建库和建表时都使用相同的编码格式。<br>
+	但是如果你已经建了库和表可以通过以下方式进行查询。<br>
+	1.查看默认的编码格式:<br>
+	<a href="http://www.2cto.com/database/MySQL/" target="_blank" class="keylink">mysql</a>&gt; show variables like "%char%";<br>
+	+--------------------------+---------------+<br>
+	| Variable_name | Value |<br>
+	+--------------------------+---------------+<br>
+	| character_set_client | gbk |<br>
+	| character_set_connection | gbk |<br>
+	| character_set_database | utf8 |<br>
+	| character_set_filesystem | binary |<br>
+	| character_set_results | gbk |<br>
+	| character_set_server | utf8 |<br>
+	| character_set_system | utf8 |<br>
+	+--------------------------+-------------+<br>
+	注：以前2个来确定,可以使用set names utf8,set names gbk设置默认的编码格式;</p>
+<p>
+	执行SET NAMES utf8的效果等同于同时设定如下：<br>
+	SET character_set_client='utf8';<br>
+	SET character_set_connection='utf8';<br>
+	SET character_set_results='utf8';</p>
+<p>
+	2.查看test数据库的编码格式:<br>
+	mysql&gt; show create database test;<br>
+	+------------+------------------------------------------------------------------------------------------------+<br>
+	| Database | Create Database |<br>
+	+------------+------------------------------------------------------------------------------------------------+<br>
+	| test | CREATE DATABASE `test` /*!40100 DEFAULT CHARACTER SET gbk */ |<br>
+	+------------+------------------------------------------------------------------------------------------------+</p>
+<p>
+	3.查看yjdb数据库的编码格式:<br>
+	mysql&gt; show create table yjdb;<br>
+	| yjdb | CREATE TABLE `yjdb` (<br>
+	`sn` int(5) NOT NULL AUTO_INCREMENT,<br>
+	`type` varchar(10) NOT NULL,<br>
+	`brc` varchar(6) NOT NULL,<br>
+	`teller` int(6) NOT NULL,<br>
+	`telname` varchar(10) NOT NULL,<br>
+	`date` int(10) NOT NULL,<br>
+	`count` int(6) NOT NULL,<br>
+	`back` int(10) NOT NULL,<br>
+	PRIMARY KEY (`sn`),<br>
+	UNIQUE KEY `sn` (`sn`),<br>
+	UNIQUE KEY `sn_2` (`sn`)<br>
+	) ENGINE=MyISAM AUTO_INCREMENT=1826 DEFAULT CHARSET=gbk ROW_FORMAT=DYNAMIC |</p>
+<p>
+	二、避免导入数据有中文乱码的问题<br>
+	1:将数据编码格式保存为utf-8<br>
+	设置默认编码为utf8：<br>
+	set names utf8;<br>
+	设置数据库db_name默认为utf8:<br>
+	ALTER DATABASE `db_name` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;<br>
+	设置表tb_name默认编码为utf8:<br>
+	ALTER TABLE `tb_name` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;<br>
+	导入：<br>
+	LOAD DATA LOCAL INFILE 'C:\\utf8.txt' INTO TABLE yjdb;<br>
+	2:将数据编码格式保存为ansi(即GBK或GB2312)<br>
+	设置默认编码为gbk：<br>
+	set names gbk;<br>
+	设置数据库db_name默认编码为gbk:<br>
+	ALTER DATABASE `db_name` DEFAULT CHARACTER SET gbk COLLATE gbk_chinese_ci;<br>
+	设置表tb_name默认编码为gbk:<br>
+	ALTER TABLE `tb_name` DEFAULT CHARACTER SET gbk COLLATE gbk_chinese_ci;<br>
+	导入：<br>
+	LOAD DATA LOCAL INFILE 'C:\\gbk.txt' INTO TABLE yjdb;</p>
+<p>
+	注：1.UTF8不要导入gbk，gbk不要导入UTF8;<br>
+	2.<a href="http://www.2cto.com/os/dos/" target="_blank" class="keylink">dos</a>下不支持UTF8的显示;<br>
+	三、解决网页中乱码的问题<br>
+	&nbsp;<br>
+	将网站编码设为 utf-8,这样可以兼容世界上所有字符。<br>
+	　　如果网站已经运作了好久,已有很多旧数据,不能再更改简体中文的设定,那么建议将页面的编码设为 GBK, GBK与GB2312的区别就在于:GBK能比GB2312显示更多的字符,要显示简体码的繁体字,就只能用GBK。<br>
+	1.编辑/etc/my.cnf　,在[mysql]段加入default_character_set=utf8;<br>
+	2.在编写Connection URL时，加上?useUnicode=true&amp;characterEncoding=utf-8参;<br>
+	3.在网页代码中加上一个"set names utf8"或者"set names gbk"的指令，告诉MySQL连线内容都要使用<br>
+	utf8或者gbk;</p>
+						</dd></dl>
+		<script type="text/javascript">
+		<!--
+		$(function(){
+		  $('#Article img').LoadImage(true, 630, 560,'http://www.2cto.com/statics/images/s_nopic.gif');    
+		})
+		
+		//-->
+		</script>
+	<div id="pages" class="box_body">	</div>
+	<dl style="width:650px;height:100px;padding-top:10px;float:left;padding-left:10px">
+		<dd><script type="text/javascript">BAIDU_CLB_fillSlot("771048");</script><div id="BAIDU_DUP_wrapper_771048_0"><iframe id="cproIframe_771048_4" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/ecom.html" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="true" align="center,center" frameborder="0" height="90" width="640"></iframe></div><script charset="utf-8" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/ecom"></script><script charset="utf-8" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/inlayFixed.js"></script></dd>
+	</dl>
+	<dl class="box_Nsc">
+		<dd class="lcopy"><a class="ckcopy" onclick="copyToClipBoard()">点击复制链接 与好友分享!</a><a class="ckhome" href="http://www.2cto.com/">回本站首页</a></dd>
+		<script> 
+		function copyToClipBoard(){ 
+		var clipBoardContent=document.title + '\r\n' + document.location; 
+		clipBoardContent+='\r\n'; 
+		window.clipboardData.setData("Text",clipBoardContent); 
+		alert("恭喜您！复制成功"); 
+		} 
+		</script>
+
+		<div class="Article-Tool">
+  <div data-bd-bind="1426475350580" class="bdsharebuttonbox bdshare-button-style0-24"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_mshare" data-cmd="mshare" title="分享到一键分享"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+                                
+	  </div>
+
+		
+		
+		<dd class="bbstt">您对本文章有什么意见或着疑问吗？请到<a href="http://bbs.2cto.com/">论坛讨论</a>您的关注和建议是我们前行的参考和动力&nbsp;&nbsp; </dd>
+	</dl>
+	<dl class="box_NPre">
+		<dd class="TLineX"><strong>上一篇：</strong><a href="http://www.2cto.com/database/201108/101141.html">mysql连接字符串—远程连接用IP地址 而非只是localhost时</a></dd>
+		<dd><strong>下一篇：</strong><a href="http://www.2cto.com/database/201108/101157.html">MySQL设置全局变量</a></dd>
+	</dl>
+	<dl class="linetb"></dl>
+	<dl class="about"><dd>相关文章</dd></dl>
+				<div class="alistline"><a href="http://www.2cto.com/database/201006/50355.html" target="blank">MySQL 5 乱码问题处理办法</a></div>
+			<div class="alistline"><a href="http://www.2cto.com/database/201108/102116.html" target="blank">mysql乱码问题</a></div>
+			<div class="alistline"><a href="http://www.2cto.com/database/201403/285169.html" target="blank">Linux下mysql中文乱码问题</a></div>
+			<dl class="linetb"></dl>
+	<dl style="width:650px;height:70px;padding-top:10px;float:left;padding-left:10px">
+		<dd><script type="text/javascript">BAIDU_CLB_fillSlot("182716");</script><div id="BAIDU_DUP_wrapper_182716_0"><iframe id="cproIframe_182716_5" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/ecom_002.html" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="true" align="center,center" frameborder="0" height="60" width="640"></iframe></div><script charset="utf-8" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/ecom_009"></script></dd>
+	</dl>
+
+	<dl style="width:650px;float:left;padding-left:10px">
+		<dd><script type="text/javascript">BAIDU_CLB_fillSlot("517916");</script><div id="BAIDU_DUP_wrapper_517916_0"></div><script charset="utf-8" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/ecom_003"></script></dd>
+	</dl>
+	<dl class="linetb"></dl>
+	<dl class="about"><dd>图文推荐</dd></dl>
+	<div class="picbox">
+						<dl class="wbox">
+			<dd class="npicbox"><a target="_blank" href="http://www.2cto.com/database/201503/380153.html"><img src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/thumb_126_90_2015030409532966.png" height="90" width="126" border="0"></a></dd>
+			<dd class="npictext"><a href="http://www.2cto.com/database/201503/380153.html">我的MYSQL学习笔记（</a></dd>
+		</dl>
+				<dl class="wbox">
+			<dd class="npicbox"><a target="_blank" href="http://www.2cto.com/database/201503/380132.html"><img src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/thumb_126_90_2015030409534076.png" height="90" width="126" border="0"></a></dd>
+			<dd class="npictext"><a href="http://www.2cto.com/database/201503/380132.html">MySQL中文insert报错</a></dd>
+		</dl>
+				<dl class="wbox">
+			<dd class="npicbox"><a target="_blank" href="http://www.2cto.com/database/201503/380114.html"><img src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/thumb_126_90_2015030409533369.png" height="90" width="126" border="0"></a></dd>
+			<dd class="npictext"><a href="http://www.2cto.com/database/201503/380114.html">MySQL体系结构以及各</a></dd>
+		</dl>
+				<dl class="wbox">
+			<dd class="npicbox"><a target="_blank" href="http://www.2cto.com/database/201503/380099.html"><img src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/thumb_126_90_2015030409532135.png" height="90" width="126" border="0"></a></dd>
+			<dd class="npictext"><a href="http://www.2cto.com/database/201503/380099.html">我的MYSQL学习笔记（</a></dd>
+		</dl>
+					</div>
+	
+
+<!--高速版，加载速度快，使用前需测试页面的兼容性-->
+<a id="changyan_area"></a><div style="width: 650px; height: auto;" id="SOHUCS"><div id="SOHU_MAIN"><div id="SOHU-comment-main" class="sohu-comment-wrapper"><div id="article_info_sohu">        <div class="reset-g clear-g section-title-w  section-title-logoutStyle">
+            <div class="title-join-w">
+                <div class="join-wrap-w join-wrap-b"><strong class="wrap-name-w wrap-name-b">我有话说</strong><span class="wrap-join-w wrap-join-b">(<em class="join-strong-gw join-strong-bg">0</em><span node-type="involved">人参与</span><i class="gap-b">，</i><em class="join-strong-gw join-strong-bg">0</em><span node-type="comments">条评论</span>)</span></div>
+            </div>
+            <div class="title-user-w">
+                <div style="display: none;" node-type="sohu-pact" class="title-link-w"><a href="http://zt.pinglun.sohu.com/s2014/sljyhgy/index.shtml" target="_blank">搜狐“我来说两句”用户公约</a></div>
+            </div>
+        </div>
+        </div><div id="login_sohu"></div><div id="comment_sohu"><div class="reset-g section-cbox-w"><div style="width:1px;height:1px;overflow:hidden;"><img src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/vcode.jpg" style="visibility:hidden;width:1px;height:1px;"></div><div class="clear-g cbox-block-w">
+            <div class="block-head-w">
+                <div class="head-img-w">
+                                        <a node-type="user-avatar" href="javascript:void(0)" target="_self"><img src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/pic42_null.gif" onerror="SOHUCS.isImgErr(this)" alt="" height="42" width="42"></a>
+                    </div>
+                <!--
+                                <div class="head-gold-w"><a href="javascript:void(0)">金币</a></div>
+                -->
+            </div>
+        <div class="block-post-w"><div class="post-default-w post-default-b"><div class="clear-g default-wrap-w"><input name="" value="来说两句吧..." class="wrap-text-f " type="text"><button class="btn-fw btn-bf single-btn-bf">发布</button></div></div></div></div><div node-type="prompt-no-privilege" class="cbox-prompt-w" style="display: none;">
+            <span class="prompt-empty-w prompt-empty-b">等级不够，发表评论升至指定级别才能获得该特权。详情请参见<a node-type="privilege-intro" href="javascript:;">等级说明</a>。</span>
+        </div></div></div><div id="list_sort_sohu"></div><div topicid="502257087" id="list_sohu">
+        <div class="reset-g section-list-w">
+            <div class="list-comment-empty-w">
+                <div class="empty-prompt-w"><span class="prompt-null-w prompt-null-b">还没有评论，快来抢沙发吧！</span></div>
+            </div>
+        </div></div><div id="list_hot">            <div class="reset-g section-newslist-w">
+                <div class="newslist-title-w"><h3 class="title-name-w">热评话题</h3></div>
+                <div class="newslist-conts-w clear-g">
+                    <ul class="conts-col conts-col-1 clear-g">
+                                                    <li style="width:280px;white-space:nowrap;overflow:hidden;float:left;"><a index="0" href="http://www.2cto.com/QQ/201409/333519.html" target="_blank" title="年少的愛情是信仰，是沿途的風光，都不再重要。 - 个性签名 - 红黑联盟">年少的愛情是信仰，是沿途的風光，都<span class="hot"></span></a></li>
+                                                    <li style="width:280px;white-space:nowrap;overflow:hidden;float:right;"><a index="1" href="http://zz.2cto.com/201305/209368.html" target="_blank" title="搜索引擎格局再生变：百度360腾讯竞购搜狗 - 其他综合 - 红黑联盟">搜索引擎格局再生变：百度360腾讯竞购<span class="hot"></span></a></li>
+                                                    <li style="width:280px;white-space:nowrap;overflow:hidden;float:left;"><a index="2" href="http://www.2cto.com/News/201407/321978.html" target="_blank" title="乌云曝招商银行网银存漏洞 该漏洞可窃取信息钓鱼种马 - 安全资讯 - 红黑联盟">乌云曝招商银行网银存漏洞 该漏洞可窃<span class="hot"></span></a></li>
+                                                    <li style="width:280px;white-space:nowrap;overflow:hidden;float:right;"><a index="3" href="http://www.2cto.com/Article/201011/78814.html" target="_blank" title="URL静态化背后的安全隐患 - 网站安全 - 红黑联盟">URL静态化背后的安全隐患 - 网站安全</a></li>
+                                                    <li style="width:280px;white-space:nowrap;overflow:hidden;float:left;"><a index="4" href="http://www.2cto.com/os/201103/85732.html" target="_blank" title="各个linux/unix版本的本地root密码破解方法 - Linux操作系统：Ubuntu_Centos_Debian - 红黑联盟">各个linux/unix版本的本地root密码破</a></li>
+                                                    <li style="width:280px;white-space:nowrap;overflow:hidden;float:right;"><a index="5" href="http://www.2cto.com/qq/201302/187323.html" target="_blank" title="当你告诉别人你累了 其实你只是伤心了 - 个性签名 - 红黑联盟">当你告诉别人你累了 其实你只是伤心了</a></li>
+                                                    <li style="width:280px;white-space:nowrap;overflow:hidden;float:left;"><a index="6" href="http://zz.2cto.com/201409/337306.html" target="_blank" title="创投泡沫来临：市场正变得无比疯狂 - 网络创业_创业经验_网赚 - 红黑联盟">创投泡沫来临：市场正变得无比疯狂 -</a></li>
+                                                    <li style="width:280px;white-space:nowrap;overflow:hidden;float:right;"><a index="7" href="http://www.2cto.com/QQ/200712/22133.html" target="_blank" title="QQ经典下级生QQ头像 - 动漫卡通 - 红黑联盟">QQ经典下级生QQ头像 - 动漫卡通 - 红</a></li>
+                                                    <li style="width:280px;white-space:nowrap;overflow:hidden;float:left;"><a index="8" href="http://www.2cto.com/kf/201104/88856.html" target="_blank" title="IT公司中最流行的10种编程语言 - 其他综合 - 红黑联盟">IT公司中最流行的10种编程语言 - 其他</a></li>
+                                                    <li style="width:280px;white-space:nowrap;overflow:hidden;float:right;"><a index="9" href="http://www.2cto.com/qq/201301/185669.html" target="_blank" title="你是我继续笑下去的坚持 - qq头像图片_男生|女生|情侣|个性头像|非主流头像|空间头头像 - 红黑联盟">你是我继续笑下去的坚持 - qq头像图片</a></li>
+                        </ul>
+                </div>
+            </div></div><div id="page_sohu"></div><div id="more_list_sohu"></div><div id="powerby_sohu">        <div class="reset-g section-service-w">
+            <div class="service-wrap-w service-wrap-b"><a node-type="powered-by" href="http://changyan.sohu.com/?from=changyan" target="_blank">畅言</a></div>
+        </div></div></div></div></div>
+<script>
+  (function(){
+    var appid = 'cyrBEfE7C',
+    conf = 'prod_830794cf494da8b808afb2994cfe0fee';
+    var doc = document,
+    s = doc.createElement('script'),
+    h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+    s.type = 'text/javascript';
+    s.charset = 'utf-8';
+    s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
+    h.insertBefore(s,h.firstChild);
+    window.SCS_NO_IFRAME = true;
+  })()
+</script> 
+
+
+	<dl style="width:650px;float:left;padding-left:10px">
+		<dd><script type="text/javascript">BAIDU_CLB_fillSlot("771057");</script><div id="BAIDU_DUP_wrapper_771057_0"><iframe id="cproIframe_771057_7" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/ecom_003.html" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="true" align="center,center" frameborder="0" height="60" width="640"></iframe></div><script charset="utf-8" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/ecom_005"></script></dd>
+	</dl>
+	</div>
+	<div class="box_right">
+		<div style="float:left;width:300px;background:white;padding-left:10px;height:250px">
+			<a target="_blank" href="http://vip.2cto.com/"><img src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/300-250.gif" height="250" width="300"></a></div>
+		<div class="box_right_line"><div class="xline"></div></div>
+		<div class="box_right_box">
+			<dl class="bTitle"><dd onmousemove="m_tab(1)" id="indexW" class="tablinkschecked">排行</dd><dd onmousemove="m_tab(2)" id="hotW" class="tablinkscheck">热门</dd></dl>
+		</div>
+		<div class="box_right_box">
+			<div class="paddingbox">
+				<dl class="index" id="index">
+					<dd class="picline"></dd>
+															<dd class="list">514 | <a target="_blank" title="Mysql中文乱码问题完美解决方案" href="http://www.2cto.com/database/201108/101151.html">Mysql中文乱码问题完美解决方案</a></dd>
+										<dd class="list">230 | <a target="_blank" title="linux下使用yum安装mysql" href="http://www.2cto.com/database/201207/141878.html">linux下使用yum安装mysql</a></dd>
+										<dd class="list">203 | <a target="_blank" title="MySQL命令行登录" href="http://www.2cto.com/database/201209/154363.html">MySQL命令行登录</a></dd>
+										<dd class="list">164 | <a target="_blank" title="mysql中int、bigint、smallint和tinyint的区别与长度" href="http://www.2cto.com/database/201212/176830.html">mysql中int、bigint、smallint和tinyi</a></dd>
+										<dd class="list">161 | <a target="_blank" title="MySQL远程访问权限，允许远程连接的开启" href="http://www.2cto.com/database/201205/130093.html">MySQL远程访问权限，允许远程连接的开</a></dd>
+										<dd class="list">150 | <a target="_blank" title="Mysql复制表结构、表数据" href="http://www.2cto.com/database/201202/120259.html">Mysql复制表结构、表数据</a></dd>
+										<dd class="list">139 | <a target="_blank" title="mysql load data infile的使用" href="http://www.2cto.com/database/201108/99655.html">mysql load data infile的使用</a></dd>
+										<dd class="list">134 | <a target="_blank" title="mysql TIMESTAMP（时间戳）详解" href="http://www.2cto.com/database/201205/131759.html">mysql TIMESTAMP（时间戳）详解</a></dd>
+														</dl>
+				<dl class="index" id="hot" style="display:none">
+					<dd class="picline"></dd>
+															<dd class="list"><a target="_blank" title="Mysql中文乱码问题完美解决方案" href="http://www.2cto.com/database/201108/101151.html">Mysql中文乱码问题完美解决方案</a></dd>
+										<dd class="list"><a target="_blank" title="mysql TIMESTAMP（时间戳）详解" href="http://www.2cto.com/database/201205/131759.html">mysql TIMESTAMP（时间戳）详解</a></dd>
+										<dd class="list"><a target="_blank" title="linux下使用yum安装mysql" href="http://www.2cto.com/database/201207/141878.html">linux下使用yum安装mysql</a></dd>
+										<dd class="list"><a target="_blank" title="MySQL命令行登录" href="http://www.2cto.com/database/201209/154363.html">MySQL命令行登录</a></dd>
+										<dd class="list"><a target="_blank" title="mysql load data infile的使用" href="http://www.2cto.com/database/201108/99655.html">mysql load data infile的使用</a></dd>
+										<dd class="list"><a target="_blank" title="mysql字符串连接函数" href="http://www.2cto.com/database/201109/103837.html">mysql字符串连接函数</a></dd>
+										<dd class="list"><a target="_blank" title="mysql 分页查询语句数据库查询" href="http://www.2cto.com/database/201109/106128.html">mysql 分页查询语句数据库查询</a></dd>
+										<dd class="list"><a target="_blank" title="MySql中时间比较的实现" href="http://www.2cto.com/database/201204/125896.html">MySql中时间比较的实现</a></dd>
+														</dl>
+			</div>
+			<script type="text/javascript">
+			<!--
+				function m_tab(index)
+				{
+					if (index == 1){
+						document.getElementById("indexW").className = "tablinkschecked";
+						document.getElementById("hotW").className = "tablinkscheck";
+						document.getElementById("index").style.display = "block";
+						document.getElementById("hot").style.display = "none";
+					}
+					else{
+						document.getElementById("hotW").className = "tablinkschecked";
+						document.getElementById("indexW").className = "tablinkscheck";
+						document.getElementById("index").style.display = "none";
+						document.getElementById("hot").style.display = "block";
+					}
+				}
+			//-->
+			</script>
+		</div>
+		<div class="rightlineT"><div class="rxline"></div></div>
+		<div style="float:left;width:300px;background:white;padding-left:10px;height:60px">
+				<!-- 广告位：内容页右侧小广告位 -->
+			<script type="text/javascript">BAIDU_CLB_fillSlot("406189");</script><div id="BAIDU_DUP_wrapper_406189_0"><iframe id="baidu_clb_slot_iframe_406189_0" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/a" onload="BAIDU_DUP_CLB_renderFrame('406189_0')" vspace="0" hspace="0" allowtransparency="true" scrolling="no" marginwidth="0" marginheight="0" style="border:0; vertical-align:bottom; margin:0; display:block;" frameborder="0" height="60" width="300"></iframe></div><script charset="utf-8" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/ecom_002"></script>
+		</div>
+<div class="rightlineT"><div class="rxline"></div></div>
+		<div style="float:left;width:300px;background:white;padding-left:10px;height:80px">
+				<!-- 广告位：内容页右侧小广告位 -->
+			<script type="text/javascript">BAIDU_CLB_fillSlot("703749");</script><div id="BAIDU_DUP_wrapper_703749_0"><iframe id="baidu_clb_slot_iframe_703749_0" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/a" onload="BAIDU_DUP_CLB_renderFrame('703749_0')" vspace="0" hspace="0" allowtransparency="true" scrolling="no" marginwidth="0" marginheight="0" style="border:0; vertical-align:bottom; margin:0; display:block;" frameborder="0" height="80" width="300"></iframe></div><script charset="utf-8" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/ecom_006"></script>
+		</div>
+		<div class="rightlineNo"></div>
+		<div class="box_right_box">
+			<dl class="bTitle borT"><dd class="newarc"></dd></dl>
+		</div>
+		<div class="box_right_box">
+			<div class="paddingbox">
+				<dl class="index">
+					<iframe name="Iframe1" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/index_002.html" frameborder="0" height="200" width="100%">
+				您的浏览器不支持嵌入式框架，或者当前配置为不显示嵌入式框架。
+			</iframe>
+				</dl>
+			</div>
+		</div>
+                                <div class="rightlineT"><div class="rxline"></div></div>
+
+		<div style="float:left;width:300px;background:white;padding-left:10px;height:250px"><script type="text/javascript">BAIDU_CLB_fillSlot("182692");</script><div id="BAIDU_DUP_wrapper_182692_0"><iframe id="cproIframe_182692_10" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/ecom_004.html" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="true" align="center,center" frameborder="0" height="250" width="300"></iframe></div><script charset="utf-8" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/ecom_012"></script> </div>
+		<div class="box_right_line"><div class="xline"></div></div>
+		<div class="box_right_box">
+			<dl class="bTitle">
+				<dd onmousemove="m_tabs(1)" id="ArticlesW" class="tablinkschecked">文章</dd>
+				<dd onmousemove="m_tabs(2)" id="DownW" class="tablinkscheck">下载</dd>
+				<dd onmousemove="m_tabs(3)" id="BookW" class="tablinkscheck">读书</dd>
+			</dl>
+		</div>
+		<div class="box_right_box">
+			<div class="paddingbox">
+				<dl class="index" id="Articles">
+					<dd class="picline"></dd>
+															<dd class="list">·&nbsp;<a target="_blank" title="Win2000下关闭无用端口" href="http://www.2cto.com/Article/200410/1.html">Win2000下关闭无用端口</a></dd>
+										<dd class="list">·&nbsp;<a target="_blank" title="禁止非法用户登录综合设置 [win9x篇]" href="http://www.2cto.com/Article/200410/2.html">禁止非法用户登录综合设置 [win9x篇]</a></dd>
+										<dd class="list">·&nbsp;<a target="_blank" title="关上可恶的后门——消除NetBIOS隐患" href="http://www.2cto.com/Article/200410/3.html">关上可恶的后门——消除NetBIOS隐患</a></dd>
+										<dd class="list">·&nbsp;<a target="_blank" title="网络入侵检测系统" href="http://www.2cto.com/Article/200410/4.html">网络入侵检测系统</a></dd>
+										<dd class="list">·&nbsp;<a target="_blank" title="潜伏在Windows默认设置中的陷井" href="http://www.2cto.com/Article/200410/5.html">潜伏在Windows默认设置中的陷井</a></dd>
+										<dd class="list">·&nbsp;<a target="_blank" title="调制解调器的不安全" href="http://www.2cto.com/Article/200410/6.html">调制解调器的不安全</a></dd>
+										<dd class="list">·&nbsp;<a target="_blank" title="构建Windows 2000服务器的安全防护林" href="http://www.2cto.com/Article/200410/7.html">构建Windows 2000服务器的安全防护林</a></dd>
+										<dd class="list">·&nbsp;<a target="_blank" title="SQL Server 2000的安全配置" href="http://www.2cto.com/Article/200410/8.html">SQL Server 2000的安全配置</a></dd>
+														</dl>
+				<dl class="index" id="Down" style="display:none">
+					<dd class="picline"></dd>
+															<dd class="list">·&nbsp;<a target="_blank" title="Windows优化大师注册机源码" href="http://www.2cto.com/soft/200409/53.html">Windows优化大师注册机源码</a></dd>
+										<dd class="list">·&nbsp;<a target="_blank" title="Process Viewer 汉化版" href="http://www.2cto.com/soft/200409/62.html">Process Viewer 汉化版</a></dd>
+										<dd class="list">·&nbsp;<a target="_blank" title="Aspcode动画教程" href="http://www.2cto.com/soft/200409/79.html">Aspcode动画教程</a></dd>
+										<dd class="list">·&nbsp;<a target="_blank" title="WIN 2000服务器防止ICMP数据包攻击教程" href="http://www.2cto.com/soft/200409/128.html">WIN 2000服务器防止ICMP数据包攻击教程</a></dd>
+										<dd class="list">·&nbsp;<a target="_blank" title="实现网络隐身的简单方法" href="http://www.2cto.com/soft/200409/129.html">实现网络隐身的简单方法</a></dd>
+										<dd class="list">·&nbsp;<a target="_blank" title="手工进行克隆帐号" href="http://www.2cto.com/soft/200409/130.html">手工进行克隆帐号</a></dd>
+										<dd class="list">·&nbsp;<a target="_blank" title="用W32DASM破解网页合并器的密码" href="http://www.2cto.com/soft/200409/134.html">用W32DASM破解网页合并器的密码</a></dd>
+										<dd class="list">·&nbsp;<a target="_blank" title="注册表操作动画教程" href="http://www.2cto.com/soft/200409/138.html">注册表操作动画教程</a></dd>
+														</dl>
+				<dl class="index" id="Book" style="display:none">
+					<dd class="picline"></dd>
+															<dd class="list">·&nbsp;<a target="_blank" title="黑客攻防技术宝典：Web实战篇（第2版）" href="http://book.2cto.com/201206/20.html">黑客攻防技术宝典：Web实战篇（第2版）</a></dd>
+										<dd class="list">·&nbsp;<a target="_blank" title="超级网管员——网络安全" href="http://book.2cto.com/201207/43.html">超级网管员——网络安全</a></dd>
+										<dd class="list">·&nbsp;<a target="_blank" title="代码大全（第二版）" href="http://book.2cto.com/201207/64.html">代码大全（第二版）</a></dd>
+										<dd class="list">·&nbsp;<a target="_blank" title="软件之道:软件开发争议问题剖析" href="http://book.2cto.com/201207/68.html">软件之道:软件开发争议问题剖析</a></dd>
+										<dd class="list">·&nbsp;<a target="_blank" title="CSS插件工具箱" href="http://book.2cto.com/201207/78.html">CSS插件工具箱</a></dd>
+										<dd class="list">·&nbsp;<a target="_blank" title="CSS入门经典(第3版)" href="http://book.2cto.com/201207/139.html">CSS入门经典(第3版)</a></dd>
+										<dd class="list">·&nbsp;<a target="_blank" title="C#并行编程高级教程：精通.NET 4 Parallel Extension" href="http://book.2cto.com/201207/169.html">C#并行编程高级教程：精通.NET 4 Pa</a></dd>
+										<dd class="list">·&nbsp;<a target="_blank" title="CMMI+敏捷整合开发" href="http://book.2cto.com/201207/190.html">CMMI+敏捷整合开发</a></dd>
+														</dl>
+			</div>
+			<script type="text/javascript">
+			<!--
+				function m_tabs(index)
+				{
+					if (index == 1){
+						document.getElementById("ArticlesW").className = "tablinkschecked";
+						document.getElementById("DownW").className = "tablinkscheck";
+						document.getElementById("BookW").className = "tablinkscheck";
+						document.getElementById("Articles").style.display = "block";
+						document.getElementById("Down").style.display = "none";
+						document.getElementById("Book").style.display = "none";
+					}
+					else if (index == 2){
+						document.getElementById("ArticlesW").className = "tablinkscheck";
+						document.getElementById("DownW").className = "tablinkschecked";
+						document.getElementById("BookW").className = "tablinkscheck";
+						document.getElementById("Articles").style.display = "none";
+						document.getElementById("Down").style.display = "block";
+						document.getElementById("Book").style.display = "none";
+					}
+					else{
+						document.getElementById("ArticlesW").className = "tablinkscheck";
+						document.getElementById("DownW").className = "tablinkscheck";
+						document.getElementById("BookW").className = "tablinkschecked";
+						document.getElementById("Articles").style.display = "none";
+						document.getElementById("Down").style.display = "none";
+						document.getElementById("Book").style.display = "block";
+					}
+				}
+			//-->
+			</script>
+		</div>
+		<div class="rightlineNo"></div>
+		<div class="box_right_box">
+			<dl class="bTitle borT"><dd class="newdown"></dd></dl>
+		</div>
+		<div class="box_right_box">
+			<div class="paddingbox">
+				<dl class="index">
+																				<dd class="picline"></dd>
+															<dd class="list">&#9642;&nbsp;<a target="_blank" href="http://www.2cto.com/database/201207/141380.html">mysql数据库(基础)笔记</a></dd>
+					</dl>
+			</div>
+			<div class="xline"></div>
+		</div>
+		<div class="box_right_line"><div class="xline"></div></div>
+		<div style="float:left;width:300px;background:white;padding-left:10px;height:250px">
+			<script type="text/javascript">BAIDU_CLB_fillSlot("771043");</script><div style="width: 300px; height: 250px; display: inline-block; z-index: 2147483646;" height="250px" width="300px" id="BAIDU_DUP_wrapper_771043_0"><iframe id="cproIframe_771043" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/ecom_005.html" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="true" align="center,center" frameborder="0" height="250" width="300"></iframe></div><script charset="utf-8" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/ecom_013"></script><script charset="utf-8" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/xuanting.js"></script></div>
+		<div class="box_right_line"><div class="xline"></div></div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+<!--
+function showLogin(){
+	window.art.dialog({id:'Login',iframe:'http://www.2cto.com/index.php?m=member&c=index&a=login&tupe=mini', title:'快捷登陆', width:'450', height:'310', lock:true}, function(){var d = window.art.dialog({id:'Login'}).data.iframe;var form = d.document.getElementById('dosubmit');form.click();return false;}, function(){window.art.dialog({id:'Login'}).close()});void(0);
+}
+function add_favorite(title) {
+		$.getJSON('http://www.2cto.com/api.php?op=add_favorite&title='+encodeURIComponent(title)+'&url='+encodeURIComponent(location.href)+'&'+Math.random()+'&callback=?', function(data){
+			if(data.status==1)	{
+				$("#favorite").html('收藏成功');
+			} else {
+				alert('请登陆');
+				window.location.href='http://home.2cto.com/?forward='+encodeURIComponent(location.href);
+			}
+		});
+	}
+//-->
+</script>
+<script language="JavaScript" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/api.html"></script>
+<!-- 广告位：右侧漂浮 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("137946");</script><div id="BAIDU_DUP_wrapper_137946_0"></div><script charset="utf-8" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/ecom_004"></script><div id="cproIframe2002holder" style="padding: 0px; display: block; visibility: visible; border: medium none; background: none repeat scroll 0% 0% transparent; float: none; overflow: hidden; position: fixed; z-index: 2147483646; width: 130px; height: 360px; right: 7px; top: 150px;"><div style="position: absolute; top: 275px; left: 0px; cursor: pointer; width: 130px; height: 28px; z-index: 100; opacity: 0; background-color: rgb(153, 153, 153);" id="cproIframe2002CloseBtnWrap"></div><div style="position: absolute; width: 130px; height: 20px; top: 280px; left: 0px; cursor: pointer; background-color: rgb(153, 153, 153); color: rgb(255, 255, 255); font-size: 12px; font-family: 微软雅黑; text-align: center; line-height: 20px;" id="cproIframe2002CloseBtn">关闭</div><div style="width: 130px; height: 360px; overflow: hidden;"><div style="display:none">-</div><iframe id="cproIframe2002" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/ecom_006.html" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="true" align="center,center" frameborder="0" height="360" width="130"></iframe></div></div><div id="cproIframe2001holder" style="padding: 0px; display: block; visibility: visible; border: medium none; background: none repeat scroll 0% 0% transparent; float: none; overflow: hidden; position: fixed; z-index: 2147483646; width: 130px; height: 360px; left: 7px; top: 150px;"><div style="position: absolute; top: 275px; left: 0px; cursor: pointer; width: 130px; height: 28px; z-index: 100; opacity: 0; background-color: rgb(153, 153, 153);" id="cproIframe2001CloseBtnWrap"></div><div style="position: absolute; width: 130px; height: 20px; top: 280px; left: 0px; cursor: pointer; background-color: rgb(153, 153, 153); color: rgb(255, 255, 255); font-size: 12px; font-family: 微软雅黑; text-align: center; line-height: 20px;" id="cproIframe2001CloseBtn">关闭</div><div style="width: 130px; height: 360px; overflow: hidden;"><div style="display:none">-</div><iframe id="cproIframe2001" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/ecom_007.html" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="true" align="center,center" frameborder="0" height="360" width="130"></iframe></div></div><script charset="utf-8" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/floatad.js"></script>
+
+<div style="width:980px;padding:8px 0px 8px 0px;margin:auto"><script type="text/javascript">BAIDU_CLB_fillSlot("333829");</script><div id="BAIDU_DUP_wrapper_333829_0"><iframe id="baidu_clb_slot_iframe_333829_0" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/a" onload="BAIDU_DUP_CLB_renderFrame('333829_0')" vspace="0" hspace="0" allowtransparency="true" scrolling="no" marginwidth="0" marginheight="0" style="border:0; vertical-align:bottom; margin:0; display:block;" frameborder="0" height="60" width="980"></iframe></div><script charset="utf-8" src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/ecom_008"></script></div>
+
+
+<div class="foot">
+<p>
+<a target="_blank" href="http://www.2cto.com/about">关于我们</a> |
+<a target="_blank" href="http://www.2cto.com/about/contact.html">联系我们</a> |
+<a target="_blank" href="http://www.2cto.com/about/ads.html">广告服务</a> |
+<a target="_blank" href="http://www.2cto.com/about/touzi.html">投资合作</a> |
+<a target="_blank" href="http://www.2cto.com/about/Copyright.html">版权申明</a> |
+<a target="_blank" href="http://www.2cto.com/about/faq.html">在线帮助</a> |
+<a target="_blank" href="http://www.2cto.com/about/map.html">网站地图</a> |
+<a target="_blank" href="http://www.2cto.com/about/tg.html">作品发布</a> |
+<a target="_blank" href="http://vip.2cto.com/"><span style="COLOR: red">Vip技术培训</span></a>
+<br>
+<span class="style4">版权所有: <a href="http://www.2cto.com/" target="_blank">红黑联盟</a>--致力于做最好的IT技术学习网站<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F1898984a3d796e86ad73ad1f4bc9f240' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/h.asc" type="text/javascript"></script>    
+</span>
+</p></div>
+
+
+<div>            <div id="changyan_floatbar_wrapper">
+                <div id="bottombar-wrap-w" style="bottom:0;">
+                    <div class="close-w"><a node-type="close" href="javascript:;">关闭</a></div>
+                    <div class="wrap-cont-w">
+                        <div class="cont-minwidth-w">
+                            <div class="cont-comment-w">
+                                <span class="comment-text-w">立刻说两句吧！</span>
+                                <a class="comment-link-w" href="javascript:;">查看<i>0</i>条评论</a>
+                            </div>
+                            <div class="cont-form-w">
+                                <div node-type="post-form" class="form-text-w">
+                                    <span class="btn-load-bf"></span>
+                                    <a class="button-w" href="javascript:void(0)">按钮</a>
+                                    <input value="来说两句吧..." class="text-w" type="text">
+                                </div>
+                                <!-- 广告 -->
+                                <!--
+                                <div class="activity-entry-w">
+                                    <div class="entry-text-w">发表评论即可赢取奥迪发表评论即可赢取奥迪</div>
+                                    <div class="entry-img-w"><img src="" width="44" height="32" alt=""/></div>
+                                </div>
+                                -->
+                                <!-- 广告 end -->
+                            </div>
+                        </div>
+                        <!-- login  Begin -->
+                        <div class="cont-login-w cont-login-new">
+                            <div class="user_func">
+                                <ul class="clear func_wrap">
+                                                                        <li node-type="login-btn" class="func_login"><a href="javascript:;">登录</a></li>
+                                    <li node-type="fav-btn" class="func_collect"><a href="javascript:;"><i class="ico"></i>收藏</a></li>
+                                    <li node-type="fav-btn" data-val="faved" class="func_collect" style="display: none;"><span>已收藏</span></li>
+                                    <li node-type="share-btn" class="func_share"><a href="javascript:;"><i class="ico"></i>分享</a></li>
+                                </ul>
+                                <!-- 登录浮窗 Begin -->
+                                <div node-type="login-list" class="func_select login_select" style="display: none;">
+                                    <ul class="clear">
+                                                                                <li><a data-key="qq" class="icon-qq-w" href="javascript:;">腾讯</a></li>
+                                                                                <li><a data-key="sina" class="icon-sina-w" href="javascript:;">新浪</a></li>
+                                        </ul>
+                                    <div class="arrow"></div>
+                                </div>
+                                <!-- 登录浮窗 End   -->
+                                <!-- 分享浮窗 Begin -->
+                                <div node-type="share-list" class="func_select share_select" style="display: none;">
+                                    <ul class="clear">
+                                        <li><a data-key="renren" class="icon-renren-w" href="javascript:;">人人网</a></li>
+                                        <li><a data-key="qzone" class="icon-qzone-w" href="javascript:;">QQ空间</a></li>
+                                        <li><a data-key="weixin" class="icon-weixin-w" href="javascript:;">腾讯微信</a></li>
+                                        <li><a data-key="sina" class="icon-sina-w" href="javascript:;">新浪</a></li>
+                                    </ul>
+                                    <div class="arrow"></div>
+                                </div>
+                                <!-- 分享浮窗 End   -->
+                                <!-- 分享浮窗-二维码 Begin -->
+                                <div node-type="weixin-code" class="two_dimension" style="display: none;">
+                                    <div class="dimension_wrap"><img src="Mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20-%20mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%8F%E7%9B%AE%20-%20%E7%BA%A2%E9%BB%91%E8%81%94%E7%9B%9F_files/a" alt="" height="90" width="90">
+                                        <div class="dimension_close"><a href="javascript:;"></a></div>
+                                    </div>
+                                    <p class="dimension_text">用微信扫描二维码即可分享此网页至好友和朋友圈</p>
+                                </div>
+                                <!-- 分享浮窗-二维码 End   -->
+                            </div>
+                        </div>
+                        <!-- login  End -->
+                        
+                        <!-- login old Begin -->
+                        <div class="cont-login-w cont-login-w-old" style="display: none;">
+                                                        <div class="logout-wrap-w">
+                                <ul node-type="login-list" class="floatbar_platform post-login-w">
+                                    <li class="first-w"><span>登录：</span></li>
+                                                                        <li><a data-key="qq" class="icon-qq-w" href="javascript:;"></a></li>
+                                                                        <li><a data-key="sina" class="icon-sina-w" href="javascript:;"></a></li>
+                                    </ul>
+                            </div>
+                            </div>
+                        <!-- login old End -->
+                        
+                    </div>
+                </div>
+            </div>
+        </div></body></html>
