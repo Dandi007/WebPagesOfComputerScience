@@ -1,0 +1,17 @@
+
+    var douban_badge_width;
+    var douban_badge_font;
+    var douban_style;
+
+    var dou_width = douban_badge_width?'width: '+douban_badge_width+';':'';
+    var dou_fnt = douban_badge_font?'font: '+douban_badge_font+';':'';
+    var dou_style= douban_style? douban_style:'';
+    var dou_bdr= '';
+
+    document.write(decodeURIComponent('%3Cdiv%20style%3D%22'+dou_style+'%22%3E%3Ctable%20cellspacing%3D%220%22%20cellpadding%3D%224%22%20style%3D%22'+dou_width+'%3E'));
+    document.write(decodeURIComponent('%3Ctr%20align%3D%22center%22%3E%3Ctd%20style%3D%22'+dou_fnt+'%22%3E%3Ca%20href%3D%22http%3A//book.douban.com/subject/1229959/%22%20title%3D%22The%20Art%20of%20UNIX%20Programming%0A%0AThe%20Art%20of%20UNIX%20Programming%22%20target%3D_blank%3E%3Cimg%20src%3D%22http%3A//img3.douban.com/mpic/s1445584.jpg%22%20border%3D%220%22/%3E%3C/a%3E%3C/td%3E%3Ctd%20style%3D%22'+dou_fnt+'%22%3E%3Ca%20href%3D%22http%3A//book.douban.com/subject/1432042/%22%20title%3D%22Code%20Complete%0A%0A%22%20target%3D_blank%3E%3Cimg%20src%3D%22http%3A//img3.douban.com/mpic/s7057342.jpg%22%20border%3D%220%22/%3E%3C/a%3E%3C/td%3E%3C/tr%3E'));
+    document.write(decodeURIComponent('%3Ctr%20align%3D%22center%22%3E%3Ctd%20style%3D%22'+dou_fnt+'%22%3E%3Ca%20href%3D%22http%3A//book.douban.com/subject/3012828/%22%20title%3D%22JAVASCRIPT%E8%AF%AD%E8%A8%80%E7%B2%BE%E9%AB%93%E4%B8%8E%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5%0A%0A%22%20target%3D_blank%3E%3Cimg%20src%3D%22http%3A//img3.douban.com/mpic/s2970031.jpg%22%20border%3D%220%22/%3E%3C/a%3E%3C/td%3E%3Ctd%20style%3D%22'+dou_fnt+'%22%3E%3Ca%20href%3D%22http%3A//book.douban.com/subject/3267575/%22%20title%3D%22Framework%20Design%20Guidelines%0A%0A%22%20target%3D_blank%3E%3Cimg%20src%3D%22http%3A//img3.douban.com/mpic/s3325415.jpg%22%20border%3D%220%22/%3E%3C/a%3E%3C/td%3E%3C/tr%3E'));
+    document.write(decodeURIComponent('%3Ctr%20align%3D%22center%22%3E%3Ctd%20style%3D%22'+dou_fnt+'%22%3E%3Ca%20href%3D%22http%3A//book.douban.com/subject/1854516/%22%20title%3D%22Applying%20Domain-Driven%20Design%20and%20Patterns%0A%0A%22%20target%3D_blank%3E%3Cimg%20src%3D%22http%3A//img5.douban.com/mpic/s1783009.jpg%22%20border%3D%220%22/%3E%3C/a%3E%3C/td%3E%3Ctd%20style%3D%22'+dou_fnt+'%22%3E%3Ca%20href%3D%22http%3A//book.douban.com/subject/1418618/%22%20title%3D%22Domain-Driven%20Design%0A%0A%22%20target%3D_blank%3E%3Cimg%20src%3D%22http%3A//img5.douban.com/mpic/s4252297.jpg%22%20border%3D%220%22/%3E%3C/a%3E%3C/td%3E%3C/tr%3E'));
+
+    document.write(decodeURIComponent('%3C/table%3E%3C/div%3E'));
+    

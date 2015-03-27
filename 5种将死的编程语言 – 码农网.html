@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)http://www.codeceo.com/article/5-die-programming-language.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<title>5种将死的编程语言 – 码农网</title>
+<link rel="stylesheet" id="wp-pagenavi-css" href="./5种将死的编程语言 – 码农网_files/pagenavi-css.css" type="text/css" media="all">
+<script async="" type="text/javascript" src="http://www.gstatic.com/pub-config/ca-pub-3171310320403916.js"></script><script type="text/javascript">
+var duoshuoQuery = {"short_name":"codeceo","sso":{"login":"http:\/\/www.codeceo.com\/wp-login.php?action=duoshuo_login","logout":"http:\/\/www.codeceo.com\/wp-login.php?action=logout&_wpnonce=35a2864945"},"theme":"default","stylePatch":"wordpress\/"};
+duoshuoQuery.sso.login += '&redirect_to=' + encodeURIComponent(window.location.href);
+duoshuoQuery.sso.logout += '&redirect_to=' + encodeURIComponent(window.location.href);
+</script>
+<script type="text/javascript" src="./5种将死的编程语言 – 码农网_files/embed.js" charset="UTF-8" async="async"></script>
+<link rel="prev" title="浅谈SQL语句的执行过程" href="http://www.codeceo.com/article/sql-execute-process.html">
+<link rel="next" title="在异步Java代码中解救已检测异常" href="http://www.codeceo.com/article/java-error-detect.html">
+<link rel="canonical" href="./5种将死的编程语言 – 码农网_files/5种将死的编程语言 – 码农网.html">
+<link rel="shortlink" href="http://www.codeceo.com/?p=8160">
+<meta name="keywords" content="编程语言, 其他, 编程开发">
+<meta name="description" content="现在的开发人员都趋向于使用新的编程语言，那么旧的编程语言呢？它们的前途一般是这样两种：仍然可以使用，但逐渐不受大家欢迎；直接完全死去。和之前的十佳最受欢迎的编程语言相反，本文我们预测以下这几种编程语言面临着死亡威胁：   Perl 曾几何时，几乎每个人都在使用Perl语言编程。但是那些经常使用的人慢慢地发现，关于这个Perl语言似乎总是有点不对劲。至少我知道有这么个叫做“piecemeal”的编程语言，它的创造者似乎就只是将这个功能堆在..">
+<link rel="stylesheet" href="http://www.codeceo.com/wp-content/themes/d-simple/style.css" media="all">
+<!--[if lt IE 9]><script src="http://www.codeceo.com/wp-content/themes/d-simple/js/html5.js"></script><![endif]-->
+<script src="./5种将死的编程语言 – 码农网_files/jquery.min.js"></script>
+
+<style type="text/css">
+
+.plink a {
+margin-right: 16px;
+display: inline-block;
+text-transform: uppercase;
+padding: 1em 1.5em 0.75em;
+border-radius: 2px;
+font-weight: bold;
+border: none;
+color: #fff !important;
+text-decoration: none;
+font-family: 'Open Sans Condensed',sans-serif;
+font-size: 14px;
+line-height: 1;
+cursor: pointer;
+}
+.plink a:hover{
+opacity:0.9;
+}
+.plink .phome{
+font-size: 16px;
+padding: 1em 2em 1em;
+background-color: #a5d16d;
+box-shadow: 0 0 5px #a4cf6c inset, 0 1px 1px #eee;
+}
+.plink .pdoc,.plink .pdownload{
+font-size: 16px;
+padding: 1em 2em 1em;
+background-color: #93d0ea;
+box-shadow: 0 0 5px #8fcde7 inset, 0 1px 1px #eee;
+}
+
+.dlink{
+text-align:center;
+}
+.dlink a{
+font-size:18px;
+}
+.trap-link{
+display:none;
+}
+
+
+.d-links{
+text-align:center;
+}
+.d-links a {
+margin-right: 16px;
+margin-bottom: 10px;
+display: inline-block;
+text-transform: uppercase;
+padding: 1em 1.5em 0.75em;
+border-radius: 2px;
+font-weight: bold;
+border: none;
+color: #fff !important;
+text-decoration: none;
+font-family: 'Open Sans Condensed',sans-serif;
+font-size: 14px;
+line-height: 1;
+cursor: pointer;
+}
+.d-links a:hover{
+opacity:0.9;
+}
+.d-links .demo{
+font-size: 18px;
+padding: 1.2em 2.5em 1em;
+background-color: #a5d16d;
+box-shadow: 0 0 5px #a4cf6c inset, 0 1px 1px #eee;
+}
+.d-links .download{
+font-size: 18px;
+padding: 1.2em 2.5em 1em;
+background-color: #93d0ea;
+box-shadow: 0 0 5px #8fcde7 inset, 0 1px 1px #eee;
+}
+
+
+</style>
+<link type="text/css" rel="stylesheet" href="./5种将死的编程语言 – 码农网_files/embed.default.css"><script src="./5种将死的编程语言 – 码农网_files/logger.js"></script><link href="./5种将死的编程语言 – 码农网_files/bdsstyle.css" rel="stylesheet" type="text/css"></head>
+<body class="single single-post postid-8160 single-format-standard"><iframe frameborder="0" style="display: none;"></iframe><div id="bdshare_s" style="display: block;"><iframe id="bdsIfr" style="position:absolute;display:none;z-index:9999;" frameborder="0"></iframe><div id="bdshare_l" style="display: none;"><div id="bdshare_l_c"><h6>分享到</h6><ul><li><a href="http://www.codeceo.com/article/5-die-programming-language.html#" class="bds_mshare mshare">一键分享</a></li><li><a href="http://www.codeceo.com/article/5-die-programming-language.html#" class="bds_qzone qqkj">QQ空间</a></li><li><a href="http://www.codeceo.com/article/5-die-programming-language.html#" class="bds_tsina xlwb">新浪微博</a></li><li><a href="http://www.codeceo.com/article/5-die-programming-language.html#" class="bds_bdysc bdysc">百度云收藏</a></li><li><a href="http://www.codeceo.com/article/5-die-programming-language.html#" class="bds_renren rrw">人人网</a></li><li><a href="http://www.codeceo.com/article/5-die-programming-language.html#" class="bds_tqq txwb">腾讯微博</a></li><li><a href="http://www.codeceo.com/article/5-die-programming-language.html#" class="bds_bdxc bdxc">百度相册</a></li><li><a href="http://www.codeceo.com/article/5-die-programming-language.html#" class="bds_kaixin001 kxw">开心网</a></li><li><a href="http://www.codeceo.com/article/5-die-programming-language.html#" class="bds_tqf txpy">腾讯朋友</a></li><li><a href="http://www.codeceo.com/article/5-die-programming-language.html#" class="bds_tieba bdtb">百度贴吧</a></li><li><a href="http://www.codeceo.com/article/5-die-programming-language.html#" class="bds_douban db">豆瓣网</a></li><li><a href="http://www.codeceo.com/article/5-die-programming-language.html#" class="bds_tsohu shwb">搜狐微博</a></li><li><a href="http://www.codeceo.com/article/5-die-programming-language.html#" class="bds_bdhome bdhome">百度新首页</a></li><li><a href="http://www.codeceo.com/article/5-die-programming-language.html#" class="bds_sqq sqq">QQ好友</a></li><li><a href="http://www.codeceo.com/article/5-die-programming-language.html#" class="bds_thx thx">和讯微博</a></li><li><a href="http://www.codeceo.com/article/5-die-programming-language.html#" class="bds_more">更多...</a></li></ul><p><a href="http://www.codeceo.com/article/5-die-programming-language.html#" class="goWebsite">百度分享</a></p></div></div></div>
+<header class="header">
+	<div class="central">
+		<a class="logo" href="http://www.codeceo.com/" title="码农网 - 程序员编程资料和编程经验分享平台">码农网</a>
+		<ul class="nav">
+			<li id="menu-item-10" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10"><a href="http://www.codeceo.com/article/category/news">资讯</a></li>
+<li id="menu-item-226" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-226"><a href="http://www.codeceo.com/article/category/develop">编程开发</a></li>
+<li id="menu-item-9" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9"><a href="http://www.codeceo.com/article/category/programmer">程序员人生</a></li>
+<li id="menu-item-225" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-225"><a href="http://www.codeceo.com/article/category/humor">幽默趣味</a></li>
+<li id="menu-item-5237" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5237"><a href="http://www.codeceo.com/article/category/weekly">《快乐码农》</a></li>
+<li id="menu-item-4520" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4520"><a href="http://www.codeceo.com/article/category/project">开源软件</a></li>
+		</ul>
+		
+
+
+
+
+
+		<form method="get" class="search-form" action="http://www.codeceo.com/">
+			<input class="search-input" name="s" type="text" placeholder="输入关键字搜索" autofocus="" x-webkit-speech=""><input class="btn btn-primary search-submit" type="submit" value="搜索">
+		</form>
+
+	</div>
+</header>
+<section class="focus">
+	<div class="central">
+		<script type="text/javascript">
+    /*码农网菜单下方链接*/
+    var cpro_id = "u1773859";
+</script>
+<script src="./5种将死的编程语言 – 码农网_files/c.js" type="text/javascript"></script><div id="BAIDU_DUP_wrapper_u1773859_0"><iframe id="cproIframe_u1773859_1" width="1024" height="40" src="./5种将死的编程语言 – 码农网_files/acom.html" align="center,center" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" allowtransparency="true"></iframe></div><script charset="utf-8" src="./5种将死的编程语言 – 码农网_files/acom"></script>
+	</div>
+</section>
+<div id="cproIframe2004holder" style="padding: 0px; display: block; visibility: visible; border: none; float: none; overflow: hidden; position: fixed; z-index: 2147483647; width: 260px; height: 235px; right: 7px; bottom: 0px; background: none;"><div id="cproIframe2004CloseBtnWrap" style="position: absolute; top: 0px; left: 199px; cursor: pointer; width: 61px; height: 20px; z-index: 100; opacity: 0; margin: 0px; background-color: rgb(153, 153, 153);"></div><div id="cproIframe2004CloseBtn" style="position: absolute; width: 61px; height: 20px; top: 0px; left: 199px; margin: 0px 0px 5px; padding: 0px; cursor: pointer; overflow: hidden;"><div style="width:40px;height:20px;background-color:#999999;color:#fff;float:left;margin-right:1px;font-size:12px;font-family:微软雅黑;text-align: center;line-height:20px;">关闭</div><a style="maring:0;padding:0;display:inline-block;border:none;overflow:hidden;height:20px;line-height:20px;cursor:pointer;width:20px;background:url(&#39;http://cpro.baidustatic.com/cpro/ui/noexpire/img/2.0.1/xuanfu_close.png&#39;) no-repeat 0 0;margin-bottom:3px;float:left"></a></div><div style="width: 250px; height: 200px; overflow: hidden; position: absolute; left: 0px; top: 25px; padding: 4px; border: 1px solid rgb(172, 172, 172);"><div style="display:none">-</div><iframe id="cproIframe2004" src="./5种将死的编程语言 – 码农网_files/acom(6).html" width="250" height="200" align="center,center" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" allowtransparency="true"></iframe></div></div><section class="central container"><div class="content-wrap">
+	<div class="content">
+		<article class="article"><div class="trap-link"><a href="./5种将死的编程语言 – 码农网_files/5种将死的编程语言 – 码农网.html">http://www.codeceo.com/article/5-die-programming-language.html</a></div></article>
+		<div class="article">
+			<header class="article-header">
+				<h1 class="article-title"><a href="./5种将死的编程语言 – 码农网_files/5种将死的编程语言 – 码农网.html" title="5种将死的编程语言 - 码农网">5种将死的编程语言</a></h1>
+				<p class="article-meta"></p>
+				<p class="article-meta">
+					2015-01-02 &nbsp;&nbsp; 分类：<a href="http://www.codeceo.com/article/category/develop/other" title="查看 其他 中的全部文章" rel="category tag">其他</a>、<a href="http://www.codeceo.com/article/category/develop" title="查看 编程开发 中的全部文章" rel="category tag">编程开发</a><a class="comm" href="http://www.codeceo.com/article/5-die-programming-language.html#comments" title="查看 5种将死的编程语言 的评论">8人评论</a> 				</p>
+<div class="share"><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"><span class="share-tit">分享到：</span><a class="bds_qzone" title="分享到QQ空间" href="http://www.codeceo.com/article/5-die-programming-language.html#"></a><a class="bds_tqq" title="分享到腾讯微博" href="http://www.codeceo.com/article/5-die-programming-language.html#"></a><a class="bds_tsina" title="分享到新浪微博" href="http://www.codeceo.com/article/5-die-programming-language.html#"></a><a class="bds_renren" title="分享到人人网" href="http://www.codeceo.com/article/5-die-programming-language.html#"></a><a class="bds_kaixin001" title="分享到开心网" href="http://www.codeceo.com/article/5-die-programming-language.html#"></a><a class="bds_tqf" title="分享到腾讯朋友" href="http://www.codeceo.com/article/5-die-programming-language.html#"></a><span class="bds_more">更多</span><a class="shareCount" href="http://www.codeceo.com/article/5-die-programming-language.html#" title="累计分享10次">10</a></div></div>			</header>
+
+						
+<div class="article-entry">
+<p><strong>本文是<a title="码农网" href="http://www.codeceo.com/" target="_blank">码农网</a>原创翻译，转载请看清文末的转载要求，谢谢合作！</strong></p>
+
+
+				<p>现在的开发人员都趋向于使用新的编程语言，那么旧的编程语言呢？它们的前途一般是这样两种：仍然可以使用，但逐渐不受大家欢迎；直接完全死去。和之前的<a href="http://www.codeceo.com/article/10-best-languages-to-learn.html" target="_blank">十佳最受欢迎的编程语言</a>相反，本文我们预测以下这几种编程语言面临着死亡威胁：</p>
+<p><img class="alignnone size-full wp-image-8161 aligncenter" title="5-die-programming-language" src="./5种将死的编程语言 – 码农网_files/5-die-programming-language.jpg" alt="" width="500" height="335"></p>
+<h2>Perl</h2>
+<p>曾几何时，几乎每个人都在使用Perl语言编程。但是那些经常使用的人慢慢地发现，关于这个Perl语言似乎总是有点不对劲。至少我知道有这么个叫做“piecemeal”的编程语言，它的创造者似乎就只是将这个功能堆在另一个功能上面而已，并没有好好考虑将它们结合在一起。</p>
+<p>事实上，甚至是它的创造者也不得不承认这种编程语言是有问题的。经过完整地改造之后，现在的开发工作开始倾向于使用Perl6，这个大概是在2000年的时候。至于Perl？俨然已经销声匿迹了！所以完全没有必要去学习它了。顺便说一句，下面这个“Goodbye World”就是用Perl写的：</p>
+<blockquote><p><em>#!/usr/bin/perl<br>
+</em><em>print “Content-type: text/html\n\n”;<br>
+</em><em>print “Goodbye, world!\n”;</em></p></blockquote>
+<p>上面这个例子会出来一个网页。现在的Perl，由于可以作为CGI脚本语言，所以使用的最广泛的是在生成web页面上。但是为了适应时代的变化，我们最好还是将Perl语言“弃之如敝履”。</p>
+<h2>Ruby</h2>
+<p>关于Ruby，可以这么唱“十年之后，我不认识你你不属于我……”。因为就在10年前，Ruby语言可谓是风靡一时。它出生于1995年，5年左右达到它的鼎盛时期。如果你经常使用的话，绝对会义无反顾地爱上它。但是，像我们这些学着C语言风格长大的孩子在学习Ruby时往往会觉得有点囧。</p>
+<p>下面是用Ruby写的“Goodbye World”：</p>
+<blockquote><p><em>puts ‘Bye bye, Miss American Ruby! Drove my Chevy to the Levie…’<br>
+</em><em>puts ’2011 was the day that Ruby died, yeah…’</em></p></blockquote>
+<p>下面是一个用于计算阶乘的例子：</p>
+<blockquote><p><em>def fact(n)<br>
+</em><em>&nbsp; if n == 0<br>
+</em><em>&nbsp; &nbsp; 1<br>
+</em><em>&nbsp; else<br>
+</em><em>&nbsp; &nbsp; n * fact(n-1)<br>
+</em><em>&nbsp; end<br>
+</em><em>end<br>
+</em><em>puts fact(ARGV[0].to_i)</em></p></blockquote>
+<p>我测试了这个例子，来计算1000的阶乘。下面是结果（由于篇幅限制，中间略过了2569个数字）：</p>
+<blockquote><p><em>ruby fact.rb 1000<br>
+</em><em>40238726007709377354370243392300…0000000</em></p></blockquote>
+<p>从各方面来看，Ruby都很好，几乎是一片赞誉声……除了Twitter。&nbsp;在2011年4月，Twitter宣称他们已经将几乎大部分的代码都改写过了，以便不必使用Ruby和它的web框架——Ruby on Rails，据他们所说这个平台非常之低效。不过，我想说的是，也正是那一天起，Ruby开始走下坡路，使用的人数也是越来越少。</p>
+<h2>Visual Basic.NET</h2>
+<p>十年前，我应聘到一个需要重写大量代码的公司，名字我已经忘记了，主要工作就是将VB6转换为Visual basic.NET。大概就只干了一两个月吧，我就跳槽了：真心太痛苦了。</p>
+<p>微软钟爱于BASIC编程语言的扩展可以一路追溯到1991年，那时他们刚刚采购了来自Alan Cooper的一个非常酷（对于那个时候而言）的可视化编程设计。Alan Cooper初期使用的是别的编程语言，但是比尔盖茨让他换成BASIC语言，因为盖茨认为那是当时最为简单的编程语言。于是乎，大名鼎鼎的Visual Basic，就从BASIC中衍生出来——对象这一概念以及新的编程技术问世了。</p>
+<p>后面又发生了一些很有意思的事情。Borland Delphi的创造引领者，Anders Hejlsberg也到微软工作，并且引领创建了一个新的编程语言——C＃。这种编程语言非常类似于Java语言。刚开始的学习或许有点难，但是一旦上手，你绝对会对它爱不释手。C＃很快就成为了微软的旗舰编程语言。现在的话，在软件行业中，有很多很多需要C＃的工作岗位，不少都是高薪聘用的。</p>
+<p>虽然针对自己的CLR运行，微软创建了C＃，但是它的工程师们另外还创建了一个盖茨深爱的BASIC语言版本，命名为Visual Basic.NET。该编程语言借用了BASIC语言的语法，但是它的编码方法却与C＃相似。虽然Visual Basic.NET也在发展，但是优胜劣汰总是不可避免的——大家都选择了C＃，于是Visual Basic.NET就成为了明日黄花。</p>
+<p>下面是摘自微软网页上的一段Visual Basic.NET程序：</p>
+<blockquote><p><em>‘ Allow easy reference to the System namespace classes.<br>
+</em><em>Imports System<br>
+</em><em>‘ This module houses the application’s entry point.<br>
+</em><em>Public Module modmain<br>
+</em><em>&nbsp;&nbsp; ‘ Main is the application’s entry point.<br>
+</em><em>&nbsp;&nbsp; Sub Main()<br>
+</em><em>&nbsp;&nbsp; &nbsp; ‘ Write text to the console.<br>
+</em><em>&nbsp;&nbsp; &nbsp; Console.WriteLine (“Hello World using Visual Basic!”)<br>
+</em><em>&nbsp;&nbsp; End Sub<br>
+</em><em>End Module</em></p></blockquote>
+<p>（这里的“Hello World”也可以替换成“Goodbye World”，这个没关系。）</p>
+<h2>Adobe Flash和AIR</h2>
+<p>从技术上讲，这些都是平台，而非编程语言。我之所以将它们包含进来是因为如果你想要使用它们，就必须安装Adobe自己的ECMAScript版本，即ActionScript。&nbsp;ActionScript是JavaScript（当前最流行的编程语言之一，因为它能用于所有的浏览器）的一个近亲。&nbsp;ActionScript在ECMAScript（这是JavaScript实现标准的官方名称）中增加了一些细节；但是除了Adobe Flash，其他地方几乎没有ActionScript的用武之地。</p>
+<p>你使用Flash不？乔布斯非常讨厌它，并且也不允许iPhone使用它。然后随着iPhone（以及随后的iPad）的逐渐普及，Web开发人员不得不创建不必依赖于Flash的网站。那些以ActionScript为生的开发人员也不得不纷纷下岗。（我曾经看到过一个Flash开发人员指责另一个JavaScript开发人员毁了他的职业生涯。）</p>
+<p>Adobe也曾试图通过AIR以求得其编程平台的一线生机，于是配建了一个用于构建AIR app的工具，称为Flex。至于AIR，许多人都说，这是一场灾难。不过我们目前也不知道为什么Adobe会推出AIR，可能是想用AIR取代Flash？也可能是想要AIR和Flash相亲相爱共同发展？</p>
+<p>记得有一段时间，得益于Twitter平台——TweetDeck（要求用户在电脑上安装AIR运行时）的使用，AIR很是红火了一阵子。那时大概有数以百万计的pc AIR应用被开发出来，只是后来Twitter在2011年买了TweetDeck之后，又改写本地代码取代了AIR。于是乎，AIR的辉煌就到此为止。</p>
+<p>随着Flash和AIR的逐渐逝去，Adobe的ActionScript也开始向世界吻别。下面是一些用ActionScript写的代码示例。</p>
+<blockquote><p><em>package {<br>
+</em><em>import flash.display.*;<br>
+</em><em>import flash.text.*;<br>
+</em><em>public class HelloWorld extends Sprite {<br>
+</em><em>&nbsp;&nbsp; private var greeting:TextField = new TextField();<br>
+</em><em>public function HelloWorld() {<br>
+</em><em>&nbsp;&nbsp; &nbsp; greeting.text = “Hello World!”;<br>
+</em><em>&nbsp;&nbsp; &nbsp; greeting.x = 100;<br>
+</em><em>&nbsp;&nbsp; &nbsp; greeting.y = 100;<br>
+</em><em>&nbsp;&nbsp; &nbsp; addChild(greeting);<br>
+</em><em>&nbsp;&nbsp; }<br>
+</em><em>&nbsp;}<br>
+</em><em>}</em></p></blockquote>
+<p>（你可能会发现这与JavaScript非常相似，都使用var、function和new，并且也使用小数点来访问成员变量。）</p>
+<h2>Delphi’s Object Pascal</h2>
+<p>首先我得向我曾经的好伙伴Delphi表示歉意，因为我不得不公布Object Pascal的“死讯”。well，Delphi（用于发Object Pascal的工具）历经变迁之后，依然苟延残喘着（它起源于Borland公司，现在抱着Embarcadero公司的大腿）。</p>
+<p>早先Delphi和它的Object Pascal语言确实给我们提供了一个良好的工作环境：虽然有点啰嗦，但是编译器很快，而且相比Visual Basic（这里指的是pre-Visual Basic.NET，1995年左右），创建Windows程序更容易。</p>
+<p>但是它的优势并没有持续下去。也很难说是什么原因，因为这个平台真心是不错的。就在这时，Borland公司开始在其Delphi的产品线上支持C＃和C++。发展到后来，Borland公司甚至直接将Delphi卖给了Embarcadero公司，然后Embarcadero公司继续使用Delphi开发产品。话说，它做得相当不错，但是重点再也不是Pascal了。当然，你依然可以用Pascal编程，但是几乎没人走这条路了。事实上，我们可以使用Delphi建立许多不同的平台，包括iOS、Android，以及即将到来的Linux操作系统。</p>
+<p>但是，如果你去Embarcadero公司的网站看看，你会发现他们主要是在促进Delphi’s C++&nbsp;的支持。因此，换言之就是，Object Pascal已然逝去了。写到这里，我不禁悲从心来，因为我花了很多很多时间来学习Pascal语言，特别是Delphi’s Object Pascal。但是没办法，现实就是如此残酷，不转行就只能饿死。</p>
+<p>下面请看Object Pascal的代码：</p>
+<blockquote><p><em>program HelloWorld;<br>
+</em><em>begin<br>
+</em><em>&nbsp; &nbsp; writeln(‘You say goodbye.’)</em></p></blockquote>
+<p>译者注：以上观点仅代表作者个人观点，请文明礼貌按秩序吐槽。</p>
+
+
+
+
+<a id="soft-link" name="soft-link"></a>
+
+<div class="bd-ad-bottom" style="margin-left:-8px;margin-top:30px">
+<script async="" src="./5种将死的编程语言 – 码农网_files/adsbygoogle.js"></script>
+<!-- codeceo bottom -->
+<ins class="adsbygoogle" style="display:inline-block;width:620px;height:90px" data-ad-client="ca-pub-3171310320403916" data-ad-slot="9125404580" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:620px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:620px;background-color:transparent"><iframe width="620" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="bd_ad_bottom" style="margin:20px 0 20px 0">
+<div class="sogou_ads" style="float:left;margin-right:40px">
+<script type="text/javascript">
+    /*码农网底部矩形2*/
+    var cpro_id = "u1739327";
+</script>
+<script src="./5种将死的编程语言 – 码农网_files/c.js" type="text/javascript"></script><div id="BAIDU_DUP_wrapper_u1739327_0"><iframe id="cproIframe_u1739327_2" width="300" height="250" src="./5种将死的编程语言 – 码农网_files/acom(7).html" align="center,center" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" allowtransparency="true"></iframe></div><script charset="utf-8" src="./5种将死的编程语言 – 码农网_files/acom(1)"></script>
+</div>
+<div class="baidu_ads" style="float:left">
+<script type="text/javascript">
+    /*码农网底部矩形*/
+    var cpro_id = "u1737826";
+</script>
+<script src="./5种将死的编程语言 – 码农网_files/c.js" type="text/javascript"></script><div id="BAIDU_DUP_wrapper_u1737826_0"><iframe id="cproIframe_u1737826_3" width="300" height="250" src="./5种将死的编程语言 – 码农网_files/acom(8).html" align="center,center" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" allowtransparency="true"></iframe></div><script charset="utf-8" src="./5种将死的编程语言 – 码农网_files/acom(2)"></script>
+</div>
+<div style="clear:both"></div>
+</div>
+
+<!--开源软件资源链接-->
+<!--开源软件资源链接结束-->
+
+
+
+<div class="article-entry">
+<p>译文链接：<a href="./5种将死的编程语言 – 码农网_files/5种将死的编程语言 – 码农网.html" target="_blank">http://www.codeceo.com/article/5-die-programming-language.html</a><br>
+英文原文：<a href="http://news.dice.com/2014/10/09/5-programming-languages-marked-for-death/" target="_blank">5 Programming Languages Marked for Death</a><br>
+翻译作者：<a href="http://www.codeceo.com/" target="_blank">码农网</a>&nbsp;– 小峰<br>
+[&nbsp;<span style="color: #ff0000;"><strong>转载必须在正文中标注并保留原文链接、译文链接和译者等信息。</strong></span>]</p>
+</div>
+
+
+
+
+
+<!-- 相关资料开始 -->
+<h2 class="base-tit">相关资料</h2>
+<div class="post-related">
+<ul>
+<li><a href="http://www.codeceo.com/article/eric-raymond-programming-language.html">开源领袖Eric Raymond对主流编程语言的评价</a></li><li><a href="http://www.codeceo.com/article/10-best-languages-to-learn.html">十佳最受欢迎的编程语言 你擅长几个？</a></li><li><a href="http://www.codeceo.com/article/program-language-most-swearing.html">那些被吐槽最多的编程语言</a></li></ul>
+</div>
+<!-- 相关资料结束 -->
+
+<h2>获取订阅</h2>
+
+<!--以下是QQ邮件列表订阅嵌入代码--><script>var nId = "77944ab9b1ed76254a12506805bee79c6517f3e520568db2",nWidth="380px",sColor="light",sText="填写您的常用邮件地址，免费订阅《快乐码农》" ;</script><script src="./5种将死的编程语言 – 码农网_files/qfcode.js" charset="gb18030"></script><style>.rssbook{padding:10px 15px;overflow:hidden;zoom:1;background:#f6f6f6;border:3px solid #ddd;}.light{background:#f6f6f6;border:3px solid #ddd;}.dark{background:#aaa;border:3px solid #666;}.mailInput{margin-top:5px;}.rssbook .info{color:#666;font-size:12px;}.light .info{color:#666;}.dark .info{color:#fff;}.rssbutton{float:left;border:1px solid #698ab4; -moz-border-radius:3px;border-radius:3px;-webkit-border-radius:3px;}.dark .rssbutton{border: 1px solid #585858;}.rssbutton input{background: #77a0d1;border: 1px solid #88b3e6; color: #FFFFFF; cursor: pointer;font-weight: bold;width:90px;display:block;height:22px;line-height:22px;*line-height:19px;text-align:center;}.dark .rssbutton input{background:#676767;border: 1px solid #777;}.rssbutton input:hover{background:#86b4eb;text-decoration:none;}.dark .rssbutton input:hover{background:#797979;border: 1px solid #939393;}input.rsstxt{width:100%;height:20px;font-size:14px;padding:2px 3px;-moz-border-radius:3px;border-radius:3px;-webkit-border-radius:3px;border:1px solid #ccc;;border-color:#7c7c7c #c3c3c3 #c3c3c3 #9a9a9a;margin-bottom:5px;}.dark input.rsstxt{background:#eee;}</style><div class="rssbook light " style="width:380px "><p class="info">填写您的常用邮件地址，免费订阅《快乐码农》</p><div class="mailInput"><form action="http://list.qq.com/cgi-bin/qf_compose_send" target="_blank" method="post"><input type="hidden" name="t" value="qf_booked_feedback"><input type="hidden" name="id" value="77944ab9b1ed76254a12506805bee79c6517f3e520568db2"><input id="to" name="to" type="text" class="rsstxt" value=""><div class="rssbutton"><input type="submit" value="订阅"></div></form></div></div>
+<p style="padding-top:30px"></p>
+
+<h2>微博推荐</h2>
+<p>
+<a href="http://weibo.com/u/2832482174" target="_blank">@WEB开发家园</a>&nbsp; &nbsp; &nbsp; &nbsp; 上面有很多WEB前端的资源以及最新的IT新闻<br>
+<a href="http://weibo.com/u/3217064070" target="_blank">@程序员大联盟</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;里面主要是一些程序员相关的热门话题，偶尔也有一些幽默和时评内容
+</p>
+
+			</div>
+
+
+			<footer class="article-footer">
+				<div class="share"><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"><span class="share-tit">分享到：</span><a class="bds_qzone" title="分享到QQ空间" href="http://www.codeceo.com/article/5-die-programming-language.html#"></a><a class="bds_tqq" title="分享到腾讯微博" href="http://www.codeceo.com/article/5-die-programming-language.html#"></a><a class="bds_tsina" title="分享到新浪微博" href="http://www.codeceo.com/article/5-die-programming-language.html#"></a><a class="bds_renren" title="分享到人人网" href="http://www.codeceo.com/article/5-die-programming-language.html#"></a><a class="bds_kaixin001" title="分享到开心网" href="http://www.codeceo.com/article/5-die-programming-language.html#"></a><a class="bds_tqf" title="分享到腾讯朋友" href="http://www.codeceo.com/article/5-die-programming-language.html#"></a><span class="bds_more">更多</span><a class="shareCount" href="http://www.codeceo.com/article/5-die-programming-language.html#" title="累计分享10次">10</a></div></div>				<div class="article-tags">继续浏览有关<a href="http://www.codeceo.com/article/tag/%e7%bc%96%e7%a8%8b%e8%af%ad%e8%a8%80" rel="tag">编程语言</a>的文章</div>
+			</footer>
+
+			<div class="article-author">
+				<img class="avatar" src="http://1.gravatar.com/avatar/5bc6e612c3bf2e3b13ee8b28ecb71c49?s=36&d=http%3A%2F%2Fwww.codeceo.com%2Fwp-content%2Fthemes%2Fd-simple%2Fimg%2Fdefault.png%3Fs%3D36&r=G" width="36" height="36">
+				<h4>本文作者：<a href="http://www.codeceo.com/article/author/codeceo" title="查看codeceo所有文章">codeceo</a></h4>
+				<p></p>
+			</div>
+		</div>
+
+		
+
+		
+		<a name="comments"></a>
+
+<div class="ds-thread" data-thread-key="8160" data-author-key="1" data-title="5种将死的编程语言" data-url="http://www.codeceo.com/article/5-die-programming-language.html" id="ds-thread"><div id="ds-reset"><div class="ds-comments-info"><div class="ds-sort"><a class="ds-order-desc">最新</a><a class="ds-order-asc ds-current">最早</a><a class="ds-order-hot">最热</a></div><ul class="ds-comments-tabs"><li class="ds-tab"><a class="ds-comments-tab-duoshuo ds-current" href="javascript:void(0);"><span class="ds-highlight">8</span>条评论</a></li></ul></div><ul class="ds-comments"><li class="ds-post" data-post-id="1217802586250282996"><div class="ds-post-self" data-post-id="1217802586250282996" data-thread-id="1217802586250281853" data-root-id="0" data-source="duoshuo"><div class="ds-avatar"><img src="./5种将死的编程语言 – 码农网_files/noavatar_default.png" alt="view"></div><div class="ds-comment-body"><div class="ds-comment-header"><span class="ds-user-name" data-qqt-account="">view</span></div><p>AIR坑死人了。</p><div class="ds-comment-footer ds-comment-actions"><span class="ds-time" datetime="2015-01-03T10:00:29+08:00" title="2015年1月3日 上午10:00:29">1月3日</span><a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>回复</a><a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>顶</a><a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>转发</a><a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>举报</a></div></div></div></li><li class="ds-post" data-post-id="1217802586250282997"><div class="ds-post-self" data-post-id="1217802586250282997" data-thread-id="1217802586250281853" data-root-id="0" data-source="duoshuo"><div class="ds-avatar"><img src="./5种将死的编程语言 – 码农网_files/noavatar_default.png" alt="yasinn"></div><div class="ds-comment-body"><div class="ds-comment-header"><span class="ds-user-name" data-qqt-account="">yasinn</span></div><p>去你的</p><div class="ds-comment-footer ds-comment-actions"><span class="ds-time" datetime="2015-01-03T11:32:47+08:00" title="2015年1月3日 上午11:32:47">1月3日</span><a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>回复</a><a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>顶</a><a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>转发</a><a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>举报</a></div></div></div></li><li class="ds-post" data-post-id="1217802586250283099"><div class="ds-post-self" data-post-id="1217802586250283099" data-thread-id="1217802586250281853" data-root-id="0" data-source="duoshuo"><div class="ds-avatar"><img src="./5种将死的编程语言 – 码农网_files/noavatar_default.png" alt="U客"></div><div class="ds-comment-body"><div class="ds-comment-header"><span class="ds-user-name" data-qqt-account="">U客</span></div><p>继续使用DELPHI</p><div class="ds-comment-footer ds-comment-actions"><span class="ds-time" datetime="2015-01-05T09:56:35+08:00" title="2015年1月5日 上午9:56:35">3小时前</span><a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>回复</a><a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>顶</a><a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>转发</a><a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>举报</a></div></div></div></li><li class="ds-post" data-post-id="1217802586250283100"><div class="ds-post-self" data-post-id="1217802586250283100" data-thread-id="1217802586250281853" data-root-id="0" data-source="duoshuo"><div class="ds-avatar" data-user-id="1465659"><a rel="nofollow author" target="_blank" href="http://psgui.com/" onclick="this.href=&#39;http://codeceo.duoshuo.com/user-url/?user_id=1465659&#39;;" title="小东别院"><img src="./5种将死的编程语言 – 码农网_files/1" alt="小东别院"></a></div><div class="ds-comment-body"><div class="ds-comment-header"><a class="ds-user-name ds-highlight" data-qqt-account="" href="http://psgui.com/" onclick="this.href=&#39;http://codeceo.duoshuo.com/user-url/?user_id=1465659&#39;;" rel="nofollow" target="_blank" data-user-id="1465659">小东别院</a></div><p>主要还是看那些大头在用哪样语言，哪样语言就能火一把。</p><div class="ds-comment-footer ds-comment-actions"><span class="ds-time" datetime="2015-01-05T09:59:10+08:00" title="2015年1月5日 上午9:59:10">3小时前</span><a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>回复</a><a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>顶</a><a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>转发</a><a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>举报</a></div></div></div></li><li class="ds-post" data-post-id="1217802586250283118"><div class="ds-post-self" data-post-id="1217802586250283118" data-thread-id="1217802586250281853" data-root-id="0" data-source="duoshuo"><div class="ds-avatar" data-user-id="572753"><a rel="nofollow author" target="_blank" href="http://weibo.com/2271522665" onclick="this.href=&#39;http://codeceo.duoshuo.com/user-url/?user_id=572753&#39;;" title="图南之猪"><img src="./5种将死的编程语言 – 码农网_files/1(1)" alt="图南之猪"></a></div><div class="ds-comment-body"><div class="ds-comment-header"><a class="ds-user-name ds-highlight" data-qqt-account="" href="http://weibo.com/2271522665" onclick="this.href=&#39;http://codeceo.duoshuo.com/user-url/?user_id=572753&#39;;" rel="nofollow" target="_blank" data-user-id="572753">图南之猪</a></div><p>ruby不合适在大规模并发web应用中使用，这个怎么就不知道呢？<br>PS：ruby也不是只能用于web的花盆。</p><div class="ds-comment-footer ds-comment-actions"><span class="ds-time" datetime="2015-01-05T10:56:55+08:00" title="2015年1月5日 上午10:56:55">2小时前</span><a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>回复</a><a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>顶</a><a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>转发</a><a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>举报</a></div></div></div></li><li class="ds-post" data-post-id="1217802586250283119"><div class="ds-post-self" data-post-id="1217802586250283119" data-thread-id="1217802586250281853" data-root-id="0" data-source="duoshuo"><div class="ds-avatar"><img src="./5种将死的编程语言 – 码农网_files/noavatar_default.png" alt="Tom"></div><div class="ds-comment-body"><div class="ds-comment-header"><span class="ds-user-name" data-qqt-account="">Tom</span></div><p>写的什么乱七八糟的东西。</p><div class="ds-comment-footer ds-comment-actions"><span class="ds-time" datetime="2015-01-05T11:03:10+08:00" title="2015年1月5日 上午11:03:10">2小时前</span><a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>回复</a><a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>顶</a><a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>转发</a><a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>举报</a></div></div></div></li><li class="ds-post" data-post-id="1217802586250283120"><div class="ds-post-self" data-post-id="1217802586250283120" data-thread-id="1217802586250281853" data-root-id="0" data-source="duoshuo"><div class="ds-avatar"><img src="./5种将死的编程语言 – 码农网_files/noavatar_default.png" alt="violetianer"></div><div class="ds-comment-body"><div class="ds-comment-header"><span class="ds-user-name" data-qqt-account="">violetianer</span></div><p>作者你出来，我保证不打烂你的脸</p><div class="ds-comment-footer ds-comment-actions"><span class="ds-time" datetime="2015-01-05T11:16:46+08:00" title="2015年1月5日 上午11:16:46">2小时前</span><a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>回复</a><a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>顶</a><a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>转发</a><a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>举报</a></div></div></div></li><li class="ds-post" data-post-id="1217802586250283122"><div class="ds-post-self" data-post-id="1217802586250283122" data-thread-id="1217802586250281853" data-root-id="0" data-source="duoshuo"><div class="ds-avatar"><img src="./5种将死的编程语言 – 码农网_files/noavatar_default.png" alt="ser163"></div><div class="ds-comment-body"><div class="ds-comment-header"><span class="ds-user-name" data-qqt-account="">ser163</span></div><p>delphi 最后竟然没有end结束.</p><div class="ds-comment-footer ds-comment-actions"><span class="ds-time" datetime="2015-01-05T13:12:33+08:00" title="2015年1月5日 下午1:12:33">13分钟前</span><a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>回复</a><a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>顶</a><a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>转发</a><a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>举报</a></div></div></div></li></ul><div class="ds-paginator" style="display: none;"><div class="ds-border"></div><a data-page="1" href="javascript:void(0);" class="ds-current">1</a></div><a name="respond"></a><div class="ds-login-buttons"><p>社交帐号登录:</p><div class="ds-social-links"><ul class="ds-service-list"><li><a href="http://codeceo.duoshuo.com/login/weibo/?sso=1&redirect_uri=http%3A%2F%2Fwww.codeceo.com%2Fwp-login.php%3Faction%3Dduoshuo_login%26redirect_to%3Dhttp%253A%252F%252Fwww.codeceo.com%252Farticle%252F5-die-programming-language.html" rel="nofollow" class="ds-service-link ds-weibo">微博</a></li><li><a href="http://codeceo.duoshuo.com/login/qq/?sso=1&redirect_uri=http%3A%2F%2Fwww.codeceo.com%2Fwp-login.php%3Faction%3Dduoshuo_login%26redirect_to%3Dhttp%253A%252F%252Fwww.codeceo.com%252Farticle%252F5-die-programming-language.html" rel="nofollow" class="ds-service-link ds-qq">QQ</a></li><li><a href="http://codeceo.duoshuo.com/login/renren/?sso=1&redirect_uri=http%3A%2F%2Fwww.codeceo.com%2Fwp-login.php%3Faction%3Dduoshuo_login%26redirect_to%3Dhttp%253A%252F%252Fwww.codeceo.com%252Farticle%252F5-die-programming-language.html" rel="nofollow" class="ds-service-link ds-renren">人人</a></li><li><a href="http://codeceo.duoshuo.com/login/douban/?sso=1&redirect_uri=http%3A%2F%2Fwww.codeceo.com%2Fwp-login.php%3Faction%3Dduoshuo_login%26redirect_to%3Dhttp%253A%252F%252Fwww.codeceo.com%252Farticle%252F5-die-programming-language.html" rel="nofollow" class="ds-service-link ds-douban">豆瓣</a></li><li><a class="ds-more-services" href="javascript:void(0)">更多»</a></li></ul><ul class="ds-service-list ds-additional-services"><li><a href="http://codeceo.duoshuo.com/login/kaixin/?sso=1&redirect_uri=http%3A%2F%2Fwww.codeceo.com%2Fwp-login.php%3Faction%3Dduoshuo_login%26redirect_to%3Dhttp%253A%252F%252Fwww.codeceo.com%252Farticle%252F5-die-programming-language.html" rel="nofollow" class="ds-service-link ds-kaixin">开心</a></li><li><a href="http://codeceo.duoshuo.com/login/netease/?sso=1&redirect_uri=http%3A%2F%2Fwww.codeceo.com%2Fwp-login.php%3Faction%3Dduoshuo_login%26redirect_to%3Dhttp%253A%252F%252Fwww.codeceo.com%252Farticle%252F5-die-programming-language.html" rel="nofollow" class="ds-service-link ds-netease">网易</a></li><li><a href="http://codeceo.duoshuo.com/login/sohu/?sso=1&redirect_uri=http%3A%2F%2Fwww.codeceo.com%2Fwp-login.php%3Faction%3Dduoshuo_login%26redirect_to%3Dhttp%253A%252F%252Fwww.codeceo.com%252Farticle%252F5-die-programming-language.html" rel="nofollow" class="ds-service-link ds-sohu">搜狐</a></li><li><a href="http://codeceo.duoshuo.com/login/baidu/?sso=1&redirect_uri=http%3A%2F%2Fwww.codeceo.com%2Fwp-login.php%3Faction%3Dduoshuo_login%26redirect_to%3Dhttp%253A%252F%252Fwww.codeceo.com%252Farticle%252F5-die-programming-language.html" rel="nofollow" class="ds-service-link ds-baidu">百度</a></li><li><a href="http://codeceo.duoshuo.com/login/google/?sso=1&redirect_uri=http%3A%2F%2Fwww.codeceo.com%2Fwp-login.php%3Faction%3Dduoshuo_login%26redirect_to%3Dhttp%253A%252F%252Fwww.codeceo.com%252Farticle%252F5-die-programming-language.html" rel="nofollow" class="ds-service-link ds-google">谷歌</a></li></ul></div></div><div class="ds-replybox"><a class="ds-avatar" href="javascript:void(0);" onclick="return false"><img src="./5种将死的编程语言 – 码农网_files/noavatar_default.png" alt=""></a><form method="post"><input type="hidden" name="thread_id" value="1217802586250281853">
+<input type="hidden" name="parent_id" value="">
+<input type="hidden" name="nonce" value="54aa1caa5e1d6"><div class="ds-textarea-wrapper ds-rounded-top"><textarea name="message" title="Ctrl+Enter快捷提交" placeholder="说点什么吧…"></textarea><pre class="ds-hidden-text"></pre></div><div class="ds-post-toolbar"><div class="ds-post-options ds-gradient-bg"><span class="ds-sync"></span></div><button class="ds-post-button" type="submit">发布</button><div class="ds-toolbar-buttons"><a class="ds-toolbar-button ds-add-emote" title="插入表情"></a></div></div></form></div><p class="ds-powered-by"><a href="http://duoshuo.com/" target="_blank" rel="nofollow">码农网正在使用多说</a></p></div></div>
+
+<script type="text/javascript">
+	if (typeof DUOSHUO !== 'undefined')
+		DUOSHUO.EmbedThread('.ds-thread');
+</script>
+	<div id="ds-ssr">
+
+		
+            <ol id="commentlist">
+                		<li class="comment even thread-even depth-1" id="li-comment-1160">
+			<article id="comment-1160" class="comment">
+				<footer class="comment-meta">
+					<cite class="comment-author vcard">
+						<span class="fn">view</span> on <a rel="nofollow" href="http://www.codeceo.com/article/5-die-programming-language.html#comment-1160"><time pubdate="" datetime="2015-01-03T10:00:29+00:00">2015 年 1 月 3 日 at 上午 10:00</time></a> <span class="says">said:</span>					</cite><!-- .comment-author .vcard -->
+				</footer>
+	
+				<div class="comment-content"><p>AIR坑死人了。</p>
+</div>
+				
+			</article><!-- #comment-## -->
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-1161">
+			<article id="comment-1161" class="comment">
+				<footer class="comment-meta">
+					<cite class="comment-author vcard">
+						<span class="fn">yasinn</span> on <a rel="nofollow" href="http://www.codeceo.com/article/5-die-programming-language.html#comment-1161"><time pubdate="" datetime="2015-01-03T11:32:47+00:00">2015 年 1 月 3 日 at 上午 11:32</time></a> <span class="says">said:</span>					</cite><!-- .comment-author .vcard -->
+				</footer>
+	
+				<div class="comment-content"><p>去你的</p>
+</div>
+				
+			</article><!-- #comment-## -->
+		</li>
+		<li class="comment even thread-even depth-1" id="li-comment-1169">
+			<article id="comment-1169" class="comment">
+				<footer class="comment-meta">
+					<cite class="comment-author vcard">
+						<span class="fn">U客</span> on <a rel="nofollow" href="http://www.codeceo.com/article/5-die-programming-language.html#comment-1169"><time pubdate="" datetime="2015-01-05T09:56:35+00:00">2015 年 1 月 5 日 at 上午 9:56</time></a> <span class="says">said:</span>					</cite><!-- .comment-author .vcard -->
+				</footer>
+	
+				<div class="comment-content"><p>继续使用DELPHI</p>
+</div>
+				
+			</article><!-- #comment-## -->
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-1170">
+			<article id="comment-1170" class="comment">
+				<footer class="comment-meta">
+					<cite class="comment-author vcard">
+						<span class="fn"><a href="http://psgui.com/" rel="external nofollow" class="url">小东别院</a></span> on <a rel="nofollow" href="http://www.codeceo.com/article/5-die-programming-language.html#comment-1170"><time pubdate="" datetime="2015-01-05T09:59:10+00:00">2015 年 1 月 5 日 at 上午 9:59</time></a> <span class="says">said:</span>					</cite><!-- .comment-author .vcard -->
+				</footer>
+	
+				<div class="comment-content"><p>主要还是看那些大头在用哪样语言，哪样语言就能火一把。</p>
+</div>
+				
+			</article><!-- #comment-## -->
+		</li>
+		<li class="comment even thread-even depth-1" id="li-comment-1174">
+			<article id="comment-1174" class="comment">
+				<footer class="comment-meta">
+					<cite class="comment-author vcard">
+						<span class="fn"><a href="http://weibo.com/2271522665" rel="external nofollow" class="url">图南之猪</a></span> on <a rel="nofollow" href="http://www.codeceo.com/article/5-die-programming-language.html#comment-1174"><time pubdate="" datetime="2015-01-05T10:56:55+00:00">2015 年 1 月 5 日 at 上午 10:56</time></a> <span class="says">said:</span>					</cite><!-- .comment-author .vcard -->
+				</footer>
+	
+				<div class="comment-content"><p>ruby不合适在大规模并发web应用中使用，这个怎么就不知道呢？PS：ruby也不是只能用于web的花盆。</p>
+</div>
+				
+			</article><!-- #comment-## -->
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-1175">
+			<article id="comment-1175" class="comment">
+				<footer class="comment-meta">
+					<cite class="comment-author vcard">
+						<span class="fn">Tom</span> on <a rel="nofollow" href="http://www.codeceo.com/article/5-die-programming-language.html#comment-1175"><time pubdate="" datetime="2015-01-05T11:03:10+00:00">2015 年 1 月 5 日 at 上午 11:03</time></a> <span class="says">said:</span>					</cite><!-- .comment-author .vcard -->
+				</footer>
+	
+				<div class="comment-content"><p>写的什么乱七八糟的东西。</p>
+</div>
+				
+			</article><!-- #comment-## -->
+		</li>
+		<li class="comment even thread-even depth-1" id="li-comment-1176">
+			<article id="comment-1176" class="comment">
+				<footer class="comment-meta">
+					<cite class="comment-author vcard">
+						<span class="fn">violetianer</span> on <a rel="nofollow" href="http://www.codeceo.com/article/5-die-programming-language.html#comment-1176"><time pubdate="" datetime="2015-01-05T11:16:46+00:00">2015 年 1 月 5 日 at 上午 11:16</time></a> <span class="says">said:</span>					</cite><!-- .comment-author .vcard -->
+				</footer>
+	
+				<div class="comment-content"><p>作者你出来，我保证不打烂你的脸</p>
+</div>
+				
+			</article><!-- #comment-## -->
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-1178">
+			<article id="comment-1178" class="comment">
+				<footer class="comment-meta">
+					<cite class="comment-author vcard">
+						<span class="fn">ser163</span> on <a rel="nofollow" href="http://www.codeceo.com/article/5-die-programming-language.html#comment-1178"><time pubdate="" datetime="2015-01-05T13:12:33+00:00">2015 年 1 月 5 日 at 下午 1:12</time></a> <span class="says">said:</span>					</cite><!-- .comment-author .vcard -->
+				</footer>
+	
+				<div class="comment-content"><p>delphi 最后竟然没有end结束.</p>
+</div>
+				
+			</article><!-- #comment-## -->
+		</li>
+            </ol>
+
+		            
+    </div>
+		
+			</div>
+</div>
+
+<script type="text/javascript">
+    /*码农网右下角悬浮*/
+var cpro_id = "u1635767";
+</script>
+<script src="./5种将死的编程语言 – 码农网_files/f.js" type="text/javascript"></script><div id="BAIDU_DUP_wrapper_u1635767_0"></div><script charset="utf-8" src="./5种将死的编程语言 – 码农网_files/acom(3)"></script>
+
+
+
+<aside class="sidebar">	
+	<div class="widget widget_text">			<div class="textwidget"><style type="text/css">
+.hot{margin-bottom:30px}
+.hot h2{font-size:18px;padding-top:7px;text-align:center}
+.hot a{text-decoration:none}
+.hot img{width:294px;padding:2px}
+</style>
+
+<div class="hot">
+<script type="text/javascript">
+    /*码农网侧边*/
+    var cpro_id = "u1635041";
+</script>
+<script src="./5种将死的编程语言 – 码农网_files/c.js" type="text/javascript"></script><div id="BAIDU_DUP_wrapper_u1635041_0"><iframe id="cproIframe_u1635041_5" width="300" height="250" src="./5种将死的编程语言 – 码农网_files/acom(9).html" align="center,center" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" allowtransparency="true"></iframe></div><script charset="utf-8" src="./5种将死的编程语言 – 码农网_files/acom(4)"></script>
+</div>
+
+<div class="hot">
+<a href="http://www.codeceo.com/article/10-effective-way-good-programmer.html" target="_blank" style="color:#000">
+    <div class="article-entry"><img src="./5种将死的编程语言 – 码农网_files/programmer-logo-2.png" alt="成为优秀程序员的10个有效方法"></div>
+<h2>成为优秀程序员的10个有效方法</h2></a>
+</div>
+
+<div class="hot">
+<script async="" src="./5种将死的编程语言 – 码农网_files/adsbygoogle.js"></script>
+<!-- codeceo left -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-3171310320403916" data-ad-slot="6171938185" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+
+
+<div class="hot">
+<a href="http://www.codeceo.com/article/8-best-jquery-slider.html" target="_blank" style="color:#000">
+    <div class="article-entry"><img src="./5种将死的编程语言 – 码农网_files/jquery-mac-2.png" alt="8个强大的jQuery图片滑块动画插件"></div>
+<h2>8个强大的jQuery图片滑块动画插件</h2></a>
+</div>
+
+
+<div class="hot">
+<script async="" src="./5种将死的编程语言 – 码农网_files/adsbygoogle.js"></script>
+<!-- codeceo left 2 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-3171310320403916" data-ad-slot="7648671380" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<div class="hot">
+<a href="http://www.codeceo.com/article/programmer-load-level.html" target="_blank" style="color:#000">
+    <div class="article-entry"><img src="./5种将死的编程语言 – 码农网_files/programmer-load-level-2.jpg" alt="程序员成长道路上必经的几个阶段"></div>
+<h2>程序员成长道路上必经的几个阶段</h2></a>
+</div>
+</div>
+		</div><div class="widget widget_text">			<div class="textwidget"><script type="text/javascript">
+    /*码农网侧边悬停*/
+    var cpro_id = "u1635048";
+</script>
+<script src="./5种将死的编程语言 – 码农网_files/c.js" type="text/javascript"></script><div id="BAIDU_DUP_wrapper_u1635048_0" width="300px" height="250px" style="width: 300px; height: 250px; display: inline-block; z-index: 2147483646;"><iframe id="cproIframe_u1635048" src="./5种将死的编程语言 – 码农网_files/acom(10).html" width="300" height="250" align="center,center" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" allowtransparency="true"></iframe></div><script charset="utf-8" src="./5种将死的编程语言 – 码农网_files/acom(5)"></script></div>
+		</div></aside></section>
+<footer class="footer">
+	<div class="central">
+		<div class="trackcode">
+					</div>
+		<div class="copyright">
+			版权所有，保留一切权利！ © 2015 <a href="http://www.codeceo.com/">码农网</a>　<a href="http://www.codeceo.com/sitemap.html" target="_blank">网站地图</a>
+		</div>
+	</div>
+</footer>
+<div class="rollto" style="display: block;"><a class="ico ico-totop" title="回顶部"></a><a href="http://www.codeceo.com/article/5-die-programming-language.html#respond" class="ico ico-torespond" title="发评论"></a></div>
+<script>var asr_1 = 0,asr_2 = 0;</script><script src="./5种将死的编程语言 – 码农网_files/post.js"></script><script id="bdshare_js" data="type=tools&amp;uid=13688" src="./5种将死的编程语言 – 码农网_files/bds_s_v2.js"></script><script>document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?t=" + new Date().getHours();</script><div style="display:none">
+<script language="javascript" type="text/javascript" src="./5种将死的编程语言 – 码农网_files/16025287.js"></script><a href="http://www.51.la/?16025287" target="_blank"><img alt="51.la 专业、免费、强健的访问统计" src="./5种将死的编程语言 – 码农网_files/icon_9.gif" style="border:none"></a>
+</div>
+
+</body></html>

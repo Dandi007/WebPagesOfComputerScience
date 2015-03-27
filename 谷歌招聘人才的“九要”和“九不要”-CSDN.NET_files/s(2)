@@ -1,0 +1,27 @@
+ADFHOST1276="http://csdnim.allyes.com";
+ADFCID1276=24;
+ADFBID1276=1276;
+ADFLOC='CNTJ0000';
+ADFUSER1276="http://csdnim.allyes.com/main/adfclick?d=csdnim&i=z24,10082697,1276,4902&rf=&a=dIA3DoLDR2A5yFzF7rk1dVqql&u=";
+ALLYESID4="08DBA4B4D4EEDBFB";
+ADFPGC="2,4,24,0,1357,1276,4902,10082697";
+var __alysLib=window.__alysLib||{console:function(){}};
+if(!__alysLib.flash)__alysLib.flash=function(a,c,d,e,f,h,b,g){var i=typeof f=="object"?f:document.getElementById(f);e=!e?"transparent":e==1?"opaque":"window";b||(b=[0,0,0,0]);a='<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0" WIDTH="'+c+'" HEIGHT="'+d+'" ID="f'+h+'"><PARAM NAME="movie" VALUE="'+a+'"><PARAM NAME="wmode" VALUE="'+e+'"><PARAM NAME="allowscriptaccess" VALUE="always"><EMBED src="'+a+'" WIDTH="'+
+c+'" HEIGHT="'+d+'" WMODE="'+e+'" TYPE="application/x-shockwave-flash" ALLOWSCRIPTACCESS="always" NAME="f'+h+'"></EMBED></OBJECT>';i?i.innerHTML=typeof g=="string"&&g!=""?'<div style="position:relative;z-index:1;width:'+c+"px;height:"+d+'px"><div style="position:absolute;left:0;top:0;z-index:2;width:'+c+"px;height:"+d+'px">'+a+'</div><a href="'+g+'" target="_blank"  style="background-color:#fff;position:absolute;left:'+b[3]+"px;top:"+b[0]+"px;z-index:3;width:"+(c-b[1]-b[3])+"px;height:"+(d-b[0]-b[2])+
+'px;opacity:0.00001;filter:alpha(opacity=0);"></a></div>':a:__alysLib.console("__alysLib.flash(): 'd' parameter missing.");return f};if(!__alysLib.sflash)__alysLib.sflash=function(a){try{var c=a.flashwmode,d=a.src,e=a.width,f=a.height,h=a.parent,b=a.href,g=a.rect,i=a.flashparamflag,k=a.flashparam,j=a.fname;if(c===null||typeof c=="undefined")c=0;typeof b=="string"&&b!=""&&i?(d=d+"?"+k+"="+encodeURIComponent(b),__alysLib.flash(d,e,f,c,h,j,g)):__alysLib.flash(d,e,f,c,h,j,g,b)}catch(l){__alysLib.console(l.toString())}};
+document.write("<script language=\"javascript\">\n");
+document.write("var d = \"xc\"+Math.ceil(Math.random()*1000000); document.write(\"<div id=\"+d+\"></div>\");\n");
+document.write("__alysLib.sflash({\n");
+document.write("src: \"http://creatim.allyes.com.cn/imedia/csdn/20141009/16_27_18_5B6E3D4E.swf\",\n");
+document.write("href:ADFUSER1276+\"http://e.cn.miaozhen.com/r.gif?k=2000489&p=6qPd2&rt=2&ns=[M_ADIP]&ni=[M_IESID]&na=[M_MAC]&v=[M_LOC]&o=http://www.ibm.com/cloud-computing/cn/zh/softlayer.html?csr=apch_cbs3_20140924_1411539296674&ck=csdn&cmp=R0230&ct=R02306HW&cr=BAU%7Ccsdn%7CCloud%7CStandard_display%7CBanner%7C475*60&cm=B&csr=iotcn%7Cca%7Cq42014&ccy=CN&cd=2014-10-13&cn=q4%7CPriorCat%7CLE%7CCloud%7CCloud%7Csoftlayer%7Ccn&csz=475*60&S_TACT=R02306HW\",\n");
+document.write("width: 475,\n");
+document.write("height: 60,\n");
+document.write("rect:0,\n");
+document.write("fname:'flash'+d,\n");
+document.write("parent:d,\n");
+document.write("flashwmode:0,\n");
+document.write("flashparamflag:0,\n");
+document.write("flashparam:\"0\"\n");
+document.write("}); \n");
+document.write("</Scr"+"ipt>");
+

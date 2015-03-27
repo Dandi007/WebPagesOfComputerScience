@@ -1,0 +1,755 @@
+
+<!doctype html>
+
+
+<html xmlns:wb="http://open.weibo.com/wb">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Python快速教程 - 头条 - 伯乐在线</title>
+	<link rel="stylesheet" type="text/css" href="http://top.jobbole.com/wp-content/themes/jobbolev4digg/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="http://top.jobbole.com/wp-content/themes/jobbolev4digg/style.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://top.jobbole.com/wp-content/themes/jobbolev4digg/js/html5shiv.js"></script>
+    <script src="http://top.jobbole.com/wp-content/themes/jobbolev4digg/js/respond.js"></script>
+    <![endif]-->
+
+    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=2606191112" type="text/javascript" charset="utf-8"></script>
+
+    
+<!-- This site is optimized with the Yoast WordPress SEO plugin v1.4.13 - http://yoast.com/wordpress/seo/ -->
+<meta name="description" content="怎么能快速地掌握Python？这是和朋友闲聊时谈起的问题。 Python包含的内容很多，加上各种标准库、拓展库，乱花渐欲迷人眼。我一直希望写一个快速的、容易上手的Python教程，而且言语简洁，循序渐进，让没有背景的读者也可以从基础开始学习。我将在每一篇中专注于一个小的概念，希望在闲暇时可以很快读完。"/>
+<link rel="canonical" href="http://top.jobbole.com/13347/" />
+<meta property='og:locale' content='zh_CN'/>
+<meta property='og:type' content='article'/>
+<meta property='og:title' content='Python快速教程 - 头条 - 伯乐在线'/>
+<meta property='og:description' content='怎么能快速地掌握Python？这是和朋友闲聊时谈起的问题。 Python包含的内容很多，加上各种标准库、拓展库，乱花渐欲迷人眼。我一直希望写一个快速的、容易上手的Python教程，而且言语简洁，循序渐进，让没有背景的读者也可以从基础开始学习。我将在每一篇中专注于一个小的概念，希望在闲暇时可以很快读完。'/>
+<meta property='og:url' content='http://top.jobbole.com/13347/'/>
+<meta property='og:site_name' content='头条 - 伯乐在线'/>
+<!-- / Yoast WordPress SEO plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="头条 - 伯乐在线 &raquo; Python快速教程 评论 Feed" href="http://top.jobbole.com/13347/feed/" />
+<link rel='stylesheet' id='jobbole-wp-css-css'  href='http://top.jobbole.com/wp-content/plugins/jobbole-wp-plugin/css/jobbole-wp-plugin.css?ver=3.5.2' type='text/css' media='all' />
+<link rel='stylesheet' id='v48fv_images-css'  href='http://top.jobbole.com/wp-content/plugins/mu-widgets/library/base/public/css/images.css?ver=1.2.v48fv' type='text/css' media='all' />
+<link rel='stylesheet' id='v48fv_front-css'  href='http://top.jobbole.com/wp-content/plugins/mu-widgets/library/base/public/css/front.css?ver=1.2.v48fv' type='text/css' media='all' />
+<link rel='stylesheet' id='v48fv_common-css'  href='http://top.jobbole.com/wp-content/plugins/mu-widgets/library/base/public/css/common.css?ver=1.2.v48fv' type='text/css' media='all' />
+<link rel='stylesheet' id='bbp-default-bbpress-css'  href='http://top.jobbole.com/wp-content/plugins/bbpress/templates/default/css/bbpress.css?ver=2.3.2' type='text/css' media='screen' />
+<link rel='stylesheet' id='bp-legacy-css-css'  href='http://top.jobbole.com/wp-content/plugins/buddypress/bp-templates/bp-legacy/css/buddypress.css?ver=1.7.2' type='text/css' media='screen' />
+<link rel='stylesheet' id='bpbbpst-bbpress-widget-css-css'  href='http://top.jobbole.com/wp-content/plugins/buddy-bbpress-support-topic/css/bpbbpst-bbpress-widget.css?ver=3.5.2' type='text/css' media='all' />
+<link rel='stylesheet' id='core3.0-css'  href='http://top.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0' type='text/css' media='all' />
+<link rel='stylesheet' id='core-Default3.0-css'  href='http://top.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/styles/shCoreDefault.css?ver=3.0' type='text/css' media='all' />
+<link rel='stylesheet' id='theme-Default3.0-css'  href='http://top.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0' type='text/css' media='all' />
+<script type='text/javascript' src='http://top.jobbole.com/wp-includes/js/jquery/jquery.js?ver=1.8.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var JobboleAjax = {"ajaxurl":"http:\/\/top.jobbole.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://top.jobbole.com/wp-content/plugins/jobbole-wp-plugin/js/jobbole-wp-plugin.js?ver=3.5.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var BP_DTheme = {"my_favs":"\u6211\u7684\u6536\u85cf","accepted":"\u5df2\u63a5\u53d7","rejected":"\u5df2\u62d2\u7edd","show_all_comments":"\u663e\u793a\u8be5\u8bdd\u9898\u6240\u6709\u8bc4\u8bba","show_all":"\u663e\u793a\u5168\u90e8","comments":"\u8bc4\u8bba","close":"\u5173\u95ed","view":"\u67e5\u770b","mark_as_fav":"\u6536\u85cf","remove_fav":"\u79fb\u9664\u6536\u85cf"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://top.jobbole.com/wp-content/plugins/buddypress/bp-templates/bp-legacy/js/buddypress.js?ver=1.7.2'></script>
+<script type='text/javascript' src='http://top.jobbole.com/wp-includes/js/comment-reply.min.js?ver=3.5.2'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://top.jobbole.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://top.jobbole.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 3.5.2" />
+<link rel='shortlink' href='http://top.jobbole.com/?p=13347' />
+
+		<script type="text/javascript">
+			/* <![CDATA[ */
+			
+						jQuery(document).ready( function() {
+
+				/* Use backticks instead of <code> for the Code button in the editor */
+				if ( typeof( edButtons ) !== 'undefined' ) {
+					edButtons[110] = new QTags.TagButton( 'code', 'code', '`', '`', 'c' );
+					QTags._buttonsInit();
+				}
+
+				/* Tab from topic title */
+				jQuery( '#bbp_topic_title' ).bind( 'keydown.editor-focus', function(e) {
+					if ( e.which !== 9 )
+						return;
+
+					if ( !e.ctrlKey && !e.altKey && !e.shiftKey ) {
+						if ( typeof( tinymce ) !== 'undefined' ) {
+							if ( ! tinymce.activeEditor.isHidden() ) {
+								var editor = tinymce.activeEditor.editorContainer;
+								jQuery( '#' + editor + ' td.mceToolbar > a' ).focus();
+							} else {
+								jQuery( 'textarea.bbp-the-content' ).focus();
+							}
+						} else {
+							jQuery( 'textarea.bbp-the-content' ).focus();
+						}
+
+						e.preventDefault();
+					}
+				});
+
+				/* Shift + tab from topic tags */
+				jQuery( '#bbp_topic_tags' ).bind( 'keydown.editor-focus', function(e) {
+					if ( e.which !== 9 )
+						return;
+
+					if ( e.shiftKey && !e.ctrlKey && !e.altKey ) {
+						if ( typeof( tinymce ) !== 'undefined' ) {
+							if ( ! tinymce.activeEditor.isHidden() ) {
+								var editor = tinymce.activeEditor.editorContainer;
+								jQuery( '#' + editor + ' td.mceToolbar > a' ).focus();
+							} else {
+								jQuery( 'textarea.bbp-the-content' ).focus();
+							}
+						} else {
+							jQuery( 'textarea.bbp-the-content' ).focus();
+						}
+
+						e.preventDefault();
+					}
+				});
+			});
+						/* ]]> */
+		</script>
+
+	
+	<script type="text/javascript">var ajaxurl = 'http://top.jobbole.com/wp-admin/admin-ajax.php';</script>
+
+</head>
+
+<body>
+<div class="wrap-all">
+    <section class="ph-top-box">
+    </section>
+    <header class="header">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="logo" href="#">
+                    伯乐在线
+                </a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span><span>&nbsp;</span></span>
+                </button>
+            </div>
+            <nav class="navbar" role="navigation">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="http://top.jobbole.com">头条</a></li>
+                        <li><a href="http://blog.jobbole.com/">博客</a></li>
+                        <li><a href="http://hao.jobbole.com/">资源导航</a></li>
+                        <li><a href="http://www.jobbole.com/groups/">小组</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav visible-xs">
+                                                <li><a href="#" data-toggle="modal" data-target="#login-modal">登录</a></li>
+                        <li><a href="http://www.jobbole.com/register">注册</a></li>
+                                            </ul>
+                </div>
+            </nav>
+            <div class="h-btns hidden-xs">
+                                <button type="button" class="btn btn-transparent" data-toggle="modal" data-target="#login-modal"><i class="glyphicon glyphicon-log-in"></i>登录</button>
+                <a class="top-right-menu" href="http://www.jobbole.com/register"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-user"></i>注册</button></a>
+                            </div>
+        </div>
+    </header><div class="content-box">
+<div class="container">
+<div class="row">
+<div class="col-xs-12 col-sm-8">
+<div class="left-content">
+
+<header class="w-border digg-top">
+    
+            <h4 class="tit1"><a href="http://top.jobbole.com">头条</a></h4>
+        <div class="p-link">
+        <div class="dropdown cate-list">
+            <a id="cateLbl" role="button" data-toggle="dropdown" data-target="#" href="#">全部 <i class="caret"></i></a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="cateLbl">
+                <li><a href="http://top.jobbole.com">全部</a></li>
+
+                                <li><a class="href-style register-user-only">我的头条</a></li>
+                
+                
+
+            </ul>
+        </div>
+
+        <span ><a href="http://top.jobbole.com"> 热门</a></span>
+        <span ><a href="http://top.jobbole.com?sort=latest">最新</a></span>
+
+        
+                    <span class="bblue"><a class="href-style  register-user-only "  >发布</a></span>
+                <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+</header><div class="p-single">
+<ul class="list-posts">
+
+        <li class="media">
+
+        <a id="13347voteflag" title="顶起，让更多人看到" alt="顶起，让更多人看到" class="p-cnt  href-style vote-post-up  register-user-only " data-post-id="13347">
+            <i class="arrow-up"></i>
+            <span id="13347votetotal">59</span>
+        </a>
+
+        <div class="media-body">
+            <h1 class="p-tit-single">
+                                    <a rel='nofollow' target="_blank" href="http://www.cnblogs.com/vamei/archive/2012/09/13/2682778.html">Python快速教程</a><label class="hide-on-480 small-domain-url">- <a rel='nofollow' target="_blank" href="http://www.cnblogs.com/vamei/archive/2012/09/13/2682778.html">www.cnblogs.com</a> <i class="glyphicon glyphicon-new-window"></i></label>
+                            </h1>
+            <p class="p-meta">
+                <span>7 天前</span>•
+                <span><a href="http://www.jobbole.com/members/aoi">
+                        <img class="img-circle" width="16" height="16" src="http://top.jobbole.com/wp-content/uploads/avatars/151/21f80d0c0e9ec654f02b3142fed3ca4a-bpthumb.jpg" />
+                        aoi</a> 分享
+                </span>
+
+                                    •<span><a href='http://top.jobbole.com/tag/python/'>Python</a></span>
+                
+                                    •<span>1 评论</span>
+                
+                <!-- JiaThis Button BEGIN -->
+                <div class="jiathis_style pb-top-share hide-on-480">
+                    <a class="jiathis_button_tsina"></a>
+                    <a class="jiathis_button_weixin"></a>
+                    <a class="jiathis_button_qzone"></a>
+                    <a class="jiathis_button_fb"></a>
+                    <a class="jiathis_button_googleplus"></a>
+                    <a class="jiathis_button_ydnote"></a>
+                    <a class="jiathis_button_evernote"></a>
+                    <a class="jiathis_button_pocket"></a>
+                </div>
+                <!-- JiaThis Button END -->
+
+            </p>
+        </div>
+    </li>
+</ul>
+<div class="p-entry">
+    <p>作者：<a href="http://weibo.com/vamei" target="_blank">@Vamei</a></p>
+<p>-----------------------</p>
+<p>怎么能快速地掌握Python？这是和朋友闲聊时谈起的问题。</p>
+<p>Python包含的内容很多，加上各种标准库、拓展库，乱花渐欲迷人眼。我一直希望写一个快速的、容易上手的Python教程，而且言语简洁，循序渐进，让没有背景的读者也可以从基础开始学习。我将在每一篇中专注于一个小的概念，希望在闲暇时可以很快读完。<br />
+小提醒</p>
+<ol>
+<li>教程将专注于Python基础，语法基于Python 2.7 (我会提醒Python 3.x中有变化的地方，以方便读者适应3.X的情况)。测试环境为Linux。标准库的一些包不适用于Windows平台。如果文中的程序无法在你的平台上运行，欢迎讨论。</li>
+<li>我将专注于Python的主干，以便读者能以最快时间对Python形成概念。</li>
+<li>Linux命令行将以$开始，比如 ls,python</li>
+<li>Python命令行将以&gt;&gt;&gt;开始，比如 &gt;&gt;&gt;print 'Hello World!'</li>
+<li>注释会以#开始</li>
+</ol>
+<p>建议</p>
+<ul>
+<li>将教程中的命令敲到Python中看看效果。</li>
+<li>看过教程之后，可以进行一些练习。</li>
+<li>参与文章评论区的讨论，可以更好的积累经验。</li>
+</ul>
+<p>&nbsp;</p>
+<h3 id="section1">Python基础</h3>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/05/28/2521650.html">Python基础01 Hello World! </a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/05/28/2522385.html">Python基础02 基本数据类型 </a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/05/28/2522677.html">Python基础03 序列 </a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/05/29/2524376.html">Python基础04 运算 </a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/05/29/2524706.html">Python基础05 缩进和选择 </a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/05/30/2526357.html">Python基础06 循环 </a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/06/01/2529500.html">Python基础07 函数</a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/06/02/2531515.html">Python基础08 面向对象的基本概念</a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/06/02/2532018.html">Python基础09 面向对象的进一步拓展 </a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/06/02/2532274.html">Python基础10 反过头来看看</a></p>
+<p>&nbsp;</p>
+<h3 id="section2">Python进阶</h3>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/06/06/2537436.html">Python进阶01 词典 </a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/06/06/2537868.html">Python进阶02 文本文件的输入输出 </a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/07/03/2574436.html">Python进阶03 模块 </a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/07/08/2581264.html">Python进阶04 函数的参数传递 </a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/07/09/2582435.html">Python进阶05 循环设计 </a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/07/09/2582499.html">Python进阶06 循环对象 </a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/07/10/2582772.html">Python进阶07 函数对象 </a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/07/10/2582787.html">Python进阶08 错误处理 </a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/07/10/2582795.html">Python进阶09 动态类型 </a></p>
+<p>&nbsp;</p>
+<h3 id="section3">Python深入</h3>
+<p>到现在为止，Python学习已经可以告一段落。下面的部分，我想讨论Python的高级语法和底层实现。这一部分的内容并不是使用Python所必须的。但如果你想从事一些大型的Python开发(比如制作Python工具、写一个框架等)，你会希望对这一部分内容有所的了解。</p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/11/19/2772441.html">Python深入01 特殊方法与多范式</a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/11/23/2772445.html">Python深入02 上下文管理器</a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/12/11/2772448.html">Python深入03 对象的属性</a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/12/15/2772451.html">Python深入04 闭包</a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2013/02/16/2820212.html">Python深入05 装饰器</a></p>
+<div><a id="PostsList1_rpPosts_TitleUrl_0" href="http://www.cnblogs.com/vamei/p/3232088.html">Python深入06 内存管理</a></div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3 id="section4">Python补充</h3>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/07/19/2599940.html">Python补充01 序列的方法</a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/11/06/2755503.html">Python补充02 Python小技巧</a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/11/09/2762224.html">Python补充03 Python内置函数清单</a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2013/02/06/2892628.html">Python补充04 Python简史</a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2013/03/12/2954938.html">Python补充05 字符串格式化 (%操作符)</a></p>
+<p><a id="PostsList1_rpPosts_TitleUrl_0" href="http://www.cnblogs.com/vamei/p/3138446.html">Python补充06 Python之道</a></p>
+<p>&nbsp;</p>
+<h3 id="section5">Python标准库</h3>
+<p>Python标准库的重要性在于：</p>
+<ul>
+<li>标准库是Python的一个组成部分。</li>
+<li>Python的哲学是一个问题只有一个最好的解决方法。这些标准库为许多问题提供了一个标准的解决方案。</li>
+</ul>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/07/18/2597212.html">Python标准库——走马观花</a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/07/23/2605345.html">Python标准库的学习准备</a></p>
+<p>&nbsp;</p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/08/31/2661870.html">Python标准库01 正则表达式 (re包)</a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/09/03/2669426.html">Python标准库02 时间与日期 (time, datetime包)</a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/09/05/2671198.html">Python标准库03 路径与文件 (os.path包, glob包)</a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/09/14/2684775.html">Python标准库04 文件管理 (部分os包，shutil包)</a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/09/15/2684781.html">Python标准库05 存储对象 (pickle包，cPickle包)</a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/09/23/2698014.html">Python标准库06 子进程 (subprocess包)</a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/10/06/2712683.html">Python标准库07 信号 (signal包)</a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/10/11/2720042.html">Python标准库08 多线程与同步 (threading包)</a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/10/12/2721016.html">Python标准库09 进程信息 (部分os包)</a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/10/12/2721484.html">Python标准库10 多进程初步 (multiprocessing包)</a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/10/13/2722254.html">Python标准库11 多进程探索 (multiprocessing包)</a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/10/26/2741702.html">Python标准库12 数学与随机数 (math包，random包)</a></p>
+<p><a id="cb_post_title_url" href="http://www.cnblogs.com/vamei/p/3174796.html">Python标准库13 循环器 (itertools)</a></p>
+<p><a id="homepage1_HomePageDays_DaysList_DayItem_0_DayList_0_TitleUrl_0" href="http://www.cnblogs.com/vamei/p/3794388.html">Python标准库14 数据库 (sqlite3)</a></p>
+<p>&nbsp;</p>
+<p>Python标准库的学习的主要难度在于，需要一定的其它领域的基础知识。可参考：</p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/10/10/2718229.html">Linux</a><a href="http://www.cnblogs.com/vamei/archive/2012/10/10/2718229.html">概念与体系</a></p>
+<p>&nbsp;</p>
+<p>下面是Python标准库中，网络相关的内容。Python在网络方面有很多应用，无论是作为服务器，还是做爬虫。Python自身的语法简单，可读性高，有强大的脚本功能。这些让Python的开发者可以迅速开发出优秀网络产品。</p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/10/30/2744955.html">Python网络01 原始Python服务器</a></p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/10/31/2747885.html">Python网络02 Python服务器进化</a></p>
+<p>&nbsp;</p>
+<p>Python网络应用也需要网络协议的相关知识。可参考：</p>
+<p><a href="http://www.cnblogs.com/vamei/archive/2012/12/05/2802811.html">协议森林</a></p>
+<p>&nbsp;</p>
+<h3 id="section6">被解放的姜戈</h3>
+<p>Django是Python最有代表性的一个网络框架。使用Django，可以方便的实现一个功能全面、管理简便的网站或App后端。这里从实用的角度出发，介绍如何使用Django框架。</p>
+<p><a href="http://www.cnblogs.com/vamei/p/3528878.html">被解放的姜戈01 初试天涯</a></p>
+<p><a id="cb_post_title_url" href="http://www.cnblogs.com/vamei/p/3531740.html">被解放的姜戈02 庄园疑云</a></p>
+<p><a id="cb_post_title_url" href="http://www.cnblogs.com/vamei/p/3531740.html"></a><a href="http://www.cnblogs.com/vamei/p/3538183.html">被解放的姜戈03 所谓伊人</a></p>
+<p><a id="cb_post_title_url" href="http://www.cnblogs.com/vamei/p/3546090.html">被解放的姜戈04 各取所需</a></p>
+<p><a href="http://www.cnblogs.com/vamei/p/3548762.html">被解放的姜戈05 黑面管家</a></p>
+<p><a id="homepage1_HomePageDays_DaysList_DayItem_0_DayList_0_TitleUrl_0" href="http://www.cnblogs.com/vamei/p/3550951.html">被解放的姜戈06 假作真时</a></p>
+<p><a href="http://www.cnblogs.com/vamei/p/3578718.html">被解放的姜戈07 马不停蹄</a></p>
+<p>&nbsp;</p>
+<p><a id="cb_post_title_url" href="http://www.cnblogs.com/vamei/p/3603046.html">Python快速教程 尾声</a></p>
+
+    <p class='post_group_info'>
+    &rsaquo; <a target="_blank" href="http://top.jobbole.com/tag/python/feed/">RSS订阅Python话题</a>，关注Python技术的最新动态和优秀文章！<br/>    </p>
+
+</div>
+
+<div id="share-buttons" class="text-center">
+    <a data-post-id="13347" class="btn  href-style btn-bluet vote-post-up vote-post-up-single-class  register-user-only "><i class="glyphicon glyphicon-thumbs-up"></i> <h10 class="vote-post-up-single">59</h10> 赞</a>
+        <a id="favorite_post_link_13347" data-post-id="13347" class="btn href-style btn-bluet favorite-post register-user-only "><i class="glyphicon glyphicon-star-empty"></i> 收藏 <img class="loading-flag" src="http://top.jobbole.com/wp-content/themes/jobbolev4digg/images/loading.gif" /></a>
+        <div class="p-share">
+        <a href="javascript:void(0);" id="social-share-link" class="btn btn-bluet">分享 <i class="glyphicon glyphicon-share-alt"></i></a>
+    </div>
+    <!-- JiaThis Button BEGIN -->
+    <div class="jiathis_style pb-share">
+        <a class="jiathis_button_tsina"></a>
+        <a class="jiathis_button_weixin"></a>
+        <a class="jiathis_button_qzone"></a>
+        <a class="jiathis_button_fb hide-on-480"></a>
+        <a class="jiathis_button_googleplus hide-on-480"></a>
+        <a class="jiathis_button_ydnote hide-on-480"></a>
+        <a class="jiathis_button_evernote hide-on-480"></a>
+        <a class="jiathis_button_pocket hide-on-480"></a>
+    </div>
+    <!-- JiaThis Button END -->
+</div>
+
+<script type="text/javascript" >
+    var jiathis_config={
+        data_track_clickback:false,
+        title:"《Python快速教程》",
+        summary:"怎么能快速地掌握Python？这是和朋友闲聊时谈起的问题。
+
+Python包含的内容很多，加上各种标准库、拓展库，乱花渐欲迷人眼。我一直希望写一个快速的、容易上手的Python教程，而且言语简洁，循序渐进，让没有背景的读者也可以从基础开始学习。我将在每一篇中专注于一个小的概念，希望在闲暇时可以很快读完。",
+        pic:"",
+        appkey:{
+            "tsina":2606191112
+        },
+        ralateuid:{
+            "tsina":3844704614
+        },
+        hideMore:true
+    }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1745061" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+<div style="text-align: center;">
+    <a href="http://www.jikexueyuan.com/event/android?hmsr=job_top_bottom_android" target="_blank"><img src="http://top.jobbole.com/wp-content/uploads/sites/8/2014/09/37af9af2778a006f51053f6f315cdcda.jpg" /></a>
+    <br/>
+</div>
+
+
+<div id="comment_form_id" class="p-commentform">
+    <h5 class="sub-title-no-bottom-line"><i class="glyphicon "></i>匿名评论                <span class="small-sub-title">（ <a target="_blank" href="http://www.jobbole.com/register">注册</a> / <a target="_blank" href="http://top.jobbole.com/wp-login.php?redirect_to=http%3A%2F%2Ftop.jobbole.com%2F13347%2F">登录</a> 后评论）</span>
+            </h5>
+    <form action="http://top.jobbole.com/wp-comments-post.php" method="post" id="comment-form">
+        <p class="row"><span class="col-xs-12"><textarea name="comment" id="comment" rows="3" class="form-control" placeholder="请填写评论内容"></textarea></span></p>
+                <p class="row">
+            <span class="col-xs-6 col-sm-3"><input id="comment-captcha-input" type="text" data-submit-btn-id="comment-submit-btn" placeholder="验证码" class="form-control"></span>
+            <span class="col-xs-6 col-sm-3">
+                <img id="comment-checking-captcha-code" class="loading-flag" src="http://top.jobbole.com/wp-content/themes/jobbolev4digg/images/loading.gif" />
+                <i id="comment-captcha-green-flag" class="captcha-green-flag glyphicon glyphicon-ok"></i>
+                <i id="comment-captcha-red-flag" class="captcha-red-flag glyphicon glyphicon-remove"></i>
+
+                
+                <img class="captcha-code" src="http://top.jobbole.com/captcha.php" data-base-src="http://top.jobbole.com/captcha.php" />
+                <a class="href-style refresh-captcha-code" title="换一个验证码" alt="换一个验证码" data-source-url="http://top.jobbole.com/captcha.php"><i class="glyphicon glyphicon-refresh"></i></a>
+            </span>
+        </p>
+        <input type='hidden' name='email' value='unknown923850402@jobbole.com' id='email' />
+        <input type='hidden' name='author' value='匿名人士' id='author' />
+                <p>
+            <button id="comment-submit-btn" disabled="disabled" class="btn btn-primary">提交评论</button>
+            <img id="comment-submit-loading" class="loading-flag" src="http://top.jobbole.com/wp-content/themes/jobbolev4digg/images/loading.gif" />
+            <label id="comment-submit-tips" class="submit-tips"></label>
+        </p>
+
+        <input type='hidden' name='comment_post_ID' value='13347' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+        
+    </form>
+
+</div>
+
+
+<div id="comment_list" class="comments">
+    
+        <h5 id="comments"  class="sub-title"><i class="glyphicon "></i>最新评论</h5>
+    <!-- Recent Comments -->
+    <ul class="cmnt-list">
+
+        
+    <li id="comment-1047" class="cmnt odd">
+        <div class="cmnt-box">
+            <header class="cmnt-header">
+                                    <a href="http://www.jobbole.com/members/envy" class="cmnt-img"><img width="37" height="37" src="http://top.jobbole.com/wp-content/uploads/avatars/34753/2458a0a24c2d444c05008b2226bf8243-bpthumb.jpg" alt=""></a>
+                    <div class="cmnt-meta">
+                        <span><a href="http://www.jobbole.com/members/envy">spectre</a><label class="comment_author_data">（<a href='http://top.jobbole.com/author/envy/'>16 分享</a>， 5 评论）</label></span>
+                        <span class="c-date">2014-09-25 19:29:18</span>
+                    </div>
+                                    <span class="level"><a href="http://top.jobbole.com/13347/#comment-1047">1 楼</a></span>
+            </header>
+            <div class="cmnt-body">
+                <p><p>马克</p>
+</p>
+            </div>
+            <footer class="cmnt-footer">
+                <p class="c-like">
+                    <a title="赞同" alt="赞同" class="1047voteflag  t-up  href-style vote-comment-up " data-comment-id="1047"><i class="glyphicon glyphicon-thumbs-up"></i> <span id="1047voteuptotal">0</span></a>
+                    <a title="反对" alt="反对" class="1047voteflag  t-down  href-style vote-comment-down " data-comment-id="1047"><i class="glyphicon glyphicon-thumbs-down"></i> <span id="1047votedowntotal">0</span></a>
+                    <a class="href-style reply-comment-btn" data-comment-id="1047" data-post-id="13347" data-comment-box-id="comment-1047">回复 <i class="glyphicon glyphicon-pencil"></i></a>
+                </p>
+            </footer>
+        </div>
+
+            </ul>
+    
+    <h5 id="comments-from-weibo"  class="sub-title"><i class="glyphicon "></i>来自微博的评论</h5>
+    <!-- Recent Comments -->
+    <ul class="cmnt-list">
+        <wb:comments url="http://top.jobbole.com/13347/" border="y" width="auto" color="e8e8e8,ffffff,4c4c4c,5093d5,cccccc,f0f0f0" appkey="2606191112" ralateuid="3844704614" ></wb:comments>
+    </ul>
+
+</div>
+</div>
+
+    <div class="back-top-div">
+        <P id="back-top">
+            <a title="返回顶部" alt="返回顶部" href="#top"><span></span></a>
+        </P>
+    </div>
+
+</div>
+</div>
+
+
+<div class="col-xs-12 col-sm-4">
+    <div class="right-content">
+        <div class="s-widget">
+            <form class="search-form" method="get" id="searchform" action="http://top.jobbole.com">
+                <input type="text" class="form-control" value="" name="s" id="s" placeholder="搜索">
+                <button class="btn-search" type="submit" id="searchsubmit"><i class="glyphicon glyphicon-search"></i></button>
+            </form>
+        </div>
+
+        <div class="t-box">
+            <div class="tab-content">
+                <ul>
+                    <li>
+                        <div class="media-body">
+                            <a target='_blank'  href='http://www.imooc.com/course/list?lange_id=223&utm_source=jobboleblog'><img src='http://top.jobbole.com/wp-content/uploads/sites/8/2014/09/af069778e16820db995dfb62f325431c.png' /></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+                <div class="t-box">
+            <h5 class="sub-title">可能感兴趣的话题</h5>
+            <div class="tab-content">
+                <ul>
+                    <li>
+                        <div class="media-body">
+                                                                <span class="topic-info"><a target="_blank" href="http://top.jobbole.com/tag/python/"><img src="http://top.jobbole.com/wp-content/uploads/sites/8/2014/07/36c4ed88b6ffefc5c83fce3881952875.png" width="15" height="15" /> Python</a></span>
+                                                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+<div class="t-box">
+    <h5 class="sub-title"><i class="glyphicon glyphicon-transfer"></i> 相关内容</h5>
+    <div class="tab-content">
+        <ul>
+                                        <li>
+                                <div class="media-body digg-item-updated">
+                                    <span class="digg-item-updated-title"><a href="http://top.jobbole.com/13833/">使用 Python 会降低程序员的编程能力吗？</a></span>
+                                    <p class="digg-item-updated-meta">
+                                        <span class="digg-user-thumbnail-list"><a title="0x00" alt="0x00" href="http://top.jobbole.com/author/lworld0x00/"><img class="img-circle" src="http://gravatar.com/avatar/3e8a2a2aa5d2afa60a212b6eaa4280b5?d=mm&s=32&r=G" /></a> 分享<a href="#"></a></span>•
+                                        <span>13 赞</span>
+                                    </p>
+                                </div>
+                            </li>
+                                                    <li>
+                                <div class="media-body digg-item-updated">
+                                    <span class="digg-item-updated-title"><a href="http://top.jobbole.com/13955/">零基础自学用Python 3开发网络爬虫(三): 伪装浏览器君</a></span>
+                                    <p class="digg-item-updated-meta">
+                                        <span class="digg-user-thumbnail-list"><a title="Jecvay" alt="Jecvay" href="http://top.jobbole.com/author/jecvay/"><img class="img-circle" src="http://gravatar.com/avatar/3ae8ac11dac876d4f528f581b10ba6d2?d=mm&s=32&r=G" /></a> 分享<a href="#"></a></span>•
+                                        <span>2 赞</span>
+                                    </p>
+                                </div>
+                            </li>
+                                                    <li>
+                                <div class="media-body digg-item-updated">
+                                    <span class="digg-item-updated-title"><a href="http://top.jobbole.com/11347/">Python中何时使用断言</a></span>
+                                    <p class="digg-item-updated-meta">
+                                        <span class="digg-user-thumbnail-list"><a title="wangjuanjuan" alt="wangjuanjuan" href="http://top.jobbole.com/author/wangjuanjuan/"><img class="img-circle" src="http://top.jobbole.com/wp-content/uploads/avatars/10550/f9dca99630ef068b0013a5728c2f2e37-bpthumb.jpg" /></a> 分享<a href="#"></a></span>•
+                                        <span>4 赞</span>
+                                    </p>
+                                </div>
+                            </li>
+                                                    <li>
+                                <div class="media-body digg-item-updated">
+                                    <span class="digg-item-updated-title"><a href="http://top.jobbole.com/11166/">快速入门：十分钟学会Python</a></span>
+                                    <p class="digg-item-updated-meta">
+                                        <span class="digg-user-thumbnail-list"><a title="wangjuanjuan" alt="wangjuanjuan" href="http://top.jobbole.com/author/wangjuanjuan/"><img class="img-circle" src="http://top.jobbole.com/wp-content/uploads/avatars/10550/f9dca99630ef068b0013a5728c2f2e37-bpthumb.jpg" /></a> 分享<a href="#"></a></span>•
+                                        <span>7 赞</span>
+                                    </p>
+                                </div>
+                            </li>
+                                                    <li>
+                                <div class="media-body digg-item-updated">
+                                    <span class="digg-item-updated-title"><a href="http://top.jobbole.com/10808/">英文公开课：计算机科学及Python编程导论</a></span>
+                                    <p class="digg-item-updated-meta">
+                                        <span class="digg-user-thumbnail-list"><a title="newseditors" alt="newseditors" href="http://top.jobbole.com/author/newseditors/"><img class="img-circle" src="http://top.jobbole.com/wp-content/uploads/avatars/9177/87dfb1a3db7e36ed8a2aefdb5c9d837e-bpthumb.png" /></a> 分享<a href="#"></a></span>•
+                                        <span>11 赞</span>
+                                    </p>
+                                </div>
+                            </li>
+                                </ul>
+    </div>
+</div>
+
+<div class="t-box">
+    <h5 class="sub-title">一周热门</h5>
+    <div class="tab-content">
+        <ul>
+                                <li>
+                    <div class="media-body digg-item-updated">
+                        <span class="digg-item-updated-title"><a target="_blank" href="http://top.jobbole.com/13347/">Python快速教程</a></span>
+                        <p class="digg-item-updated-meta">
+                            <span>59 赞</span>
+                                                            •<span><a href='http://top.jobbole.com/tag/python/'>Python</a></span>
+                                                    </p>
+                    </div>
+                </li>
+                                <li>
+                    <div class="media-body digg-item-updated">
+                        <span class="digg-item-updated-title"><a target="_blank" href="http://top.jobbole.com/13810/">从零开始写一个简单的操作系统</a></span>
+                        <p class="digg-item-updated-meta">
+                            <span>31 赞</span>
+                                                    </p>
+                    </div>
+                </li>
+                                <li>
+                    <div class="media-body digg-item-updated">
+                        <span class="digg-item-updated-title"><a target="_blank" href="http://top.jobbole.com/13592/">CTO这点事</a></span>
+                        <p class="digg-item-updated-meta">
+                            <span>20 赞</span>
+                                                    </p>
+                    </div>
+                </li>
+                                <li>
+                    <div class="media-body digg-item-updated">
+                        <span class="digg-item-updated-title"><a target="_blank" href="http://top.jobbole.com/13465/">如何快速掌握一门技术</a></span>
+                        <p class="digg-item-updated-meta">
+                            <span>19 赞</span>
+                                                    </p>
+                    </div>
+                </li>
+                                <li>
+                    <div class="media-body digg-item-updated">
+                        <span class="digg-item-updated-title"><a target="_blank" href="http://top.jobbole.com/13516/">网传iPhone 6国行10月10号开始发售，售价5288起</a></span>
+                        <p class="digg-item-updated-meta">
+                            <span>16 赞</span>
+                                                    </p>
+                    </div>
+                </li>
+                                <li>
+                    <div class="media-body digg-item-updated">
+                        <span class="digg-item-updated-title"><a target="_blank" href="http://top.jobbole.com/13833/">使用 Python 会降低程序员的编程能力吗？</a></span>
+                        <p class="digg-item-updated-meta">
+                            <span>13 赞</span>
+                                                            •<span><a href='http://top.jobbole.com/tag/python/'>Python</a></span>
+                                                    </p>
+                    </div>
+                </li>
+                        </ul>
+    </div>
+</div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-3 col-md-2">
+                <p>&copy; 2014 <a href="#">伯乐在线</a></p>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-8">
+                <nav class="footer-menu">
+                    <ul>
+                        <li><a target="_blank" href="http://blog.jobbole.com">博客</a></li>
+                        <li><a target="_blank" href="http://top.jobbole.com">头条</a></li>
+                        <li><a target="_blank" href="http://www.jobbole.com/groups">小组</a></li>
+                        <li><a target="_blank" href="http://hao.jobbole.com">资源</a></li>
+                                            </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+<!-- Info Box -->
+<div class="modal fade" id="info-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="rl-form">
+                <header class="form-header">
+                    <label id="info-modal-title"></label>
+                    <a href="#" class="pull-right" data-dismiss="modal" aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></a>
+                </header>
+                <p id="info-modal-content"></p>
+                <p class="text-center">
+                    <button id="info-modal-button" class="btn btn-primary btn-md" data-dismiss="modal"></button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //info box -->
+<!-- Login -->
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="rl-form">
+                <form name="loginform" id="loginform" action="http://top.jobbole.com/wp-login.php" method="post">
+                    <header class="form-header">
+                        <label><i class="glyphicon glyphicon-log-in"></i> 登录</label>
+                        <a href="#" class="pull-right" data-dismiss="modal" aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></a>
+                    </header>
+                    <p><input type="text" name="log" id="user_login" placeholder="用户名" class="form-control required"></p>
+
+                    <p><input type="password" name="pwd" id="user_pass" placeholder="密码" class="form-control required"></p>
+
+                    <p class="text-right">
+                        <small><a target="_blank" href="http://www.jobbole.com/wp-login.php?action=lostpassword ">忘记密码</a></small>
+                        <small><a target="_blank" href="http://www.jobbole.com/register">注册用户</a></small>
+                    </p>
+                    <p>
+                        <button type="submit" class="btn btn-primary btn-md btn-block">登录</button>
+                        <input type="hidden" name="redirect_to" value="http://top.jobbole.com/13347/" />
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //Login -->
+<!-- Submit Link -->
+<div class="modal fade" id="submit-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="rl-form">
+                    <header class="form-header">
+                        <label>传播精华，人人有责 :)  </label>
+                        <a href="#" class="pull-right" data-dismiss="modal" aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></a>
+                    </header>
+                    <p><input id="submit_form_source_article_title" title="标题长度不能大于100字" type="text" placeholder="标题（必填*）" class="form-control required"></p>
+                    <p><input id="submit_form_source_article_url" title="如果原文链接不填写，将作为讨论帖发布。（链接长度不能超过200字）" type="text" placeholder="原文链接（选填）" class="form-control"></p>
+                    <p><textarea id="submit_form_source_article_excerpt" title="摘要可以帮助读者提高阅读效率。如果需要包含图片，请直接贴图片地址。（摘要长度不能超过5000字）" placeholder="内容摘要（必填*）" rows="7" class="form-control required"></textarea></p>
+                                        <p class="row">
+                        <span class="col-xs-6 col-sm-3"><input type="text" id="article-captcha-input" data-submit-btn-id="article-submit-btn" placeholder="验证码" class="form-control"></span>
+                        <span class="col-xs-5 col-md-4">
+                            <img id="article-checking-captcha-code" class="loading-flag" src="http://top.jobbole.com/wp-content/themes/jobbolev4digg/images/loading.gif" />
+                            <i id="article-captcha-green-flag" class="captcha-green-flag glyphicon glyphicon-ok"></i>
+                            <i id="article-captcha-red-flag" class="captcha-red-flag glyphicon glyphicon-remove"></i>
+                            <img class="captcha-code" src="http://top.jobbole.com/captcha.php" alt="点击刷新验证码" title="点击刷新验证码" data-base-src="http://top.jobbole.com/captcha.php" />
+                            <a class="href-style refresh-captcha-code" title="换一个验证码" alt="换一个验证码" data-source-url="http://top.jobbole.com/captcha.php"><i class="glyphicon glyphicon-refresh"></i></a>
+                        </span>
+                    </p>
+                                        <p class="text-center">
+                        <button id="article-submit-btn" disabled="disabled" class="btn btn-md btn-primary">提交</button>
+                        <button id="article-submit-close-btn"  data-dismiss="modal" class="btn btn-md btn-default">关闭</button>
+                        <img id="article-submit-loading" class="loading-flag" src="http://top.jobbole.com/wp-content/themes/jobbolev4digg/images/loading.gif" />
+                        <label id="article-submit-tips" class="submit-tips"></label>
+                    </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //Submit Link -->
+
+<!-- Generated in 0.389 seconds. (138 q) -->
+
+	<script type='text/javascript'>
+/* <![CDATA[ */
+var viewsCacheL10n = {"admin_ajax_url":"http:\/\/top.jobbole.com\/wp-admin\/admin-ajax.php","post_id":"13347"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://top.jobbole.com/wp-content/plugins/wp-postviews/postviews-cache.js?ver=1.64'></script>
+<script lang="javascript">
+    var templateUrl = 'http://top.jobbole.com/wp-content/themes/jobbolev4digg';
+</script>
+<script src="http://top.jobbole.com/wp-content/themes/jobbolev4digg/js/jquery-1.11.0.min.js"></script>
+<script src="http://top.jobbole.com/wp-content/themes/jobbolev4digg/js/bootstrap.min.js"></script>
+<script src="http://top.jobbole.com/wp-content/themes/jobbolev4digg/js/script.js"></script>
+<script src="http://top.jobbole.com/wp-content/themes/jobbolev4digg/js/jquery.placeholder.js"></script>
+<script src="http://top.jobbole.com/wp-content/themes/jobbolev4digg/js/jquery.cookie.js"></script>
+<!-- script src="/js/jquery.infinitescroll.js"></script -->
+
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','http://top.jobbole.com/wp-content/themes/jobbolev4digg/js/analytics.js','ga');
+
+    ga('create', 'UA-51671036-1', 'jobbole.com');
+    ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

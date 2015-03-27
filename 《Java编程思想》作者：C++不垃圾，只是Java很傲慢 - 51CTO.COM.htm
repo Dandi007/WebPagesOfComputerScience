@@ -1,0 +1,606 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0048)http://developer.51cto.com/art/200906/131773.htm -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK"><script src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/saved_resource" charset="utf-8"></script><script src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/ujian.js" charset="utf-8" id="uyan_script"></script><script type="text/javascript" async="" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/ga.js"></script><script src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/style5.js" charset="utf-8" id="uyan_script"></script><script src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/saved_resource(1)" charset="utf-8" id="uyan_script"></script>
+
+<meta http-equiv="x-ua-compatible" content="ie=7">
+
+<title>《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM</title>
+<meta name="description" content="《Thinking in C++》及《Thinking in Java》的作者Bruce Eckel向来是个“拥C++反Java”派，他曾经不止一次的提到，C++语言特性的添加有多么的深思熟虑，而Java又是如何的把一些奇怪的东西不停的加进去。Bruce认为，理解语言特性为什么会存在是非常有帮助的。他将其称之为“语言考古学”。">
+<meta name="keywords" content="Java编程思想,C++,Java">
+<!--<base target="_blank">--><base href="." target="_blank">
+<link href="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/grid.css" rel="stylesheet" type="text/css">
+<link type="text/css" rel="stylesheet" href="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/art_master_top.css">
+<link href="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/css3.css" rel="stylesheet" type="text/css">
+<script language="javaScript" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/base_art.js"></script>
+<script src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/index_1_down.js"></script>
+<style type="text/css">
+.bds_tools a{ padding:0; margin:0;}
+</style>
+<link href="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/bdsstyle.css" rel="stylesheet" type="text/css"><style type="text/css">#uyan_cmt_box{width: 100% !important;}#uyan_star{display: none !important;}#uyan_cmty_btn{display: block !important;}#uyan_login_btn{display: block !important;}#uyan_usp{display: none !important;}.uyan_st_slog{right: 162px !important;}#uyan_ddword{display: none !important;}#uyan_info_sync{display: none !important;}</style><script src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/logger.js"></script></head>
+<body><div id="BAIDU_DUP_fp_wrapper" style="position: absolute; left: -1px; bottom: -1px; z-index: 0; width: 0px; height: 0px; overflow: hidden; visibility: hidden; display: none;"><iframe id="BAIDU_DUP_fp_iframe" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/o.htm" style="width: 0px; height: 0px; visibility: hidden; display: none;"></iframe></div><iframe frameborder="0" style="display: none;"></iframe><div id="bdshare_s" style="display: block;"><iframe id="bdsIfr" style="position:absolute;display:none;z-index:9999;" frameborder="0"></iframe><div id="bdshare_l" style="display: none;"><div id="bdshare_l_c"><h6>分享到</h6><ul><li><a href="http://developer.51cto.com/art/200906/131773.htm#" class="bds_mshare mshare">一键分享</a></li><li><a href="http://developer.51cto.com/art/200906/131773.htm#" class="bds_qzone qqkj">QQ空间</a></li><li><a href="http://developer.51cto.com/art/200906/131773.htm#" class="bds_tsina xlwb">新浪微博</a></li><li><a href="http://developer.51cto.com/art/200906/131773.htm#" class="bds_bdysc bdysc">百度云收藏</a></li><li><a href="http://developer.51cto.com/art/200906/131773.htm#" class="bds_renren rrw">人人网</a></li><li><a href="http://developer.51cto.com/art/200906/131773.htm#" class="bds_tqq txwb">腾讯微博</a></li><li><a href="http://developer.51cto.com/art/200906/131773.htm#" class="bds_bdxc bdxc">百度相册</a></li><li><a href="http://developer.51cto.com/art/200906/131773.htm#" class="bds_kaixin001 kxw">开心网</a></li><li><a href="http://developer.51cto.com/art/200906/131773.htm#" class="bds_tqf txpy">腾讯朋友</a></li><li><a href="http://developer.51cto.com/art/200906/131773.htm#" class="bds_tieba bdtb">百度贴吧</a></li><li><a href="http://developer.51cto.com/art/200906/131773.htm#" class="bds_douban db">豆瓣网</a></li><li><a href="http://developer.51cto.com/art/200906/131773.htm#" class="bds_tsohu shwb">搜狐微博</a></li><li><a href="http://developer.51cto.com/art/200906/131773.htm#" class="bds_bdhome bdhome">百度新首页</a></li><li><a href="http://developer.51cto.com/art/200906/131773.htm#" class="bds_sqq sqq">QQ好友</a></li><li><a href="http://developer.51cto.com/art/200906/131773.htm#" class="bds_thx thx">和讯微博</a></li><li><a href="http://developer.51cto.com/art/200906/131773.htm#" class="bds_more">更多...</a></li></ul><p><a href="http://developer.51cto.com/art/200906/131773.htm#" class="goWebsite">百度分享</a></p></div></div></div>
+<!-- 导航 开始-->
+<div id="home_top">    <div class="top_nav">        <div class="left" style="width:400px"><div class="logo_51cto" title="51CTO.COM - 技术成就梦想 -  中国领先的IT技术网站"></div><a href="http://www.51cto.com/">首页</a><img width="16" height="25" align="absmiddle" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/top_bg_xian.gif" style="padding-top: 2px;"><a onmouseover="show(1,this);" onmouseout="popupClose();" href="http://www.51cto.com/col/35/" target="_blank">技术频道<img align="absmiddle" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/nav_ico1.gif" style="padding-left: 4px;"></a><img width="16" height="25" align="absmiddle" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/top_bg_xian.gif"><a onmouseover="show(2,this);" onmouseout="popupClose();" href="http://www.51cto.com/" target="_blank">51CTO旗下网站<img align="absmiddle" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/nav_ico1.gif" style="padding-left: 4px;"></a><img width="16" height="25" align="absmiddle" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/top_bg_xian.gif"><a href="http://www.51cto.com/about/map.htm" target="_blank">地图</a> <a href="http://www.51cto.com/about/rss.html" target="_blank"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/143749870.gif" style="vertical-align:middle; margin-bottom: 5px; margin-left:5px;"></a>       </div>        <div class="right">            <div class="more"><img width="27" height="16" align="absmiddle" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/top_shequ.gif">社区：<a href="http://edu.51cto.com/" target="_blank" style="color:#CC0000">学院</a><a href="http://down.51cto.com/" target="_blank">下载</a><a href="http://bbs.51cto.com/" target="_blank">论坛</a><a href="http://blog.51cto.com/" target="_blank">博客</a><a onmouseover="show(3,this)" onmouseout="popupClose()" href="javascript:viod(0);">更多<img align="absmiddle" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/nav_ico1.gif" style="padding-left: 4px;"></a>            </div>            <span id="login_status"><div class="login" style="padding-top:8px; text-align:right;"><a href="http://edu.51cto.com/top" style="background:none"><img style="margin-top:-3px" id="dia" align="absmiddle" width="20" title="今天你领学分了吗？" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/dia.gif"></a><a href="http://home.51cto.com/?reback=http%253A%252F%252Fdeveloper.51cto.com%252Fart%252F200906%252F131773.htm" target="_self">登录</a><a href="http://ucenter.51cto.com/reg_01.php?reback=http%253A%252F%252Fdeveloper.51cto.com%252Fart%252F200906%252F131773.htm" target="_self">注册</a></div></span>                </div>    </div></div>
+<div class="subMenu1" id="s1" onmouseover="popupNoClose();" onmouseout="popupClose();">
+<ul>
+<li><a href="http://network.51cto.com/" target="_blank">网络</a></li>
+<li><a href="http://netsecurity.51cto.com/" target="_blank">安全</a></li>
+<li><a href="http://developer.51cto.com/" target="_blank">开发</a></li>
+<li><a href="http://database.51cto.com/" target="_blank">数据库</a></li>
+<li><a href="http://server.51cto.com/" target="_blank">服务器</a></li>
+<li><a href="http://os.51cto.com/" target="_blank">系统</a></li>
+<li><a href="http://virtual.51cto.com/" target="_blank">虚拟化</a></li>
+<li><a href="http://cloud.51cto.com/" target="_blank">云计算</a></li>
+<li><a href="http://developer.51cto.com/embed/" target="_blank">嵌入式</a></li>
+<li><a href="http://mobile.51cto.com/" target="_blank">移动开发</a></li>
+</ul>
+</div> 
+<div class="subMenu2" id="s2" onmouseover="popupNoClose()" onmouseout="popupClose()">
+<ul>
+<li><a href="http://www.51cto.com/" target="_blank" title="中国领先的IT技术网站">51CTO.COM</a></li>
+<li><a href="http://www.cioage.com/" target="_blank" title="中国首个专门服务于CIO的专业网站">CIOage.com</a></li>
+<li><a href="http://www.watchstor.com/" target="_blank" title="领先的中文存储网络媒体">WatchStor.com</a></li>
+<li><a href="http://www.hc3i.cn/" target="_blank" title="中国首家专注于数字医疗及医疗信息化的专业网站">HC3i.cn</a></li>
+</ul>
+</div>
+<script src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/jquery-1.8.3.min.js"></script>
+<script>
+$(function(){
+	$(".bann").height(265);	 
+	$(".bann").css("background-color","white");
+});
+var edunum=2;
+$(function(){
+	$("#change").click(function(){
+		$("#edu > ul").css("display","none");
+		var eduid='edu'+edunum;
+		$("#" + eduid).css("display","block");	
+		if(edunum<4){
+			edunum++;	
+		}else{
+			edunum=1;	
+		}							
+	});  
+});
+</script>
+
+<script src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/head_art_more1.js"></script><div class="subMenu3" id="s3" onmouseover="popupNoClose()" onmouseout="popupClose()" style="z-index:9999;position: absolute;">
+<ul>
+<li><a href="http://home.51cto.com/" target="_blank">家园</a></li>
+<li><a href="http://edu.51cto.com/" target="_blank">学院</a></li>
+<li><a href="http://blog.51cto.com/" target="_blank">博客</a></li>
+<li><a href="http://bbs.51cto.com/" target="_blank">论坛</a></li>
+<li><a href="http://down.51cto.com/" target="_blank">下载</a></li>
+<li><a href="http://selftest.51cto.com/" target="_blank">自测</a></li>
+<li><a href="http://doctor.51cto.com/" target="_blank">门诊</a></li>
+<li><a href="http://blog.51cto.com/newsletter/" target="_blank">周刊</a></li>
+<li><a href="http://book.51cto.com/" target="_blank">读书</a></li>
+<li><a href="http://g.51cto.com/" target="_blank">技术圈</a></li>
+</ul>
+</div>
+
+<!-- 登陆信息 -->
+<!-- 导航 结束--> 
+ <div class="g_39 mb10">
+	<div id="tonglanad" class="fl"><script language="JavaScript" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/ad.js"></script><script type="text/javascript" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/ad.php"></script><iframe width="760" height="90" noresize="" scrolling="No" frameborder="0" marginheight="0" marginwidth="0" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/4(1).htm" align="left"></iframe></div>
+	<div id="list4" class="fr">
+		<ul>
+			<li id="wordlinkad1"><script src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/wordlink1.js"></script><script type="text/javascript" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/ajs.php"></script><a href="http://gg1.51cto.com/www/delivery/ck.php?oaparams=2__bannerid=512__zoneid=254__cb=e2348c3f6a__oadest=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Fcloud%2Fbluemix%2F2014_8_7test.html%3Fcmp%3Ddwskl%26cpb%3Ddw%26ct%3Ddwcon%26cr%3Dcn_51CTO_t2%26ccy%3Dcn" target="_blank"><font color="red"> 关注移动开发，参与有奖问答</font></a><div id="beacon_e2348c3f6a" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/lg.php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div>
+</li>
+			<li id="wordlinkad2"><script src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/wordlink2.js"></script><script type="text/javascript" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/ajs(1).php"></script><a href="http://gg.51cto.com/www/delivery/ck.php?oaparams=2__bannerid=359__zoneid=255__cb=d4f425ad5b__oadest=http%3A%2F%2Fnetsecurity.51cto.com%2Fsecu%2FF5%2FSynthesis%2F" target="_blank"><font color="blue">软件定义的数据中心解决方案</font></a><div id="beacon_d4f425ad5b" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/lg(1).php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div>
+</li>
+			<li id="wordlinkad3"><script src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/wordlink3.js"></script><script type="text/javascript" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/ajs(2).php"></script><a href="http://gg2.51cto.com/www/delivery/ck.php?oaparams=2__bannerid=90__zoneid=256__cb=e2b825bd50__oadest=http%3A%2F%2Fnetwork.51cto.com%2Fnetwork%2F01%2F1.html" target="_blank"><font color="blue">智能化管理，让IT管理更轻松</font></a><div id="beacon_e2b825bd50" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/lg(2).php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div>
+</li>
+			<li id="wordlinkad4"><script src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/wordlink4.js"></script><script type="text/javascript" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/ajs(3).php"></script></li>
+		</ul>
+	</div>
+<br class="dle">
+</div>
+
+<div class="g_39 menu">
+<div class="subNav_logo"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/kaifa_logo.gif"></div>
+<div class="subNav_l"><a href="http://developer.51cto.com/">首页</a> | <a href="http://developer.51cto.com/java/">Java</a> | <a href="http://developer.51cto.com/net/">.NET</a> | <a href="http://developer.51cto.com/web/">Web</a> | <a href="http://developer.51cto.com/col/1315/">XML</a> | <a href="http://developer.51cto.com/col/585/">语言工具</a> | <a href="http://developer.51cto.com/col/1312/">测试</a> | <a href="http://developer.51cto.com/col/1314/" target="_blank">游戏</a> | <a href="http://developer.51cto.com/col/583/" target="_blank">移动</a> | <a href="http://developer.51cto.com/col/1308/">架构</a> | <a href="http://developer.51cto.com/col/586/">项目管理</a> | <a href="http://publish.51cto.com/list/460/">全部文章</a></div>
+  
+<div class="search fr">
+<dl>
+<form name="searchform" action="http://www.51cto.com/php/search.php" target="_blank" method="post" style="margin:0px; padding:0px;">
+<dt class="fl"><input name="keyword" type="text" class="searchInput f14 input" value="请输入关键字" onfocus="doempty(this, &#39;请输入关键字&#39;);" onblur="doempty(this, &#39;请输入关键字&#39;);"></dt>
+<dd class="fl"><input type="image" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/search.gif"></dd></form>
+</dl>
+</div>
+<br class="dle">
+</div>
+<div class="g_39 b3-s-4273B3 rel">
+<!--width : 26*25 - 15 = 635px-->
+<div class="g_26 fl m_l">
+<div class="brief bgF8F8F8">
+<p class="crumb ">您所在的位置：<a href="http://developer.51cto.com/">开发</a> &gt; <a href="http://developer.51cto.com/col/576/">技术新闻</a> &gt;  <b>《Java编程思想》作者：C++不垃圾，只是Java很傲慢</b> </p>
+<h1>《Java编程思想》作者：C++不垃圾，只是Java很傲慢</h1>
+<div class="msg">
+<div>2009-06-25 18:13  boxi 编译  <a href="http://www.51cto.com/" target="_blank">51cto.com</a> <span class="f12-a"><a href="http://developer.51cto.com/art/200906/131773.htm#commment" target="_self"></a></span> 字号：<span class="f14-b"><a href="javascript:setfont(12);" target="_self">T</a></span> | <span class="f16-b"><a href="javascript:setfont(16);" target="_self">T</a></span></div>
+<div class="artHd" id="books" style="padding:5px 25px;display:none;"><script language="JavaScript" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/getBookData.php"></script></div>
+<div class="fav"><a href="javascript:favorBox('open');" title="一键收藏，随时查看，分享好友！" target="_self"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/Fav.gif" alt="一键收藏，随时查看，分享好友！" border="0"></a></div>
+</div>
+<div class="brieftext">
+<p class="f14 green">《Thinking in C++》及《Thinking in Java》的作者Bruce Eckel向来是个“拥C++反Java”派，他曾经不止一次的提到，C++语言特性的添加有多么的深思熟虑，而Java又是如何的把一些奇怪的东西不停的加进去。Bruce认为，理解语言特性为什么会存在是非常有帮助的。他将其称之为“语言考古学”。</p>
+<p class="ad">AD：<script src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/keywords_ad_new.js"></script><a href="http://edu.51cto.com/course/course_id-1189.html" target="_blank" style="text-decoration: none;color:red">2014WOT全球软件技术峰会北京站 课程视频发布</a>
+</p>
+</div>
+</div>
+<div class="tag bgF8F8F8" id="indexlist" style="display:none;">
+<ul id="indexliststr">
+</ul>
+<br class="dle">
+</div>
+<div class="content bgF8F8F8 f14">
+<div id="content">
+<p></p><p><font face="黑体">【51CTO外电精选】本文节选自《Thinking in C++》及《Thinking in Java》作者Bruce Eckel的博文，文章写在一次C++规范委员会例常会议之后，Bruce受C++设计师（常被称为C++之父）Bjarne Stroustrup邀请而参与了这次会议，并写下了参会感想如下（节选）：</font></p>
+<p>在C++委员会会议上我所能找到的，是C++社区里最聪明的一群人，群英荟萃，为我答疑解惑。我很快意识到，这种方式之好，远超我在任何一门研究生课程中之所得。如果考虑到研究生的机会成本，这还是一笔在财务上要划算得多的生意。</p>
+<p>我被深深吸引住了，坚持出席了有大约8年的时间。在我走后，委员会仍继续前行；虽标准仍未制定完成，但彼时Java已经出现了，还有一些其他（语言）的草案也问世了（这是技术刺激成瘾者的毛病——我的确钻研某一门语言，但我也一直在寻找更有生产力的手段：那些前景看起来很光明的语言特性可以毫不费力地分散我的注意力）。</p>
+<p>每次大家见面的时候，我都会抛出一列清单，这是我累积下来的有关C++的棘手问题列表。通常我会请他们在几日内予以澄清。出席委员会能看到的最有价值的东西就是这个，当然，还包括得以早早接触到即将公布的新特性。</p>
+<p>从长远来看，把语言特性添加进C++的谜团里面并观察它，是一门深奥的学问。现在说三道四是一件很简单的事情，说什么C++太烂了，设计太糟糕了等等。在对C++设计时所受的约束都没有任何理解时，很多人就这样脱口而出了。Stroustrup（51CTO编者注：这个Stroustrup也就是邀请作者参会的Stroustrup，也就是C++语言的设计师Stroustrup）的约束是，C程序应该稍作改动，或者最好不做改动，就能在C++下编译。且不管这是不是完全合乎逻辑，但它给C程序员提供了一个很好的演进路径。不过这存在较大的局限性，需要把每一项大家抱怨不已的困难特性都一一虚拟化。由于这些特性难以理解，许多人就直接得出结论说C++设计糟糕，而这远非事实。</p>
+<p>在语言设计上，Java用傲慢的态度对待这一认识。关于这一点，我在《Java编程思想》及许多博文上都写过了。因此我的长期追随者都知道，由于Gosling（Java语言之父）和Java语言设计者对C++的否定态度，Java一开始就把我拧到了错误的方向。说实话，我与Gosling 的首次“邂逅”印象糟糕——那是很多年以前的事了，当时我刚进入第一家公司，第一次开始使用UNIX （Fluke，生产电子测试设备；我在里面做嵌入式系统编程）。有一位软件工程师辅导我，教我使用emacs。不过当时公司里唯一的工具只有Gosling Emacs的商用版（Unipress）。如果你做错了什么，程序会侮辱你，把你叫做火鸡，并把屏幕填满垃圾。这样的东西出现在了一个商用产品上，而我们公司可是花了相当一笔钱的。不消说，等到Gnu emacs变得稳定起来后，公司马上就换到了Gnu emacs上（我见过Richard Stallman。当然，他是个疯狂的家伙。不过他也是绝顶聪明的：他知道当遇到麻烦的时候，你需要的是帮助，而不是侮辱）。（51CTO编者注：Richard Stallman即Gnu emacs的开发人员，美国一位著名黑客。他曾在05年<a href="http://job.51cto.com/art/200509/3412.htm" target="_blank">坐客新浪，与洪峰大谈黑客道培训</a>。）</p>
+<p>我不知道对Gosling印象的这段形成经历在多大程度上影响了我后面对他工作的看法，但事实上，“我们看见它太差劲了，就决定拿出自己的语言”，对C++的这种态度于事无补。尤其是当我开始在《Java编程思想》的写作过程中把它弄清楚，并屡次发现，那些草率决定的语言特性与库，都不得不予以修订——确实如此，其中的大部分都必须要修订，有些修订还是在程序员已经忍受了多年之后才落实。在许多场合下，Gosling坦诚他们必须快马加鞭，否则就要被互联网革命超越了。</p>
+<p>我发现，理解语言特性为什么会存在是非常有帮助的。如果是由大学教授一下子和盘托出，把它们端到你面前，你势必就会构想出这门语言的一个神话，说“这种语言特性之所以存在，肯定有一些真正重要的原因，这些原因只有创建这门语言的聪明人才能理解，我是理解不了的，我信赖它就是了”。从某方面来说，对语言特性这种基于信仰的接受是一种负担；它阻止你对所发生的事情进行分析和理解。在我的主旨演讲中（Bruce将在未来几天参与一个主旨演讲），我会关注一些特性，并检查一下它们在不同语言中是如何被实现的，以及为什么被实现。</p>
+<p>这里就有个例子。对象创建。在C语言中，声明了变量之后编译器就会为你创建堆栈空间（未经初始化，除非你初始化，否则会有垃圾数据）。但是如果你想要动态地做这件事情，你就得使用 malloc() 和 free()这两个标准库函数，还要小心翼翼地手工执行完所有的初始化及清理工作。如果你忘了，就会出现内存泄漏等类似灾难，这是常有的事。</p>
+<p><font face="黑体">有关动态对象创建：一般来说，编译器将内存分为三部分：静态存储区域、栈、堆。静态存储区主要保存全局变量和静态变量，栈存储调用函数相关的变量、地址等，堆存储动态生成的变量，在c中是指由malloc,free运算产生释放的存储空间，在c++中就是指new和delete运算符作用的存储区域。（来源：</font><a href="http://whithin.blog.51cto.com/690417/144892"><font face="黑体">51CTO树洞的技术博客</font></a><font face="黑体">）</font></p>
+<p>因为malloc() 和 free() “仅仅”是库函数，在基本编程课上，应有的相关知识通常没有被传授，令人既疑惑不解又胆颤心惊。当程序员需要分配大量的内存空间时，他们就不去学如何来使用这些函数进行处理，取而代之的是常常就分配一个巨型数组的全局变量了事（不是开玩笑），数组之大，远远超过他们曾自认为所需的空间。程序似乎工作了，再说了，好像谁都不会用到产生越界——因此，当多年之后它的确发生的时候，程序中断了，而某个可怜的家伙就得一头钻进去，把错误在哪里这个谜底给找出来。</p>
+<p>Stroustrup认为动态分配需要更简单、更安全——这一块得放到语言核心中，而不是降格为库函数。还必须要与初始化和清理一起协同工作，初始化和清理必须由构造函数和析构函数分别提供，以便为所有对象提供相同的保证。</p>
+<p>这个问题是影响了全部C++决策的一块里程碑：对C的向后兼容性。理想情况下，对象的堆栈（heap）分配可只需忽略即可。但C的兼容性要求进行堆栈（stack）分配，因此必须对heap对象和stack对象进行区分。为了解决这个问题，C++从SmallTalk挪用了new 这个关键字。创建 stack 对象只需声明即可，像这样： Cat x；或者带参数的情况下， Cat x("mittens");。而创建heap 对象时，就使用new，像这样： new Cat x; 或者 new Cat x("mittens");。利用这个约束，我们得到一个优雅而一致的解决方案。</p>
+<p>自从判定C++的一切都做得不好且过于复杂之后，Java就产生了。具有讽刺意味的是，Java 决定把 stack 彻底抛弃了（特别是忽略了基本类型上的失败，这点我已经在别的地方指出过了）。真好啊，既然所有对象都是在heap上分配的，区分stack和heap的分配就没有必要了。他们可以轻易说 Cat x = Cat() 或者 Cat x = Cat("mittens")。或者甚至更好地，用联合的类型引用来消除重复（不过那样——还有像闭包（closure）之类的其他特性——就显得“太长”了。因此我们反而离不开Java的平凡版；类型推导已经讨论过了，但我敢打赌那不会发生，也不该发生。因为这会在给Java增加特性的同时带来问题）。</p>
+<p>Guido Van Rossum （Python的创建者）采用了一个最小化的方案——经常为人所痛斥的空白的使用，正说明了他对语言简洁性的追求。既然 new 关键字不再必要，他就省去了，好像这样： x = Cat("mittens")。Ruby 也可能用了这种方法，不过Ruby其中一个主要的约束是尽可能追随Smalltalk，因此在Ruby是这样的：x = Cat.new("mittens") 。但Java以贬低C++做事的方式为准则，以至于用了new 这个关键字成了一个迷了。自研究了该语言在其他地方所做的决策后，我的猜测是，他们是不是从来就没有意识到，这东西根本就是可有可无的？</p>
+<p>因此这就是我所说的语言考古学的意思。我希望人们能用一个更好的视角来看待语言设计，并在学习一门编程语言时，能有更多的批判性思维过程。 </p>
+<p>本文选译自Bruce Eckel在Artima的博文：<font color="#0000ff">Why? Language Archaeology ... and Metaprogramming</font> </p>
+<p>附录：<a href="http://book.51cto.com/art/200706/49651.htm">《Java编程思想》第四版章节预览</a>——51CTO读书频道</p>
+<p>【编辑推荐】</p>
+<ol>
+<li><a href="http://developer.51cto.com/art/200906/126199.htm" target="_blank"><font color="#0000ff">Java与C++语言在作用域上的差异浅析</font></a> 
+</li><li><a href="http://developer.51cto.com/art/200906/130086.htm" target="_blank"><font color="#0000ff">为软件王国立法：从硬件产业的内幕说起</font></a> 
+</li><li><a href="http://developer.51cto.com/art/200906/131465.htm" target="_blank"><font color="#0000ff">Java之父：我们看中的并非Java语言，而是JVM</font></a> 
+</li><li><a href="http://developer.51cto.com/art/200906/127830.htm" target="_blank"><font color="#0000ff">Scala编程语言</font></a> 
+</li><li><a href="http://developer.51cto.com/art/200709/56340.htm" target="_blank">C++是垃圾语言？！</a></li></ol>
+<div align="right">【责任编辑：<a class="ln" href="mailto:yangsai@51cto.com">杨赛</a> TEL：（010）68476606】</div><br> 
+<p class="blank10"></p> 
+ 
+ 
+
+
+<div class="f12"> <span class="fl">原文：<a href="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM.htm" class="blue"><b>《Java编程思想》作者：C++不垃圾，只是Java很傲慢</b></a></span> <span class="fr"><a href="http://developer.51cto.com/">返回开发首页</a></span> </div>
+<p class="blank1"></p>
+</div>
+<iframe width="600" height="239" frameborder="0" scrolling="no" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/bulkfollow.htm"></iframe>
+<div class="tips">
+<div style="float:left;">
+<span style="float:left; margin-top:4px;">分享到：</span>
+<!-- Baidu Button BEGIN -->
+    <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" style="margin-right:5px; float:left;">
+        <a class="bds_qzone" title="分享到QQ空间" href="http://developer.51cto.com/art/200906/131773.htm#"></a>
+        <a class="bds_tsina" title="分享到新浪微博" href="http://developer.51cto.com/art/200906/131773.htm#"></a>
+        <a class="bds_tqq" title="分享到腾讯微博" href="http://developer.51cto.com/art/200906/131773.htm#"></a>
+        <a class="bds_renren" title="分享到人人网" href="http://developer.51cto.com/art/200906/131773.htm#"></a>
+        <a class="bds_t163" title="分享到网易微博" href="http://developer.51cto.com/art/200906/131773.htm#"></a>
+        <span class="bds_more"></span>
+		<a class="shareCount" href="http://developer.51cto.com/art/200906/131773.htm#" title="累计分享4次">4</a>
+
+</div>
+<!--<div class="fl"> 
+    </div>
+--><script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=585532" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/bds_s_v2.js"></script>
+
+<script type="text/javascript">
+	var bds_config = {'snsKey':{'tsina':'2378297317'}};
+	document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?t=" + new Date().getHours();
+</script>
+<!-- Baidu Button END -->
+
+
+
+</div><div class="fr blue"><a href="javascript:AddFavorite(document.location.href,document.title);" target="_self">收藏</a>|<a href="javascript:window.print();" target="_self">打印</a>|<a id="msnqqcopy" title="分享本资源给好友" target="_self">复制</a></div>
+</div>
+</div>
+<!--内容 end-->
+<div class="topbiaoqing">
+<div class="biaoqing fixfloat pad">
+<ul>
+<li><a href="javascript:getcountscom(131773,1)" target="_self"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/bq1.jpg"></a>
+<div><a href="javascript:getcountscom(131773,1)" target="_self">给力</a></div>
+<span id="131773_1">(0票)</span></li>
+<li><a href="javascript:getcountscom(131773,2)" target="_self"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/bq2.jpg"></a>
+<div><a href="javascript:getcountscom(131773,2)" target="_self">动心</a></div>
+<span id="131773_2">(0票)</span></li>
+<li><a href="javascript:getcountscom(131773,3)" target="_self"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/bq3.jpg"></a>
+<div><a href="javascript:getcountscom(131773,3)" target="_self">废话</a></div>
+<span id="131773_3">(0票)</span></li>
+<li><a href="javascript:getcountscom(131773,4)" target="_self"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/bq4.jpg"></a>
+<div><a href="javascript:getcountscom(131773,4)" target="_self">专业</a></div>
+<span id="131773_4">(0票)</span></li>
+<li><a href="javascript:getcountscom(131773,5)" target="_self"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/bq5.jpg"></a>
+<div><a href="javascript:getcountscom(131773,5)" target="_self">标题党</a></div>
+<span id="131773_5">(0票)</span></li>
+<li><a href="javascript:getcountscom(131773,6)" target="_self"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/bq6.jpg"></a>
+<div><a href="javascript:getcountscom(131773,6)" target="_self">路过</a></div>
+<span id="131773_6">(0票)</span></li>
+</ul>
+</div>
+<script language="javascript"> 
+getcountscom(131773,11);
+
+</script>
+</div>
+<p class="blank10"></p>
+<!--reltag end-->
+
+<p class="blank10"></p>
+<div class="uyan">
+<div id="uyan_frame"><div id="uyan_cmt_box" style="width: 100%; font-family: &#39;Microsoft YaHei&#39;,arial,tahoma,宋体,sans-serif; position: relative; float: left;"><div id="uyan_top" style="height: 30px; font-size: 12px; font-weight: bold;"><div id="uyan_like" style="float: left; padding-right: 13px; padding-top: 2px; width: 88px;"><a id="uyan_vu" onclick="UYAN.voteUD(&#39;uu&#39;);" style="background: url(&#39;http://v2.uyan.cc/code/images/like.png&#39;) no-repeat scroll 19px 5px #999; border-radius: 3px 3px 3px 3px; color: #F2F2F2; cursor: pointer; float: left; font-weight: normal; height: 16px; padding: 3px; width: 48px;"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/upDig.png" style="float: left; padding: 2px 5px 0 2px; border: 0 none;"></a><a id="uyan_vd" onclick="UYAN.voteUD(&#39;du&#39;);" style="background-color: #999; border-radius: 3px 3px 3px 3px; color: #F2F2F2; cursor: pointer; float: left; font-weight: normal; height: 16px; margin-left: 5px; padding: 3px; width: 16px;"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/downDig.png" style="float: left; padding: 3px 0 0 2px;"></a><div style="clear: both;"></div></div><div id="uyan_count" style="font-size: 12px; color: #888888; float: left; font-weight: normal; padding: 5px 5px 0 0;">共有<span id="uyan_vun">0</span>人喜欢&nbsp;&nbsp;共<span id="uyan_acn">1</span>条评论</div><a id="uyan_login_btn" onclick="UYAN.login();" style="background-color: #999; border-radius: 3px 3px 3px 3px; color: #EEEEEE; cursor: pointer; float: right; font-size: 13px; font-weight: bold; height: 20px; margin-left: 5px; margin-top: 2px; height: 16px; line-height: 17px; padding: 3px 15px; text-shadow: 0 1px 0 #646464;">登录</a><a id="uyan_cmty_btn" onclick="UYAN.cmty();" style="background-color: #999; border-radius: 3px 3px 3px 3px; color: #EEEEEE; cursor: pointer; float: right; font-size: 13px; font-weight: bold; height: 20px; margin-left: 5px; margin-top: 2px; height: 16px; line-height: 17px; padding: 3px 15px; text-shadow: 0 1px 0 #646464;">社区</a><div style="clear: both;"></div></div><div id="uyan_usp" style="margin-bottom: 10px;"><div style="font-size: 13px; height: 26px; overflow: hidden;"><a id="uyan_uname_txt_t" style="color: #5874af; cursor: pointer; display: block; float: left; font-weight: bold; margin: 6px 0 0 0; text-decoration: none; font-size: 16px; line-height: 17px;" href="javascript:;"></a><div style="background: url(&#39;http://v2.uyan.cc/code/images/medalIcon.png&#39;) no-repeat scroll 0 2px transparent; float: left; height: 20px; margin: 6px 0 0 10px; padding-left: 15px; line-height: 18px;"><div id="uyan_utname_edit" style="display: none;"><div style="color: #333333; float: left; padding-right: 4px;">头衔:</div><input id="uyan_utname" type="text" value="" style="color: #777777; float: left; height: 12px; padding: 1px 3px; width: 100px;"><a onclick="UYAN.setUtname();" style="background-color: #8BAD50; border: 1px solid #799E3C; border-radius: 3px 3px 3px 3px; color: #FFFFFF; cursor: pointer; float: left; margin-left: 3px; padding: 0 10px; text-align: center; text-decoration: none;">确定</a><a onclick="UYAN.changeUtname();" style="color: #AAAAAA; cursor: pointer; float: left; margin-left: 6px;">取消</a></div><div id="uyan_utname_txt"><div id="uyan_utname_show" style="color: #444444; float: left; padding-right: 5px;"></div><a onclick="UYAN.changeUtname();" style="color: #5874af; cursor: pointer; float: left; text-decoration: none;">编辑头衔</a></div></div><div style="background: url(&#39;http://v2.uyan.cc/code/images/emailIcon.png&#39;) no-repeat scroll 0 0 transparent; float: left; height: 20px; margin: 6px 0 0 10px; padding-left: 19px; line-height: 18px;"><div id="uyan_femail_edit" style="display: none;"><div style="color: #333333; float: left; padding-right: 4px;">邮箱:</div><input id="uyan_femail" type="text" value="" style="color: #777777; float: left; height: 12px; padding: 1px 3px; width: 100px;"><a onclick="UYAN.setFemail();" style="background-color: #8BAD50; border: 1px solid #799E3C; border-radius: 3px 3px 3px 3px; color: #FFFFFF; cursor: pointer; float: left; margin-left: 3px; padding: 0 10px; text-align: center; text-decoration: none;">确定</a><a onclick="UYAN.changeFemail();" style="color: #AAAAAA; cursor: pointer; float: left; margin-left: 6px;">取消</a></div><div id="uyan_femail_txt"><div id="uyan_femail_show" style="color: #444444; float: left; padding-right: 5px;"></div><a onclick="UYAN.changeFemail();" style="color: #5874af; cursor: pointer; float: left; text-decoration: none;">跟踪回复</a></div></div><div style="clear: both;"></div></div><div style="padding: 4px 0;"><div id="uyan_uacn" style="font-size: 12px; float: left; padding: 0 10px 0 0;">0条评论</div><div id="uyan_uvon" style="font-size: 12px; float: left; padding: 0 10px 0 0;">0次被喜欢</div><div style="clear: both;"></div></div><div style="clear: both;"></div></div><div id="uyan_star" style="height: 22px; padding: 0 0 0 60px; overflow: hidden;"><div style="float: left;"><a id="uyan_vs_1" onclick="UYAN.voteStar(1);" onmouseover="UYAN.cagStar(1);" onmouseout="UYAN.cagStar(0);" style="background: url(&#39;http://v2.uyan.cc/code/images/star_un.png&#39;) no-repeat scroll 0 0 transparent; cursor: pointer; float: left; height: 16px; padding-right: 5px; width: 16px;"></a><a id="uyan_vs_2" onclick="UYAN.voteStar(2);" onmouseover="UYAN.cagStar(2);" onmouseout="UYAN.cagStar(0);" style="background: url(&#39;http://v2.uyan.cc/code/images/star_un.png&#39;) no-repeat scroll 0 0 transparent; cursor: pointer; float: left; height: 16px; padding-right: 5px; width: 16px;"></a><a id="uyan_vs_3" onclick="UYAN.voteStar(3);" onmouseover="UYAN.cagStar(3);" onmouseout="UYAN.cagStar(0);" style="background: url(&#39;http://v2.uyan.cc/code/images/star_un.png&#39;) no-repeat scroll 0 0 transparent; cursor: pointer; float: left; height: 16px; padding-right: 5px; width: 16px;"></a><a id="uyan_vs_4" onclick="UYAN.voteStar(4);" onmouseover="UYAN.cagStar(4);" onmouseout="UYAN.cagStar(0);" style="background: url(&#39;http://v2.uyan.cc/code/images/star_un.png&#39;) no-repeat scroll 0 0 transparent; cursor: pointer; float: left; height: 16px; padding-right: 5px; width: 16px;"></a><a id="uyan_vs_5" onclick="UYAN.voteStar(5);" onmouseover="UYAN.cagStar(5);" onmouseout="UYAN.cagStar(0);" style="background: url(&#39;http://v2.uyan.cc/code/images/star_un.png&#39;) no-repeat scroll 0 0 transparent; cursor: pointer; float: left; height: 16px; padding-right: 5px; width: 16px;"></a><div style="clear: both;"></div></div></div><div id="uyan_loginot" style="padding: 0 0 3px 60px;"><div style="clear: both;"></div></div><div style="height: 78px; overflow: hidden; padding: 0 0 20px 0; _padding: 0;"><div style="float: left; border-radius: 6px 6px 6px 6px; width: 50px; height: 50px; overflow: hidden; margin-right: 10px;"><img id="uyan_uface" style="width: 50px; height: 50px;" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/duface.png"></div><div style="padding: 0 0 0 60px; overflow: visible;"><div onclick="UYAN.hidIntro(this.firstChild);" style="height: 60px; background: url(&#39;http://v2.uyan.cc/code/images/textareabg.png&#39;) repeat-x scroll 0 0 #FFFFFF; border: 1px solid #d7d7d7; border-radius: 4px 4px 4px 4px; padding: 7px; position: relative; overflow: hidden; cursor: text;"><textarea id="uyan_comment" onkeyup="UYAN.checkTxt(this, 140);" onkeydown="UYAN.checkTxt(this, 140);" onfocus="UYAN.hidIntro(this);" onblur="UYAN.shoIntro(this);" style="background: none repeat scroll 0 0 #FFFFFF; padding: 0; box-shadow: 0 0; color: #BDBBBB; border: 0; z-index: 90; overflow: hidden; float: left; font-size: 13px; font-family: &#39;Microsoft YaHei&#39;,arial,tahoma,宋体,sans-serif; resize: none; height: 60px; display: block; outline: none; word-wrap: break-word; margin: 0;">请输入你的评论</textarea><pre style="width: 100%; font-size: 13px; left: 0; line-height: 18px; position: absolute; top: 0; visibility: hidden; word-wrap: break-word; white-space: pre-wrap;" id="uyan_cmt_cnt"></pre></div><div style="clear: both;"></div></div><div id="uyan_smile" onclick="UYAN.shoSmile(this);" style="display: none; background: url(&#39;http://v2.uyan.cc/code/images/emotion.png&#39;) no-repeat scroll 6px 2px #FFFFFF; color: #3A82FF; cursor: pointer; font-size: 11px; height: 17px; left: 70px; position: relative; top: -2px; width: 60px; z-index: 5500; border: 1px solid #d7d7d7; border-top: none; border-radius: 2px; margin: 0; line-height: 20px; padding-bottom: 2px; font-family: &#39;Microsoft YaHei&#39;,arial,tahoma,宋体,sans-serif; text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;表情</div></div><div id="uyan_ssmile" style="margin-left: 60px; margin-top: -20px; _margin-top: 0; position: absolute; z-index: 9999; display: none;"><div style="border: 1px solid #989999; border-radius: 5px; width: 322px; height: 160px; background: #fff; font-size: 12px; padding: 6px;"><ul style="margin: 5px 0 0 0; padding: 0; height: 24px;"><li id="uyan_ssmile_df" onclick="UYAN.shoSmile(this, &#39;df&#39;);" style="float: left; list-style: none; line-height: 22px; background: url(&#39;http://v2.uyan.cc/code/images/smileb.gif&#39;) no-repeat scroll 0 center transparent; color: #fff; width: 68px; height: 24px; overflow: hidden; text-align: center; margin: 0 5px; display: inline; cursor: pointer; padding: 0;">默认表情</li><li id="uyan_ssmile_al" onclick="UYAN.shoSmile(this, &#39;al&#39;);" style="float: left; list-style: none; line-height: 22px; background: none repeat scroll 0 center transparent; width: 68px; height: 24px; overflow: hidden; text-align: center; margin: 0 5px; display: inline; cursor: pointer; padding: 0;">阿狸</li></ul><ul id="uyan_ssmile_list" style="margin: 0; padding: 0; width: 310px; border-top: 1px solid #d3e4f0; border-left: 1px solid #d3e4f0; margin: 5px 0 0 5px;"></ul></div></div><div style="color: #D2D2D2; height: 20px; font-size: 13px; position: absolute; z-index: 100; margin-right: 10px; margin-top: -42px; right: 0;"><span id="uyan_tts">140</span></div><div id="uyan_stat_btn" style="position: relative; height: 40px; overflow: hidden; margin-top: -20px; _margin-top: 0;"><a id="uyan_cmt_btn" onmouseover="UYAN.cagBtn(&#39;on&#39;, this);" onmouseout="UYAN.cagBtn(&#39;out&#39;, this);" style="background: url(&#39;http://v2.uyan.cc/code/images/buttonLarge.png&#39;) repeat-x scroll 0 0 transparent; border: 1px solid #d0cfcf; border-radius: 5px 5px 5px 5px; color: #666; cursor: pointer; float: right; font-size: 13px; font-weight: bold; height: 24px; line-height: 21px; margin: 4px 0 0; padding: 3px 25px 1px; text-align: center; text-shadow: 0 1px 0 #FFFFFF;" onclick="UYAN.addCmt(this);">发&nbsp;&nbsp;布</a><div id="uyan_ottype" style="float: right; padding: 11px 15px 0 3px;"><div style="color: #AAAAAA; float: right; font-size: 12px; padding-left: 5px;"><span id="uyan_vis" style="float: right; line-height: 18px;">&nbsp;&nbsp;或<span style="text-decoration: underline; cursor: pointer;" onclick="UYAN.login();">游客留言</span></span><span onmouseover="UYAN.show(&#39;uyan_slog&#39;);" onmouseout="UYAN.hide(&#39;uyan_slog&#39;);" style="float: right; cursor: pointer;"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/arrow.png" style="margin: 1px 2px 0;"></span><span onclick="UYAN.loginRenren();" title="使用人人账号登陆" style="float: right; cursor: pointer;"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/renren.png" style="margin: 1px 2px 0;"></span><span onclick="UYAN.loginTQq();" title="使用腾讯微博账号登陆" style="float: right; cursor: pointer;"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/tqq.png" style="margin: 1px 2px 0;"></span><span onclick="UYAN.loginQq();" title="使用QQ账号登陆" style="float: right; cursor: pointer;"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/qq.png" style="margin: 1px 2px 0;"></span><span onclick="UYAN.loginTSina();" title="使用新浪微博账号登陆" style="float: right; cursor: pointer;"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/tsina.png" style="margin: 1px 2px 0;"></span></div><div style="clear: both;"></div></div><div style="clear: both;"></div></div><div id="uyan_slog" class="uyan_st_slog" onmouseover="UYAN.show(this);" onmouseout="UYAN.hide(this);" style="background-color: #FFFFFF; border-color: #d3d2d2; border-width: 1px 1px 2px; border-style: solid; position: absolute; z-index: 90000; padding: 1px 3px; display: none; width: 20px;"><div onclick="UYAN.loginKaixin001();" title="kaixin001" style="color: #9797C4;  font-size: 12px; font-weight: normal; width:16px; margin:0 auto; padding:2px 0; cursor: pointer; height: 17px; overflow: hidden;"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/kaixin001.png"></div><div onclick="UYAN.loginTSohu();" title="sohu" style="color: #9797C4;  font-size: 12px; font-weight: normal; width:16px; margin:0 auto; padding:2px 0; cursor: pointer; height: 17px; overflow: hidden;"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/tsohu.png"></div><div onclick="UYAN.loginT163();" title="163" style="color: #9797C4;  font-size: 12px; font-weight: normal; width:16px; margin:0 auto; padding:2px 0; cursor: pointer; height: 17px; overflow: hidden;"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/t163.png"></div></div><div id="uyan_sort" style="color: #424242; font-size: 12px;"><div style="height: 28px; overflow: hidden; float: left;"><a id="uyan_sort_name" onclick="UYAN.cmtSort();" style="background: url(&#39;http://v2.uyan.cc/code/images/sorttype.png&#39;) no-repeat scroll right 7px transparent; color: #424242; cursor: pointer; display: block; float: left; font-size: 12px; padding-right: 15px;">按时间排序</a></div><div style="clear: both;"></div></div><div id="uyan_sort_box" style="background-color: #FFFFFF; border-color: #d3d2d2; border-width: 1px 1px 2px; border-style: solid; left: 15px; position: absolute; width: 115px; z-index: 90000; display: none;"><div style="color: #9797C4; font-size: 12px; font-weight: normal; padding-bottom: 2px; padding-left: 21px; padding-top: 4px; height: 16px;">排序方式:</div><a id="uyan_sort_time" onclick="UYAN.cmtSort(0);" style="color: rgb(28, 28, 28); cursor: pointer; display: block; font-size: 12px; padding-bottom: 2px; padding-left: 21px; padding-top: 2px; height: 16px; font-weight: bold; background: url(http://v2.uyan.cc/code/images/currentSort.png) 8px 8px no-repeat scroll transparent;">按时间排序</a><a id="uyan_sort_hot" onclick="UYAN.cmtSort(1);" style="color: #1C1C1C; cursor: pointer; display: block; font-size: 12px; padding-bottom: 2px; padding-left: 21px; padding-top: 2px; height: 16px;">按热度排序</a></div><div id="uyan_cmt_list">	<div id="uyan_cmt_9605277" onmouseover="UYAN.changeS(this, &#39;on&#39;, &#39;9605277&#39;);" onmouseout="UYAN.changeS(this, &#39;out&#39;, &#39;9605277&#39;);" style="border-top: 1px solid #D7D7D7; padding: 15px 0;">		<div style="position: relative; float: left; border-radius: 6px 6px 6px 6px; width: 50px; height: 50px; margin-right: 10px;">			<a href="" style="cursor: pointer; text-decoration: none; white-space: inherit;" target="_blank">				<img style="border: 0 none; box-shadow: 0 1px 5px rgba(0, 0, 0, 0.22); border-radius: 4px; width: 50px; height: 50px;" onload="UYAN.loadUface(this, &#39;http://v2.uyan.cc/code/images/duface.png&#39;, &#39;http://v2.uyan.cc/code/images/duface.png&#39;);" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/duface.png" onerror="UYAN.noUface(this, &#39;http://v2.uyan.cc/code/images/duface.png&#39;);">			</a>			<span style="bottom: -4px; position: absolute; right: -5px;">				<a title="游客" style="cursor: pointer; text-decoration: none; background: url(&#39;http://v2.uyan.cc/code/images/semail.png&#39;) no-repeat scroll 0 0 transparent; background-position: 0 0; opacity: 1; display: block; float: left; height: 16px !important; line-height: 100px; opacity: 0.8; overflow: hidden; width: 16px !important;" href="" target="_blank"></a>			</span>		</div>		<div style="padding-left: 60px;">			<div style="color: #303030; font-size: 13px; line-height: 18px; height: 20px;">				<a id="uyan_cmt_uname_9605277" class="uyan_cmt_uname" href="" target="_blank" style="color: #2B8CE6; cursor: pointer; float: left; text-decoration: none; padding-right: 6px;">java578933760</a>								<span class="uyan_cmt_ufromname" style="color: #aaaaaa; float: left;">(<a style="color: #aaaaaa; text-decoration: none;" href="" target="_blank">游客</a>)</span>				<div id="uyan_star_9605277" style="float: right; display: none;"></div>			</div>			<div class="uyan_cmt_txt" style="color: #303030; font-size: 13px; line-height: 18px; word-wrap: break-word; text-align: left;">路过...</div>			<div class="uyan_cmt_exp" style="padding: 5px 5px 0 0; line-height: 14px;">				<a id="uyan_exp_rpy_9605277" onclick="UYAN.addRpy(9605277);" onmouseover="UYAN.mouseOO(this.nextSibling, &#39;rpy.png&#39;);" onmouseout="UYAN.mouseOO(this.nextSibling, &#39;rpy2.png&#39;);" style="color: #999999; cursor: pointer; display: block; float: right; font-size: 11px; padding: 0 4px 0 0;">回复</a><a onclick="UYAN.addRpy(9605277);" onmouseover="UYAN.mouseOO(this, &#39;rpy.png&#39;);" onmouseout="UYAN.mouseOO(this, &#39;rpy2.png&#39;);" style="background: url(&#39;http://v2.uyan.cc/code/images/rpy2.png&#39;) no-repeat scroll 0 0 transparent; cursor: pointer; display: block; float: right; height: 13px; margin-right: 4px; margin-top: 0px; width: 14px;"></a>				<a onclick="UYAN.cmtUD(&#39;du&#39;, 9605277);" style="color: #999999; cursor: pointer; display: none; float: right; font-size: 11px; padding: 0 10px 0 0;">踩<span id="uyan_cd_9605277" style="padding-left: 3px;"></span></a>				<a id="uyan_cdw_9605277" onclick="UYAN.cmtUD(&#39;du&#39;, 9605277);" style="background: url(&#39;http://v2.uyan.cc/code/images/downDig2.png&#39;) no-repeat scroll 0 0 transparent; cursor: pointer; display: none; float: right; height: 13px; margin-right: 4px; margin-top: 3px; width: 13px;"></a>				<a onclick="UYAN.cmtUD(&#39;uu&#39;, 9605277);" style="color: #999999; cursor: pointer; display: block; float: right; font-size: 11px; padding: 0 10px 0 0;">顶<span id="uyan_cu_9605277" style="padding-left: 3px;"></span></a>				<a id="uyan_cuw_9605277" onclick="UYAN.cmtUD(&#39;uu&#39;, 9605277);" style="background: url(&#39;http://v2.uyan.cc/code/images/upDig2.png&#39;) no-repeat scroll 0 0 transparent; cursor: pointer; display: block; float: right; height: 13px; margin-right: 4px; margin-top: 0px; width: 13px;"></a>								<div style="color: #999999; float: left; font-size: 11px; padding: 0 10px 0 0;">2010-8-8 20:16</div>				<div style="clear: both;"></div>			</div>		</div>		<div style="clear: both;"></div>	</div></div><div class="ujian-uyan"></div><div style="float: right; font-size: 12px; padding: 20px 8px 10px 0;">    <a style="color: #aaaaaa; text-decoration: none;" target="_blank" title="社会化评论是什么？" href="http://www.uyan.cc/">友言[?]</a>    </div>    <div style="clear: both;"></div></div><div id="uyan_rpy" style="display: none; padding-left: 60px; padding-top: 10px;"><div style="height: 78px; overflow: hidden; padding: 0 0 20px 0; _padding: 0;"><div style="float: left; border-radius: 6px 6px 6px 6px; width: 38px; height: 38px; overflow: hidden; margin-right: 10px;"><img id="uyan_uface_r" style="width: 38px; height: 38px;" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/duface.png"></div><div style="padding: 0 0 0 48px; overflow: visible;"><div onclick="UYAN.hidIntro(this.firstChild, uyan_smile_region);" style="height: 60px; background: url(&#39;http://v2.uyan.cc/code/images/textareabg.png&#39;) repeat-x scroll 0 0 #FFFFFF; border: 1px solid #d7d7d7; border-radius: 4px 4px 4px 4px; padding: 7px; position: relative; overflow: hidden; cursor: text;"><textarea id="uyan_comment" onkeyup="UYAN.checkTxt(this, 140, uyan_tts_region);" onkeydown="UYAN.checkTxt(this, 140, uyan_tts_region);" onfocus="UYAN.hidIntro(this, uyan_smile_region);" onblur="UYAN.shoIntro(this, uyan_smile_region);" style="background: none repeat scroll 0 0 #FFFFFF; padding: 0; box-shadow: 0 0; color: #BDBBBB; border: 0; z-index: 90; overflow: hidden; float: left; font-size: 13px; font-family: &#39;Microsoft YaHei&#39;,arial,tahoma,宋体,sans-serif; resize: none; height: 60px; display: block; outline: none; word-wrap: break-word; margin: 0;">请输入你的评论</textarea><pre style="width: 100%; font-size: 13px; left: 0; line-height: 18px; position: absolute; top: 0; visibility: hidden; word-wrap: break-word; white-space: pre-wrap;" id="uyan_cmt_cnt"></pre></div><div style="clear: both;"></div></div><div id="uyan_smile" onclick="UYAN.shoSmile(this, &#39;&#39;, uyan_smile_region);" style="display: none; background: url(&#39;http://v2.uyan.cc/code/images/emotion.png&#39;) no-repeat scroll 6px 2px #FFFFFF; color: #3A82FF; cursor: pointer; font-size: 11px; height: 17px; left: 58px; position: relative; top: -2px; width: 60px; z-index: 5500; border: 1px solid #d7d7d7; border-top: none; border-radius: 2px; margin: 0; line-height: 20px; padding-bottom: 2px; font-family: &#39;Microsoft YaHei&#39;,arial,tahoma,宋体,sans-serif; text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;表情</div></div><div id="uyan_ssmile" style="margin-left: 48px; margin-top: -20px; _margin-top: 0; position: absolute; z-index: 9999; display: none;"><div style="border: 1px solid #989999; border-radius: 5px; width: 322px; height: 160px; background: #fff; font-size: 12px; padding: 6px;"><ul style="margin: 5px 0 0 0; padding: 0; height: 24px;"><li id="uyan_ssmile_df" onclick="UYAN.shoSmile(this, &#39;df&#39;, uyan_smile_region);" style="float: left; list-style: none; line-height: 22px; background: url(&#39;http://v2.uyan.cc/code/images/smileb.gif&#39;) no-repeat scroll 0 center transparent; color: #fff; width: 68px; height: 24px; overflow: hidden; text-align: center; margin: 0 5px; display: inline; cursor: pointer; padding: 0;">默认表情</li><li id="uyan_ssmile_al" onclick="UYAN.shoSmile(this, &#39;al&#39;, uyan_smile_region);" style="float: left; list-style: none; line-height: 22px; background: none repeat scroll 0 center transparent; width: 68px; height: 24px; overflow: hidden; text-align: center; margin: 0 5px; display: inline; cursor: pointer; padding: 0;">阿狸</li></ul><ul id="uyan_ssmile_list" style="margin: 0; padding: 0; width: 310px; border-top: 1px solid #d3e4f0; border-left: 1px solid #d3e4f0; margin: 5px 0 0 5px;"></ul></div></div><div style="color: #D2D2D2; height: 20px; font-size: 13px; position: absolute; z-index: 100; margin-right: 10px; margin-top: -42px; right: 0;"><span id="uyan_tts">140</span></div><div id="uyan_stat_btn_r" style="position: relative; height: 40px; overflow: hidden; margin-top: -20px; _margin-top: 0;"><a id="uyan_cmt_btn" onmouseover="UYAN.cagBtn(&#39;on&#39;, this);" onmouseout="UYAN.cagBtn(&#39;out&#39;, this);" style="background: url(&#39;http://v2.uyan.cc/code/images/buttonLarge.png&#39;) repeat-x scroll 0 0 transparent; border: 1px solid #d0cfcf; border-radius: 5px 5px 5px 5px; color: #666; cursor: pointer; float: right; font-size: 13px; font-weight: bold; height: 24px; line-height: 21px; margin: 4px 0 0; padding: 3px 25px 1px; text-align: center; text-shadow: 0 1px 0 #FFFFFF;" onclick="UYAN.addCmt(this, uyan_comment_region);">回&nbsp;&nbsp;复</a><div style="float: right; padding: 11px 15px 0 3px;"><div style="color: #AAAAAA; float: right; font-size: 12px; padding-left: 5px;"><span id="uyan_vis" style="float: right; line-height: 18px;">&nbsp;&nbsp;或<span style="text-decoration: underline; cursor: pointer;" onclick="UYAN.login();">游客留言</span></span><span onmouseover="UYAN.show(&#39;uyan_slog&#39;);" onmouseout="UYAN.hide(&#39;uyan_slog&#39;);" style="float: right; cursor: pointer;"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/arrow.png" style="margin: 1px 2px 0;"></span><span onclick="UYAN.loginRenren();" title="使用人人账号登陆" style="float: right; cursor: pointer;"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/renren.png" style="margin: 1px 2px 0;"></span><span onclick="UYAN.loginTQq();" title="使用腾讯微博账号登陆" style="float: right; cursor: pointer;"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/tqq.png" style="margin: 1px 2px 0;"></span><span onclick="UYAN.loginQq();" title="使用QQ账号登陆" style="float: right; cursor: pointer;"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/qq.png" style="margin: 1px 2px 0;"></span><span onclick="UYAN.loginTSina();" title="使用新浪微博账号登陆" style="float: right; cursor: pointer;"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/tsina.png" style="margin: 1px 2px 0;"></span></div><div style="clear: both;"></div></div><div style="clear: both;"></div></div><div id="uyan_slog" class="uyan_st_slog" onmouseover="UYAN.show(this);" onmouseout="UYAN.hide(this);" style="background-color: #FFFFFF; border-color: #d3d2d2; border-width: 1px 1px 2px; border-style: solid; position: absolute; z-index: 90000; padding: 1px 3px; display: none; width: 20px;"><div onclick="UYAN.loginKaixin001();" title="kaixin001" style="color: #9797C4;  font-size: 12px; font-weight: normal; width:16px; margin:0 auto; padding:2px 0; cursor: pointer; height: 17px; overflow: hidden;"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/kaixin001.png"></div><div onclick="UYAN.loginTSohu();" title="sohu" style="color: #9797C4;  font-size: 12px; font-weight: normal; width:16px; margin:0 auto; padding:2px 0; cursor: pointer; height: 17px; overflow: hidden;"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/tsohu.png"></div><div onclick="UYAN.loginT163();" title="163" style="color: #9797C4;  font-size: 12px; font-weight: normal; width:16px; margin:0 auto; padding:2px 0; cursor: pointer; height: 17px; overflow: hidden;"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/t163.png"></div></div></div><div style="clear: both;"></div><div id="uyan_box" style="font-family: &#39;Microsoft YaHei&#39;; display: none; top: 0px; left: 0px; z-index: 9999999; opacity: 1; empty-cells: show; position: absolute; background: none repeat scroll 0 0 #FFFFFF; text-align: left;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; width: auto; line-height: normal;"><tbody><tr><td style="background: url(&#39;http://v2.uyan.cc/code/images/boxnw.png&#39;) repeat scroll 0 0 transparent; height: 10px; padding: 0; width: 10px; opacity: 0.5;"></td><td style="background-color: black; height: 10px; opacity: 0.3; padding: 0; filter: alpha(opacity=60);"></td><td onclick="UYAN.hideBox();" style="background: url(&#39;http://v2.uyan.cc/code/images/boxclose.png&#39;) no-repeat scroll 0 0 transparent; _background: url(&#39;http://v2.uyan.cc/code/images/boxclose.gif&#39;) no-repeat scroll 0 0 transparent; cursor: pointer; display: block; height: 23px; position: absolute; right: -8px; top: -8px; width: 23px; z-index: 100000; padding: 0;"></td></tr><tr><td style="background-color: black; opacity: 0.6; padding: 0; width: 10px; opacity: 0.3; filter: alpha(opacity=60);"></td><td style="background-color: white; padding: 0;"><div id="uyan_box_cnt"></div></td><td style="background-color: black; opacity: 0.6; padding: 0; width: 10px; opacity: 0.3; filter: alpha(opacity=60);"></td></tr><tr><td style="background: url(&#39;http://v2.uyan.cc/code/images/boxsw.png&#39;) repeat scroll 0 0 transparent; height: 10px; padding: 0; width: 10px; opacity: 0.5;"></td><td style="background-color: black; height: 10px; opacity: 0.3; padding: 0; filter: alpha(opacity=60);"></td><td style="background: url(&#39;http://v2.uyan.cc/code/images/boxse.png&#39;) repeat scroll 0 0 transparent; height: 10px; padding: 0; width: 10px; opacity: 0.5;"></td></tr></tbody></table></div><div id="uyan_cmty" style="display: none;"><div style="width: 520px;"><div style="border-bottom: 1px solid #b6b5b5; background: #eeeeee; color: #666; font-size: 16px; height: 22px; padding: 10px 0;"><span id="uyan_sdm_name" style="float: left; padding-left: 25px; text-shadow: 0 1px 0 #fff;">developer.51cto.com</span></div><div style="color: #666;"><div style="background: url(&#39;http://v2.uyan.cc/code/images/commentWeb.png&#39;) no-repeat 20px 13px; border-right: 1px solid #EEEEEE; float: left; height: 49px; padding-left: 70px; padding-top: 6px; width: 102px;"><span id="uyan_dacn" style="font-size: 18px;">15082</span><br><span style="font-size: 12px;">评论数</span></div><div style="background: url(&#39;http://v2.uyan.cc/code/images/likeWeb.png&#39;) no-repeat 24px 10px; border-right: 1px solid #EEEEEE; float: left; height: 49px; padding-left: 70px; padding-top: 6px; width: 102px;"><span id="uyan_dvun" style="font-size: 18px;">1629</span><br><span style="font-size: 12px;">喜欢数</span></div><div style="background: url(&#39;http://v2.uyan.cc/code/images/humanWeb.png&#39;) no-repeat 27px 13px; border-right: 1px solid #EEEEEE; float: left; height: 49px; padding-left: 70px; padding-top: 6px; width: 102px;"><span id="uyan_daun" style="font-size: 18px;">796</span><br><span style="font-size: 12px;">用户数</span></div><div style="clear: both;"></div></div><div id="uyan_cmty_info_tmp" style="border-top: 1px solid #CCCCCC; padding: 10px 20px; font-size: 15px; color: #555555;">数据正在加载中...</div><div style="background-color: #F0F0F0; border-top: 1px solid #CCCCCC; height: 20px; padding-top: 6px;"><a target="_blank" href="http://www.uyan.cc/" style="color: #6B6B6B; cursor: pointer; display: block; float: right; font-family: Arial, Helvetica, sans-serif; font-size: 11px; margin-right: 15px; text-decoration: none;">友言</a><div style="clear: both;"></div></div></div></div><div id="uyan_login" style="display: none;"><div style="border-bottom: 1px solid #b6b5b5; background: #eeeeee; color: #666; font-size: 16px; height: 22px; padding: 10px 0;"><span style="padding-left: 25px; text-shadow: 0 1px 0 #fff; font-weight: 600;">社会化帐号登录</span></div><div style="width: 429px; padding: 22px;"><h2 style="margin: 0; font-size: 14px; font-weight: normal; color: #666; padding-left: 25px; padding-bottom: 5px; background: none repeat scroll 0 center transparent;">点击按钮，使用社交帐号评论</h2><div id="uyan_loginom" style="padding-bottom: 20px;"><span style="height: 16px; float: left; display: block; line-height: 16px; overflow: hidden; width: 60px; margin: 15px 22px 0 25px; display: inline;"><a title="用新浪微博账号登陆" onclick="UYAN.loginTSina();" style="cursor: pointer; font-size: 14px; color: #666; text-decoration: none;"><img title="用新浪微博账号登陆" border="0" style="display: block; float: left; width: 16px; height: 16px;" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/tsina.png">&nbsp;&nbsp;新浪微博</a></span><span style="height: 16px; float: left; display: block; line-height: 16px; overflow: hidden; width: 60px; margin: 15px 22px 0 25px; display: inline;"><a title="用QQ账号登陆" onclick="UYAN.loginQq();" style="cursor: pointer; font-size: 14px; color: #666; text-decoration: none;"><img title="用QQ账号登陆" border="0" style="display: block; float: left; width: 16px; height: 16px;" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/qq.png">&nbsp;&nbsp;QQ</a></span><span style="height: 16px; float: left; display: block; line-height: 16px; overflow: hidden; width: 60px; margin: 15px 22px 0 25px; display: inline;"><a title="用腾讯微博账号登陆" onclick="UYAN.loginTQq();" style="cursor: pointer; font-size: 14px; color: #666; text-decoration: none;"><img title="用腾讯微博账号登陆" border="0" style="display: block; float: left; width: 16px; height: 16px;" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/tqq.png">&nbsp;&nbsp;腾讯微博</a></span><span style="height: 16px; float: left; display: block; line-height: 16px; overflow: hidden; width: 60px; margin: 15px 22px 0 25px; display: inline;"><a title="用人人网账号登陆" onclick="UYAN.loginRenren();" style="cursor: pointer; font-size: 14px; color: #666; text-decoration: none;"><img title="用人人网账号登陆" border="0" style="display: block; float: left; width: 16px; height: 16px;" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/renren.png">&nbsp;&nbsp;人人网</a></span><span style="height: 16px; float: left; display: block; line-height: 16px; overflow: hidden; width: 60px; margin: 15px 22px 0 25px; display: inline;"><a title="用网易微博账号登陆" onclick="UYAN.loginT163();" style="cursor: pointer; font-size: 14px; color: #666; text-decoration: none;"><img title="用网易微博账号登陆" border="0" style="display: block; float: left; width: 16px; height: 16px;" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/t163.png">&nbsp;&nbsp;网易微博</a></span><span style="height: 16px; float: left; display: block; line-height: 16px; overflow: hidden; width: 60px; margin: 15px 22px 0 25px; display: inline;"><a title="用搜狐微博账号登陆" onclick="UYAN.loginTSohu();" style="cursor: pointer; font-size: 14px; color: #666; text-decoration: none;"><img title="用搜狐微博账号登陆" border="0" style="display: block; float: left; width: 16px; height: 16px;" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/tsohu.png">&nbsp;&nbsp;搜狐微博</a></span><span style="height: 16px; float: left; display: block; line-height: 16px; overflow: hidden; width: 60px; margin: 15px 22px 0 25px; display: inline;"><a title="用开心网账号登陆" onclick="UYAN.loginKaixin001();" style="cursor: pointer; font-size: 14px; color: #666; text-decoration: none;"><img title="用开心网账号登陆" border="0" style="display: block; float: left; width: 16px; height: 16px;" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/kaixin001.png">&nbsp;&nbsp;开心网</a></span><div style="clear: both;"></div></div><div id="uyan_vis_login"><h2 style="padding-top: 10px; border-top: 1px solid #ccc; margin: 0; font-size: 14px; font-weight: normal; color: #666; padding-left: 25px; margin-top: 15px; background: none repeat scroll 0 center transparent;">作为游客留言</h2><span style="height: 30px; display: block; padding-left: 54px; overflow: hidden; margin-top: 15px;"><p style="text-indent: 0; display: block; float: left; width: 58px; line-height: 30px; text-align: left; margin: 0; font-size: 14px; color: #666;">Email <span style="color: #ff0000;">*</span></p><input onkeyup="UYAN.syncEN();" onkeydown="UYAN.syncEN();" id="uyan_email_tmp" type="text" style="margin: auto; border: 1px solid #c1c1c1; color: #687793; float: left; height: 24px; line-height: 24px; padding: 2px 8px; width: 230px; border-radius: 5px;"></span><span style="height: 30px; display: block; padding-left: 54px; overflow: hidden; margin-top: 18px;"><p style="text-indent: 0; display: block; float: left; width: 58px; line-height: 30px; text-align: left; margin: 0; font-size: 14px; color: #666;">昵&nbsp;&nbsp;称</p><input onfocus="UYAN.nnbg(&#39;h&#39;);" onblur="UYAN.nnbg(&#39;s&#39;);" id="uyan_uname_tmp" type="text" style="margin: auto; background: #f2f2f2; border: 1px solid #c1c1c1; color: #687793; float: left; height: 24px; line-height: 24px; padding: 2px 8px; width: 230px; border-radius: 5px; box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15) inset;"></span><span style="height: 30px; display: block; padding-left: 54px; overflow: hidden; margin-top: 15px; width: 306px;"><div id="uyan_login_warn_tmp" style="color: #ff0000; float: left; font-family: Arial, Helvetica, sans-serif; font-size: 13px; padding-right: 15px; padding-top: 8px; text-align: right; width: 150px;"></div><input onclick="UYAN.loginEmail();" type="submit" style="margin: auto; background: url(&#39;http://v2.uyan.cc/code/images/btn.jpg&#39;) no-repeat; width: 86px; height: 26px; border: none; font-size: 14px; font-weight: bold; color: #666; float: right; cursor: pointer;" value="登录"></span></div></div></div><div style="background-color: #FFFFFF; border-color: #D3D2D2; border-style: solid; border-width: 1px 1px 2px; height: 130px; position: absolute; top: 23px; width: 135px; z-index: 99999; display: none;"><div style="color: #9797C4; font-size: 12px; font-weight: normal; padding: 4px 0 4px 10px; line-height: 18px;">顶并分享到:</div><div style="padding: 3px 0;"><input id="sinaShareBox" style="float: left; margin: 2px 5px 0 10px; padding: 0;" type="checkbox"><div style="background: url(&#39;http://v2.uyan.cc/code/images/tsina.png&#39;) no-repeat scroll 0 0 transparent; color: #494949; float: left; height: 18px; line-height: 18px; font-size: 12px; font-weight: normal; padding-left: 18px;">新浪微博</div><div style="clear: both;"></div></div><div style="padding: 3px 0;"><input id="sinaShareBox" style="float: left; margin: 2px 5px 0 10px; padding: 0;" type="checkbox"><div style="background: url(&#39;http://v2.uyan.cc/code/images/tsina.png&#39;) no-repeat scroll 0 0 transparent; color: #494949; float: left; height: 18px; line-height: 18px; font-size: 12px; font-weight: normal; padding-left: 18px;">新浪微博</div><div style="clear: both;"></div></div><div style="padding: 3px 0;"><input id="sinaShareBox" style="float: left; margin: 2px 5px 0 10px; padding: 0;" type="checkbox"><div style="background: url(&#39;http://v2.uyan.cc/code/images/tsina.png&#39;) no-repeat scroll 0 0 transparent; color: #494949; float: left; height: 18px; line-height: 18px; font-size: 12px; font-weight: normal; padding-left: 18px;">新浪微博</div><div style="clear: both;"></div></div><div style="padding: 5px 0 0 10px;"><a style="border: 1px solid #D0CFCF; background: url(&#39;http://v2.uyan.cc/code/images/buttonLarge.png&#39;) repeat-x; border-radius: 3px 3px 3px 3px; color: #666; font-weight: bold; cursor: pointer; font-weight: normal; float: left; font-size: 12px; height: 20px; line-height: 22px; overflow: hidden; padding: 0 18px;">顶</a><a style="background-color: #FFFFFF; border: 1px solid #FFFFFF; color: #737373; height: 20px; line-height: 22px; overflow: hidden; cursor: pointer; display: block; float: left; font-size: 12px; font-weight: normal; padding: 0 18px;">取消</a><div style="clear: both; height: 1px; overflow: hidden;"></div></div></div></div>
+<script type="text/javascript" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/uyan.js"></script>
+</div>
+<!--box end-->
+
+<div class="bor">
+<div class="titbg pl15">关于<a href="http://www.51cto.com/php/search.php?keyword=Java%B1%E0%B3%CC%CB%BC%CF%EB" target="_blank" class="underline">Java编程思想</a>&nbsp;&nbsp;<a href="http://www.51cto.com/php/search.php?keyword=C%2B%2B" target="_blank" class="underline">C++</a>&nbsp;&nbsp;<a href="http://www.51cto.com/php/search.php?keyword=Java" target="_blank" class="underline">Java</a>的更多文章</div>
+<div class="reltag">
+<ul class="fl list02">
+  <li><a href="http://developer.51cto.com/art/201311/415096.htm" title="Java 开源博客—B3log Solo 0.6.5 正式版发布了！">Java 开源博客—B3log Solo 0.6.5 正式版发</a></li><li><a href="http://developer.51cto.com/art/201310/413964.htm" title="Java长存！12个Java长久占居主要地位的原因">Java长存！12个Java长久占居主要地位的原因</a></li><li><a href="http://developer.51cto.com/art/201310/413776.htm" title="Firefox 封杀 Java 惹恼开发者">Firefox 封杀 Java 惹恼开发者</a></li><li><a href="http://developer.51cto.com/art/201211/364725.htm" title="从程序员到项目经理：成长历程">从程序员到项目经理：成长历程</a></li><li><a href="http://developer.51cto.com/art/201310/413211.htm" title="JVM性能优化,Java的伸缩性">JVM性能优化,Java的伸缩性</a></li>
+</ul>
+<div class="fr">
+<div class="h5 f12"><a href="http://developer.51cto.com/art/201311/415182.htm" title="开发频道2013年10月第5周重点内容推荐：JavaScript就是一种垃圾语言"><b>开发频道2013年10月第5周重点内容推荐：JavaScript就是一种垃圾语言</b></a></div>
+<a href="http://developer.51cto.com/art/201311/415182.htm" title="开发频道2013年10月第5周重点内容推荐：JavaScript就是一种垃圾语言"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/wKioJlJzSTTgD4rzAAATbDPO0Lg822.jpg" alt="开发频道2013年10月第5周重点内容推荐：JavaScript就是一种垃圾语言" width="100" height="80" border="0"></a>
+<p class="c666">又是一周匆匆而过。上周五、周六两天，2013年51CTO云计算架构师<a class="blue" href="http://developer.51cto.com/art/201311/415182.htm" title="开发频道2013年10月第5周重点内容推荐：JavaScript就是一种垃圾语言">[详细]</a></p>
+</div>
+</div></div>
+
+<p class="blank10"></p>
+
+
+
+<div class="relart fl bor">
+<div class="titbg">
+<h3 class="fl t1">栏目热门</h3>
+<a href="http://developer.51cto.com/click/576" class="tmore">更多&gt;&gt;</a></div>
+<ul>
+  
+	  <li><a href="http://developer.51cto.com/art/201310/412591.htm" title="2013年10月编程语言排行榜：Groovy首次闯入前二十">2013年10月编程语言排行榜：Groovy首次闯入</a></li>
+	  
+	  <li><a href="http://developer.51cto.com/art/201309/411375.htm" title="新51CTO电子杂志《开发月刊》2013年9月刊发布">新51CTO电子杂志《开发月刊》2013年9月刊发</a></li>
+	  
+	  <li><a href="http://developer.51cto.com/art/201310/413757.htm" title="51CTO电子杂志《开发月刊》2013年10月刊发布">51CTO电子杂志《开发月刊》2013年10月刊发</a></li>
+	  
+	  <li><a href="http://developer.51cto.com/art/201311/415620.htm" title="去IOE化浅谈：能否去“O”进入“My”世界">去IOE化浅谈：能否去“O”进入“My”世界</a></li>
+	  
+	  <li><a href="http://developer.51cto.com/art/201309/411031.htm" title="谷歌开发新技术替代Cookies 网上追踪重洗牌">谷歌开发新技术替代Cookies 网上追踪重洗牌</a></li>
+	  
+</ul>
+</div>
+<div class="cathot fr bor">
+<div class="titbg">
+<h3 class="fl t1">同期最新</h3>
+<a href="http://developer.51cto.com/col/576" class="tmore">更多&gt;&gt;</a></div>
+<ul>
+	
+	  <li><a href="http://developer.51cto.com/art/200906/131467.htm" title="有一天你也会成为很牛的程序员">有一天你也会成为很牛的程序员</a></li>
+	  
+	  <li><a href="http://developer.51cto.com/art/200906/131323.htm" title="开发者网络Project Kenai简介">开发者网络Project Kenai简介</a></li>
+	  
+	  <li><a href="http://developer.51cto.com/art/200906/131214.htm" title="Zend Studio 7.0.0 Beta发布 增强源代码编辑">Zend Studio 7.0.0 Beta发布 增强源代码编</a></li>
+	  
+	  <li><a href="http://developer.51cto.com/art/200906/130960.htm" title="开发热点周报：开发者社区新潮流 PHP 5.2.10发布">开发热点周报：开发者社区新潮流 PHP 5.2.1</a></li>
+	  
+	  <li><a href="http://developer.51cto.com/art/200906/130823.htm" title="MSN十周年庆典即将启动系列线上活动回报用户">MSN十周年庆典即将启动系列线上活动回报用</a></li>
+	  
+</ul>
+</div>
+<p class="blank10"></p>
+<div class="bor">
+<div class="titbg">
+<h3 class="fl t1"><a href="http://developer.51cto.com/">开发</a></h3>
+<span class="pl10">频道导航</span></div>
+ <ul class="xtlist">
+<li><span class="tit">Java</span>
+<div><a href="http://developer.51cto.com/java/">Java开发</a>|<a href="http://developer.51cto.com/col/1005/">Java基础</a>|<a href="http://developer.51cto.com/col/1014/">Java EE开发</a>|<a href="http://developer.51cto.com/col/1004/">Java框架</a>|<a href="http://developer.51cto.com/col/1007/">设计模式</a></div>
+</li>
+<li><span class="tit">WEB开发</span>
+<div><a href="http://developer.51cto.com/col/1441/">PHP开发</a>|<a href="http://developer.51cto.com/col/1455/">Python</a>|<a href="http://developer.51cto.com/col/1552/">Ruby</a>|<a href="http://developer.51cto.com/col/1552/">JSP</a>|<a href="http://developer.51cto.com/art/200907/133407.htm">HTML 5</a>|<a href="http://developer.51cto.com/col/1450/">DIV+CSS</a></div>
+</li>
+<li class="last"><span class="tit">综合</span>
+<div><a href="http://developer.51cto.com/net/">.NET开发</a>|<a href="http://developer.51cto.com/embed/">嵌入式开发</a>|<a href="http://developer.51cto.com/col/586/">项目管理</a>|<a href="http://developer.51cto.com/col/1308/">架构设计</a></div>
+</li>
+</ul> 
+</div> 
+<p class="blank10"></p>
+<div class="leftbotcon">
+<div class="bor jdlist">
+<div class="titbg">
+<h3 class="t2">热点推荐</h3></div>
+<ul>
+<li><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-t-4&#39;]);" href="http://mobile.51cto.com/mobile-182392.htm"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/153546162.jpg"></a> 
+<div class="name"><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-t-4&#39;]);" href="http://mobile.51cto.com/mobile-182392.htm">Android开发应用详解</a></div></li>
+<li><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-t-4&#39;]);" href="http://developer.51cto.com/art/201106/266369.htm"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/133620622.jpg"></a> 
+<div class="name"><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-t-4&#39;]);" href="http://developer.51cto.com/art/201106/266369.htm">那些性感的让人尖叫的程序员</a></div></li>
+<li><a href="http://developer.51cto.com/art/200907/133407.htm"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/134217922.jpg"></a> 
+<div class="name"><a href="http://developer.51cto.com/art/200907/133407.htm">HTML5 下一代Web开发标准详解</a></div></li>
+<li><a href="http://developer.51cto.com/art/201104/257581.htm"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/123123954.jpg"></a> 
+<div class="name"><a href="http://developer.51cto.com/art/201104/257581.htm">高性能WEB开发应用指南</a></div></li>
+<li><a href="http://os.51cto.com/art/200706/49181.htm"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/195816929.jpg"></a> 
+<div class="name"><a href="http://os.51cto.com/art/200706/49181.htm">Ubuntu开源技术交流频道</a></div></li></ul></div>
+<p class="blank10"></p>
+<div class="bor hotTag"><strong>热门标签：</strong> <a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-2]);" href="http://os.51cto.com/windows/">windows频道</a><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-w&#39;]);" href="http://mobile.51cto.com/">移动开发</a><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-w&#39;]);" href="http://cloud.51cto.com/">云计算</a><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-w&#39;]);" href="http://mobile.51cto.com/mobile/objc/">objective-c</a><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-w&#39;]);" href="http://network.51cto.com/art/200909/151122.htm">tp-link路由器设置图解</a><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-w&#39;]);" href="http://developer.51cto.com/art/200907/133407.htm">html5</a> </div></div>
+<div class="leftbotbox"> </div>
+</div>
+<!--left end-->
+<div class="g_13 fr">
+<div class="focus fixfloat"> 
+ <img width="298" style="border: 1px solid #CCCCCC; margin:5px 0px 5px;" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/weixin.png"><div class="hot">
+<ul>
+<li class="tit"><em>头条</em> <a href="http://developer.51cto.com/art/201405/438832.htm">《开发专刊》2014年4月刊发布</a> </li>
+<li class="con"><dl><dt><a href="http://developer.51cto.com/art/201405/438832.htm"><img border="0" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/wKioL1NvvUaxFIvQAAAX2THaVGw231.jpg"></a></dt>
+<dd>本次的专刊为大家提供了Oracle最新推出的Java SE 8详细的开发教程，从解读到探究Java 8最新</dd>
+</dl></li></ul><ol class="hotlist"><li><a href="http://developer.51cto.com/art/201403/434342.htm">《开发专刊》2014年3月刊发布</a></li><li><a href="http://developer.51cto.com/art/201312/423275.htm">《开发月刊》2013年11月刊发布</a></li></ol></div>
+<p id="hzh_one">
+<script language="JavaScript" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/ad(1).js" type="text/javascript"></script><script type="text/javascript" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/ad(2).php"></script><iframe width="300" height="400" noresize="" scrolling="No" frameborder="0" marginheight="0" marginwidth="0" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/4.htm" align="left"></iframe>
+</p>
+</div>
+<div class="rank">
+<div class="tlt">
+      <h3>文章排行</h3>
+      <a onmouseover="change_top10(3);" id="top_3">本月</a><a onmouseover="change_top10(2);" id="top_2">本周</a><a onmouseover="change_top10(1);" class="myon" id="top_1">24小时</a> </div>
+ <div id="top10_1" style="display: block;" class="list"><ul>
+<li><a href="http://developer.51cto.com/art/201409/450248.htm" target="_blank" title="容器与虚拟机管理程序之战刚开始打响">容器与虚拟机管理程序之战刚开始打响</a>
+</li><li><a href="http://developer.51cto.com/art/201007/214478.htm" target="_blank" title="Eclipse插件大全 挑选最牛的TOP30">Eclipse插件大全 挑选最牛的TOP30</a>
+</li><li><a href="http://developer.51cto.com/art/200906/128274.htm" target="_blank" title="Java数组声明、创建、初始化">Java数组声明、创建、初始化</a>
+</li><li><a href="http://developer.51cto.com/art/200908/146071.htm" target="_blank" title="五个免费UML建模工具推荐">五个免费UML建模工具推荐</a>
+</li><li><a href="http://developer.51cto.com/art/201409/450255.htm" target="_blank" title="千万别理程序员">千万别理程序员</a>
+</li><li><a href="http://developer.51cto.com/art/201409/450265.htm" target="_blank" title="产品环境中 Go 语言的最佳实践">产品环境中 Go 语言的最佳实践</a>
+</li><li><a href="http://developer.51cto.com/art/200903/117512.htm" target="_blank" title="详解Java解析XML的四种方法">详解Java解析XML的四种方法</a>
+</li><li><a href="http://developer.51cto.com/art/201408/449789.htm" target="_blank" title="如何开发属于自己的框架">如何开发属于自己的框架</a>
+</li><li><a href="http://developer.51cto.com/art/201408/449857.htm" target="_blank" title="你真的该换一台新电脑的 14 种迹象">你真的该换一台新电脑的 14 种迹象</a>
+</li><li><a href="http://developer.51cto.com/art/201409/450273.htm" target="_blank" title="Shou.TV 背后基于 Node.js 和 WebSocke">Shou.TV 背后基于 Node.js 和 WebSocke</a>
+</li></ul></div>
+<div id="top10_2" style="display: none;" class="list"><ul>
+<li><a href="http://developer.51cto.com/art/201408/449789.htm" target="_blank" title="如何开发属于自己的框架">如何开发属于自己的框架</a>
+</li><li><a href="http://developer.51cto.com/art/201408/449857.htm" target="_blank" title="你真的该换一台新电脑的 14 种迹象">你真的该换一台新电脑的 14 种迹象</a>
+</li><li><a href="http://developer.51cto.com/art/201408/449785.htm" target="_blank" title="当程序员遇到硬盘损坏导致代码丢失时心">当程序员遇到硬盘损坏导致代码丢失时心</a>
+</li><li><a href="http://developer.51cto.com/art/201408/449852.htm" target="_blank" title="2014 年最火的 21 个 JavaScript 框架">2014 年最火的 21 个 JavaScript 框架</a>
+</li><li><a href="http://developer.51cto.com/art/201408/450082.htm" target="_blank" title="调查显示：OpenStack和Docker雄冠云计">调查显示：OpenStack和Docker雄冠云计</a>
+</li><li><a href="http://developer.51cto.com/art/201408/449991.htm" target="_blank" title="生于忧患而死于安乐：程序员如何走出安">生于忧患而死于安乐：程序员如何走出安</a>
+</li><li><a href="http://developer.51cto.com/art/201408/449995.htm" target="_blank" title="HTML5：Network Information API详解">HTML5：Network Information API详解</a>
+</li><li><a href="http://developer.51cto.com/art/201408/449867.htm" target="_blank" title=".NET程序的性能要领和优化建议">.NET程序的性能要领和优化建议</a>
+</li><li><a href="http://developer.51cto.com/art/201408/450086.htm" target="_blank" title="有效领导创业型员工的8种方式">有效领导创业型员工的8种方式</a>
+</li><li><a href="http://developer.51cto.com/art/201408/449978.htm" target="_blank" title="囧之有道：残酷现实中的巾帼程序员">囧之有道：残酷现实中的巾帼程序员</a>
+</li></ul></div>
+<div id="top10_3" style="display: none;" class="list"><ul>
+<li><a href="http://developer.51cto.com/art/201408/447341.htm" target="_blank" title="PHP终于迎来自己的正式语言规范">PHP终于迎来自己的正式语言规范</a>
+</li><li><a href="http://developer.51cto.com/art/201408/448142.htm" target="_blank" title="2014年8月编程语言排行榜：Swift降到20">2014年8月编程语言排行榜：Swift降到20</a>
+</li><li><a href="http://developer.51cto.com/art/201408/448409.htm" target="_blank" title="程序员不可不知的7款编程工具">程序员不可不知的7款编程工具</a>
+</li><li><a href="http://developer.51cto.com/art/201408/448405.htm" target="_blank" title="一个数据挖掘大牛，用程序算法做人生选">一个数据挖掘大牛，用程序算法做人生选</a>
+</li><li><a href="http://developer.51cto.com/art/201408/448609.htm" target="_blank" title="Java 专业人士必备的书籍和网站列表">Java 专业人士必备的书籍和网站列表</a>
+</li><li><a href="http://developer.51cto.com/art/201408/447561.htm" target="_blank" title="报告：新毕业程序员平均年薪暴涨44%">报告：新毕业程序员平均年薪暴涨44%</a>
+</li><li><a href="http://developer.51cto.com/art/201408/449789.htm" target="_blank" title="如何开发属于自己的框架">如何开发属于自己的框架</a>
+</li><li><a href="http://developer.51cto.com/art/201408/447865.htm" target="_blank" title="2014年最流行的应用服务器">2014年最流行的应用服务器</a>
+</li><li><a href="http://developer.51cto.com/art/201408/447346.htm" target="_blank" title="程序员生存定律：打造属于自己的稀缺性">程序员生存定律：打造属于自己的稀缺性</a>
+</li><li><a href="http://developer.51cto.com/art/201408/447248.htm" target="_blank" title="程序员逆袭应具备的7大技能">程序员逆袭应具备的7大技能</a>
+</li></ul></div>
+ 
+ </div>
+<p class="blank1"></p>
+
+<div class="bor">
+<div class="titbg">
+<h3 class="fl t1">热点专题</h3>
+<a href="http://developer.51cto.com/speclist/576" class="tmore">更多&gt;&gt;</a></div>
+<ul class="plist01">
+<li><a href="http://developer.51cto.com/art/201310/412747.htm" title="Java排序基础应用回顾"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/wKioJlJXqPjy3kOuAAAUbCH_xuk698.jpg" alt="Java排序基础应用回顾" width="100" height="80"></a>
+<h5><a href="http://developer.51cto.com/art/201310/412747.htm" title="Java排序基础应用回顾">Java排序基础应用回顾</a></h5>
+<div class="c666">数据结构课程，貌似是大学计算机、网络、软件等专业的</div>
+</li><li><a href="http://developer.51cto.com/art/201309/411913.htm" title="JavaScript成为网络霸主的“绯闻”"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/wKioJlJHn8DC9RVYAAAv2xgpMSU902.png" alt="JavaScript成为网络霸主的“绯闻”" width="100" height="80"></a>
+<h5><a href="http://developer.51cto.com/art/201309/411913.htm" title="JavaScript成为网络霸主的“绯闻”">JavaScript成为网络霸</a></h5>
+<div class="c666">JavaScript正凭借新型工具与功能提升以极度夸张的速度</div>
+</li><li><a href="http://developer.51cto.com/art/201309/411803.htm" title="开发频道2013年9月第4周重点内容推荐：值得尝试的七大前沿性编程实验"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/wKioJlJFH9jxdzYPAAAY4WF2i1M859.jpg" alt="开发频道2013年9月第4周重点内容推荐：值得尝试的七大前沿性编程实验" width="100" height="80"></a>
+<h5><a href="http://developer.51cto.com/art/201309/411803.htm" title="开发频道2013年9月第4周重点内容推荐：值得尝试的七大前沿性编程实验">开发频道2013年9月第4</a></h5>
+<div class="c666">国庆假期前的612，是不是有点折腾？网上的中秋国庆放</div>
+</li> 
+</ul>
+</div>
+<p class="blank10"></p>
+<div class="tagCloud">
+<div class="tlt">
+<h3>热点标签</h3>
+</div>
+<div class="taglist"><a title="编程语言排行榜" href="http://developer.51cto.com/art/200911/165281.htm">编程语言排行榜</a> <a title="敏捷开发" href="http://developer.51cto.com/art/200803/68222.htm">敏捷开发</a> <a title="Eclipse" href="http://developer.51cto.com/art/201006/207407.htm">Eclipse 3.6</a> <a title="PHP设计模式" href="http://developer.51cto.com/art/201004/195765.htm">PHP设计模式</a> <a title="NetBeans7" href="http://developer.51cto.com/art/201105/259431.htm">NetBeans 7</a> <a title="Java7" href="http://developer.51cto.com/art/201001/175830.htm">Java7</a> <a title="Scala编程语言" href="http://developer.51cto.com/art/200906/127830.htm">Scala编程语言</a> <a title="Python编程世界" href="http://developer.51cto.com/art/201011/234347.htm">Python编程世界</a> <a title="Ruby" on="" rails开发="" href="http://developer.51cto.com/art/201007/215101.htm">Ruby On Rails开发</a> <a class="imp" title="LINQ" href="http://developer.51cto.com/art/200911/165090.htm">LINQ</a> <a title="ASP.NET视频教程" href="http://developer.51cto.com/art/200904/120314.htm">ASP.NET视频教程</a> <a title="Visual Studio" href="http://developer.51cto.com/art/201004/194262.htm">Visual Studio</a> <a title="智能手机" href="http://p.linkphone.cn/">智能手机</a> <a title="软件下载" href="http://download.linkphone.cn/">软件下载</a></div>
+</div>
+<div class="rss">
+<ul>
+<li class="lin f12-c"><a href="http://news.51cto.com/col/1323/"><strong>点击这里查看样刊</strong></a></li>
+<li>
+<dl>
+<dt> </dt>
+<dd><a href="http://home.51cto.com/index.php?s=/Subscribe"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/dingy.gif"></a></dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="bor">
+<div class="titbg">
+<h3 class="t1">全站热点</h3>
+</div>
+<div class="webhot fixfloat">
+<ul>
+
+<li>
+  <a href="http://mobile.51cto.com/market-408462.htm" title="App营销之ASO应用商店优化攻略"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/wKioOVIdcyXiY1CVAABFnIenMdo436.jpg"></a>
+  <div><a href="http://mobile.51cto.com/market-408462.htm" title="App营销之ASO应用商店优化攻略">App营销之ASO应用商店优化攻略</a></div>
+</li>
+
+<li>
+  <a href="http://network.51cto.com/network/ruijie/newton-video/" title="网络世界的Newton"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/wKioOVIdcMfwql8tAACW4jbaj_M992.jpg"></a>
+  <div><a href="http://network.51cto.com/network/ruijie/newton-video/" title="网络世界的Newton">网络世界的Newton</a></div>
+</li>
+
+</ul>
+</div>
+<p class="blank1"></p>
+<ul class="list03">
+
+<li><a href="http://server.51cto.com/News-408672.htm" title="英特尔下周将推新一代Atom服务器处理器">英特尔下周将推新一代Atom服务器处理</a></li>
+
+<li><a href="http://server.51cto.com/CPU-408671.htm" title="Power8处理器比Watson芯片性能翻番">Power8处理器比Watson芯片性能翻番</a></li>
+
+<li><a href="http://server.51cto.com/Review-408669.htm" title="2020年7纳米制程：摩尔定律的终点站">2020年7纳米制程：摩尔定律的终点站</a></li>
+
+<li><a href="http://server.51cto.com/HPC-408666.htm" title="24岁黑客因叫卖美国能源部超级计算机账户被捕">24岁黑客因叫卖美国能源部超级计算机</a></li>
+
+<li><a href="http://os.51cto.com/art/201308/408661.htm" title="Velocity China 2013：51CTO采访实录汇总">Velocity China 2013：51CTO采访实录</a></li>
+
+</ul>
+</div>
+<p class="blank10"></p>
+<div class="bor">
+<div class="titbg">
+<h3 class="t1">读书</h3>
+</div>
+  
+<div class="catbook"><a href="http://book.51cto.com/art/200707/50412.htm" title="Cisco网络工程案例精粹"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/132703244.gif" width="66" height="98" border="0"></a>
+<h5><a href="http://book.51cto.com/art/200707/50412.htm">Cisco网络工程案例精粹</a></h5>
+<div class="c666 text">《Cisco网络工程案例精粹》是一本以案例为基础兼顾知识概述的案例性书籍，所收录的案例都是笔者精心挑选出来的在网络工作中常见</div>
+</div>
+
+
+<ul class="list03">
+
+<li><a href="http://book.51cto.com/art/200707/50511.htm" title="数据库加密——最后的防线">数据库加密——最后的防线</a></li>
+
+<li><a href="http://book.51cto.com/art/200707/50516.htm" title="网络系统开发实例精粹（JSP版）">网络系统开发实例精粹（JSP版）</a></li>
+
+<li><a href="http://book.51cto.com/art/200707/50861.htm" title="Linux服务器安全策略详解">Linux服务器安全策略详解</a></li>
+
+<li><a href="http://book.51cto.com/art/200707/50910.htm" title="SOA 原理&#8226;方法&#8226;实践">SOA 原理&#8226;方法&#8226;实践</a></li>
+
+</ul>
+</div>
+<p class="blank10"></p>
+<div class="bor">
+<div class="titbg">
+<h3 class="t1 fl">博文推荐</h3>
+<a class="tmore" href="http://blog.51cto.com/">更多&gt;&gt;</a></div>
+
+<ul class="list03">
+ <li><a href="http://andylhz2009.blog.51cto.com/728703/453848/" target="_blank" title="Oracle ORA-4031错误产生的原因详解">Oracle ORA-4031错误产生的原因详解</a></li><li><a href="http://zhangjunhd.blog.51cto.com/113473/453789/" target="_blank" title="读大前研一《思考的技术》-锻炼解决问题的思维">读大前研一《思考的技术》-锻炼解决</a></li><li><a href="http://lqlaps169.blog.51cto.com/855319/453252/" target="_blank" title="Windows2008应用之组策略分发应用程序">Windows2008应用之组策略分发应用程</a></li><li><a href="http://jqq1982.blog.51cto.com/515663/453250/" target="_blank" title="配置Exchange边缘服务器解决内外域名不一致的方法">配置Exchange边缘服务器解决内外域名</a></li>
+</ul>
+</div>
+<p class="blank10"></p>
+<div class="tj">
+<div class="tlt">
+<h3>最新热帖</h3>
+<a class="more" href="http://bbs.51cto.com/hotthreads.php">更多&gt;&gt;</a></div>
+<ul>
+<li><a href="http://bbs.51cto.com/thread-984054-1.html" target="_blank" title="这样的网络结构会造成环路吗？">这样的网络结构会造成环路吗？</a></li><li><a href="http://bbs.51cto.com/thread-984054-1.html" target="_blank" title="这样的网络结构会造成环路吗？">这样的网络结构会造成环路吗？</a></li><li><a href="http://bbs.51cto.com/thread-983886-1.html" target="_blank" title="关于共享库的动态加载和更换">关于共享库的动态加载和更换</a></li><li><a href="http://bbs.51cto.com/thread-982869-1.html" target="_blank" title="Citrix Access Gateway 连接内网后，无法使用内网的DNS，请教如何设置。">Citrix Access Gateway 连接内网后，</a></li><li><a href="http://bbs.51cto.com/thread-982738-1.html" target="_blank" title="vc++ 2010疑难问题集锦（持续更新！！！）">vc++ 2010疑难问题集锦（持续更新！</a></li>
+</ul>
+</div>
+<div class="picAD">
+<script language="JavaScript" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/ad(3).js" type="text/javascript"></script><script type="text/javascript" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/ad(4).php"></script><script type="text/javascript"> var cpro_id = 'u708626';</script><script src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/c.js" type="text/javascript"></script><div id="BAIDU_DUP_wrapper_u708626_0"><iframe width="300" height="250" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/acom.htm" align="center,center" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" allowtransparency="true"></iframe></div><script charset="utf-8" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/acom"></script>
+</div>
+</div>
+<p class="blank1"></p> 
+<!--leftbotcon end-->
+</div> 
+<div class="subweb">
+<h4>51CTO旗下网站</h4>
+<div>
+<a target="_blank" href="http://www.51cto.com/">领先的IT技术网站 51CTO</a>
+<a target="_blank" href="http://www.watchstor.com/">领先的中文存储媒体 WatchStor</a>
+<a target="_blank" href="http://www.cioage.com/">中国首个CIO网站 CIOage</a>
+<a target="_blank" href="http://www.hc3i.cn/">中国首家数字医疗网站 HC3i</a>
+</div>
+</div>
+<div id="ft"><div id="foot" align="center"><script src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/copy_right.js"></script>Copyright&#169;2005-2014 <a href="http://www.51cto.com/">51CTO.COM</a> 版权所有 未经许可 请勿转载</div></div>
+<script src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/count.js"></script><script src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/count.php"></script>
+<!-- START GA.js -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-20883758-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_addOrganic', 'baidu', 'word']);
+  _gaq.push(['_addOrganic', 'google', 'q']);
+  _gaq.push(['_addOrganic', 'soso', 'w']);
+  _gaq.push(['_addOrganic', '3721', 'name']);
+  _gaq.push(['_addOrganic', 'yodao', 'q']); 
+  _gaq.push(['_addOrganic', 'vnet', 'kw']);
+  _gaq.push(['_addOrganic', 'sogou', 'query']);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<!-- END GA.js -->
+
+
+<script type="text/javascript">
+
+	$("#uyan_cmt_list").next().remove();	
+	$("#uyan_cmt_list").next().css("display","none");	
+</script>
+<style>
+.Nfloat {
+    position: fixed;
+    right: 2%;
+    top: 35%;
+    z-index: 801;
+}
+</style>
+<!--学院广告
+<div class="Nfloat" style="width:127px; height:197px;" id="fullYearfloatPic">
+	<img width="127" border="0" src="http://img1.51cto.com/edu/images/floatpic.png" usemap="#Map">
+	<map name="Map" id="Map">
+	  <area shape="rect" coords="11,83,120,117" target="_blank" href="http://edu.51cto.com/course/courseList/id-all-field-toll-isLecturer-0-difficulty-all.html" onfocus="isfox ? void(0) : blur(this);">
+	  <area shape="rect" coords="6,120,119,144" target="_blank" href="http://edu.51cto.com/member/index.html" onfocus="isfox ? void(0) : blur(this);">
+	  <area shape="rect" coords="9,149,117,178" target="_blank" href="http://bbs.51cto.com/viewthread.php?tid=1113099&amp;page=1&amp;extra=#pid5675432" onfocus="isfox ? void(0) : blur(this);">
+	  <area shape="circle" coords="118,25,9" href="javascript:void(0);" onclick="document.getElementById('fullYearfloatPic').style.display='none';return false;" onfocus="isfox ? void(0) : blur(this);">
+	</map>
+</div>
+学院广告end-->
+<!-- 新监测代码 -->
+<!-- 新监测代码 -->
+<div id="MyMoveAd" style="display: none; height: 2px;">
+<span id="wordlink_1"><script src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/wordlink1.js"></script><script type="text/javascript" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/ajs.php"></script><a href="http://gg1.51cto.com/www/delivery/ck.php?oaparams=2__bannerid=512__zoneid=254__cb=e2348c3f6a__oadest=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Fcloud%2Fbluemix%2F2014_8_7test.html%3Fcmp%3Ddwskl%26cpb%3Ddw%26ct%3Ddwcon%26cr%3Dcn_51CTO_t2%26ccy%3Dcn" target="_blank"><font color="red"> 关注移动开发，参与有奖问答</font></a><div id="beacon_e2348c3f6a" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/lg.php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div>
+</span>
+<span id="wordlink_2"><script src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/wordlink2.js"></script><script type="text/javascript" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/ajs(1).php"></script><a href="http://gg.51cto.com/www/delivery/ck.php?oaparams=2__bannerid=359__zoneid=255__cb=d4f425ad5b__oadest=http%3A%2F%2Fnetsecurity.51cto.com%2Fsecu%2FF5%2FSynthesis%2F" target="_blank"><font color="blue">软件定义的数据中心解决方案</font></a><div id="beacon_d4f425ad5b" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/lg(1).php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div>
+</span>
+<span id="wordlink_3"><script src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/wordlink3.js"></script><script type="text/javascript" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/ajs(2).php"></script><a href="http://gg2.51cto.com/www/delivery/ck.php?oaparams=2__bannerid=90__zoneid=256__cb=e2b825bd50__oadest=http%3A%2F%2Fnetwork.51cto.com%2Fnetwork%2F01%2F1.html" target="_blank"><font color="blue">智能化管理，让IT管理更轻松</font></a><div id="beacon_e2b825bd50" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/lg(2).php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div>
+</span>
+<span id="wordlink_4"><script src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/wordlink4.js"></script><script type="text/javascript" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/ajs(3).php"></script></span>
+<span id="pinglun"><script language="JavaScript" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/getArtCount.php"></script>1</span>
+<span id="tonglan"></span>
+<span id="wordlink"><script language="JavaScript" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/ad(5).js"></script></span>
+<script src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/ad(5).js"></script>
+<span id="bookss"><script language="JavaScript" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/getBookData.php"></script></span>
+</div>   
+<script language="javascript" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/favorite.js"></script>
+
+<script language="javaScript" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/dialog_utf8.js"></script>
+<script language="javaScript" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/mail.js"></script>  
+<script type="text/javascript" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/favorbox.js"></script>
+<script language="javascript" src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/clipboard.js"></script>
+<script language="javaScript"> 
+	var thistid=131773; 
+	
+	//收藏按钮
+	var favor_url = 'http://developer.51cto.com/art/200906/131773.htm';  // 如：http://bbs.51cto.com/thread-789649-1.html
+	var favor_title = '《Java编程思想》作者：C++不垃圾，只是Java很傲慢';       //  
+	
+	//绑定复制按钮
+	copy('msnqqcopy', 'http://developer.51cto.com/art/200906/131773.htm', '分享到MSN/QQ的链接复制成功!');
+//	copy('bbscopy', '[url=http://developer.51cto.com/art/200906/131773.htm][u]《Java编程思想》作者：C++不垃圾，只是Java很傲慢[/u][/url]', '分享到论坛的UBB代码复制成功!');
+
+</script><div style="position: absolute; left: 783px; top: 3593px; width: 34px; height: 12px; z-index: 99;"><embed id="ZeroClipboardMovie_1" src="http://images.51cto.com/images/art/newart1012/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="34" height="12" name="ZeroClipboardMovie_1" align="middle" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=1&amp;width=34&amp;height=12" wmode="transparent"></div> 
+<script src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/index.php" charset="utf-8"></script>
+<script src="./《Java编程思想》作者：C++不垃圾，只是Java很傲慢 - 51CTO.COM_files/count(1).php" language="javascript"></script>
+<script language="javascript">
+document.getElementById('books').innerHTML = document.getElementById("bookss").innerHTML; 
+</script>
+
+
+
+</body></html>

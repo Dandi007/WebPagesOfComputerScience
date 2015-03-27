@@ -1,0 +1,3 @@
+var OX_1673ee68 = '';
+OX_1673ee68 += "<"+"a href=\'//gg.51cto.com/www/delivery/ck.php?oaparams=2__bannerid=359__zoneid=255__cb=d4f425ad5b__oadest=http%3A%2F%2Fnetsecurity.51cto.com%2Fsecu%2FF5%2FSynthesis%2F\' target=\'_blank\'><"+"font color=\'blue\'>软件定义的数据中心解决方案<"+"/font><"+"/a><"+"div id=\'beacon_d4f425ad5b\' style=\'position: absolute; left: 0px; top: 0px; visibility: hidden;\'><"+"img src=\'//gg1.51cto.com/www/delivery/lg.php?bannerid=359&amp;campaignid=103&amp;zoneid=255&amp;loc=1&amp;referer=http%3A%2F%2Fdeveloper.51cto.com%2Fart%2F200906%2F131773.htm&amp;cb=d4f425ad5b\' width=\'0\' height=\'0\' alt=\'\' style=\'width: 0px; height: 0px;\' /><"+"/div>\n";
+document.write(OX_1673ee68);

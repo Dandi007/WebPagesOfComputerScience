@@ -1,0 +1,642 @@
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>IT技术博客大学习 -- 共学习 共进步！ -- 收录IT领域的优秀技术博客,在这里你可以找到Web开发、系统架构、数据库、前端技术、用户体验等领域的前沿文章</title>
+<meta name="description" content="IT技术博客大学习 -- 共学习 共进步！ -- 收录IT领域的优秀技术博客,在这里你可以找到Web开发、系统架构、数据库、前端技术、用户体验等领域的前沿文章" />
+<meta name="keywords" content="IT技术,IT技术博客大学习,PHP教程,MySQL教程,Linux教程,Apache教程,系统架构,JavaScript,CSS,用户研究,信息和交互,视觉设计" />
+<meta name="renderer" content="webkit">
+<meta property="qc:admins" content="0135301347725146367147" />
+<html xmlns:wb="http://open.weibo.com/wb">
+<link href="/it/css/css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://lib.vipsinaapp.com/js/jquery/1.8/jquery.min.js"></script>
+<script type="text/javascript">
+	window.google_analytics_uacct = "UA-6082292-6";
+</script>
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=3741373929" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript">
+function nav_locate(){
+	var top=$(document).scrollTop();
+	if(($.browser.msie==true)&&($.browser.version==6.0)){
+		if(top>131) {
+			$('.main').css('margin-top', '104px');
+			$("#nav").css({position:"absolute",top:top-131});
+		}
+	}else{
+		if(top>131) {
+			$('.main').css('margin-top', '104px');
+			$("#nav").css({position:"fixed",top:0});
+		}
+	}
+	if(top<=131) {
+		$('.main').removeAttr('style');
+		$("#nav").css({position:"static",top:0});
+	}
+}
+$(function(){
+		window.onscroll=nav_locate;
+		window.onresize=nav_locate;
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#adlayerclose").click(function(){
+		$("#adlayer").hide();
+	});
+	$("#adlayerclose").click(function(){
+		$("#adlayertitle").show();
+	});
+	
+	$("#adlayeropen").click(function(){
+		$("#adlayer").show();
+		$("#adlayertitle").hide();
+	});
+});
+</script>
+
+</head>
+
+<body>
+
+<div class="body">
+	<div class="topnav">
+		<div style="float:left;"><a href="http://weibo.com/blogread" title="IT技术博客大学习" target="_blank"><img src="http://tp1.sinaimg.cn/1646218964/30/1279883225/1" style="border:0" alt="IT技术博客大学习" /></a></div>
+		<div style="float:left;margin-top:5px;"><wb:follow-button uid="1646218964" type="red_3" width="100%" height="24" ></wb:follow-button></div>
+		&nbsp;&nbsp;&nbsp;&nbsp;<a href="/daohang/"><strong>博客导航</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/wap/">手机版</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/search.php">搜索本站</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/site/">作者列表</a>
+	</div>
+    
+    <div class="banner">
+    	<div>
+        	<div class="logo"><h2><a href="/it/">IT技术博客大学习</a></h2><font color="#FB993B">-- 共学习 共进步！ --</font></div>
+        	<div class="ad">
+				<script type="text/javascript"><!--
+				google_ad_client = "pub-2206192680127944";
+				/* 728x90, 创建于 09-10-14 */
+				google_ad_slot = "2235377458";
+				google_ad_width = 728;
+				google_ad_height = 90;
+				//-->
+				</script>
+				<script type="text/javascript"
+				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+				</script>
+            </div>    
+        </div>
+	</div><!-- banner -->
+
+	<div class="nav" id="nav"> 
+		<a href="/it/category/2">PHP</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/3">MySQL</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/4">Oracle</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/5">Linux</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/6">Apache</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/9">算法</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/16">安全</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/15">网络系统</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/17">系统架构</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/18">系统运维</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/23">源码分析</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/22">编程语言</a>
+		<br /> 
+		<a href="/it/">首页</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/7">JavaScript</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/12">CSS/HTML</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/13">用户研究</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/20">信息和交互</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/19">视觉设计</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/21">设计思想</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/11">发现</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/10">奋斗</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/14">互联网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/8">其他</a> 
+	</div> 
+    <div class="main">
+
+        <div class="main_left">
+
+            <div class="posi_hot">
+				<strong>您现在的位置</strong>：
+								来，瞅一眼最近的热文有木有让您一眼销魂的：
+							</div>
+
+			
+			<div class="cateArtBox">
+            	            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 439】 <a href="http://blogread.cn/it/article/6439?f=hot1">Yupoo（又拍网）的系统架构 </a>
+                    </div>
+                                        <div class="images">
+                    	                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/6439?f=hot1"><img src="http://www.biaodianfu.com/wp-content/uploads/2013/05/yupoo-architecture.jpg" width="150" height="150" alt="Yupoo（又拍网）的系统架构" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/6439?f=hot1"><img src="http://www.biaodianfu.com/wp-content/uploads/2013/05/language.png" width="150" height="150" alt="Yupoo（又拍网）的系统架构" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/6439?f=hot1"><img src="http://www.biaodianfu.com/wp-content/uploads/2013/05/workforme.png" width="150" height="150" alt="Yupoo（又拍网）的系统架构" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/6439?f=hot1"><img src="http://www.biaodianfu.com/wp-content/uploads/2013/05/web-architecture.png" width="150" height="150" alt="Yupoo（又拍网）的系统架构" /></a>
+                			</div>
+                    						</div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;Yupoo的服务器端开发语言主要是PHP和Python，其中PHP用于编写Web逻辑(通过HTTP和用户直接打交道)， 而Python则主要用于开发内部服务和后台任务。在客户端则使用了大量基于MooTools框架的Javascript。 另外，Yupoo把图片处理过程从PHP进程里独立出来变成一个服务。这个服务基于nginx，作为nginx的一个模块开放REST API。 <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/6439?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	标点符 发布于：2013-05-29 22:19:50  分类：<a href="http://blogread.cn/it/category/17">系统架构</a>  浏览(4360)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 263】 <a href="http://blogread.cn/it/article/6774?f=hot1">Linux如何统计进程的CPU利用率 </a>
+                    </div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;在Linux的/proc文件系统，可以看到自启动时候开始，所有CPU消耗的时间片；对于个进程，也可以看到进程消耗的时间片。这是一个累计值，可以"非阻塞"的输出。获得一定时间间隔的两次统计就可以计算出这段时间内的进程CPU利用率。 <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/6774?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	Orczhou 发布于：2013-11-01 13:59:43  分类：<a href="http://blogread.cn/it/category/18">系统运维</a>  浏览(5080)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 262】 <a href="http://blogread.cn/it/article/6440?f=hot1">腾讯分析系统架构解析 </a>
+                    </div>
+                                        <div class="images">
+                    	                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/6440?f=hot1"><img src="http://www.biaodianfu.com/wp-content/uploads/2013/05/ta-theory.png" width="150" height="150" alt="腾讯分析系统架构解析" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/6440?f=hot1"><img src="http://www.biaodianfu.com/wp-content/uploads/2013/05/ta-architecture.png" width="150" height="150" alt="腾讯分析系统架构解析" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/6440?f=hot1"><img src="http://www.biaodianfu.com/wp-content/uploads/2013/05/esp.png" width="150" height="150" alt="腾讯分析系统架构解析" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/6440?f=hot1"><img src="http://www.biaodianfu.com/wp-content/uploads/2013/05/esp-2.png" width="150" height="150" alt="腾讯分析系统架构解析" /></a>
+                			</div>
+                    						</div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;TA(Tencent Analytics，腾讯分析)是一款面向第三方站长的免费网站分析系统，在数据稳定性、及时性方面广受站长好评，其秒级的实时数据更新频率也获得业界的认可。本文将从实时数据处理、数据存储等多个方面带你深入探寻TA的系统架构及实现原理。 <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/6440?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	标点符 发布于：2013-05-29 22:20:56  分类：<a href="http://blogread.cn/it/category/18">系统运维</a>  浏览(4780)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 213】 <a href="http://blogread.cn/it/article/6441?f=hot1">HTTP的升级产品：SPDY </a>
+                    </div>
+                                        <div class="images">
+                    	                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/6441?f=hot1"><img src="http://www.biaodianfu.com/wp-content/uploads/2013/05/spdy.png" width="150" height="150" alt="HTTP的升级产品：SPDY" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/6441?f=hot1"><img src="http://www.biaodianfu.com/wp-content/uploads/2013/05/http-spdy.gif" width="150" height="150" alt="HTTP的升级产品：SPDY" /></a>
+                			</div>
+                    						</div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;    SPDY是Google开发的基于传输控制协议(TCP)的应用层协议 。目前已经被用于Google Chrome浏览器中来访问Google的SSL加密服务。SPDY当前并不是一个标准协议，但SPDY的开发组已经开始推动SPDY成为正式标准(现为互联网草案)，Google Chrome，Mozilla Firefox和Opera均已支持SPDY协议。SPDY协议类似于HTTP，但旨在缩短网页的加载时间和提高安全性。SPDY协议通过压缩、多路复用和优先级来缩短加载时间。SPDY并不是首字母缩略字，而仅仅是”speedy”的缩写。
+    设计SPDY的目的在于降低网页的加载时间。通过优先级和多路复用，SPDY使得只需要建立一个TCP连接即可传送网页内容及图片等资源。SPDY中广泛应用了TLS加密，传输内容也均以gzip或DEFLATE格式压缩(与HTTP不同，HTTP的头部并不会被压缩)。另外，除了像HTTP的网页服务器被动的等待浏览器发起请求外，SPDY的网页服务器还可以主动推送内容。 <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/6441?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	标点符 发布于：2013-05-29 22:34:16  分类：<a href="http://blogread.cn/it/category/15">网络系统</a>  浏览(2000)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 211】 <a href="http://blogread.cn/it/article/6771?f=hot1">Linux大棚版Thrift入门教程 </a>
+                    </div>
+                                    	<div class="profile">
+                		                			<div style="float:left;margin:4px;border:#BBD7E6 2px solid;"> 
+                			<a href="http://blogread.cn/it/article/6771?f=hot1"><img src="http://roclinux.cn/wp-content/uploads/2013/10/thrift-example-graph-roclinux-png1.png" width="150" height="150" alt="Linux大棚版Thrift入门教程" /></a>
+                			</div>
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;thrift的全名叫做Apache thrift，是一款软件开发RPC框架，可以很高效地实现跨语言的RPC服务。 <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/6771?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	rocrocket 发布于：2013-11-01 13:52:54  分类：<a href="http://blogread.cn/it/category/8">其他</a>  浏览(6460)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 199】 <a href="http://blogread.cn/it/article/6443?f=hot1">Shell的那些事儿 </a>
+                    </div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;相对于高级语句如C/C++/Java，Shell其实应该是一门最容易上手，也能够给工作带来最大便利的工具性语言，无论是写写程序做下并发的压力测试，还是实现比较复杂的控制逻辑，Shell语句的开发效率一般都比那些高级语言要高，不需要编译，一写完马上可以测试。在这个追求效率的年代，不熟悉Shell都不好意思说会性能调优啊。 <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/6443?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	Kaya 发布于：2013-05-29 22:36:11  分类：<a href="http://blogread.cn/it/category/22">编程语言</a>  浏览(1320)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 142】 <a href="http://blogread.cn/it/article/6446?f=hot1">C的那些事儿 </a>
+                    </div>
+                                        <div class="images">
+                    	                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/6446?f=hot1"><img src="http://s0.homezz.com/201305/95/36607_o.png" width="150" height="150" alt="C的那些事儿" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/6446?f=hot1"><img src="http://s0.homezz.com/201305/95/36608_o.png" width="150" height="150" alt="C的那些事儿" /></a>
+                			</div>
+                    						</div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;C语言于我，主要是一门学习性的语言，这或许也是大多数人第一门接触到的计算机语言。当然时代在变，现在的学生也不一定要从C语言学起啦。C语言在Linux的世界有着举足轻重的地位。Linux内核是用C写的，Linux上的大部分应用也是用C写的。关键是，它们都是开源的！于是，如果你想进一步提高C语言的品味，Linux开源世界真的是海阔凭鱼跃，天高任鸟飞了。 <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/6446?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	Kaya 发布于：2013-06-02 19:39:17  分类：<a href="http://blogread.cn/it/category/22">编程语言</a>  浏览(3140)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 141】 <a href="http://blogread.cn/it/article/6438?f=hot1">Java的那些事儿 </a>
+                    </div>
+                                    	<div class="profile">
+                		                			<div style="float:left;margin:4px;border:#BBD7E6 2px solid;"> 
+                			<a href="http://blogread.cn/it/article/6438?f=hot1"><img src="http://s1.homezz.com/201305/95/36534_o.jpg" width="150" height="150" alt="Java的那些事儿" /></a>
+                			</div>
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;Java的易于上手，并不表明新手们就能把它用得很好。例如，对于与数据库打交道，没有对数据库的基础知识那也是不行的，对于Java来说，很大一部分就在于如何使用JDBC开发出高性能的数据库Java应用程序。这里当然可以推而广之，对于其它的编程语言，这一问题也广泛存在，如如何使用OCI开发高性能的数据库C应用程序，Pro*C应用程序，PHP应用程序。 <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/6438?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	Kaya 发布于：2013-05-29 22:17:54  分类：<a href="http://blogread.cn/it/category/22">编程语言</a>  浏览(1280)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 119】 <a href="http://blogread.cn/it/article/6445?f=hot1">JavaScript的5种调用函数的方法 </a>
+                    </div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;一次又一次的,我发现,那些有bug的Javascript代码是由于没有真正理解Javascript函数是如何工作而导致的(顺便说一下,许多那样的代码是我写的).JavaScript拥有函数式编程的特性, 当我们选择面对它的时候,这将成为我们前进的阻碍.
+作为初学者,我们来测试五种函数调用的方法,从表面来看我们会认为那些函数与C#中函数的作用非常相似,但是我们一会儿可以看到还是有非常重要的不同的地方的,忽视这些差异无疑会导致难于跟踪的bug。 <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/6445?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	charies 发布于：2013-05-29 23:09:58  分类：<a href="http://blogread.cn/it/category/7">JavaScript</a>  浏览(2160)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 102】 <a href="http://blogread.cn/it/article/6444?f=hot1">如何诊断CDN故障 </a>
+                    </div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;某项目使用CDN做文件下载服务，最近不时有网友反馈下载出错，因为CDN是第三方提供的，且节点众多，所以诊断起来有点麻烦，必须想想招儿。 首当其冲的问题是如何确认CDN有哪些节点？ 幸运的是通过阿里测提供的服务，我们能拿到这个IP列表，当然这个IP列表不可能百分百完整，不过应该包含了大部分的节点，有兴趣的可以参考百度的JQuery CDN例子。  <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/6444?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	老王 发布于：2013-05-29 22:37:00  分类：<a href="http://blogread.cn/it/category/15">网络系统</a>  浏览(2160)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 96】 <a href="http://blogread.cn/it/article/6866?f=hot1">工作与价值观 </a>
+                    </div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;你工作是为了什么？这个问题看起来很哲学，但其实每个人心中都有答案。 <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/6866?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	A programmer's life 发布于：2014-05-11 21:29:20  分类：<a href="http://blogread.cn/it/category/10">奋斗</a>  浏览(480)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 94】 <a href="http://blogread.cn/it/article/6777?f=hot1">响应式网页设计 </a>
+                    </div>
+                                        <div class="images">
+                    	                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/6777?f=hot1"><img src="http://gongxinjun.com/wp-content/uploads/2013/11/115526Tck.png" width="150" height="150" alt="响应式网页设计" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/6777?f=hot1"><img src="http://gongxinjun.com/wp-content/uploads/2013/11/115526SQM.jpg" width="150" height="150" alt="响应式网页设计" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/6777?f=hot1"><img src="http://gongxinjun.com/wp-content/uploads/2013/11/115526tVU.png" width="150" height="150" alt="响应式网页设计" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/6777?f=hot1"><img src="http://gongxinjun.com/wp-content/uploads/2013/11/115526ozL.png" width="150" height="150" alt="响应式网页设计" /></a>
+                			</div>
+                    						</div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;响应式网页设计最初是由 Ethan Marcotte 提出的一个概念：为什么一定要为每个用户群各自打造一套设计和开发方案？Web设计应该做到根据不同设备环境自动响应及调整。当然响应式Web设计不仅仅是关于屏幕分辨率自适应以及自动缩放的图片等等，它更像是一种对于设计的全新思维模式；我们应当向下兼容、移动优先。 <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/6777?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	鑫发现 发布于：2013-11-06 23:32:18  分类：<a href="http://blogread.cn/it/category/12">CSS/HTML</a>  浏览(2760)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 89】 <a href="http://blogread.cn/it/article/6442?f=hot1">基于用户行为分析的搜索引擎自动性能评价 </a>
+                    </div>
+                                        <div class="images">
+                    	                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/6442?f=hot1"><img src="http://www.biaodianfu.com/wp-content/uploads/2013/05/se.png" width="150" height="150" alt="基于用户行为分析的搜索引擎自动性能评价" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/6442?f=hot1"><img src="http://www.biaodianfu.com/wp-content/uploads/2013/05/user-log.jpg" width="150" height="150" alt="基于用户行为分析的搜索引擎自动性能评价" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/6442?f=hot1"><img src="http://www.biaodianfu.com/wp-content/uploads/2013/05/qf.png" width="150" height="150" alt="基于用户行为分析的搜索引擎自动性能评价" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/6442?f=hot1"><img src="http://www.biaodianfu.com/wp-content/uploads/2013/05/qr.jpg" width="150" height="150" alt="基于用户行为分析的搜索引擎自动性能评价" /></a>
+                			</div>
+                    						</div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;为了提高检索系统查询处理能力,我们提出基于用户群体行为分析的搜索引擎自动评价方法.该方法利用搜索引擎用户查询、点击行为的宏观分析,自动挑选适用于搜索引擎评价的查询集合,并进一步自动定位对应这些查询的标准答案.由于挑选查询集合和标准答案的过程由计算机自动完成,因此可以及时、准确、客观地反映搜索引擎的真实性能. <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/6442?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	标点符 发布于：2013-05-29 22:35:23  分类：<a href="http://blogread.cn/it/category/17">系统架构</a>  浏览(1580)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 86】 <a href="http://blogread.cn/it/article/6764?f=hot1">Bash的模式和配置文件加载 </a>
+                    </div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;有些很基础的东西，一直以来也就没有搞懂，其实，究其原因，还是不求甚解。关于Bash的种种，便是如是。接下来，我来过一点man里面有的东西，经常看man的人，就请自动飘过吧。
+
+Bash是shell的一种，运行中的Bash有两种属性（状态/模式），一种，是否interactive shell（交互式Shell），另一种，是否login shell（登录Shell），然后，运行中的Shell排列组合有这么几种.... <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/6764?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	Charles 发布于：2013-10-29 23:01:45  分类：<a href="http://blogread.cn/it/category/5">Linux</a>  浏览(7600)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 70】 <a href="http://blogread.cn/it/article/6756?f=hot1">Git subtree 要不要使用 –squash 参数 </a>
+                    </div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;Git submodule 的繁琐似乎是世人皆知了， 所以我用 subtree 来解决上面的包含关系。即： 在 Gregarius 中以 subtree 的方式管理 MagpieRSS， 然后在 MagpieRSS 中以 subtree 的方式管理 Snoopy。 问题的产生 subtree 处理多层包含是没有问题的，因为包含进项目之后， 别人根本看不出这是一个 subtree， 所以它本质上还只是管理本地 repo 的一种方法。 使用 Git subtree 新建或更新子项目的时候，可以选用 --squash 参数， 它的作用就是把 subtree 子项目的更新记录进行合并，再合并到主项目中。  <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/6756?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	Fwolf 发布于：2013-10-23 12:57:19  分类：<a href="http://blogread.cn/it/category/18">系统运维</a>  浏览(7860)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 67】 <a href="http://blogread.cn/it/article/874?f=hot1">用Hyer来进行网站的抓取 </a>
+                    </div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;Hyer是我个人用来抓取站点内容的一个工具包。后来慢慢地想做成一个开源软件，现在它注册在http://www.github.com/xurenlu/hyer/ 上。本文作为入门教程,以新华网作为例子，讲讲如何用hyer做网页抓取。请从这里http://github.com/xurenlu/hyer/downloads下载hyer-0.6.12.tar.gz这个压缩包，解压。我们要用的主要是webctl.py这个文件,我们需要对它进行一些修改。在修改之前，先创建一个数据库,将sql/struct.sql导入进去。 mysql&amp;#... <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/874?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	一米六二 发布于：2009-12-23 09:47:13  分类：<a href="http://blogread.cn/it/category/8">其他</a>  浏览(145260)  <!-- 评论(1) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 61】 <a href="http://blogread.cn/it/article/1738?f=hot1">用户研究方法介绍――情绪板（Mood Board） </a>
+                    </div>
+                                        <div class="images">
+                    	                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/1738?f=hot1"><img src="http://uedc.163.com/wp-content/uploads/2010/02/image_20100205140709.jpg" width="150" height="150" alt="用户研究方法介绍――情绪板（Mood Board）" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/1738?f=hot1"><img src="http://uedc.163.com/wp-content/uploads/2010/02/image_20100205140403.jpg" width="150" height="150" alt="用户研究方法介绍――情绪板（Mood Board）" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/1738?f=hot1"><img src="http://uedc.163.com/wp-content/uploads/2010/02/image_20100205140956.jpg" width="150" height="150" alt="用户研究方法介绍――情绪板（Mood Board）" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/1738?f=hot1"><img src="http://uedc.163.com/wp-content/uploads/2010/02/image_20100205141127.jpg" width="150" height="150" alt="用户研究方法介绍――情绪板（Mood Board）" /></a>
+                			</div>
+                    						</div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;用户研究方法介绍――情绪板（Mood Board） by 用研组本文为UCD书友会2009年年会工作坊的讲义。当时受UCD China的邀请，在年会上举办一个用户研究主题的工作坊。刚好那段时间公司有用户研究项目正在尝试使用情绪板（Mood Board）的方式，以更多地发掘用户在产品视觉方面的想法。经过一段时间的尝试后，我们发现情绪板方式除了能帮助我们做视觉研究之外，其实应用在用户访谈中，也可以帮助我们收集到更多关于用户内在需求及看法的... <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/1738?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	网易用户体验设计中心 发布于：2010-06-04 14:52:48  分类：<a href="http://blogread.cn/it/category/13">用户研究</a>  浏览(135420)  <!-- 评论(3) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 59】 <a href="http://blogread.cn/it/article/6435?f=hot1">如何计算两个文档的相似度（一） </a>
+                    </div>
+                                    	<div class="profile">
+                		                			<div style="float:left;margin:4px;border:#BBD7E6 2px solid;"> 
+                			<a href="http://blogread.cn/it/article/6435?f=hot1"><img src="http://www.52nlp.cn/wp-content/uploads/2013/05/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7-2013-05-18-%E4%B8%8B%E5%8D%887.16.33.png" width="150" height="150" alt="如何计算两个文档的相似度（一）" /></a>
+                			</div>
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;通过一些调研和之前的一些工作经验，最终考虑采用Topic model来解决这个问题，其实方案很简单，就是将两个公开课的文本内容映射到topic的维度，然后再计算其相似度。然后的然后就通过google发现了gensim这个强大的Python工具包，它的简介只有一句话：topic modelling for humans, 用过之后，只能由衷的说一句：感谢上帝，感谢Google，感谢开源！ <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/6435?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	52nlp 发布于：2013-05-28 22:24:02  分类：<a href="http://blogread.cn/it/category/9">算法</a>  浏览(2640)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 54】 <a href="http://blogread.cn/it/article/6436?f=hot1">如何计算两个文档的相似度（二） </a>
+                    </div>
+                                    	<div class="profile">
+                		                			<div style="float:left;margin:4px;border:#BBD7E6 2px solid;"> 
+                			<a href="http://blogread.cn/it/article/6436?f=hot1"><img src="http://www.52nlp.cn/wp-content/uploads/2013/05/2dlsi.png" width="150" height="150" alt="如何计算两个文档的相似度（二）" /></a>
+                			</div>
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;上一节​我们介绍了一些背景知识以及gensim , 相信很多同学已经尝试过了。这一节将从gensim最基本的安装讲起，然后举一个非常简单的例子用以说明如何使用gensim，下一节再介绍其在课程图谱上的应用。 <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/6436?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	52nlp 发布于：2013-05-28 22:24:03  分类：<a href="http://blogread.cn/it/category/9">算法</a>  浏览(2160)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 47】 <a href="http://blogread.cn/it/article/6761?f=hot1">一种常见的并发编程场景的处理 </a>
+                    </div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;对于并发编程，大家想到总是多线程之间对等的临界资源竞争。然而经常会遇到下面这样的场景：  守护线程提供一个临界资源，多个子线程会并发改写该临界资源。大部分时候(99.9%的时间)，主线程是不会干涉各个线程之间的竞争的，通常只要该临界资源自己内部处理好同步即可。但是偶尔主线程也会干预一下该临界资源，比如做一些统计，做一个快照，或者复制数据然后清空等。这个操作通常会耗时比较长，并且在此期间不希望有人改写临界资源。如果，主线程与各个子线程使用同样的锁或者synchronized同步，那么在主线程没有作该操作时，各个子线程之间会因为竞争而阻塞，这个阻塞开起来是没有必要的。  <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/6761?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	童燕群 发布于：2013-10-29 12:23:14  分类：<a href="http://blogread.cn/it/category/22">编程语言</a>  浏览(6160)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                			</div>
+
+        </div><!-- main_left --> 
+
+        <div class="main_right">
+
+            
+
+
+            <div class="category">
+                <div class="title">
+                    最新发表
+                </div>
+                <div class="info">
+                    <ul>
+                                            <li><img src="http://blogread.cn/it/images/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6923">jQuery.ajax处理302重定向</a></li>
+                                            <li><img src="http://blogread.cn/it/images/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6922">linux下boot空间不足解决方法</a></li>
+                                            <li><img src="http://blogread.cn/it/images/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6921">如何应对：这个功能别人都有了</a></li>
+                                            <li><img src="http://blogread.cn/it/images/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6920">如何捕获和分析 JavaScript Error</a></li>
+                                            <li><img src="http://blogread.cn/it/images/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6919">cookie窃取和session劫持</a></li>
+                                            <li><img src="http://blogread.cn/it/images/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6918">如何实现一个malloc</a></li>
+                                            <li><img src="http://blogread.cn/it/images/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6917">理解JavaScript 中的 this</a></li>
+                                            <li><img src="http://blogread.cn/it/images/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6916">Print —— 被埋没的Media Type</a></li>
+                                            <li><img src="http://blogread.cn/it/images/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6915">launchAnyWhere: Activity组件权限绕过漏洞解析</a></li>
+                                            <li><img src="http://blogread.cn/it/images/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6914">javascript DOM操作中的insertAdjacentHT</a></li>
+                        
+                    </ul>
+                </div>
+            </div><!-- category -->
+
+			<div style="margin-bottom:4px;">
+				<iframe src="/it/gg/jike/2/geek.html" frameborder="0" height="300"></iframe>
+			</div><!-- category -->
+
+
+            <div class="category">
+                <div class="info" style="text-align:center">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- it右侧 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:250px;height:250px"
+     data-ad-client="ca-pub-2206192680127944"
+     data-ad-slot="5430998082"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+				</div>
+            </div><!-- category -->
+            
+
+            <div class="category">
+                <div class="title">
+                    扫一扫订阅我的微信
+                </div>
+                <div class="info">
+					微信号：IT技术博客大学习
+					<br />
+                        <iframe src="http://blogread.cn/it/images/weixin/qrcode_for_gh_609c8c16bbd2_258.jpg" frameborder="0" height="258"></iframe>
+                </div>
+            </div><!-- category -->
+
+
+
+            <div class="category">
+                <div class="title">
+                    欢迎前往下面站点观光
+                </div>
+                <div class="info">
+                    <ul>
+                        <li><a href="http://www.ourmysql.com/" title="我们致力于一个MySQL知识的分享网站" target="_blank">OurMySQL -- MySQL学习</a></li>
+                        <li><a href="http://www.ourapache.com/" title="我们致力于一个Apache知识的分享网站" target="_blank">OurApache -- MySQLApache</a></li>
+                        <li><a href="http://n22.cn/github/" title="Github排行榜" target="_blank">Github排行榜</a></li>
+						<li><a title="MySQL官方网站所提供的文章集合" href="http://dev.mysql.com/doc/" target="_blank">MySQL官方文档集</a>【包含各语种、各格式的下载地址】</li>
+						<li><a title="这是MySQL参考手册 它涉及MySQL 5.1至5.1.2-alpha版本。" href="http://dev.mysql.com/doc/refman/5.1/zh/index.html" target="_blank">MySQL 5.1 中文参考手册</a></li>
+						<li><a title="This is the MySQL Reference Manual. It documents MySQL 5.1 through 5.1.30. " href="http://dev.mysql.com/doc/refman/5.1/en/index.html" target="_blank">MySQL 5.1 英文参考手册</a></li>
+						<li><a title="This is the MySQL Reference Manual. It documents MySQL 5.0 through 5.0.70. " href="http://dev.mysql.com/doc/refman/5.0/en/index.html" target="_blank">MySQL 5.0 英文参考手册</a></li>
+						<li><a title="This is the MySQL Reference Manual. It documents MySQL 6.0 through 6.0.7. " href="http://dev.mysql.com/doc/refman/6.0/en/index.html" target="_blank">MySQL 6.0 英文参考手册</a></li>
+						<li><a title="This is the MySQL Reference Manual. It documents MySQL 3.23 through MySQL 4.1.25. " href="http://dev.mysql.com/doc/refman/4.1/en/index.html" target="_blank">MySQL 3.23, 4.0, 4.1 英文参考手册</a></li>
+                    </ul>
+                </div>
+            </div><!-- category -->
+
+			<div class="category">
+				<div class="title">
+					 赞助商广告
+				</div>
+				<div class="info" style="text-align:center">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- IT右侧摩天 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-2206192680127944"
+     data-ad-slot="6907731281"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+				</div>
+			</div><!-- category -->
+
+			<div class="category">
+                <div class="title">
+                    订阅本站
+                </div>
+                <div class="info">
+				Google FeedBurner 订阅源：<a href="http://feeds.feedburner.com/blogreadIT" title="墙外可见，如Google Reader" target="_blank"><img src="http://feeds.feedburner.com/~fc/blogreadIT?bg=99CCFF&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" /></a>
+				<br />
+				FeedSky 订阅源：<a href="http://feed.feedsky.com/blogreadIT" title="IT技术博客大学习" target="_blank"><img src="http://www.feedsky.com/feed/blogreadIT/sc/orange.gif" style="border:0" alt="" /></a>
+				</div>
+			</div><!-- category -->
+
+
+			<div class="adlayer" id="adlayer">
+				<div class="header">
+					<div class="title">站长推荐</div>
+					<div class="close" id="adlayerclose">关闭</div>
+				</div>
+				<div class="box">
+					<div class="articletitle"><a href="http://blogread.cn/it/go.php?from=jike&url=http%3A%2F%2Fwww.jikexueyuan.com%2Fpath%2Fhtml5%2F%3Fhmsr%3Dblogread_tc_html5" rel="nofollow" target="_blank">独家分享，HTML5开发学习路径图</a></div>
+					<div class="content">
+						<a href="http://blogread.cn/it/go.php?from=jike&url=http%3A%2F%2Fwww.jikexueyuan.com%2Fpath%2Fhtml5%2F%3Fhmsr%3Dblogread_tc_html5" rel="nofollow" target="_blank">
+							<img src="http://blogread.cn/it/images/gg/h5.jpg" height="90" width="90" style="float:left;margin-right:5px">
+							新WEB / HTML5的时代马上就要到来, 还不把握先机？从入门到完整项目开发啥都有。 
+						</a>
+					</div>
+				</div>
+				<div class="footer"><a href="http://blogread.cn/it/go.php?from=jike&url=http%3A%2F%2Fwww.jikexueyuan.com%2Fpath%2Fhtml5%2F%3Fhmsr%3D%20blogread_tc_html5" rel="nofollow" target="_blank">查看 &gt;&gt;</a></div>
+			</div><!-- category -->
+			
+			<div class="adlayer" id="adlayertitle" style="display: none">
+				<div class="header">
+					<div class="title">极客学院精品课程</div>
+					<div class="close" id="adlayeropen">打开</div>
+				</div>
+			</div><!-- category -->
+        </div><!-- main_right -->
+
+    </div><!-- main -->
+
+            <div class="bottom">
+            &copy; 2009 - 2014 本页面所有内容，转载请注明出处 站长Email:blogread.cn@gmail.com
+        
+        <br />
+        <br />
+		<a href="http://www.miibeian.gov.cn" target="_blank">京ICP备09017802号</a>
+		<script language="javascript" type="text/javascript" src="http://js.users.51.la/2709512.js"></script>
+<noscript><a href="http://www.51.la/?2709512" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/2709512.asp" style="border:none" /></a></noscript>
+
+	<script src="http://s15.cnzz.com/stat.php?id=2320291&web_id=2320291" language="JavaScript"></script>
+	
+		<img alt="powered by sae" src="../daohang/images/sae.gif" style="scrollbar-arrow-color:buttontext">
+	
+	<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6082292-6");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F7d07e17bc73562efebd41b6ddcd5a499' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+    </div><!-- bottom -->
+
+		 
+</div><!-- body -->
+<!-- 将以下代码放在<head>之后或者</body>标签之前。 -->
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+  {lang: 'zh-CN'}
+</script>
+
+</body> 
+</html>

@@ -1,0 +1,621 @@
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>IT技术博客大学习 -- 共学习 共进步！ -- 收录IT领域的优秀技术博客,在这里你可以找到Web开发、系统架构、数据库、前端技术、用户体验等领域的前沿文章</title>
+<meta name="description" content="IT技术博客大学习 -- 共学习 共进步！ -- 收录IT领域的优秀技术博客,在这里你可以找到Web开发、系统架构、数据库、前端技术、用户体验等领域的前沿文章" />
+<meta name="keywords" content="IT技术,IT技术博客大学习,PHP教程,MySQL教程,Linux教程,Apache教程,系统架构,JavaScript,CSS,用户研究,信息和交互,视觉设计" />
+<meta name="renderer" content="webkit">
+<meta property="qc:admins" content="0135301347725146367147" />
+<html xmlns:wb="http://open.weibo.com/wb">
+<link href="/it/css/css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://lib.vipsinaapp.com/js/jquery/1.8/jquery.min.js"></script>
+<script type="text/javascript">
+	window.google_analytics_uacct = "UA-6082292-6";
+</script>
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=3741373929" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript">
+function nav_locate(){
+	var top=$(document).scrollTop();
+	if(($.browser.msie==true)&&($.browser.version==6.0)){
+		if(top>131) {
+			$('.main').css('margin-top', '104px');
+			$("#nav").css({position:"absolute",top:top-131});
+		}
+	}else{
+		if(top>131) {
+			$('.main').css('margin-top', '104px');
+			$("#nav").css({position:"fixed",top:0});
+		}
+	}
+	if(top<=131) {
+		$('.main').removeAttr('style');
+		$("#nav").css({position:"static",top:0});
+	}
+}
+$(function(){
+		window.onscroll=nav_locate;
+		window.onresize=nav_locate;
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#adlayerclose").click(function(){
+		$("#adlayer").hide();
+	});
+	$("#adlayerclose").click(function(){
+		$("#adlayertitle").show();
+	});
+	
+	$("#adlayeropen").click(function(){
+		$("#adlayer").show();
+		$("#adlayertitle").hide();
+	});
+});
+</script>
+
+</head>
+
+<body>
+
+<div class="body">
+	<div class="topnav">
+		<div style="float:left;"><a href="http://weibo.com/blogread" title="IT技术博客大学习" target="_blank"><img src="http://tp1.sinaimg.cn/1646218964/30/1279883225/1" style="border:0" alt="IT技术博客大学习" /></a></div>
+		<div style="float:left;margin-top:5px;"><wb:follow-button uid="1646218964" type="red_3" width="100%" height="24" ></wb:follow-button></div>
+		&nbsp;&nbsp;&nbsp;&nbsp;<a href="/daohang/"><strong>博客导航</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/wap/">手机版</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/search.php">搜索本站</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/site/">作者列表</a>
+	</div>
+    
+    <div class="banner">
+    	<div>
+        	<div class="logo"><h2><a href="/it/">IT技术博客大学习</a></h2><font color="#FB993B">-- 共学习 共进步！ --</font></div>
+        	<div class="ad">
+				<script type="text/javascript"><!--
+				google_ad_client = "pub-2206192680127944";
+				/* 728x90, 创建于 09-10-14 */
+				google_ad_slot = "2235377458";
+				google_ad_width = 728;
+				google_ad_height = 90;
+				//-->
+				</script>
+				<script type="text/javascript"
+				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+				</script>
+            </div>    
+        </div>
+	</div><!-- banner -->
+
+	<div class="nav" id="nav"> 
+		<a href="/it/category/2">PHP</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/3">MySQL</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/4">Oracle</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/5">Linux</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/6">Apache</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/9">算法</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/16">安全</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/15">网络系统</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/17">系统架构</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/18">系统运维</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/23">源码分析</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/22">编程语言</a>
+		<br /> 
+		<a href="/it/">首页</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/7">JavaScript</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/12">CSS/HTML</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/13">用户研究</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/20">信息和交互</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/19">视觉设计</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/21">设计思想</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/11">发现</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/10">奋斗</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/14">互联网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/8">其他</a> 
+	</div> 
+    <div class="main">
+
+        <div class="main_left">
+
+            <div class="posi_hot">
+				<strong>您现在的位置</strong>：
+								来，瞅一眼最近的热文有木有让您一眼销魂的：
+							</div>
+
+			
+			<div class="cateArtBox">
+            	            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 257】 <a href="http://blogread.cn/it/article/6077?f=hot1">程序员疫苗：代码注入 </a>
+                    </div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;几个月在我的微博上说过要建一个程序员疫苗网站，希望大家一起来提交一些错误示例的代码，来帮助我们新入行的程序员，不要让我们的程序员一代又一代的再重复地犯一些错误。很多程序上错误就像人类世界的病毒一样，我们应该给我们的新入行的程序员注射一些疫苗，就像给新生儿打疫苗一样，希望程序员从入行时就对这些错误有抵抗力。 <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/6077?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	陈皓 发布于：2012-12-11 13:33:03  分类：<a href="http://blogread.cn/it/category/16">安全</a>  浏览(4480)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 237】 <a href="http://blogread.cn/it/article/6082?f=hot1">查看linux系统版本命令总结 </a>
+                    </div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;查看linux系统版本命令总结 <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/6082?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	darkmi 发布于：2012-12-11 13:45:32  分类：<a href="http://blogread.cn/it/category/5">Linux</a>  浏览(3260)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 236】 <a href="http://blogread.cn/it/article/2170?f=hot1">python实现自动登录discuz论坛 </a>
+                    </div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;<P>需求也比较简单，老婆是做社区运营的，所以需要每天把几个帖子定时的顶上来，手工做很累，所以就想让我用程序实现。</P>
+<P>分析一下，其实无非是先用户名和密码登录，获取到cookie后，再带着cookie去访问要顶贴的页面即可，至于剖析页面来获取url就是BeautifulSoup要做的事情了。（论坛是discuz做的，这里只为演示方法）</P> <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/2170?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	Dante 发布于：2010-08-06 00:13:50  分类：<a href="http://blogread.cn/it/category/8">其他</a>  浏览(23160)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 149】 <a href="http://blogread.cn/it/article/6189?f=hot1">彻底屏蔽优酷广告 </a>
+                    </div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;很早以前，江湖上就有利用在hosts文件屏蔽优酷广告服务器IP地址的方式来达到屏蔽其广告的秘笈。可惜秘笈没有使用多久，就被优酷用黑屏广告给攻击了。于是，江湖人事继续苦练内功后，又推出了目前能完整屏蔽优酷广告的秘笈。此秘笈如下。。。。 <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/6189?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	Linux|系统管理|WEB开发 发布于：2013-01-16 14:01:57  分类：<a href="http://blogread.cn/it/category/11">发现</a>  浏览(7280)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 120】 <a href="http://blogread.cn/it/article/1738?f=hot1">用户研究方法介绍――情绪板（Mood Board） </a>
+                    </div>
+                                        <div class="images">
+                    	                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/1738?f=hot1"><img src="http://uedc.163.com/wp-content/uploads/2010/02/image_20100205140709.jpg" width="150" height="150" alt="用户研究方法介绍――情绪板（Mood Board）" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/1738?f=hot1"><img src="http://uedc.163.com/wp-content/uploads/2010/02/image_20100205140403.jpg" width="150" height="150" alt="用户研究方法介绍――情绪板（Mood Board）" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/1738?f=hot1"><img src="http://uedc.163.com/wp-content/uploads/2010/02/image_20100205140956.jpg" width="150" height="150" alt="用户研究方法介绍――情绪板（Mood Board）" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/1738?f=hot1"><img src="http://uedc.163.com/wp-content/uploads/2010/02/image_20100205141127.jpg" width="150" height="150" alt="用户研究方法介绍――情绪板（Mood Board）" /></a>
+                			</div>
+                    						</div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;用户研究方法介绍――情绪板（Mood Board） by 用研组本文为UCD书友会2009年年会工作坊的讲义。当时受UCD China的邀请，在年会上举办一个用户研究主题的工作坊。刚好那段时间公司有用户研究项目正在尝试使用情绪板（Mood Board）的方式，以更多地发掘用户在产品视觉方面的想法。经过一段时间的尝试后，我们发现情绪板方式除了能帮助我们做视觉研究之外，其实应用在用户访谈中，也可以帮助我们收集到更多关于用户内在需求及看法的... <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/1738?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	网易用户体验设计中心 发布于：2010-06-04 14:52:48  分类：<a href="http://blogread.cn/it/category/13">用户研究</a>  浏览(132600)  <!-- 评论(3) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 115】 <a href="http://blogread.cn/it/article/6084?f=hot1">各种浏览器审查、监听http头工具介绍 </a>
+                    </div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;最近在研究http协议，浏览器缓存，接触到各种浏览器的各种审查、资源提取、监听工具。觉得这些工具(插件)挺好用，特意写篇博文分享下。这些工具对于web前端程序员来说应该是再熟悉不过了，前端都是调试审查css布局定位之类，而对于后台方面，一般phper能用到的时候也少，一般是查缓存，做缓存功能等需要查看http头部，还有ajax监听后台响应会打开这些工具. <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/6084?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	Benwin 发布于：2012-12-11 21:51:31  分类：<a href="http://blogread.cn/it/category/16">安全</a>  浏览(4140)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 106】 <a href="http://blogread.cn/it/article/3496?f=hot1">Fix Bug的五个阶段 </a>
+                    </div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;一个非常严重和困难的bug，能够成就一个饱经沧桑深受压力的有经验的专业程序员的职业生涯。经受这种考验的创伤程度，相当你受到了一次严重的身体伤害，离婚，或是家庭成为的离世。 研究人员在研究了计算机编程心理学后，得出了一个程序员们在解决一个困难的bug时的心路里程。这些不同的境界，很像为... <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/3496?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	陈皓 发布于：2011-03-30 13:59:45  分类：<a href="http://blogread.cn/it/category/17">系统架构</a>  浏览(35140)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 103】 <a href="http://blogread.cn/it/article/874?f=hot1">用Hyer来进行网站的抓取 </a>
+                    </div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;Hyer是我个人用来抓取站点内容的一个工具包。后来慢慢地想做成一个开源软件，现在它注册在http://www.github.com/xurenlu/hyer/ 上。本文作为入门教程,以新华网作为例子，讲讲如何用hyer做网页抓取。请从这里http://github.com/xurenlu/hyer/downloads下载hyer-0.6.12.tar.gz这个压缩包，解压。我们要用的主要是webctl.py这个文件,我们需要对它进行一些修改。在修改之前，先创建一个数据库,将sql/struct.sql导入进去。 mysql&amp;#... <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/874?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	一米六二 发布于：2009-12-23 09:47:13  分类：<a href="http://blogread.cn/it/category/8">其他</a>  浏览(142500)  <!-- 评论(1) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 99】 <a href="http://blogread.cn/it/article/6078?f=hot1">Windows: 使用Win7自带的远程协助功能 </a>
+                    </div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;今天向大家介绍如何使用Win7自带的远程协助功能实现管理员向用户主动提供远程协助。这个特性是Win7新增的，也就是说诸如XP那种早起版本里就没有了。如果你所在公司IT预算有限的话，就可以考虑以下这个叫做Windows Remote Assistance的东东了。 <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/6078?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	lesca 发布于：2012-12-11 13:34:09  分类：<a href="http://blogread.cn/it/category/11">发现</a>  浏览(760)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 95】 <a href="http://blogread.cn/it/article/2885?f=hot1">神马？用excel来做项目管理？ </a>
+                    </div>
+                                        <div class="images">
+                    	                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/2885?f=hot1"><img src="http://1883.img.pp.sohu.com.cn/images/blog/2010/12/20/12/27/u82672385_12db918fe3fg214.jpg" width="150" height="150" alt="神马？用excel来做项目管理？" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/2885?f=hot1"><img src="http://1883.img.pp.sohu.com.cn/images/blog/2010/12/20/12/28/u82672385_12db9193c65g215.jpg" width="150" height="150" alt="神马？用excel来做项目管理？" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/2885?f=hot1"><img src="http://511.img.pp.sohu.com.cn/images/blog/2010/12/20/13/1/u82672385_12db91cb58dg214.jpg" width="150" height="150" alt="神马？用excel来做项目管理？" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/2885?f=hot1"><img src="http://511.img.pp.sohu.com.cn/images/blog/2010/12/20/12/29/u82672385_12db91a651fg215.jpg" width="150" height="150" alt="神马？用excel来做项目管理？" /></a>
+                			</div>
+                    						</div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;临时充当了一个项目的项目管理人员，电脑上没装项目管理专门的软件，之前也用过excel来做过小团队的资源管理，所以，现在临时上马，又把目光投到了无所不能的神奇的excel身上。现在感觉良好，于是又迫不及待来和大家分享分享了，多多拍砖哦。下面即是一个山寨的excel项目管理模版了～颜色配色大家可以忽略，这些都是次要且可以调整的。Part 01: 任务分解任务分解是成功项目管理的第一步。术语一般称为WBS。临阵磨枪，看了一些资料... <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/2885?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	Heidi格物志 发布于：2010-12-21 01:49:44  分类：<a href="http://blogread.cn/it/category/11">发现</a>  浏览(35800)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 92】 <a href="http://blogread.cn/it/article/6777?f=hot1">响应式网页设计 </a>
+                    </div>
+                                        <div class="images">
+                    	                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/6777?f=hot1"><img src="http://gongxinjun.com/wp-content/uploads/2013/11/115526Tck.png" width="150" height="150" alt="响应式网页设计" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/6777?f=hot1"><img src="http://gongxinjun.com/wp-content/uploads/2013/11/115526SQM.jpg" width="150" height="150" alt="响应式网页设计" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/6777?f=hot1"><img src="http://gongxinjun.com/wp-content/uploads/2013/11/115526tVU.png" width="150" height="150" alt="响应式网页设计" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/6777?f=hot1"><img src="http://gongxinjun.com/wp-content/uploads/2013/11/115526ozL.png" width="150" height="150" alt="响应式网页设计" /></a>
+                			</div>
+                    						</div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;响应式网页设计最初是由 Ethan Marcotte 提出的一个概念：为什么一定要为每个用户群各自打造一套设计和开发方案？Web设计应该做到根据不同设备环境自动响应及调整。当然响应式Web设计不仅仅是关于屏幕分辨率自适应以及自动缩放的图片等等，它更像是一种对于设计的全新思维模式；我们应当向下兼容、移动优先。 <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/6777?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	鑫发现 发布于：2013-11-06 23:32:18  分类：<a href="http://blogread.cn/it/category/12">CSS/HTML</a>  浏览(1920)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 92】 <a href="http://blogread.cn/it/article/1031?f=hot1">JQuery实现Excel表格呈现 </a>
+                    </div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;1.jQuery.sheet 插件简介：jQuery.sheet 是一个用于创建 Web 电子表格的 jQuery插件，其功能及界面风格和微软的 Excel 非常相似，可以根据需要重新定义布局，重新样式化需要的风格。下载地址：http://jqueryplugins.weebly.com/jquerysheet.html 2.csv2table 插件简介：csv2table是一个加载CSV文件，来使页面上呈现表格形式的插件。下载地址：http://plugins.jquery.com/project/csv2table 3.DataTables 插件简介：DataTables是... <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/1031?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	标点符 发布于：2010-02-09 09:04:36  分类：<a href="http://blogread.cn/it/category/7">JavaScript</a>  浏览(39640)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 91】 <a href="http://blogread.cn/it/article/6282?f=hot1">Git常用命令备忘 </a>
+                    </div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;Git常用命令备忘 <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/6282?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	robbin的自言自语 发布于：2013-03-05 13:21:53  分类：<a href="http://blogread.cn/it/category/8">其他</a>  浏览(42621)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 82】 <a href="http://blogread.cn/it/article/6080?f=hot1">寄存器分配初探–问题描述( Register Allocation – The Problem ) </a>
+                    </div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;                		寄存器分配是编译器中一个历久弥新的问题，因为它是编译器在输出汇编代码前必须经历的阶段。寄存器分配算法的好坏，关系着生成代码的性能，大小。为了追求极致性能，很多编译器都在寄存器分配上做了很多文章，不惜引入非常复杂的算法。另一方面寄存器分配算法本身的性能也很关键， 在诸多的JIT编译器(Just-In-Time compiler)中，编译器的性能同时也是程序本身的性能，因此在JIT编译器中还需要关注寄存器分配算法本身的效率问题。                	 <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/6080?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	erlv 发布于：2012-12-11 13:37:27  分类：<a href="http://blogread.cn/it/category/9">算法</a>  浏览(1640)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 80】 <a href="http://blogread.cn/it/article/6771?f=hot1">Linux大棚版Thrift入门教程 </a>
+                    </div>
+                                    	<div class="profile">
+                		                			<div style="float:left;margin:4px;border:#BBD7E6 2px solid;"> 
+                			<a href="http://blogread.cn/it/article/6771?f=hot1"><img src="http://roclinux.cn/wp-content/uploads/2013/10/thrift-example-graph-roclinux-png1.png" width="150" height="150" alt="Linux大棚版Thrift入门教程" /></a>
+                			</div>
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;thrift的全名叫做Apache thrift，是一款软件开发RPC框架，可以很高效地实现跨语言的RPC服务。 <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/6771?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	rocrocket 发布于：2013-11-01 13:52:54  分类：<a href="http://blogread.cn/it/category/8">其他</a>  浏览(3680)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 76】 <a href="http://blogread.cn/it/article/4845?f=hot1">情绪版(Mood board)操作流程的新思考 </a>
+                    </div>
+                                        <div class="images">
+                    	                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/4845?f=hot1"><img src="http://ued.taobao.com/blog/wp-content/uploads/2011/12/1.jpg" width="150" height="150" alt="情绪版(Mood board)操作流程的新思考" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/4845?f=hot1"><img src="http://ued.taobao.com/blog/wp-content/uploads/2011/12/5.jpg" width="150" height="150" alt="情绪版(Mood board)操作流程的新思考" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/4845?f=hot1"><img src="http://ued.taobao.com/blog/wp-content/uploads/2011/12/2.jpg" width="150" height="150" alt="情绪版(Mood board)操作流程的新思考" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/4845?f=hot1"><img src="http://ued.taobao.com/blog/wp-content/uploads/2011/12/4.jpg" width="150" height="150" alt="情绪版(Mood board)操作流程的新思考" /></a>
+                			</div>
+                    						</div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;情绪版这种方法在国外的应用已经有一定的历史了，它诞生于上世纪的非信息时代，通常参与者被要求从日常的报刊杂志中挑选出符合“某种心情意境或关键词”的图片，把图片减下来，然后粘贴在一起。但时代在变，如今我们正经历着信息爆炸的网络时代――google、百度各种图片搜索引擎的进入了我们的生活；Shutter Stock、全景图等国内外专业图片素材网站的异军崛起――这不得不让我思考，“情绪版”这种方法是不是也能感受一下党中央的号召，“与时俱进”一下呢？ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在今年10月份的安卓客户端设计研究的项目中，我们组织用户参与尝试了这个研究方法，并且对该方法的操作实施细节与分析过程进行了一些小小的改良。希望通过这边文章，与大家分享一下整个方法的流程。 &nbsp; 1 传统意义上，情绪版的定义和意义  <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/4845?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	晓千 发布于：2012-01-27 18:15:08  分类：<a href="http://blogread.cn/it/category/19">视觉设计</a>  浏览(34781)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 69】 <a href="http://blogread.cn/it/article/4478?f=hot1">gen_tcp发送进程被挂起起因分析及对策 </a>
+                    </div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;最近有同学在gmail上问关于gen_tcp发送进程被挂起的问题，问题描述的非常好，见底下： 第一个问题是关于port_command和gen_tcp:send的。从项目上线至今，我在tcp发送的地方遇到过两次问题，都跟port_command有关系。 起初程... <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/4478?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	Yu Feng 发布于：2011-10-14 13:46:07  分类：<a href="http://blogread.cn/it/category/9">算法</a>  浏览(27380)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 67】 <a href="http://blogread.cn/it/article/1409?f=hot1">越简单越丰富――极简网页设计视觉呈现技巧 </a>
+                    </div>
+                                        <div class="images">
+                    	                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/1409?f=hot1"><img src="http://cdc.tencent.com/wp-content/uploads/2010/04/1004-single-web-design-17.jpg" width="150" height="150" alt="越简单越丰富――极简网页设计视觉呈现技巧" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/1409?f=hot1"><img src="http://cdc.tencent.com/wp-content/uploads/2010/04/1004-single-web-design-03.jpg" width="150" height="150" alt="越简单越丰富――极简网页设计视觉呈现技巧" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/1409?f=hot1"><img src="http://cdc.tencent.com/wp-content/uploads/2010/04/1004-single-web-design-01.jpg" width="150" height="150" alt="越简单越丰富――极简网页设计视觉呈现技巧" /></a>
+                			</div>
+                    	                    		<div style="float:left;margin:4px;margin-left:10px;border:#BBD7E6 2px solid;"> 
+                				<a href="http://blogread.cn/it/article/1409?f=hot1"><img src="http://cdc.tencent.com/wp-content/uploads/2010/04/1004-single-web-design-02.jpg" width="150" height="150" alt="越简单越丰富――极简网页设计视觉呈现技巧" /></a>
+                			</div>
+                    						</div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;　　如何让杂乱又咄咄逼人的网页变得轻薄简洁而美观，又需保留完整功能、同时很好的区分出重点模块？这往往是让设计师困扰纠结之源；如何更好的将多余的元素、色彩、形状和纹理剔除，保留重点并梳理清晰的视觉流动方向？ 　　如果一个页面有太多的元素，用户将迷惑于去看哪里或误解每个元素的优先级。优秀的设计师需要用设计语言将焦点正好引导到正确的内容上，正如提到的，极简的网页视觉能够将最重要的内容带到最前面并为用户... <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/1409?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	番茄果果 发布于：2010-04-16 13:27:57  分类：<a href="http://blogread.cn/it/category/19">视觉设计</a>  浏览(2901)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 67】 <a href="http://blogread.cn/it/article/6764?f=hot1">Bash的模式和配置文件加载 </a>
+                    </div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;有些很基础的东西，一直以来也就没有搞懂，其实，究其原因，还是不求甚解。关于Bash的种种，便是如是。接下来，我来过一点man里面有的东西，经常看man的人，就请自动飘过吧。
+
+Bash是shell的一种，运行中的Bash有两种属性（状态/模式），一种，是否interactive shell（交互式Shell），另一种，是否login shell（登录Shell），然后，运行中的Shell排列组合有这么几种.... <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/6764?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	Charles 发布于：2013-10-29 23:01:45  分类：<a href="http://blogread.cn/it/category/5">Linux</a>  浏览(6181)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                            	<div class="box">
+                	<div class="title">
+                    	【 &uarr; 65】 <a href="http://blogread.cn/it/article/4986?f=hot1">MySQL数据库在实际应用一些方面的介绍 </a>
+                    </div>
+                                    	<div class="profile">
+                		                    	&nbsp;&nbsp;&nbsp;&nbsp;此篇文章主要介绍的是MySQL数据库实际应用方面的操作。但是你必须要先登录到 MySQL数据库中，下面的操作是在MySQL数据库的实际提示符之下进行的，同时也要求每个相关命令以分号结束。 一、操作技巧 1、如果你打命令时，回车后发现忘记加分号，你无须重打一遍命令，只要打个分号回车就可以了。 也就是说你可以把一个完整的命令分成几行来打，完后用分号作结束标志就OK。 2、你可以使用光标上下键调出以前的命令。 二、显示命令 1、显示当前MySQL数据库服务器中的数据库列表： MySQL&gt; SHOW DATABASES; 注意：MySQL库里面有MySQL的系统信息，我们改密码和新增用户，实际上就是用这个库进行操作。 2、显示MySQL数据库中的数据表： MySQL&gt; USE 库名; MySQL&gt; SHOW TABLES; 3、显示数据表的结构： MySQL&gt; DE <br />&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://blogread.cn/it/article/4986?f=hot1">[ >> <strong>浏览全文</strong> ]</a>
+                    </div>
+					<!--
+                    <div class="info">
+                    	luckyyuan 发布于：2012-03-04 17:22:24  分类：<a href="http://blogread.cn/it/category/3">MySQL</a>  浏览(29241)  <!-- 评论(0) --
+                    </div>
+					 -->
+                </div>
+                			</div>
+
+        </div><!-- main_left --> 
+
+        <div class="main_right">
+
+            
+
+
+            <div class="category">
+                <div class="title">
+                    最新发表
+                </div>
+                <div class="info">
+                    <ul>
+                                            <li><img src="http://blogread.cn/it/images/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6902">教你如何在Windiws平台上创建以点(.)开头的文件名</a></li>
+                                            <li><img src="http://blogread.cn/it/images/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6901">浏览器的重绘(repaints)与重排(reflows)</a></li>
+                                            <li><img src="http://blogread.cn/it/images/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6900">页面重绘和回流以及优化</a></li>
+                                            <li><img src="http://blogread.cn/it/images/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6899">用三段 140 字符以内的代码生成一张 1024×1024 的图片</a></li>
+                                            <li><img src="http://blogread.cn/it/images/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6898">Python中的闭包</a></li>
+                                            <li><img src="http://blogread.cn/it/images/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6897">百度是如何使用hadoop的</a></li>
+                                            <li><img src="http://blogread.cn/it/images/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6896">Linux系统巡检常用命令</a></li>
+                                            <li><img src="http://blogread.cn/it/images/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6895">有用的linux命令——chattr</a></li>
+                                            <li><img src="http://blogread.cn/it/images/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6894">那些让工作更美好的设备们</a></li>
+                                            <li><img src="http://blogread.cn/it/images/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6893">CAP 理论</a></li>
+                        
+                    </ul>
+                </div>
+            </div><!-- category -->
+
+			<div style="margin-bottom:4px;">
+				<iframe src="/it/gg/jike/1/geek.html" frameborder="0" height="300"></iframe>
+			</div><!-- category -->
+
+
+            <div class="category">
+                <div class="info">
+                	学习的同时，勿忘上淘宝，上淘宝有助家庭和睦 :) 原因你懂的！
+<script type="text/javascript">
+     document.write('<a style="display:none!important" id="tanx-a-mm_10984112_4090067_13398709"></a>');
+     tanx_s = document.createElement("script");
+     tanx_s.type = "text/javascript";
+     tanx_s.charset = "gbk";
+     tanx_s.id = "tanx-s-mm_10984112_4090067_13398709";
+     tanx_s.async = true;
+     tanx_s.src = "http://p.tanx.com/ex?i=mm_10984112_4090067_13398709";
+     tanx_h = document.getElementsByTagName("head")[0];
+     if(tanx_h)tanx_h.insertBefore(tanx_s,tanx_h.firstChild);
+</script>
+				</div>
+            </div><!-- category -->
+            
+
+            <div class="category">
+                <div class="title">
+                    扫一扫订阅我的微信
+                </div>
+                <div class="info">
+					微信号：IT技术博客大学习
+					<br />
+                        <iframe src="http://blogread.cn/it/images/weixin/qrcode_for_gh_609c8c16bbd2_258.jpg" frameborder="0" height="258"></iframe>
+                </div>
+            </div><!-- category -->
+
+
+
+            <div class="category">
+                <div class="title">
+                    欢迎前往下面站点观光
+                </div>
+                <div class="info">
+                    <ul>
+                        <li><a href="http://www.ourmysql.com/" title="我们致力于一个MySQL知识的分享网站" target="_blank">OurMySQL -- MySQL学习</a></li>
+                        <li><a href="http://www.ourapache.com/" title="我们致力于一个Apache知识的分享网站" target="_blank">OurApache -- MySQLApache</a></li>
+                        <li><a href="http://n22.cn/github/" title="Github排行榜" target="_blank">Github排行榜</a></li>
+						<li><a title="MySQL官方网站所提供的文章集合" href="http://dev.mysql.com/doc/" target="_blank">MySQL官方文档集</a>【包含各语种、各格式的下载地址】</li>
+						<li><a title="这是MySQL参考手册 它涉及MySQL 5.1至5.1.2-alpha版本。" href="http://dev.mysql.com/doc/refman/5.1/zh/index.html" target="_blank">MySQL 5.1 中文参考手册</a></li>
+						<li><a title="This is the MySQL Reference Manual. It documents MySQL 5.1 through 5.1.30. " href="http://dev.mysql.com/doc/refman/5.1/en/index.html" target="_blank">MySQL 5.1 英文参考手册</a></li>
+						<li><a title="This is the MySQL Reference Manual. It documents MySQL 5.0 through 5.0.70. " href="http://dev.mysql.com/doc/refman/5.0/en/index.html" target="_blank">MySQL 5.0 英文参考手册</a></li>
+						<li><a title="This is the MySQL Reference Manual. It documents MySQL 6.0 through 6.0.7. " href="http://dev.mysql.com/doc/refman/6.0/en/index.html" target="_blank">MySQL 6.0 英文参考手册</a></li>
+						<li><a title="This is the MySQL Reference Manual. It documents MySQL 3.23 through MySQL 4.1.25. " href="http://dev.mysql.com/doc/refman/4.1/en/index.html" target="_blank">MySQL 3.23, 4.0, 4.1 英文参考手册</a></li>
+                    </ul>
+                </div>
+            </div><!-- category -->
+
+			<div class="category">
+				<div class="title">
+					 赞助商广告
+				</div>
+				<div class="info" style="text-align:center">
+				<script type="text/javascript"><!--
+				google_ad_client = "pub-2206192680127944";
+				/* 160x600, 创建于 09-10-14 */
+				google_ad_slot = "1349749521";
+				google_ad_width = 160;
+				google_ad_height = 600;
+				//-->
+				</script>
+				<script type="text/javascript"
+				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+				</script>
+				</div>
+			</div><!-- category -->
+
+			<div class="category">
+                <div class="title">
+                    订阅本站
+                </div>
+                <div class="info">
+				Google FeedBurner 订阅源：<a href="http://feeds.feedburner.com/blogreadIT" title="墙外可见，如Google Reader" target="_blank"><img src="http://feeds.feedburner.com/~fc/blogreadIT?bg=99CCFF&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" /></a>
+				<br />
+				FeedSky 订阅源：<a href="http://feed.feedsky.com/blogreadIT" title="IT技术博客大学习" target="_blank"><img src="http://www.feedsky.com/feed/blogreadIT/sc/orange.gif" style="border:0" alt="" /></a>
+				</div>
+			</div><!-- category -->
+
+
+			<div class="adlayer" id="adlayer">
+				<div class="header">
+					<div class="title">极客学院精品课程</div>
+					<div class="close" id="adlayerclose">关闭</div>
+				</div>
+				<div class="box">
+					<div class="articletitle"><a href="http://blogread.cn/it/go.php?from=jike" rel="nofollow" target="_blank">极客学院—最酷的IT职业在线教育平台</a></div>
+					<div class="content">
+						<a href="http://blogread.cn/it/go.php?from=jike" rel="nofollow" target="_blank">
+							<img src="http://blogread.cn/it/images/gg/jike_180_180.jpg" height="90" width="90" style="float:left;margin-right:5px">
+							50000+开发者在线学习，通过1500+高清课程，系统学习Android/Cocos2d-x/iOS开发技能。存款不够首付？那就快来充电吧！
+						</a>
+					</div>
+				</div>
+				<div class="footer"><a href="http://blogread.cn/it/go.php?from=jike" rel="nofollow" target="_blank">查看 &gt;&gt;</a></div>
+			</div><!-- category -->
+			
+			<div class="adlayer" id="adlayertitle" style="display: none">
+				<div class="header">
+					<div class="title">极客学院精品课程</div>
+					<div class="close" id="adlayeropen">打开</div>
+				</div>
+			</div><!-- category -->
+        </div><!-- main_right -->
+
+    </div><!-- main -->
+
+            <div class="bottom">
+            &copy; 2009 - 2014 本页面所有内容，转载请注明出处 站长Email:blogread.cn@gmail.com
+        
+        <br />
+        <br />
+		<a href="http://www.miibeian.gov.cn" target="_blank">京ICP备09017802号</a>
+		<script language="javascript" type="text/javascript" src="http://js.users.51.la/2709512.js"></script>
+<noscript><a href="http://www.51.la/?2709512" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/2709512.asp" style="border:none" /></a></noscript>
+
+	<script src="http://s15.cnzz.com/stat.php?id=2320291&web_id=2320291" language="JavaScript"></script>
+	
+		<img alt="powered by sae" src="../daohang/images/sae.gif" style="scrollbar-arrow-color:buttontext">
+	
+	<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6082292-6");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F7d07e17bc73562efebd41b6ddcd5a499' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+    </div><!-- bottom -->
+
+		 
+</div><!-- body -->
+<!-- 将以下代码放在<head>之后或者</body>标签之前。 -->
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+  {lang: 'zh-CN'}
+</script>
+
+</body> 
+</html>

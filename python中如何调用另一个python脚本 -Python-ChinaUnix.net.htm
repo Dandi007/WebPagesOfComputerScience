@@ -1,0 +1,1510 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0048)http://bbs.chinaunix.net/thread-3777538-1-1.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" class=" widthauto"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+
+<title>python中如何调用另一个python脚本?-Python-ChinaUnix.net</title>
+<meta name="google-site-verification" content="OJoEeACa37Td5C_TevGy7D9GrG9Pe407duCwm81ra6g">
+<link href="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/python中如何调用另一个python脚本 -Python-ChinaUnix.net.htm" rel="canonical"><meta name="description" content=" python中如何调用另一个python脚本? ">
+<meta name="author" content="Discuz! Team and Comsenz UI Team">
+<meta name="copyright" content="2001-2011 Comsenz Inc.">
+<meta name="MSSmartTagsPreventParsing" content="True">
+<meta http-equiv="MSThemeCompatible" content="Yes">
+<!--<base href="http://bbs.chinaunix.net/">--><base href="."><link rel="stylesheet" type="text/css" href="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/style_3_common.css"><link rel="stylesheet" type="text/css" href="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/style_3_forum_viewthread.css"><script type="text/javascript" charset="utf-8" src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/js"></script><script type="text/javascript" async="" src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/ga.js"></script><script type="text/javascript" charset="utf-8" src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/ODM5OTE0Ng==.js"></script><script type="text/javascript">var STYLEID = '3', STATICURL = 'static/', IMGDIR = 'http://cu.img168.net/static/image/common/', VERHASH = '6FQ', charset = 'gbk', discuz_uid = '0', cookiepre = 'ndfU_81a3_', cookiedomain = '.chinaunix.net', cookiepath = '/', showusercard = '1', attackevasive = '0', disallowfloat = 'login|newthread|reply|tradeorder|activity|debate|nav|usergroups|task', creditnotice = '', defaultstyle = '', REPORTURL = 'aHR0cDovL2Jicy5jaGluYXVuaXgubmV0L3RocmVhZC0zNzc3NTM4LTEtMS5odG1s', SITEURL = 'http://bbs.chinaunix.net/', JSPATH = 'static/js/';</script>
+<script src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/common.js" type="text/javascript"></script>
+<!-- 2014 -->
+<script type="text/javascript" src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/h599.js"></script><script type="text/javascript" src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/h599(1).js"></script><meta name="application-name" content="ChinaUnix.net">
+<meta name="msapplication-tooltip" content="ChinaUnix.net">
+<meta name="msapplication-task" content="name=论坛;action-uri=http://bbs.chinaunix.net/forum.php;icon-uri=http://bbs.chinaunix.net/http://cu.img168.net/static/image/common//bbs.ico">
+<link rel="archives" title="ChinaUnix.net" href="http://bbs.chinaunix.net/archiver/">
+<link rel="stylesheet" id="css_widthauto" type="text/css" href="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/style_3_widthauto.css">
+<script type="text/javascript">HTMLNODE.className += ' widthauto'</script>
+<script src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/forum.js" type="text/javascript" charset="gbk"></script>
+<script src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/logger.js"></script><link href="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/bdsstyle.css" rel="stylesheet" type="text/css"></head>
+<body id="nv_forum" class="pg_viewthread"><div id="BAIDU_DUP_fp_wrapper" style="position: absolute; left: -1px; bottom: -1px; z-index: 0; width: 0px; height: 0px; overflow: hidden; visibility: hidden; display: none;"><iframe id="BAIDU_DUP_fp_iframe" src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/o.htm" style="width: 0px; height: 0px; visibility: hidden; display: none;"></iframe></div><iframe frameborder="0" style="display: none;"></iframe><div id="bdshare_s" style="display: block;"><iframe id="bdsIfr" style="position:absolute;display:none;z-index:9999;" frameborder="0"></iframe><div id="bdshare_l" style="display: none;"><div id="bdshare_l_c"><h6>分享到</h6><ul><li><a href="http://bbs.chinaunix.net/#" class="bds_mshare mshare">一键分享</a></li><li><a href="http://bbs.chinaunix.net/#" class="bds_qzone qqkj">QQ空间</a></li><li><a href="http://bbs.chinaunix.net/#" class="bds_tsina xlwb">新浪微博</a></li><li><a href="http://bbs.chinaunix.net/#" class="bds_bdysc bdysc">百度云收藏</a></li><li><a href="http://bbs.chinaunix.net/#" class="bds_renren rrw">人人网</a></li><li><a href="http://bbs.chinaunix.net/#" class="bds_tqq txwb">腾讯微博</a></li><li><a href="http://bbs.chinaunix.net/#" class="bds_bdxc bdxc">百度相册</a></li><li><a href="http://bbs.chinaunix.net/#" class="bds_kaixin001 kxw">开心网</a></li><li><a href="http://bbs.chinaunix.net/#" class="bds_tqf txpy">腾讯朋友</a></li><li><a href="http://bbs.chinaunix.net/#" class="bds_tieba bdtb">百度贴吧</a></li><li><a href="http://bbs.chinaunix.net/#" class="bds_douban db">豆瓣网</a></li><li><a href="http://bbs.chinaunix.net/#" class="bds_tsohu shwb">搜狐微博</a></li><li><a href="http://bbs.chinaunix.net/#" class="bds_bdhome bdhome">百度新首页</a></li><li><a href="http://bbs.chinaunix.net/#" class="bds_sqq sqq">QQ好友</a></li><li><a href="http://bbs.chinaunix.net/#" class="bds_thx thx">和讯微博</a></li><li><a href="http://bbs.chinaunix.net/#" class="bds_more">更多...</a></li></ul><p><a href="http://bbs.chinaunix.net/#" class="goWebsite">百度分享</a></p></div></div></div>
+<div id="append_parent"></div><div id="ajaxwaitid"></div>
+<!-- 自定义 -->		
+<!--头-->
+<!--广告位置名称：首页通栏 -->
+<div id="ADV_13039"><script>LG('ADV_13039')</script></div>
+<!--2011.12.1修改 大版宽屏显示 但是莫名其妙设置中的用户组也宽屏了，打印了下gid为28.暂时不清楚为什么 -->
+<div class="wp head_top">
+<table width="100%" cellspacing="0" cellpadding="0" border="0" align="left">
+<tbody><tr>
+<td>
+<a href="http://bbs.chinaunix.net/member.php?mod=logging&action=login&logsubmit=yes"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/login.gif"></a>
+&nbsp;&nbsp;<a href="http://u.it168.com/findPassword?returnUrl=http://bbs.chinaunix.net/home.php?mod=spacecp">忘记密码</a>
+&nbsp;&nbsp;<a href="http://bbs.chinaunix.net/member.php?mod=register.php">免费注册</a>
+</td>
+<td align="right">
+<a href="http://bbs.chinaunix.net/listthread.php">查看新帖</a> |
+<a href="http://www.chinaunix.net/jh/"><font color="red">论坛精华区</font></a>
+</td>
+</tr>
+<tr><td height="1" colspan="3" style="background-color:#000"></td></tr>
+</tbody></table>
+</div>
+<div id="hd">
+<div class="wp">
+<!--LOGO和banner  -->
+<table width="100%" style="clear: both;height:90px">
+<tbody><tr>
+<td style="padding:0">
+<h1>
+<!--2011.12.27修改只有首页去www其他去bbs-->
+<a href="http://bbs.chinaunix.net/" title="ChinaUnix.net"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/logo.gif" alt="ChinaUnix.net" border="0"></a>
+</h1>
+</td>
+<td style="padding:0" align="center">
+<!--不同页面广告位 -->
+<div id="ADV_18508"><a href="http://bbs.chinaunix.net/thread-4155862-1-1.html" target="_blank"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/20140928111525610.jpg" border="0" width="960" height="80"></a></div>
+	
+</td>
+<!--2014.07.30添加广告位ADV_20649-->
+<td style="padding:0" align="center">
+<div id="ADV_20649"><a href="http://ask.chinaunix.net/#all" target="_blank"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/20140909094539045.jpg" border="0" width="220" height="90"></a></div>
+</td>
+</tr>
+</tbody></table>
+<!--<div id="nv">
+<a href="javascript:;" id="qmenu" onmouseover="showMenu({'ctrlid':'qmenu','pos':'34!','ctrlclass':'a','duration':2});">快捷导航</a>
+<ul> --><!-- <li id="mn_Ne30e" ><a href="plugin.php?id=auction" hidefocus="true" title="Auction"  >竞拍<span>Auction</span></a></li> --><!-- <li id="mn_N2ddf" ><a href="plugin.php?id=itpub_medal:medal_shop" hidefocus="true"  >商店</a></li> --><!-- <li id="mn_forum" ><a href="forum.php" hidefocus="true" title="BBS"  >论坛<span>BBS</span></a></li> --><!-- <li id="mn_userapp" ><a href="userapp.php" hidefocus="true" title="Manyou"  >应用<span>Manyou</span></a></li> --><!-- <li id="mn_N12a7" ><a href="misc.php?mod=ranklist" hidefocus="true" title="Ranklist"  >排行榜<span>Ranklist</span></a></li> --><!--</ul>
+</div> -->
+<div id="mu" class="cl">
+</div><!--搜索框去掉20111024 -->
+</div>
+</div>
+<!--2011.11.30如果是大版则宽屏显示 -->
+<div id="wp" class="wp">
+
+<table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" style="background:url(static/image/common/bg_menu_top.gif)"> 
+<tbody>
+<tr><td height="2" colspan="2"></td></tr>
+<tr>
+<td width="*" valign="center" align="left">&nbsp;
+<font color="#666666"><strong>平台</strong></font>： 
+<a target="_blank" class="title2" href="http://bbs.chinaunix.net/"><font color="#5B7DB3">论坛</font></a>   
+<a target="_blank" class="title2" href="http://blog.chinaunix.net/"><font color="#5B7DB3">博客</font></a>
+<a target="_blank" class="title2" href="http://u.it168.com/vip/"><font color="#FF0000">认证专区</font></a>
+<a target="_blank" class="title2" href="http://www.chinaunix.net/talk"><font color="#FF0000">大话IT</font></a>
+<a target="_blank" class="title2" href="http://wenku.it168.com/"><font color="#5B7DB3">文库</font></a>
+<a target="_blank" class="title2" href="http://www.it168.com/itclub/"><font color="#5B7DB3">沙龙</font></a>   		
+<a target="_blank" class="title2" href="http://selftest.chinaunix.net/"><font color="#5B7DB3">自测</font></a>
+<a target="_blank" class="title2" href="http://download.chinaunix.net/"><font color="#5B7DB3">下载</font></a>
+<font color="#666666"><strong>频道</strong></font>：
+<a target="_blank" class="title2" href="http://www.chinaunix.net/ops/"><font color="#5B7DB3">自动化运维</font></a>   
+<a target="_blank" class="title2" href="http://www.chinaunix.net/virtual/"><font color="#5B7DB3">虚拟化</font></a>   
+<a target="_blank" class="title2" href="http://www.chinaunix.net/server/"><font color="#5B7DB3">服务器</font></a>    
+<a target="_blank" class="title2" href="http://www.chinaunix.net/stor/"><font color="#5B7DB3">储存备份</font></a>  
+<a target="_blank" class="title2" href="http://www.chinaunix.net/cpp/"><font color="#5B7DB3">C/C++</font></a>  
+<a target="_blank" class="title2" href="http://www.chinaunix.net/php/"><font color="#5B7DB3">PHP</font></a>   
+<a target="_blank" class="title2" href="http://www.chinaunix.net/mysql/"><font color="#5B7DB3">MySQL</font></a>   
+<a target="_blank" class="title2" href="http://www.chinaunix.net/embedded/"><font color="#5B7DB3">嵌入式</font></a> 
+<a target="_blank" class="title2" href="http://www.chinaunix.net/linux/"><font color="#5B7DB3">Linux系统</font></a>  
+</td>
+<td>
+<form id="scbar_form" method="post" autocomplete="off" onsubmit="searchFocus($(&#39;scbar_txt&#39;))" action="http://bbs.chinaunix.net/search.php?searchsubmit=yes" target="_blank">
+<!--<form target="_blank" method="get" action="http://search.chinaunix.net/bbs.php"> 
+<input type="text" name=q  size="15" maxlength="20" style="width:60px">
+<input type="hidden" name="title" value="fulltext">
+<input type="hidden" name="st" value="title">
+<input type="hidden" name="bbs" value="1">
+<input type="hidden" name="forums" value="all">-->
+<input type="text" name="srchtxt" id="scbar_txt" autocomplete="off" style="width:80px">
+<input type="hidden" name="mod" id="scbar_mod" value="forum">
+<input type="hidden" name="formhash" value="565495bb">
+<input type="hidden" name="srchtype" value="title">
+<input type="hidden" name="srhfid" value="55" id="dzsearchforumid">
+<input type="hidden" name="srhlocality" value="forum::viewthread">
+<input type="hidden" name="source" value="discuz">
+<input type="hidden" name="fId" value="" id="cloudsearchforumId">
+<input type="hidden" name="q" id="cloudsearchquery" value="">
+<input type="submit" value="搜索">
+</form>
+</td>
+</tr>
+<tr><td height="2" colspan="2"></td></tr> 
+</tbody>
+</table><!--原广告位置 -->
+<!--<div style="margin-top:10px"></div> -->
+<!--广告位置移动这,去掉自带的 换为广告系统标签 -->
+<table width="960px" height="20" cellspacing="0" cellpadding="0" border="0"> 
+<tbody>
+<tr>
+<td align="center"><div id="ADV_17278"><div style="margin-right: 10px;">·<a href="http://www.now.cn/?now_qing_it168wenzi" target="_blank"><font color="red">cn域名免费送！云主机52元起</font></a></div></div></td>
+<td align="center"><div id="ADV_18502"><div style="margin-right: 10px;">·<a href="http://bbs.chinaunix.net/thread-4155387-1-1.html" target="_blank"><font color="blue">如何构建高性能Linux服务器</font></a></div></div></td>
+<td align="center"><div id="ADV_18503"><div style="margin-right: 10px;">·<a href="http://bbs.chinaunix.net/thread-4154850-1-1.html" target="_blank"><font color="red">IT行业中年转行现象，原因在哪里？</font></a></div></div></td>
+<td align="center"><div id="ADV_18504"><script>LG('ADV_18504')</script></div></td>
+</tr>
+</tbody>
+</table>
+<script type="text/javascript">var fid = parseInt('55'), tid = parseInt('3777538');</script>
+
+<script src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/forum_viewthread.js" type="text/javascript"></script>
+<script type="text/javascript">zoomstatus = parseInt(1);var imagemaxwidth = '700';var aimgcount = new Array();</script>
+
+<style id="diy_style" type="text/css"></style>
+<!--[diy=diynavtop]--><div id="diynavtop" class="area"></div><!--[/diy]-->
+<div id="pt" class="bm cl">
+<div class="z">
+<a href="http://www.chinaunix.net/" class="nvhm" title="首页"></a> <em>&#8250;</em> <a href="http://bbs.chinaunix.net/forum.php">论坛</a> <em>&#8250;</em> <a href="http://bbs.chinaunix.net/forum.php?gid=60">程序设计</a> <em>&#8250;</em> <a href="http://bbs.chinaunix.net/forum.php?mod=forumdisplay&fid=55&page=1">Python</a> <em>&#8250;</em> <a href="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/python中如何调用另一个python脚本 -Python-ChinaUnix.net.htm">python中如何调用另一个python脚本?</a>
+</div>
+</div>
+
+
+
+<style id="diy_style" type="text/css"></style>
+<div class="wp">
+<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
+</div>
+
+<div id="ct" class="wp cl">
+<div id="pgt" class="pgs mbm cl ">
+<div class="pgt"></div>
+<span class="y pgb"><a href="http://bbs.chinaunix.net/forum.php?mod=forumdisplay&fid=55&page=1">最近访问板块</a></span>
+
+<!--增加板块跳转  -->
+<span style="float:right; padding:0px 0 4px 0; margin-top:5px">
+<select style=" padding:5px 0 4px 0" onchange="if(this.options[this.selectedIndex].value != &#39;&#39;) {
+window.location=(&#39;forum-&#39; + this.options[this.selectedIndex].value + &#39;-1.html&#39;) }">
+<option value="">版块跳转</option>
+<optgroup label="--Linux操作系统"><option value="216">新手园地</option><option value="269">&nbsp; &nbsp; &nbsp; 硬件问题</option><option value="217">Linux系统管理</option><option value="218">Linux网络问题</option><option value="223">Linux环境编程</option><option value="271">Linux桌面系统</option><option value="221">国产Linux</option></optgroup><optgroup label="--Unix操作系统"><option value="5">BSD</option><option value="127">&nbsp; &nbsp; &nbsp; BSD文档中心</option><option value="9">AIX</option><option value="193">&nbsp; &nbsp; &nbsp; 新手入门</option><option value="124">&nbsp; &nbsp; &nbsp; AIX文档中心</option><option value="189">&nbsp; &nbsp; &nbsp; 资源下载</option><option value="188">&nbsp; &nbsp; &nbsp; Power高级应用</option><option value="187">&nbsp; &nbsp; &nbsp; IBM存储</option><option value="10">AS400</option><option value="6">Solaris</option><option value="128">&nbsp; &nbsp; &nbsp; Solaris文档中心</option><option value="8">HP-UX</option><option value="129">&nbsp; &nbsp; &nbsp; HP文档中心</option><option value="7">SCO UNIX</option><option value="130">&nbsp; &nbsp; &nbsp; SCO文档中心</option><option value="118">互操作专区</option><option value="12">IRIX</option><option value="11">Tru64 UNIX</option><option value="41">Mac OS X</option></optgroup><optgroup label="--IT运维架构"><option value="141">门户网站运维</option><option value="233">集群和高可用</option><option value="232">服务器应用</option><option value="235">监控和防护</option><option value="283">虚拟化技术</option><option value="185">架构设计</option><option value="285">行业应用和管理</option></optgroup><optgroup label="--IT基础设施"><option value="45">服务器及硬件技术</option><option value="184">&nbsp; &nbsp; &nbsp; 服务器资源下载</option><option value="180">云计算</option><option value="181">&nbsp; &nbsp; &nbsp; 云计算文档中心</option><option value="182">&nbsp; &nbsp; &nbsp; 云计算业界</option><option value="183">&nbsp; &nbsp; &nbsp; 云计算资源下载</option><option value="34">存储备份</option><option value="125">&nbsp; &nbsp; &nbsp; 存储文档中心</option><option value="126">&nbsp; &nbsp; &nbsp; 存储业界</option><option value="145">&nbsp; &nbsp; &nbsp; 存储资源下载</option><option value="194">&nbsp; &nbsp; &nbsp; Symantec技术交流区</option><option value="29">安全技术</option><option value="30">网络技术</option><option value="131">&nbsp; &nbsp; &nbsp; 网络技术文档中心</option></optgroup><optgroup label="--程序设计"><option value="23">C/C++</option><option value="84">&nbsp; &nbsp; &nbsp; GUI编程</option><option value="142">&nbsp; &nbsp; &nbsp; Functional编程</option><option value="224">内核源码</option><option value="220">&nbsp; &nbsp; &nbsp; 内核问题</option><option value="222">移动开发</option><option value="265">&nbsp; &nbsp; &nbsp; 移动开发技术资料</option><option value="24">Shell</option><option value="25">Perl</option><option value="26">Java</option><option value="133">&nbsp; &nbsp; &nbsp; Java文档中心</option><option value="27">PHP</option><option value="135">&nbsp; &nbsp; &nbsp; php文档中心</option><option value="55">Python</option><option value="132">&nbsp; &nbsp; &nbsp; Python文档中心</option><option value="116">Ruby</option><option value="226">CPU与编译器</option><option value="225">嵌入式开发</option><option value="227">驱动开发</option><option value="80">Web开发</option><option value="100">VoIP开发技术</option></optgroup><optgroup label="--数据库技术"><option value="17">MySQL</option><option value="136">&nbsp; &nbsp; &nbsp; MySQL文档中心</option><option value="21">Sybase</option><option value="19">Oracle</option><option value="18">PostgreSQL</option><option value="22">DB2</option><option value="20">Informix</option><option value="140">数据仓库与数据挖掘</option><option value="292">NoSQL技术</option></optgroup><optgroup label="--综合交流区"><option value="46">IT业界新闻与评论</option><option value="32">IT职业生涯</option><option value="293">&nbsp; &nbsp; &nbsp; 猎头招聘</option><option value="82">IT图书与评论</option><option value="156">&nbsp; &nbsp; &nbsp; CU技术图书大系</option><option value="247">&nbsp; &nbsp; &nbsp; Linux书友会</option><option value="54">二手交易</option><option value="249">下载共享</option><option value="250">Linux文档专区</option><option value="53">IT培训与认证</option><option value="295">&nbsp; &nbsp; &nbsp; 培训交流</option><option value="191">&nbsp; &nbsp; &nbsp; 认证培训</option></optgroup><optgroup label="--休闲生活"><option value="31">清茶斋</option><option value="115">投资理财</option><option value="39">运动地带</option><option value="40">快乐数码摄影</option><option value="168">&nbsp; &nbsp; &nbsp; 摄影器材</option><option value="134">&nbsp; &nbsp; &nbsp; 摄影比赛专区</option><option value="121">IT爱车族</option><option value="96">旅游天下</option></optgroup><optgroup label="--站务及频道"><option value="2">站务交流</option><option value="3">版主会议室</option><option value="51">博客SNS站务交流区</option><option value="123">CU活动专区</option><option value="207">&nbsp; &nbsp; &nbsp; Power活动专区</option><option value="169">&nbsp; &nbsp; &nbsp; 拍卖交流区</option><option value="97">频道交流区</option></optgroup></select>
+</span>
+
+<a id="newspecial" style="margin-top:8px" onmouseover="$(&#39;newspecial&#39;).id = &#39;newspecialtmp&#39;;this.id = &#39;newspecial&#39;;showMenu({&#39;ctrlid&#39;:this.id})" onclick="showWindow(&#39;newthread&#39;, &#39;forum.php?mod=post&amp;action=newthread&amp;fid=55&#39;)" href="javascript:;" title="发新帖"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/pn_post.png" alt="发新帖"></a>
+</div>
+
+
+
+<div id="postlist" class="pl bm">
+<table cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="pls ptm pbm" style="background:#9898BA;border-bottom:1px solid #000">
+<div class="hm">
+<span style="color:#fff">查看:</span> 
+<span style="color:#000">5785</span>
+<span class="pipe">|</span>
+
+<span style="color:#fff">回复:</span> 
+<span style="color:#000">6</span>
+</div>
+</td>
+<td class="plc ptm pbn" style="background-color:#9898BA;border-bottom:1px solid #000">
+<div class="y">
+<a href="http://bbs.chinaunix.net/forum.php?mod=viewthread&action=printable&tid=3777538" title="打印" target="_blank"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/print.png" alt="打印" class="vm"></a>
+<a href="http://bbs.chinaunix.net/forum.php?mod=redirect&goto=nextoldset&tid=3777538" title="上一主题"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/thread-prev.png" alt="上一主题" class="vm"></a>
+<a href="http://bbs.chinaunix.net/forum.php?mod=redirect&goto=nextnewset&tid=3777538" title="下一主题"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/thread-next.png" alt="下一主题" class="vm"></a>
+</div>
+
+
+<h1 class="ts">
+<a href="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/python中如何调用另一个python脚本 -Python-ChinaUnix.net.htm" id="thread_subject">python中如何调用另一个python脚本?</a>
+<!--2011.12.01更改class-->
+<span class="xw0 xs1">
+<!--<span class="xw0 xs1 xg1">-->
+<a href="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/python中如何调用另一个python脚本 -Python-ChinaUnix.net.htm" onclick="return copyThreadUrl(this)" title="您的朋友访问此链接后，您将获得相应的积分奖励">[复制链接]</a>
+</span>					
+                    <!-- Baidu Button BEGIN -->
+                    <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" style="float:right;">
+                        <a class="bds_qzone" title="分享到QQ空间" href="http://bbs.chinaunix.net/#"></a><a class="bds_tsina" title="分享到新浪微博" href="http://bbs.chinaunix.net/#"></a><a class="bds_tqq" title="分享到腾讯微博" href="http://bbs.chinaunix.net/#"></a><a class="bds_renren" title="分享到人人网" href="http://bbs.chinaunix.net/#"></a>
+<a class="bds_douban" title="分享到豆瓣网" href="http://bbs.chinaunix.net/#"></a><a class="bds_taobao" title="分享到我的淘宝" href="http://bbs.chinaunix.net/#"></a><a class="bds_fbook" title="分享到Facebook" href="http://bbs.chinaunix.net/#"></a><a class="shareCount" href="http://bbs.chinaunix.net/#" title="累计分享0次">0</a>
+<span class="bds_more"></span><a class="shareCount" href="http://bbs.chinaunix.net/#" title="累计分享0次">0</a>
+                    </div>
+                	<!-- Baidu Button END -->					
+</h1>
+</td>
+</tr>
+</tbody></table>
+
+
+<!--1楼标题下面的两条线-->	
+<!-- 
+<table cellspacing="0" cellpadding="0" class="ad">
+<tr>
+<td class="pls" style="border-width:1px 0 1px 0; border-style:solid; border-color:#000; background:#fff"></td>
+<td class="plc" style="border-width:1px 0 1px 0; border-style:solid; border-color:#000; background:#fff"></td>
+</tr>
+</table>
+ --><div id="post_22330906" style="background-color:#E5EDF2"><table id="pid22330906" summary="pid22330906" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="pls" rowspan="2" style="background-color:#F0F3FA">
+<a name="newpost"></a> <div class="pi" style=" border-bottom:none">
+<div class="authi"><a href="http://bbs.chinaunix.net/space-uid-26990529.html" target="_blank" class="xw1">yfjelley</a>
+
+</div>
+
+</div>
+<!--2011.12.01自定义头衔移到用户名下面头像上面  -->
+<div class="p_pop blk bui" id="userinfo22330906" style="display: none; margin-top: -11px;">
+<div class="m z">
+<div id="userinfo22330906_ma"></div>
+</div>
+<div class="i y">
+<div>
+<strong><a href="http://bbs.chinaunix.net/space-uid-26990529.html" target="_blank" class="xi2">yfjelley</a></strong>
+<em>当前离线</em>
+</div>
+<dl class="cl"><dt>空间积分</dt><dd>0 </dd><dt>信誉积分</dt><dd>667 </dd><dt>UID</dt><dd>26990529</dd><dt>阅读权限</dt><dd>20</dd><dt>积分</dt><dd>491</dd><dt>帖子</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=26990529&do=thread&type=reply&view=me&from=space" target="_blank" class="xi2">331</a></dd><dt>精华</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=26990529&do=thread&type=digest&view=me&from=space" target="_blank" class="xi2">0</a></dd><dt>可用积分</dt><dd>493 </dd><dt>专家积分</dt><dd>0 </dd><dt>在线时间</dt><dd>476 小时</dd><dt>注册时间</dt><dd>2012-05-23</dd><dt>最后登录</dt><dd>2014-09-30</dd></dl>
+<div class="imicn">
+<a href="http://bbs.chinaunix.net/home.php?mod=space&uid=26990529&do=profile" target="_blank" title="查看详细资料"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/userinfo.gif" alt="查看详细资料"></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar" onmouseover="showauthor(this, &#39;userinfo22330906&#39;)"><a href="http://bbs.chinaunix.net/space-uid-26990529.html" target="_blank"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/29_avatar_middle.jpg" onerror="this.onerror=null;this.src=&#39;http://passport.ixpub.net/images/noavatar_middle.gif&#39;"></a></div>
+<p><em><a href="http://bbs.chinaunix.net/home.php?mod=spacecp&ac=usergroup&gid=11" target="_blank">稍有积蓄</a></em></p>
+
+</div>
+<p id="g_up22330906" onmouseover="showMenu({&#39;ctrlid&#39;:this.id, &#39;pos&#39;:&#39;12!&#39;});"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/star_level1.gif" alt="Rank: 1"></p>
+<div id="g_up22330906_menu" class="tip tip_4" style="display: none;">
+<div class="tip_horn"></div>
+<div class="tip_c">稍有积蓄, 积分 491, 距离下一级还需 9 积分</div>
+</div>
+<dl class="pil cl"><dt>帖子</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=26990529&do=thread&type=reply&view=me&from=space" target="_blank" class="xi2">331</a></dd><dt>主题</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=26990529&do=thread&type=thread&view=me&from=space" target="_blank" class="xi2">169</a></dd><dt>精华</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=26990529&do=thread&type=digest&view=me&from=space" target="_blank" class="xi2">0</a></dd><dt>可用积分</dt><dd>493 </dd><dt>专家积分</dt><dd>0 </dd><dt>在线时间</dt><dd>476 小时</dd><dt>注册时间</dt><dd>2012-05-23</dd><dt>最后登录</dt><dd>2014-09-30</dd></dl><ul class="xl xl2 o cl">
+<!--修改文字部分20111026-->
+<!--
+<li class="callon"><a href="space-uid-26990529.html" target="_blank" title="串个门" class="xi2">串个门</a></li>
+<li class="buddy"><a href="home.php?mod=spacecp&amp;ac=friend&amp;op=add&amp;uid=26990529&amp;handlekey=addfriendhk_26990529" id="a_friend_li_22330906" onclick="showWindow(this.id, this.href, 'get', 1, {'ctrlid':this.id,'pos':'00'});" title="加好友" class="xi2">加好友</a></li>
+<li class="poke2"><a href="home.php?mod=spacecp&amp;ac=poke&amp;op=send&amp;uid=26990529" id="a_poke_li_22330906" onclick="showWindow(this.id, this.href, 'get', 0);" title="打招呼" class="xi2">打招呼</a></li>
+<li class="pm2"><a href="home.php?mod=spacecp&amp;ac=pm&amp;op=showmsg&amp;handlekey=showmsg_26990529&amp;touid=26990529&amp;pmid=0&amp;daterange=2&amp;pid=22330906&amp;tid=3777538" onclick="showWindow('sendpm', this.href);" title="发消息" class="xi2">发消息</a></li>
+ -->
+<!--2013.05.15 修改串门链接 -->
+                    <li class="callon"><a href="http://ask.chinaunix.net/account/login/" target="_blank" class="xi2" style=" font-weight:bold; color:#F00">问答</a></li>
+
+<li class="buddy"><a href="http://bbs.chinaunix.net/home.php?mod=spacecp&ac=friend&op=add&uid=26990529&handlekey=addfriendhk_26990529" id="a_friend_li_22330906" onclick="showWindow(this.id, this.href, &#39;get&#39;, 1, {&#39;ctrlid&#39;:this.id,&#39;pos&#39;:&#39;00&#39;});" title="加好友" class="xi2">好友</a></li>
+<!--<li class="poke2"><a href="toblog.php?uid=26990529" class="xi2" target="_blank">博客</a></li>-->
+<li class="poke2"><a href="http://blog.chinaunix.net/dir.php?uid=26990529" class="xi2" target="_blank">博客</a></li> 
+<li class="pm2"><a href="http://bbs.chinaunix.net/home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_26990529&touid=26990529&pmid=0&daterange=2&pid=22330906&tid=3777538" onclick="showWindow(&#39;sendpm&#39;, this.href);" title="发消息" class="xi2">消息</a></li>
+</ul>
+<dl class="pil cl"><dt>论坛徽章:</dt><dd>0</dd></dl><div style="padding:3px; margin-left:5px; margin-right:5px;"></div><!--2011.12.05新增禁止本版发言2011.12.17修改增加是否是本版版主且对管理员全部开放 -->
+</td>
+<td class="plc" style="background-color:#F0F3FA">
+<div class="pi">
+<!--管理操作口移到这-->
+		
+<div id="fj" class="y">
+<label class="z">电梯直达</label>
+<input type="text" class="px p_fre z" size="2" onkeyup="$(&#39;fj_btn&#39;).href=&#39;forum.php?mod=redirect&amp;ptid=3777538&amp;authorid=0&amp;postno=&#39;+this.value" onkeydown="if(event.keyCode==13) {window.location=$(&#39;fj_btn&#39;).href;return false;}" title="跳转到指定楼层">
+<a href="javascript:;" id="fj_btn" class="z" title="跳转到指定楼层"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/fj_btn.png" alt="跳转到指定楼层" class="vm"></a>
+</div>
+<strong>
+<a href="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/python中如何调用另一个python脚本 -Python-ChinaUnix.net.htm" title="您的朋友访问此链接后，您将获得相应的积分奖励" id="postnum22330906" onclick="setCopy(this.href, &#39;帖子地址复制成功&#39;);return false;"><em>1</em>楼</a>
+<!--以下新加开始 -->
+
+<!--收藏2011.12.01修改-->
+<a href="http://bbs.chinaunix.net/home.php?mod=spacecp&ac=favorite&type=thread&id=3777538" id="k_favorite" onclick="showWindow(this.id, this.href, &#39;get&#39;, 0);" onmouseover="this.title = $(&#39;favoritenumber&#39;).innerHTML + &#39; 人收藏&#39;">[收藏(<span id="favoritenumber">0</span>)]</a>
+<!--评分-->
+<!--邀请-->
+
+                <!--编辑-->
+
+<!--报告-->
+<a href="javascript:;" onclick="showWindow(&#39;miscreport22330906&#39;, &#39;misc.php?mod=report&amp;rtype=post&amp;rid=22330906&amp;tid=3777538&amp;fid=55&#39;, &#39;get&#39;, -1);return false;">[报告]</a>
+
+
+<!--评分2011.12.29-->
+
+<!--评分2011.12.29-->
+					
+
+				
+
+<!--新加的结束-->	
+
+</strong>
+
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon22330906" src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/online_member.gif">
+<em id="authorposton22330906">发表于 2012-10-28 11:01:00</em>
+<span class="pipe">|</span><a href="http://bbs.chinaunix.net/forum.php?mod=viewthread&tid=3777538&page=1&authorid=26990529" rel="nofollow">只看该作者</a>
+<span class="pipe">|</span><a href="http://bbs.chinaunix.net/forum.php?mod=viewthread&tid=3777538&extra=page%3D1&ordertype=1">倒序浏览</a>
+</div>
+</div>
+</div><div class="pct"><style type="text/css">.pcb{margin-right:0}</style><div class="pcb">
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tbody><tr><td class="t_f" id="postmessage_22330906">
+python中如何调用另一个python脚本?<br>
+<br>
+<br>
+python中如何调用另一个shell脚本?<br>
+</td></tr></tbody></table>
+</div>
+<div id="comment_22330906" class="cm">
+</div>
+<script type="text/javascript">var auc_list_tmp = $('auc_list_tmp');if(auc_list_tmp !== null){document.write(auc_list_tmp.innerHTML);auc_list_tmp.innerHTML='';}
+function lalala(){
+	ajaxget('plugin.php?id=auction:involve&operation=view&tid=3777538&page=1', 'list_ajax');
+	$('list_ajax').style.display = 'block';
+}
+if($('list_ajax')){setTimeout('lalala()', 1000);}
+</script><div id="post_rate_div_22330906"></div>
+</div></div>
+
+</td></tr>
+<tr><td class="plc plm" style="background-color:#F0F3FA">
+
+<!--这原先是一楼的评分分享收藏的 现在删掉移到上面去 -->
+
+
+        <!--//CHINAUNIX 此处去掉DZ自带相关帖子代码-->
+        
+        <!--//CHINAUNIX 一楼增加看了又看,相关帖子,本版精华内容 start-->
+                                <div class="mtw mbw w90">
+            <div class="tab011">
+                <ul id="tab011">
+                	                                                            <li><a class="here">本版精华</a></li>
+                                        
+                                                            
+                    <li><a>文库|博客</a></li>
+          
+                </ul>
+             </div>
+                                                                                         <div id="tab011_Content0" class="tab011Cont" style="display: block;">
+                    <div class="tab011_l1">
+                        <ul>     
+                                                                                	<li><a href="http://bbs.chinaunix.net/thread-1502270-1-1.html" target="_blank">web.py官方doc(chm版)</a></li>
+                                                                                                            	<li><a href="http://bbs.chinaunix.net/thread-1668860-1-1.html" target="_blank">Python 学习资源 ( 整理日期2010-02-24 )</a></li>
+                                                                                                            	<li><a href="http://bbs.chinaunix.net/thread-553985-1-1.html" target="_blank">做为脚本语言来说perl和python那个更有优势?</a></li>
+                                                                                                            	<li><a href="http://bbs.chinaunix.net/thread-1672187-1-1.html" target="_blank">一个python的个人记账程序(更新到0.9.5)</a></li>
+                                                                                                            	<li><a href="http://bbs.chinaunix.net/thread-1335374-1-1.html" target="_blank">Python做cpu利用率的脚本</a></li>
+                                                                                                            	<li><a href="http://bbs.chinaunix.net/thread-1596644-1-1.html" target="_blank">【译】py2exe Tutorial</a></li>
+                                                                                                            	<li><a href="http://bbs.chinaunix.net/thread-554068-1-1.html" target="_blank">从网上找的 ping 源代码</a></li>
+                                                                                                            	<li><a href="http://bbs.chinaunix.net/thread-2306082-1-1.html" target="_blank">玩GAE（Google App Engine）完全指南</a></li>
+                                                                                                            	<li><a href="http://bbs.chinaunix.net/thread-574467-1-1.html" target="_blank">请教：怎样列出指定目录下的所有文件，包括子目录下的文件，谢谢</a></li>
+                                                                                                            	<li><a href="http://bbs.chinaunix.net/thread-558195-1-1.html" target="_blank">我写的python调用com的技巧以及com事件</a></li>
+                                                                            </ul>
+                        <div class="clear"></div>
+                    </div> 
+                 </div>
+                                                                            
+            <div id="tab011_Content1" class="tab011Cont">
+               <div class="tab011_l1">
+                   <ul>     
+                   
+                  <li><a href="http://wenku.it168.com/d_001231254.shtml" target="_blank">CDays–5 习题二（利用Python科学计算特性，使用常用计算符）及相关内容解析。.doc</a></li><li><a href="http://wenku.it168.com/d_001231225.shtml" target="_blank">初识Python.doc</a></li><li><a href="http://wenku.it168.com/d_001231244.shtml" target="_blank">Python 学习手册 第二部分 类型与运算  第4章 介绍Python对象类型.doc</a></li><li><a href="http://wenku.it168.com/d_001230927.shtml" target="_blank">urllib与urllib2的学习总结(python2.7_x).doc</a></li><li><a href="http://wenku.it168.com/d_001231201.shtml" target="_blank">Django零碎知识(13)-分页功能.doc</a></li> 
+        
+      
+                  <li><a href="http://blog.chinaunix.net/uid-7374279-id-4494760.html" target="_blank">关于Java内存泄露</a></li><li><a href="http://blog.chinaunix.net/uid-7374279-id-4489100.html" target="_blank">Java的GC机制及算法</a></li> 
+          
+                   </ul>
+                   <div class="clear"></div>
+               </div> 
+            </div>
+            
+   	    </div>
+   	    <script type="text/javascript">
+function iniMenu(tabObj,selNum,tabTagName,t){
+var collection = document.getElementById(tabObj).getElementsByTagName(tabTagName);
+var selObj = collection[selNum];
+selObj.className = 'here';
+document.getElementById(tabObj+"_Content"+selNum).style.display = "block";
+for(var i = 0; i < collection.length; i++){
+collection[i].num= i;
+collection[i].onmouseover = function(){
+//onclick
+temp = this;
+timer = setTimeout( function(){
+if(temp != selObj){
+selObj.className = '';
+temp.className = 'here';
+document.getElementById( tabObj+"_Content" + temp.num).style.display="block";
+document.getElementById( tabObj+"_Content" + selObj.num).style.display="none";
+selObj = temp;
+}
+},t);
+}
+collection[i].onmouseout = function(){
+clearTimeout(timer);
+}
+}
+}
+iniMenu('tab011',0,'a',200);
+</script> 
+                
+        <!--//CHINAUNIX 一楼增加看了又看,相关帖子,本版精华内容 end-->
+
+        
+        <!--//CUASK 增加CU问答文字链 start by caojingfei at 2012.03.21-->
+                <div class="a_pb"><a href="http://ask.chinaunix.net/question/785686" target="_blank" title="shell怎么读取网页内容"><b>shell怎么读取网页内容</b></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://ask.chinaunix.net/question/785684" target="_blank" title="ssh等待连接的超时问题"><b>ssh等待连接的超时问题</b></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://ask.chinaunix.net/question/785661" target="_blank" title="curl: (56) Recv failure: Connection reset by peer"><b>curl: (56) Recv failure: Connection rese ...</b></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://ask.chinaunix.net/question/785656" target="_blank" title="CACTI 不能安装WINE，怎么办？"><b>CACTI 不能安装WINE，怎么办？</b></a>&nbsp;&nbsp;|&nbsp;&nbsp;</div>                <!--//ITPUB 增加CU文字链 end by caojingfei at 2012.03.21-->
+</td>
+</tr>
+<tr>
+<td class="pls" style=""></td>
+<td class="plc">
+<div>
+<!--管理操作口移到上面-->
+
+<!--这块原先是每层楼下的回复编辑现在删掉，移到上面去-->
+</div>
+
+</td>
+</tr>
+
+<!--2011.12.01修改 帖子最后一个回帖出现的粗的黑线，有程序部分取得最大pid做对比，参照forum_vithread.php第596行  -->
+<tr class="ad">
+<td class="pls" style="border-width:1px 0 1px 0; border-style:solid; border-color:#000; background:#fff"></td>
+<td class="plc" style="border-width:1px 0 1px 0; border-style:solid; border-color:#000; background:#fff">
+</td>
+</tr>
+</tbody></table>
+</div><div id="post_22330921" style=""><table id="pid22330921" summary="pid22330921" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="pls" rowspan="2" style="background-color:#fff">
+ <div class="pi" style=" border-bottom:none">
+<div class="authi"><a href="http://bbs.chinaunix.net/space-uid-20874231.html" target="_blank" class="xw1">wzhuzhu</a>
+
+</div>
+
+</div>
+<!--2011.12.01自定义头衔移到用户名下面头像上面  -->
+<div class="p_pop blk bui" id="userinfo22330921" style="display: none; margin-top: -11px;">
+<div class="m z">
+<div id="userinfo22330921_ma"></div>
+</div>
+<div class="i y">
+<div>
+<strong><a href="http://bbs.chinaunix.net/space-uid-20874231.html" target="_blank" class="xi2">wzhuzhu</a></strong>
+<em>当前离线</em>
+</div>
+<dl class="cl"><dt>空间积分</dt><dd>0 </dd><dt>信誉积分</dt><dd>256 </dd><dt>UID</dt><dd>20874231</dd><dt>阅读权限</dt><dd>20</dd><dt>积分</dt><dd>225</dd><dt>帖子</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=20874231&do=thread&type=reply&view=me&from=space" target="_blank" class="xi2">125</a></dd><dt>精华</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=20874231&do=thread&type=digest&view=me&from=space" target="_blank" class="xi2">0</a></dd><dt>可用积分</dt><dd>225 </dd><dt>专家积分</dt><dd>0 </dd><dt>在线时间</dt><dd>307 小时</dd><dt>注册时间</dt><dd>2009-02-20</dd><dt>最后登录</dt><dd>2014-07-14</dd></dl>
+<div class="imicn">
+<a href="http://bbs.chinaunix.net/home.php?mod=space&uid=20874231&do=profile" target="_blank" title="查看详细资料"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/userinfo.gif" alt="查看详细资料"></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar" onmouseover="showauthor(this, &#39;userinfo22330921&#39;)"><a href="http://bbs.chinaunix.net/space-uid-20874231.html" target="_blank"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/noavatar_middle.gif" onerror="this.onerror=null;this.src=&#39;http://passport.ixpub.net/images/noavatar_middle.gif&#39;"></a></div>
+<p><em><a href="http://bbs.chinaunix.net/home.php?mod=spacecp&ac=usergroup&gid=11" target="_blank">稍有积蓄</a></em></p>
+
+</div>
+<p id="g_up22330921" onmouseover="showMenu({&#39;ctrlid&#39;:this.id, &#39;pos&#39;:&#39;12!&#39;});"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/star_level1.gif" alt="Rank: 1"></p>
+<div id="g_up22330921_menu" class="tip tip_4" style="display: none;">
+<div class="tip_horn"></div>
+<div class="tip_c">稍有积蓄, 积分 225, 距离下一级还需 275 积分</div>
+</div>
+<dl class="pil cl"><dt>帖子</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=20874231&do=thread&type=reply&view=me&from=space" target="_blank" class="xi2">125</a></dd><dt>主题</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=20874231&do=thread&type=thread&view=me&from=space" target="_blank" class="xi2">15</a></dd><dt>精华</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=20874231&do=thread&type=digest&view=me&from=space" target="_blank" class="xi2">0</a></dd><dt>可用积分</dt><dd>225 </dd><dt>专家积分</dt><dd>0 </dd><dt>在线时间</dt><dd>307 小时</dd><dt>注册时间</dt><dd>2009-02-20</dd><dt>最后登录</dt><dd>2014-07-14</dd></dl><ul class="xl xl2 o cl">
+<!--修改文字部分20111026-->
+<!--
+<li class="callon"><a href="space-uid-20874231.html" target="_blank" title="串个门" class="xi2">串个门</a></li>
+<li class="buddy"><a href="home.php?mod=spacecp&amp;ac=friend&amp;op=add&amp;uid=20874231&amp;handlekey=addfriendhk_20874231" id="a_friend_li_22330921" onclick="showWindow(this.id, this.href, 'get', 1, {'ctrlid':this.id,'pos':'00'});" title="加好友" class="xi2">加好友</a></li>
+<li class="poke2"><a href="home.php?mod=spacecp&amp;ac=poke&amp;op=send&amp;uid=20874231" id="a_poke_li_22330921" onclick="showWindow(this.id, this.href, 'get', 0);" title="打招呼" class="xi2">打招呼</a></li>
+<li class="pm2"><a href="home.php?mod=spacecp&amp;ac=pm&amp;op=showmsg&amp;handlekey=showmsg_20874231&amp;touid=20874231&amp;pmid=0&amp;daterange=2&amp;pid=22330921&amp;tid=3777538" onclick="showWindow('sendpm', this.href);" title="发消息" class="xi2">发消息</a></li>
+ -->
+<!--2013.05.15 修改串门链接 -->
+                    <li class="callon"><a href="http://ask.chinaunix.net/account/login/" target="_blank" class="xi2" style=" font-weight:bold; color:#F00">问答</a></li>
+
+<li class="buddy"><a href="http://bbs.chinaunix.net/home.php?mod=spacecp&ac=friend&op=add&uid=20874231&handlekey=addfriendhk_20874231" id="a_friend_li_22330921" onclick="showWindow(this.id, this.href, &#39;get&#39;, 1, {&#39;ctrlid&#39;:this.id,&#39;pos&#39;:&#39;00&#39;});" title="加好友" class="xi2">好友</a></li>
+<!--<li class="poke2"><a href="toblog.php?uid=20874231" class="xi2" target="_blank">博客</a></li>-->
+<li class="poke2"><a href="http://blog.chinaunix.net/dir.php?uid=20874231" class="xi2" target="_blank">博客</a></li> 
+<li class="pm2"><a href="http://bbs.chinaunix.net/home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_20874231&touid=20874231&pmid=0&daterange=2&pid=22330921&tid=3777538" onclick="showWindow(&#39;sendpm&#39;, this.href);" title="发消息" class="xi2">消息</a></li>
+</ul>
+<dl class="pil cl"><dt>论坛徽章:</dt><dd>0</dd></dl><div style="padding:3px; margin-left:5px; margin-right:5px;"></div><!--2011.12.05新增禁止本版发言2011.12.17修改增加是否是本版版主且对管理员全部开放 -->
+</td>
+<td class="plc" style="background-color:#fff">
+<div class="pi">
+<!--管理操作口移到这-->
+		
+<strong>
+<a href="http://bbs.chinaunix.net/forum.php?mod=redirect&goto=findpost&ptid=3777538&pid=22330921" title="您的朋友访问此链接后，您将获得相应的积分奖励" id="postnum22330921" onclick="setCopy(this.href, &#39;帖子地址复制成功&#39;);return false;"><em>2</em>楼</a>
+<!--以下新加开始 -->
+
+                <!--编辑-->
+
+<!--报告-->
+<a href="javascript:;" onclick="showWindow(&#39;miscreport22330921&#39;, &#39;misc.php?mod=report&amp;rtype=post&amp;rid=22330921&amp;tid=3777538&amp;fid=55&#39;, &#39;get&#39;, -1);return false;">[报告]</a>
+
+
+<!--评分2011.12.29-->
+
+<!--评分2011.12.29-->
+					
+
+				
+
+<!--新加的结束-->	
+
+</strong>
+
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon22330921" src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/online_member.gif">
+<em id="authorposton22330921">发表于 2012-10-28 11:16:20</em>
+<span class="pipe">|</span><a href="http://bbs.chinaunix.net/forum.php?mod=viewthread&tid=3777538&page=1&authorid=20874231" rel="nofollow">只看该作者</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tbody><tr><td class="t_f" id="postmessage_22330921">
+subprocess 模块，os模块中都有能满足你需要的功能。<br>
+</td></tr></tbody></table>
+</div>
+<div id="comment_22330921" class="cm">
+</div>
+<div id="post_rate_div_22330921"></div>
+</div></div>
+
+</td></tr>
+<tr><td class="plc plm" style="background-color:#fff">
+
+        <!--//CHINAUNIX 此处去掉DZ自带相关帖子代码-->
+        
+        <!--//CHINAUNIX 一楼增加看了又看,相关帖子,本版精华内容 start-->
+                                
+        <!--//CHINAUNIX 一楼增加看了又看,相关帖子,本版精华内容 end-->
+
+        
+        <!--//CUASK 增加CU问答文字链 start by caojingfei at 2012.03.21-->
+                <div class="a_pb"><a href="http://bbs.chinaunix.net/thread-4155259-1-1.html" target="_blank" style="color:green"><b>2014中国系统架构师大会演讲PPT下载</b></a>|<a target="_blank" href="http://bbs.chinaunix.net/thread-4155246-1-1.html" style="color:red"><b>
+APM技术知多少,小伙伴速来还送曲径账号 </b></a> | <a href="http://bbs.chinaunix.net/thread-4155387-1-1.html" target="_blank" style="color:blue"><b>如何构建高性能Linux服务器</b></a> | <a href="http://bbs.chinaunix.net/thread-4155237-1-1.html" target="_blank" style="color:#8E236B"><b>设计大型分布式网站可能遇到的问题</b></a></div>                <!--//ITPUB 增加CU文字链 end by caojingfei at 2012.03.21-->
+</td>
+</tr>
+<tr>
+<td class="pls" style="background-color:#fff"></td>
+<td class="plc">
+<div>
+<!--管理操作口移到上面-->
+
+<!--这块原先是每层楼下的回复编辑现在删掉，移到上面去-->
+</div>
+
+</td>
+</tr>
+
+<!--2011.12.01修改 帖子最后一个回帖出现的粗的黑线，有程序部分取得最大pid做对比，参照forum_vithread.php第596行  -->
+<tr class="ad">
+<td class="pls" style="border-width:1px 0 1px 0; border-style:solid; border-color:#000; background:#fff"></td>
+<td class="plc" style="border-width:1px 0 1px 0; border-style:solid; border-color:#000; background:#fff">
+</td>
+</tr>
+</tbody></table>
+</div><div id="post_22331284" style="background-color:#E5EDF2"><table id="pid22331284" summary="pid22331284" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="pls" rowspan="2" style="background-color:#F0F3FA">
+ <div class="pi" style=" border-bottom:none">
+<div class="authi"><a href="http://bbs.chinaunix.net/space-uid-26805797.html" target="_blank" class="xw1">Hadron74</a>
+
+</div>
+
+</div>
+<!--2011.12.01自定义头衔移到用户名下面头像上面  -->
+<div class="p_pop blk bui" id="userinfo22331284" style="display: none; margin-top: -11px;">
+<div class="m z">
+<div id="userinfo22331284_ma"></div>
+</div>
+<div class="i y">
+<div>
+<strong><a href="http://bbs.chinaunix.net/space-uid-26805797.html" target="_blank" class="xi2">Hadron74</a></strong>
+<em>当前离线</em>
+</div>
+<dl class="cl"><dt>空间积分</dt><dd>0 </dd><dt>信誉积分</dt><dd>1002 </dd><dt>UID</dt><dd>26805797</dd><dt>阅读权限</dt><dd>30</dd><dt>积分</dt><dd>1361</dd><dt>帖子</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=26805797&do=thread&type=reply&view=me&from=space" target="_blank" class="xi2">225</a></dd><dt>精华</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=26805797&do=thread&type=digest&view=me&from=space" target="_blank" class="xi2">0</a></dd><dt>可用积分</dt><dd>1361 </dd><dt>专家积分</dt><dd>0 </dd><dt>在线时间</dt><dd>1021 小时</dd><dt>注册时间</dt><dd>2012-07-05</dd><dt>最后登录</dt><dd>2014-09-25</dd></dl>
+<div class="imicn">
+<a href="http://bbs.chinaunix.net/home.php?mod=space&uid=26805797&do=profile" target="_blank" title="查看详细资料"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/userinfo.gif" alt="查看详细资料"></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar" onmouseover="showauthor(this, &#39;userinfo22331284&#39;)"><a href="http://bbs.chinaunix.net/space-uid-26805797.html" target="_blank"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/97_avatar_middle.jpg" onerror="this.onerror=null;this.src=&#39;http://passport.ixpub.net/images/noavatar_middle.gif&#39;"></a></div>
+<p><em><a href="http://bbs.chinaunix.net/home.php?mod=spacecp&ac=usergroup&gid=12" target="_blank">家境小康</a></em></p>
+
+</div>
+<p id="g_up22331284" onmouseover="showMenu({&#39;ctrlid&#39;:this.id, &#39;pos&#39;:&#39;12!&#39;});"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/star_level2.gif" alt="Rank: 2"></p>
+<div id="g_up22331284_menu" class="tip tip_4" style="display: none;">
+<div class="tip_horn"></div>
+<div class="tip_c">家境小康, 积分 1361, 距离下一级还需 639 积分</div>
+</div>
+<dl class="pil cl"><dt>帖子</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=26805797&do=thread&type=reply&view=me&from=space" target="_blank" class="xi2">225</a></dd><dt>主题</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=26805797&do=thread&type=thread&view=me&from=space" target="_blank" class="xi2">5</a></dd><dt>精华</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=26805797&do=thread&type=digest&view=me&from=space" target="_blank" class="xi2">0</a></dd><dt>可用积分</dt><dd>1361 </dd><dt>专家积分</dt><dd>0 </dd><dt>在线时间</dt><dd>1021 小时</dd><dt>注册时间</dt><dd>2012-07-05</dd><dt>最后登录</dt><dd>2014-09-25</dd></dl><ul class="xl xl2 o cl">
+<!--修改文字部分20111026-->
+<!--
+<li class="callon"><a href="space-uid-26805797.html" target="_blank" title="串个门" class="xi2">串个门</a></li>
+<li class="buddy"><a href="home.php?mod=spacecp&amp;ac=friend&amp;op=add&amp;uid=26805797&amp;handlekey=addfriendhk_26805797" id="a_friend_li_22331284" onclick="showWindow(this.id, this.href, 'get', 1, {'ctrlid':this.id,'pos':'00'});" title="加好友" class="xi2">加好友</a></li>
+<li class="poke2"><a href="home.php?mod=spacecp&amp;ac=poke&amp;op=send&amp;uid=26805797" id="a_poke_li_22331284" onclick="showWindow(this.id, this.href, 'get', 0);" title="打招呼" class="xi2">打招呼</a></li>
+<li class="pm2"><a href="home.php?mod=spacecp&amp;ac=pm&amp;op=showmsg&amp;handlekey=showmsg_26805797&amp;touid=26805797&amp;pmid=0&amp;daterange=2&amp;pid=22331284&amp;tid=3777538" onclick="showWindow('sendpm', this.href);" title="发消息" class="xi2">发消息</a></li>
+ -->
+<!--2013.05.15 修改串门链接 -->
+                    <li class="callon"><a href="http://ask.chinaunix.net/account/login/" target="_blank" class="xi2" style=" font-weight:bold; color:#F00">问答</a></li>
+
+<li class="buddy"><a href="http://bbs.chinaunix.net/home.php?mod=spacecp&ac=friend&op=add&uid=26805797&handlekey=addfriendhk_26805797" id="a_friend_li_22331284" onclick="showWindow(this.id, this.href, &#39;get&#39;, 1, {&#39;ctrlid&#39;:this.id,&#39;pos&#39;:&#39;00&#39;});" title="加好友" class="xi2">好友</a></li>
+<!--<li class="poke2"><a href="toblog.php?uid=26805797" class="xi2" target="_blank">博客</a></li>-->
+<li class="poke2"><a href="http://blog.chinaunix.net/dir.php?uid=26805797" class="xi2" target="_blank">博客</a></li> 
+<li class="pm2"><a href="http://bbs.chinaunix.net/home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_26805797&touid=26805797&pmid=0&daterange=2&pid=22331284&tid=3777538" onclick="showWindow(&#39;sendpm&#39;, this.href);" title="发消息" class="xi2">消息</a></li>
+</ul>
+<dl class="pil cl"><dt>论坛徽章:</dt><dd>0</dd></dl><div style="padding:3px; margin-left:5px; margin-right:5px;"></div><!--2011.12.05新增禁止本版发言2011.12.17修改增加是否是本版版主且对管理员全部开放 -->
+</td>
+<td class="plc" style="background-color:#F0F3FA">
+<div class="pi">
+<!--管理操作口移到这-->
+		
+<strong>
+<a href="http://bbs.chinaunix.net/forum.php?mod=redirect&goto=findpost&ptid=3777538&pid=22331284" title="您的朋友访问此链接后，您将获得相应的积分奖励" id="postnum22331284" onclick="setCopy(this.href, &#39;帖子地址复制成功&#39;);return false;"><em>3</em>楼</a>
+<!--以下新加开始 -->
+
+                <!--编辑-->
+
+<!--报告-->
+<a href="javascript:;" onclick="showWindow(&#39;miscreport22331284&#39;, &#39;misc.php?mod=report&amp;rtype=post&amp;rid=22331284&amp;tid=3777538&amp;fid=55&#39;, &#39;get&#39;, -1);return false;">[报告]</a>
+
+
+<!--评分2011.12.29-->
+
+<!--评分2011.12.29-->
+					
+
+				
+
+<!--新加的结束-->	
+
+</strong>
+
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon22331284" src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/online_member.gif">
+<em id="authorposton22331284">发表于 2012-10-28 21:30:09</em>
+<span class="pipe">|</span><a href="http://bbs.chinaunix.net/forum.php?mod=viewthread&tid=3777538&page=1&authorid=26805797" rel="nofollow">只看该作者</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tbody><tr><td class="t_f" id="postmessage_22331284">
+<strong>回复 <a href="http://bbs.chinaunix.net/forum.php?mod=redirect&goto=findpost&pid=&ptid=3777538" target="_blank">1#</a> <font color="Olive">yfjelley</font> </strong><br>
+<br>
+<br>
+&nbsp; &nbsp; 如果要调用另一个python脚本用import 文件名（不包括.py) ,就可以了，这个脚本要在PYTHONPATH的路径下，如当前目录，非常方便的。</td></tr></tbody></table>
+</div>
+<div id="comment_22331284" class="cm">
+</div>
+<div id="post_rate_div_22331284"></div>
+</div></div>
+
+</td></tr>
+<tr><td class="plc plm" style="background-color:#F0F3FA">
+
+        <!--//CHINAUNIX 此处去掉DZ自带相关帖子代码-->
+        
+        <!--//CHINAUNIX 一楼增加看了又看,相关帖子,本版精华内容 start-->
+                                
+        <!--//CHINAUNIX 一楼增加看了又看,相关帖子,本版精华内容 end-->
+
+        
+        <!--//CUASK 增加CU问答文字链 start by caojingfei at 2012.03.21-->
+                <div class="a_pb"><a href="http://bbs.chinaunix.net/thread-4155259-1-1.html" target="_blank" style="color:green"><b>2014中国系统架构师大会演讲PPT下载</b></a>|<a target="_blank" href="http://bbs.chinaunix.net/thread-4155246-1-1.html" style="color:red"><b>
+APM技术知多少,小伙伴速来还送曲径账号 </b></a> | <a href="http://bbs.chinaunix.net/thread-4155387-1-1.html" target="_blank" style="color:blue"><b>如何构建高性能Linux服务器</b></a> | <a href="http://bbs.chinaunix.net/thread-4155237-1-1.html" target="_blank" style="color:#8E236B"><b>设计大型分布式网站可能遇到的问题</b></a></div>                <!--//ITPUB 增加CU文字链 end by caojingfei at 2012.03.21-->
+</td>
+</tr>
+<tr>
+<td class="pls" style=""></td>
+<td class="plc">
+<div>
+<!--管理操作口移到上面-->
+
+<!--这块原先是每层楼下的回复编辑现在删掉，移到上面去-->
+</div>
+
+</td>
+</tr>
+
+<!--2011.12.01修改 帖子最后一个回帖出现的粗的黑线，有程序部分取得最大pid做对比，参照forum_vithread.php第596行  -->
+<tr class="ad">
+<td class="pls" style="border-width:1px 0 1px 0; border-style:solid; border-color:#000; background:#fff"></td>
+<td class="plc" style="border-width:1px 0 1px 0; border-style:solid; border-color:#000; background:#fff">
+</td>
+</tr>
+</tbody></table>
+</div><div id="post_22331327" style=""><table id="pid22331327" summary="pid22331327" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="pls" rowspan="2" style="background-color:#fff">
+ <div class="pi" style=" border-bottom:none">
+<div class="authi"><a href="http://bbs.chinaunix.net/space-uid-27208017.html" target="_blank" class="xw1">linux_c_py_php</a>
+
+</div>
+
+</div>
+<!--2011.12.01自定义头衔移到用户名下面头像上面  -->
+<div class="p_pop blk bui" id="userinfo22331327" style="display: none; margin-top: -11px;">
+<div class="m z">
+<div id="userinfo22331327_ma"></div>
+</div>
+<div class="i y">
+<div>
+<strong><a href="http://bbs.chinaunix.net/space-uid-27208017.html" target="_blank" class="xi2">linux_c_py_php</a></strong>
+<em>当前离线</em>
+</div>
+<dl class="cl"><dt>空间积分</dt><dd>0 </dd><dt>信誉积分</dt><dd>1496 </dd><dt>UID</dt><dd>27208017</dd><dt>阅读权限</dt><dd>90</dd><dt>积分</dt><dd>37941</dd><dt>帖子</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=27208017&do=thread&type=reply&view=me&from=space" target="_blank" class="xi2">3323</a></dd><dt>精华</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=27208017&do=thread&type=digest&view=me&from=space" target="_blank" class="xi2">1</a></dd><dt>可用积分</dt><dd>37941 </dd><dt>专家积分</dt><dd>0 </dd><dt>在线时间</dt><dd>1943 小时</dd><dt>注册时间</dt><dd>2012-07-28</dd><dt>最后登录</dt><dd>2014-09-29</dd></dl>
+<div class="imicn">
+<a href="http://wpa.qq.com/msgrd?V=1&Uin=120848369&Site=ChinaUnix.net&Menu=yes" target="_blank" title="QQ"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/qq.gif" alt="QQ"></a><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=27208017&do=profile" target="_blank" title="查看详细资料"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/userinfo.gif" alt="查看详细资料"></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar" onmouseover="showauthor(this, &#39;userinfo22331327&#39;)"><a href="http://bbs.chinaunix.net/space-uid-27208017.html" target="_blank"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/17_avatar_middle.jpg" onerror="this.onerror=null;this.src=&#39;http://passport.ixpub.net/images/noavatar_middle.gif&#39;"></a></div>
+<p><em><a href="http://bbs.chinaunix.net/home.php?mod=spacecp&ac=usergroup&gid=26" target="_blank">巨富豪门</a></em></p>
+
+</div>
+<p id="g_up22331327" onmouseover="showMenu({&#39;ctrlid&#39;:this.id, &#39;pos&#39;:&#39;12!&#39;});"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/star_level3.gif" alt="Rank: 8"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/star_level3.gif" alt="Rank: 8"></p>
+<div id="g_up22331327_menu" class="tip tip_4" style="display: none;">
+<div class="tip_horn"></div>
+<div class="tip_c">巨富豪门, 积分 37941, 距离下一级还需 2059 积分</div>
+</div>
+<dl class="pil cl"><dt>帖子</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=27208017&do=thread&type=reply&view=me&from=space" target="_blank" class="xi2">3323</a></dd><dt>主题</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=27208017&do=thread&type=thread&view=me&from=space" target="_blank" class="xi2">29</a></dd><dt>精华</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=27208017&do=thread&type=digest&view=me&from=space" target="_blank" class="xi2">1</a></dd><dt>可用积分</dt><dd>37941 </dd><dt>专家积分</dt><dd>0 </dd><dt>在线时间</dt><dd>1943 小时</dd><dt>注册时间</dt><dd>2012-07-28</dd><dt>最后登录</dt><dd>2014-09-29</dd></dl><ul class="xl xl2 o cl">
+<!--修改文字部分20111026-->
+<!--
+<li class="callon"><a href="space-uid-27208017.html" target="_blank" title="串个门" class="xi2">串个门</a></li>
+<li class="buddy"><a href="home.php?mod=spacecp&amp;ac=friend&amp;op=add&amp;uid=27208017&amp;handlekey=addfriendhk_27208017" id="a_friend_li_22331327" onclick="showWindow(this.id, this.href, 'get', 1, {'ctrlid':this.id,'pos':'00'});" title="加好友" class="xi2">加好友</a></li>
+<li class="poke2"><a href="home.php?mod=spacecp&amp;ac=poke&amp;op=send&amp;uid=27208017" id="a_poke_li_22331327" onclick="showWindow(this.id, this.href, 'get', 0);" title="打招呼" class="xi2">打招呼</a></li>
+<li class="pm2"><a href="home.php?mod=spacecp&amp;ac=pm&amp;op=showmsg&amp;handlekey=showmsg_27208017&amp;touid=27208017&amp;pmid=0&amp;daterange=2&amp;pid=22331327&amp;tid=3777538" onclick="showWindow('sendpm', this.href);" title="发消息" class="xi2">发消息</a></li>
+ -->
+<!--2013.05.15 修改串门链接 -->
+                    <li class="callon"><a href="http://ask.chinaunix.net/account/login/" target="_blank" class="xi2" style=" font-weight:bold; color:#F00">问答</a></li>
+
+<li class="buddy"><a href="http://bbs.chinaunix.net/home.php?mod=spacecp&ac=friend&op=add&uid=27208017&handlekey=addfriendhk_27208017" id="a_friend_li_22331327" onclick="showWindow(this.id, this.href, &#39;get&#39;, 1, {&#39;ctrlid&#39;:this.id,&#39;pos&#39;:&#39;00&#39;});" title="加好友" class="xi2">好友</a></li>
+<!--<li class="poke2"><a href="toblog.php?uid=27208017" class="xi2" target="_blank">博客</a></li>-->
+<li class="poke2"><a href="http://blog.chinaunix.net/dir.php?uid=27208017" class="xi2" target="_blank">博客</a></li> 
+<li class="pm2"><a href="http://bbs.chinaunix.net/home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_27208017&touid=27208017&pmid=0&daterange=2&pid=22331327&tid=3777538" onclick="showWindow(&#39;sendpm&#39;, this.href);" title="发消息" class="xi2">消息</a></li>
+</ul>
+<dl class="pil cl"><dt>论坛徽章:</dt><dd>4</dd></dl><div style="padding:3px; margin-left:5px; margin-right:5px;"><img id="1185" src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/xin3-small.gif" width="24px" style="margin:2px;cursor: hand;" alt="水瓶座
+日期:2013-09-06 12:27:30" title="水瓶座
+日期:2013-09-06 12:27:30"><img id="1187" src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/xin7-small.gif" width="24px" style="margin:2px;cursor: hand;" alt="摩羯座
+日期:2013-09-28 14:07:46" title="摩羯座
+日期:2013-09-28 14:07:46"><img id="1182" src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/xin11-small.gif" width="24px" style="margin:2px;cursor: hand;" alt="处女座
+日期:2013-10-24 14:25:01" title="处女座
+日期:2013-10-24 14:25:01"><img id="1197" src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/shengxiao10-small.gif" width="24px" style="margin:2px;cursor: hand;" alt="酉鸡
+日期:2014-04-07 11:54:15" title="酉鸡
+日期:2014-04-07 11:54:15"></div><!--2011.12.05新增禁止本版发言2011.12.17修改增加是否是本版版主且对管理员全部开放 -->
+</td>
+<td class="plc" style="background-color:#fff">
+<div class="pi">
+<!--管理操作口移到这-->
+		
+<strong>
+<a href="http://bbs.chinaunix.net/forum.php?mod=redirect&goto=findpost&ptid=3777538&pid=22331327" title="您的朋友访问此链接后，您将获得相应的积分奖励" id="postnum22331327" onclick="setCopy(this.href, &#39;帖子地址复制成功&#39;);return false;"><em>4</em>楼</a>
+<!--以下新加开始 -->
+
+                <!--编辑-->
+
+<!--报告-->
+<a href="javascript:;" onclick="showWindow(&#39;miscreport22331327&#39;, &#39;misc.php?mod=report&amp;rtype=post&amp;rid=22331327&amp;tid=3777538&amp;fid=55&#39;, &#39;get&#39;, -1);return false;">[报告]</a>
+
+
+<!--评分2011.12.29-->
+
+<!--评分2011.12.29-->
+					
+
+				
+
+<!--新加的结束-->	
+
+</strong>
+
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon22331327" src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/online_member.gif">
+<em id="authorposton22331327">发表于 2012-10-28 22:10:10</em>
+<span class="pipe">|</span><a href="http://bbs.chinaunix.net/forum.php?mod=viewthread&tid=3777538&page=1&authorid=27208017" rel="nofollow">只看该作者</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tbody><tr><td class="t_f" id="postmessage_22331327">
+import进来就可以用了.</td></tr></tbody></table>
+</div>
+<div id="comment_22331327" class="cm">
+</div>
+<div id="post_rate_div_22331327"></div>
+</div></div>
+
+</td></tr>
+<tr><td class="plc plm" style="background-color:#fff">
+
+        <!--//CHINAUNIX 此处去掉DZ自带相关帖子代码-->
+        
+        <!--//CHINAUNIX 一楼增加看了又看,相关帖子,本版精华内容 start-->
+                                
+        <!--//CHINAUNIX 一楼增加看了又看,相关帖子,本版精华内容 end-->
+
+<div class="sign" style="max-height:500px;maxHeightIE:500px;">专注linux服务端性能与架构设计... www.settledown.cn</div>
+        
+        <!--//CUASK 增加CU问答文字链 start by caojingfei at 2012.03.21-->
+                <div class="a_pb"><a href="http://bbs.chinaunix.net/thread-4155259-1-1.html" target="_blank" style="color:green"><b>2014中国系统架构师大会演讲PPT下载</b></a>|<a target="_blank" href="http://bbs.chinaunix.net/thread-4155246-1-1.html" style="color:red"><b>
+APM技术知多少,小伙伴速来还送曲径账号 </b></a> | <a href="http://bbs.chinaunix.net/thread-4155387-1-1.html" target="_blank" style="color:blue"><b>如何构建高性能Linux服务器</b></a> | <a href="http://bbs.chinaunix.net/thread-4155237-1-1.html" target="_blank" style="color:#8E236B"><b>设计大型分布式网站可能遇到的问题</b></a></div>                <!--//ITPUB 增加CU文字链 end by caojingfei at 2012.03.21-->
+</td>
+</tr>
+<tr>
+<td class="pls" style="background-color:#fff"></td>
+<td class="plc">
+<div>
+<!--管理操作口移到上面-->
+
+<!--这块原先是每层楼下的回复编辑现在删掉，移到上面去-->
+</div>
+
+</td>
+</tr>
+
+<!--2011.12.01修改 帖子最后一个回帖出现的粗的黑线，有程序部分取得最大pid做对比，参照forum_vithread.php第596行  -->
+<tr class="ad">
+<td class="pls" style="border-width:1px 0 1px 0; border-style:solid; border-color:#000; background:#fff"></td>
+<td class="plc" style="border-width:1px 0 1px 0; border-style:solid; border-color:#000; background:#fff">
+</td>
+</tr>
+</tbody></table>
+</div><div id="post_22333777" style="background-color:#E5EDF2"><table id="pid22333777" summary="pid22333777" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="pls" rowspan="2" style="background-color:#F0F3FA">
+ <div class="pi" style=" border-bottom:none">
+<div class="authi"><a href="http://bbs.chinaunix.net/space-uid-23619955.html" target="_blank" class="xw1">qingchn</a>
+
+</div>
+
+</div>
+<!--2011.12.01自定义头衔移到用户名下面头像上面  -->
+<div class="p_pop blk bui" id="userinfo22333777" style="display: none; margin-top: -11px;">
+<div class="m z">
+<div id="userinfo22333777_ma"></div>
+</div>
+<div class="i y">
+<div>
+<strong><a href="http://bbs.chinaunix.net/space-uid-23619955.html" target="_blank" class="xi2">qingchn</a></strong>
+<em>当前离线</em>
+</div>
+<dl class="cl"><dt>空间积分</dt><dd>0 </dd><dt>信誉积分</dt><dd>365 </dd><dt>UID</dt><dd>23619955</dd><dt>阅读权限</dt><dd>20</dd><dt>积分</dt><dd>228</dd><dt>帖子</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=23619955&do=thread&type=reply&view=me&from=space" target="_blank" class="xi2">182</a></dd><dt>精华</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=23619955&do=thread&type=digest&view=me&from=space" target="_blank" class="xi2">0</a></dd><dt>可用积分</dt><dd>228 </dd><dt>专家积分</dt><dd>0 </dd><dt>在线时间</dt><dd>704 小时</dd><dt>注册时间</dt><dd>2010-03-30</dd><dt>最后登录</dt><dd>2014-05-19</dd></dl>
+<div class="imicn">
+<a href="http://bbs.chinaunix.net/home.php?mod=space&uid=23619955&do=profile" target="_blank" title="查看详细资料"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/userinfo.gif" alt="查看详细资料"></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar" onmouseover="showauthor(this, &#39;userinfo22333777&#39;)"><a href="http://bbs.chinaunix.net/space-uid-23619955.html" target="_blank"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/55_avatar_middle.jpg" onerror="this.onerror=null;this.src=&#39;http://passport.ixpub.net/images/noavatar_middle.gif&#39;"></a></div>
+<p><em><a href="http://bbs.chinaunix.net/home.php?mod=spacecp&ac=usergroup&gid=11" target="_blank">稍有积蓄</a></em></p>
+
+</div>
+<p id="g_up22333777" onmouseover="showMenu({&#39;ctrlid&#39;:this.id, &#39;pos&#39;:&#39;12!&#39;});"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/star_level1.gif" alt="Rank: 1"></p>
+<div id="g_up22333777_menu" class="tip tip_4" style="display: none;">
+<div class="tip_horn"></div>
+<div class="tip_c">稍有积蓄, 积分 228, 距离下一级还需 272 积分</div>
+</div>
+<dl class="pil cl"><dt>帖子</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=23619955&do=thread&type=reply&view=me&from=space" target="_blank" class="xi2">182</a></dd><dt>主题</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=23619955&do=thread&type=thread&view=me&from=space" target="_blank" class="xi2">12</a></dd><dt>精华</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=23619955&do=thread&type=digest&view=me&from=space" target="_blank" class="xi2">0</a></dd><dt>可用积分</dt><dd>228 </dd><dt>专家积分</dt><dd>0 </dd><dt>在线时间</dt><dd>704 小时</dd><dt>注册时间</dt><dd>2010-03-30</dd><dt>最后登录</dt><dd>2014-05-19</dd></dl><ul class="xl xl2 o cl">
+<!--修改文字部分20111026-->
+<!--
+<li class="callon"><a href="space-uid-23619955.html" target="_blank" title="串个门" class="xi2">串个门</a></li>
+<li class="buddy"><a href="home.php?mod=spacecp&amp;ac=friend&amp;op=add&amp;uid=23619955&amp;handlekey=addfriendhk_23619955" id="a_friend_li_22333777" onclick="showWindow(this.id, this.href, 'get', 1, {'ctrlid':this.id,'pos':'00'});" title="加好友" class="xi2">加好友</a></li>
+<li class="poke2"><a href="home.php?mod=spacecp&amp;ac=poke&amp;op=send&amp;uid=23619955" id="a_poke_li_22333777" onclick="showWindow(this.id, this.href, 'get', 0);" title="打招呼" class="xi2">打招呼</a></li>
+<li class="pm2"><a href="home.php?mod=spacecp&amp;ac=pm&amp;op=showmsg&amp;handlekey=showmsg_23619955&amp;touid=23619955&amp;pmid=0&amp;daterange=2&amp;pid=22333777&amp;tid=3777538" onclick="showWindow('sendpm', this.href);" title="发消息" class="xi2">发消息</a></li>
+ -->
+<!--2013.05.15 修改串门链接 -->
+                    <li class="callon"><a href="http://ask.chinaunix.net/account/login/" target="_blank" class="xi2" style=" font-weight:bold; color:#F00">问答</a></li>
+
+<li class="buddy"><a href="http://bbs.chinaunix.net/home.php?mod=spacecp&ac=friend&op=add&uid=23619955&handlekey=addfriendhk_23619955" id="a_friend_li_22333777" onclick="showWindow(this.id, this.href, &#39;get&#39;, 1, {&#39;ctrlid&#39;:this.id,&#39;pos&#39;:&#39;00&#39;});" title="加好友" class="xi2">好友</a></li>
+<!--<li class="poke2"><a href="toblog.php?uid=23619955" class="xi2" target="_blank">博客</a></li>-->
+<li class="poke2"><a href="http://blog.chinaunix.net/dir.php?uid=23619955" class="xi2" target="_blank">博客</a></li> 
+<li class="pm2"><a href="http://bbs.chinaunix.net/home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_23619955&touid=23619955&pmid=0&daterange=2&pid=22333777&tid=3777538" onclick="showWindow(&#39;sendpm&#39;, this.href);" title="发消息" class="xi2">消息</a></li>
+</ul>
+<dl class="pil cl"><dt>论坛徽章:</dt><dd>0</dd></dl><div style="padding:3px; margin-left:5px; margin-right:5px;"></div><!--2011.12.05新增禁止本版发言2011.12.17修改增加是否是本版版主且对管理员全部开放 -->
+</td>
+<td class="plc" style="background-color:#F0F3FA">
+<div class="pi">
+<!--管理操作口移到这-->
+		
+<strong>
+<a href="http://bbs.chinaunix.net/forum.php?mod=redirect&goto=findpost&ptid=3777538&pid=22333777" title="您的朋友访问此链接后，您将获得相应的积分奖励" id="postnum22333777" onclick="setCopy(this.href, &#39;帖子地址复制成功&#39;);return false;"><em>5</em>楼</a>
+<!--以下新加开始 -->
+
+                <!--编辑-->
+
+<!--报告-->
+<a href="javascript:;" onclick="showWindow(&#39;miscreport22333777&#39;, &#39;misc.php?mod=report&amp;rtype=post&amp;rid=22333777&amp;tid=3777538&amp;fid=55&#39;, &#39;get&#39;, -1);return false;">[报告]</a>
+
+
+<!--评分2011.12.29-->
+
+<!--评分2011.12.29-->
+					
+
+				
+
+<!--新加的结束-->	
+
+</strong>
+
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon22333777" src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/online_member.gif">
+<em id="authorposton22333777">发表于 2012-10-30 16:01:53</em>
+<span class="pipe">|</span><a href="http://bbs.chinaunix.net/forum.php?mod=viewthread&tid=3777538&page=1&authorid=23619955" rel="nofollow">只看该作者</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tbody><tr><td class="t_f" id="postmessage_22333777">
+python 调用python 用 import <br>
+python 调用shell的话 如果是shell命令的话 相当于调用系统os import os 即可<br>
+shell脚本的话，我暂时没有想到</td></tr></tbody></table>
+</div>
+<div id="comment_22333777" class="cm">
+</div>
+<div id="post_rate_div_22333777"></div>
+</div></div>
+
+</td></tr>
+<tr><td class="plc plm" style="background-color:#F0F3FA">
+
+        <!--//CHINAUNIX 此处去掉DZ自带相关帖子代码-->
+        
+        <!--//CHINAUNIX 一楼增加看了又看,相关帖子,本版精华内容 start-->
+                                
+        <!--//CHINAUNIX 一楼增加看了又看,相关帖子,本版精华内容 end-->
+
+<div class="sign" style="max-height:500px;maxHeightIE:500px;">好好学习 努力挣钱</div>
+        
+        <!--//CUASK 增加CU问答文字链 start by caojingfei at 2012.03.21-->
+                <div class="a_pb"><a href="http://bbs.chinaunix.net/thread-4155259-1-1.html" target="_blank" style="color:green"><b>2014中国系统架构师大会演讲PPT下载</b></a>|<a target="_blank" href="http://bbs.chinaunix.net/thread-4155246-1-1.html" style="color:red"><b>
+APM技术知多少,小伙伴速来还送曲径账号 </b></a> | <a href="http://bbs.chinaunix.net/thread-4155387-1-1.html" target="_blank" style="color:blue"><b>如何构建高性能Linux服务器</b></a> | <a href="http://bbs.chinaunix.net/thread-4155237-1-1.html" target="_blank" style="color:#8E236B"><b>设计大型分布式网站可能遇到的问题</b></a></div>                <!--//ITPUB 增加CU文字链 end by caojingfei at 2012.03.21-->
+</td>
+</tr>
+<tr>
+<td class="pls" style=""></td>
+<td class="plc">
+<div>
+<!--管理操作口移到上面-->
+
+<!--这块原先是每层楼下的回复编辑现在删掉，移到上面去-->
+</div>
+
+</td>
+</tr>
+
+<!--2011.12.01修改 帖子最后一个回帖出现的粗的黑线，有程序部分取得最大pid做对比，参照forum_vithread.php第596行  -->
+<tr class="ad">
+<td class="pls" style="border-width:1px 0 1px 0; border-style:solid; border-color:#000; background:#fff"></td>
+<td class="plc" style="border-width:1px 0 1px 0; border-style:solid; border-color:#000; background:#fff">
+</td>
+</tr>
+</tbody></table>
+</div><div id="post_22337215" style=""><table id="pid22337215" summary="pid22337215" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="pls" rowspan="2" style="background-color:#fff">
+ <div class="pi" style=" border-bottom:none">
+<div class="authi"><a href="http://bbs.chinaunix.net/space-uid-26911895.html" target="_blank" class="xw1">linger0377</a>
+
+</div>
+
+</div>
+<!--2011.12.01自定义头衔移到用户名下面头像上面  -->
+<div class="p_pop blk bui" id="userinfo22337215" style="display: none; margin-top: -11px;">
+<div class="m z">
+<div id="userinfo22337215_ma"></div>
+</div>
+<div class="i y">
+<div>
+<strong><a href="http://bbs.chinaunix.net/space-uid-26911895.html" target="_blank" class="xi2">linger0377</a></strong>
+<em>当前离线</em>
+</div>
+<dl class="cl"><dt>空间积分</dt><dd>0 </dd><dt>信誉积分</dt><dd>14 </dd><dt>UID</dt><dd>26911895</dd><dt>阅读权限</dt><dd>10</dd><dt>积分</dt><dd>5</dd><dt>帖子</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=26911895&do=thread&type=reply&view=me&from=space" target="_blank" class="xi2">3</a></dd><dt>精华</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=26911895&do=thread&type=digest&view=me&from=space" target="_blank" class="xi2">0</a></dd><dt>可用积分</dt><dd>5 </dd><dt>专家积分</dt><dd>0 </dd><dt>在线时间</dt><dd>6 小时</dd><dt>注册时间</dt><dd>2012-11-01</dd><dt>最后登录</dt><dd>2012-11-12</dd></dl>
+<div class="imicn">
+<a href="http://bbs.chinaunix.net/home.php?mod=space&uid=26911895&do=profile" target="_blank" title="查看详细资料"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/userinfo.gif" alt="查看详细资料"></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar" onmouseover="showauthor(this, &#39;userinfo22337215&#39;)"><a href="http://bbs.chinaunix.net/space-uid-26911895.html" target="_blank"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/95_avatar_middle.jpg" onerror="this.onerror=null;this.src=&#39;http://passport.ixpub.net/images/noavatar_middle.gif&#39;"></a></div>
+<p><em><a href="http://bbs.chinaunix.net/home.php?mod=spacecp&ac=usergroup&gid=10" target="_blank">白手起家</a></em></p>
+
+</div>
+<p id="g_up22337215" onmouseover="showMenu({&#39;ctrlid&#39;:this.id, &#39;pos&#39;:&#39;12!&#39;});"></p>
+<div id="g_up22337215_menu" class="tip tip_4" style="display: none;">
+<div class="tip_horn"></div>
+<div class="tip_c">白手起家, 积分 5, 距离下一级还需 195 积分</div>
+</div>
+<dl class="pil cl"><dt>帖子</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=26911895&do=thread&type=reply&view=me&from=space" target="_blank" class="xi2">3</a></dd><dt>主题</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=26911895&do=thread&type=thread&view=me&from=space" target="_blank" class="xi2">1</a></dd><dt>精华</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=26911895&do=thread&type=digest&view=me&from=space" target="_blank" class="xi2">0</a></dd><dt>可用积分</dt><dd>5 </dd><dt>专家积分</dt><dd>0 </dd><dt>在线时间</dt><dd>6 小时</dd><dt>注册时间</dt><dd>2012-11-01</dd><dt>最后登录</dt><dd>2012-11-12</dd></dl><ul class="xl xl2 o cl">
+<!--修改文字部分20111026-->
+<!--
+<li class="callon"><a href="space-uid-26911895.html" target="_blank" title="串个门" class="xi2">串个门</a></li>
+<li class="buddy"><a href="home.php?mod=spacecp&amp;ac=friend&amp;op=add&amp;uid=26911895&amp;handlekey=addfriendhk_26911895" id="a_friend_li_22337215" onclick="showWindow(this.id, this.href, 'get', 1, {'ctrlid':this.id,'pos':'00'});" title="加好友" class="xi2">加好友</a></li>
+<li class="poke2"><a href="home.php?mod=spacecp&amp;ac=poke&amp;op=send&amp;uid=26911895" id="a_poke_li_22337215" onclick="showWindow(this.id, this.href, 'get', 0);" title="打招呼" class="xi2">打招呼</a></li>
+<li class="pm2"><a href="home.php?mod=spacecp&amp;ac=pm&amp;op=showmsg&amp;handlekey=showmsg_26911895&amp;touid=26911895&amp;pmid=0&amp;daterange=2&amp;pid=22337215&amp;tid=3777538" onclick="showWindow('sendpm', this.href);" title="发消息" class="xi2">发消息</a></li>
+ -->
+<!--2013.05.15 修改串门链接 -->
+                    <li class="callon"><a href="http://ask.chinaunix.net/account/login/" target="_blank" class="xi2" style=" font-weight:bold; color:#F00">问答</a></li>
+
+<li class="buddy"><a href="http://bbs.chinaunix.net/home.php?mod=spacecp&ac=friend&op=add&uid=26911895&handlekey=addfriendhk_26911895" id="a_friend_li_22337215" onclick="showWindow(this.id, this.href, &#39;get&#39;, 1, {&#39;ctrlid&#39;:this.id,&#39;pos&#39;:&#39;00&#39;});" title="加好友" class="xi2">好友</a></li>
+<!--<li class="poke2"><a href="toblog.php?uid=26911895" class="xi2" target="_blank">博客</a></li>-->
+<li class="poke2"><a href="http://blog.chinaunix.net/dir.php?uid=26911895" class="xi2" target="_blank">博客</a></li> 
+<li class="pm2"><a href="http://bbs.chinaunix.net/home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_26911895&touid=26911895&pmid=0&daterange=2&pid=22337215&tid=3777538" onclick="showWindow(&#39;sendpm&#39;, this.href);" title="发消息" class="xi2">消息</a></li>
+</ul>
+<dl class="pil cl"><dt>论坛徽章:</dt><dd>0</dd></dl><div style="padding:3px; margin-left:5px; margin-right:5px;"></div><!--2011.12.05新增禁止本版发言2011.12.17修改增加是否是本版版主且对管理员全部开放 -->
+</td>
+<td class="plc" style="background-color:#fff">
+<div class="pi">
+<!--管理操作口移到这-->
+		
+<strong>
+<a href="http://bbs.chinaunix.net/forum.php?mod=redirect&goto=findpost&ptid=3777538&pid=22337215" title="您的朋友访问此链接后，您将获得相应的积分奖励" id="postnum22337215" onclick="setCopy(this.href, &#39;帖子地址复制成功&#39;);return false;"><em>6</em>楼</a>
+<!--以下新加开始 -->
+
+                <!--编辑-->
+
+<!--报告-->
+<a href="javascript:;" onclick="showWindow(&#39;miscreport22337215&#39;, &#39;misc.php?mod=report&amp;rtype=post&amp;rid=22337215&amp;tid=3777538&amp;fid=55&#39;, &#39;get&#39;, -1);return false;">[报告]</a>
+
+
+<!--评分2011.12.29-->
+
+<!--评分2011.12.29-->
+					
+
+				
+
+<!--新加的结束-->	
+
+</strong>
+
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon22337215" src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/online_member.gif">
+<em id="authorposton22337215">发表于 2012-11-02 09:42:40</em>
+<span class="pipe">|</span><a href="http://bbs.chinaunix.net/forum.php?mod=viewthread&tid=3777538&page=1&authorid=26911895" rel="nofollow">只看该作者</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tbody><tr><td class="t_f" id="postmessage_22337215">
+os.popen('python path/xxx.py')<br>
+os.popen('python path/xxx.sh')</td></tr></tbody></table>
+</div>
+<div id="comment_22337215" class="cm">
+</div>
+<div id="post_rate_div_22337215"></div>
+</div></div>
+
+</td></tr>
+<tr><td class="plc plm" style="background-color:#fff">
+
+        <!--//CHINAUNIX 此处去掉DZ自带相关帖子代码-->
+        
+        <!--//CHINAUNIX 一楼增加看了又看,相关帖子,本版精华内容 start-->
+                                
+        <!--//CHINAUNIX 一楼增加看了又看,相关帖子,本版精华内容 end-->
+
+        
+        <!--//CUASK 增加CU问答文字链 start by caojingfei at 2012.03.21-->
+                <div class="a_pb"><a href="http://bbs.chinaunix.net/thread-4155259-1-1.html" target="_blank" style="color:green"><b>2014中国系统架构师大会演讲PPT下载</b></a>|<a target="_blank" href="http://bbs.chinaunix.net/thread-4155246-1-1.html" style="color:red"><b>
+APM技术知多少,小伙伴速来还送曲径账号 </b></a> | <a href="http://bbs.chinaunix.net/thread-4155387-1-1.html" target="_blank" style="color:blue"><b>如何构建高性能Linux服务器</b></a> | <a href="http://bbs.chinaunix.net/thread-4155237-1-1.html" target="_blank" style="color:#8E236B"><b>设计大型分布式网站可能遇到的问题</b></a></div>                <!--//ITPUB 增加CU文字链 end by caojingfei at 2012.03.21-->
+</td>
+</tr>
+<tr>
+<td class="pls" style="background-color:#fff"></td>
+<td class="plc">
+<div>
+<!--管理操作口移到上面-->
+
+<!--这块原先是每层楼下的回复编辑现在删掉，移到上面去-->
+</div>
+
+</td>
+</tr>
+
+<!--2011.12.01修改 帖子最后一个回帖出现的粗的黑线，有程序部分取得最大pid做对比，参照forum_vithread.php第596行  -->
+<tr class="ad">
+<td class="pls" style="border-width:1px 0 1px 0; border-style:solid; border-color:#000; background:#fff"></td>
+<td class="plc" style="border-width:1px 0 1px 0; border-style:solid; border-color:#000; background:#fff">
+</td>
+</tr>
+</tbody></table>
+</div><div id="post_22337284" style="background-color:#E5EDF2"><table id="pid22337284" summary="pid22337284" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="pls" rowspan="2" style="background-color:#F0F3FA">
+ <a name="lastpost"></a><div class="pi" style=" border-bottom:none">
+<div class="authi"><a href="http://bbs.chinaunix.net/space-uid-28332894.html" target="_blank" class="xw1">dingwei0377</a>
+
+</div>
+
+</div>
+<!--2011.12.01自定义头衔移到用户名下面头像上面  -->
+<div class="p_pop blk bui" id="userinfo22337284" style="display: none; margin-top: -11px;">
+<div class="m z">
+<div id="userinfo22337284_ma"></div>
+</div>
+<div class="i y">
+<div>
+<strong><a href="http://bbs.chinaunix.net/space-uid-28332894.html" target="_blank" class="xi2">dingwei0377</a></strong>
+<em>当前离线</em>
+</div>
+<dl class="cl"><dt>空间积分</dt><dd>0 </dd><dt>信誉积分</dt><dd>20 </dd><dt>UID</dt><dd>28332894</dd><dt>阅读权限</dt><dd>10</dd><dt>积分</dt><dd>9</dd><dt>帖子</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=28332894&do=thread&type=reply&view=me&from=space" target="_blank" class="xi2">5</a></dd><dt>精华</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=28332894&do=thread&type=digest&view=me&from=space" target="_blank" class="xi2">0</a></dd><dt>可用积分</dt><dd>9 </dd><dt>专家积分</dt><dd>0 </dd><dt>在线时间</dt><dd>6 小时</dd><dt>注册时间</dt><dd>2012-11-01</dd><dt>最后登录</dt><dd>2013-08-12</dd></dl>
+<div class="imicn">
+<a href="http://bbs.chinaunix.net/home.php?mod=space&uid=28332894&do=profile" target="_blank" title="查看详细资料"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/userinfo.gif" alt="查看详细资料"></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar" onmouseover="showauthor(this, &#39;userinfo22337284&#39;)"><a href="http://bbs.chinaunix.net/space-uid-28332894.html" target="_blank"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/noavatar_middle.gif" onerror="this.onerror=null;this.src=&#39;http://passport.ixpub.net/images/noavatar_middle.gif&#39;"></a></div>
+<p><em><a href="http://bbs.chinaunix.net/home.php?mod=spacecp&ac=usergroup&gid=10" target="_blank">白手起家</a></em></p>
+
+</div>
+<p id="g_up22337284" onmouseover="showMenu({&#39;ctrlid&#39;:this.id, &#39;pos&#39;:&#39;12!&#39;});"></p>
+<div id="g_up22337284_menu" class="tip tip_4" style="display: none;">
+<div class="tip_horn"></div>
+<div class="tip_c">白手起家, 积分 9, 距离下一级还需 191 积分</div>
+</div>
+<dl class="pil cl"><dt>帖子</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=28332894&do=thread&type=reply&view=me&from=space" target="_blank" class="xi2">5</a></dd><dt>主题</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=28332894&do=thread&type=thread&view=me&from=space" target="_blank" class="xi2">1</a></dd><dt>精华</dt><dd><a href="http://bbs.chinaunix.net/home.php?mod=space&uid=28332894&do=thread&type=digest&view=me&from=space" target="_blank" class="xi2">0</a></dd><dt>可用积分</dt><dd>9 </dd><dt>专家积分</dt><dd>0 </dd><dt>在线时间</dt><dd>6 小时</dd><dt>注册时间</dt><dd>2012-11-01</dd><dt>最后登录</dt><dd>2013-08-12</dd></dl><ul class="xl xl2 o cl">
+<!--修改文字部分20111026-->
+<!--
+<li class="callon"><a href="space-uid-28332894.html" target="_blank" title="串个门" class="xi2">串个门</a></li>
+<li class="buddy"><a href="home.php?mod=spacecp&amp;ac=friend&amp;op=add&amp;uid=28332894&amp;handlekey=addfriendhk_28332894" id="a_friend_li_22337284" onclick="showWindow(this.id, this.href, 'get', 1, {'ctrlid':this.id,'pos':'00'});" title="加好友" class="xi2">加好友</a></li>
+<li class="poke2"><a href="home.php?mod=spacecp&amp;ac=poke&amp;op=send&amp;uid=28332894" id="a_poke_li_22337284" onclick="showWindow(this.id, this.href, 'get', 0);" title="打招呼" class="xi2">打招呼</a></li>
+<li class="pm2"><a href="home.php?mod=spacecp&amp;ac=pm&amp;op=showmsg&amp;handlekey=showmsg_28332894&amp;touid=28332894&amp;pmid=0&amp;daterange=2&amp;pid=22337284&amp;tid=3777538" onclick="showWindow('sendpm', this.href);" title="发消息" class="xi2">发消息</a></li>
+ -->
+<!--2013.05.15 修改串门链接 -->
+                    <li class="callon"><a href="http://ask.chinaunix.net/account/login/" target="_blank" class="xi2" style=" font-weight:bold; color:#F00">问答</a></li>
+
+<li class="buddy"><a href="http://bbs.chinaunix.net/home.php?mod=spacecp&ac=friend&op=add&uid=28332894&handlekey=addfriendhk_28332894" id="a_friend_li_22337284" onclick="showWindow(this.id, this.href, &#39;get&#39;, 1, {&#39;ctrlid&#39;:this.id,&#39;pos&#39;:&#39;00&#39;});" title="加好友" class="xi2">好友</a></li>
+<!--<li class="poke2"><a href="toblog.php?uid=28332894" class="xi2" target="_blank">博客</a></li>-->
+<li class="poke2"><a href="http://blog.chinaunix.net/dir.php?uid=28332894" class="xi2" target="_blank">博客</a></li> 
+<li class="pm2"><a href="http://bbs.chinaunix.net/home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_28332894&touid=28332894&pmid=0&daterange=2&pid=22337284&tid=3777538" onclick="showWindow(&#39;sendpm&#39;, this.href);" title="发消息" class="xi2">消息</a></li>
+</ul>
+<dl class="pil cl"><dt>论坛徽章:</dt><dd>0</dd></dl><div style="padding:3px; margin-left:5px; margin-right:5px;"></div><!--2011.12.05新增禁止本版发言2011.12.17修改增加是否是本版版主且对管理员全部开放 -->
+</td>
+<td class="plc" style="background-color:#F0F3FA">
+<div class="pi">
+<!--管理操作口移到这-->
+		
+<strong>
+<a href="http://bbs.chinaunix.net/forum.php?mod=redirect&goto=findpost&ptid=3777538&pid=22337284" title="您的朋友访问此链接后，您将获得相应的积分奖励" id="postnum22337284" onclick="setCopy(this.href, &#39;帖子地址复制成功&#39;);return false;"><em>7</em>楼</a>
+<!--以下新加开始 -->
+
+                <!--编辑-->
+
+<!--报告-->
+<a href="javascript:;" onclick="showWindow(&#39;miscreport22337284&#39;, &#39;misc.php?mod=report&amp;rtype=post&amp;rid=22337284&amp;tid=3777538&amp;fid=55&#39;, &#39;get&#39;, -1);return false;">[报告]</a>
+
+
+<!--评分2011.12.29-->
+
+<!--评分2011.12.29-->
+					
+
+				
+
+<!--新加的结束-->	
+
+</strong>
+
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon22337284" src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/online_member.gif">
+<em id="authorposton22337284">发表于 2012-11-02 10:14:19</em>
+<span class="pipe">|</span><a href="http://bbs.chinaunix.net/forum.php?mod=viewthread&tid=3777538&page=1&authorid=28332894" rel="nofollow">只看该作者</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tbody><tr><td class="t_f" id="postmessage_22337284">
+os.popen('python path/xxx.py')<br>
+os.popen('sh path/xxx.sh')</td></tr></tbody></table>
+</div>
+<div id="comment_22337284" class="cm">
+</div>
+<div id="post_rate_div_22337284"></div>
+</div></div>
+
+</td></tr>
+<tr><td class="plc plm" style="background-color:#F0F3FA">
+
+        <!--//CHINAUNIX 此处去掉DZ自带相关帖子代码-->
+        
+        <!--//CHINAUNIX 一楼增加看了又看,相关帖子,本版精华内容 start-->
+                                
+        <!--//CHINAUNIX 一楼增加看了又看,相关帖子,本版精华内容 end-->
+
+        
+        <!--//CUASK 增加CU问答文字链 start by caojingfei at 2012.03.21-->
+                <div class="a_pb"><a href="http://bbs.chinaunix.net/thread-4155259-1-1.html" target="_blank" style="color:green"><b>2014中国系统架构师大会演讲PPT下载</b></a>|<a target="_blank" href="http://bbs.chinaunix.net/thread-4155246-1-1.html" style="color:red"><b>
+APM技术知多少,小伙伴速来还送曲径账号 </b></a> | <a href="http://bbs.chinaunix.net/thread-4155387-1-1.html" target="_blank" style="color:blue"><b>如何构建高性能Linux服务器</b></a> | <a href="http://bbs.chinaunix.net/thread-4155237-1-1.html" target="_blank" style="color:#8E236B"><b>设计大型分布式网站可能遇到的问题</b></a></div>                <!--//ITPUB 增加CU文字链 end by caojingfei at 2012.03.21-->
+</td>
+</tr>
+<tr>
+<td class="pls" style=""></td>
+<td class="plc">
+<div>
+<!--管理操作口移到上面-->
+
+<!--这块原先是每层楼下的回复编辑现在删掉，移到上面去-->
+</div>
+
+</td>
+</tr>
+
+<!--2011.12.01修改 帖子最后一个回帖出现的粗的黑线，有程序部分取得最大pid做对比，参照forum_vithread.php第596行  -->
+<tr class="ad">
+<td class="pls" style="border-width:1px 0 1px 0; border-style:solid; border-color:#000; background:#fff"></td>
+<td class="plc" style="border-width:1px 0 1px 0; border-style:solid; border-color:#000; background:#fff">
+</td>
+</tr>
+</tbody></table>
+</div>
+<div id="postlistreply" class="pl"><div id="post_new" class="viewthread_table" style="display: none"></div></div>
+</div>
+
+
+
+<style>
+.box0828{ width:960px; margin:0 auto;}
+.box0828_l{ float:left; width:475px;}
+.box0828_r{ float:right; width:475px;}
+</style>
+		<div class="box0828">
+<div class="box0828_l">
+<img border="0" alt="" src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/weixint.jpg">
+
+</div>
+<div class="box0828_r">
+<script type="text/javascript">
+
+    var cpro_id = "u1684206";
+</script>
+<script src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/c.js" type="text/javascript"></script><div id="BAIDU_DUP_wrapper_u1684206_0"><iframe id="cproIframe_u1684206" width="475" height="135" src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/acom.htm" align="center,center" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" allowtransparency="true"></iframe></div><script charset="utf-8" src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/acom"></script>
+
+</div>
+</div><br><form method="post" autocomplete="off" name="modactions" id="modactions">
+<input type="hidden" name="formhash" value="565495bb">
+<input type="hidden" name="optgroup">
+<input type="hidden" name="operation">
+<input type="hidden" name="listextra" value="page%3D1">
+<input type="hidden" name="page" value="1">
+</form>
+
+<!--2011.12.01去掉mbm-->
+<div class="pgs mtm cl">
+<!--<div class="pgs mtm mbm cl">-->
+<span class="pgb y"><a href="http://bbs.chinaunix.net/forum.php?mod=forumdisplay&fid=55&page=1">返回列表</a></span>
+<a id="newspecialtmp" onmouseover="$(&#39;newspecial&#39;).id = &#39;newspecialtmp&#39;;this.id = &#39;newspecial&#39;;showMenu({&#39;ctrlid&#39;:this.id})" onclick="showWindow(&#39;newthread&#39;, &#39;forum.php?mod=post&amp;action=newthread&amp;fid=55&#39;)" href="javascript:;" title="发新帖"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/pn_post.png" alt="发新帖"></a>
+</div>
+
+<!--底部的导航-->
+<div id="pt" class="bm cl">
+<div class="z">
+<a href="http://www.chinaunix.net/" class="nvhm" title="首页">ChinaUnix.net</a> <em>&#8250;</em> <a href="http://bbs.chinaunix.net/forum.php">论坛</a> <em>&#8250;</em> <a href="http://bbs.chinaunix.net/forum.php?gid=60">程序设计</a> <em>&#8250;</em> <a href="http://bbs.chinaunix.net/forum.php?mod=forumdisplay&fid=55&page=1">Python</a> <em>&#8250;</em> <a href="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/python中如何调用另一个python脚本 -Python-ChinaUnix.net.htm">python中如何调用另一个python脚本?</a>
+</div>
+</div>
+
+
+<!--[diy=diyfastposttop]--><div id="diyfastposttop" class="area"></div><!--[/diy]-->
+<script type="text/javascript">
+var postminchars = parseInt('10');
+var postmaxchars = parseInt('40000');
+var disablepostctrl = parseInt('0');
+</script>
+
+<div id="f_pst" class="pl bm bmw">
+<form method="post" autocomplete="off" id="fastpostform" action="http://bbs.chinaunix.net/forum.php?mod=post&action=reply&fid=55&tid=3777538&extra=page%3D1&replysubmit=yes&infloat=yes&handlekey=fastpost" onsubmit="return fastpostvalidate(this)">
+<table cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="pls">
+
+</td>
+<td class="plc">
+
+<span id="fastpostreturn"></span>
+
+
+<div class="cl">
+<div id="fastsmiliesdiv" class="y"><div id="fastsmiliesdiv_data"><div id="fastsmilies"></div></div></div><div class="hasfsl" id="fastposteditor">
+<div class="tedt mtn">
+<div class="bar">
+<span class="y">
+<a href="http://bbs.chinaunix.net/forum.php?mod=post&action=reply&fid=55&tid=3777538" onclick="return switchAdvanceMode(this.href)">高级模式</a>
+</span><script src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/seditor.js" type="text/javascript"></script>
+<div class="fpd">
+<a href="javascript:;" title="文字加粗" class="fbld">B</a>
+<a href="javascript:;" title="设置文字颜色" class="fclr" id="fastpostforecolor">Color</a>
+<a id="fastpostimg" href="javascript:;" title="图片" class="fmg">Image</a>
+<a id="fastposturl" href="javascript:;" title="添加链接" class="flnk">Link</a>
+<a id="fastpostquote" href="javascript:;" title="引用" class="fqt">Quote</a>
+<a id="fastpostcode" href="javascript:;" title="代码" class="fcd">Code</a>
+<a href="javascript:;" class="fsml" id="fastpostsml">Smilies</a>
+</div></div>
+<div class="area">
+<div class="pt hm">您需要登录后才可以回帖 <a href="http://bbs.chinaunix.net/member.php?mod=logging&action=login&logsubmit=yes" onclick="showWindow(&#39;login&#39;, this.href)" class="xi2">登录</a> | <a href="http://bbs.chinaunix.net/member.php?mod=register.php" class="xi2">注册</a> 
+<a href="http://bbs.chinaunix.net/connect.php?mod=login&op=init&referer=forum.php%3Fmod%3Dviewthread%26tid%3D3777538%26extra%3Dpage%253D1%26page%3D1&statfrom=login" target="_top" rel="nofollow"><img src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/qq_login.gif" class="vm"></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<input type="hidden" name="formhash" value="565495bb">
+<input type="hidden" name="subject" value="">
+<p class="ptm pnpost">
+<button type="button" onclick="showWindow(&#39;login&#39;, &#39;member.php?mod=logging&amp;action=login&amp;guestmessage=yes&#39;)" name="replysubmit" id="fastpostsubmit" class="pn pnc vm" value="replysubmit" tabindex="5" style="background:#9898BA; border:0"><strong>发表回复</strong></button>
+<label for="fastpostrefresh"><input id="fastpostrefresh" type="checkbox" class="pc">回帖后跳转到最后一页</label>
+<script type="text/javascript">if(getcookie('fastpostrefresh') == 1) {$('fastpostrefresh').checked=true;}</script>
+</p>
+<!--2011.12.01 -->
+</td>
+</tr>
+</tbody></table>
+</form>
+</div>
+
+<script type="text/javascript">
+var connect_qzone_share_url = 'http://bbs.chinaunix.net/home.php?mod=spacecp&ac=plugin&id=qqconnect:spacecp&pluginop=share&sh_type=1&thread_id=3777538';
+var connect_weibo_share_url = 'http://bbs.chinaunix.net/home.php?mod=spacecp&ac=plugin&id=qqconnect:spacecp&pluginop=share&sh_type=2&thread_id=3777538';
+var connect_thread_info = {
+thread_url: 'http://bbs.chinaunix.net/thread-3777538-1-1.html',
+thread_id: '3777538',
+post_id: '22330906',
+forum_id: '55',
+author_id: '26990529',
+author: 'yfjelley'
+};
+
+connect_autoshare = '0';
+connect_isbind = '';
+if(connect_autoshare == 1 && connect_isbind) {
+_attachEvent(window, 'load', function(){
+connect_share(connect_weibo_share_url, connect_openid);
+});
+}
+</script>
+
+
+<script type="text/javascript">document.onkeyup = function(e){keyPageScroll(e, 0, 0, 'forum.php?mod=viewthread&tid=3777538', 1);}</script>
+</div>
+
+<div class="wp mtn">
+<!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
+</div>
+
+<script src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/se" type="text/javascript"></script><style>body {padding:0; margin:0 }.minipage_con { float:left;background: #FFF; border:1px solid #CDCDCD; padding:10px; width:240px; }.dot {color: #999999; font-family: simsun; font-style: normal; margin-left: -3px; }.minipage { width: 362px; position: fixed; bottom: 20px; left:0px; font: 12px Tahoma,Helvetica,SimSun,sans-serif; z-index: 2147483647;}.minipage a { text-decoration: none; color: #444; }.minipage a:hover { text-decoration: underline; }.minipage a em { font-style:normal; color: #EA0000; }.minipage_c { padding-top: 5px; background-position: -668px 0; }.minipage_c ul { margin: 0px; padding: 0 10px; list-style: none; }.minipage_result { padding:0; margin:0; }.minipage_result li { margin: 0 0 4px 0; line-height: 21px; height: 21px; overflow: hidden; }.minipage_result li.adv { margin-left: -5px; padding-left: 0; line-height: 18px; height: 18px; overflow: hidden; background: none;}.minipage_hint {padding:0;margin:0;}.minipage_hint li { float: left; margin: 2px 5px 0 0; width: 72px;  height: 20px; line-height: 20px; overflow: hidden; display: inline;  white-space:nowrap; }.minipage_hint li a { color: #009DCC; }.minipage_more { margin: 0 0 6px; padding: 6px 0; border-bottom: 1px dotted #CCC; text-align: right; }.minipage_more a em { color: #009DCC; }.minipage_t { height: 32px; line-height: 32px; font-weight: 700; }.minipage_f { height: 10px; background-position: -334px 100%; font-size: 0px; }.minipage_min { background: none; margin-left: -260px;}.cl:after{content:".";display:block;height:0;clear:both;visibility:hidden;}.cl{zoom:1;}.minipage_ad { }.minipage_ad li { background: url("http://discuz.gtimg.cn/search/images/minipage_ad.png") no-repeat 0 3px; }a.minipage_btn_max { float:left; background:url("http://discuz.gtimg.cn/search/images/mini_bg.png") no-repeat 0 0;display:block; width:25px; height:105px;overflow:hidden; }a.minipage_btn_min { float:left; background:url("http://discuz.gtimg.cn/search/images/mini_bg.png") no-repeat -25px 0;display:block; width:25px; height:105px;overflow:hidden; }a.minipage_btn_min span,a.minipage_btn_max span {display:none;}</style><div class="minipage" id="div_minipage">	<div class="minipage_con cl">        <ul class="minipage_result">                    	        	<li><i class="dot">．</i><a href="http://bbs.chinaunix.net/forum.php?mod=viewthread&tid=3579079" target="_blank" title="菜鸟请教高手 python调用其他脚本的问题" onclick="javascript:uploadMiniPageAction(8399146, 1, 1, this);"><nowrap>菜鸟请教高手 <em>python</em><em>调用</em>其他<em>脚本</em>的问题</nowrap></a></li>                	<li><i class="dot">．</i><a href="http://bbs.chinaunix.net/forum.php?mod=viewthread&tid=4092898" target="_blank" title="python脚本调用perl脚本的问题" onclick="javascript:uploadMiniPageAction(8399146, 2, 1, this);"><nowrap><em>python</em><em>脚本</em><em>调用</em>perl<em>脚本</em>的问题</nowrap></a></li>                	<li><i class="dot">．</i><a href="http://bbs.chinaunix.net/forum.php?mod=viewthread&tid=3777538" target="_blank" title="python中如何调用另一个python脚本?" onclick="javascript:uploadMiniPageAction(8399146, 3, 1, this);"><nowrap>python中如何<em>调用</em>另一个<em>python</em><em>脚本</em>?</nowrap></a></li>                	<li><i class="dot">．</i><a href="http://bbs.chinaunix.net/forum.php?mod=viewthread&tid=4138434" target="_blank" title="Python 调用PHP(上传文件)出现的问题" onclick="javascript:uploadMiniPageAction(8399146, 4, 1, this);"><nowrap><em>Python</em> <em>调用</em>PHP(上传文件)出现的问题</nowrap></a></li>                	<li><i class="dot">．</i><a href="http://bbs.chinaunix.net/forum.php?mod=viewthread&tid=3619089" target="_blank" title="疑问。。关于python一个脚本调用另一个并传参的问题" onclick="javascript:uploadMiniPageAction(8399146, 5, 1, this);"><nowrap>疑问。。关于<em>python</em>一个<em>脚本</em><em>调用</em>另一个并传参的问题</nowrap></a></li>            	</ul>    	<div class="minipage_more">			<a href="http://search.chinaunix.net/f/search?ts=1412161873&mySign=45840121&q=python%E8%B0%83%E7%94%A8python%E8%84%9A%E6%9C%AC&sId=8399146&menu=1&rfh=1&qs=search.more" target="_blank">+ 更多"<em>python调用python...</em>"相关帖子</a>		</div>			</div>	<a href="http://bbs.chinaunix.net/#" id="a_min" class="minipage_btn_min" title="最小化" onclick="minimizeMinipage(8399146);return false;"><span>最小化</span></a>	<a style="display: none;" href="http://bbs.chinaunix.net/#" id="a_max" class="minipage_btn_max" title="最大化" onmouseover="maximizeMinipage(8399146);return false;"><span>最大化</span></a><script src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/ping.js"></script></div>
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=442796" src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/bds_s_v2.js"></script>
+
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?t=" + new Date().getHours();
+</script>
+<!-- Baidu Button END -->
+
+<!--//CHINAUNIX 记录用户看贴日志 start--><script src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/viewlog_js.php" type="text/javascript"></script>
+<!--//CHINAUNIX 记录用户看贴日志 END-->	</div>
+<script type="text/javascript">var cookieLogin = Ajax("TEXT");cookieLogin.get("connect.php?mod=check&op=cookie", function() {});</script><div style="width:960px; margin:0 auto; text-align:center; line-height:18px; padding:0 10px 10px 10px">
+<p>北京皓辰网域网络信息技术有限公司. 版权所有 京ICP证:060528号 北京市公安局海淀分局网监中心备案编号：1101082001<br>	
+广播电视节目制作经营许可证(京) 字第1234号  中国互联网协会会员&nbsp;&nbsp;联系我们：<img width="139" height="12" border="0" src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/adminmail.gif">
+<br>感谢所有关心和支持过ChinaUnix的朋友们    转载本站内容请注明原作者名及出处</p>
+</div>
+
+<table align="center">
+<tbody><tr>
+<td align="center">
+<a href="http://bbs.chinaunix.net/member.php?mod=clearcookies">清除 Cookies</a> - <a target="_blank" href="http://www.chinaunix.net/">ChinaUnix</a>
+ 	- <a target="_blank" href="http://bbs.chinaunix.net/archiver/">Archiver</a> - <a target="_blank" href="http://bbs.chinaunix.net/">WAP</a> - <a href="http://bbs.chinaunix.net/#top">TOP</a>
+</td>
+</tr>
+</tbody></table>
+
+<!--广告标签 -->
+<!--  <script type='text/javascript' src='http://168.it168.com/js/599.js'></script>-->
+<!-- <script type='text/javascript' src='http://168.it168.com/js/863.js'></script>-->
+<script>if(typeof(BLA)!='undefined'){BLA();}</script><script type="text/javascript" src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/f599.js"></script><iframe id="_cnzid" height="0" width="0" style="display:none"></iframe>
+<!--新版测试广告标签 -->
+<script type="text/javascript">
+var SeriesId='';
+var BrandId='';
+</script>
+<!-- <script type='text/javascript' src='http://168.it168.com/ajs/599.js'></script> -->
+<!-- <script type='text/javascript' src='http://168.it168.com/ajs/863.js'></script> -->
+
+    <!--//ITPUB 腾讯分析代码-->
+    &nbsp;&nbsp;<span id="tcss"></span><script type="text/javascript" src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/ping(1).js" charset="utf-8"></script><script type="text/javascript" reload="1">pgvMain({"discuzParams":{"r2":"8399146","ui":0,"rt":"forum","md":"viewthread","fi":"55","ti":"3777538","pn":1},"virtualDomain":"bbs.chinaunix.net","extraParams":""});</script>            
+    
+<div id="g_upmine_menu" class="tip tip_3" style="display:none;">
+<div class="tip_c">
+积分 0, 距离下一级还需  积分
+</div>
+<div class="tip_horn"></div>
+</div>
+<script src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/home.php" type="text/javascript"></script>
+<!--回顶部js2011.12.30-->
+<script language="javascript">
+ lastScrollY=0;
+ function heartBeat(){
+ var diffY;
+ if (document.documentElement && document.documentElement.scrollTop)
+     diffY = document.documentElement.scrollTop;
+ else if (document.body)
+     diffY = document.body.scrollTop
+ else
+     {/*Netscape stuff*/}
+ percent=.1*(diffY-lastScrollY);
+ if(percent>0)percent=Math.ceil(percent);
+ else percent=Math.floor(percent);
+ document.getElementById("full").style.top=parseInt(document.getElementById("full").style.top)+percent+"px";
+ lastScrollY=lastScrollY+percent;
+ if(lastScrollY<200)
+ {
+ document.getElementById("full").style.display="none";
+ }
+ else
+ {
+ document.getElementById("full").style.display="block";
+ }
+ }
+ var gkuan=document.body.clientWidth;
+ var ks=(gkuan-960)/2-30;
+ suspendcode="<div id=\"full\" style='right:4px;POSITION:absolute;TOP:500px;z-index:100;width:20px; height:50px;cursor:pointer;'><a href=\"javascript:void(0)\" onclick=\"window.scrollTo(0,0);\"></a></div>"
+ document.write(suspendcode);
+ window.setInterval("heartBeat()",1);
+ </script><div id="full" style="right: 4px; position: absolute; top: 1835px; z-index: 100; width: 20px; height: 50px; cursor: pointer; display: block;"><a href="javascript:void(0)" onclick="window.scrollTo(0,0);"></a></div>
+
+
+<!-- 统计 START -->
+<script src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/pv.js" type="text/javascript"></script>
+<script type="text/javascript">
+function sendPV(){
+    var pvTrack = new PvTrack();
+    pvTrack.type = 35; // 频道类别ID
+    pvTrack.channel = 22; // 频道ID
+    pvTrack.pageType = 0;
+    pvTrack.track();
+}
+window.setTimeout("sendPV()", 0);
+</script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-20237423-2']);
+  _gaq.push(['_setDomainName', '.chinaunix.net']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<script type="text/javascript"> 
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js?0ee5e8cdc4d43389b3d1bfd76e83216b' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./python中如何调用另一个python脚本 -Python-ChinaUnix.net_files/h.js" type="text/javascript"></script>
+<!-- 统计 END -->
+
+</body></html>

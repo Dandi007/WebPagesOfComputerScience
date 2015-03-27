@@ -1,0 +1,1047 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0054)http://blog.csdn.net/snsn1984/article/details/24024811 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" async="" src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/ga.js"></script><script id="allmobilize" charset="utf-8" src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/allmobilize.min.js"></script><style type="text/css"></style>
+ <meta http-equiv="Cache-Control" content="no-siteapp"><link rel="alternate" media="handheld" href="http://blog.csdn.net/snsn1984/article/details/24024811#">
+
+    <title>HIT CS科班对计算机专业knowledge的compilation - SHINING的博客
+        - 博客频道 - CSDN.NET</title>
+    
+    <meta name="description" content="【题记】Great minds discuss ideas. Average minds discuss events. Small minds discuss people.【前面的话】本文首发于某留学论坛，并可以随意转载。有任何建议、意见，都可以给我发邮件，hitzzy at gmail dot com。作为计算机科班、系统方向，谈谈我对计算机专业素养的理解，希望对大家有所帮助">
+    <script src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript" src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/ad.js"></script>
+        <!--new top-->
+       
+        <link rel="stylesheet" href="http://static.csdn.net/public/common/toolbar/css/index.css">
+        <!--new top-->
+
+    <link rel="Stylesheet" type="text/css" href="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/style.css">
+    <link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="http://blog.csdn.net/snsn1984/rss/list">
+    <link rel="shortcut icon" href="http://csdnimg.cn/public/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/default.css">
+ 
+
+
+<script src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/share.js"></script><script type="text/javascript" charset="utf-8" src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/tracking.js"></script><script type="text/javascript" charset="utf-8" src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/main.js"></script><link rel="stylesheet" type="text/css" href="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/style(1).css"><link href="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/bdsstyle.css" rel="stylesheet" type="text/css"><script charset="utf-8" async="" src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/sm.min.js"></script><link rel="stylesheet" type="text/css" href="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/style(2).css"><script src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/logger.js"></script><link rel="stylesheet" href="http://bdimg.share.baidu.com/static/api/css/share_style0_16.css?v=f4b44e79.css"></head>
+<body><iframe frameborder="0" style="display: none;"></iframe>
+    
+   
+      <!--new top-->
+    <script id="toolbar-tpl-scriptId" fixed="true" prod="blog" skin="black" src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/html.js" type="text/javascript"></script><div class="csdn-toolbar csdn-toolbar-skin-black ">        <div class="container row center-block ">          <div class="col-md-3 pull-left logo clearfix"><a href="http://www.csdn.net/?ref=toolbar" title="CSDN首页" target="_blank" class="icon"></a><a title="频道首页" href="http://blog.csdn.net/?ref=toolbar_logo" target="_blank" class="img blog-icon"></a></div>          <div class="pull-right login-wrap ">            <ul class="btns">              <li class="loginlink"><a href="https://passport.csdn.net/account/login?ref=toolbar" target="_top">登录&nbsp;</a>|<a target="_top" href="https://passport.csdn.net/account/register?ref=toolbar">&nbsp;注册</a></li>              <li class="search">                <div class="icon on-search-icon">                  <div class="wrap">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <form action="http://so.csdn.net/search" method="get" target="_blank">                      <input type="hidden" value="toolbar" name="ref" accesskey="2">                      <div class="border">                        <input placeholder="搜索" type="text" value="" name="q" accesskey="2"><span class="icon-enter-sm"></span>                      </div>                    </form>                  </div>                </div>              </li>              <li class="favor">                <div class="icon on-favor-icon">                  <div class="wrap">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <div style="display:none;" class="favor-success"><span class="msg">收藏成功</span>                      <div class="btns"><span class="btn btn-primary ok">确定</span></div>                    </div>                    <div style="display:none;" class="favor-failed"><span class="icon-danger-lg"></span><span class="msg">收藏失败，请重新收藏</span>                      <div class="btns"><span class="btn btn-primary ok">确定</span></div>                    </div>                    <form role="form" class="form-horizontal favor-form">                      <div class="form-group">                        <div class="clearfix">                          <label for="input-title" class="col-sm-2 control-label">标题</label>                          <div class="col-sm-10">                            <input id="inputTitle" type="text" placeholder="" class="title form-control">                          </div>                        </div>                        <div class="alert alert-danger"><strong></strong>标题不能为空</div>                      </div>                      <div class="form-group">                        <label for="input-url" class="col-sm-2 control-label">网址</label>                        <div class="col-sm-10">                          <input id="input-url" type="text" placeholder="" class="url form-control">                        </div>                      </div>                      <div class="form-group">                        <label for="input-tag" class="col-sm-2 tag control-label">标签</label>                        <div class="col-sm-10">                          <input id="input-tag" type="text" class="form-control tag">                        </div>                      </div>                      <div class="form-group">                        <label for="input-description" class="description col-sm-2 control-label">摘要</label>                        <div class="col-sm-10">                          <textarea id="input-description" class="form-control description"></textarea>                        </div>                      </div>                      <div class="form-group">                        <div class="col-sm-offset-2 col-sm-10 ft">                          <div class="col-sm-4 pull-left">                            <div class="checkbox">                              <label>                                <input type="checkbox" name="share" checked="checked" class="share">公开                              </label>                            </div>                          </div>                          <div class="col-sm-8 pull-right favor-btns">                            <button type="button" class="cancel btn btn-default">取消</button>                            <button type="submit" class="submit btn btn-primary">收藏</button>                          </div>                        </div>                      </div>                    </form>                  </div>                </div>              </li>              <li class="notify">                <div style="display:none" class="number"></div>                <div style="display: none;" class="icon-hasnotes-sm"></div>                <div id="header_notice_num"><div class="icon-hasnotes" style="display: none;"></div></div>                <div class="icon on-notify-icon">                  <div class="wrap">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <div id="note1" class="csdn_note" style="left: -212px; top: 125px; display: none;">                      <div class="box"><div class="notifications notice_list_con curr">  <div class="menu_title">    <span class="title"><a href="http://msg.csdn.net/" target="_blank" class="read_all">全部设为已读</a><a href="http://msg.csdn.net/" target="_blank" class="go_all">查看所有通知</a></span>  </div>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <div class="notice_content"></div></div><div class="notifications detail_con" style="display: none">  <div class="menu_title">    <span class="title">      <a class="go_back" href="javascript:void 0;">返回通知列表</a>      <a class="notifications_page_none nextnote" href="javascript:void 0;">下一条</a>      <a class="notifications_page prvnote" href="javascript:void 0;">上一条</a>    </span>  </div>  <div class="notice_content"></div></div><div class="error"></div></div>                    <iframe src="about:block" frameborder="0" allowtransparency="true" style="z-index:-1;position:absolute;top:0;left:0;width:100%;height:100%;background:transparent"></iframe></div>                  </div>                </div>              </li>              <li class="ugc">                <div class="icon on-ugc-icon">                  <div class="wrap clearfix">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <dl>                      <dt><a href="http://geek.csdn.net/news/expert?ref=toolbar" target="_blank" class="p-news clearfix"><em class="icon"></em><span>分享资讯</span></a></dt>                      <dt><a href="http://share.csdn.net/slides/new?ref=toolbar" target="_blank" class="p-doc clearfix"><em class="icon"></em><span>传PPT/文档</span></a></dt>                      <dt><a href="http://bbs.csdn.net/topics/new?ref=toolbar" target="_blank" class="p-ask clearfix"><em class="icon"></em><span>提问题</span></a></dt>                      <dt><a href="http://write.blog.csdn.net/postedit?ref=toolbar" target="_blank" class="p-blog clearfix"><em class="icon"></em><span>写博客</span></a></dt>                      <dt><a href="http://u.download.csdn.net/upload?ref=toolbar" target="_blank" class="p-src clearfix"><em class="icon"></em><span>传资源</span></a></dt>                      <dt><a href="https://code.csdn.net/projects/new?ref=toolbar" target="_blank" class="c-obj clearfix"><em class="icon"></em><span>创建项目</span></a></dt>                      <dt><a href="https://code.csdn.net/snippets/new?ref=toolbar" target="_blank" class="c-code clearfix"><em class="icon"></em><span>创建代码片</span></a></dt>                    </dl>                  </div>                </div>              </li>              <li class="profile">                <div class="icon on-profile-icon"><img src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/2_dandi007.jpg" class="curr-icon-img">                  <div class="wrap clearfix">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <div class="bd">                      <dl class="clearfix">                        <dt class="pull-left img"><a target="_blank" href="http://my.csdn.net/?ref=toolbar" class="avatar"><img src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/2_dandi007.jpg"></a></dt>                        <dd class="info"><a target="_blank" href="http://my.csdn.net/?ref=toolbar" class="nickname">Dandi007</a><span class="dec"><a class="fill-dec" href="http://my.csdn.net/" target="_blank">编辑自我介绍，让更多人了解你<span class="write-icon"></span></a></span></dd>                      </dl>                    </div>                    <div class="ft clearfix"><a target="_blank" href="http://my.csdn.net/my/account/changepwd?ref=toolbar" class="pull-left"><span class="icon-cog"></span>帐号设置</a><a href="https://passport.csdn.net/account/logout?ref=toolbar" target="_top" class="pull-right "><span class="icon-signout"></span><span class="out">退出</span></a></div>                  </div>                </div>              </li>              <li class="apps">                <div class="icon on-apps-icon">                  <div class="wrap clearfix">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                  <div class="detail">                    <dl>                      <dt>                        <h5>社区</h5>                      </dt>                      <dd> <a href="http://blog.csdn.net/?ref=toolbar" target="_blank">博客</a></dd>                      <dd> <a href="http://bbs.csdn.net/?ref=toolbar" target="_blank">论坛</a></dd>                      <dd> <a href="http://download.csdn.net/?ref=toolbar" target="_blank">下载</a></dd>                      <dd><a href="http://share.csdn.net/?ref=toolbar" target="_blank">Share</a></dd>                      <dd><a href="http://geek.csdn.net/?ref=toolbar" target="_blank">极客头条</a></dd>                    </dl>                  </div>                  <div class="detail">                    <dl>                      <dt>                        <h5>服务</h5>                      </dt>                      <dd> <a href="https://code.csdn.net/?ref=toolbar" target="_blank">CODE</a></dd>                      <dd> <a href="http://hero.csdn.net/?ref=toolbar" target="_blank">英雄会</a></dd>                      <dd> <a href="http://huiyi.csdn.net/?ref=toolbar" target="_blank">活动</a></dd>                      <dd> <a href="http://www.csto.com/?ref=toolbar" target="_blank">CSTO</a></dd>                    </dl>                  </div>                  <div class="detail last">                    <dl>                      <dt>                        <h5>俱乐部</h5>                      </dt>                      <dd> <a href="http://cto.csdn.net/?ref=toolbar" target="_blank">CTO俱乐部</a></dd>                      <dd> <a href="http://student.csdn.net/?ref=toolbar" target="_blank">高校俱乐部</a></dd>                    </dl>                  </div>                </div>              </div>            </li>            </ul>          </div>        </div>    </div>
+     <!--new top-->
+    <div id="container">
+        <div id="header">
+    <div class="header">
+        <div id="blog_title">
+            <h2>
+                <a href="http://blog.csdn.net/snsn1984">SHINING的博客</a></h2>
+            <h3>向着目标不停歇的奔跑。</h3>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div id="navigator">
+    <div class="navigator_bg">
+    </div>
+    <div class="navigator">
+        <ul>
+                <li id="btnContents"><a href="http://blog.csdn.net/snsn1984?viewmode=contents"><span onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_mulu&#39;])">
+                    <img src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/ico_list.gif">目录视图</span></a></li>
+                <li id="btnView"><a href="http://blog.csdn.net/snsn1984?viewmode=list"><span onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_zhaiyao&#39;])">
+                    <img src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/ico_summary.gif">摘要视图</span></a></li>
+                <li id="btnRss"><a href="http://blog.csdn.net/snsn1984/rss/list"><span onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_RSS&#39;])">
+                    <img src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/ico_rss.gif">订阅</span></a></li>                
+
+            </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var username = "snsn1984";
+    var _blogger = username;
+    var blog_address = "http://blog.csdn.net/snsn1984";
+    var static_host = "http://static.blog.csdn.net";
+    var currentUserName = "Dandi007";  
+</script>
+
+        <div id="body">
+            <div id="main">
+                <div class="main">
+                        <div class="ad_class">
+<div class="notice tracking-ad" data-mod="popu_3"> 
+
+<a href="http://bbs.csdn.net/topics/390812950?page=5" target="_blank">
+<font color="blue">博客专家福利
+</font></a>
+&nbsp;&nbsp;&nbsp;
+
+<a href="http://blog.csdn.net/csdnproduct/article/details/40896243" target="_blank">
+<font color="red">公告：CSDN论坛停站维护公告</font></a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="http://bbs.csdn.net/topics/390921628" target="_blank">
+<font color="blue">Qualcomm博客征文活动
+</font></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="http://blog.csdn.net/blogdevteam/article/details/39894901" target="_blank">
+<font color="red">参与话题讨论，好礼等你拿
+</font></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="http://blog.csdn.net/csdnproduct/article/details/40822727" target="_blank">
+<font color="blue">公告：博客新皮肤上线啦
+</font></a>
+
+
+</div>                        </div>
+                        
+
+  
+<link href="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/comment1.css" type="text/css" rel="stylesheet">
+<link href="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/style1.css" type="text/css" rel="stylesheet">
+<script language="JavaScript" type="text/javascript" src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/jquery.cookie.js"></script>
+<script type="text/javascript" src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/main(1).js"></script>
+<div id="article_details" class="details">
+    <div class="article_title">   
+         <span class="ico ico_type_Repost"></span>
+
+
+    <h1>
+        <span class="link_title"><a href="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET.html">
+        HIT CS科班对计算机专业knowledge的compilation
+        </a></span>
+    </h1>
+</div>
+
+    <div class="article_manage">
+        <span class="link_categories">
+        分类：
+            <a href="http://blog.csdn.net/snsn1984/article/category/144823" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_fenlei&#39;]);">技术综合区</a> 
+        </span>
+    <span class="link_postdate">2014-04-18 15:57</span>
+    <span class="link_view" title="阅读次数">627人阅读</span>
+    <span class="link_comments" title="评论次数"><a href="http://blog.csdn.net/snsn1984/article/details/24024811#comments" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_pinglun&#39;])">评论</a>(0)</span>
+    <span class="link_collect"><a href="javascript:void(0);" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_shoucang&#39;]);collectArticle(&#39;HIT CS科班对计算机专业knowledge的compilation&#39;,&#39;24024811&#39;);return false;" title="收藏">收藏</a></span>
+    <span class="link_report"><a href="http://blog.csdn.net/snsn1984/article/details/24024811#report" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_jubao&#39;]);report(24024811,2);return false;" title="举报">举报</a></span>
+    
+</div>
+<div class="tag2box"><a href="http://www.csdn.net/tag/%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%a7%91%e5%ad%a6" target="_blank" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_tag&#39;]);">计算机科学</a><a href="http://www.csdn.net/tag/%e5%ad%a6%e4%b9%a0" target="_blank" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_tag&#39;]);">学习</a><a href="http://www.csdn.net/tag/%e6%80%9d%e8%80%83" target="_blank" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_tag&#39;]);">思考</a></div>
+
+  
+    
+<div id="article_content" class="article_content">
+
+<span style="">【题记】Great minds discuss ideas. Average minds discuss events. Small minds discuss people.</span><br style="">
+<br style="">
+<span style="">【前面的话】本文首发于</span><a target="_blank" rel="nofollow" href="http://www.1point3acres.com/bbs/thread-26964-1-1.html" style="">某留学论坛</a><span style="">，并可以随意转载。有任何建议、意见，都可以给我发邮件，hitzzy at gmail dot com。</span><br style="">
+<br style="">
+<span style="">作为计算机科班、系统方向，谈谈我对计算机专业素养的理解，希望对大家有所帮助。</span><br style="">
+<br style="">
+<span style="">所谓，知之者不如好之者，好之者不如乐之者，计算机专业也不例外。虽然本科是被选到计算机专业，但大一因为</span><a target="_blank" rel="nofollow" href="http://sunner.cn/" style="">C语言老师</a><span style="">的激励而喜欢这个专业，并在大三偶然参加</span><a target="_blank" rel="nofollow" href="http://www.nudt.edu.cn/summerschool2009/" style="">国防科大“微处理器设计”研究生暑期学校</a><span style="">时，知道了超级计算机之父Cray及其借用1024只鸡与牛来比喻性能差异的名言，见识了龙芯实现的经验，而决定做系统领域研究。兴趣入门，比如《计算机文化》（第10版？）《编码的奥秘》（我觉得旧版比新版的小开本更好）《大话处理器》，</span><a target="_blank" rel="nofollow" href="http://www.sis.pitt.edu/~mbsclass/hall_of_fame/list.html" style="">the
+ Information Science Hall of Fame</a><span style="">，以及传记类的《ACM图灵奖演讲集:前20年 (1966-1985)》《ACM图灵奖 (1966-2006):计算机发展史的缩影》（</span><a target="_blank" rel="nofollow" href="http://amturing.acm.org/lectures.cfm" style="">ACM网站的演讲原稿</a><span style="">）《IEEE计算机先驱奖:1980-2006》。更专业一些，推荐UT
+ Austin </span><a target="_blank" rel="nofollow" href="http://users.ece.utexas.edu/~patt/" style="">Prof. Patt</a><span style="">的《计算机系统概论》(Introduction to Computing Systems: From Bits and Gates to C and Beyond)，CMU
+</span><a target="_blank" rel="nofollow" href="http://www.cs.cmu.edu/~bryant/" style="">Prof. Bryant</a><span style="">合著的《深入理解计算机系统》（</span><a target="_blank" rel="nofollow" href="http://csapp.cs.cmu.edu/" style="">Computer
+ Systems: A Programmer's Perspective</a><span style="">）。CMU流传着这个段子：15-213，给CMU门牌的课程。这里的15-213，既是以CSAPP为课本的Introduction to Computer System课程编号，也是匹村的邮编。信不信由你，我也是因为这本书，了解</span><a target="_blank" rel="nofollow" href="http://www.eecs.berkeley.edu/~rcs/research/interactive_latency.html" style="">系统各部分延迟</a><span style="">并喜欢上系统这个方向的！</span><br style="">
+<br style="">
+<span style="">在谈具体课程前，插播三类文章，以培养专业（职业？）精神。</span><br style="">
+<span style="">a) 专业科普</span><br style="">
+<span style="">Utah AP的</span><a target="_blank" rel="nofollow" href="http://matt.might.net/articles/what-cs-majors-should-know/" style="">What every computer science major should know</a><span style="">、</span><a target="_blank" rel="nofollow" href="http://www.zhiyan.info/" style="">我上届创业的师兄</a><span style="">编辑的《</span><a target="_blank" rel="nofollow" href="http://wiki.pureweber.com/index.php/Develop/%E6%96%B0%E4%BA%BA%E5%85%A5%E9%97%A8%E4%BB%BB%E5%8A%A1%E5%B7%A5%E5%85%B7%E4%B8%8E%E5%B9%B3%E5%8F%B0" style="">计算机新人入门任务</a><span style="">》，Eric
+ Raymond的</span><a target="_blank" rel="nofollow" href="http://www.catb.org/esr/faqs/hacker-howto.html" style="">How To Become A Hacker</a><span style="">、William Long的《</span><a target="_blank" rel="nofollow" href="http://www.williamlong.info/archives/2700.html" style="">写给新手程序员的一封信</a><span style="">》，《</span><a target="_blank" rel="nofollow" href="http://blog.sina.com.cn/s/blog_475b3d560102dt81.html" style="">给未来的你——李开复在2011级大学新生学习规划讲座上的演讲</a><span style="">》。</span><a target="_blank" rel="nofollow" href="https://www.quora.com/Linux/What-are-some-time-saving-tips-that-every-Linux-user-should-know" style="">Linux:
+ What are some time-saving tips that every Linux user should know?</a><span style="">。创业师兄写的《</span><a target="_blank" rel="nofollow" href="http://www.fancycedar.info/2013/06/programmer/" style="">程序员的战斗力</a><span style="">》。Peter Norvig's
+</span><a target="_blank" rel="nofollow" href="http://norvig.com/21-days.html" style="">Teach Yourself Programming in Ten Years</a><span style="">。</span><a target="_blank" rel="nofollow" href="http://doc.cat-v.org/sitemap" style="">杂类汇编</a><span style="">。现在M$当QA的本科校友的</span><a target="_blank" rel="nofollow" href="http://www.1point3acres.com/bbs/thread-24540-1-1.html" style="">转CS建议</a><span style="">和</span><a target="_blank" rel="nofollow" href="http://www.1point3acres.com/bbs/thread-52028-1-1.html" style="">面经</a><span style="">。《</span><a target="_blank" rel="nofollow" href="http://dandreamsofcoding.com/2013/04/08/how-senior-software-engineers-are-different/" style="">资深软件工程师的特点</a><span style="">》。工欲善其事，必先利其器——</span><a target="_blank" rel="nofollow" href="http://heather.cs.ucdavis.edu/~matloff/ProgEdit/ProgEdit.html" style="">程序员的文本编辑器简介</a><span style="">；基于HTML5的VIM寓教于乐在线游戏</span><a target="_blank" rel="nofollow" href="http://vim-adventures.com/" style="">Vim
+ Adventures</a><span style="">。</span><a target="_blank" rel="nofollow" href="http://www.computer.org/portal/web/tandc/tclist" style="">IEEE Computer Society</a><span style="">。NSF旗下课程网站TRUST Academy Online (</span><a target="_blank" rel="nofollow" href="https://tao.truststc.org/" style="">TAO</a><span style="">)。</span><br style="">
+<span style="">b) 科研素养</span><br style="">
+<span style="">前哈佛教授、现Google SE的</span><a target="_blank" rel="nofollow" href="http://matt-welsh.blogspot.com/2010/09/getting-started-as-phd-student.html" style="">Getting started as a PhD student</a><span style="">，基于指导MIT和Berkerly学生总结而成的</span><a target="_blank" rel="nofollow" href="http://www.seas.upenn.edu/~andre/general/student_research_advice.html" style="">Advice
+ for students starting into research work</a><span style="">，CMU教授的</span><a target="_blank" rel="nofollow" href="http://da-data.blogspot.com/2013/01/on-phd.html" style="">On the Ph.D.</a><span style="">，Wisc教授的</span><a target="_blank" rel="nofollow" href="http://pages.cs.wisc.edu/~gleicher/Web/Advice/Advice" style="">Advice</a><span style="">，Utah
+ AP的</span><a target="_blank" rel="nofollow" href="http://matt.might.net/articles/ways-to-fail-a-phd/" style="">10 easy ways to fail a Ph.D.</a><span style="">和</span><a target="_blank" rel="nofollow" href="http://matt.might.net/articles/books-papers-materials-for-graduate-students/" style="">Reading
+ for graduate students</a><span style="">，HIT校友、Wisc AP的</span><a target="_blank" rel="nofollow" href="http://xyzhang.ece.wisc.edu/links.html" style="">外链</a><span style="">。Princeton</span><a target="_blank" rel="nofollow" href="http://blog.sciencenet.cn/blog-414166-542685.html" style="">李凯教授</a><span style="">关于</span><a target="_blank" rel="nofollow" href="http://blog.sciencenet.cn/blog-414166-321619.html" style="">职业生涯规划的报告</a><span style="">。UT-Dallas
+ AP关于科研方法和安全领域的</span><a target="_blank" rel="nofollow" href="http://www.utdallas.edu/~zxl111930/resource.html" style="">资料汇总</a><span style="">。UW教授对Paper Award的</span><a target="_blank" rel="nofollow" href="http://programanalysis.blogspot.com/2013/02/acm-sigsoft-impact-paper-award.html" style="">观点</a><span style="">。</span><a target="_blank" rel="nofollow" href="http://blog.sciencenet.cn/blog-493885-589542.html" style="">The
+ Ph.D. grind</a><span style="">也非常</span><a target="_blank" rel="nofollow" href="http://blog.regehr.org/archives/743" style="">有参考价值</a><span style="">。工大博士师兄的《</span><a target="_blank" rel="nofollow" href="http://billlangjun.blogspot.com/2012/09/blog-post.html" style="">读书的习惯需要好好培养</a><span style="">》。</span><a target="_blank" rel="nofollow" href="http://cgi.stanford.edu/~dept-ctl/cgi-bin/tomprof/posting.php?ID=1232" style="">Active
+ Learning</a><span style="">。</span><a target="_blank" rel="nofollow" href="http://cgi.stanford.edu/~dept-ctl/cgi-bin/tomprof/posting.php?ID=1227" style="">Intensive Study Abroad for First-Generation College Students</a><span style="">。来自NUS的CS</span><a target="_blank" rel="nofollow" href="http://www.comp.nus.edu.sg/~wang06/SoC%20Conference%20Ranking.htm" style="">会议</a><span style="">和</span><a target="_blank" rel="nofollow" href="http://www.comp.nus.edu.sg/~wang06/SoC%20Journal%20Ranking.htm" style="">期刊</a><span style="">排行。</span><a target="_blank" rel="nofollow" href="http://norvig.com/cacm-hybrid.html" style="">Google's
+ Hybrid Approach to Research</a><span style="">.《</span><a target="_blank" rel="nofollow" href="http://www.ruanyifeng.com/blog/2013/09/liang_shuming.html" style="">梁漱溟：做学问的八个境界</a><span style="">》。</span><a target="_blank" rel="nofollow" href="http://jeffhuang.com/best_paper_awards.html" style="">Best
+ CS papers</a><span style="">。</span><br style="">
+<span style="">c) 时间规划</span><br style="">
+<a target="_blank" rel="nofollow" href="http://lixiaolai.com/" style="">李笑来老师</a><span style="">的《</span><a target="_blank" rel="nofollow" href="http://code.google.com/p/befriend-with-time/" style="">把时间当作朋友</a><span style="">》，</span><a target="_blank" rel="nofollow" href="http://www.weibo.com/pongba" style="">MSRA员工</a><span style="">的《</span><a target="_blank" rel="nofollow" href="http://mindhacks.cn/2009/12/20/dark-time/" style="">暗时间</a><span style="">》，Utah
+ AP的</span><a target="_blank" rel="nofollow" href="http://matt.might.net/articles/work-life-balance/" style="">Tips for work-lif balance</a><span style="">，Time Planning by
+</span><a target="_blank" rel="nofollow" href="http://chronicle.com/article/Establishing-Your-Absence/45649/" style="">Establishing your Absence</a><span style=""> and
+</span><a target="_blank" rel="nofollow" href="http://cgi.stanford.edu/~dept-ctl/cgi-bin/tomprof/posting.php?ID=1234" style="">Multitasking</a><span style="">，Prof. Tao Xie's
+</span><a target="_blank" rel="nofollow" href="http://asegrp.blogspot.com/2010/11/time-management-self-checklist.html" style="">checklist</a><span style="">，工大博士师兄的</span><a target="_blank" rel="nofollow" href="http://www1.i2r.a-star.edu.sg/~jlang/timemanagement.html" style="">页面</a><span style="">和</span><a target="_blank" rel="nofollow" href="http://billlangjun.blogspot.com/2012/10/blog-post_2.html" style="">博文</a><span style="">，</span><a target="_blank" rel="nofollow" href="http://blog.samaltman.com/how-things-get-done" style="">GTD</a><span style="">
+ from a startup's perspective，我上届百度师兄的《</span><a target="_blank" rel="nofollow" href="http://cnberg.com/archive/how-i-manage-my-time/" style="">我是如何“管理时间”的</a><span style="">》，Fenng在微信“</span><a target="_blank" rel="nofollow" href="http://hutu.me/" style="">小道消息</a><span style="">”发布的《碎片化时间与我的阅读习惯》《我阅读技术图书的一些习惯》。《</span><a target="_blank" rel="nofollow" href="http://blog.sciencenet.cn/blog-393255-641222.html" style="">如何提高开会的效益</a><span style="">》。Habits
+ for </span><a target="_blank" rel="nofollow" href="http://matt.might.net/articles/college-tips/" style="">college students</a><span style=""> and
+</span><a target="_blank" rel="nofollow" href="http://matt.might.net/articles/grad-student-resolutions/" style="">grads</a><span style="">, by Matt.</span><br style="">
+<br style="">
+<span style="">1）Programming Language</span><br style="">
+<span style="">入门当然是</span><a target="_blank" rel="nofollow" href="http://www.hrbxinzhi.com/pro-knowledge.html" style="">C</a><span style="">，否则都不好意思说自己是学cs。我当年用的是C Prime Plus，很基础。C之父写的C bible——The C Programming Language绝对是好书，是进阶和reference必备。C进阶还有各种C专家编程，C与指针，C陷阱了，可以提高。之后是C++，java，C#就看科研/项目需要了。我认识的一些MSRA实习生从C++转到C#（C++++），说什么编码效率高云云。反正我因为做llvm，就是C++一条道走到黑。（LLVM
+ is to me as Allegro is to </span><a target="_blank" rel="nofollow" href="http://codingnow.com/" style="">Cloud Wu</a><span style="">）人称“大牛”的师兄跟我说，按照某语言排名榜的说法 c++快挂了；anyway，大牛没给出出处。而在TAMU任教的C++之父还在弄STAPL，并行版的</span><a target="_blank" rel="nofollow" href="http://blog.sina.com.cn/s/blog_687d9aa90100wjsq.html" style="">STL</a><span style="">，我觉得C++肯定还不至于是五丈原的诸葛半仙。C++入门，我用的是C++
+ Prime（注意，不是C++ Prime Plus）。C++之父写的C++程序设计语言，其实比较难懂，入门之后可以翻一翻。C++的进阶书更多，各种Efficient C++，侯捷老师的STL源码剖析啊。boost是C++广泛应用的开源库。</span><a target="_blank" rel="nofollow" href="http://www.stroustrup.com/C++11FAQ.html" style="">C++11</a><span style="">也很</span><a target="_blank" rel="nofollow" href="http://mindhacks.cn/2012/08/27/modern-cpp-practices/" style="">有趣</a><span style="">。（不好意思，我也只是知道，没怎么看。）而Java是不适合作为第一门语言的；CMU,
+ "the home of object-oriented modular programming" by David Parnas，</span><a target="_blank" rel="nofollow" href="http://www.i-programmer.info/news/150-training-a-education/2188-cmu-drops-oop.html" style="">2010年3月末取消了大一的OOP，转而开设OOD</a><span style="">，因为前者反模块化反并行化。当然，这点还在广泛争论中。</span><br style="">
+<br style="">
+<span style="">脚本语言，顾名思义，用于完成冗余繁琐的事情。把这些事情交给计算机，定时跑就行，什么</span><a target="_blank" rel="nofollow" href="http://www.pgbovine.net/python-teaching.htm" style="">python</a><span style="">, shell, perl, awk, sed, ruby, ror等等。选一个顺手即可。记得豆瓣还是哪里的程序员自述，计算机科班教育不会开脚本语言课，但谁真正掌握了一门脚本语言，说明他是爱计算机的，所以我们会招聘他。（说到job-hiring，相信很多人看过《</span><a target="_blank" rel="nofollow" href="http://movie.douban.com/subject/3205624/" style="">The
+ Social Network</a><span style="">》。Zack招来的人，和那个硅谷小子的，风格完全不一样；而前者才适合一起创业。）书籍都不一一举例了，似乎是个脚本语言，O'Reilly都有从入门到精通的书。最后，要精通正则表达式哦。</span><br style="">
+<br style="">
+<a target="_blank" rel="nofollow" href="http://matt.might.net/articles/i-love-you-in-racket/" style="">浪漫</a><span style="">的</span><a target="_blank" rel="nofollow" href="http://www.infoq.com/interviews/john-hughes-fp" style="">函数式语言</a><span style="">，比如</span><a target="_blank" rel="nofollow" href="http://www.haskell.org/haskellwiki/Haskell" style="">Haskell</a><span style="">，lisp，</span><a target="_blank" rel="nofollow" href="http://www.3nfconsulting.com/students-ML.aspx" style="">ML</a><span style="">等等，是另一种思维方式。有一个笑话，前苏联克克勃苦心偷到了美国NASA的核心代码，交给上峰后被训了一顿；他很莫名其妙，瞅了一眼代码，全是（）的组合，当场崩溃。后面介绍Compiler时也会涉及FP。事实上，我觉得，这才是计算机学生应该掌握的语言，MIT大二就开了Scheme的</span><a target="_blank" rel="nofollow" href="http://mitpress.mit.edu/sicp/" style="">课程</a><span style="">（但现在似乎</span><a target="_blank" rel="nofollow" href="http://blog.willbenton.com/2009/05/computer-science-and-plumbing/" style="">停了</a><span style="">）。法国“中科院”INRIA设计了</span><a target="_blank" rel="nofollow" href="http://coq.inria.fr/" style="">Coq</a><span style="">，用于各种形式化证明（比如，编译器生成代码的正确性验证），以及</span><a target="_blank" rel="nofollow" href="http://blog.willbenton.com/2008/05/shortening-the-feedback-loop/" style="">教授程序原理</a><span style="">。首届国家科学进步奖的两位获得者有吴文俊，主要贡献就是机器证明，而另一位是袁隆平，解决咱们的口粮。可见这一领域有多么重要！</span><br style="">
+<br style="">
+<span style="">最后，我很纳闷，居然有人推荐HTML/CSS/JS作为语言的入门？亲，这说的是计算机科学学生的第一门专业课。我讨论的是计算机科学，是科学，不是工程；是本科，不是大专技校。学C，是为了后面的OS——linux。学web，你跟得上市场潮流吗？HTML/CSS/JS，你咋不HTML5、node.js、Go、以及Scala呢。看到这个</span><a target="_blank" rel="nofollow" href="http://www.techempower.com/benchmarks/" style="">benchmarking</a><span style="">，我都眼花缭乱啦。不好意思，本人</span><a target="_blank" rel="nofollow" href="http://wordpress.lixiaolai.com/archives/1455.html" style="">很惭愧</a><span style="">，不太懂</span><a target="_blank" rel="nofollow" href="http://www.lxkid.com/?p=154" style="">前端编程</a><span style="">，也感叹前端的</span><a target="_blank" rel="nofollow" href="http://bjk5.com/post/44698559168/breaking-down-amazons-mega-dropdown" style="">技术细节</a><span style="">；但推荐各位想做web的看看HTML5的发布会视频，演讲者一上来给出各种设计哲学，包括了The
+ Declaration Of Independence、Karl Marx的按需分配、George Orwell的Animal Farm，最后才给出了HTML5的。这才是精髓，或是说web设计的精髓。看到自己做的webpage很有成就感，修改linux内核代码的成就感怎样？先抑后扬的感觉不是更爽！本科学习的原则，在我看来，是不要被外界所打动，夯实基础，做自己有兴趣的事情。举个俗透了的例子，如乔布斯学书法，去印度礼佛！</span><br style="">
+<br style="">
+<a target="_blank" rel="nofollow" href="http://rigaux.org/language-study/syntax-across-languages-per-language/" style="">编程语言语法大全</a><br style="">
+<br style="">
+<span style="">2）Data Structure &amp; Algorithm</span><br style="">
+<span style="">很多人推荐CLRS，我也不能免俗，但毕竟不是入门级别的。其实，学DS掌握基本概念就行，推荐清华大学严蔚敏老师的《数据结构》，网上也有视频。同时推荐MIT的</span><a target="_blank" rel="nofollow" href="http://courses.csail.mit.edu/6.851/" style="">Advanced Data Structures</a><span style="">和Wisc的Introduction
+ to Algorithms（</span><a target="_blank" rel="nofollow" href="http://pages.cs.wisc.edu/~dieter/Courses/2012f-CS577/" style="">普通版</a><span style="">和</span><a target="_blank" rel="nofollow" href="http://pages.cs.wisc.edu/~dieter/Courses/2013f-CS577/" style="">Honor版</a><span style="">）。之后也正如大家所言，ACM吧，不是为了WF，只为了不惧怕编程，</span><a target="_blank" rel="nofollow" href="http://blog.renren.com/blog/60525895/852730269" style="">体验成就感</a><span style="">（再回到PL，web语言可以acm?）。一定题量后，需要</span><a target="_blank" rel="nofollow" href="http://blog.csdn.net/v_july_v/article/details/6543438" style="">加强算法</a><span style="">，推荐Robert
+ Sedgewick的算法书，</span><a target="_blank" rel="nofollow" href="http://www8.cs.umu.se/kurser/TDBAfl/VT06/algorithms/INDEX.HTM" style="">the Algorithm Design Manual</a><span style="">，</span><a target="_blank" rel="nofollow" href="http://www.cs.princeton.edu/~wayne/kleinberg-tardos/" style="">Algorithm
+ Design</a><span style="">，以及《算法学：计算精髓》，并辅以《编程珠玑》。</span><a target="_blank" rel="nofollow" href="http://www.algorithmist.com/index.php/Main_Page" style="">algorithmist website</a><span style="">。最后，拜一下</span><a target="_blank" rel="nofollow" href="http://book.douban.com/review/5384627/" style="">高德纳</a><span style="">的</span><a target="_blank" rel="nofollow" href="http://book.douban.com/review/1319514/" style="">TAOCP</a><span style="">，所谓家居编码旅行侃山必备利器。</span><br style="">
+<br style="">
+<span style="">据研究TCS的同学说，the power of randomness in computation是现代的计算复杂性理论最活跃也是最核心的一个部分，其目的在于fool any computationally bounded observer，而高德纳的伪随机卷似乎只是讨论ad hoc伪随机方法。他认为，伪随机是整个计算理论最核心也是最有影响力的理论，没有之一；现代的密码学正是植根于这套理论。他同时推荐了</span><a target="_blank" rel="nofollow" href="http://people.seas.harvard.edu/~salil/pseudorandomness/" style="">伪随机的教材</a><span style="">，以及（伪）随机课程（</span><a target="_blank" rel="nofollow" href="http://people.seas.harvard.edu/~salil/cs225/" style="">Harvard版</a><span style="">和</span><a target="_blank" rel="nofollow" href="http://pages.cs.wisc.edu/~dieter/Courses/2013s-CS880/general.html" style="">Wisc版</a><span style="">）。他认为，Prof.
+ Yao是现代密码学的founding father，并对其论文theoy and applications of trapdoor functions的评价是“完全的神作，一语洞穿宇宙的奥秘”。</span><br style="">
+<br style="">
+<a target="_blank" rel="nofollow" href="http://www.wisdom.weizmann.ac.il/~naor/" style="">Prof. Moni Naor</a><span style="">, who taught
+</span><a target="_blank" rel="nofollow" href="http://www.wisdom.weizmann.ac.il/~robi/teaching/2013a-RandomizedAlgorithms/" style="">Randomized Algorithms</a><span style="">, conducts research in cryptography.</span><br style="">
+<br style="">
+<span style="">TCS也是有qual的，这是</span><a target="_blank" rel="nofollow" href="http://valis.cs.uiuc.edu/~sariel/research/algorithms/quals/" style="">UIUC版</a><span style="">和</span><a target="_blank" rel="nofollow" href="http://research.cs.wisc.edu/areas/theory/qual.html" style="">Wisc版</a><span style="">。</span><br style="">
+<br style="">
+<a target="_blank" rel="nofollow" href="http://xlinux.nist.gov/dads/" style="">Dictionary</a><span style=""> of Algorithms and Data Structures;
+</span><a target="_blank" rel="nofollow" href="http://www.cs.sunysb.edu/~algorith/" style="">SUNY Algo</a><br style="">
+<a target="_blank" rel="nofollow" href="http://www.cafepress.com/notsohumblepi" style="">Interesting Pi</a><span style="">.</span><br style="">
+<br style="">
+<a target="_blank" rel="nofollow" href="http://bigocheatsheet.com/" style="">Big O</a><span style="">.</span><br style="">
+<br style="">
+<span style="">Off-topic:</span><br style="">
+<span style="">The </span><a target="_blank" rel="nofollow" href="http://stacks.math.columbia.edu/browse" style="">Stacks project</a><span style=""> on algebraic.</span><br style="">
+<span style="">An interesting </span><a target="_blank" rel="nofollow" href="http://www.connellybarnes.com/work/" style="">graphic guy</a><span style=""> who products a really, if not the most, popular feature in Adobe Photoshop.</span><br style="">
+<a target="_blank" rel="nofollow" href="http://www.jasondavies.com/primos/" style="">Prime Number Patterns</a><span style="">, also a fantasy expamle for interactive web design.</span><br style="">
+<br style="">
+<span style="">3）Operating System</span><br style="">
+<span style="">与DS &amp; Algo需要考虑实际的应用场合一样，</span><a target="_blank" rel="nofollow" href="http://www.hrbxinzhi.com/os/resource.asp" style="">操作系统</a><span style="">也是门实践的学科。记得老师在课上说，当年他读书时，觉得银行家算法是这么优雅，为什么没有任何OS使用？原因就在于时间复杂度是O(n^3)。话不多说，熟悉</span><a target="_blank" rel="nofollow" href="http://heather.cs.ucdavis.edu/~matloff/unix.html" style="">类UNIX环境</a><span style="">后，参考</span><a target="_blank" rel="nofollow" href="http://www.makelinux.net/kernel_map/" style="">Linux
+ Kernel Map</a><span style="">和《</span><a target="_blank" rel="nofollow" href="http://www.makelinux.net/books/lkd2/" style="">Linux Kernel Development</a><span style="">》，直接读</span><a target="_blank" rel="nofollow" href="http://kernelnewbies.org/" style="">linux
+ kernel</a><span style="">的源码，比如0.11，一万行左右，市面上有代码剖析的书。我的建议是，以访客身份自学</span><a target="_blank" rel="nofollow" href="https://cms.hit.edu.cn/" style="">工大cms</a><span style="">的</span><a target="_blank" rel="nofollow" href="https://cms.hit.edu.cn/course/view.php?id=44" style="">OS课程</a><span style="">，自己动手实验+</span><a target="_blank" rel="nofollow" href="http://bbs.csdn.net/IndexPage/SmartQuestion.aspx" style="">智慧</a><span style="">的提问。有了</span><a target="_blank" rel="nofollow" href="http://people.cs.nctu.edu.tw/~chenwj/dokuwiki/doku.php?id=bochs" style="">Bochs模拟器</a><span style="">和0.11的基础，恐怕将来对任何OS部分都不会感到陌生（进一步可以读LDD;</span><a target="_blank" rel="nofollow" href="http://blog.regehr.org/archives/940" style="">阅读代码</a><span style="">的方法论可以参考《</span><a target="_blank" rel="nofollow" href="http://book.douban.com/subject/1156148/" style="">Code
+ Reading: The Open Source Perspective</a><span style="">》），此时读者可就不只是“牛人”了，而是“大牛”甚至“专家”了（参见《</span><a target="_blank" rel="nofollow" href="http://software.intel.com/zh-cn/blogs/2009/02/04/400001071/" style="">程序员的十层楼</a><span style="">》）。</span><a target="_blank" rel="nofollow" href="http://www.lingcc.com/2013/02/23/12261/" style="">这篇文章</a><span style="">介绍了linux
+ FS的进化史。MIT用于教学的类UNIX OS </span><a target="_blank" rel="nofollow" href="http://pdos.csail.mit.edu/6.828/2012/xv6.html" style="">XV6</a><span style="">是另一种选择。果然还是有推荐</span><a target="_blank" rel="nofollow" href="http://os-book.com/" style="">OS
+ Concepts</a><span style="">，APUE，Unix编程艺术和UNP的。感兴趣的同学可以一起学习Wisc系统课程</span><a target="_blank" rel="nofollow" href="http://pages.cs.wisc.edu/~remzi/Classes/537/Fall2013/" style="">Introduction to OS</a><span style="">、</span><a target="_blank" rel="nofollow" href="http://pages.cs.wisc.edu/~swift/classes/cs736-fa12/wiki/pmwiki.php" style="">Advanced
+ OS</a><span style="">和</span><a target="_blank" rel="nofollow" href="http://pages.cs.wisc.edu/~swift/classes/cs739-sp12/wiki/pmwiki.php/Main/HomePage" style="">Distributed Systems</a><span style="">。前者可以参考</span><a target="_blank" rel="nofollow" href="http://pages.cs.wisc.edu/~remzi/OSTEP/" style="">Operating
+ Systems: Three Easy Pieces</a><span style="">，后两者直接读</span><a target="_blank" rel="nofollow" href="http://research.cs.wisc.edu/areas/os/Qual/readinglist-print.html" style="">paper</a><span style="">。而哈佛教授也在钻研</span><a target="_blank" rel="nofollow" href="http://mis-misinformation.blogspot.com/2013/02/cs161-one-womans-adventure-with-flipped.html" style="">OS课程教学创新</a><span style="">。</span><a target="_blank" rel="nofollow" href="http://www.rackaid.com/resources/linux-screen-tutorial-and-how-to/" style="">screen
+ login tool</a><span style="">。</span><br style="">
+<br style="">
+<span style="">当然，也可以拿实时操作系统练练手，比如uC/OS，代码短小精悍，和linux kernel一样，pure C。</span><a target="_blank" rel="nofollow" href="http://www.qnx.com/developers/docs/6.4.1/neutrino/getting_started/about.html" style="">QNX</a><span style="">。除了平时就使用linux发行版外，百尺竿头，还可以学习如何自定制Linux系统</span><a target="_blank" rel="nofollow" href="http://www.linuxfromscratch.org/lfs/" style="">Linux
+ From Scratch</a><span style="">。DWARF debug info in </span><a target="_blank" rel="nofollow" href="http://lkml.indiana.edu/hypermail/linux/kernel/0912.2/00161.html" style="">Debian
+</a><span style="">and thus Ubuntu as a static library is a root of evil.</span><br style="">
+<br style="">
+<span style="">国内还有本“</span><a target="_blank" rel="nofollow" href="http://book.douban.com/subject/3735649/" style="">自己动手写操作系统</a><span style="">”？</span><br style="">
+<br style="">
+<span style="">Win方面，好像有Window internals?虽然是牛书，但是用膝盖想想也知道，写出来的肯定还没深入到骨髓（那可是商业机密啊），不如读linux源码学得扎实。当然，我不太用win，也只是偶尔对win编程。Win API似乎设计得太诡异啦，一点也不正交。以操作内存页面权限为例，为啥设置页面权限的同时还返回页面的初始权限；而获取页面权限时却是返回给定页面的所有信息，再从中找出权限信息。当然，想进入微软，还是要积累些Win</span><a target="_blank" rel="nofollow" href="http://mindhacks.cn/2011/11/04/how-to-interview-a-person-for-two-years/" style="">系统编程</a><span style="">和</span><a target="_blank" rel="nofollow" href="http://blog.csdn.net/eparg/article/details/1792015" style="">调试</a><span style="">的阅读量的。</span><a target="_blank" rel="nofollow" href="http://research.microsoft.com/en-us/um/people/simonpj/win32-cheat.html" style="">Win32
+ cheat sheet</a><span style="">也有帮助。这是Windows进程管理的</span><a target="_blank" rel="nofollow" href="http://blog.codingnow.com/cloud/CmdTips" style="">脚本</a><span style="">。</span><br style="">
+<br style="">
+<span style="">至此，还是要鄙视一下win——没有好用的终端（git的Win版都配有bash），只是</span><a target="_blank" rel="nofollow" href="http://www.dbanotes.net/opensource/OS_and_Matrix.html" style="">以图形界面赢得普通市场，取得商业成功</a><span style="">而已；当然win的内核技术事实上是比linux强大。君不见，哪个知名IT公司没有自己的集群？集群需要图形界面吗？在我看来，不用终端，似乎失去对整个计算机的控制；不爽，计算机是服务于人的，是被CSer控制的。顺便8g一下，“盖茨对'计算'这一概念的理解，是初中生水平；Google的Page，是本科生。”（引自《</span><a target="_blank" rel="nofollow" href="http://software.intel.com/zh-cn/blogs/2009/02/04/400001073/" style="">程序员的十层楼</a><span style="">》）现在，我还不确定实现</span><a target="_blank" rel="nofollow" href="http://blog.andpue.com/michelangelo/7.html" style="">facemash</a><span style="">的Zack是什么水平，但至少和Page是平手。再拜一下Amazon，这是因其云平台，才有Dropbox等一路风生水起；可叹中国，国家垄断。</span><br style="">
+<br style="">
+<span style="">至于选择日常使用的OS，王垠04年写过《完全用 GNU/Linux 工作》和《写给支持和反对&amp;lt;完全用Linux工作&amp;gt;的人们》(</span><a target="_blank" rel="nofollow" href="http://ishare.iask.sina.com.cn/f/19062056.html" style="">两文合集下载</a><span style="">)。正如之后有工大师弟向我介绍Windows的优势一样，事后也有人</span><a target="_blank" rel="nofollow" href="http://ishare.iask.sina.com.cn/f/11228358.html" style="">批驳王垠</a><span style="">。现在，王倒戈啦，但其观点</span><a target="_blank" rel="nofollow" href="http://blog.youxu.info/2013/03/03/unix-haters-2/" style="">没法立足</a><span style="">啊；等我准备完</span><a target="_blank" rel="nofollow" href="http://research.cs.wisc.edu/areas/os/Qual/" style="">OS
+ qual</a><span style="">，新开一文试论类UNIX系统发展历程。在我看来，萝卜青菜，各有所爱嘛；凡事都有各自的因缘，保持和而不同的姿态，不是更体现多样化之美嘛。</span><br style="">
+<br style="">
+<span style="">还有，移动设备的OS有</span><a target="_blank" rel="nofollow" href="http://matt-welsh.blogspot.com/2013/01/my-mobile-systems-research-wish-list.html" style="">自己的研究特点</a><span style="">。固态硬盘也有其市场化的</span><a target="_blank" rel="nofollow" href="http://cseweb.ucsd.edu/users/swanson/papers/FAST2012BleakFlash.pdf" style="">局限</a><span style="">。</span><br style="">
+<br style="">
+<span style="">既然来地里的大都是出国的，那么清华学生写的《</span><a target="_blank" rel="nofollow" href="http://blog.csdn.net/celestialwy/article/details/2766402" style="">OSDI, SOSP与美国著名计算机系的调查</a><span style="">》自然不能错过；虽然有些信息已经过时，比如Prof Zhou已转到UCSD了；OSDI、SOSP已经“沦陷”了。文中以这两大OS领域顶级会议为基础，介绍了MIT、Princeton、Washington、Stanford、Berkeley和CMU的OS牛教授。我相信，包括我在内的大多非牛牛们，对这些学校大都只是dream而已（给写推荐信的教授直接灭了我Stanford,
+ berkeley的念想，各种they are top云云），那么大家可以关注下这些牛教授的学生们，都去哪些地方任教了，比如Utah，OSU都是很不错的，可以尝试。另一方面，从</span><a target="_blank" rel="nofollow" href="http://www.sigplan.org/asplos.htm" style="">ASPLOS</a><span style="">、HPCA、</span><a target="_blank" rel="nofollow" href="http://www.microarch.org/" style="">MICRO</a><span style="">、</span><a target="_blank" rel="nofollow" href="http://www.pactconf.org/" style="">PACT</a><span style="">、</span><a target="_blank" rel="nofollow" href="http://www.sigplan.org/pldi.htm" style="">PLDI</a><span style="">、FAST、</span><a target="_blank" rel="nofollow" href="http://www.supercomp.org/" style="">SC</a><span style="">、</span><a target="_blank" rel="nofollow" href="http://ics-conference.org/" style="">ICS</a><span style="">和</span><a target="_blank" rel="nofollow" href="http://www.cgo.org/" style="">CGO</a><span style="">等会议</span><a target="_blank" rel="nofollow" href="http://da-data.blogspot.com/2013/01/two-examples-from-computer-science.html" style="">发表的论文</a><span style="">，可以大致了解系统方向的牛校。</span><br style="">
+<br style="">
+<span style="">4）Database</span><br style="">
+<span style="">不好意思，我本科db没学好。但其实</span><a target="_blank" rel="nofollow" href="http://duanple.blog.163.com/blog/static/70971767201311810939564/" style="">db</a><span style="">是相当成熟也很有意思的领域。入门我就不推荐了，直接进阶吧——《数据库系统实现》。Prof. Anhai Doan recommends
+</span><a target="_blank" rel="nofollow" href="http://www.cs.wisc.edu/~dbbook" style="">the Cow Book</a><span style=""> and the
+</span><a target="_blank" rel="nofollow" href="http://pages.cs.wisc.edu/~dbbook/openAccess/thirdEdition/slides/slides3ed.html" style="">slides</a><span style="">, or
+</span><a target="_blank" rel="nofollow" href="http://infolab.stanford.edu/~ullman/dscb.html" style="">the Complete Book</a><span style="">. And this is a collection of
+</span><a target="_blank" rel="nofollow" href="http://pages.cs.wisc.edu/~dbbook/openAccess/www_resources.html" style="">resource</a><span style=""> about languages, technologies, and DB systems. Another
+</span><a target="_blank" rel="nofollow" href="http://www.labouseur.com/courses/db/" style="">course</a><span style=""> on DB systems.
+</span><a target="_blank" rel="nofollow" href="http://www.sigmod.org/publications/interview" style="">Guru</a><span style=""> in DB.</span><br style="">
+<br style="">
+<span style="">Wisc的DB据说比较强势：</span><br style="">
+<span style="">i）</span><a target="_blank" rel="nofollow" href="http://pages.cs.wisc.edu/~cs564-1/" style="">CS 564</a><span style=""> (Database Management Systems: Design And Implementation) is “everything you should know so that you can get
+ an industrial job working with relational databases”.</span><br style="">
+<span style="">ii）</span><a target="_blank" rel="nofollow" href="http://pages.cs.wisc.edu/~cs764-1/" style="">CS 764</a><span style=""> (Topics In Database Management Systems) is “all the gory details you may (or may not) want to know about
+ relational data management systems”.</span><br style="">
+<span style="">iii）</span><a target="_blank" rel="nofollow" href="http://pages.cs.wisc.edu/~anhai/courses/784-spring13/" style="">CS 784</a><span style=""> (Data Models And Languages) is “all the stuff beyond relational data (e.g., Web, text,
+ data mining, data integration, data extraction) that you should know to broaden your data management knowledge or to work in the field as an advanced developer/researcher”. 而</span><a target="_blank" rel="nofollow" href="http://pages.cs.wisc.edu/~anhai/courses/784-spring13/" style="">其课程项目列表</a><span style="">足以成立若干创业公司。同时推荐</span><a target="_blank" rel="nofollow" href="http://research.cs.wisc.edu/dibook/" style="">Principles
+ of Data Integration</a><span style="">。CMU就有将DI技术应用于建筑设计领域的startup </span><a target="_blank" rel="nofollow" href="http://v.youku.com/v_show/id_XNTEyNzMwMTYw.html" style="">Schema Fusion</a><span style="">。</span><br style="">
+<br style="">
+<span style="">Parallel db by </span><a target="_blank" rel="nofollow" href="http://gsl.azurewebsites.net/People/dewitt.aspx" style="">Dr. David DeWitt</a><span style="">.</span><br style="">
+<br style="">
+<span style="">In the midst of Big Data era, we may need to have a profound understanding of
+</span><a target="_blank" rel="nofollow" href="http://www.aosabook.org/en/nosql.html" style="">NoSQL</a><span style=""> (</span><a target="_blank" rel="nofollow" href="http://horicky.blogspot.com/2009/11/nosql-patterns.html" style="">模式</a><span style="">，</span><a target="_blank" rel="nofollow" href="http://www.yankay.com/nosql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%B0%88v0-2/" style="">漫谈</a><span style="">,
+</span><a target="_blank" rel="nofollow" href="http://nosql-database.org/" style="">举例</a><span style="">).
+</span><a target="_blank" rel="nofollow" href="http://natishalom.typepad.com/nati_shaloms_blog/2013/01/in-memory-computing-data-grid-for-big-data.html" style="">In-memory computing infrastructure</a><span style=""> for Big Data. CACM published
+ a </span><a target="_blank" rel="nofollow" href="http://cacm.acm.org/blogs/blog-cacm/50678" style="">blog</a><span style=""> on SQL databases v. NoSQL databases. However, Google developed
+</span><a target="_blank" rel="nofollow" href="http://research.google.com/pubs/pub41344.html" style="">F1</a><span style="">, a distributed rational database with the scalability of NoSQL key/value system, to support its core business, AdWords.</span><br style="">
+<br style="">
+<span style="">A review article on </span><a target="_blank" rel="nofollow" href="http://cacm.acm.org/magazines/2011/4/106563-crowdsourcing-systems-on-the-world-wide-web/fulltext" style="">Crowdsourcing systems</a><span style="">.</span><br style="">
+<br style="">
+<span style="">5）Software Engineering</span><br style="">
+<span style="">这简直是个人文学科，集计算机科学、管理学、心理学、社会工程学于一身。在此我不展开，可以参考UW教授的讲座</span><a target="_blank" rel="nofollow" href="http://programanalysis.blogspot.com/2013/02/talk-video-software-evolution-then-and.html" style="">Software evolution then and now:
+ the research of David Notkin</a><span style="">。经典书籍也有很多分类，比如编码类（Write solid code, refactor, 各类</span><a target="_blank" rel="nofollow" href="http://en.wikipedia.org/wiki/Software_design_pattern" style="">design pattern</a><span style="">，《代码大全》第二版，《程序员修炼之道》，《编程卓越之道》，O‘Reilly“xx之美”系列，各种“UML，</span><a target="_blank" rel="nofollow" href="http://www.ruanyifeng.com/blog/2013/01/abstraction_principles.html" style="">XP编程</a><span style="">、敏捷、需求，测试”书籍），故事类（dreaming
+ code），管理类（各种Joel on software，美国“创新工场”YC创始人Graham的《黑客与画家》，peopleware，37single的好书，甚至时间管理GTD的书籍）。同时敬礼图灵奖获得者、北卡教堂山教授、《人月神话》作者Brooks，但我推荐的是他另一本书《设计原本》。</span><br style="">
+<br style="">
+<span style="">The co-author (and UW alumnus) of </span><a target="_blank" rel="nofollow" href="http://www.bitmover.com/lmbench/lmbench.html" style="">lmbench</a><span style="">, a system performance benchmark, is proud of his
+</span><a target="_blank" rel="nofollow" href="http://www.bitmover.com/lm/papers/srcos.html" style="">Sourceware Operating System proposal</a><span style=""> considered as the peer to Raymond's
+</span><a target="_blank" rel="nofollow" href="http://www.catb.org/esr/writings/homesteading/" style="">Cathedral and Bazaar paper</a><span style="">. He also recommends
+</span><a target="_blank" rel="nofollow" href="http://www.bitmover.com/lm/bugs.html" style="">this</a><span style=""> to everyone who was annoyed at countless bugs.</span><br style="">
+<br style="">
+<span style="">搭车说一下，我不是鄙视web。如果想学web，也应该学习CSS，Ruby的framework，再不济也得HTML5。在我看来，后端架构更为重要，包括apache，linux sever管理（</span><a target="_blank" rel="nofollow" href="http://linux.vbird.org/" style="">鸟哥的linux私房菜馆</a><span style="">）之类的。但如果真想学web，推荐</span><a target="_blank" rel="nofollow" href="https://wiki.engr.illinois.edu/display/cs498stk/Home" style="">UIUC课程</a><span style="">，我上届创业</span><a target="_blank" rel="nofollow" href="http://zhiyan.de/" style="">师兄</a><span style="">建立的</span><a target="_blank" rel="nofollow" href="http://wiki.pureweber.com/" style="">pureweber</a><span style="">及其搭档的关于前后端开发的</span><a target="_blank" rel="nofollow" href="http://www.fancycedar.info/" style="">博客</a><span style="">，至少</span><a target="_blank" rel="nofollow" href="http://jenniferdewalt.com/index.html" style="">坚持180天</a><span style="">。</span><br style="">
+<br style="">
+<span style="">SE </span><a target="_blank" rel="nofollow" href="https://sites.google.com/site/asergrp/bibli" style="">paper bibliography/categorization/classification</a><span style=""> by Prof. Tao Xie's Automated Software Engineering Research
+ Group</span><br style="">
+<br style="">
+<span style="">Stanford的</span><a target="_blank" rel="nofollow" href="http://startup.stanford.edu/" style="">创业课程</a><br style="">
+<br style="">
+<span style="">6) Compiler及PL设计哲学</span><br style="">
+<span style="">出来混，早晚都要还的。我本科学的最差的就是编译；一个字，混。结果研究生做的都是编译器，即</span><a target="_blank" rel="nofollow" href="http://llvm.org/" style="">LLVM</a><span style="">。那些用iDevice的同学为什么觉得系统很流畅，</span><a target="_blank" rel="nofollow" href="http://www.programmer.com.cn/9436/" style="">闭源版本的llvm功不可没</a><span style="">；当然还有基于freeBSD（B是伯克利的哦，他们有做工具、开源的传统。8g一下，现在Berkeley的</span><a target="_blank" rel="nofollow" href="http://robotics.eecs.berkeley.edu/~sastry/" style="">工程系主任Sastry教授</a><span style="">，就是受不了Harvard的理论派作风，于1994年跳过来白手起家做系统的）的Mac
+ OS X及其简化版iOS的功劳。北京intel研究院实习的师兄跟我说，intel之所以牛，是在于其编译器优化。所以说，学好OS和compiler，走遍天下都不怕。</span><br style="">
+<br style="">
+<span style="">可惜学到这门课，大家应该大三了。很多人</span><a target="_blank" rel="nofollow" href="http://duanple.blog.163.com/blog/static/709717672012535958380/" style="">如梦方醒</a><span style="">，要面对出国</span><a target="_blank" rel="nofollow" href="http://www.cloudfly.info/archives/181" style="">保研考研工作</a><span style="">公务员等等了，无心恋战。但从</span><a target="_blank" rel="nofollow" href="http://duanple.blog.163.com/blog/static/7097176720111141085197/" style="">这门课</a><span style="">（包括以前的汇编语言，工大是大一下在C之后开设的）起，才能真正体现CSer与其它非计算机的区别。CSer应有的境界就是，写</span><a target="_blank" rel="nofollow" href="http://erlang.org/pipermail/erlang-questions/2013-January/071949.html" style="">高级语言</a><span style="">的时候能想到对应的汇编；这应该要花</span><a target="_blank" rel="nofollow" href="http://blog.youxu.info/21-days/" style="">10年功夫</a><span style="">，或至少</span><a target="_blank" rel="nofollow" href="http://www.ruanyifeng.com/blog/2011/04/the_dan_plan.html" style="">10,000小时</a><span style="">吧？</span><br style="">
+<br style="">
+<a target="_blank" rel="nofollow" href="http://cppgm.org/" style="">徒手实现C++11</a><span style="">？这是OSDev论坛讨论此项目的</span><a target="_blank" rel="nofollow" href="http://forum.osdev.org/viewtopic.php?f=13&p=219252" style="">帖子</a><span style="">。</span><br style="">
+<br style="">
+<span style="">编译强调的更是优化。这里介绍了</span><a target="_blank" rel="nofollow" href="http://www.agner.org/optimize/" style="">基于Intel处理器的优化</a><span style="">。</span><a target="_blank" rel="nofollow" href="http://www.bearcave.com/software/comp_index.html" style="">编译器构造相关的主题</a><span style="">。</span><br style="">
+<br style="">
+<span style="">《程序设计方法》《计算机程序的构造和解释》《程序设计语言概念》《程序设计语言原理》，甚至《自动机理论、语言和计算导论》《计算理论导引》才应是计算机专业学生应该具有的理论素养。优秀的程序员应是</span><a target="_blank" rel="nofollow" href="http://blog.sina.com.cn/s/blog_5d90e82f010165wf.html" style="">理解程序设计语言原理</a><span style="">的，包括</span><a target="_blank" rel="nofollow" href="http://en.wikipedia.org/wiki/Relational_operator" style="">Relational
+ operator</a><span style="">，</span><a target="_blank" rel="nofollow" href="http://blog.enfranchisedmind.com/2007/01/ocaml-lazy-lists-an-introduction/" style="">lazy evaluation</a><span style="">，</span><a target="_blank" rel="nofollow" href="http://www.di.ens.fr/~cousot/AI/IntroAbsInt.html" style="">Abstract
+ Interpretation</a><span style="">等概念；即使不理解语言原理，也能围观</span><a target="_blank" rel="nofollow" href="http://www.aqee.net/if-programming-languages-were-cars/" style="">各种编程语言的特色</a><span style="">。Wisc有</span><a target="_blank" rel="nofollow" href="http://pages.cs.wisc.edu/~cs704-1/cs704.html" style="">介绍程序语言原理的课程</a><span style="">，使用</span><a target="_blank" rel="nofollow" href="http://ocaml.org/" style="">OCaml</a><span style="">（这是</span><a target="_blank" rel="nofollow" href="http://ocaml.org/tutorials/99problems.html" style="">99难题</a><span style="">和</span><a target="_blank" rel="nofollow" href="http://caml.inria.fr/ocaml/anonsvn.en.html" style="">其标准库实现</a><span style="">；阅读STL是学习语言的最好方式）。编译点滴blog也给出了</span><a target="_blank" rel="nofollow" href="http://www.lingcc.com/2012/05/16/12048/" style="">Compiler书目的点评</a><span style="">。Utah
+ Prof. John Regehr科研之余写</span><a target="_blank" rel="nofollow" href="http://blog.regehr.org/" style="">blog</a><span style="">。Utah另一位研究PL、编译的AP
+</span><a target="_blank" rel="nofollow" href="http://matt.might.net/" style="">Matt Might</a><span style="">也有关于</span><a target="_blank" rel="nofollow" href="http://matt.might.net/articles/books-papers-materials-for-graduate-students/#pl" style="">PL</a><span style="">、</span><a target="_blank" rel="nofollow" href="http://matt.might.net/articles/books-papers-materials-for-graduate-students/#compilers" style="">Compilers</a><span style="">、</span><a target="_blank" rel="nofollow" href="http://matt.might.net/articles/books-papers-materials-for-graduate-students/#analysis" style="">static
+ analysis</a><span style="">的推荐；更重要的是，其</span><a target="_blank" rel="nofollow" href="http://matt.might.net/articles/" style="">blog</a><span style="">营养价值之高，让我惊叹！</span><br style="">
+<br style="">
+<span style="">推荐研究PL的</span><a target="_blank" rel="nofollow" href="http://www.cs.indiana.edu/~yw21/" style="">王垠</a><span style="">（</span><a target="_blank" rel="nofollow" href="http://kurttlin.diandian.com/post/2011-10-03/5502426" style="">11年及以前的状况</a><span style="">）的《初学者程序语言的选择》。Indiana
+ U in Bloomington教授、PL领域先驱</span><a target="_blank" rel="nofollow" href="https://www.cs.indiana.edu/~dfried/" style="">Daniel Friedman</a><span style="">（</span><a target="_blank" rel="nofollow" href="http://en.wikipedia.org/wiki/Daniel_P._Friedman" style="">wikipedia</a><span style="">；从其学生王垠的叙述，怎么看怎么像CS领域的“周伯通”</span><a target="_blank" rel="nofollow" href="http://book.douban.com/review/5258811/" style="">费曼</a><span style="">）01年做了主题为The
+ Role of the Study of Programming Languages in the Education of a Programmer的演讲（</span><a target="_blank" rel="nofollow" href="http://www.cs.indiana.edu/~dfried/mex.pdf" style="">pdf原文</a><span style="">，</span><a target="_blank" rel="nofollow" href="http://www.cs.indiana.edu/hyplan/dfried/SLIDES~1.PPT" style="">PPT
+ slides</a><span style="">）。</span><br style="">
+<br style="">
+<span style="">当然，不能少了龙书虎书和鲸书。Wisc的程序语言和编译方向的</span><a target="_blank" rel="nofollow" href="http://www.cs.wisc.edu/sites/default/files/pl.reading.pdf" style="">qual</a><span style="">自然不可错过。对于</span><a target="_blank" rel="nofollow" href="http://www.youtube.com/watch?v=D8gFWWyWr0k" style="">the
+ life of Binaries</a><span style="">，程序员又知多少。编译也是注重实践的一门学科；基于</span><a target="_blank" rel="nofollow" href="http://ssabook.gforge.inria.fr/latest/book.pdf" style="">SSA形式</a><span style="">中间表示的LLVM从UIUC发芽，经过10多年的发展，成为apple主力支持的用于iOS的商业编译器，且大有替代gcc之势（FreeBSD已经完成了这一步），不可谓不是个奇迹。但有时，有人</span><a target="_blank" rel="nofollow" href="http://blog.willbenton.com/2010/04/research-and-development/" style="">质疑</a><span style="">PL研究，比如program
+ slicing，的价值。</span><br style="">
+<br style="">
+<span style="">关于编译的牛校，Rice肯定有一席之地，历史上就完成了多个高性能编译器设计的研究，现存的有</span><a target="_blank" rel="nofollow" href="http://habanero.rice.edu/Habanero_Home.html" style="">Habanero</a><span style="">。</span><br style="">
+<br style="">
+<span style="">Facebook从10年起开发、</span><a target="_blank" rel="nofollow" href="http://developers.facebook.com/blog/post/2010/02/02/hiphop-for-php--move-fast/" style="">华人</a><span style="">始创的</span><a target="_blank" rel="nofollow" href="http://www.facebook.com/note.php?note_id=10150415177928920" style="">HHVM</a><span style="">(</span><a target="_blank" rel="nofollow" href="https://www.facebook.com/publications/370247373089711/" style="">paper</a><span style="">)旨在优化</span><a target="_blank" rel="nofollow" href="http://www.digital-web.com/articles/php_for_designers/" style="">PHP</a><span style="">，</span><a target="_blank" rel="nofollow" href="https://github.com/facebook/hiphop-php" style="">技术细节</a><span style="">是</span><a target="_blank" rel="nofollow" href="http://www.youtube.com/watch?v=p5S1K60mhQU" style="">PHP2C++</a><span style="">以及</span><a target="_blank" rel="nofollow" href="http://blog.kowalczyk.info/article/67j/Summary-of-David-Ditzel-talk-on-binary-translati.html" style="">Dynamic
+ Binary Translation</a><span style=""> &amp;amp; </span><a target="_blank" rel="nofollow" href="http://www.ccf.org.cn/resources/1190201776262/2011/09/20/2.pdf" style="">Optimization</a><span style="">。</span><br style="">
+<br style="">
+<span style="">7) Computer Architecture</span><br style="">
+<span style="">海纳百川，系统结构就是这样一门学科——把低层的指令集/汇编、中间的OS、高层的PL熔于一炉。君不见，因为银河机，国防科大永远是中国计算机系的翘楚，虽然现在也开始浮躁了，但清华华科上交（以及南大某并行实验室）还是难以望其项背。</span><br style="">
+<br style="">
+<span style="">系统结构可大可小。小的指指令集，大的可以包括计算机组成原理、编译（每个指令集都需要自己的编译器）。所以，我把帕特森和轩尼诗的两本扛鼎之作和盘托出——《计算机组成和设计：软硬件接口》和《计算机系统结构：量化的研究方法》（caaqa）。读不懂没关系，</span><a target="_blank" rel="nofollow" href="http://pages.cs.wisc.edu/~ragh/Qualfiles/base.html" style="">书读百遍，其意自现</a><span style="">。还有《Readings
+ in Computer Architecture》《</span><a target="_blank" rel="nofollow" href="http://www.cambridge.org/us/knowledge/isbn/item6633770/?site_locale=en_US" style="">Parallel Computer Organization and Design</a><span style="">》，</span><a target="_blank" rel="nofollow" href="http://www.aosabook.org/en/index.html" style="">ASOA</a><span style="">以及《</span><a target="_blank" rel="nofollow" href="http://www.sigarch.org/2013/01/06/chinese-translation-21st-century-computer-architecture/" style="">21世纪计算机体系结构——计算机体系结构共同体白皮书</a><span style="">》。同时，推荐陈首席及其</span><a target="_blank" rel="nofollow" href="http://www.tektalk.org/" style="">弯曲评论</a><span style="">，保罗万象，从系统结构到IT史话，从千人计划到复兴中国，特别推荐“弯曲推荐”。至于国内做编译/系统结构的blog
+ roll，有IBM员工的</span><a target="_blank" rel="nofollow" href="http://www.parallellabs.com/" style="">并行实验室</a><span style="">，中科院博士的</span><a target="_blank" rel="nofollow" href="http://www.lingcc.com/" style="">编译点滴</a><span style="">，</span><a target="_blank" rel="nofollow" href="http://www.hellogcc.org/" style="">HelloGCC</a><span style="">，台湾研究员</span><a target="_blank" rel="nofollow" href="http://people.cs.nctu.edu.tw/~chenwj/" style="">陳韋任</a><span style="">、特别是他的</span><a target="_blank" rel="nofollow" href="http://people.cs.nctu.edu.tw/~chenwj/dokuwiki/doku.php" style="">wiki</a><span style="">。</span><br style="">
+<br style="">
+<span style="">还是那句话，</span><a target="_blank" rel="nofollow" href="http://www.tektalk.org/2010/11/21/%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6%E7%A0%94%E7%A9%B6%E7%9A%84%E4%B8%80%E4%BA%9B%E8%B0%83%E6%9F%A5%E6%95%B0%E6%8D%AE/" style="">计算机专业是很practical的</a><span style="">，Dr.
+ Brooks是因为领导IBM 360而成就的图灵奖；系统结构领域也是很活跃的——传统的处理器设计（包括cache一致性、互联网络等）、软件层级的并行编程模型（如TAMU的STAPL、UCLA的CDSC、Intel的TBB等等）、多核众核，以及利用GPU/FPGA加速的可重构计算等等，甚至还包括系统平台相关的编译支持。</span><a target="_blank" rel="nofollow" href="http://homes.cs.washington.edu/~hadianeh/" style="">Mr.
+ Esmaeilzadeh</a><span style="">关于系统结构的进化，特别是多核芯片功耗的研究，非常具有前瞻性；</span><a target="_blank" rel="nofollow" href="http://cacm.acm.org/magazines/2012/7/151242-technical-perspective-for-better-or-worse-benchmarks-shape-a-field/fulltext" style="">Prof.
+ Dave Patterson</a><span style="">和</span><a target="_blank" rel="nofollow" href="http://dl.acm.org/citation.cfm?id=2408796" style="">Dr. Pradip Bose</a><span style="">分别阐述了自己的观点。务实的方案是利用现有技术扩展计算能力，比如CMU的FAWN。</span><br style="">
+<br style="">
+<span style="">Gene M. Amdahl Prof. Mark Hill shared </span><a target="_blank" rel="nofollow" href="http://www.pbs.org/wgbh/americanexperience/films/silicon/" style="">PBS American Experience: Silicon Valley</a><span style=""> and pointed out
+ that “This excellent documentary is mostly about how discrete transistors and then integrated circuits became commercially successful at Fairchild Semiconductor, which then in turn spawned many companies. At one time NASA bought over half the transistors sold,
+ accelerating computer development (and IMHO allowing you to have a smartphone now and not in decade)”.</span><br style="">
+<br style="">
+<span style="">Wisc维护的</span><a target="_blank" rel="nofollow" href="http://pages.cs.wisc.edu/~arch/www/" style="">World-Wide Computer Architecture Information</a><span style="">以及</span><a target="_blank" rel="nofollow" href="http://pages.cs.wisc.edu/~arch/uwarch/" style="">Computer
+ Architecture Research at Wisconsin</a><span style="">提供了很多信息。ISCA是系统结构的顶级会议；有些国人分享了他们在ISCA的经历：计算所研究生的《</span><a target="_blank" rel="nofollow" href="http://hi.baidu.com/microarch/blog/item/458c308f0a3b4119b31bba8e.html" style="">ISCA和中国</a><span style="">》，</span><a target="_blank" rel="nofollow" href="http://asl.ncic.ac.cn/baoyg/" style="">计算所系统组副教授</a><span style="">的《</span><a target="_blank" rel="nofollow" href="http://blog.sciencenet.cn/blog-414166-302386.html" style="">ISCA08见闻</a><span style="">》，</span><a target="_blank" rel="nofollow" href="http://www.cs.virginia.edu/~skadron/" style="">Prof.
+ Kevin Skadron</a><span style="">学生记录ISCA 2011的《</span><a target="_blank" rel="nofollow" href="http://www.douban.com/note/155598567/" style="">ISCA归</a><span style="">》。</span><br style="">
+<br style="">
+<span style="">原复旦大学副教授、现上交软件学院教授陈海波，于11年在中国计算机学会通讯专栏发表的《一名系统研究者的攀登之路》(</span><a target="_blank" rel="nofollow" href="http://www.ccf.org.cn/resources/1190201776262/2011/09/21/7.pdf" style="">pdf</a><span style="">)，很适合作为Statement of Purpose的第一部分，即Why
+ computer architecture。按我导师的话说，与其说是此人的攀登之路，不如说是本来很牛、思维很活跃的人（从04年大四到11年投中若干重要甚至顶级会议SOSP，只花了7年时间），通过明师（注意，是明白的明，不是名气的名）指点，在转换若干方向（包括VLIW的GCC后端移植和可重构计算）后，选定系统虚拟化这个三年后国内很火的领域后，一路顺风顺水，并从此处在系统虚拟化研究的浪潮之巅，无论是从科研经历（在MSRA和MIT鼎鼎大名的PDOS组和大牛人</span><a target="_blank" rel="nofollow" href="http://pdos.csail.mit.edu/~kaashoek/" style="">Frans
+ Kaashoek</a><span style="">共事），还是发表的论文（包括ISCA'08、MICRO 2009、PACT 2010、SOSP 2011、PPoPP 2011等）的角度。《ISCA08见闻》谈及的Harford博士毕业、现在是上交教授的Xiaoyao Liang，也很幸运——“他的老板是David Brooks，给他指导了一个很好的方向，避开了功耗这个热点，选择Process Variation这个突破口，在Top Conference上发表了一系列文章。”事实上，每个博士都有自己进入某一领域的独特因缘，否则真应该思考一下</span><a target="_blank" rel="nofollow" href="http://www.pgbovine.net/undergrad-research-guest-article.htm" style="">Why
+ Ph.D.</a><span style="">——6年的commitment（特指美国）。来自台湾的MIT CS博士对为什么读博士也有</span><a target="_blank" rel="nofollow" href="http://blog.vgod.tw/2012/03/20/why-i-do-phd/" style="">他的观点</a><span style="">（需翻墙）。以上故事能有所借鉴最好，实在不行，当成茶余饭后的一个段子，也能博得一笑，十年少！</span><br style="">
+<br style="">
+<span style="">而从我的偶像，</span><a target="_blank" rel="nofollow" href="http://www.drdobbs.com/architecture-and-design/the-design-of-llvm/240001128" style="">LLVM</a><span style="">首席architect Chris Lattner自述的</span><a target="_blank" rel="nofollow" href="http://www.nondot.org/sabre/bio.html" style="">简短生平</a><span style="">中，能从中了解他的成长轨迹；更重要的是，他和咱的差距也就是十年！不过，系统结构方向更务实的马拉松目标，可以定为Wisc的09届本科、11届硕士，UIUC
+ 11年入学的博士</span><a target="_blank" rel="nofollow" href="http://pages.cs.wisc.edu/~sinclair/" style="">Matt Sinclair</a><span style="">。</span><br style="">
+<br style="">
+<span style="">最后，推荐威斯康馨系统结构课程</span><a target="_blank" rel="nofollow" href="http://pages.cs.wisc.edu/~markhill/cs752/Fall2011/" style="">Advanced Arch I</a><span style="">和II（</span><a target="_blank" rel="nofollow" href="http://pages.cs.wisc.edu/~markhill/cs757/Spring2012/" style="">Prof.
+ Mark Hill</a><span style="">或</span><a target="_blank" rel="nofollow" href="http://ece757.ece.wisc.edu/" style="">Prof. Mikko Lipasti</a><span style="">版），</span><a target="_blank" rel="nofollow" href="http://pages.cs.wisc.edu/~david/courses/cs758/Fall2013/wiki/" style="">多核处理器编程</a><span style="">，以及Qual的</span><a target="_blank" rel="nofollow" href="http://pages.cs.wisc.edu/~karu/qualwiki/" style="">备考资料</a><span style="">和</span><a target="_blank" rel="nofollow" href="http://www.cs.wisc.edu/academic-programs/graduate-program/phd-qualifying-exams-archive" style="">历年真题</a><span style="">，让想做CA研究的感受一下！话说，我当年本科时苦于没人指导如何研究系统结构，就下载《微处理器设计》、caaqa等经典书籍每章后面感兴趣的论文，陷于浩瀚paper海而没有灯塔指引。希望后来者不要重蹈我的覆辙！</span><br style="">
+<br style="">
+<span style="">上面推荐了一些书，但是对于《</span><a target="_blank" rel="nofollow" href="http://www.aqee.net/books-programmers-dont-really-read/" style="">最常被程序员们谎称读过的计算机书籍</a><span style="">》，不知是不是有人躺枪了；反正，我是中了。</span><br style="">
+<br style="">
+<span style="">8) Systems</span><br style="">
+<span style="">CS科研，尤其是系统领域的研究，不是一门课的知识就能涵盖的。比如，</span><a target="_blank" rel="nofollow" href="http://highscalability.com/blog/2013/1/28/duckduckgo-architecture-1-million-deep-searches-a-day-and-gr.html" style="">此文</a><span style="">介绍了垂直搜索引擎</span><a target="_blank" rel="nofollow" href="https://github.com/duckduckgo" style="">Duckduckgo</a><span style="">的架构。</span><br style="">
+<a target="_blank" rel="nofollow" href="http://pages.cs.wisc.edu/~remzi/Classes/838/Spring2013/" style="">虚拟化</a><span style="">也是系统领域研究的热点之一，比如Virtual Machine Moniter应用于smartphone平台方面，</span><a target="_blank" rel="nofollow" href="http://systems.cs.columbia.edu/lab/news/" style="">哥大</a><span style="">比较前沿。</span><br style="">
+<br style="">
+<span style="">网络方面本人水平有限，暂归此类。这是</span><a target="_blank" rel="nofollow" href="http://www.cs.ucsb.edu/~almeroth/conf/stats/" style="">网络方向会议统计</a><span style="">。</span><a target="_blank" rel="nofollow" href="http://lizstinson.blogspot.com/2009/06/browser-architecture-chrome.html" style="">Chrome
+ Browser architecture</a><span style="">. An interesting </span><a target="_blank" rel="nofollow" href="http://lizstinson.blogspot.com/2009/09/so-i-recently-added-google-analytics.html" style="">trick, powered by Google,
+</a><span style="">to augment the visiting counter for ur website; I am sure I am joking.</span><br style="">
+<br style="">
+<a target="_blank" rel="nofollow" href="http://multipath-tcp.org/" style="">MultiPath TCP</a><span style=""> seems to be
+</span><a target="_blank" rel="nofollow" href="http://blog.codingnow.com/2014/02/connection_reuse.html" style="">promising</a><span style=""> in the mobile networking settings.</span><br style="">
+<br style="">
+<span style="">纷繁复杂的分布式系统永远是系统领域研究的皇冠之一。Google Fellow</span><a target="_blank" rel="nofollow" href="http://research.google.com/people/jeff/" style="">Jeff Dean</a><span style="">必然是其中翘楚。Google分布式计算的</span><a target="_blank" rel="nofollow" href="http://blog.sina.com.cn/s/blog_4ed630e801000bi3.html" style="">三驾马车</a><span style="">。</span><a target="_blank" rel="nofollow" href="http://lizstinson.blogspot.com/2009/09/some-google-technology-briefly-pagerank.html" style="">MapReduce</a><span style="">其实是FP的两个higher-order
+ functions map和reduce；当然，这也不是大数据处理的救世主，详见</span><a target="_blank" rel="nofollow" href="http://dl.acm.org/citation.cfm?id=1559865" style="">A Comparison of Approaches to Large-Scale Data Analysis</a><span style="">。关于</span><a target="_blank" rel="nofollow" href="http://pages.cs.wisc.edu/~swift/classes/cs739-sp12/wiki/pmwiki.php/Main/DistributedSystemArticles" style="">分布式系统</a><span style="">和</span><a target="_blank" rel="nofollow" href="http://pages.cs.wisc.edu/~swift/classes/cs739-sp12/wiki/pmwiki.php/Main/ScalingPresentations" style="">scaling</a><span style="">的一些文章。</span><a target="_blank" rel="nofollow" href="http://www.metabrew.com/article/anti-rdbms-a-list-of-distributed-key-value-stores" style="">Distributed
+ Key-Value Stores</a><span style="">。云计算。</span><a target="_blank" rel="nofollow" href="http://the-paper-trail.org/blog/" style="">此博客</a><span style="">主要讨论分布式领域技术。</span><br style="">
+<br style="">
+<a target="_blank" rel="nofollow" href="http://jeffhuang.com/search_query_logs.html" style="">QoS of SE</a><br style="">
+<br style="">
+<span style="">有一类分布式系统是基于</span><a target="_blank" rel="nofollow" href="http://www.elementallinks.com/2011/02/06/5th-anniversary-edition-event-driven-architecture-overview/" style="">事件驱动模型</a><span style="">。微软也有一篇</span><a target="_blank" rel="nofollow" href="http://msdn.microsoft.com/en-us/library/dd129913.aspx" style="">综述</a><span style="">。</span><br style="">
+<br style="">
+<span style="">这是</span><a target="_blank" rel="nofollow" href="http://the-paper-trail.org/blog/advanced-computer-science-courses/" style="">高级CS课程合辑</a><span style="">。</span><br style="">
+<br style="">
+<a target="_blank" rel="nofollow" href="http://www.inf.tu-dresden.de/index.php?node_id=1738" style="">德国德累斯顿工业大学的系统方向论文阅读列表</a><span style="">。</span><br style="">
+<br style="">
+<span style="">9) Security &amp; Privacy</span><br style="">
+<span style="">有人的地方就有江湖，也有安全和隐私。计算机安全领域的会议统计有很多人维护：</span><a target="_blank" rel="nofollow" href="http://pages.cs.wisc.edu/~mihai/conference%20acceptance%20rates.html" style="">麦屯版</a><span style="">、</span><a target="_blank" rel="nofollow" href="http://faculty.cs.tamu.edu/guofei/sec_conf_stat.htm" style="">TAMU版</a><span style="">、</span><a target="_blank" rel="nofollow" href="http://icsd.i2r.a-star.edu.sg/staff/jianying/conference-ranking.html" style="">新加坡版</a><span style="">、</span><a target="_blank" rel="nofollow" href="https://personal.cis.strath.ac.uk/changyu.dong/ranking.html" style="">英国版</a><span style="">、</span><a target="_blank" rel="nofollow" href="http://faculty.kfupm.edu.sa/ics/zhioua/Research/ResearchResources.html" style="">沙特版</a><span style="">。IEEE
+ S&amp;P展示了数十年该领域的</span><a target="_blank" rel="nofollow" href="http://www.ieee-security.org/TC/SP-Index.html" style="">研究趋势</a><span style="">以及近些年的</span><a target="_blank" rel="nofollow" href="http://www.ieee-security.org/TC/Reports.html" style="">会议总结</a><span style="">。加拿大Carleton大学汇编了</span><a target="_blank" rel="nofollow" href="http://www.ccsl.carleton.ca/conferences/" style="">一些资料</a><span style="">。而TAMU的华人AP也收集了</span><a target="_blank" rel="nofollow" href="http://faculty.cs.tamu.edu/guofei/links.htm" style="">一些信息</a><span style="">。</span><a target="_blank" rel="nofollow" href="http://www.ieee-security.org/Calendar/cipher-hypercalendar.html" style="">Security
+ and Privacy related Events and Slang</a><span style="">. </span><a target="_blank" rel="nofollow" href="http://www.ieee-security.org/CSFWweb/" style="">Computer Security Foundations Symposium workshop</a><span style="">。</span><a target="_blank" rel="nofollow" href="http://dimacs.rutgers.edu/Workshops/" style="">DIMACS
+ workshop</a><span style="">。</span><br style="">
+<br style="">
+<span style="">UT-Dallas的</span><a target="_blank" rel="nofollow" href="http://www.utdallas.edu/~zxl111930/#toc3" style="">安全课程</a><span style="">；雪城大学以instructional laboratories for security education闻名的</span><a target="_blank" rel="nofollow" href="http://www.cis.syr.edu/~wedu/Teaching/cis643/" style="">计算机安全</a><span style="">和</span><a target="_blank" rel="nofollow" href="http://www.cis.syr.edu/~wedu/Teaching/cis644/" style="">网络安全</a><span style="">课程；麦屯的</span><a target="_blank" rel="nofollow" href="http://pages.cs.wisc.edu/~rist/642-fall-2012/" style="">安全课程</a><span style="">和</span><a target="_blank" rel="nofollow" href="http://pages.cs.wisc.edu/~rist/838-spring-2012/" style="">密码学课程</a><span style="">。</span><br style="">
+<br style="">
+<a target="_blank" rel="nofollow" href="http://cacr.uwaterloo.ca/hac/" style="">Handbook of Applied Cryptography</a><br style="">
+<br style="">
+<span style="">病毒（Malware）早已不是单纯的压缩和加密，还包括利用packer工具，甚至是protection packer工具，对可执行程序进行混淆（obfuscation）处理。Cisco安全博客回顾了</span><a target="_blank" rel="nofollow" href="http://blogs.cisco.com/security/a_brief_history_of_malware_obfuscation_part_1_of_2/" style="">病毒的obfuscation技术历史</a><span style="">。Panda研究所介绍了</span><a target="_blank" rel="nofollow" href="http://research.pandasecurity.com/packer-revolution/" style="">packer工具的进化史</a><span style="">。</span><br style="">
+<br style="">
+<a target="_blank" rel="nofollow" href="http://www.av-test.org/" style="">av-test</a><br style="">
+<span style="">A </span><a target="_blank" rel="nofollow" href="http://www.securityfocus.com/" style="">website</a><span style=""> focus on security &amp; Vulnerabilities</span><br style="">
+<span style="">Security tools to </span><a target="_blank" rel="nofollow" href="http://www.spychecker.com/" style="">download</a><br style="">
+<br style="">
+<span style="">10）课程之外</span><br style="">
+<span style="">回首这些年，很高兴学计算机，不仅是因为与人相比，计算机其实很“简单”，照着程序执行，出现了意外也是可评估可能恢复并规避的——每个程序员都是折翼的天使，在计算机世界里构建属于自己的理想国，没有尔虞我诈；更是因为通过计算机专业的学习（推荐MIT CS五年本硕、海南中学07届师弟给08级高中生</span><a target="_blank" rel="nofollow" href="http://www.56.com/u11/v_NTc3NDMyMjQ.html" style="">介绍学习经验的视频</a><span style="">），更懂得如何获得更多的信息，以更开放的心态接受新鲜事物，而不是成为完全执着保守的左派。这是另一个</span><a target="_blank" rel="nofollow" href="http://blog.csdn.net/v_july_v/article/details/6628086" style="">励志的故事</a><span style="">，在平庸的大学做不平凡的计算机人。事实上，很多学计算机的人喜欢科幻，喜欢哲学，比如冯大师的《计算机和人脑》、《万里任禅游》，喜欢讨论技术背后体现的价值观，如《我们的防火墙:网络时代的表达与监管》。</span><br style="">
+<br style="">
+<span style="">计算机的</span><a target="_blank" rel="nofollow" href="http://www.pgbovine.net/PhD-memoir.htm" style="">博士研究</a><span style="">，需要扎实的</span><a target="_blank" rel="nofollow" href="http://cstheory.stackexchange.com/questions/3253/what-books-should-everyone-read" style="">数学基础</a><span style="">，更需要人文素养。在介绍SE时，其实更多的书目是偏人文的。是的，我认为中国缺少安贫乐道、少欲知足的精神，这与缺乏真正</span><a target="_blank" rel="nofollow" href="http://www.phdcomics.com/comics/aboutcomics.html" style="">Ph.D.</a><span style="">教育——五到六年时间在一个方向钻研（</span><a target="_blank" rel="nofollow" href="http://pages.cs.wisc.edu/~gleicher/Web/" style="">Prof.
+ Mike Gleicher</a><span style="">给出了很多建议）——有关。以计算机专业而言，本科学位是B.E.，工科学士；研究生或是M.S.，科学大拿；博士是</span><a target="_blank" rel="nofollow" href="http://graphics.stanford.edu/~levoy/unc-commencement.html" style="">Ph.D.</a><span style="">，哲学博士。</span><a target="_blank" rel="nofollow" href="http://da-data.blogspot.com/2013/01/on-phd.html" style="">Ph.D.</a><span style="">毕业后，追求的不应该是过分的物质生活，反而应是研究领域精神上的快乐！</span><br style="">
+<br style="">
+<span style="">这也与传统文化的缺失有关，包括我在内，没几人读过千字文、三字经、弟子规、四书五经、春秋、左传。另外，学计算机技术也是要读</span><a target="_blank" rel="nofollow" href="http://www.hrbxinzhi.com/history/resource.asp" style="">计算机发展史</a><span style="">、参观</span><a target="_blank" rel="nofollow" href="http://www.ruanyifeng.com/blog/2010/10/where_to_see_silicon_valley.html" style="">硅谷</a><span style="">的</span><a target="_blank" rel="nofollow" href="http://blog.sciencenet.cn/blog-414166-568032.html" style="">计算机历史博物馆</a><span style="">的，什么《数学之美和浪潮之巅》《</span><a target="_blank" rel="nofollow" href="http://book.douban.com/subject/1970428/" style="">激荡三十年</a><span style="">》《</span><a target="_blank" rel="nofollow" href="http://book.douban.com/subject/3816827/" style="">沸腾十五年</a><span style="">》《</span><a target="_blank" rel="nofollow" href="http://book.douban.com/subject/1085729/" style="">IT史记</a><span style="">》《</span><a target="_blank" rel="nofollow" href="http://book.douban.com/subject/1434831/" style="">IT通史</a><span style="">》《</span><a target="_blank" rel="nofollow" href="http://book.douban.com/subject/1230055/" style="">IT大败局</a><span style="">》，以及</span><a target="_blank" rel="nofollow" href="http://book.douban.com/doulist/154109/" style="">《信息技术文化史》豆列</a><span style="">，了解什么技术方兴未艾，什么如日中天，什么日薄西山。同时推荐这个ted视频，</span><a target="_blank" rel="nofollow" href="http://www.ted.com/talks/simon_sinek_how_great_leaders_inspire_action.html" style="">how
+ inspired leader inspire others</a><span style="">，里面有描述创新的源泉和从新兴到衰亡的市场趋势分析。桑德尔的《公正》，讨论的就是很贴近生活实际的道德标准评判。而《细读美国大学》则是让国人了解米国大学的细节，以及如何在米国读大学，特别是本科Liberal Art教育（通识教育、素质教育都不是恰当的翻译）。子曰从心所欲而不逾矩，庄子说逍遥游，佛家的观自在（即大悲观世音菩萨的别称），让我向往，让我思考，让我自由！</span><br style="">
+<br style="">
+<span style="">跑远了，期待一下</span><a target="_blank" rel="nofollow" href="http://www.lingcc.com/2010/12/23/11431/" style="">量子计算机</a><span style="">吧。那时的计算机基础课，可能完全不是上面这一套了。1）应该是量子力学了吧？</span><br style="">
+<br style="">
+<span style="">总之，祝福所有CSer，这是门最好的学科。祝福所有飞友，并附上</span><a target="_blank" rel="nofollow" href="http://www.douban.com/note/269668597/" style="">我的飞跃总结</a><span style="">以及</span><a target="_blank" rel="nofollow" href="http://2.bp.blogspot.com/-adt1AR56vHg/UZuO_CmzAJI/AAAAAAAAAws/4NXz0sbgS18/s1600/zips-2013.jpg" style="">Remzi的CS牛校统计图</a><span style="">，心安处，即是家。南无阿弥陀佛！</span><br style="">
+<br style="">
+<span style="">不好意思，知者不言，言者不知。喷了一地口水，与我头像不符，</span><a target="_blank" rel="nofollow" href="http://www.lianhua33.com/gs/gs131.htm" style="">常惭愧</a><span style="">。</span>
+
+</div>
+
+
+
+
+<!-- Baidu Button BEGIN -->
+
+<div class="bdsharebuttonbox bdshare-button-style0-16" style="float: right;" data-bd-bind="1415672434279">
+<a href="http://blog.csdn.net/snsn1984/article/details/24024811#" class="bds_more" data-cmd="more" style="background-position:0 0 !important; background-image: url(http://bdimg.share.baidu.com/static/api/img/share/icons_0_16.png?v=d754dcc0.png) !important"></a>
+<a href="http://blog.csdn.net/snsn1984/article/details/24024811#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间" style="background-position:0 -52px !important"></a>
+<a href="http://blog.csdn.net/snsn1984/article/details/24024811#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博" style="background-position:0 -104px !important"></a>
+<a href="http://blog.csdn.net/snsn1984/article/details/24024811#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博" style="background-position:0 -260px !important"></a>
+<a href="http://blog.csdn.net/snsn1984/article/details/24024811#" class="bds_renren" data-cmd="renren" title="分享到人人网" style="background-position:0 -208px !important"></a>
+<a href="http://blog.csdn.net/snsn1984/article/details/24024811#" class="bds_weixin" data-cmd="weixin" title="分享到微信" style="background-position:0 -1612px !important"></a>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+<!-- Baidu Button END -->
+
+<!--192.168.100.33-->
+<ul class="article_next_prev">
+            <li class="prev_article"><span onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_shangyipian&#39;]);location.href=&#39;/snsn1984/article/details/22187507&#39;;">上一篇</span><a href="http://blog.csdn.net/snsn1984/article/details/22187507" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_shangyipian&#39;])">Let’s Work on an LLVM Superoptimizer</a></li>
+            <li class="next_article"><span onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_xiayipian&#39;]);location.href=&#39;/snsn1984/article/details/24408917&#39;;">下一篇</span><a href="http://blog.csdn.net/snsn1984/article/details/24408917" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_xiayipian&#39;])">程序员学习资料分享---爱分享的程序员（新浪微博）</a></li>
+</ul>
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1536434" src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/bds_s_v2.js"></script>
+
+<script type="text/javascript">
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+
+</div>
+      <dl class="blog-associat-tag">
+        <dt>主题推荐</dt>
+        <dd>
+                <a href="http://www.csdn.net/tag/%E8%AE%A1%E7%AE%97%E6%9C%BA" target="_blank" class="blog-tage-red">计算机</a> 
+                <a href="http://www.csdn.net/tag/linux%E5%86%85%E6%A0%B8" target="_blank" class="blog-tage-red">linux内核</a> 
+                <a href="http://www.csdn.net/tag/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6" target="_blank" class="blog-tage-red">计算机科学</a> 
+                <a href="http://www.csdn.net/tag/operating%20system" target="_blank" class="blog-tage-red">operating system</a> 
+                <a href="http://www.csdn.net/tag/web%E8%AE%BE%E8%AE%A1" target="_blank" class="blog-tage-red">web设计</a> 
+        </dd>
+    </dl> 
+
+
+<dl class="blog-ass-articl tracking-ad" data-mod="popu_36" id="res-relatived"> 
+     <dt><span>猜你在找</span></dt>    
+<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/zhengyuquan/article/details/17709847" title="HIT archive data格式的system.img解包" strategy="SearchAlgorithm" target="_blank">HIT archive data格式的system.img解包</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/flowingflying/article/details/6914655" title="公开课学习笔记-[哈佛]计算机科学CS50（三）" strategy="SearchAlgorithm" target="_blank">公开课学习笔记-[哈佛]计算机科学CS50（三）</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/u011368821/article/details/38025577" title="《modern operating system》 chapter 6 DEADLOCKS  笔记" strategy="SearchAlgorithm" target="_blank">《modern operating system》 chapter 6 DEADLOCKS  笔记</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/chinapub_2009/article/details/7942574" title="设计原本：计算机科学巨匠Frederick P.Brooks的思考(评注版)(Design of Design名作精读)" strategy="SearchAlgorithm" target="_blank">设计原本：计算机科学巨匠Frederick P.Brooks的思考(评注版)(Design of Design名作精读)</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/hezikui1987/article/details/30975137" title="Press&lt;F1&gt;...&lt;F12&gt;missing operating system的解决办法" strategy="SearchAlgorithm" target="_blank">Press<f1>...<f12>missing operating system的解决办法</f12></f1></a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/sxhelijian/article/details/17651761" title="大三计算机科班学生悟道理论联系实际" strategy="SearchAlgorithm" target="_blank">大三计算机科班学生悟道理论联系实际</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/zhuchaohua/article/details/22339457" title="The cpu has been disabled by the guest operating system" strategy="SearchAlgorithm" target="_blank">The cpu has been disabled by the guest operating system</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/dingxingmei/article/details/17285595" title="CS0234: 命名空间“System.Web.Mvc”中不存在类型或命名空间名称“Pager”(是否缺少程序集引用?)" strategy="SearchAlgorithm" target="_blank">CS0234: 命名空间“System.Web.Mvc”中不存在类型或命名空间名称“Pager”(是否缺少程序集引用?)</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/chifuqi/article/details/23330613" title="Error 1962: No operating system found." strategy="SearchAlgorithm" target="_blank">Error 1962: No operating system found.</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/weican57/article/details/6684673" title=".编译器错误信息: CS0030 无法将类型“ASP.login_aspx”转换为“System.Web.UI.WebControls.Login”" strategy="SearchAlgorithm" target="_blank">.编译器错误信息: CS0030 无法将类型“ASP.login_aspx”转换为“System.Web.UI.WebControls.Login”</a></dd></dl>
+
+<script type="text/javascript">
+    var searchtitletags = 'HIT CS科班对计算机专业knowledge的compilation' + ',' + '计算机,linux内核,计算机科学,operating system,web设计';
+    searchService({
+        index: 'blog',
+        query: searchtitletags,
+        from: 10,
+        size: 10,
+        appendTo: '#res-relatived',
+        url: 'recommend',
+        his: 2,
+        client: "blog_cf_enhance",
+        tmpl: '<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="#{ url }" title="#{ title }" strategy="#{ strategy }">#{ title }</a></dd>'
+    });
+
+ </script>   
+
+
+    <div id="ad_cen">
+   
+          <script type="text/javascript">
+              new Ad(4, 'ad_cen');
+          </script>
+    <iframe id="ad_frm_0" frameborder="0" scrolling="no" src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/ad(1).html" style="border-width: 0px; overflow: hidden; width: 984px; height: 90px;"></iframe></div>
+<div class="comment_class">
+    <div id="comment_title" class="panel_head">
+        <span class="see_comment">查看评论</span><a name="comments"></a></div>
+    <div id="comment_list"><br>&nbsp;&nbsp;暂无评论<br><br><div class="clear"></div></div>
+    <div id="comment_bar">
+    </div>
+    <div id="comment_form"><a name="commentbox"></a><a name="reply"></a><a name="quote"></a><form action="http://blog.csdn.net/snsn1984/comment/submit?id=24024811" method="post" onsubmit="return subform(this);"><div class="commentform"><div class="panel_head">发表评论</div><ul><li class="left">用 户 名：</li><li class="right">Dandi007</li></ul><ul><li class="left">评论内容：</li><li class="right" style="position:relative;"><div id="ubbtools"><a href="http://blog.csdn.net/snsn1984/article/details/24024811#insertcode" code="code"><img src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/code.gif" border="0" alt="插入代码" title="插入代码"></a></div><div id="lang_list" style="position: absolute; top: 28px; left: 0px; display: none;"><a class="long_name" href="http://blog.csdn.net/snsn1984/article/details/24024811#html">HTML/XML</a><a class="long_name" href="http://blog.csdn.net/snsn1984/article/details/24024811#objc">objective-c</a><a class="zhong_name" href="http://blog.csdn.net/snsn1984/article/details/24024811#delphi">Delphi</a><a class="zhong_name" href="http://blog.csdn.net/snsn1984/article/details/24024811#ruby">Ruby</a><a href="http://blog.csdn.net/snsn1984/article/details/24024811#php">PHP</a><a class="duan_name" href="http://blog.csdn.net/snsn1984/article/details/24024811#csharp">C#</a><a style=" border-right: none;" class="duan_name" href="http://blog.csdn.net/snsn1984/article/details/24024811#cpp">C++</a><a style=" border-bottom:none;" class="long_name" href="http://blog.csdn.net/snsn1984/article/details/24024811#javascript">JavaScript</a><a style=" border-bottom:none;" class="long_name" href="http://blog.csdn.net/snsn1984/article/details/24024811#vb">Visual Basic</a><a style=" border-bottom:none;" class="zhong_name" href="http://blog.csdn.net/snsn1984/article/details/24024811#python">Python</a><a style=" border-bottom:none;" class="zhong_name" href="http://blog.csdn.net/snsn1984/article/details/24024811#java">Java</a><a style="border-bottom:none;" class="duan_name" href="http://blog.csdn.net/snsn1984/article/details/24024811#css">CSS</a><a style="border-bottom:none;" class="duan_name" href="http://blog.csdn.net/snsn1984/article/details/24024811#sql">SQL</a><a style="border:none;" class="duan_name" href="http://blog.csdn.net/snsn1984/article/details/24024811#plain">其它</a></div><textarea class="comment_content" name="comment_content" id="comment_content" style="width: 400px; height: 200px;"></textarea></li></ul><ul><input type="hidden" id="comment_replyId" name="comment_replyId"><input type="hidden" id="comment_userId" name="comment_userId" value="521203"><input type="hidden" id="commentId" name="commentId" value=""><input type="submit" class="comment_btn" value="提交">&nbsp;&nbsp;<span id="tip_comment" style="color: Red; display: none;"></span></ul></div></form></div>
+
+    <div class="announce">
+        * 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场<a name="reply"></a><a name="quote"></a></div>
+</div>
+
+<script type="text/javascript">
+    var fileName = '24024811';
+    var commentscount = 0;
+    var islock = false
+</script>
+<script type="text/javascript" src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/comment.js"></script>
+    <div id="ad_bot">
+    <iframe id="ad_frm_1" frameborder="0" scrolling="no" src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/ad(2).html" style="border-width: 0px; overflow: hidden; width: 984px; height: 0px;"></iframe></div>
+    <script type="text/javascript">
+    new Ad(5, 'ad_bot');
+    </script>
+<div id="report_dialog">
+</div>
+
+<div id="d-top" style="bottom:60px;">
+        <a id="quick-reply" class="btn btn-top q-reply" title="快速回复" style="">
+            <img src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/blog-icon-reply.png" alt="快速回复">
+        </a>    
+
+    <a id="d-top-a" class="btn btn-top backtop" style="" title="返回顶部" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_huidaodingbu&#39;])">         
+         <img src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/top.png" alt="TOP">
+    </a>
+</div>
+<script type="text/javascript">
+    $(function ()
+    {
+        $("#ad_frm_0").height("90px");
+        
+        setTimeout(function(){
+            $("#ad_frm_2").height("200px");
+        },1000);
+        
+
+        if($("#comment_content").length>0)
+        {
+            $("#quick-reply").show();
+
+            $("#quick-reply").click(function(){
+                setEditorFocus();
+            });
+        }       
+     
+        var d_top = $('#d-top-a');
+        document.onscroll = function ()
+        {
+            var scrTop = (document.body.scrollTop || document.documentElement.scrollTop);
+            if (scrTop > 500)
+            {
+                d_top.show();
+            } else
+            {
+                d_top.hide();
+            }
+        }
+        $('#d-top-a').click(function ()
+        {
+            scrollTo(0, 0);
+            this.blur();
+            return false;
+        });
+    });
+  
+</script>
+<style type="text/css">
+    .tag_list
+    {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #D7CBC1;
+        color: #000000;
+        font-size: 12px;
+        line-height: 20px;
+        list-style: none outside none;
+        margin: 10px 2% 0 1%;
+        padding: 1px;
+    }
+    .tag_list h5
+    {
+        background: none repeat scroll 0 0 #E0DBD3;
+        color: #47381C;
+        font-size: 12px;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 5px;
+        margin: 0;
+    }
+    .tag_list h5 a
+    {
+        color: #47381C;
+    }
+    .classify
+    {
+        margin: 10px 0;
+        padding: 4px 12px 8px;
+    }
+    .classify a
+    {
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+</style>
+<div class="tag_list">
+    <h5>
+        <a href="http://www.csdn.net/tag/" target="_blank">核心技术类目</a></h5>
+    <div class="classify">
+<a title="全部主题" href="http://www.csdn.net/tag" target="_blank" onclick="LogClickCount(this,336);">全部主题</a>
+<a title="Hadoop" href="http://g.csdn.net/5272865" target="_blank" onclick="LogClickCount(this,336);">Hadoop</a>
+<a title="AWS" href="http://g.csdn.net/5272866" target="_blank" onclick="LogClickCount(this,336);">AWS</a>
+<a title="移动游戏" href="http://g.csdn.net/5272870" target="_blank" onclick="LogClickCount(this,336);">移动游戏</a>
+<a title="Java" href="http://g.csdn.net/5272871" target="_blank" onclick="LogClickCount(this,336);">Java</a>
+<a title="Android" href="http://g.csdn.net/5272872" target="_blank" onclick="LogClickCount(this,336);">Android</a>
+<a title="iOS" href="http://g.csdn.net/5272873" target="_blank" onclick="LogClickCount(this,336);">iOS</a>
+<a title="Swift" href="http://g.csdn.net/5272868" target="_blank" onclick="LogClickCount(this,336);">Swift</a>
+<a title="智能硬件" href="http://g.csdn.net/5272869" target="_blank" onclick="LogClickCount(this,336);">智能硬件</a>
+<a title="Docker" href="http://g.csdn.net/5272867" target="_blank" onclick="LogClickCount(this,336);">Docker</a>
+<a title="OpenStack" href="http://g.csdn.net/5272925" target="_blank" onclick="LogClickCount(this,336);">OpenStack</a>
+<a title="VPN" href="http://www.csdn.net/tag/vpn" target="_blank" onclick="LogClickCount(this,336);">VPN</a>
+<a title="Spark" href="http://g.csdn.net/5272924" target="_blank" onclick="LogClickCount(this,336);">Spark</a>
+<a title="ERP" href="http://www.csdn.net/tag/erp" target="_blank" onclick="LogClickCount(this,336);">ERP</a>
+<a title="IE10" href="http://www.csdn.net/tag/ie10" target="_blank" onclick="LogClickCount(this,336);">IE10</a>
+<a title="Eclipse" href="http://www.csdn.net/tag/eclipse" target="_blank" onclick="LogClickCount(this,336);">Eclipse</a>
+<a title="CRM" href="http://www.csdn.net/tag/crm" target="_blank" onclick="LogClickCount(this,336);">CRM</a>
+<a title="JavaScript" href="http://www.csdn.net/tag/javascript" target="_blank" onclick="LogClickCount(this,336);">JavaScript</a>
+<a title="数据库" href="http://www.csdn.net/tag/%E6%95%B0%E6%8D%AE%E5%BA%93" target="_blank" onclick="LogClickCount(this,336);">数据库</a>
+<a title="Ubuntu" href="http://www.csdn.net/tag/ubuntu" target="_blank" onclick="LogClickCount(this,336);">Ubuntu</a>
+<a title="NFC" href="http://www.csdn.net/tag/nfc" target="_blank" onclick="LogClickCount(this,336);">NFC</a>
+<a title="WAP" href="http://www.csdn.net/tag/wap" target="_blank" onclick="LogClickCount(this,336);">WAP</a>
+<a title="jQuery" href="http://www.csdn.net/tag/jquery" target="_blank" onclick="LogClickCount(this,336);">jQuery</a>
+<a title="BI" href="http://www.csdn.net/tag/bi" target="_blank" onclick="LogClickCount(this,336);">BI</a>
+<a title="HTML5" href="http://www.csdn.net/tag/html5" target="_blank" onclick="LogClickCount(this,336);">HTML5</a>
+<a title="Spring" href="http://www.csdn.net/tag/spring" target="_blank" onclick="LogClickCount(this,336);">Spring</a>
+<a title="Apache" href="http://www.csdn.net/tag/apache" target="_blank" onclick="LogClickCount(this,336);">Apache</a>
+<a title=".NET" href="http://www.csdn.net/tag/.net" target="_blank" onclick="LogClickCount(this,336);">.NET</a>
+<a title="API" href="http://www.csdn.net/tag/api" target="_blank" onclick="LogClickCount(this,336);">API</a>
+<a title="HTML" href="http://www.csdn.net/tag/html" target="_blank" onclick="LogClickCount(this,336);">HTML</a>
+<a title="SDK" href="http://www.csdn.net/tag/sdk" target="_blank" onclick="LogClickCount(this,336);">SDK</a>
+<a title="IIS" href="http://www.csdn.net/tag/iis" target="_blank" onclick="LogClickCount(this,336);">IIS</a>
+<a title="Fedora" href="http://www.csdn.net/tag/fedora" target="_blank" onclick="LogClickCount(this,336);">Fedora</a>
+<a title="XML" href="http://www.csdn.net/tag/xml" target="_blank" onclick="LogClickCount(this,336);">XML</a>
+<a title="LBS" href="http://www.csdn.net/tag/lbs" target="_blank" onclick="LogClickCount(this,336);">LBS</a>
+<a title="Unity" href="http://www.csdn.net/tag/unity" target="_blank" onclick="LogClickCount(this,336);">Unity</a>
+<a title="Splashtop" href="http://www.csdn.net/tag/splashtop" target="_blank" onclick="LogClickCount(this,336);">Splashtop</a>
+<a title="UML" href="http://www.csdn.net/tag/uml" target="_blank" onclick="LogClickCount(this,336);">UML</a>
+<a title="components" href="http://www.csdn.net/tag/components" target="_blank" onclick="LogClickCount(this,336);">components</a>
+<a title="Windows Mobile" href="http://www.csdn.net/tag/windowsmobile" target="_blank" onclick="LogClickCount(this,336);">Windows Mobile</a>
+<a title="Rails" href="http://www.csdn.net/tag/rails" target="_blank" onclick="LogClickCount(this,336);">Rails</a>
+<a title="QEMU" href="http://www.csdn.net/tag/qemu" target="_blank" onclick="LogClickCount(this,336);">QEMU</a>
+<a title="KDE" href="http://www.csdn.net/tag/kde" target="_blank" onclick="LogClickCount(this,336);">KDE</a>
+<a title="Cassandra" href="http://www.csdn.net/tag/cassandra" target="_blank" onclick="LogClickCount(this,336);">Cassandra</a>
+<a title="CloudStack" href="http://www.csdn.net/tag/cloudstack" target="_blank" onclick="LogClickCount(this,336);">CloudStack</a>
+<a title="FTC" href="http://www.csdn.net/tag/ftc" target="_blank" onclick="LogClickCount(this,336);">FTC</a>
+<a title="coremail" href="http://www.csdn.net/tag/coremail" target="_blank" onclick="LogClickCount(this,336);">coremail</a>
+<a title="OPhone " href="http://www.csdn.net/tag/ophone" target="_blank" onclick="LogClickCount(this,336);">OPhone </a>
+<a title="CouchBase" href="http://www.csdn.net/tag/couchbase" target="_blank" onclick="LogClickCount(this,336);">CouchBase</a>
+<a title="云计算" href="http://www.csdn.net/tag/%E4%BA%91%E8%AE%A1%E7%AE%97" target="_blank" onclick="LogClickCount(this,336);">云计算</a>
+<a title="iOS6" href="http://www.csdn.net/tag/iOS6" target="_blank" onclick="LogClickCount(this,336);">iOS6</a>
+<a title="Rackspace " href="http://www.csdn.net/tag/rackspace" target="_blank" onclick="LogClickCount(this,336);">Rackspace </a>
+<a title="Web App" href="http://www.csdn.net/tag/webapp" target="_blank" onclick="LogClickCount(this,336);">Web App</a>
+<a title="SpringSide" href="http://www.csdn.net/tag/springside" target="_blank" onclick="LogClickCount(this,336);">SpringSide</a>
+<a title="Maemo" href="http://www.csdn.net/tag/maemo" target="_blank" onclick="LogClickCount(this,336);">Maemo</a>
+<a title="Compuware" href="http://www.csdn.net/tag/compuware" target="_blank" onclick="LogClickCount(this,336);">Compuware</a>
+<a title="大数据" href="http://www.csdn.net/tag/%E5%A4%A7%E6%95%B0%E6%8D%AE" target="_blank" onclick="LogClickCount(this,336);">大数据</a>
+<a title="aptech" href="http://www.csdn.net/tag/aptech" target="_blank" onclick="LogClickCount(this,336);">aptech</a>
+<a title="Perl" href="http://www.csdn.net/tag/perl" target="_blank" onclick="LogClickCount(this,336);">Perl</a>
+<a title="Tornado" href="http://www.csdn.net/tag/tornado" target="_blank" onclick="LogClickCount(this,336);">Tornado</a>
+<a title="Ruby" href="http://www.csdn.net/tag/ruby" target="_blank" onclick="LogClickCount(this,336);">Ruby</a>
+<a title="Hibernate" href="http://www.csdn.net/hibernate" target="_blank" onclick="LogClickCount(this,336);">Hibernate</a>
+<a title="ThinkPHP" href="http://www.csdn.net/tag/thinkphp" target="_blank" onclick="LogClickCount(this,336);">ThinkPHP</a>
+<a title="HBase" href="http://www.csdn.net/tag/hbase" target="_blank" onclick="LogClickCount(this,336);">HBase</a>
+<a title="Pure" href="http://www.csdn.net/tag/pure" target="_blank" onclick="LogClickCount(this,336);">Pure</a>
+<a title="Solr" href="http://www.csdn.net/tag/solr" target="_blank" onclick="LogClickCount(this,336);">Solr</a>
+<a title="Angular" href="http://www.csdn.net/tag/angular" target="_blank" onclick="LogClickCount(this,336);">Angular</a>
+<a title="Cloud Foundry" href="http://www.csdn.net/tag/cloudfoundry" target="_blank" onclick="LogClickCount(this,336);">Cloud Foundry</a>
+<a title="Redis" href="http://www.csdn.net/tag/redis" target="_blank" onclick="LogClickCount(this,336);">Redis</a>
+<a title="Scala" href="http://www.csdn.net/tag/scala" target="_blank" onclick="LogClickCount(this,336);">Scala</a>
+<a title="Django" href="http://www.csdn.net/tag/django" target="_blank" onclick="LogClickCount(this,336);">Django</a>
+<a title="Bootstrap" href="http://www.csdn.net/tag/bootstrap" target="_blank" onclick="LogClickCount(this,336);">Bootstrap</a>
+    </div>
+</div>
+
+
+                        <div class="clear">
+                        </div>
+                    </div>                   
+                
+            </div>
+            <div id="side">
+    <div class="side">
+<div id="panel_Profile" class="panel">
+<ul class="panel_head"><span>个人资料</span></ul>
+<ul class="panel_body profile">
+<div id="blog_userface">
+    <a href="http://my.csdn.net/snsn1984" target="_blank">
+    <img src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/1_snsn1984.jpg" title="访问我的空间" style="max-width:90%">
+    </a>
+    <br>
+    <span><a href="http://my.csdn.net/snsn1984" class="user_name" target="_blank">snsn1984</a></span>
+</div>
+<div class="interact">
+<a href="javascript:void(0);" class="attent" id="span_add_follow" title="[加关注]" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_guanzhu&#39;])"></a>
+
+ <a href="javascript:void(0);" class="letter" title="[发私信]" onclick="window.open(&#39;http://msg.csdn.net/letters/model?receiver=snsn1984&#39;,&#39;_blank&#39;,&#39;height=350,width=700&#39;);_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_sixin&#39;])"></a>  
+</div>
+<div id="blog_medal">
+                       <div class="ico_expert" title="CSDN认证专家" style="width:54px;height:60px;background:url(&#39;http://csdnimg.cn/jifen/images/xunzhang/xunzhang/bokezhuanjiamiddle.png&#39;) no-repeat"></div>
+                <div id="bms_box">
+                                            <a target="_blank">
+                                                    <img src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/zhuanlandaren.png" onmouseover="m_over_m(this,2)" onmouseout="m_out_m()" alt="2">
+                                            </a>
+               </div>
+</div>
+<ul id="blog_rank">
+    <li>访问：<span>253721次</span></li>
+    <li>积分：<span>4366</span> </li>    
+    <li>等级： <span style="position:relative;display:inline-block;z-index:1">
+            <img src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/blog5.png" alt="" style="vertical-align: middle;" id="leveImg">
+            <div id="smallTittle" style=" position: absolute;  left: -24px;  top: 25px;  text-align: center;  width: 101px;  height: 32px;  background-color: #fff;  line-height: 32px;  border: 2px #DDDDDD solid;  box-shadow: 0px 2px 2px rgba (0,0,0,0.1);  display: none;   z-index: 999;">
+            <div style="left: 42%;  top: -8px;  position: absolute;  width: 0;  height: 0;  border-left: 10px solid transparent;  border-right: 10px solid transparent;  border-bottom: 8px solid #EAEAEA;"></div>
+            积分：4366 </div>
+        </span>  </li>
+    <li>排名：<span>第2117名</span></li>
+</ul>
+<ul id="blog_statistics">
+    <li>原创：<span>121篇</span></li>
+    <li>转载：<span>32篇</span></li>
+    <li>译文：<span>5篇</span></li>
+    <li>评论：<span>265条</span></li>
+</ul>
+</ul>
+</div>
+
+
+<div class="panel" id="panel_Search">
+    <ul class="panel_head"><span>文章搜索</span></ul>
+    <ul class="panel_body">
+        <form id="frmSearch" action="http://so.csdn.net/search" class="form_search" target="_blank">
+        <span><input id="inputSearch" type="text" class="blogsearch" title="请输入关键字"></span>
+        <input id="btnSubmit" type="button" value="搜索" title="search in blog">
+        <input type="hidden" name="q" id="inputQ">
+        <input type="hidden" name="t" value="blog">
+        <a id="btnSearchBlog" target="_blank"></a>
+        </form>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {           
+            search();
+        });
+
+        $("#frmSearch").submit(function () {
+            search();
+            return false;
+        });
+
+        function search()
+        {
+            var url = "http://so.csdn.net/so/search/s.do?q=" + encodeURIComponent($("#inputSearch").val()) + "&u=" + username + "&t=blog";
+            window.location.href = url;
+        }   
+    });
+</script><div id="panel_Category" class="panel">
+    <ul class="panel_head"><span>博客专栏</span></ul>
+    <ul class="panel_body" id="sp_column">
+    <table cellpadding="0" cellspacing="0"><tbody><tr>
+    <td style="padding:10px 10px 0 0;">
+    <a href="http://blog.csdn.net/column/details/llvm.html" target="_blank"><img src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/20130228114303532.jpg" style="width:75px;height:75px;"></a>
+    </td>
+    <td style="padding:10px 0; vertical-align:top;">
+    <a href="http://blog.csdn.net/column/details/llvm.html" target="_blank">LLVM零基础学习</a>
+    <p>文章：8篇</p>
+    <span>阅读：32029</span>
+    </td>
+    </tr></tbody></table>
+    <table cellpadding="0" cellspacing="0"><tbody><tr>
+    <td style="padding:10px 10px 0 0;">
+    <a href="http://blog.csdn.net/column/details/llvm-study.html" target="_blank"><img src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/20130108140621268.jpg" style="width:75px;height:75px;"></a>
+    </td>
+    <td style="padding:10px 0; vertical-align:top;">
+    <a href="http://blog.csdn.net/column/details/llvm-study.html" target="_blank">LLVM每日谈</a>
+    <p>文章：20篇</p>
+    <span>阅读：57950</span>
+    </td>
+    </tr></tbody></table>
+    </ul>
+</div>
+<div id="panel_Category" class="panel">
+<ul class="panel_head"><span>文章分类</span></ul>
+<ul class="panel_body">
+             <li>
+                <a href="http://blog.csdn.net/snsn1984/article/category/1249418" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">编译技术及LLVM</a><span>(56)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/snsn1984/article/category/1844555" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">翻译</a><span>(5)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/snsn1984/article/category/144823" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">技术综合区</a><span>(32)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/snsn1984/article/category/488621" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">C++</a><span>(28)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/snsn1984/article/category/496108" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">软件工程</a><span>(8)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/snsn1984/article/category/1814733" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">Android</a><span>(8)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/snsn1984/article/category/420804" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">VC++/MFC</a><span>(22)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/snsn1984/article/category/144822" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">随笔</a><span>(33)</span>
+            </li>
+</ul>
+</div><div id="panel_Archive" class="panel">
+<ul class="panel_head"><span>文章存档</span></ul>
+<ul class="panel_body">
+<div id="archive_list"><li><a href="http://blog.csdn.net/snsn1984/article/month/2014/11">2014年11月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2014/10">2014年10月</a><span>(3)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2014/09">2014年09月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2014/07">2014年07月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2014/06">2014年06月</a><span>(4)</span></li><span class="hidelist" style="display:none;"><li><a href="http://blog.csdn.net/snsn1984/article/month/2014/05">2014年05月</a><span>(5)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2014/04">2014年04月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2014/03">2014年03月</a><span>(3)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2014/02">2014年02月</a><span>(3)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2014/01">2014年01月</a><span>(3)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2013/12">2013年12月</a><span>(18)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2013/10">2013年10月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2013/07">2013年07月</a><span>(3)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2013/06">2013年06月</a><span>(4)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2013/05">2013年05月</a><span>(11)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2013/03">2013年03月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2013/02">2013年02月</a><span>(13)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2013/01">2013年01月</a><span>(3)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2012/12">2012年12月</a><span>(4)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2012/11">2012年11月</a><span>(5)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2012/10">2012年10月</a><span>(12)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2012/07">2012年07月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2012/04">2012年04月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2011/12">2011年12月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2011/03">2011年03月</a><span>(3)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2010/05">2010年05月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2010/04">2010年04月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2010/03">2010年03月</a><span>(9)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2010/01">2010年01月</a><span>(6)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2009/12">2009年12月</a><span>(4)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2009/11">2009年11月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2009/09">2009年09月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2009/08">2009年08月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2009/07">2009年07月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2008/12">2008年12月</a><span>(5)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2008/11">2008年11月</a><span>(5)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2008/10">2008年10月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2008/07">2008年07月</a><span>(9)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2008/05">2008年05月</a><span>(4)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2008/03">2008年03月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2006/11">2006年11月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2006/08">2006年08月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2006/07">2006年07月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2005/09">2005年09月</a><span>(7)</span></li><li><a href="http://blog.csdn.net/snsn1984/article/month/2004/06">2004年06月</a><span>(1)</span></li></span><div id="archive_list_button" class="list_closed">展开</div></div>
+</ul>
+</div>
+<div id="hotarticls" class="panel">
+<ul class="panel_head">
+    <span>       
+阅读排行    </span>
+</ul>
+
+<ul class="panel_body itemlist">
+<li>
+<a href="http://blog.csdn.net/snsn1984/article/details/8036032" title="LLVM每日谈之一 LLVM是什么">LLVM每日谈之一 LLVM是什么</a><span>(14303)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/snsn1984/article/details/8593380" title="七天LLVM零基础入门（Linux版本）------第一天">七天LLVM零基础入门（Linux版本）------第一天</a><span>(9893)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/snsn1984/article/details/5387901" title="一步一步学List Control控件的用法（第一步）----创建第一列">一步一步学List Control控件的用法（第一步）----创建第一列</a><span>(8436)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/snsn1984/article/details/5388334" title="一步一步学List Control控件的用法（第二步）----创建第一行">一步一步学List Control控件的用法（第二步）----创建第一行</a><span>(8318)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/snsn1984/article/details/8232943" title="LLVM每日谈之七 Clang">LLVM每日谈之七 Clang</a><span>(7300)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/snsn1984/article/details/7456963" title="Android 4.0.3 源代码结构分析（一）">Android 4.0.3 源代码结构分析（一）</a><span>(6265)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/snsn1984/article/details/8037414" title="LLVM每日谈之二 LLVM IR">LLVM每日谈之二 LLVM IR</a><span>(6161)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/snsn1984/article/details/8596794" title="七天LLVM零基础入门（Linux版本）------第二天">七天LLVM零基础入门（Linux版本）------第二天</a><span>(5651)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/snsn1984/article/details/5408433" title="一步一步学Edit Control控件的用法">一步一步学Edit Control控件的用法</a><span>(5275)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/snsn1984/article/details/5389252" title="一步一步学List Control控件的用法（第三步）----设置风格">一步一步学List Control控件的用法（第三步）----设置风格</a><span>(5205)</span>
+</li>
+</ul>
+</div>
+<div id="hotarticls2" class="panel">
+<ul class="panel_head"><span>评论排行</span></ul>
+<ul class="panel_body itemlist">
+<li>
+<a href="http://blog.csdn.net/snsn1984/article/details/37872029" title="程序员也应该有梦想">程序员也应该有梦想</a><span>(35)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/snsn1984/article/details/7069174" title="苦逼程序员的2011">苦逼程序员的2011</a><span>(27)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/snsn1984/article/details/8476109" title="我的2012----苦逼程序员的蜕变">我的2012----苦逼程序员的蜕变</a><span>(20)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/snsn1984/article/details/8593380" title="七天LLVM零基础入门（Linux版本）------第一天">七天LLVM零基础入门（Linux版本）------第一天</a><span>(16)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/snsn1984/article/details/8504649" title="三论计算机专业本科该如何学习——三要，三不要">三论计算机专业本科该如何学习——三要，三不要</a><span>(15)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/snsn1984/article/details/31747705" title="请不要轻易的说：我不会">请不要轻易的说：我不会</a><span>(13)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/snsn1984/article/details/8998490" title="论计算机专业毕业生的人文素养">论计算机专业毕业生的人文素养</a><span>(13)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/snsn1984/article/details/8232943" title="LLVM每日谈之七 Clang">LLVM每日谈之七 Clang</a><span>(11)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/snsn1984/article/details/27658623" title="CSDN--十年">CSDN--十年</a><span>(10)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/snsn1984/article/details/22252" title="大本计算机专业该怎么学习？">大本计算机专业该怎么学习？</a><span>(9)</span>
+</li>
+</ul>
+</div>
+<div id="homepageArticles" class="panel tracking-ad" data-mod="popu_4">
+<ul class="panel_head"><span>推荐文章</span></ul>
+<ul class="panel_body" id="ad_commend"><iframe id="ad_frm_2" frameborder="0" scrolling="no" src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/ad.html" style="border-width: 0px; overflow: hidden; width: 194px; height: 200px;"></iframe></ul>
+</div>
+<script type="text/javascript">
+ new Ad(12, 'ad_commend');
+</script><div id="newcomments" class="panel">
+<ul class="panel_head"><span>最新评论</span></ul>
+<ul class="panel_body itemlist">
+    <li>
+   
+         <a href="http://blog.csdn.net/snsn1984/article/details/17718745#comments">LLVM每日谈之十八 GEP Instruction的几点总结</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/snsn1984" class="user_name">snsn1984</a>:
+@fjqzzhyp:这种问题建议你自己调试下。
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/snsn1984/article/details/17718745#comments">LLVM每日谈之十八 GEP Instruction的几点总结</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/fjqzzhyp" class="user_name">fjqzzhyp</a>:
+额...觉得没反应又多发了一次...求助，万分感谢~~~
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/snsn1984/article/details/17718745#comments">LLVM每日谈之十八 GEP Instruction的几点总结</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/fjqzzhyp" class="user_name">fjqzzhyp</a>:
+刚开始学习，求教，我现在想要实现float callee_fun(float a, float b)...
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/snsn1984/article/details/40372065#comments">关于Java的一点感悟---底层开发者的上层学习感悟</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/snsn1984" class="user_name">snsn1984</a>:
+@yaoxinren:是啊，完全不一样的感觉。需要的思维方式也不一样，底层感觉为了达到目标信马由缰，...
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/snsn1984/article/details/40372065#comments">关于Java的一点感悟---底层开发者的上层学习感悟</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/yaoxinren" class="user_name">yaoxinren</a>:
+我一直做底层好多年了，包括硬件驱动等，用的最多的是C。现在也开始学习java,才发现真的是不一样的语...
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/snsn1984/article/details/8232943#comments">LLVM每日谈之七 Clang</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/u013893633" class="user_name">u013893633</a>:
+其實代碼地址用github的mirror的更加方便，可以自己提交，自己branch~~
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/snsn1984/article/details/28264443#comments">龙、虎、鲸书杂谈</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/u013893633" class="user_name">u013893633</a>:
+還有露珠，電子版很好下的～～打個廣告，ppurl.com－－－－－－－－－－－－聽說，鯨書最著名的還...
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/snsn1984/article/details/28264443#comments">龙、虎、鲸书杂谈</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/u013893633" class="user_name">u013893633</a>:
+@tianxiong66:命名是因爲封面，親～～
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/snsn1984/article/details/39176999#comments">回归</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/snsn1984" class="user_name">snsn1984</a>:
+@c00lb0ycw:目前还回到原来的公司了。
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/snsn1984/article/details/39176999#comments">回归</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/c00lb0ycw" class="user_name">_青v菜_</a>:
+你现在准备去哪里发展呢
+    </p>
+    </li>
+</ul>
+</div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+
+            <div class="clear">
+            </div>
+        </div>
+        
+
+<script type="text/javascript" src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/cnick.js"></script>
+<script type="text/javascript" src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/newblog.min.js"></script>
+
+
+<script type="text/javascript" src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/showblogmedal.ashx"></script>
+<script type="text/javascript">
+    document.write('<script type="text/javascript" src="http://csdnimg.cn/pubfooter/js/publib_footer.js?' + Math.floor(new Date() / 120000).toString(36) + '="></' + 'script>');
+</script><script type="text/javascript" src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/publib_footer.js"></script><link rel="stylesheet" type="text/css" href="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/pub_footer_2012.css"><div id="pub_footerall" class="pub_footerall"><dl><dt></dt> <dd><a href="http://www.csdn.net/company/about.html" target="_blank">公司简介</a>|<a href="http://www.csdn.net/company/recruit.html" target="_blank">招贤纳士</a>|<a href="http://www.csdn.net/company/marketing.html" target="_blank">广告服务</a>|<a href="http://www.csdn.net/company/account.html" target="_blank">银行汇款帐号</a>|<a href="http://www.csdn.net/company/contact.html" target="_blank">联系方式</a>|<a href="http://www.csdn.net/company/statement.html" target="_blank">版权声明</a>|<a href="http://www.csdn.net/company/layer.html" target="_blank">法律顾问</a>|<a href="mailto:webmaster@csdn.net">问题报告</a>|<a target="_blank" href="http://www.csdn.net/friendlink.html">合作伙伴</a>|<a href="http://bbs.csdn.net/forums/Service" target="_blank">论坛反馈</a></dd><dd><a href="http://wpa.qq.com/msgrd?v=3&uin=2355263776&site=qq&menu=yes" target="_blank" class="qq">网站客服</a> <a href="http://wpa.qq.com/msgrd?v=3&uin=2251809102&site=qq&menu=yes" target="_blank" class="qq">杂志客服</a> <a href="http://e.weibo.com/csdnsupport/profile" target="_blank" class="weibo">微博客服</a> <a href="mailto:webmaster@csdn.net" class="email" title="联系邮箱">webmaster@csdn.net</a> <span class="phone" title="服务热线">400-600-2320</span></dd><dd>京&nbsp;ICP&nbsp;证&nbsp;070598&nbsp;号</dd><dd>北京创新乐知信息技术有限公司 版权所有</dd><dd>江苏乐知网络技术有限公司 提供商务支持</dd><dd>Copyright © 1999-2014, CSDN.NET, All Rights Reserved&nbsp;<a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202001032100010" target="_blank"><img src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/gongshang_logos.gif" alt="GongshangLogo" title=""></a></dd></dl></div><div id="note1" class="csdn_note" style="display:none; position:absolute; z-index:9999; width:440px">  <span class="notice_top_arrow"><span class="inner"></span></span>  <div class="box"></div></div><div class="csdn_notice_tip" style="display: none; position: absolute; z-index: 9990; width: 170px; left: -72px; top: 118px;">  <iframe src="about:blank" frameborder="0" scrolling="no" style="z-index:-1;position:absolute;top:0;left:0;width:100%;height:100%;background:transparent"></iframe>  <div class="tip_text">您有<strong>0</strong>条新通知</div>  <a href="javascript:void 0" class="close2"></a></div><script id="noticeScript" type="text/javascript" btnid="header_notice_num" wrapid="note1" count="5" subcount="5" src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/notify.js"></script>
+<script type="text/javascript">document.write("<img src=http://counter.csdn.net/pv.aspx?id=24 border=0 width=0 height=0>");</script><img src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/pv.aspx" border="0" width="0" height="0">
+<script type="text/javascript" src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/counter.js"></script><script type="text/javascript" charset="UTF-8" src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/msg.popup.js"></script>
+<script type="text/javascript" src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/ad-blog.js"></script><script type="text/javascript" src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/ad-js1065.js"></script>
+<script type="text/javascript" src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/ad-js1062_2.js"></script>
+<script type="text/javascript" src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/ad-js1069_3.js"></script>
+
+<script type="text/javascript" src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/count.js"></script><iframe src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/logs.html" frameborder="0" width="0" height="0"></iframe>
+<script type="text/javascript">
+    $(function () {
+        function __get_code_toolbar(snippet_id) {
+            return $("<a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "' target='_blank' title='在CODE上查看代码片' style='text-indent:0;'><img src='https://code.csdn.net/assets/CODE_ico.png' width=12 height=12 alt='在CODE上查看代码片' style='position:relative;top:1px;left:2px;'/></a>"
+                    + "<a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "/fork' target='_blank' title='派生到我的代码片'  style='text-indent:0;'><img src='https://code.csdn.net/assets/ico_fork.svg' width=12 height=12 alt='派生到我的代码片' style='position:relative;top:2px;left:2px;'/></a>");
+        }
+        
+        $("[code_snippet_id]").each(function () {
+            __s_id = $(this).attr("code_snippet_id");
+            if (__s_id != null && __s_id != "" && __s_id != 0 && parseInt(__s_id) > 70020) {
+                __code_tool = __get_code_toolbar(__s_id);
+                $(this).prev().find(".tools").append(__code_tool);
+            }
+        });
+    });
+</script>
+
+    </div><iframe src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/1065.html" style="width: 1px; height: 1px; position: absolute; visibility: hidden;"></iframe>
+      <!--new top-->
+    
+    <script id="csdn-toolbar-id" btnid="header_notice_num" wrapid="note1" count="5" subcount="5" type="text/javascript" src="./HIT CS科班对计算机专业knowledge的compilation - SHINING的博客 - 博客频道 - CSDN.NET_files/toolbar.js"></script>
+     <!--new top-->
+
+
+<div id="tag-suggest-pop">
+  <div class="relative">
+    <div class="close"></div>
+    <div class="content"></div>
+  </div>
+</div><link href="http://vipnews.csdn.net/webIM/message_pop.css" rel="stylesheet" type="text/css"><div id="_popup_msg_container" style="display: block;">
+
+<div wistate="max" id="im_popupWindow_miniMsg" class="im_popupWindow" style="display: block; height: 104px;">
+	<h6 class="wi_draggable"><span>
+</span><a onclick="_message_tips_pop(&#39;down&#39;);return false;"><img alt="close" class="founctionpic3" src="http://csdnimg.cn/www/images/popup/pic_close.gif"></a></h6>
+    <div id="im_popupWindow_miniMsgContent" class="wi_content">
+		<div class="kuai">
+			<div style="width:280px;"><a href="http://bdtc2014.hadooper.cn/" target="_blank"><img src="http://info-database.csdn.net/Upload/2014-11-11/280-188(5).jpg" alt="" border="0" style="border:0;" title=""></a></div>
+		</div>
+	</div>
+<div class="content_qq"><span onclick="window.open(&#39;&#39;)" target="_blank"><font color="red">
+</font></span>
+ </div>
+ 
+ 
+</div>
+</div><img src="http://message.csdn.net/shm/count_new.php?id=2773&t=1" style="display: none;"></body></html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn"><head><script src="linux%E4%B8%8Bpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8B%E4%B8%80%E2%80%94%E2%80%94%E5%AE%89%E8%A3%85python%20-%20Done%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/analytics.js" async=""></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>linux下python开发环境之一——安装python - Done - 博客园</title>
+<link type="text/css" rel="stylesheet" href="linux%E4%B8%8Bpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8B%E4%B8%80%E2%80%94%E2%80%94%E5%AE%89%E8%A3%85python%20-%20Done%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="linux%E4%B8%8Bpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8B%E4%B8%80%E2%80%94%E2%80%94%E5%AE%89%E8%A3%85python%20-%20Done%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/bundle-elf.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/chenzehe/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/chenzehe/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/chenzehe/wlwmanifest.xml">
+<script src="linux%E4%B8%8Bpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8B%E4%B8%80%E2%80%94%E2%80%94%E5%AE%89%E8%A3%85python%20-%20Done%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/encoder.js" type="text/javascript"></script><script src="linux%E4%B8%8Bpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8B%E4%B8%80%E2%80%94%E2%80%94%E5%AE%89%E8%A3%85python%20-%20Done%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/gpt.js" type="text/javascript" async=""></script><script src="linux%E4%B8%8Bpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8B%E4%B8%80%E2%80%94%E2%80%94%E5%AE%89%E8%A3%85python%20-%20Done%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'chenzehe', cb_enable_mathjax=false;</script>
+<script src="linux%E4%B8%8Bpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8B%E4%B8%80%E2%80%94%E2%80%94%E5%AE%89%E8%A3%85python%20-%20Done%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/blog-common.js" type="text/javascript"></script>
+<script src="linux%E4%B8%8Bpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8B%E4%B8%80%E2%80%94%E2%80%94%E5%AE%89%E8%A3%85python%20-%20Done%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/pubads_impl_48.js" type="text/javascript" async=""></script><script src="linux%E4%B8%8Bpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8B%E4%B8%80%E2%80%94%E2%80%94%E5%AE%89%E8%A3%85python%20-%20Done%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/osd.js" type="text/javascript"></script></head>
+<body>
+<a name="top"></a>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/chenzehe/"><img id="blogLogo" src="linux%E4%B8%8Bpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8B%E4%B8%80%E2%80%94%E2%80%94%E5%AE%89%E8%A3%85python%20-%20Done%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/logo.gif" alt="返回主页"></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/chenzehe/">Done</a></h1>
+<h2>  陈某人</h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="MyLinks1_HomeLink" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+<li><a id="MyLinks1_MyHomeLink" class="menu" href="http://www.cnblogs.com/chenzehe/">首页</a></li>
+<li><a class="menu" href="http://q.cnblogs.com/">博问</a></li>
+<li><a class="menu" href="http://home.cnblogs.com/ing/">闪存</a></li>
+<li></li>
+<li><a id="MyLinks1_ContactLink" class="menu" rel="nofollow" href="http://space.cnblogs.com/msg/send/Done">联系</a></li>
+<li><a id="MyLinks1_Syndication" class="menu" href="http://www.cnblogs.com/chenzehe/rss">订阅</a>
+<!--<a id="MyLinks1_XMLLink" class="aHeaderXML" href="http://www.cnblogs.com/chenzehe/rss"><img src="http://www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li><a id="MyLinks1_Admin" class="menu" rel="nofollow" href="http://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			
+<!--done-->
+随笔- 98&nbsp;
+文章- 0&nbsp;
+评论- 51&nbsp;
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/chenzehe/archive/2010/10/20/1856437.html">linux下python开发环境之一——安装python</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body"><p>绝大多数linux distribution都内置安装了python，我们只要在liunx命令行下打入python就能看到了，但是版本有点低不是我们想要的，如下图：</p>
+<p><img alt="" src="linux%E4%B8%8Bpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8B%E4%B8%80%E2%80%94%E2%80%94%E5%AE%89%E8%A3%85python%20-%20Done%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/liunxpython.jpg" border="0" width="498" height="82"></p>
+<p><span style="font-size: 14pt"><strong>1、下载python</strong></span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 到<a href="http://www.python.org/download/">http://www.python.org/download/</a>上下载python时注意可能是被和谐了该连接打不开，所以在download前多加些/////////，像<a href="http://www.python.org///////////////////download/">http://www.python.org///////////////////download/</a>这样，被挂起一两分钟后就能打开了，找到我们想要的linux下python版本就行了，这里看到如下版本：</p>
+<p><img style="width: 715px;" alt="" src="linux%E4%B8%8Bpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8B%E4%B8%80%E2%80%94%E2%80%94%E5%AE%89%E8%A3%85python%20-%20Done%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/python.jpg" border="0" width="806" height="286"></p>
+<p>linux平台的有两种，</p><li><a class="reference external" href="http://www.cnblogs.com/ftp/python/2.7/Python-2.7.tgz">Python 2.7 compressed source tarball</a> (for Linux, Unix or OS X) 
+<p>和</p></li><li>
+<p><a class="reference external" href="http://www.cnblogs.com/ftp/python/2.7/Python-2.7.tar.bz2">Python 2.7 bzipped source tarball</a><a class="reference external" href="http://www.cnblogs.com/ftp/python/2.7/Python-2.7.tar.bz2"> (for Linux, Unix or OS X, more compressed) </a></p></li><li><a class="reference external" href="http://www.cnblogs.com/ftp/python/2.7/Python-2.7.tar.bz2">
+</a><p><a class="reference external" href="http://www.cnblogs.com/ftp/python/2.7/Python-2.7.tar.bz2"></a>第二种是压缩比较好的，在linux中用bzip2压缩的文件比较高，文件名一般为*.tar.bz2，</p>
+<p>但是上面第二个版本<a href="http://www.python.org/ftp/python/2.7/Python-2.7.tar.bz2">http://www.python.org/ftp/python/2.7/Python-2.7.tar.bz2</a>这个是2.7版的，也不是我想要的，就把连接中的2.7改成2.6就能下到自己想装的版本了。</p>
+<p>&nbsp;</p>
+<p>linux中下载安装的源码文件一般习惯放在/usr/local/src/中，src是source的缩写，进入该目录，用wget下载就行：</p>
+<p><img alt="" src="linux%E4%B8%8Bpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8B%E4%B8%80%E2%80%94%E2%80%94%E5%AE%89%E8%A3%85python%20-%20Done%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/linuxdownloadpython.jpg" border="0" width="591" height="44"></p>
+<p>这样就能我们想要的版本的linux版本下载到本机了。</p>
+<p>&nbsp;</p>
+<p><strong style="font-size: 14pt">2、解压缩</strong></p>
+<p>用tar命令就可以把下载的包解压缩，如下图：</p>
+<p><img alt="" src="linux%E4%B8%8Bpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8B%E4%B8%80%E2%80%94%E2%80%94%E5%AE%89%E8%A3%85python%20-%20Done%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/tar.jpg" border="0" width="550" height="226"></p>
+<p>&nbsp;</p>
+<p><strong style="font-size: 14pt">3、编译和安装</strong></p>
+<p>linux中一般把用户安装的软件安装到/usr/local/XXX/中，用configure和make、make install这几个命令就可以完成编译并安装，--prefix指定要安装的目的目录，如下：</p>
+<div class="cnblogs_code">
+<div><!--<br/ /><br/ />Code highlighting produced by Actipro CodeHighlighter (freeware)<br/ />http://www.CodeHighlighter.com/<br/ /><br/ />--><span style="color: #000000">1</span><span style="color: #000000">、&nbsp;进入python</span><span style="color: #000000">-</span><span style="color: #000000">2</span><span style="color: #000000">.6文件夹<br></span><span style="color: #000000">2</span><span style="color: #000000">、&nbsp;.</span><span style="color: #000000">/</span><span style="color: #000000">configure&nbsp;</span><span style="color: #000000">--</span><span style="color: #000000">prefix</span><span style="color: #000000">=/</span><span style="color: #000000">usr</span><span style="color: #000000">/</span><span style="color: #000000">local</span><span style="color: #000000">/</span><span style="color: #000000">python</span><span style="color: #000000">-</span><span style="color: #000000">2.6</span><span style="color: #000000"><br></span><span style="color: #000000">3</span><span style="color: #000000">、&nbsp;make<br></span><span style="color: #000000">4</span><span style="color: #000000">、&nbsp;make&nbsp;install<br></span></div></div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong style="font-size: 14pt">&nbsp;4、检测和设置环境变量</strong></p>
+<p>安装完后，我们在linux命令行中打入python，执行的还是之前系统自带的2.4版本，这个跟系统的环境变量有关<img alt="" src="linux%E4%B8%8Bpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8B%E4%B8%80%E2%80%94%E2%80%94%E5%AE%89%E8%A3%85python%20-%20Done%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/python2_003.jpg" border="0" width="495" height="82"></p>
+<p>进入/usr/bin/文件夹里面看到有如下文件：python、python2、pthon2.4，如下图：</p>
+<p><img alt="" src="linux%E4%B8%8Bpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8B%E4%B8%80%E2%80%94%E2%80%94%E5%AE%89%E8%A3%85python%20-%20Done%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/usrbin.jpg" border="0" width="415" height="95"></p>
+<p>如果我们用绝对路径的方式来执行刚刚安装的2.6版本就会运行2.6版本的了，如下图：</p>
+<p><img alt="" src="linux%E4%B8%8Bpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8B%E4%B8%80%E2%80%94%E2%80%94%E5%AE%89%E8%A3%85python%20-%20Done%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/python2.jpg" border="0" width="502" height="100"></p>
+<p>切换到该目录下，也发现有跟/usr/bin/目录下一样的python文件，</p>
+<p><img alt="" src="linux%E4%B8%8Bpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8B%E4%B8%80%E2%80%94%E2%80%94%E5%AE%89%E8%A3%85python%20-%20Done%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/python2_002.jpg" border="0" width="543" height="137"></p>
+<p>用PATH="$PATH":/usr/local/Python-2.6/bin把该目录添加到linux环境变量中，如下图：</p>
+<p><img style="width: 715px;" alt="" src="linux%E4%B8%8Bpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8B%E4%B8%80%E2%80%94%E2%80%94%E5%AE%89%E8%A3%85python%20-%20Done%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/path.jpg" border="0" width="781" height="129"></p>
+<p>此时再在命令行里输入python，系统还是执行2.4版本的，因为系统先搜到的是/usr/bin/里面的python，但是输入python2.6已经执行2.6版的了，如下图：</p>
+<p><img alt="" src="linux%E4%B8%8Bpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8B%E4%B8%80%E2%80%94%E2%80%94%E5%AE%89%E8%A3%85python%20-%20Done%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/python2_004.jpg" border="0" width="506" height="150"></p>
+<p>我们到/usr/bin/中删除里面的python文件，然后再在该目录下创建2.6的一个symbolic link就可以让系统执行我们想要的2.6版本了，如下：</p>
+<div class="cnblogs_code">
+<div><!--<br/ /><br/ />Code highlighting produced by Actipro CodeHighlighter (freeware)<br/ />http://www.CodeHighlighter.com/<br/ /><br/ />--><span style="color: #000000">1</span><span style="color: #000000">、cd&nbsp;</span><span style="color: #000000">/</span><span style="color: #000000">usr</span><span style="color: #000000">/</span><span style="color: #000000">bin</span><span style="color: #000000">/</span><span style="color: #000000"><br></span><span style="color: #000000">2</span><span style="color: #000000">、rm&nbsp;</span><span style="color: #000000">-</span><span style="color: #000000">rf&nbsp;python<br></span><span style="color: #000000">3</span><span style="color: #000000">、ln&nbsp;</span><span style="color: #000000">-</span><span style="color: #000000">s&nbsp;</span><span style="color: #000000">/</span><span style="color: #000000">usr</span><span style="color: #000000">/</span><span style="color: #000000">local</span><span style="color: #000000">/</span><span style="color: #000000">Python</span><span style="color: #000000">-</span><span style="color: #000000">2.6</span><span style="color: #000000">/</span><span style="color: #000000">bin</span><span style="color: #000000">/</span><span style="color: #000000">python&nbsp;.</span><span style="color: #000000">/</span><span style="color: #000000">python</span></div></div>
+<p>&nbsp;</p>
+<p>我们再看一下/usr/bin/目录下的文件，输入python执行的就是我们安装的版本的了，如下图：</p>
+<p><img alt="" src="linux%E4%B8%8Bpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8B%E4%B8%80%E2%80%94%E2%80%94%E5%AE%89%E8%A3%85python%20-%20Done%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/pythonend.jpg" border="0" width="581" height="131"></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></li></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory">分类: <a href="http://www.cnblogs.com/chenzehe/category/255905.html">Python</a></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info"><div id="green_channel">
+绿色通道：
+<a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(1856437,cb_blogId,1);green_channel_success(this,'谢谢推荐！');">好文要顶</a>
+<a id="green_channel_follow" onclick="c_follow();" href="javascript:void(0);">关注我</a>
+<a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a><a id="green_channel_contact" href="http://space.cnblogs.com/msg/send/Done" target="_blank">与我联系</a>
+<a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="linux%E4%B8%8Bpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8B%E4%B8%80%E2%80%94%E2%80%94%E5%AE%89%E8%A3%85python%20-%20Done%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/icon_weibo_24.png" alt=""></a>
+</div>
+<div id="author_profile">
+<div id="author_profile_info" class="author_profile_info">
+<a href="http://home.cnblogs.com/u/chenzehe/" target="_blank"><img src="linux%E4%B8%8Bpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8B%E4%B8%80%E2%80%94%E2%80%94%E5%AE%89%E8%A3%85python%20-%20Done%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/u44527.jpg" class="author_avatar" alt=""></a>
+<div id="author_profile_detail" class="author_profile_info">
+<a href="http://home.cnblogs.com/u/chenzehe/">Done</a><br>
+<a href="http://home.cnblogs.com/u/chenzehe/followees">关注 - 3</a><br>
+<a href="http://home.cnblogs.com/u/chenzehe/followers">粉丝 - 31</a>
+</div>
+</div>
+<div class="clear"></div>
+<div id="author_profile_honor"></div>
+<div id="author_profile_follow">
+    <a href="javascript:void(0);" onclick="c_follow();return false;">+加关注</a>
+</div>
+</div>
+<div id="div_digg">										
+    <div class="diggit" onclick="votePost(1856437,'Digg')">
+        <span class="diggnum" id="digg_count">0</span>
+    </div>
+	<div class="buryit" onclick="votePost(1856437,'Bury')"> 
+		<span class="burynum" id="bury_count">0</span>
+	</div>
+	<div class="clear"></div>	
+	<div class="diggword" id="digg_tips">
+    (请您对文章做出评价)
+    </div>	
+</div>
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/chenzehe/archive/2010/10/16/1853176.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/chenzehe/archive/2010/10/16/1853176.html" title="发布于2010-10-16 18:01">C#泛型两语</a><br><a href="http://www.cnblogs.com/chenzehe/archive/2010/10/21/1857170.html" class="p_n_p_prefix">» </a> 下一篇：<a href="http://www.cnblogs.com/chenzehe/archive/2010/10/21/1857170.html" title="发布于2010-10-21 17:43">linux下python开发环境之二——安装Eclipse+PyDev</a><br></div>
+</div>
+
+
+		</div>
+		<div class="postDesc">posted @ <span id="post-date">2010-10-20 16:51</span> <a href="http://www.cnblogs.com/chenzehe/">Done</a> 阅读(<span id="post_view_count">17120</span>) 评论(<span id="post_comment_count">0</span>)  <a href="http://i.cnblogs.com/EditPosts.aspx?postid=1856437" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(1856437);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,isLogined=false,cb_blogId=48113,cb_entryId=1856437,cb_blogApp=currentBlogApp,cb_blogUserGuid='a402470b-63cf-dd11-9e4d-001cf0cd104b',cb_entryCreatedDate='2010/10/20 16:51:00';loadViewCount(cb_entryId);</script>
+	
+</div><!--end: topics 文章、评论容器-->
+<a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" id="lnk_RefreshComments" onclick="return RefreshCommentList();">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login('commentform');">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="site_nav_under"><a href="http://www.imooc.com/view/167?from=cnblogs" target="_blank"><b>【免费课程】系列：JS动画效果</b></a><br><a href="http://zt.cnblogs.com/tingyun/" target="_blank">听云App——终结移动App性能黑洞</a></div>
+<div id="opt_under_post"></div>
+<script type="text/javascript">
+    var enableGoogleAd = canShowAdsense(); var googletag = googletag || {}; googletag.cmd = googletag.cmd || [];
+    fixPostBodyFormat();
+</script>
+<div id="ad_under_post_holder">
+<script type="text/javascript">
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function () {
+        if (enableGoogleAd) {
+            var gads = document.createElement('script');
+            gads.async = true;
+            gads.type = 'text/javascript';
+            var useSSL = 'https:' == document.location.protocol;
+            gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+            var node = document.getElementsByTagName('script')[0];
+            node.parentNode.insertBefore(gads, node);
+        }
+    })();
+</script>
+<script type="text/javascript">
+    try {
+        if (enableGoogleAd) {
+            googletag.cmd.push(function () {
+                googletag.defineSlot('/1090369/cnblogs_blogpost_C1_sitehome', [300, 250], 'div-gpt-ad-1346480159711-0').addService(googletag.pubads());
+                googletag.pubads().enableSingleRequest();
+                googletag.enableServices();
+            });
+        };
+    } catch (e) { }
+</script>
+<div id="google_ad_c1" class="c_ad_block">
+    <div id="div-gpt-ad-1346480159711-0" style="width: 300px; height: 250px;">
+    <script type="text/javascript">
+        try {
+            if (enableGoogleAd) {
+                googletag.cmd.push(function () { googletag.display('div-gpt-ad-1346480159711-0'); });            
+            } else {
+                $('#div-gpt-ad-1346480159711-0').hide();
+            }
+    } catch (e) { }
+    </script>
+    <div style="border: 0pt none;" id="google_ads_iframe_/1090369/cnblogs_blogpost_C1_sitehome_0__container__"><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px none; vertical-align: bottom;" marginheight="0" marginwidth="0" name="google_ads_iframe_/1090369/cnblogs_blogpost_C1_sitehome_0" id="google_ads_iframe_/1090369/cnblogs_blogpost_C1_sitehome_0" scrolling="no" width="300" frameborder="0" height="250"></iframe></div><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px none; vertical-align: bottom; visibility: hidden; display: none;" marginheight="0" marginwidth="0" name="google_ads_iframe_/1090369/cnblogs_blogpost_C1_sitehome_0__hidden__" id="google_ads_iframe_/1090369/cnblogs_blogpost_C1_sitehome_0__hidden__" scrolling="no" width="0" frameborder="0" height="0"></iframe></div>
+</div>
+</div>
+<div id="blog_news_kb"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="http://news.cnblogs.com/n/503517/" target="_blank">风险投资人的四个错觉</a><br> ·  <a href="http://news.cnblogs.com/n/503516/" target="_blank">IDC：56%的欧洲企业IT部门缺少云服务专业人才</a><br> ·  <a href="http://news.cnblogs.com/n/503515/" target="_blank">Facebook测试“阅后能焚”功能 可设置消息焚毁时间</a><br> ·  <a href="http://news.cnblogs.com/n/503514/" target="_blank">为何iPhone 6/Plus独缺32GB的机种</a><br> ·  <a href="http://news.cnblogs.com/n/503513/" target="_blank">排名前十的SQL和NoSQL数据库</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/503460/" target="_blank">构建高可伸缩性的WEB交互式系统（上）</a><br> ·  <a href="http://kb.cnblogs.com/page/503468/" target="_blank">APM的前世今生：如何全面掌控应用性能</a><br> ·  <a href="http://kb.cnblogs.com/page/503333/" target="_blank">别再浪费时间了！如何从细节上真正节省用户的时间</a><br> ·  <a href="http://kb.cnblogs.com/page/503317/" target="_blank">分布式与集群的区别</a><br> ·  <a href="http://kb.cnblogs.com/page/502983/" target="_blank">从MVC框架看MVC架构的设计</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+$(function () {
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 200);
+});
+</script>
+</div>
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"><div id="profile_block">昵称：<a href="http://home.cnblogs.com/u/chenzehe/">Done</a><br>园龄：<a href="http://home.cnblogs.com/u/chenzehe/" title="入园时间：2008-11-23">5年9个月</a><br>粉丝：<a href="http://home.cnblogs.com/u/chenzehe/followers/">31</a><br>关注：<a href="http://home.cnblogs.com/u/chenzehe/followees/">3</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="cnblogs.UserManager.FollowBlogger('a402470b-63cf-dd11-9e4d-001cf0cd104b')">+加关注</a></div></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" title="日历" cellpadding="0" cellspacing="0">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar('2010/09/01');return false;">&lt;</a></td><td align="center">2010年10月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar('2010/11/01');return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" abbr="日" scope="col" align="center">日</th><th class="CalDayHeader" abbr="一" scope="col" align="center">一</th><th class="CalDayHeader" abbr="二" scope="col" align="center">二</th><th class="CalDayHeader" abbr="三" scope="col" align="center">三</th><th class="CalDayHeader" abbr="四" scope="col" align="center">四</th><th class="CalDayHeader" abbr="五" scope="col" align="center">五</th><th class="CalDayHeader" abbr="六" scope="col" align="center">六</th></tr><tr><td class="CalOtherMonthDay" align="center">26</td><td class="CalOtherMonthDay" align="center">27</td><td class="CalOtherMonthDay" align="center">28</td><td class="CalOtherMonthDay" align="center">29</td><td class="CalOtherMonthDay" align="center">30</td><td align="center">1</td><td class="CalWeekendDay" align="center">2</td></tr><tr><td class="CalWeekendDay" align="center">3</td><td align="center">4</td><td align="center">5</td><td align="center">6</td><td align="center">7</td><td align="center">8</td><td class="CalWeekendDay" align="center"><a href="http://www.cnblogs.com/chenzehe/archive/2010/10/09.html"><u>9</u></a></td></tr><tr><td class="CalWeekendDay" align="center">10</td><td align="center">11</td><td align="center">12</td><td align="center">13</td><td align="center">14</td><td align="center">15</td><td class="CalWeekendDay" align="center"><a href="http://www.cnblogs.com/chenzehe/archive/2010/10/16.html"><u>16</u></a></td></tr><tr><td class="CalWeekendDay" align="center">17</td><td align="center">18</td><td align="center">19</td><td align="center"><a href="http://www.cnblogs.com/chenzehe/archive/2010/10/20.html"><u>20</u></a></td><td align="center"><a href="http://www.cnblogs.com/chenzehe/archive/2010/10/21.html"><u>21</u></a></td><td align="center"><a href="http://www.cnblogs.com/chenzehe/archive/2010/10/22.html"><u>22</u></a></td><td class="CalWeekendDay" align="center">23</td></tr><tr><td class="CalWeekendDay" align="center">24</td><td align="center">25</td><td align="center">26</td><td align="center">27</td><td align="center">28</td><td align="center">29</td><td class="CalWeekendDay" align="center">30</td></tr><tr><td class="CalWeekendDay" align="center">31</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td><td class="CalOtherMonthDay" align="center">6</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn">
+<div class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="widget_my_zzk" class="div_my_zzk"><input id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk" type="text">&nbsp;<input onclick="zzk_go()" value="找找看" id="btnZzk" class="btn_my_zzk" type="button"></div>
+
+</div>
+
+
+<div class="catListPostCategory">
+<h3 class="catListTitle">随笔分类<span style="font-size:11px;font-weight:normal">(92)</span></h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_0_Link_0" href="http://www.cnblogs.com/chenzehe/category/175114.html">Ajax(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_1" href="http://www.cnblogs.com/chenzehe/category/170030.html">CLR学习笔记(29)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_2" href="http://www.cnblogs.com/chenzehe/category/281877.html">Django源码阅读(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_3" href="http://www.cnblogs.com/chenzehe/category/255905.html">Python(19)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_4" href="http://www.cnblogs.com/chenzehe/category/222799.html">SharePoint(8)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_5" href="http://www.cnblogs.com/chenzehe/category/173431.html">生活(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_6" href="http://www.cnblogs.com/chenzehe/category/180604.html">图书馆外挂(19)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_7" href="http://www.cnblogs.com/chenzehe/category/173432.html">学习(8)</a> </li>
+
+</ul>
+
+</div>
+
+<div class="catList">
+<h3 class="catListTitle">博客园</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_1_Link_0" href="http://blog.s135.com/index.php" rel="nofollow">很有水平的一个技术blog - LAMP方面 - [张宴] - 服务器系统架构与底层研发</a> </li>
+
+</ul>
+
+</div>
+
+
+<div class="catListBlogRank">
+<h3 class="catListTitle">积分与排名</h3>
+<ul>
+	<li class="liScore">
+		积分 -	36285
+	</li>
+	<li class="liRank">
+		排名 -	4599
+	</li>
+</ul>
+</div>
+
+
+<div id="recent_comments_wrap">
+<div class="catListComment">
+<h3 class="catListTitle">最新评论</h3>
+
+	<div id="RecentCommentsBlock"><ul>
+    <li class="recent_comment_title"><a href="http://www.cnblogs.com/chenzehe/archive/2011/04/30/1947622.html#3005865">1. Re:Django源代码阅读分析-2：持久层结构分析</a></li>
+    <li class="recent_comment_body">楼主，你这些文章是从哪里转载的啊？还有没？</li>
+    <li class="recent_comment_author">--free&amp;#39;s</li>
+</ul>
+</div>
+</div>
+</div><div id="topview_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock"><ul><li><a href="http://www.cnblogs.com/chenzehe/archive/2010/09/05/1818303.html">1. python urllib2使用(29805)</a></li><li><a href="http://www.cnblogs.com/chenzehe/archive/2010/10/20/1856437.html">2. linux下python开发环境之一——安装python(17120)</a></li><li><a href="http://www.cnblogs.com/chenzehe/archive/2010/08/30/1812995.html">3. python基于http协议编程：httplib,urllib和urllib2(13191)</a></li><li><a href="http://www.cnblogs.com/chenzehe/archive/2010/09/01/1814639.html">4. Python中classmethod与staticmethod区别(10192)</a></li><li><a href="http://www.cnblogs.com/chenzehe/archive/2010/10/22/1858657.html">5. python搜索引擎和爬虫框架介绍(3999)</a></li></ul></div>
+</div>
+</div><div id="topfeedback_posts_wrap">
+<div class="catListFeedback">
+<h3 class="catListTitle">评论排行榜</h3>
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="http://www.cnblogs.com/chenzehe/archive/2009/01/24/1380679.html">1. 十一：认识基元类型、FCL类型及与CLR的相容情况(8)</a></li><li><a href="http://www.cnblogs.com/chenzehe/archive/2009/01/22/1379835.html">2. 大家说说验证码(7)</a></li><li><a href="http://www.cnblogs.com/chenzehe/archive/2008/12/19/1358653.html">3. @@IDENTITY--插入记录返回主键(6)</a></li><li><a href="http://www.cnblogs.com/chenzehe/archive/2009/01/26/1381009.html">4. 十二：checked和unchecked(4)</a></li><li><a href="http://www.cnblogs.com/chenzehe/archive/2009/01/27/1381073.html">5. 十三：引用类型和值类型(3)</a></li></ul></div>
+</div>
+</div></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright ©2014 Done
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+<iframe style="display: none; width: 0px; height: 0px;" name="google_osd_static_frame" id="google_osd_static_frame_137778127461"></iframe></body></html>

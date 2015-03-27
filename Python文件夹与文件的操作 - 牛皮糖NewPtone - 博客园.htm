@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Python文件夹与文件的操作 - 牛皮糖NewPtone - 博客园</title>
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=k2uL13BZlYpYjZ7FITMnMaB1mOfAPcMGfJChBRaBpP01"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/SimpleBlue/bundle-SimpleBlue.css?v=g1Ly_5CnmgosFgcSP2WTmRocMrlS6IO9yhcnMXW9dOA1"/>
+<link type="text/css" rel="stylesheet" href="/blog/customcss/88100.css?v=s1fazUFVZ243D50Z7CcYKFInS%2fE%3d"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/yuxc/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/yuxc/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/yuxc/wlwmanifest.xml"/>
+<script src="http://common.cnblogs.com/script/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'yuxc', cb_enable_mathjax=false;</script>
+<script src="/bundles/blog-common.js?v=Pbt4uMm_qWARxxiPM8vQwX0Bh-yg-NcQxX73-xkOCnw1" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+<div id="page_begin_html"></div><script>load_page_begin_html();</script>
+
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+		
+<!--done-->
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/yuxc/">牛皮糖的旅程</a></div>
+<div class="subtitle">Brick walls,they let us prove how badly we want things.    
+            --------摘自Randy Pausch的《最后一课》</div>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li id="nav_sitehome"><a id="MyLinks1_HomeLink" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+<li id="nav_myhome"><a id="MyLinks1_MyHomeLink" class="menu" href="http://www.cnblogs.com/yuxc/">首页</a></li>
+<li id="nav_q"><a class="menu" href="http://q.cnblogs.com/">博问</a></li>
+<li id="nav_ing"><a class="menu" href="http://home.cnblogs.com/ing/">闪存</a></li>
+<li id="nav_newpost"></li>
+<li id="nav_contact"><a id="MyLinks1_ContactLink" class="menu" rel="nofollow" href="http://space.cnblogs.com/msg/send/%e7%89%9b%e7%9a%ae%e7%b3%96NewPtone">联系</a></li>
+<li id="nav_rss">
+<!----></li>
+<li id="nav_admin"><a id="MyLinks1_Admin" class="menu" rel="nofollow" href="http://i.cnblogs.com/">管理</a></li>
+</ul>
+
+		<div class="blogStats">
+			
+			
+<!--done-->
+随笔-231&nbsp;
+文章-0&nbsp;
+评论-207&nbsp;
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+
+<!--done-->
+<div id="topics">
+	<div class = "post">
+		<h1 class = "postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/yuxc/archive/2011/08/01/2124012.html">Python文件夹与文件的操作</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body"><p><wbr>&nbsp;</wbr></p>
+<p style="line-height: normal;">最近在写的程序频繁地与文件操作打交道，这块比较弱，还好在百度上找到一篇不错的文章，这是原文<a href="http://hi.baidu.com/jxq61/blog/item/c24a36a0d6897aa6caefd0ed.html" target="_blank">传送门</a>，我对原文稍做了些改动。</p>
+<p style="line-height: normal;">有关文件夹与文件的查找，删除等功能 在<span>&nbsp;</span><strong style="line-height: normal;"><span style="font-size: medium; line-height: normal;" size="4">os</span></strong><span>&nbsp;</span>模块中实现。使用时需先导入这个模块，</p>
+<p style="line-height: normal;">导入的方法是:</p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff">import os</span></strong></p>
+<p style="line-height: normal;">一、取得当前目录</p>
+<p style="line-height: normal;">s =<span>&nbsp;</span><strong style="line-height: normal;"><span style="color: #ff0000; line-height: normal;" color="#ff0000">os.getcwd()</span></strong></p>
+<p style="line-height: normal;"># s 中保存的是当前目录(即文件夹)</p>
+<p style="line-height: normal;">比如运行abc.py，那么输入该命令就会返回abc所在的文件夹位置。</p>
+<p style="line-height: normal;">举个简单例子，我们将abc.py放入A文件夹。并且希望不管将A文件夹放在硬盘的哪个位置，都可以在A文件夹内生成一个新文件夹。且文件夹的名字根据时间自动生成。</p>
+<p style="line-height: normal;"><strong><span style="color: #0000ff;" color="#0000ff">import os</span></strong></p>
+<p style="line-height: normal;"><strong><span style="color: #0000ff;" color="#0000ff">import time</span></strong></p>
+<p style="margin: 0px; text-indent: 0px; qt-block-indent: 0; qt-user-state: 0;"><strong><span style="color: #0000ff;" color="#0000ff">folder = time.strftime(r"%Y-%m-%d_%H-%M-%S",time.localtime())</span></strong></p>
+<p style="margin: 0px; text-indent: 0px; qt-block-indent: 0; qt-user-state: 0;"><strong><span style="color: #0000ff;" color="#0000ff">os.makedirs(r'%s/%s'%(os.getcwd(),folder))</span></strong></p>
+<p style="margin: 0px; text-indent: 0px; qt-block-indent: 0; qt-user-state: 0;"><strong><span style="color: #0000ff;" color="#0000ff"></span></strong>&nbsp;</p>
+<p style="line-height: normal;">二、更改当前目录</p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff"><span style="color: #ff0000; line-height: normal;" color="#ff0000">os.chdir</span>( "C:\\123")</span></strong></p>
+<p style="line-height: normal;">#将当前目录设为 "C:\123", 相当于DOC命令的 CD C:\123&nbsp;&nbsp;&nbsp;</p>
+<p style="line-height: normal;">#说明：<span>&nbsp;</span><strong style="line-height: normal;"><span style="color: #ff0000; line-height: normal;" color="#ff0000">当指定的目录不存在时，引发异常。</span></strong></p>
+<p style="line-height: normal;"><strong><span style="color: #ff0000;" color="#ff0000">异常类型：WindowsError</span></strong></p>
+<p style="line-height: normal;"><strong><span style="color: #ff0000;" color="#ff0000">Linux下没去试，不知是哪种</span></strong></p>
+<p style="line-height: normal;"><strong><span style="color: #ff0000;" color="#ff0000"></span></strong>&nbsp;</p>
+<p style="line-height: normal;">三 将一个路径名分解为目录名和文件名两部分</p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff">fpath , fname = os.path.split( "你要分解的路径")</span></strong></p>
+<p style="line-height: normal;">例如：</p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff">a, b =</span></strong><span>&nbsp;</span><strong style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff"><span style="color: #ff0000; line-height: normal;" color="#ff0000">os.path.split</span>( "c:\\123\\456\\test.txt" )</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff">print a</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff">print b</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #000000; line-height: normal;" color="#000000">显示：</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #ff00ff; line-height: normal;" color="#ff00ff">c:\123\456</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #ff00ff; line-height: normal;" color="#ff00ff">test.txt</span></strong></p>
+<p style="line-height: normal;"><strong><span style="color: #ff00ff;" color="#ff00ff"></span></strong>&nbsp;</p>
+<p style="line-height: normal;">四&nbsp;&nbsp; 分解文件名的扩展名</p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff">fpathandname , fext = os.path.splitext( "你要分解的路径")</span></strong></p>
+<p style="line-height: normal;">例如：</p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff">a, b =</span></strong><span>&nbsp;</span><strong style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff"><span style="color: #ff0000; line-height: normal;" color="#ff0000">os.path.splitext</span>( "c:\\123\\456\\test.txt" )</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff">print a</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff">print b</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #000000; line-height: normal;" color="#000000">显示：</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #ff00ff; line-height: normal;" color="#ff00ff">c:\123\456\test</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #ff00ff; line-height: normal;" color="#ff00ff">.txt</span></strong></p>
+<p style="line-height: normal;"><strong><span style="color: #ff00ff;" color="#ff00ff"></span></strong>&nbsp;</p>
+<p style="line-height: normal;">五、判断一个路径（ 目录或文件）是否存在</p>
+<p><wbr><span style="color: #000000; line-height: normal;" color="#000000"></span></wbr></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff">b = os.path.exists( "你要判断的路径")</span></strong></p>
+<p style="line-height: normal;">返回值b： True 或 False</p>
+<p style="line-height: normal;">&nbsp;</p>
+<p style="line-height: normal;"><span style="color: #000000;" color="#000000">六、判断一个路径是否文件</span></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff">b = os.path.isfile( "你要判断的路径")</span></strong></p>
+<p style="line-height: normal;">返回值b： True 或 False</p>
+<p style="line-height: normal;">&nbsp;</p>
+<p style="line-height: normal;"><span style="color: #000000;" color="#000000">七、判断一个路径是否目录</span></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff">b = os.path.isdir( "你要判断的路径")</span></strong></p>
+<p style="line-height: normal;">返回值b： True 或 False</p>
+<p style="line-height: normal;">&nbsp;</p>
+<p style="line-height: normal;"><span style="color: #000000;" color="#000000">八、获取某目录中的文件及子目录的列表&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff">L = os.listdir( "你要判断的路径")</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #000000; line-height: normal;" color="#000000">例如：</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff">L =<span>&nbsp;</span><span style="color: #ff0000; line-height: normal;" color="#ff0000">os.listdir</span>( "c:/" )</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff">print L</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #000000; line-height: normal;" color="#000000">显示 :</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #ff00ff; line-height: normal;" color="#ff00ff">['1.avi', '1.jpg', '1.txt', 'CONFIG.SYS', 'Inetpub', 'IO.SYS', 'KCBJGDJC', 'KCBJGDYB', 'KF_GSSY_JC', 'MSDOS.SYS', 'MSOCache', 'NTDETECT.COM', 'ntldr', 'pagefile.sys', 'PDOXUSRS.NET', 'Program Files', 'Python24', 'Python31', 'QQVideo.Cache', 'RECYCLER', 'System Volume Information', 'TDDOWNLOAD', 'test.txt', 'WINDOWS']</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #000000; line-height: normal;" color="#000000">这里面既有文件也有子目录</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #000000; line-height: normal;" color="#000000">1 获取某指定目录下的所有子目录的列表</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff">def getDirList( p ):</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p = str( p )</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if p=="":</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return [ ]</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p = p.replace( "/","\\")</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if p[ -1] != "\\":</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; p = p+"\\"</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a = os.listdir( p )</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b = [ x&nbsp;&nbsp; for x in a if<span>&nbsp;</span><span style="color: #ff0000; line-height: normal;" color="#ff0000">os.path.isdir</span>( p + x ) ]</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return b</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff">print&nbsp;&nbsp; getDirList( "C:\\" )</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #000000; line-height: normal;" color="#000000">结果:</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #ff00ff; line-height: normal;" color="#ff00ff">['Documents and Settings', 'Downloads', 'HTdzh', 'KCBJGDJC', 'KCBJGDYB', 'KF_GSSY_JC', 'MSOCache', 'Program Files', 'Python24', 'Python31', 'QQVideo.Cache', 'RECYCLER', 'System Volume Information', 'TDDOWNLOAD', 'WINDOWS']</span></strong></p>
+<p style="line-height: normal;"><span style="color: #000000; line-height: normal;" color="#000000"><strong style="line-height: normal;">2 获取某指定目录下的所有文件的列表</strong></span></p>
+<p style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff"><strong style="line-height: normal;">def getFileList( p ):</strong></span></p>
+<p style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff"><strong style="line-height: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p = str( p )</strong></span></p>
+<p style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff"><strong style="line-height: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if p=="":</strong></span></p>
+<p style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff"><strong style="line-height: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return [ ]</strong></span></p>
+<p style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff"><strong style="line-height: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p = p.replace( "/","\\")</strong></span></p>
+<p style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff"><strong style="line-height: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if p[ -1] != "\\":</strong></span></p>
+<p style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff"><strong style="line-height: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; p = p+"\\"</strong></span></p>
+<p style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff"><strong style="line-height: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a = os.listdir( p )</strong></span></p>
+<p style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff"><strong style="line-height: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b = [ x&nbsp;&nbsp; for x in a if<span>&nbsp;</span><span style="color: #ff0000; line-height: normal;" color="#ff0000">os.path.isfile</span>( p + x ) ]</strong></span></p>
+<p style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff"><strong style="line-height: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return b</strong></span></p>
+<p style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff"><strong style="line-height: normal;">print&nbsp;&nbsp; getFileList( "C:\\" )</strong></span></p>
+<p style="line-height: normal;"><span style="color: #000000; line-height: normal;" color="#000000"><strong style="line-height: normal;">结果:</strong></span></p>
+<p style="line-height: normal;"><span style="color: #ff00ff; line-height: normal;" color="#ff00ff"><strong style="line-height: normal;">['1.avi', '1.jpg', '1.txt', '123.txt', '12345.txt', '2.avi', 'a.py', 'AUTOEXEC.BAT', 'boot.ini', 'bootfont.bin', 'CONFIG.SYS', 'IO.SYS', 'MSDOS.SYS', 'NTDETECT.COM', 'ntldr', 'pagefile.sys', 'PDOXUSRS.NET', 'test.txt']</strong></span></p>
+<p style="line-height: normal;"><strong><span style="color: #ff00ff;" color="#ff00ff"></span></strong>&nbsp;</p>
+<p style="line-height: normal;"><span style="color: #000000; line-height: normal;" color="#000000"><strong style="line-height: normal;">九、创建子目录</strong></span></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff">os.makedirs(&nbsp;&nbsp; path )&nbsp;&nbsp; #<span>&nbsp;</span></span><span style="color: #000000; line-height: normal;" color="#000000">path 是"要创建的子目录"</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #000000; line-height: normal;" color="#000000">例如:</span></strong></p>
+<p style="line-height: normal;"><span style="color: #0000ff; line-height: normal;" color="#0000ff"><strong style="line-height: normal;">os.makedirs(&nbsp;&nbsp; "C:\\123\\456\\789")</strong></span></p>
+<p style="line-height: normal;"><span style="color: #000000; line-height: normal;" color="#000000">调用有可能失败，可能的原因是：</span></p>
+<p style="line-height: normal;"><span style="color: #000000; line-height: normal;" color="#000000">(1) path 已存在时(不管是文件还是文件夹)</span></p>
+<p style="line-height: normal;"><span style="color: #000000; line-height: normal;" color="#000000">(2) 驱动器不存在</span></p>
+<p style="line-height: normal;"><span style="color: #000000; line-height: normal;" color="#000000">(3) 磁盘已满</span></p>
+<p style="line-height: normal;"><span style="color: #000000; line-height: normal;" color="#000000">(4)磁盘是只读的或没有写权限</span></p>
+<p style="line-height: normal;"><span style="color: #000000; line-height: normal;" color="#000000"><strong style="line-height: normal;">十、删除子目录</strong></span></p>
+<p style="line-height: normal;"><strong style="line-height: normal;">os.rmdir( path )&nbsp;&nbsp; # path: "要删除的子目录"</strong></p>
+<p style="line-height: normal;"><span style="color: #000000; line-height: normal;" color="#000000">产生异常的可能原因:</span></p>
+<p style="line-height: normal;"><span style="color: #000000; line-height: normal;" color="#000000">(1) path 不存在</span></p>
+<p style="line-height: normal;"><span style="color: #000000; line-height: normal;" color="#000000">(2) path 子目录中有文件或下级子目录</span></p>
+<p style="line-height: normal;"><span style="color: #000000; line-height: normal;" color="#000000">(3) 没有操作权限或只读</span></p>
+<p style="line-height: normal;"><span style="color: #000000; line-height: normal;" color="#000000">测试该函数时，请自已先建立子目录。</span></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="color: #000000; line-height: normal;" color="#000000">十一、删除文件</span></strong></p>
+<p style="line-height: normal;"><strong style="line-height: normal;">os.remove(&nbsp;&nbsp; filename )&nbsp;&nbsp; # filename: "要删除的文件名"</strong></p>
+<p style="line-height: normal;"><span style="color: #000000; line-height: normal;" color="#000000">产生异常的可能原因:</span></p>
+<p style="line-height: normal;"><span style="color: #000000; line-height: normal;" color="#000000">(1)&nbsp;&nbsp; filename 不存在</span></p>
+<p style="line-height: normal;"><span style="color: #000000; line-height: normal;" color="#000000">(2) 对filename文件，<span>&nbsp;</span></span><span style="color: #000000; line-height: normal;" color="#000000">没有操作权限或只读。</span></p>
+<p style="line-height: normal;"><span style="color: #000000; line-height: normal;" color="#000000">十二、文件改名</span></p>
+<p style="line-height: normal;"><strong style="line-height: normal;"><span style="font-size: small; color: #0000ff; line-height: normal;" size="3" color="#0000ff">os.name( oldfileName, newFilename)</span></strong></p>
+<p style="line-height: normal;"><span style="color: #000000; line-height: normal;" color="#000000">产生异常的原因：</span></p>
+<p style="line-height: normal;"><span style="color: #000000; line-height: normal;" color="#000000">(1) oldfilename 旧文件名不存在</span></p>
+<p style="line-height: normal;"><span style="color: #000000; line-height: normal;" color="#000000">(2) newFilename 新文件已经存在时，此时，您需要先删除 newFilename 文件。</span></p>
+<p><wbr><span style="word-spacing: 0px; font: medium Simsun; text-transform: none; color: #000000; text-indent: 0px; white-space: normal; letter-spacing: normal; border-collapse: separate; orphans: 2; widows: 2; webkit-border-horizontal-spacing: 0px; webkit-border-vertical-spacing: 0px; webkit-text-decorations-in-effect: none; webkit-text-size-adjust: auto; webkit-text-stroke-width: 0px;"><span style="font-size: 12px; color: #666666; line-height: 20px; font-family: Arial; webkit-border-horizontal-spacing: 2px; webkit-border-vertical-spacing: 2px;"><span style="color: #0000ff; line-height: normal;" color="#0000ff"></span></span></span></wbr></p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+
+		</div>
+		<div class = "postDesc">posted @ <span id="post-date">2011-08-01 16:32</span> <a href='http://www.cnblogs.com/yuxc/'>牛皮糖NewPtone</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="http://i.cnblogs.com/EditPosts.aspx?postid=2124012" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(2124012);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,isLogined=true,cb_blogId=88100,cb_entryId=2124012,cb_blogApp=currentBlogApp,cb_blogUserGuid='4e16972c-ba5d-e011-a53f-842b2b196315',cb_entryCreatedDate='2011/8/1 16:32:00';loadViewCount(cb_entryId);</script>
+	
+</div><!--end: topics 文章、评论容器-->
+<a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" id="lnk_RefreshComments" onclick="return RefreshCommentList();">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+<div id="comment_form_container"></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="site_nav_under"><a href="http://www.cnblogs.com/" target="_blank" title="开发者的网上家园">博客园首页</a><a href="http://q.cnblogs.com/" target="_blank" title="程序员问答社区">博问</a><a href="http://news.cnblogs.com/" target="_blank" title="IT新闻">新闻</a><a href="http://home.cnblogs.com/ing/" target="_blank">闪存</a><a href="http://job.cnblogs.com/" target="_blank">程序员招聘</a><a href="http://kb.cnblogs.com/" target="_blank">知识库</a></div>
+<div id="opt_under_post"></div>
+<script type="text/javascript">
+    var enableGoogleAd = canShowAdsense(); var googletag = googletag || {}; googletag.cmd = googletag.cmd || [];
+    fixPostBodyFormat();
+</script>
+<div id="ad_under_post_holder">
+<script type='text/javascript'>
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function () {
+        if (enableGoogleAd) {
+            var gads = document.createElement('script');
+            gads.async = true;
+            gads.type = 'text/javascript';
+            var useSSL = 'https:' == document.location.protocol;
+            gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+            var node = document.getElementsByTagName('script')[0];
+            node.parentNode.insertBefore(gads, node);
+        }
+    })();
+</script>
+<script type='text/javascript'>
+    try {
+        if (enableGoogleAd) {
+            googletag.cmd.push(function () {
+                googletag.defineSlot('/1090369/cnblogs_blogpost_C1_sitehome', [300, 250], 'div-gpt-ad-1346480159711-0').addService(googletag.pubads());
+                googletag.defineSlot('/1090369/cnblogs_blogpost_C2', [468, 60], 'div-gpt-ad-1410860226396-0').addService(googletag.pubads());
+                googletag.pubads().enableSingleRequest();
+                googletag.enableServices();
+            });
+        };
+    } catch (e) { }
+</script>
+<div id="google_ad_c1" class="c_ad_block">
+    <div id='div-gpt-ad-1346480159711-0' style='width:300px; height:250px;'>
+    <script type='text/javascript'>
+        try {
+            if (enableGoogleAd) {
+                googletag.cmd.push(function () { googletag.display('div-gpt-ad-1346480159711-0'); });            
+            } else {
+                $('#div-gpt-ad-1346480159711-0').hide();
+            }
+    } catch (e) { }
+    </script>
+    </div>
+</div>
+</div>
+<div id="under_post_news"></div>
+<div id="google_ad_c2" class="c_ad_block">
+<div id='div-gpt-ad-1410860226396-0' style='width:468px; height:60px;'>
+<script type='text/javascript'>
+try {
+    if (enableGoogleAd) {
+        googletag.cmd.push(function () { googletag.display('div-gpt-ad-1410860226396-0'); });
+    } else {
+        $('#div-gpt-ad-1346480159711-0').hide();
+    }
+} catch (e) { }
+</script>
+</div>
+</div>
+<div id="under_post_kb"></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+$(function () {
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 200);
+});
+</script>
+</div>
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script></div>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright &copy;2014 牛皮糖NewPtone
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+</body>
+</html>

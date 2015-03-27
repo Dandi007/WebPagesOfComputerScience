@@ -1,0 +1,2 @@
+﻿function BLA(){document.write('<script type="text/javascript" src="http://168.it168.com/a/b/f599.js"></scr'+'ipt>');}
+document.write('<script type="text/javascript" src="http://168.it168.com/'+( (!document.all)?"a/b/h599.js":"cm/Gg168.ashx?re="+document.referrer+"&t1=599&p=9")+'"></scr'+'ipt>'); 

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)http://news.html5tricks.com/what-is-clean-code.html -->
+<html dir="ltr" lang="zh-CN"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" charset="utf-8" async="" src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/single_image.app.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+
+<title>怎么样才算是整洁的代码？ | IT新闻 | html5tricks</title>
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="http://news.html5tricks.com/xmlrpc.php">
+<!--[if lt IE 9]>
+<script src="http://news.html5tricks.com/wp-content/themes/twentytwelve/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+<script src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/wb.js" type="text/javascript" charset="utf-8"></script>
+<link rel="alternate" type="application/rss+xml" title="IT新闻 » Feed" href="http://news.html5tricks.com/feed">
+<link rel="alternate" type="application/rss+xml" title="IT新闻 » 评论Feed" href="http://news.html5tricks.com/comments/feed">
+<link rel="alternate" type="application/rss+xml" title="IT新闻 » 怎么样才算是整洁的代码？评论Feed" href="http://news.html5tricks.com/what-is-clean-code.html/feed">
+<link rel="stylesheet" id="twentytwelve-style-css" href="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/style.css" type="text/css" media="all">
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentytwelve-ie-css'  href='http://news.html5tricks.com/wp-content/themes/twentytwelve/css/ie.css?ver=20121010' type='text/css' media='all' />
+<![endif]-->
+<link rel="stylesheet" id="wp-pagenavi-css" href="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/pagenavi-css.css" type="text/css" media="all">
+<script type="text/javascript">
+var duoshuoQuery = {"short_name":"news-html5tricks","sso":{"login":"http:\/\/news.html5tricks.com\/wp-login.php?action=duoshuo_login","logout":"http:\/\/news.html5tricks.com\/wp-login.php?action=logout&_wpnonce=ae95220813"},"theme":"default","stylePatch":"wordpress\/Twenty_Twelve"};
+duoshuoQuery.sso.login += '&redirect_to=' + encodeURIComponent(window.location.href);
+duoshuoQuery.sso.logout += '&redirect_to=' + encodeURIComponent(window.location.href);
+</script>
+<script type="text/javascript" src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/embed.js" charset="UTF-8" async="async"></script>
+<script type="text/javascript" src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/comment-reply.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://news.html5tricks.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://news.html5tricks.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="《小苹果》版 IT程序猿基情四射" href="http://news.html5tricks.com/little-apple-for-code-monkey.html">
+<link rel="next" title="去哪儿网女员工猝死：入职仅三个月" href="http://news.html5tricks.com/qunaer-female-stuff-die.html">
+<meta name="generator" content="WordPress 3.4.2">
+<link rel="canonical" href="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/怎么样才算是整洁的代码？   IT新闻   html5tricks.htm">
+<link rel="shortlink" href="http://news.html5tricks.com/?p=4834">
+<meta name="wumiiVerification" content="f5c7c4c0-e144-4bed-a49e-58a6bceee65b">
+<style type="text/css">
+.tricksButtons{
+text-align:center;
+}
+.tricksButtons a,.read-more a {
+margin-right: 16px;
+margin-bottom: 10px;
+display: inline-block;
+text-transform: uppercase;
+padding: 1em 1.5em 0.75em;
+border-radius: 2px;
+font-weight: bold;
+border: none;
+color: #fff !important;
+text-decoration: none;
+font-family: 'Open Sans Condensed',sans-serif;
+font-size: 14px;
+line-height: 1;
+cursor: pointer;
+}
+.tricksButtons a:hover,.read-more a:hover{
+opacity:0.9;
+}
+.tricksButtons .demo{
+font-size: 18px;
+padding: 1.2em 2.5em 1em;
+background-color: #a5d16d;
+box-shadow: 0 0 5px #a4cf6c inset, 0 1px 1px #eee;
+}
+.tricksButtons .download{
+font-size: 18px;
+padding: 1.2em 2.5em 1em;
+background-color: #93d0ea;
+box-shadow: 0 0 5px #8fcde7 inset, 0 1px 1px #eee;
+}
+
+.read-more{
+text-align:center
+}
+.read-more a{
+font-size: 18px;
+padding: 1.2em 2.5em 1em;
+background-color: #a5d16d;
+box-shadow: 0 0 5px #a4cf6c inset, 0 1px 1px #eee;
+}
+
+.contactItem{ float:right;margin-left:70px;text-align:center}
+.contactItem .txt{font-weight:bold;font-size:16px;text-align:center;padding:3px 0}
+.contactItem a{ text-decoration:none;color:#6a6a6a}
+
+.wumii-hook{display:none}
+#wumiiBtnDiv{display:none}
+.wumii-text-ul li{width:270px;height:30px;overflow:hidden;}
+.wumii-text-ul li a{line-height:1.9em}
+#wumiiDisplayDiv{width:275px;overflow:hidden;}
+</style>
+<link type="text/css" rel="stylesheet" href="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/embed.default.css"><script type="text/javascript" charset="gbk" src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/ui"></script><link href="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/bdsstyle.css" rel="stylesheet" type="text/css"><script type="text/javascript" src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/related_items_v2"></script><script type="text/javascript" charset="gbk" src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/ui(1)"></script><script charset="UTF-8" src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/bundle.js"></script><script src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/logger.js"></script><script charset="UTF-8" src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/iframeWidget.js"></script><script type="text/javascript" charset="gbk" src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/ui(2)"></script></head>
+
+<body class="single single-post postid-4834 single-format-standard single-author"><div id="BAIDU_DUP_fp_wrapper" style="position: absolute; left: -1px; bottom: -1px; z-index: 0; width: 0px; height: 0px; overflow: hidden; visibility: hidden; display: none;"><iframe id="BAIDU_DUP_fp_iframe" src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/o.htm" style="width: 0px; height: 0px; visibility: hidden; display: none;"></iframe></div><iframe id="sina_anywhere_iframe" style="display: none;"></iframe><iframe frameborder="0" style="display: none;"></iframe><div id="bdshare_s" style="display: block;"><iframe id="bdsIfr" style="position:absolute;display:none;z-index:9999;" frameborder="0"></iframe><div id="bdshare_l" style="display: none;"><div id="bdshare_l_c"><h6>分享到</h6><ul><li><a href="http://news.html5tricks.com/what-is-clean-code.html#" class="bds_mshare mshare">一键分享</a></li><li><a href="http://news.html5tricks.com/what-is-clean-code.html#" class="bds_qzone qqkj">QQ空间</a></li><li><a href="http://news.html5tricks.com/what-is-clean-code.html#" class="bds_tsina xlwb">新浪微博</a></li><li><a href="http://news.html5tricks.com/what-is-clean-code.html#" class="bds_bdysc bdysc">百度云收藏</a></li><li><a href="http://news.html5tricks.com/what-is-clean-code.html#" class="bds_renren rrw">人人网</a></li><li><a href="http://news.html5tricks.com/what-is-clean-code.html#" class="bds_tqq txwb">腾讯微博</a></li><li><a href="http://news.html5tricks.com/what-is-clean-code.html#" class="bds_bdxc bdxc">百度相册</a></li><li><a href="http://news.html5tricks.com/what-is-clean-code.html#" class="bds_kaixin001 kxw">开心网</a></li><li><a href="http://news.html5tricks.com/what-is-clean-code.html#" class="bds_tqf txpy">腾讯朋友</a></li><li><a href="http://news.html5tricks.com/what-is-clean-code.html#" class="bds_tieba bdtb">百度贴吧</a></li><li><a href="http://news.html5tricks.com/what-is-clean-code.html#" class="bds_douban db">豆瓣网</a></li><li><a href="http://news.html5tricks.com/what-is-clean-code.html#" class="bds_tsohu shwb">搜狐微博</a></li><li><a href="http://news.html5tricks.com/what-is-clean-code.html#" class="bds_bdhome bdhome">百度新首页</a></li><li><a href="http://news.html5tricks.com/what-is-clean-code.html#" class="bds_sqq sqq">QQ好友</a></li><li><a href="http://news.html5tricks.com/what-is-clean-code.html#" class="bds_thx thx">和讯微博</a></li><li><a href="http://news.html5tricks.com/what-is-clean-code.html#" class="bds_more">更多...</a></li></ul><p><a href="http://news.html5tricks.com/what-is-clean-code.html#" class="goWebsite">百度分享</a></p></div></div></div>
+<div id="cproIframe2004holder" style="padding: 0px; display: block; visibility: visible; border: none; float: none; overflow: hidden; position: fixed; z-index: 2147483647; width: 260px; height: 235px; right: 7px; bottom: 0px; background: none;"><div id="cproIframe2004CloseBtnWrap" style="position: absolute; top: 0px; left: 199px; cursor: pointer; width: 61px; height: 20px; z-index: 100; opacity: 0; margin: 0px; background-color: rgb(153, 153, 153);"></div><div id="cproIframe2004CloseBtn" style="position: absolute; width: 61px; height: 20px; top: 0px; left: 199px; margin: 0px 0px 5px; padding: 0px; cursor: pointer; overflow: hidden;"><div style="width:40px;height:20px;background-color:#999999;color:#fff;float:left;margin-right:1px;font-size:12px;font-family:微软雅黑;text-align: center;line-height:20px;">关闭</div><a style="maring:0;padding:0;display:inline-block;border:none;overflow:hidden;height:20px;line-height:20px;cursor:pointer;width:20px;background:url(&#39;http://cpro.baidustatic.com/cpro/ui/noexpire/img/2.0.1/xuanfu_close.png&#39;) no-repeat 0 0;margin-bottom:3px;float:left"></a></div><div style="width: 260px; height: 210px; overflow: hidden; position: absolute; left: 0px; top: 25px;"><div style="display:none">-</div><iframe id="cproIframe2004" src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/acom.htm" width="260" height="210" align="center,center" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" allowtransparency="true"></iframe></div></div><div id="page" class="hfeed site">
+	<header id="masthead" class="site-header" role="banner">
+<div style="width:701px;height:90px;float:right;">
+    <div class="contactItem"><a href="http://weibo.com/u/5052963352" target="_blank"><img src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/icon_weibo.jpg"><p class="txt">微博关注</p><p></p></a></div><a href="http://weibo.com/u/5052963352" target="_blank">
+    
+    </a><div class="contactItem"><a href="http://weibo.com/u/5052963352" target="_blank"></a><a href="http://news.html5tricks.com/feed" target="_blank"><img src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/icon_rss.png"><p class="txt">RSS订阅</p></a></div>
+</div>
+		<hgroup style="width:252px;float:left">
+<a href="http://news.html5tricks.com/" title="IT新闻" rel="home">
+<img src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/news-html5tricks-logo.jpg" alt="html5tricks新闻频道" title="html5tricks新闻频道"></a>
+			
+<!--<div style="margin-top:10px">
+<div style="float:left">
+<wb:follow-button uid="5052963352" type="red_2" width="115" height="24" ></wb:follow-button></div>
+<iframe  src="http://follow.v.t.qq.com/index.php?c=follow&a=quick&appkey=801484131&sign=b9b10d49&v=2&name=html5tricks&style=5&t=1396508619628&f=1" frameborder="0" scrolling="auto" width="110" height="24" marginwidth="0" marginheight="0" allowtransparency="true"></iframe>
+</div>-->
+
+		</hgroup>
+<div style="clear:both;"></div>
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<h3 class="menu-toggle">Menu</h3>
+			<a class="assistive-text" href="http://news.html5tricks.com/what-is-clean-code.html#content" title="Skip to content">Skip to content</a>
+			<div class="menu-main-menu-container"><ul id="menu-main-menu" class="nav-menu"><li id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-7"><a href="http://news.html5tricks.com/">新闻首页</a></li>
+<li id="menu-item-69" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-69"><a target="_blank" href="http://www.html5tricks.com/">HTML5</a></li>
+<li id="menu-item-28" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-28"><a href="http://news.html5tricks.com/category/it">IT业界</a></li>
+<li id="menu-item-29" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-29"><a href="http://news.html5tricks.com/category/opensource">开源软件</a></li>
+<li id="menu-item-30" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-30"><a href="http://news.html5tricks.com/category/programmer">程序员</a></li>
+<li id="menu-item-40" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-40"><a href="http://news.html5tricks.com/category/%e7%a7%bb%e5%8a%a8%e4%ba%92%e8%81%94">移动互联</a></li>
+</ul></div>		</nav><!-- #site-navigation -->
+
+			</header><!-- #masthead -->
+<!-- <div id="bd_ad_top" style="margin-bottom:10px">
+<script type="text/javascript">
+/*html5tricks新闻大横幅*/
+var cpro_id = "u1621587";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+</div> -->
+	<div id="main" class="wrapper">
+	<div id="primary" class="site-content">
+		<div id="content" role="main">
+
+			
+				
+	<article id="post-4834" class="post-4834 post type-post status-publish format-standard hentry category-programmer">
+				<header class="entry-header">
+									<h1 class="entry-title">怎么样才算是整洁的代码？</h1>
+						<div class="comments-link" style="float:left;margin-top:20px;margin-right:30px;margin-left:5px">
+2,730 人浏览</div>
+				<div class="comments-link" style="float:left;margin-top:20px">
+					<a href="http://news.html5tricks.com/what-is-clean-code.html#comments" class="ds-thread-count" data-thread-key="4834" title="《怎么样才算是整洁的代码？》上的评论">1条评论</a>				</div><!-- .comments-link -->
+<style type="text/css">
+.comments-link a{text-decoration:none}
+</style>
+			<div id="bdshare" class="bdshare_t bds_tools_24 get-codes-bdshare" style="float:right;margin-top:10px">
+<a class="bds_tsina" title="分享到新浪微博" href="http://news.html5tricks.com/what-is-clean-code.html#"></a>
+<a class="bds_tqq" title="分享到腾讯微博" href="http://news.html5tricks.com/what-is-clean-code.html#"></a>
+<a class="bds_renren" title="分享到人人网" href="http://news.html5tricks.com/what-is-clean-code.html#"></a>
+<a class="bds_qzone" title="分享到QQ空间" href="http://news.html5tricks.com/what-is-clean-code.html#"></a>
+<a class="bds_xg" title="分享到鲜果" href="http://news.html5tricks.com/what-is-clean-code.html#"></a>
+<a class="bds_douban" title="分享到豆瓣网" href="http://news.html5tricks.com/what-is-clean-code.html#"></a>
+<a class="bds_diandian" title="分享到点点网" href="http://news.html5tricks.com/what-is-clean-code.html#"></a>
+<a class="bds_ty" title="分享到天涯社区" href="http://news.html5tricks.com/what-is-clean-code.html#"></a>
+<span class="bds_more"></span>
+<a class="shareCount" href="http://news.html5tricks.com/what-is-clean-code.html#" title="累计分享7次">7</a>
+</div>
+
+<div style="clear:both"></div>
+		</header><!-- .entry-header -->
+
+				<div class="entry-content">
+
+
+
+
+<p><strong>本文是<a title="html5tricks" href="http://www.html5tricks.com/" target="_blank">html5tricks</a>原创翻译，转载请看清文末的转载要求，谢谢合作！</strong></p>
+
+
+
+			<p>怎么样才算是真正整洁的代码呢？为什么整洁如此重要？</p>
+<p>Marry Poppendieck在她精彩的演讲《软件开发中的刻意练习》中，重点讲述了我们这个行业的一些权威人士对于代码整洁性的定义。</p>
+<p><img class="alignnone size-full wp-image-4840 aligncenter" title="what-is-clean-code2" src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/what-is-clean-code2.jpg" alt="" width="588" height="330"></p>
+<h2>Bjarne&nbsp;Stroustrup，C + +的创造者：</h2>
+<blockquote><p>我喜欢优雅高效的代码，因为这样的代码逻辑性强，直截了当，bug无所遁形，依赖性低，易于维护，能策略化地处理各种异常情况，性能接近最优，还能避免人们随意和无原则并最终将导致杂乱无章的优化。整洁的代码让上述每一件事都显得井井有条。</p></blockquote>
+<h2>Grady Booch，《面向对象分析与设计的经典之作》的作者：</h2>
+<blockquote><p>整洁的代码简单直接， 好像优美的散文，娓娓述说着设计师的意图，有一种明快的节奏感。</p></blockquote>
+<h2>大Dave Thomas，OTI的创始人、Eclipse战略之父：</h2>
+<blockquote><p>整洁的代码易读易懂，其他开发人员也能心领神会，一般会有单元测试和验收测试，变量名也有一定含义，能为我们解决问题提供某种清晰的思路。其相关性也低，这一点是很重要，还有就是API很少。代码应该清晰流畅易懂，但是没用必要所有的信息都一股脑儿全写进去。</p></blockquote>
+<h2>Michael Feathers，《修改代码的艺术》一文的作者：</h2>
+<blockquote><p>整洁的代码给我们带来的好处数不胜数，而且与旁的一比，总体质量高下立现。整洁的代码就如同一位精心装饰的女子，一眼看去，感觉增一分则艳，删一分则素，恰如其分。几乎所有的事情都考虑到了，甚至即便你想试着改进，也完全无从下手。</p></blockquote>
+<h2>Ward Cunningham，Wiki&nbsp;和Fit的发明者、Extreme Programming的联合创始人、设计模式的中流砥柱、Smalltalk和面向对象的思想领袖。</h2>
+<blockquote><p>你知道代码整洁是什么感觉吗？那就是，你读到的每个步骤比你预期所想的还要好。有时候我们甚至可以称之为代码模本，因为它就像专门为解决这个问题而生的。</p></blockquote>
+<h2>小结</h2>
+<p>整洁的代码：</p>
+<ul>
+<li><span style="line-height: 1.714285714; font-size: 1rem;">明白易懂（直截了当、清晰明了、恰当的抽象层次、不故弄玄虚、变量命名有规则）——要说优点，这一条排第二，就没有第一了。</span></li>
+<li><span style="line-height: 1.714285714; font-size: 1rem;">服务于现实世界，有明确的异常处理策略（我有很多项目都是因为这一点而付之一炬，所以，放上这一条，稍稍带了点感情色彩）。</span></li>
+<li><span style="line-height: 1.714285714; font-size: 1rem;">可读性和可维护性。</span></li>
+<li><span style="line-height: 1.714285714; font-size: 1rem;">流程最简化，依赖性最小化。</span></li>
+<li><span style="line-height: 1.714285714; font-size: 1rem;">程序运行良好。</span></li>
+</ul>
+<div class="wumii-hook">
+    <input type="hidden" name="wurl" value="http://news.html5tricks.com/what-is-clean-code.html"><br>
+    <input type="hidden" name="wtitle" value="怎么样才算是整洁的代码？"><br>
+    <input type="hidden" name="wpic" value="">
+</div>
+					</div><!-- .entry-content -->
+		
+<div class="bd_ads_bottom" style="margin-bottom:10px">
+<script type="text/javascript">
+/*html5tricks新闻底部横幅*/
+var cpro_id = "u1620392";
+</script>
+<script src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/c.js" type="text/javascript"></script><div id="BAIDU_DUP_wrapper_u1620392_0"><iframe width="580" height="90" src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/acom(6).htm" align="center,center" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" allowtransparency="true"></iframe></div><script charset="utf-8" src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/acom"></script>
+
+
+</div>
+
+<div class="entry-content">
+<p>译文链接：<a href="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/怎么样才算是整洁的代码？   IT新闻   html5tricks.htm" target="_blank">http://news.html5tricks.com/what-is-clean-code.html</a><br>
+英文原文：<a href="http://java.dzone.com/articles/what-clean-code-%E2%80%93-quotes" target="_blank">What Is Clean Code? – In Quotes</a><br>
+翻译作者：<a href="http://news.html5tricks.com/" target="_blank">IT新闻</a>&nbsp;– 蒋丽丽<br>
+[&nbsp;<span style="color: #ff0000;"><strong>转载必须在正文中标注并保留原文链接、译文链接和译者等信息。</strong></span>]</p>
+</div>
+
+
+
+<div style="margin-bottom:20px;margin-top:20px;line-height:1.8em">
+<b style="float:left">微博关注我们：</b>
+<div style="float:left">
+<wb:follow-button uid="5052963352" type="red_2" width="136" height="24"><iframe src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/followbutton.htm" width="136" height="24" frameborder="0" scrolling="no" marginheight="0"></iframe></wb:follow-button></div>
+<iframe src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/index.htm" frameborder="0" scrolling="auto" width="178" height="24" marginwidth="0" marginheight="0" allowtransparency="true"></iframe>
+</div>
+<div style="clear:both"></div>
+
+
+<div id="wumi_relate" style="width:275px;height:300px;margin-bottom:20px;margin-top:-20px;float:right;overflow:hidden">
+<div id="wumiiDisplayDiv"><div id="wumiiBtnDiv" style="clear:both;overflow:visible;position:relative;left:0;top:0;height:28px;margin:0;padding:10px 0 0;text-shadow: none;text-indent:0;">
+    <div id="wumiiLikeBtnDiv" style="position: static; float: left; display: inline; width: 89px; height: 28px; margin: 0px; padding: 0px; text-indent: 0px; background: url(http://static.wumii.cn/images/blogWidget/widget_buttons_deepBlue.png) 0px 0px no-repeat;" onmouseover="this.style.backgroundPosition=&#39;-89px 0&#39;;" onmouseout="this.style.backgroundPosition=&#39;0 0&#39;;">
+        <a href="http://www.wumii.com/item/19JjwHBFP" target="_blank" id="wumiiNumLikes" style="float:left;width:38px;height:20px;line-height:21px;margin:4px 0 0 4px;padding:0;border:none;background-color:#fff;color:#385c80;letter-spacing:0;text-decoration:none;text-align:center;text-indent:0;font-size:12px;" onmouseover="this.style.fontWeight=&#39;bold&#39;;" onmouseout="this.style.fontWeight=&#39;normal&#39;;">0</a>
+        <span style="float:left;width:40px;height:29px;margin:0;padding:0;outline:none;cursor:pointer;" id="wumiiLikeBtn" hidefocus="true"></span>
+    </div>
+    <div id="wumiiRecommendBtnDiv" style="position:static;clear:none;float:left;display:inline;height:28px;margin:0;padding:0 5px;text-indent:0;">
+        <span id="wumiiRecommendBtn" hidefocus="true" style="float:left;display:inline;width:60px;height:28px;margin:0 0 0 5px;padding:0;background:url(&#39;http://static.wumii.cn/images/blogWidget/widget_buttons_deepBlue.png&#39;) no-repeat -267px 0;cursor:pointer;outline:none;" onmouseover="this.style.backgroundPosition=&#39;-328px 0&#39;;" onmouseout="this.style.backgroundPosition=&#39;-267px 0&#39;;"></span>
+        <img src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/loading.gif" id="wumiiLoading" style="clear:none;display:none;height:15px;margin:7px 0 0 8px;padding:0;border:0;background:none;cursor:default;" alt="正在加载推荐文章">
+    </div>
+</div>
+<div class="wumii-related-items-div" wmode="1" style="margin: 0; border: none; padding: 0; clear: both; overflow: hidden; *zoom: 1; *position: relative;">
+    
+    
+    
+        <div class="wumii-internal" style="padding: 0; margin: 0; border: none; clear: both; display: block;">
+        <div class="wumii-widget-title" style="margin: 0; border: none; padding: 20px 0 5px; _padding-top:10px; text-indent: 0; text-align: left; font-weight: bold; ">我们还推荐您阅读以下文章：</div>
+                <ul class="wumii-text-ul" style="padding: 0; margin: 0 0 0 1px;" fromurl="http%3A%2F%2Fnews.html5tricks.com%2Fwhat-is-clean-code.html"><li class="wumii-text-li" style="list-style: disc inside none; display: list-item; line-height: 1.65em; background: none repeat scroll 0 0 transparent; padding: 0; margin: 0; text-indent: 0; text-align: left; font-size: 14px;">
+    <a class="wumii-text-a" hidefocus="true" onmouseout="this.style.textDecoration=&#39;none&#39;" onmouseover="this.style.textDecoration=&#39;underline&#39;" href="http://news.html5tricks.com/look-your-old-code.html" style="text-decoration: none; border-bottom: none; outline: none; " redirecturl=""><span>如何看待自己写的烂代码</span></a>
+</li><li class="wumii-text-li" style="list-style: disc inside none; display: list-item; line-height: 1.65em; background: none repeat scroll 0 0 transparent; padding: 0; margin: 0; text-indent: 0; text-align: left; font-size: 14px;">
+    <a class="wumii-text-a" hidefocus="true" onmouseout="this.style.textDecoration=&#39;none&#39;" onmouseover="this.style.textDecoration=&#39;underline&#39;" href="http://news.html5tricks.com/better-code-write-twice.html" style="text-decoration: none; border-bottom: none; outline: none; " redirecturl=""><span>想要好代码问世，我们至少要写两次</span></a>
+</li><li class="wumii-text-li" style="list-style: disc inside none; display: list-item; line-height: 1.65em; background: none repeat scroll 0 0 transparent; padding: 0; margin: 0; text-indent: 0; text-align: left; font-size: 14px;">
+    <a class="wumii-text-a" hidefocus="true" onmouseout="this.style.textDecoration=&#39;none&#39;" onmouseover="this.style.textDecoration=&#39;underline&#39;" href="http://news.html5tricks.com/clean-code-vs-great-code.html" style="text-decoration: none; border-bottom: none; outline: none; " redirecturl=""><span>简洁的代码，强悍的代码，你的选择是...？</span></a>
+</li><li class="wumii-text-li" style="list-style: disc inside none; display: list-item; line-height: 1.65em; background: none repeat scroll 0 0 transparent; padding: 0; margin: 0; text-indent: 0; text-align: left; font-size: 14px;">
+    <a class="wumii-text-a" hidefocus="true" onmouseout="this.style.textDecoration=&#39;none&#39;" onmouseover="this.style.textDecoration=&#39;underline&#39;" href="http://news.html5tricks.com/find-girlfriend-like-coding.html" style="text-decoration: none; border-bottom: none; outline: none; " redirecturl=""><span>程序员如何像写代码一样找女朋友</span></a>
+</li><li class="wumii-text-li" style="list-style: disc inside none; display: list-item; line-height: 1.65em; background: none repeat scroll 0 0 transparent; padding: 0; margin: 0; text-indent: 0; text-align: left; font-size: 14px;">
+    <a class="wumii-text-a" hidefocus="true" onmouseout="this.style.textDecoration=&#39;none&#39;" onmouseover="this.style.textDecoration=&#39;underline&#39;" href="http://news.html5tricks.com/code-much-means-kill-you.html" style="text-decoration: none; border-bottom: none; outline: none; " redirecturl=""><span>超负荷写代码 = 慢性自杀</span></a>
+</li><li class="wumii-text-li" style="list-style: disc inside none; display: list-item; line-height: 1.65em; background: none repeat scroll 0 0 transparent; padding: 0; margin: 0; text-indent: 0; text-align: left; font-size: 14px;">
+    <a class="wumii-text-a" hidefocus="true" onmouseout="this.style.textDecoration=&#39;none&#39;" onmouseover="this.style.textDecoration=&#39;underline&#39;" href="http://news.html5tricks.com/code-engineer-it.html" style="text-decoration: none; border-bottom: none; outline: none; " redirecturl=""><span>写代码，更需要设计代码</span></a>
+</li><li class="wumii-text-li" style="list-style: disc inside none; display: list-item; line-height: 1.65em; background: none repeat scroll 0 0 transparent; padding: 0; margin: 0; text-indent: 0; text-align: left; font-size: 14px;">
+    <a class="wumii-text-a" hidefocus="true" onmouseout="this.style.textDecoration=&#39;none&#39;" onmouseover="this.style.textDecoration=&#39;underline&#39;" href="http://news.html5tricks.com/hard-drive-failure-5-stages.html" style="text-decoration: none; border-bottom: none; outline: none; " redirecturl=""><span>程序员硬盘损坏导致代码丢失时心理变化的5个阶段</span></a>
+</li><li class="wumii-text-li" style="list-style: disc inside none; display: list-item; line-height: 1.65em; background: none repeat scroll 0 0 transparent; padding: 0; margin: 0; text-indent: 0; text-align: left; font-size: 14px;">
+    <a class="wumii-text-a" hidefocus="true" onmouseout="this.style.textDecoration=&#39;none&#39;" onmouseover="this.style.textDecoration=&#39;underline&#39;" href="http://news.html5tricks.com/140-chars-image.html" style="text-decoration: none; border-bottom: none; outline: none; " redirecturl=""><span>用三段140字符以内的代码生成一张1024*1024的图片</span></a>
+</li><li class="wumii-text-li" style="list-style: disc inside none; display: list-item; line-height: 1.65em; background: none repeat scroll 0 0 transparent; padding: 0; margin: 0; text-indent: 0; text-align: left; font-size: 14px;">
+    <a class="wumii-text-a" hidefocus="true" onmouseout="this.style.textDecoration=&#39;none&#39;" onmouseover="this.style.textDecoration=&#39;underline&#39;" href="http://news.html5tricks.com/why-programmer-write-less-code.html" style="text-decoration: none; border-bottom: none; outline: none; " redirecturl=""><span>为什么程序员要尽量少写代码</span></a>
+</li></ul>
+    </div><div class="wumii-footer" style="margin: 0; border: none; padding: 5px 0; clear: both; text-align: right;">
+            <a href="http://www.wumii.com/widget/relatedItems" target="_blank" title="无觅关联推荐" style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 12px; line-height: normal; font-family: arial; color: rgb(187, 187, 187); border-bottom-style: none; word-wrap: normal; display: inline; cursor: pointer;">无觅关联推荐[?]</a>
+        </div>
+</div></div>
+</div>
+
+<div id="bd_ads_bottom" style="padding:10px auto;width:336px;margin-bottom:20px;float:left;margin-right:10px;">
+<script type="text/javascript">
+/*新闻文章底部*/
+var cpro_id = "u1581474";
+</script>
+<script src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/c.js" type="text/javascript"></script><div id="BAIDU_DUP_wrapper_u1581474_0"><iframe width="336" height="280" src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/acom(8).htm" align="center,center" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" allowtransparency="true"></iframe></div><script charset="utf-8" src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/acom(1)"></script>
+</div>
+
+
+<!--<div style="width:66px;position:fixed;bottom:100px;left:0;padding:5px 0 5px 5px;border-top:#C5C7C6 solid 1px;border-right:#C5C7C6 solid 1px;background-color:#fff;border-bottom:#C5C7C6 solid 1px">-->
+<!-- Baidu Button BEGIN -->
+
+<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare" style="margin-left:-3px">
+<a class="bds_tsina" title="分享到新浪微博" href="http://news.html5tricks.com/what-is-clean-code.html#"></a>
+<a class="bds_tqq" title="分享到腾讯微博" href="http://news.html5tricks.com/what-is-clean-code.html#"></a>
+<a class="bds_renren" title="分享到人人网" href="http://news.html5tricks.com/what-is-clean-code.html#"></a>
+<a class="bds_qzone" title="分享到QQ空间" href="http://news.html5tricks.com/what-is-clean-code.html#"></a>
+<a class="bds_xg" title="分享到鲜果" href="http://news.html5tricks.com/what-is-clean-code.html#"></a>
+<a class="bds_douban" title="分享到豆瓣网" href="http://news.html5tricks.com/what-is-clean-code.html#"></a>
+<a class="bds_diandian" title="分享到点点网" href="http://news.html5tricks.com/what-is-clean-code.html#"></a>
+<a class="bds_ty" title="分享到天涯社区" href="http://news.html5tricks.com/what-is-clean-code.html#"></a>
+<span class="bds_more"></span>
+<a class="shareCount" href="http://news.html5tricks.com/what-is-clean-code.html#" title="累计分享7次">7</a>
+</div>
+<div style="clear:both"></div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=0" src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/bds_s_v2.js"></script>
+
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+
+
+
+<!--<div style="width:120px;position:fixed;bottom:100px;right:0;padding:5px 0 5px 5px;border-top:#C5C7C6 solid 1px;border-left:#C5C7C6 solid 1px;background-color:#fff;border-bottom:#C5C7C6 solid 1px">-->
+
+
+
+
+<script type="text/javascript">
+/*新闻右下角悬浮*/
+var cpro_id = "u1581494";
+</script>
+<script src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/f.js" type="text/javascript"></script><div id="BAIDU_DUP_wrapper_u1581494_0"></div><script charset="utf-8" src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/acom(2)"></script>
+
+<script type="text/javascript">
+    /*图加推广*/
+var cpro_id = "u1691328";
+</script>
+<script src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/i.js" type="text/javascript"></script>
+
+
+		<footer class="entry-meta">
+			This entry was posted in <a href="http://news.html5tricks.com/category/programmer" title="查看程序员中的全部文章" rel="category tag">程序员</a> on <a href="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/怎么样才算是整洁的代码？   IT新闻   html5tricks.htm" title="10:22 下午" rel="bookmark"><time class="entry-date" datetime="2014-09-01T22:22:47+00:00">九月 1, 2014</time></a><span class="by-author"> by <span class="author vcard"><a class="url fn n" href="http://news.html5tricks.com/author/sxwgf" title="View all posts by html5tricks" rel="author">html5tricks</a></span></span>.								</footer><!-- .entry-meta -->
+	</article><!-- #post -->
+				<nav class="nav-single">
+					<h3 class="assistive-text">Post navigation</h3>
+					<span class="nav-previous"><a href="http://news.html5tricks.com/little-apple-for-code-monkey.html" rel="prev"><span class="meta-nav">←</span> 《小苹果》版 IT程序猿基情四射</a></span>
+					<span class="nav-next"><a href="http://news.html5tricks.com/qunaer-female-stuff-die.html" rel="next">去哪儿网女员工猝死：入职仅三个月 <span class="meta-nav">→</span></a></span>
+				</nav><!-- .nav-single -->
+
+				<a name="comments"></a>
+
+<div class="ds-thread" data-thread-key="4834" data-author-key="1" data-title="怎么样才算是整洁的代码？" data-url="http://news.html5tricks.com/what-is-clean-code.html" id="ds-thread"><div id="ds-reset"><div class="ds-comments-info"><div class="ds-sort"><a class="ds-order-desc">最新</a><a class="ds-order-asc ds-current">最早</a><a class="ds-order-hot">最热</a></div><ul class="ds-comments-tabs"><li class="ds-tab"><a class="ds-comments-tab-duoshuo ds-current" href="javascript:void(0);"><span class="ds-highlight">1</span>条评论</a></li></ul></div><ul class="ds-comments"><li class="ds-post" data-post-id="1285687533660800319"><div class="ds-post-self" data-post-id="1285687533660800319" data-thread-id="1285687533660799817" data-root-id="0" data-source="duoshuo"><div class="ds-avatar"><img src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/noavatar_default.png" alt="隐臣子"></div><div class="ds-comment-body"><div class="ds-comment-header"><span class="ds-user-name" data-qqt-account="">隐臣子</span></div><p>哦，多些分享</p><div class="ds-comment-footer ds-comment-actions"><span class="ds-time" datetime="2014-09-02T11:05:09+08:00" title="2014年9月2日 上午11:05:09">12小时前</span><a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>回复</a><a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>顶</a><a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>转发</a><a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>举报</a></div></div></div></li></ul><div class="ds-paginator" style="display: none;"><div class="ds-border"></div><a data-page="1" href="javascript:void(0);" class="ds-current">1</a></div><a name="respond"></a><div class="ds-login-buttons"><p>社交帐号登录:</p><div class="ds-social-links"><ul class="ds-service-list"><li><a href="http://news-html5tricks.duoshuo.com/login/weibo/?sso=1&redirect_uri=http%3A%2F%2Fnews.html5tricks.com%2Fwp-login.php%3Faction%3Dduoshuo_login%26redirect_to%3Dhttp%253A%252F%252Fnews.html5tricks.com%252Fwhat-is-clean-code.html" rel="nofollow" class="ds-service-link ds-weibo">微博</a></li><li><a href="http://news-html5tricks.duoshuo.com/login/qq/?sso=1&redirect_uri=http%3A%2F%2Fnews.html5tricks.com%2Fwp-login.php%3Faction%3Dduoshuo_login%26redirect_to%3Dhttp%253A%252F%252Fnews.html5tricks.com%252Fwhat-is-clean-code.html" rel="nofollow" class="ds-service-link ds-qq">QQ</a></li><li><a href="http://news-html5tricks.duoshuo.com/login/renren/?sso=1&redirect_uri=http%3A%2F%2Fnews.html5tricks.com%2Fwp-login.php%3Faction%3Dduoshuo_login%26redirect_to%3Dhttp%253A%252F%252Fnews.html5tricks.com%252Fwhat-is-clean-code.html" rel="nofollow" class="ds-service-link ds-renren">人人</a></li><li><a href="http://news-html5tricks.duoshuo.com/login/douban/?sso=1&redirect_uri=http%3A%2F%2Fnews.html5tricks.com%2Fwp-login.php%3Faction%3Dduoshuo_login%26redirect_to%3Dhttp%253A%252F%252Fnews.html5tricks.com%252Fwhat-is-clean-code.html" rel="nofollow" class="ds-service-link ds-douban">豆瓣</a></li><li><a class="ds-more-services" href="javascript:void(0)">更多»</a></li></ul><ul class="ds-service-list ds-additional-services"><li><a href="http://news-html5tricks.duoshuo.com/login/kaixin/?sso=1&redirect_uri=http%3A%2F%2Fnews.html5tricks.com%2Fwp-login.php%3Faction%3Dduoshuo_login%26redirect_to%3Dhttp%253A%252F%252Fnews.html5tricks.com%252Fwhat-is-clean-code.html" rel="nofollow" class="ds-service-link ds-kaixin">开心</a></li><li><a href="http://news-html5tricks.duoshuo.com/login/netease/?sso=1&redirect_uri=http%3A%2F%2Fnews.html5tricks.com%2Fwp-login.php%3Faction%3Dduoshuo_login%26redirect_to%3Dhttp%253A%252F%252Fnews.html5tricks.com%252Fwhat-is-clean-code.html" rel="nofollow" class="ds-service-link ds-netease">网易</a></li><li><a href="http://news-html5tricks.duoshuo.com/login/sohu/?sso=1&redirect_uri=http%3A%2F%2Fnews.html5tricks.com%2Fwp-login.php%3Faction%3Dduoshuo_login%26redirect_to%3Dhttp%253A%252F%252Fnews.html5tricks.com%252Fwhat-is-clean-code.html" rel="nofollow" class="ds-service-link ds-sohu">搜狐</a></li><li><a href="http://news-html5tricks.duoshuo.com/login/baidu/?sso=1&redirect_uri=http%3A%2F%2Fnews.html5tricks.com%2Fwp-login.php%3Faction%3Dduoshuo_login%26redirect_to%3Dhttp%253A%252F%252Fnews.html5tricks.com%252Fwhat-is-clean-code.html" rel="nofollow" class="ds-service-link ds-baidu">百度</a></li><li><a href="http://news-html5tricks.duoshuo.com/login/google/?sso=1&redirect_uri=http%3A%2F%2Fnews.html5tricks.com%2Fwp-login.php%3Faction%3Dduoshuo_login%26redirect_to%3Dhttp%253A%252F%252Fnews.html5tricks.com%252Fwhat-is-clean-code.html" rel="nofollow" class="ds-service-link ds-google">谷歌</a></li></ul></div></div><div class="ds-replybox"><a class="ds-avatar" href="javascript:void(0);" onclick="return false"><img src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/noavatar_default.png" alt=""></a><form method="post"><input type="hidden" name="thread_id" value="1285687533660799817">
+<input type="hidden" name="parent_id" value="">
+<input type="hidden" name="nonce" value="5405e0ffa386f"><div class="ds-textarea-wrapper ds-rounded-top"><textarea name="message" title="Ctrl+Enter快捷提交" placeholder="说点什么吧…"></textarea><pre class="ds-hidden-text"></pre></div><div class="ds-post-toolbar"><div class="ds-post-options ds-gradient-bg"><span class="ds-sync"></span></div><button class="ds-post-button" type="submit">发布</button><div class="ds-toolbar-buttons"><a class="ds-toolbar-button ds-add-emote" title="插入表情"></a></div></div></form></div><p class="ds-powered-by"><a href="http://duoshuo.com/" target="_blank" rel="nofollow">IT新闻正在使用多说</a></p></div></div>
+
+<script type="text/javascript">
+	if (typeof DUOSHUO !== 'undefined')
+		DUOSHUO.EmbedThread('.ds-thread');
+</script>
+	<div id="ds-ssr">
+
+		
+            <ol id="commentlist">
+                		<li class="comment even thread-even depth-1" id="li-comment-995">
+			<article id="comment-995" class="comment">
+				<footer class="comment-meta">
+					<cite class="comment-author vcard">
+						<span class="fn">隐臣子</span> on <a rel="nofollow" href="http://news.html5tricks.com/what-is-clean-code.html#comment-995"><time pubdate="" datetime="2014-09-02T11:05:09+00:00">九月 2, 2014 at 11:05 上午</time></a> <span class="says">said:</span>					</cite><!-- .comment-author .vcard -->
+				</footer>
+	
+				<div class="comment-content"><p>哦，多些分享</p>
+</div>
+				
+			</article><!-- #comment-## -->
+		</li>
+            </ol>
+
+		            
+    </div>
+			
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+
+			<div id="secondary" class="widget-area" role="complementary">
+			<aside id="text-2" class="widget widget_text">			<div class="textwidget"><style type="text/css">
+.hot{margin-bottom:30px}
+.hot h2{font-size:18px}
+.hot a{text-decoration:none}
+.weibo{margin-bottom:20px}
+.rss{margin-bottom:20px;text-align:center;border:#333 solid 2px;padding:10px 5px 5px 5px}
+</style>
+<!--
+<div class="rss">
+<div>
+<a target="_blank" href="http://list.qq.com/cgi-bin/qf_invite?id=a25fc2e29b385e4103b9076d340a63b6c8f17cd49a2ba2fe"><img border="0" alt="填写您的邮件地址，订阅我们的精彩内容：" src="http://rescdn.list.qq.com/zh_CN/htmledition/images/qunfa/manage/picMode_light_l.png" /></a>
+</div>
+</div>
+
+<div class="weibo">
+<a href="http://weibo.com/u/5052963352" target="_blank">
+<img src="http://www.html5tricks.com/wp-content/uploads/2014/05/weibo.jpg" alt="新浪微博关注" /></a>
+</div>
+<div class="weibo">
+<a href="http://t.qq.com/html5tricks" target="_blank">
+<img src="http://www.html5tricks.com/wp-content/uploads/2014/05/qqweibo.jpg" alt="腾讯微博关注" /></a>
+</div>
+-->
+<div class="hot">
+<script type="text/javascript">
+/*新闻侧边*/
+var cpro_id = "u1591528";
+</script>
+<script src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/c.js" type="text/javascript"></script><div id="BAIDU_DUP_wrapper_u1591528_0"><iframe width="300" height="250" src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/acom(7).htm" align="center,center" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" allowtransparency="true"></iframe></div><script charset="utf-8" src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/acom(3)"></script>
+</div>
+
+
+<div class="hot">
+<a href="http://news.html5tricks.com/qunaer-female-stuff-die.html" target="_blank" style="color:#000">
+    <img src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/qunaer-die.jpg" alt="去哪儿网女员工猝死：入职仅三个月">
+<h2>去哪儿网女员工猝死 入职仅三个月</h2></a>
+</div>
+
+<div class="hot">
+<a href="http://news.html5tricks.com/10-reasons-dating-programmer.html" target="_blank" style="color:#000">
+    <img src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/dating-with-programmer.jpg" alt="选择跟程序员约会的10个理由">
+<h2>选择跟程序员约会的10个理由</h2></a>
+</div>
+
+
+
+
+</div>
+		</aside><aside id="text-3" class="widget widget_text">			<div class="textwidget"><script type="text/javascript">
+/*新闻侧边悬停*/
+var cpro_id = "u1581478";
+</script>
+<script src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/c.js" type="text/javascript"></script><div id="BAIDU_DUP_wrapper_u1581478_0placeholder" style="width: 300px; height: 250px; margin: 0px; padding: 0px; border: none; display: inline-block; background: none;"></div><div id="BAIDU_DUP_wrapper_u1581478_0" width="300px" height="250px" style="width: 300px; height: 250px; display: inline-block; z-index: 2147483646; position: fixed; top: 5px; left: 170px;"><iframe id="cproIframe_u1581478" src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/acom(5).htm" width="300" height="250" align="center,center" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" allowtransparency="true"></iframe></div><script charset="utf-8" src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/acom(4)"></script></div>
+		</aside>		</div><!-- #secondary -->
+		</div><!-- #main .wrapper -->
+	<footer id="colophon" role="contentinfo">
+		<div class="site-info">
+			
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<div id="wp-auto-top"><div id="wp-auto-top-top"></div><div id="wp-auto-top-comment"></div><div id="wp-auto-top-bottom"></div></div>
+<script> var commentPositionId = '[name="comments"]:last';var wpAutoTopSpeed = 0;</script><style>
+   #wp-auto-top{position:fixed;top:40%;right:50%;display:block;margin-right:-50%; z-index:9999;}
+   #wp-auto-top-top,#wp-auto-top-comment,#wp-auto-top-bottom{background:url(http://news.html5tricks.com/wp-content/plugins/wp-auto-top/img/5.png) no-repeat;position:relative;cursor:pointer;height:25px;width:29px;margin:10px 0 0;}
+   #wp-auto-top-comment{background-position:left -30px;height:32px;}#wp-auto-top-bottom{background-position:left -68px;}
+   #wp-auto-top-comment:hover{background-position:right -30px;}
+   #wp-auto-top-top:hover{background-position:right 0;}
+   #wp-auto-top-bottom:hover{background-position:right -68px ;}
+   </style>
+<p style="margin:0;padding:0;height:1px;overflow:hidden;">
+    <script type="text/javascript"><!--
+        var wumiiSitePrefix = "http://news.html5tricks.com";
+        var wumiiEnableCustomPos = true;
+        var wumiiParams = "&num=9&mode=3&displayInFeed=1&version=1.0.5.7&pf=WordPress3.4.2";
+        var wumiiCategories = ["\u7a0b\u5e8f\u5458"];
+    //--></script><script type="text/javascript" src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/relatedItemsWidget"></script><a href="http://www.wumii.com/widget/relatedItems" style="border:0;"><img src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/pixel.png" alt="无觅相关文章插件，快速提升流量" style="border:0;padding:0;margin:0;"></a>
+</p><script type="text/javascript" src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/navigation.js"></script>
+<script type="text/javascript" src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/jquery.js"></script><div style="position: absolute; border: 0px; margin: 0px; padding: 0px; height: 0px; overflow: visible; text-align: left; top: 835px; left: 170px; width: 300px;"><div id="f21ac82b21eeb7322631b6aa94e17f45hicmnn"><style type="text/css" media="screen">#f21ac82b21eeb7322631b6aa94e17f45hicmnn {position:absolute;top:0;left:0;right:auto;bottom:auto;margin:0;padding:0;border:0;width:200px;background:transparent;}#f21ac82b21eeb7322631b6aa94e17f45hicmnn div{float:left;width:144px;height:17px;line-height:17px;margin:3px 0 0 -2px;background:url(http://ecma.bdimg.com/public03/imageplus/tip-back.png) 0 0 no-repeat;_background:0;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/tip-back.png');font-family:sans-serif;text-align:center;font-size:12px;color:#666;padding:8px 10px;display:none;}#f21ac82b21eeb7322631b6aa94e17f45hicmnn-icon {float:left;height:38px;width:38px;cursor:default;background:url(http://ecma.bdimg.com/public03/imageplus/tip.png) 0 0 no-repeat;_background:0;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/tip.png');}#f21ac82b21eeb7322631b6aa94e17f45hicmnn-icon:hover {float:left;height:38px;width:38px;background:url(http://ecma.bdimg.com/public03/imageplus/tip-hover.png) 0 0 no-repeat;_background:0;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/tip-hover.png');}</style><a href="javascript:void(0);" id="f21ac82b21eeb7322631b6aa94e17f45hicmnn-icon" data-action="icon"></a><div>查看标识获取更多信息</div></div><style type="text/css" media="screen" id="ad-style-f21ac82b21eeb7322631b6aa94e17f451j359j1">.ad-widget-imageplus-single_image{font:12px/1.5 arial,sans-serif;position:relative;padding:1px;overflow:hidden;_zoom:1;background-color:#FFF}.ad-widget-imageplus-single_image img{display:block;width:300px!important;height:250px!important;padding:0;margin:0;border:0;position:static!important}.ad-widget-imageplus-single_image-redirect{position:absolute;top:0;left:0;_left:-1px;z-index:2;width:100%;height:100%;_height:252px;background-color:#FFF;opacity:0;filter:alpha(opacity=0)}.ad-widget-imageplus-box{position:absolute;top:0;left:0;margin:0;padding:0;width:0;height:0;overflow:visible!important}.ad-widget-imageplus-box-icon{position:absolute;top:0;left:0;z-index:10;width:38px;height:38px;overflow:hidden;cursor:pointer;background:url("http://ecma.bdimg.com/public03/imageplus/pa.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa.png')\9}
+.ad-widget-imageplus-box-icon:hover{background:url("http://ecma.bdimg.com/public03/imageplus/pa-hover.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-hover.png')\9}.ad-widget-imageplus-box-icon span{position:absolute;top:0;left:0;width:38px;height:38px;cursor:pointer;text-decoration:none;background-color:#FFF;opacity:0;filter:alpha(opacity=0)}span.ad-widget-imageplus-box-icon{cursor:default}.ad-widget-imageplus-box-icon-medical{background:url("http://ecma.bdimg.com/public03/imageplus/pa-medical.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-medical.png')\9}
+.ad-widget-imageplus-box-icon-medical:hover{background:url("http://ecma.bdimg.com/public03/imageplus/pa-medical-hover.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-medical-hover.png')\9}.ad-widget-imageplus-box-icon-decoration{background:url("http://ecma.bdimg.com/public03/imageplus/pa-decoration.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-decoration.png')\9}.ad-widget-imageplus-box-icon-decoration:hover{background:url("http://ecma.bdimg.com/public03/imageplus/pa-decoration-hover.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-decoration-hover.png')\9}
+.ad-widget-imageplus-box-icon-machine{background:url("http://ecma.bdimg.com/public03/imageplus/pa-machine.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-machine.png')\9}.ad-widget-imageplus-box-icon-machine:hover{background:url("http://ecma.bdimg.com/public03/imageplus/pa-machine-hover.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-machine-hover.png')\9}.ad-widget-imageplus-box-icon-photo{background:url("http://ecma.bdimg.com/public03/imageplus/pa-photo.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-photo.png')\9}
+.ad-widget-imageplus-box-icon-photo:hover{background:url("http://ecma.bdimg.com/public03/imageplus/pa-photo-hover.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-photo-hover.png')\9}.ad-widget-imageplus-box-icon-tourism{background:url("http://ecma.bdimg.com/public03/imageplus/pa-tourism.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-tourism.png')\9}.ad-widget-imageplus-box-icon-tourism:hover{background:url("http://ecma.bdimg.com/public03/imageplus/pa-tourism-hover.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-tourism-hover.png')\9}
+.ad-widget-imageplus-box-icon-game{background:url("http://ecma.bdimg.com/public03/imageplus/game.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/game.png')\9}.ad-widget-imageplus-box-icon-game:hover{background:url("http://ecma.bdimg.com/public03/imageplus/game-hover.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/game-hover.png')\9}.ad-widget-imageplus-box-bd{position:absolute;top:0;left:0;z-index:11;display:none;overflow:visible;background:#FFF}.ad-widget-imageplus-box-bg{position:absolute;top:0;left:0;z-index:11;width:100%;height:100%;background:#FFF;opacity:.95;filter:alpha(opacity=95);border-radius:2px;-webkit-box-shadow:2px 2px 4px #000;-moz-box-shadow:2px 2px 4px #000;box-shadow:2px 2px 4px #000}
+.ad-widget-imageplus{position:relative;top:0;left:0;z-index:12}#f21ac82b21eeb7322631b6aa94e17f451j359j1{font:12px/1.5 arial,sans-serif}</style><div id="f21ac82b21eeb7322631b6aa94e17f451j359j1" data-rendered="true" style="margin: 0px; padding: 0px; border: none; overflow: visible; text-align: left;"><div class="ad-widget-imageplus ad-widget-imageplus-box" id="ad-w-jc8g3x" style="left: 210px; top: 60px;">
+<a class="ad-widget-imageplus-box-icon ad-widget-imageplus-box-icon-default" href="http://www.baidu.com/cpro.php?9kmK00jcyflfEkyEla4OY-F9zNK_ykMLRHIjoJb5rexFlc-MUWPBq7RVnuEZKe31y2Iqze4m7L9-_Ldicp8LkdNMCVT8iOVpgSOfrclLNv5Unu4KNpsdeItSSOaN.7b_a96JsTBknIP-MW3d4QryZZn_nYQZZx_vTN0.IgF_5y9YIZ0lQzq8ugI1Qh9YUysdIZFGmvV1QhPEUiqLpA7YQy-1QyP_uy78QyPEuAR8pZwVU0KYUHYkPjTLPjT40Zwd5gRkPWbkn1c30ZI_5Hc0mv4YUWYvnj0LP1Dzn7qWTZc0mywWUA71T1Ys0ZF15H00mLwV5yF9pywdfLN1IDG1Uv30Uh7YIHY40A-Ypyfqn0KGIA-8uhqGujYs0AIspyfqn0Kzuyuspyfqn0KWTZFEpyfqPHKKrjKKfYf1PRRYnHK7fHujwHcdPjRYnHIAnWD1fRD0mvqVTAk-5H00mgwGujY0mgwYXHY0mMNbuvNYgvN3TA-b5H00my-s5y9wUvwVNh4hpdIi0ZNGTjYVnAqlivqrm6KWpjYs0Zw9TWYvP0KbIZ0qnfK1uyk_ugFxpyfqPfKGTdq9TZ0qn0K9TZKxpyfqn0KWIgPY5fKGTdqLpgF-UAN1T1Ys0ZI9T7qYXgK-5H00TAsqn0KVm1Y1PhP9rAmdmsKVIWYk0A4vTjYsQW0snj0snj0s0AT45HD0uh-zTLwxThNMpyq85Hn0TvNWUv4bgLF-uv-EUWYLP1T0TLPs5HR0TLPsnWYs0ZwYTjYk0AwGTLws5H00mycqn0K9uZ6qnfKsuMwzmyw-5Hf0TZPYTh7buHYYnjc0TA-b5H00ILKGujYs0A7bIZ-suHYs0ZPLpyfqn0K1IZ-suHYs0APzm1YkP1n1rf0" target="_blank" id="ad-w-jc8g3x-icon" data-log="2" data-attach="1" style="width: 38px; height: 38px; display: none;">
+<!-- span遮盖了整个a，故需要加data-log和data-attach -->
+<span data-log="2" data-attach="1">&nbsp;</span>
+</a>
+<div class="ad-widget-imageplus-box-bd" id="ad-w-jc8g3x-content" style="top: 38px; left: -132px; width: 302px; height: 252px;">
+<div class="ad-widget-imageplus-box-bg"></div>
+<div class="ad-widget-imageplus ad-widget-imageplus-single_image" id="ad-w-jqxbdb">
+<img src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/0f000D3Nc-Ne0-DhkUN9z6.jpg">
+<!-- 图片频道会修改a的地址，如果img标签放在a里面的话 -->
+<a class="ad-widget-imageplus-single_image-redirect" href="http://www.baidu.com/cpro.php?9kmK00jcyflfEkyEla4OY-F9zNK_ykMLRHIjoJb5rexFlc-MUWPBq7RVnuEZKe31y2Iqze4m7L9-_Ldicp8LkdNMCVT8iOVpgSOfrclLNv5Unu4KNpsdeItSSOaN.7b_a96JsTBknIP-MW3d4QryZZn_nYQZZx_vTN0.IgF_5y9YIZ0lQzq8ugI1Qh9YUysdIZFGmvV1QhPEUiqLpA7YQy-1QyP_uy78QyPEuAR8pZwVU0KYUHYkPjTLPjT40Zwd5gRkPWbkn1c30ZI_5Hc0mv4YUWYvnj0LP1Dzn7qWTZc0mywWUA71T1Ys0ZF15H00mLwV5yF9pywdfLN1IDG1Uv30Uh7YIHY40A-Ypyfqn0KGIA-8uhqGujYs0AIspyfqn0Kzuyuspyfqn0KWTZFEpyfqPHKKrjKKfYf1PRRYnHK7fHujwHcdPjRYnHIAnWD1fRD0mvqVTAk-5H00mgwGujY0mgwYXHY0mMNbuvNYgvN3TA-b5H00my-s5y9wUvwVNh4hpdIi0ZNGTjYVnAqlivqrm6KWpjYs0Zw9TWYvP0KbIZ0qnfK1uyk_ugFxpyfqPfKGTdq9TZ0qn0K9TZKxpyfqn0KWIgPY5fKGTdqLpgF-UAN1T1Ys0ZI9T7qYXgK-5H00TAsqn0KVm1Y1PhP9rAmdmsKVIWYk0A4vTjYsQW0snj0snj0s0AT45HD0uh-zTLwxThNMpyq85Hn0TvNWUv4bgLF-uv-EUWYLP1T0TLPs5HR0TLPsnWYs0ZwYTjYk0AwGTLws5H00mycqn0K9uZ6qnfKsuMwzmyw-5Hf0TZPYTh7buHYYnjc0TA-b5H00ILKGujYs0A7bIZ-suHYs0ZPLpyfqn0K1IZ-suHYs0APzm1YkP1n1rf0" data-log="2" target="_blank">&nbsp;</a>
+</div>
+</div>
+</div></div></div>
+<script type="text/javascript" src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/wp-auto-top.js"></script>
+<div style="display:none">
+<script language="javascript" type="text/javascript" src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/16741667.js"></script><a href="http://www.51.la/?16741667" target="_blank"><img alt="51.la 专业、免费、强健的访问统计" src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/icon_0.gif" style="border:none"></a>
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9346d6b49a73fab9c4d557ed45e0dad0' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/h.js" type="text/javascript"></script><a href="http://tongji.baidu.com/hm-web/welcome/ico?s=9346d6b49a73fab9c4d557ed45e0dad0" target="_blank"><img border="0" src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/21.gif" width="20" height="20"></a>
+
+</div>
+
+<div style="position: absolute; border: 0px; margin: 0px; padding: 0px; height: 0px; overflow: visible; text-align: left; top: 543px; left: 524px; width: 588px;"><div id="f21ac82b21eeb7322631b6aa94e17f45ubkj8t"><style type="text/css" media="screen">#f21ac82b21eeb7322631b6aa94e17f45ubkj8t {position:absolute;top:0;left:0;right:auto;bottom:auto;margin:0;padding:0;border:0;width:200px;background:transparent;}#f21ac82b21eeb7322631b6aa94e17f45ubkj8t div{float:left;width:144px;height:17px;line-height:17px;margin:3px 0 0 -2px;background:url(http://ecma.bdimg.com/public03/imageplus/tip-back.png) 0 0 no-repeat;_background:0;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/tip-back.png');font-family:sans-serif;text-align:center;font-size:12px;color:#666;padding:8px 10px;display:none;}#f21ac82b21eeb7322631b6aa94e17f45ubkj8t-icon {float:left;height:38px;width:38px;cursor:default;background:url(http://ecma.bdimg.com/public03/imageplus/tip.png) 0 0 no-repeat;_background:0;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/tip.png');}#f21ac82b21eeb7322631b6aa94e17f45ubkj8t-icon:hover {float:left;height:38px;width:38px;background:url(http://ecma.bdimg.com/public03/imageplus/tip-hover.png) 0 0 no-repeat;_background:0;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/tip-hover.png');}</style><a href="javascript:void(0);" id="f21ac82b21eeb7322631b6aa94e17f45ubkj8t-icon" data-action="icon"></a><div>查看标识获取更多信息</div></div><style type="text/css" media="screen" id="ad-style-f21ac82b21eeb7322631b6aa94e17f452fx9cm6">.ad-widget-imageplus-single_image{font:12px/1.5 arial,sans-serif;position:relative;padding:1px;overflow:hidden;_zoom:1;background-color:#FFF}.ad-widget-imageplus-single_image img{display:block;width:300px!important;height:250px!important;padding:0;margin:0;border:0;position:static!important}.ad-widget-imageplus-single_image-redirect{position:absolute;top:0;left:0;_left:-1px;z-index:2;width:100%;height:100%;_height:252px;background-color:#FFF;opacity:0;filter:alpha(opacity=0)}.ad-widget-imageplus-box{position:absolute;top:0;left:0;margin:0;padding:0;width:0;height:0;overflow:visible!important}.ad-widget-imageplus-box-icon{position:absolute;top:0;left:0;z-index:10;width:38px;height:38px;overflow:hidden;cursor:pointer;background:url("http://ecma.bdimg.com/public03/imageplus/pa.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa.png')\9}
+.ad-widget-imageplus-box-icon:hover{background:url("http://ecma.bdimg.com/public03/imageplus/pa-hover.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-hover.png')\9}.ad-widget-imageplus-box-icon span{position:absolute;top:0;left:0;width:38px;height:38px;cursor:pointer;text-decoration:none;background-color:#FFF;opacity:0;filter:alpha(opacity=0)}span.ad-widget-imageplus-box-icon{cursor:default}.ad-widget-imageplus-box-icon-medical{background:url("http://ecma.bdimg.com/public03/imageplus/pa-medical.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-medical.png')\9}
+.ad-widget-imageplus-box-icon-medical:hover{background:url("http://ecma.bdimg.com/public03/imageplus/pa-medical-hover.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-medical-hover.png')\9}.ad-widget-imageplus-box-icon-decoration{background:url("http://ecma.bdimg.com/public03/imageplus/pa-decoration.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-decoration.png')\9}.ad-widget-imageplus-box-icon-decoration:hover{background:url("http://ecma.bdimg.com/public03/imageplus/pa-decoration-hover.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-decoration-hover.png')\9}
+.ad-widget-imageplus-box-icon-machine{background:url("http://ecma.bdimg.com/public03/imageplus/pa-machine.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-machine.png')\9}.ad-widget-imageplus-box-icon-machine:hover{background:url("http://ecma.bdimg.com/public03/imageplus/pa-machine-hover.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-machine-hover.png')\9}.ad-widget-imageplus-box-icon-photo{background:url("http://ecma.bdimg.com/public03/imageplus/pa-photo.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-photo.png')\9}
+.ad-widget-imageplus-box-icon-photo:hover{background:url("http://ecma.bdimg.com/public03/imageplus/pa-photo-hover.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-photo-hover.png')\9}.ad-widget-imageplus-box-icon-tourism{background:url("http://ecma.bdimg.com/public03/imageplus/pa-tourism.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-tourism.png')\9}.ad-widget-imageplus-box-icon-tourism:hover{background:url("http://ecma.bdimg.com/public03/imageplus/pa-tourism-hover.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-tourism-hover.png')\9}
+.ad-widget-imageplus-box-icon-game{background:url("http://ecma.bdimg.com/public03/imageplus/game.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/game.png')\9}.ad-widget-imageplus-box-icon-game:hover{background:url("http://ecma.bdimg.com/public03/imageplus/game-hover.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/game-hover.png')\9}.ad-widget-imageplus-box-bd{position:absolute;top:0;left:0;z-index:11;display:none;overflow:visible;background:#FFF}.ad-widget-imageplus-box-bg{position:absolute;top:0;left:0;z-index:11;width:100%;height:100%;background:#FFF;opacity:.95;filter:alpha(opacity=95);border-radius:2px;-webkit-box-shadow:2px 2px 4px #000;-moz-box-shadow:2px 2px 4px #000;box-shadow:2px 2px 4px #000}
+.ad-widget-imageplus{position:relative;top:0;left:0;z-index:12}#f21ac82b21eeb7322631b6aa94e17f452fx9cm6{font:12px/1.5 arial,sans-serif}</style><div id="f21ac82b21eeb7322631b6aa94e17f452fx9cm6" data-rendered="true" style="margin: 0px; padding: 0px; border: none; overflow: visible; text-align: left;"><div class="ad-widget-imageplus ad-widget-imageplus-box" id="ad-w-s9v9bd" style="left: 411.6px; top: 99px; z-index: 12;">
+<a class="ad-widget-imageplus-box-icon ad-widget-imageplus-box-icon-default" href="http://www.baidu.com/cpro.php?9kmK00jtxX0DGvkDyKR5YMWZEYDGhNnDgn_XyriypZQl6F_5RQzdTXI49uVNK_VTFDVn5y30MUCWWHjmAU8TQ-OnSGMwyv5VdPRsPcBfekq8kHmgputa6v0qtm9n.DY_KS-1CRff8sHwG6qrJuMHTh6zSWKWkfTXS8uv-W21qjnTn1tIjVHjRMn_HZHuu3SPXi1-9k1QjPakke5Zuv20.IgF_5y9YIZ0lQzq8ugI1Qh9YUysdIZFGmvV1QhPEUiqLpA7YQy-1QyP_uy78QyPEuAR8pZwVU0KYUHYkPjTLPjT40Zwd5gRkPWbkn1c30ZI_5Hc0mv4YUWYvnj0LP1Dzn7qWTZc0mywWUA71T1Ys0ZF15H00mLwV5yF9pywdfLN1IDG1Uv30Uh7YIHY40A-Ypyfqn0KGIA-8uhqGujYs0AIspyfqn0Kzuyuspyfqn0KWTZFEpyfqPHKKrjKKfYf1PRRYnHK7fHujwHcdPjRYnHIAnWD1fRD0mvqVTAk-5H00mgwGujY0mgwYXHY0mMNbuvNYgvN3TA-b5H00my-s5y9wUvwVNh4hpdIi0ZNGTjdin79zPN7fijusI0KWpjYs0Zw9TWYvP0KbIZ0qnfK1uyk_ugFxpyfqPfKGTdq9TZ0qn0K9TZKxpyfqn0KWIgPY5fKGTdqLpgF-UAN1T1Ys0ZI9T7qYXgK-5H00TAsqn0KVm1Y1rjDdnj6vnsKVIWYk0A4vTjYsQW0snj0snj0s0AT45H00uh-zTLwxThNMpyq85Hn0TvNWUv4bgLF-uv-EUWYLP1T0TLPs5HR0TLPsnWYs0ZwYTjYk0AwGTLws5H00mycqn0K9uZ6qnfKsuMwzmyw-5Hf0TZPYTh7buHYYnjc0TA-b5H00ILKGujYs0A7bIZ-suHYs0ZPLpyfqn0K1IZ-suHYs0APzm1Y1rjfvr00" target="_blank" id="ad-w-s9v9bd-icon" data-log="2" data-attach="1" style="width: 38px; height: 38px; display: none;">
+<!-- span遮盖了整个a，故需要加data-log和data-attach -->
+<span data-log="2" data-attach="1">&nbsp;</span>
+</a>
+<div class="ad-widget-imageplus-box-bd" id="ad-w-s9v9bd-content" style="top: 38px; left: -132px; width: 302px; height: 252px; display: none;">
+<div class="ad-widget-imageplus-box-bg"></div>
+<div class="ad-widget-imageplus ad-widget-imageplus-single_image" id="ad-w-9vs389">
+<img src="./怎么样才算是整洁的代码？   IT新闻   html5tricks_files/0f0000Ryu58DpnG1GdVyZs.jpg">
+<!-- 图片频道会修改a的地址，如果img标签放在a里面的话 -->
+<a class="ad-widget-imageplus-single_image-redirect" href="http://www.baidu.com/cpro.php?9kmK00jtxX0DGvkDyKR5YMWZEYDGhNnDgn_XyriypZQl6F_5RQzdTXI49uVNK_VTFDVn5y30MUCWWHjmAU8TQ-OnSGMwyv5VdPRsPcBfekq8kHmgputa6v0qtm9n.DY_KS-1CRff8sHwG6qrJuMHTh6zSWKWkfTXS8uv-W21qjnTn1tIjVHjRMn_HZHuu3SPXi1-9k1QjPakke5Zuv20.IgF_5y9YIZ0lQzq8ugI1Qh9YUysdIZFGmvV1QhPEUiqLpA7YQy-1QyP_uy78QyPEuAR8pZwVU0KYUHYkPjTLPjT40Zwd5gRkPWbkn1c30ZI_5Hc0mv4YUWYvnj0LP1Dzn7qWTZc0mywWUA71T1Ys0ZF15H00mLwV5yF9pywdfLN1IDG1Uv30Uh7YIHY40A-Ypyfqn0KGIA-8uhqGujYs0AIspyfqn0Kzuyuspyfqn0KWTZFEpyfqPHKKrjKKfYf1PRRYnHK7fHujwHcdPjRYnHIAnWD1fRD0mvqVTAk-5H00mgwGujY0mgwYXHY0mMNbuvNYgvN3TA-b5H00my-s5y9wUvwVNh4hpdIi0ZNGTjdin79zPN7fijusI0KWpjYs0Zw9TWYvP0KbIZ0qnfK1uyk_ugFxpyfqPfKGTdq9TZ0qn0K9TZKxpyfqn0KWIgPY5fKGTdqLpgF-UAN1T1Ys0ZI9T7qYXgK-5H00TAsqn0KVm1Y1rjDdnj6vnsKVIWYk0A4vTjYsQW0snj0snj0s0AT45H00uh-zTLwxThNMpyq85Hn0TvNWUv4bgLF-uv-EUWYLP1T0TLPs5HR0TLPsnWYs0ZwYTjYk0AwGTLws5H00mycqn0K9uZ6qnfKsuMwzmyw-5Hf0TZPYTh7buHYYnjc0TA-b5H00ILKGujYs0A7bIZ-suHYs0ZPLpyfqn0K1IZ-suHYs0APzm1Y1rjfvr00" data-log="2" target="_blank">&nbsp;</a>
+</div>
+</div>
+</div></div></div></body></html>

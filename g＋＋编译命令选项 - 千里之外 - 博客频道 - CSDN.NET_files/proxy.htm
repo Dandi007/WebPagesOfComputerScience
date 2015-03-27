@@ -1,0 +1,119 @@
+
+<!-- saved from url=(0127)http://recommend.api.csdn.net/proxy.html?X-ACL-TOKEN=tag_suggest_kdfjkqwuiplkajmncbsb_token&contentId=tagsCallback1412160997093 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    
+
+    <title>cross domain proxy page</title>
+
+    <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+
+    <script type="text/javascript">
+
+      document.domain="csdn.net";
+
+      function _parserUrl(tourl){
+
+         if(!tourl)return;
+
+         var paramsArr=tourl.split('?')[1].split('&');   
+
+          var args={},argsStr=[],param,name,value;
+
+         args['url']=encodeURIComponent(tourl.split('?')[0]); 
+
+          for(var i=0;i<paramsArr.length;i++){
+
+         param=paramsArr[i].split('=');
+
+         name=param[0],value=param[1];
+
+         if(name=="")name="unkown";
+
+         if(typeof args[name]=="undefined"){
+
+          args[name]=value;
+
+         }else if(typeof args[name]=="string"){
+
+          args[name]=[args[name]];
+
+          args[name].push(value);
+
+         }else{ //
+
+          args[name].push(value);
+
+         }
+
+          }
+
+
+
+          var showArg=function(x){
+
+              if(typeof(x)=="string"&&!/\d+/.test(x)) return "'"+x+"'";
+
+              if(x instanceof Array) return "["+x+"]";
+
+              return x;
+
+          }
+
+          args.toString=function(){
+
+              for(var i in args) argsStr.push(i+':'+showArg(args[i]));
+
+              return '{'+argsStr.join(',')+'}';
+
+          }
+
+          return args;
+
+      };      
+
+      
+
+      var inst = parent[_parserUrl(window.location.href).contentId];
+      var protocol = window.location.protocol;
+      var _url;
+      if(protocol == 'https:'){
+        _url = "https://recommend-api.csdn.net/tag/csdn/suggest?X-ACL-TOKEN=tag_suggest_kdfjkqwuiplkajmncbsb_token";
+      }else{
+        _url = "http://recommend.api.csdn.net/tag/csdn/suggest?X-ACL-TOKEN=tag_suggest_kdfjkqwuiplkajmncbsb_token";
+      }
+      
+
+      var _data={
+
+        title:inst.title,
+
+        body:inst.content
+
+      }
+
+      $.ajax({
+
+            url:_url,
+ 
+            type:'POST',
+
+            data:_data,
+
+            contentType:'application/x-www-form-urlencoded; charset=UTF-8',
+
+            success:function (data) {
+
+               inst.onGetTag(data);
+
+            }
+
+        });
+
+    </script>
+
+  </head>
+
+  <body>
+
+</body></html>

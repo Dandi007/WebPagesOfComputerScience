@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Windows下python环境变量配置 - 七叶树之技术博客 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=k2uL13BZlYpYjZ7FITMnMaB1mOfAPcMGfJChBRaBpP01"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/BOOK/bundle-BOOK.css?v=DaIdaa-2GlCJY57BeysMEAHbKkfdzZNJbosbSdqmsv41"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/qiyeshublog/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/qiyeshublog/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/qiyeshublog/wlwmanifest.xml"/>
+<script src="http://common.cnblogs.com/script/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'qiyeshublog', cb_enable_mathjax=false;</script>
+<script src="/bundles/blog-common.js?v=Pbt4uMm_qWARxxiPM8vQwX0Bh-yg-NcQxX73-xkOCnw1" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<script type="text/javascript">
+	try {
+		if (screen.availWidth > 1200) {
+			document.getElementById("MainCss").href = '/Skins/BOOK/style2.css';
+		}
+	} catch (e) { }
+</script>
+
+<div id="header">
+<div id="HeaderTitle">
+<div id="Title">
+<a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/qiyeshublog/">七叶树之技术博客</a>
+</div>
+<div id="subTitle"></div>
+</div>
+</div>
+
+<div id="main">
+	
+
+	<div class="post">
+		<h2>
+			<a id="cb_post_title_url" href="http://www.cnblogs.com/qiyeshublog/archive/2012/01/24/2329162.html">Windows下python环境变量配置</a>
+		</h2>
+		<div id="cnblogs_post_body"><div class="articalContent  ">
+<div>
+<p>默认情况下，在windows下安装python之后，系统并不会自动添加相应的环境变量。此时不能在命令行直接使用python命令。</p>
+<p>&nbsp;</p>
+<p>1. 首先需要在系统中注册python环境变量：假设python的安装路径为c:\python2.6，则修改我的电脑-&gt;属性-&gt;高级-&gt;环境变量-&gt;系统变量中的PATH为:</p>
+<p><span style="font-style: italic;">(为了在命令行模式下运行Python命令，需要将python.exe所在的目录附加到PATH这个环境变量中。)</span></p>
+<p>&nbsp;</p>
+<div class="cnblogs_code">
+<pre>PATH=PATH;c:\python26</pre>
+</div>
+<p>上述环境变量设置成功之后，就可以在命令行直接使用python命令。或执行"python *.py"运行python脚本了。</p>
+<p>&nbsp;</p>
+<p>2. 此时，还是只能通过"python *.py"运行python脚本，若希望直接运行*.py，只需再修改另一个环境变量PATHEXT:</p>
+<p>&nbsp;</p>
+<div class="cnblogs_code">
+<pre>PATHEXT=PATHEXT;.PY;.PYM</pre>
+</div>
+<p><em><span style="color: #ff0000;"><br /></span></em></p>
+<p>3. 另外，在使用python的过程中，可能需要经常查看某个命令的帮助文档，如使用help('print')查看print命令的使用说明。默认安装的python无法查看帮助文档，尚需进行简单的配置：</p>
+<p>在python安装目录下，找到python25.chm，使用</p>
+<p>&nbsp;</p>
+<div class="cnblogs_code">
+<pre>hh -decompile .python26.chm</pre>
+</div>
+<p>将其反编译出来，然后将其所在的目录加入到上面提到的PATH环境变量中即可。</p>
+<p>&nbsp;</p>
+<p>4.&nbsp;如何使Python解释器能直接import默认安装路径以外的第三方模块？</p>
+<p>为了能import默认安装路径以外的第三方的模块（如自己写的模块），<span style="color: #ff0000;">需要新建PYTHONPATH环境变量</span>，值为这个模块所在的目录。</p>
+</div>
+</div></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+
+		<p class="postfoot">
+			posted on <span id="post-date">2012-01-24 14:38</span> <a href='http://www.cnblogs.com/qiyeshublog/'>七叶树之技术博客</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="http://i.cnblogs.com/EditPosts.aspx?postid=2329162" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(2329162);return false;">收藏</a>
+		</p>
+	</div>
+	<script type="text/javascript">var allowComments=true,isLogined=true,cb_blogId=106829,cb_entryId=2329162,cb_blogApp=currentBlogApp,cb_blogUserGuid='6577ba11-af3c-e111-9590-842b2b196315',cb_entryCreatedDate='2012/1/24 14:38:00';loadViewCount(cb_entryId);</script>
+	
+	<a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" id="lnk_RefreshComments" onclick="return RefreshCommentList();">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+<div id="comment_form_container"></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="site_nav_under"><a href="http://www.cnblogs.com/" target="_blank" title="开发者的网上家园">博客园首页</a><a href="http://q.cnblogs.com/" target="_blank" title="程序员问答社区">博问</a><a href="http://news.cnblogs.com/" target="_blank" title="IT新闻">新闻</a><a href="http://home.cnblogs.com/ing/" target="_blank">闪存</a><a href="http://job.cnblogs.com/" target="_blank">程序员招聘</a><a href="http://kb.cnblogs.com/" target="_blank">知识库</a></div>
+<div id="opt_under_post"></div>
+<script type="text/javascript">
+    var enableGoogleAd = canShowAdsense(); var googletag = googletag || {}; googletag.cmd = googletag.cmd || [];
+    fixPostBodyFormat();
+</script>
+<div id="ad_under_post_holder">
+<script type='text/javascript'>
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function () {
+        if (enableGoogleAd) {
+            var gads = document.createElement('script');
+            gads.async = true;
+            gads.type = 'text/javascript';
+            var useSSL = 'https:' == document.location.protocol;
+            gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+            var node = document.getElementsByTagName('script')[0];
+            node.parentNode.insertBefore(gads, node);
+        }
+    })();
+</script>
+<script type='text/javascript'>
+    try {
+        if (enableGoogleAd) {
+            googletag.cmd.push(function () {
+                googletag.defineSlot('/1090369/cnblogs_blogpost_C1_sitehome', [300, 250], 'div-gpt-ad-1346480159711-0').addService(googletag.pubads());
+                googletag.defineSlot('/1090369/cnblogs_blogpost_C2', [468, 60], 'div-gpt-ad-1410860226396-0').addService(googletag.pubads());
+                googletag.pubads().enableSingleRequest();
+                googletag.enableServices();
+            });
+        };
+    } catch (e) { }
+</script>
+<div id="google_ad_c1" class="c_ad_block">
+    <div id='div-gpt-ad-1346480159711-0' style='width:300px; height:250px;'>
+    <script type='text/javascript'>
+        try {
+            if (enableGoogleAd) {
+                googletag.cmd.push(function () { googletag.display('div-gpt-ad-1346480159711-0'); });            
+            } else {
+                $('#div-gpt-ad-1346480159711-0').hide();
+            }
+    } catch (e) { }
+    </script>
+    </div>
+</div>
+</div>
+<div id="under_post_news"></div>
+<div id="google_ad_c2" class="c_ad_block">
+<div id='div-gpt-ad-1410860226396-0' style='width:468px; height:60px;'>
+<script type='text/javascript'>
+try {
+    if (enableGoogleAd) {
+        googletag.cmd.push(function () { googletag.display('div-gpt-ad-1410860226396-0'); });
+    } else {
+        $('#div-gpt-ad-1346480159711-0').hide();
+    }
+} catch (e) { }
+</script>
+</div>
+</div>
+<div id="under_post_kb"></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+$(function () {
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 200);
+});
+</script>
+</div>
+
+	
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	<a id="Footer1_Hyperlink3" NAME="Hyperlink1" href="http://www.cnblogs.com/" style="font-family:Verdana;font-size:12px;">博客园</a>
+	<br />
+	Copyright &copy; 七叶树之技术博客
+</p>
+</div>
+<div id="rightmenu">
+	
+		<div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+		
+<h3>导航</h3>
+<ul>
+			<li><a id="MyLinks1_HomeLink" href="http://www.cnblogs.com/">博客园</a></li>
+			<li><a id="MyLinks1_MyHomeLink" href="http://www.cnblogs.com/qiyeshublog/">首页</a></li>
+			<li><a id="MyLinks1_NewPostLink" rel="nofollow" href="http://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+			<li><a id="MyLinks1_ContactLink" accesskey="9" rel="nofollow" href="http://space.cnblogs.com/msg/send/%e4%b8%83%e5%8f%b6%e6%a0%91%e4%b9%8b%e6%8a%80%e6%9c%af%e5%8d%9a%e5%ae%a2">联系</a></li>
+			<li><a id="MyLinks1_Syndication" href="http://www.cnblogs.com/qiyeshublog/rss">订阅</a><a id="MyLinks1_XMLLink" href="http://www.cnblogs.com/qiyeshublog/rss"><img src="http://www.cnblogs.com/images/xml.gif" alt="订阅" /></a>
+			<li><a id="MyLinks1_Admin" rel="nofollow" href="http://i.cnblogs.com/">管理</a></li>
+</ul>
+		
+<h3>统计</h3>
+	<ul>
+		<li>随笔 - 4
+		<li>文章 - 2
+		<li>评论 - 1
+		<li>引用 - 0
+	</li>
+</ul>
+		
+<h3>公告</h3>
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+
+		<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+	
+</div>
+			
+			
+			
+			
+			 
+
+	
+
+</body>
+</html>

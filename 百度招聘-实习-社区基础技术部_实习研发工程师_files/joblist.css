@@ -1,0 +1,84 @@
+#hrs_main{background:none;}
+#hrs_side{float:right;width:190px;background:transparent;}
+#hrs_mainContent{float:left;width:790px;min-height:557px;background:#fff;}
+#hrs_searchOuter{margin:0 20px;}
+#hrs_joblistTable tr td:first-child{padding-left:28px;background:url(../images/sec_bg.png) no-repeat 10px -86px;}
+#hrs_searchOuter .hrs_submitBtn{width:88px;height:31px;line-height:31px;text-align:center;background:#ffffff url(../images/sprite_bg.png) no-repeat -10px -607px;padding-top:1px;border:0px solid #ccc;font-size:14px;font-weight:normal;color:#555555;cursor:pointer;margin:0;}
+#hrs_searchOuter .hrs_submitBtn:active{background-position: -10px -653px;}
+#hrs_searchOuter form input{height:25px;vertical-align:middle;margin-left:0; padding:2px 8px;}
+#hrs_searchOuter form{margin-top:15px;margin-bottom:28px;}
+#hrs_searchOuter dl{line-height:24px;margin-bottom:18px;}
+#hrs_searchOuter dt{font-size:14px;font-weight:bold;color:#333333;display:inline-block;*display:inline;zoom:1;vertical-align:middle;}
+#hrs_searchOuter dd{display:inline-block;*display:inline;zoom:1;vertical-align:middle;height:21px;margin-right:12px;}
+#hrs_searchOuter .hrs_jobDuty dd, #hrs_searchOuter .hrs_jobRequire dd{text-indent: 2em; line-height: 1.25em;}
+#hrs_searchOuter dd a{display:block;font-size:14px;color:#333333;height:21px; line-height:20px; padding:0 5px;}
+#hrs_searchOuter dd a:hover{text-decoration:none;}
+#hrs_searchOuter dd.hrs_curType,#hrs_searchOuter dd:hover{background:#009de0;}
+#hrs_searchOuter #hrs_jobDetail dd:hover{ background: none; }
+#hrs_searchOuter dd.hrs_curType a,#hrs_searchOuter dd:hover a{color:#fff;}
+#hrs_joblistOuter{margin-top:32px;}
+.hrs_page{margin-top:20px;}
+.hrs_topBorder{padding:10px 0 20px;border-top:5px solid #029fd3;}
+.hrs_table_striped{width:100%;margin-top:12px;border:none;}.hrs_table_striped tr{height:32px;line-height:32px;}
+.hrs_table_striped thead tr{background:#f3f3f3;}
+.hrs_table_striped th{text-align:left;color:#333333;}
+.hrs_table_striped th:first-child{padding-left:20px;}
+.hrs_table_striped tbody tr:nth-child(even){background:#f9f9f9;}
+.hrs_table_striped tbody a{color:#333333;}
+.hrs_table_striped tbody a:hover{color:#029fd3;text-decoration:underline;}
+.hrs_table_striped tbody a.hrs_operation{color:#029fd3;}
+.hrs_listModel{background:#fff;}.hrs_listModel h3{position:relative;height:39px;line-height:39px;background:#029fd3;font-size:14px;font-weight:bold;color:#ffffff;padding:0 10px;}.hrs_listModel h3 a{display:inline-block;*display:inline;zoom:1;vertical-align:middle;position:absolute;top:0;right:10px;height:39px;font-size:12px;color:#55d5ff;font-weight:normal;}.hrs_listModel h3 a span{font-family:'宋体';}
+.hrs_listModel ul{padding:8px 0;min-height: 150px;}.hrs_listModel ul li{line-height:22px;background:url(../images/sec_bg.png) no-repeat 4px -91px;padding-left:18px;}.hrs_listModel ul li a{font-size:12px;color:#333333;}.hrs_listModel ul li a:hover{color:#029fd3;text-decoration:underline;}/* by dayee */
+#hrs_slider{width:190px;height:132px;margin-top:10px;}
+.smallslider{position:relative;padding:0;margin:0;overflow:hidden;}
+.smallslider ul{list-style-type:none;padding:0;margin:0;position:absolute;width:auto;height:auto;}
+.smallslider li{margin:0;padding:0;width:190px;height:114px;}
+.smallslider li a{margin:0;padding:0;}
+.smallslider li a img{width:190px;height:114px;border:0;padding:0;margin:0;vertical-align:top;}
+.smallslider h3{position:absolute;font-weight:bold;font-size:12px;margin:0;padding:0;text-indent:2%;line-height:26px;z-index:102;width:98%;color:#CCC;}
+.smallslider h3 a{padding:0;margin:0;text-indent:0;}
+.smallslider h3 a:link,.smallslider h3 a:visited{text-decoration:none;color:#FFFFFF;}
+.smallslider h3 a:hover{text-decoration:underline;color:#FF6600;}
+.smallslider-btns{position:absolute;z-index:103;width:100%;height:18px;background:#78736d;}
+.smallslider-btns span{background-color:#6d6d6d;border-right:1px solid #363636;color:#fff;cursor:pointer;float:left;font-size:12px;height:18px;line-height:18px;text-align:center;width:18px;}
+.smallslider-btns span.current-btn{background-color:#ba0101;}
+.smallslider-lay{position:absolute;background:black;height:26px;width:100%;z-index:101;}
+#debug{width:200px;height:200px;border:1px solid;background:#CCC;position:fixed;left:10px;bottom:20px;}
+#hrs_share{border-top:1px solid #e0dedf;margin-top:30px;padding:4px 10px 7px 0;}
+#bdshare label{float:left;line-height:26px;}
+#bdshare span.bds_more{line-height:17px;}
+#bdshare a{margin-right:18px;}
+#hrs_searchOuter .hrs_jobInfo{font-size:12px;color:#666666;margin-top:14px;}
+#hrs_searchOuter .hrs_jobInfo dt{font-size:12px;font-weight:normal;color:#333333;}
+#hrs_searchOuter .hrs_jobInfo dd{margin-right:40px;line-height:22px;}
+#hrs_searchOuter .hrs_jobDuty dt,#hrs_searchOuter .hrs_jobRequire dt,#hrs_searchOuter .hrs_jobDuty dd,#hrs_searchOuter .hrs_jobRequire dd{display:block;font-size:12px;color:#333333;}
+#hrs_jobDetail dd:hover{background:none;}
+#hrs_applyJob{width:88px;height:32px;line-height:32px;text-align:center;background:url(../images/sec_bg.png) no-repeat left top;border:1px solid #ff6901;border-radius:2px;font-size:14px;font-weight:bold;color:#ffffff;cursor:pointer;}
+#hrs_favoriteJob{width:88px;height:32px;line-height:32px;text-align:center;background:#ffffff url(../images/sec_bg.png) no-repeat left -216px;border:1px solid #439dd9;border-radius:2px;font-size:14px;font-weight:bold;color:#ffffff;cursor:pointer;margin-left:10px;}
+#hrs_applyJob:hover{background-position:left -294px;}
+#hrs_favoriteJob:hover{background-position:left -326px;}
+
+/*实习*/
+.hrs_jobIntern .hrs_topBorder{border-top-color:#f88e1e;}
+.hrs_jobIntern .hrs_listModel h3{ background: #f88f1c; }
+.hrs_jobIntern .hrs_listModel h3 a{ color:#fdc98f;}
+.hrs_jobIntern #hrs_searchOuter dd.hrs_curType,.hrs_jobIntern #hrs_searchOuter dd:hover{ background: #fa8f1d; }
+.hrs_jobIntern .hrs_table_striped tbody a:hover,.hrs_jobIntern .hrs_page a,.hrs_jobIntern .hrs_listModel ul li a:hover{color:#f88e1e;}
+
+/*校招*/
+.hrs_jobSchool .hrs_topBorder{border-top-color:#8ac916;}
+.hrs_jobSchool .hrs_listModel h3{ background: #8dc919; }
+.hrs_jobSchool .hrs_listModel h3 a{ color:#daff9f;}
+.hrs_jobSchool #hrs_searchOuter dd.hrs_curType,.hrs_jobSchool #hrs_searchOuter dd:hover{ background: #8dca15; }
+.hrs_jobSchool .hrs_table_striped tbody a:hover,.hrs_jobSchool .hrs_page a,.hrs_jobSchool .hrs_listModel ul li a:hover{color:#8ac916;}
+.hrs_applyTip {color: red;}
+
+/*海外*/
+.hrs_jobOverseas .hrs_topBorder{border-top-color:#920093;}
+.hrs_jobOverseas .hrs_listModel h3{ background: #920093; }
+.hrs_jobOverseas .hrs_listModel h3 a{ color:#e43ee6;}
+.hrs_jobOverseas #hrs_searchOuter dd.hrs_curType, .hrs_jobOverseas #hrs_searchOuter dd:hover{ background: #8f0094; }
+.hrs_jobOverseas .hrs_table_striped tbody a:hover,.hrs_jobOverseas .hrs_page a,.hrs_jobOverseas .hrs_listModel ul li a:hover{color:#920093;}
+
+.en #hrs_applyJob {width: 110px;}
+.en #hrs_favoriteJob {width: 125px;}

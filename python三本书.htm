@@ -1,0 +1,1558 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="ua-windows ua-webkit book-new-nav">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>
+python三本书
+</title>
+  
+
+
+  
+<script>!function(f){var h=function(o,n,m){var k=new Date(),j,l;n=n||30;m=m||"/";k.setTime(k.getTime()+(n*24*60*60*1000));j="; expires="+k.toGMTString();for(l in o){f.cookie=l+"="+o[l]+j+"; path="+m}},d=function(m){var l=m+"=",o,n,j,k=f.cookie.split(";");for(n=0,j=k.length;n<j;n++){o=k[n].replace(/^\s+|\s+$/g,"");if(o.indexOf(l)==0){return o.substring(l.length,o.length).replace(/\"/g,"")}}return null},e=f.write,b={"douban.com":1,"douban.fm":1,"google.com":1,"google.cn":1,"googleapis.com":1,"gmaptiles.co.kr":1,"gstatic.com":1,"gstatic.cn":1,"google-analytics.com":1,"googleadservices.com":1},a=function(l,k){var j=new Image();j.onload=function(){};j.src="http://www.douban.com/j/except_report?kind=ra022&reason="+encodeURIComponent(l)+"&environment="+encodeURIComponent(k)},i=function(k){try{e.call(f,k)}catch(j){e(k)}},c=/<script.*?src\=["']?([^"'\s>]+)/ig,g=/http:\/\/(.+?)\.([^\/]+).+/i;f.writeln=f.write=function(k){var j=c.exec(k),l;if(!j){i(k);return}l=g.exec(j[1]);if(!l){i(k);return}if(b[l[2]]){i(k);return}if(d("hj")==="tqs"){return}a(j[1],location.href);h({hj:"tqs"},1);setTimeout(function(){location.replace(location.href)},50)}}(document);</script>
+
+  
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="Sun, 6 Mar 2005 01:00:00 GMT">
+  
+  <script>var _head_start = new Date();</script>
+  
+  <link href="http://img3.douban.com/f/book/23327e5a06ca8839222afbaa12d87c1a3bde2d00/css/book/master.css" rel="stylesheet" type="text/css">
+
+  <style type="text/css"></style>
+  <script src="http://img3.douban.com/f/book/e9d9543ebc06f2964039a2e94898f84ce77fc070/js/book/lib/jquery/jquery.js"></script>
+  <script src="http://img3.douban.com/f/book/e3771c98a306f043a66f43a2c9a3a8c2aab09c4e/js/book/master.js"></script>
+  
+
+  
+  <style type ="text/css">
+    .dui-dialog{position:fixed;_position:absolute;z-index:1000}.dui-dialog .dui-dialog-content{position:relative;z-index:2;background:#fff;border:1px solid #bbb;-moz-border-radius:4px;border-radius:4px;*zoom:1}.dui-dialog .hd{padding:10px 10px 6px;background:#ebf5eb;font-size:14px;-moz-border-radius:4px;border-radius:4px 4px 0 0}.dui-dialog .hd h3{padding:0 40px 0 4px;background:0;color:#060}.dui-dialog .hd h3 i{color:#060;font-style:normal;margin-left:.5ex}.dui-dialog .bd{position:relative;padding:15px;*zoom:1;font-size:12px}.dui-dialog .bd:after{content:&#39;\0020&#39;;clear:both;display:block}.dui-dialog .ft .bn-flat,.dui-dialog .ft input{margin:0 .5em}.dui-dialog .ft{text-align:center;padding:10px;padding-top:0}.dui-dialog .dui-dialog-close{position:absolute;top:10px;right:12px;padding:0 3px;z-index:1;font:11px/1.2 &#34;Comic Sans MS&#34;,sans-serif}a.dui-dialog-close:link{color:#b4b4b4}a.dui-dialog-close:hover{color:#fab0b6;background:0}.dui-dialog .dui-dialog-shd{position:absolute;left:-8px;top:-8px;width:100%;height:100%;padding:8px;background:#666;opacity:.4;filter:alpha(opacity=50);-ms-filter:&#34;alpha(opacity=50)&#34;;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px}.dui-dialog-iframe{border:0;background:transparent;position:absolute;z-index:1;left:-8px;top:-8px;opacity:0;filter:alpha(opacity=0)}.dui-dialog-msk{background:#fff;position:absolute;width:100%;z-index:999;left:0;top:0;opacity:.7;filter:alpha(opacity=70)}
+  </style>
+  <script type="text/javascript" src="http://img3.douban.com/f/shire/4b3bad5e25de78678d700dd5353570dce3e6bbcc/js/ui/dialog.js"></script>
+  <link href="http://img3.douban.com/f/book/667fbd263e9c88ff78028d123f86af026a555457/css/book/subject/discussion.css" rel="stylesheet">
+
+  <script>  </script>
+  <link rel="stylesheet" href="http://img3.douban.com/misc/mixed_static/362f3edb35694265.css">
+
+  <link rel="shortcut icon" href="http://img3.douban.com/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  
+    <script>var _body_start = new Date();</script>
+    
+  
+  
+  
+
+
+
+
+
+
+<div id="db-global-nav" class="global-nav">
+  <div class="bd">
+    
+
+
+
+
+
+
+<div class="top-nav-info">
+      
+      <a href="http://www.douban.com/accounts/login?source=book" class="nav-login" rel="nofollow">登录</a>
+      <a href="http://www.douban.com/accounts/register?source=book" class="nav-register" rel="nofollow">注册</a>
+</div>
+
+
+
+    <div class="global-nav-items">
+      <ul>
+          
+            
+            <li>
+            <a href="http://www.douban.com/" target="_blank" data-moreurl-dict="{&#34;from&#34;:&#34;top-nav-click-main&#34;,&#34;uid&#34;:&#34;0&#34;}">豆瓣</a>
+            </li>
+          
+            
+            <li class="on">
+            <a href="http://book.douban.com/" data-moreurl-dict="{&#34;from&#34;:&#34;top-nav-click-book&#34;,&#34;uid&#34;:&#34;0&#34;}">读书</a>
+            </li>
+          
+            
+            <li>
+            <a href="http://movie.douban.com/" target="_blank" data-moreurl-dict="{&#34;from&#34;:&#34;top-nav-click-movie&#34;,&#34;uid&#34;:&#34;0&#34;}">电影</a>
+            </li>
+          
+            
+            <li>
+            <a href="http://music.douban.com/" target="_blank" data-moreurl-dict="{&#34;from&#34;:&#34;top-nav-click-music&#34;,&#34;uid&#34;:&#34;0&#34;}">音乐</a>
+            </li>
+          
+            
+            <li>
+            <a href="http://www.douban.com/location/" target="_blank" data-moreurl-dict="{&#34;from&#34;:&#34;top-nav-click-location&#34;,&#34;uid&#34;:&#34;0&#34;}">同城</a>
+            </li>
+          
+            
+            <li>
+            <a href="http://www.douban.com/group/" target="_blank" data-moreurl-dict="{&#34;from&#34;:&#34;top-nav-click-group&#34;,&#34;uid&#34;:&#34;0&#34;}">小组</a>
+            </li>
+          
+            
+            <li>
+            <a href="http://read.douban.com/?dcs=top-nav&amp;dcm=douban" target="_blank" data-moreurl-dict="{&#34;from&#34;:&#34;top-nav-click-read&#34;,&#34;uid&#34;:&#34;0&#34;}">阅读</a>
+            </li>
+          
+            
+            <li>
+            <a href="http://douban.fm/" target="_blank" data-moreurl-dict="{&#34;from&#34;:&#34;top-nav-click-fm&#34;,&#34;uid&#34;:&#34;0&#34;}">豆瓣FM</a>
+            </li>
+          
+            
+            <li>
+            <a href="http://dongxi.douban.com/?dcs=top-nav&amp;dcm=douban" target="_blank" data-moreurl-dict="{&#34;from&#34;:&#34;top-nav-click-commodity&#34;,&#34;uid&#34;:&#34;0&#34;}">东西</a>
+            </li>
+          
+            <li>
+              <a href="#more" class="bn-more"><span>更多</span></a>
+              <div class="more-items">
+                <table cellpadding="0" cellspacing="0">
+                    
+                    <tr><td><a href="http://9.douban.com" target="_blank" data-moreurl-dict="{&#34;from&#34;:&#34;top-nav-click-9&#34;,&#34;uid&#34;:&#34;0&#34;}">九点</a></td></tr>
+                    
+                    <tr><td><a href="http://alphatown.com" target="_blank" data-moreurl-dict="{&#34;from&#34;:&#34;top-nav-click-town&#34;,&#34;uid&#34;:&#34;0&#34;}">阿尔法城</a></td></tr>
+                    
+                    <tr><td><a href="http://www.douban.com/mobile/" target="_blank" data-moreurl-dict="{&#34;from&#34;:&#34;top-nav-click-mobile&#34;,&#34;uid&#34;:&#34;0&#34;}">移动应用</a></td></tr>
+                </table>
+              </div>
+            </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+  
+  
+
+
+
+
+
+
+
+
+<div id="db-nav-book" class="nav">
+  <div class="nav-wrap">
+    <div class="nav-primary">
+      <div class="nav-logo">
+        <a href="http://book.douban.com">豆瓣读书</a>
+      </div>
+      <div class="nav-search">
+        <form action="http://book.douban.com/subject_search" method="get">
+          <fieldset>
+            <legend>搜索：</legend>
+            <label for="inp-query">书名、作者、ISBN</label>
+            <div class="inp">
+              <input id="inp-query" name="search_text" size="22" maxlength="60"
+                value="">
+            </div>
+            <div class="inp-btn">
+              <input type="submit" value="搜索">
+            </div>
+            <input type="hidden" name="cat" value="1001">
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="nav-secondary">
+    
+    <ul class="nav-items">
+      <li
+        class="nav-item-first"
+      ><a href="http://book.douban.com/tag/">分类浏览</a></li>
+      
+      <li class="book-cart ">
+        <a href="http://book.douban.com/cart">购书单</a>
+      </li>
+      <li>
+        <a href="http://read.douban.com/ebooks/?dcs=book-nav&amp;dcm=douban" target="_blank">电子图书</a>
+        <sup class="icon-new"></sup>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+  
+  <script type="text/template" id="suggest-item">
+    <li class="item"><a href="#">{{= item}}</a></li>
+  </script>
+  
+  
+
+
+
+    <div id="wrapper">
+        
+        
+  <div id="content">
+    
+  <h1>
+    python三本书
+  </h1>
+
+    <div class="grid-16-8 clearfix">
+      
+      <div class="article">
+    <table class="wr">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://book.douban.com/people/metac/">
+            <img class="pil" src="http://img3.douban.com/icon/u1142600-1.jpg" />
+          </a>
+        </td>
+        <td valign="top">
+          <div id="link-report">
+            <span class="mn">
+              2006-04-18 15:25:04
+            </span>
+            <span class="pl2"> 　　来自:
+              <a href="http://book.douban.com/people/metac/" class=" ">
+                元创
+              </a>
+                (深圳)
+            </span>
+            <br/>
+
+
+              <span class="">　　我学习和使用python用三本书,如果安装时的看的python tutorial不算.<br /><br />learning python. 学完它,python就&quot;很&quot;入门了.<br />python manuals. 会查它,就会用python写程序挣钱了.<br />python cookbook. 会用它,就会用python写&quot;很python&quot;的程序了.<br /><br />第一本是learning python,现有第四版了,包括2.6和3.X的内容.<br />这本书的好处是可以学以致用.就是说它兼有入门读物与手册的功能.<br />刚学的时候一边看书一边试源码.<br />三五天后,就可以写自己的程序了,但这时还不熟呀,于是就要查书.<br />这本书非常适合初期的查找,比如dictionary怎么用之类的.<br /><br />第二本是python manuals. 安装带的手册. 就像手册说的,library reference它应该是python 程序员的枕边书,的确如此.<br />library reference的前几章应该记个七七八八,后面的内容也应该有点印象.<br />会查这本书,你就会感到自己很牛或python很牛了,啥都能干了.<br /><br />第三本是python cookbook,有几个版本,最新的是2005的.<br />菜谱是用来查的,一个菜不会做,看看菜谱应该怎么做.有问题不会解决,python cookbook一般也会有答案.<br />但这本菜谱还是用来读的.读N道川菜菜谱,会感到川菜不同与上海菜,广东菜是不同. 读几章python cookbook,写的程序就有python味了.<br /><br />learning python你可以换一本书学,但python cookbook是不可替代的,只此一本.<br /><br />最后一次修改是2009/12/04.</span>
+
+            <br clear="all"/>
+
+            </div>
+
+            
+
+
+            <div class="review-stat">
+              
+              你认为这篇讨论：
+                <span class="useful">
+                    <a class="btn-useful j a_show_login" href="javascript:;"
+                      onclick="voteuseful('c-1015058',true)">
+                      有用
+                    </a>
+                    <em id="ucount1015058u">19</em>
+                </span>
+
+                <span class="unuseful">
+                  <a class="btn-unuseful j a_show_login" href="javascript:;"
+                    onclick="voteuseless('c-1015058',true)">
+                    没用
+                  </a>
+                  <em id="ucount1015058l"></em>
+                </span>
+              </div>
+              <br/><br/>
+
+          
+  
+  <div id="comments" class="">
+
+        
+  
+  <table id="c-4919" class="wr comment-item " data-cid="4919" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/1154653/"><img class="pil " src="http://img3.douban.com/icon/user_normal.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2006-04-28 21:10:29</span> <a class="  " href="http://www.douban.com/people/1154653/">chinhantang</a>
+            </h4>
+          </span>
+          <span class="">　　感觉评论不错</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-9807" class="wr comment-item " data-cid="9807" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/WeakishJiang/"><img class="pil " src="http://img3.douban.com/icon/u1090097-5.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2006-08-17 00:40:10</span> <a class="  " href="http://www.douban.com/people/WeakishJiang/">weakish</a>
+                (Jakukyo Friel)
+            </h4>
+          </span>
+          <span class="">　　聽說dive in python不錯？<br/>　　 元创介紹一下</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-49676" class="wr comment-item " data-cid="49676" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/mustang/"><img class="pil " src="http://img3.douban.com/icon/u1051745-103.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2007-06-04 12:42:59</span> <a class="  " href="http://www.douban.com/people/mustang/">Simon.emacs</a>
+                (尽人事,听天命)
+            </h4>
+          </span>
+          <span class="">　　呵呵，刚读完nutshell,准备读cookbook了.</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-179731" class="wr comment-item " data-cid="179731" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/vvoody/"><img class="pil " src="http://img3.douban.com/icon/u1247134-9.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2008-02-13 21:38:44</span> <a class="  " href="http://www.douban.com/people/vvoody/">vvoody</a>
+            </h4>
+          </span>
+          <span class="">　　怎么不能推荐评论呢？呵呵</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-388287" class="wr comment-item " data-cid="388287" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/lvs/"><img class="pil " src="http://img3.douban.com/icon/u1078636-3.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2008-06-02 10:28:33</span> <a class="  " href="http://www.douban.com/people/lvs/">lvscar</a>
+                (just for fun)
+            </h4>
+          </span>
+          <span class="">　　　　“learning python你可以换一本书学,但python cookbook是不可替代的,只此一本.“          十分认同楼主的观点！</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-766990" class="wr comment-item " data-cid="766990" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/metac/"><img class="pil " src="http://img3.douban.com/icon/u1142600-1.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2008-09-21 22:12:28</span> <a class="  " href="http://www.douban.com/people/metac/">元创</a>
+                (我的专业是打酱油)
+            </h4>
+          </span>
+          <span class="">　　为什么《Dive into Python》不值得推荐<br/>　　http://blog.csdn.net<wbr/>/lanphaday/archive/2<wbr/>008/08/28/2845258.as<wbr/>px<br/>　　<br/>　　我想说的这篇博客都说了。<br/>　　<br/>　　也许一个java或别的什么语言的高手，从这本书中最容易看到python哪些地方与众不同吧。</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-980175" class="wr comment-item " data-cid="980175" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/1480264/"><img class="pil " src="http://img3.douban.com/icon/u1480264-1.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2008-11-07 18:15:06</span> <a class="  " href="http://www.douban.com/people/1480264/">小白·菜</a>
+            </h4>
+          </span>
+          <span class="">　　学到了，以前都没注意到python munuals。一直为不会使用库而苦恼</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-2566720" class="wr comment-item " data-cid="2566720" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/2111355/"><img class="pil " src="http://img3.douban.com/icon/user_normal.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2009-06-02 23:12:53</span> <a class="  " href="http://www.douban.com/people/2111355/">newfoxnose</a>
+            </h4>
+          </span>
+          <span class="">　　怎么收藏？</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-2735835" class="wr comment-item " data-cid="2735835" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/lipingtababa/"><img class="pil " src="http://img3.douban.com/icon/u1205065-1.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2009-06-18 20:23:56</span> <a class="  " href="http://www.douban.com/people/lipingtababa/">LipingTaBaBa</a>
+            </h4>
+          </span>
+          <span class="">　　你们怎么都把manual写成munual?</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-3106469" class="wr comment-item " data-cid="3106469" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/gjhuai/"><img class="pil " src="http://img3.douban.com/icon/u1299371-1.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2009-08-02 10:41:18</span> <a class="  " href="http://www.douban.com/people/gjhuai/">Chris</a>
+                (生命在于运动)
+            </h4>
+          </span>
+          <span class="">　　python cookbook是不可替代的,只此一本</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-3671042" class="wr comment-item " data-cid="3671042" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/4570316/"><img class="pil " src="http://img3.douban.com/icon/u4570316-2.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2009-10-15 22:43:04</span> <a class="  " href="http://www.douban.com/people/4570316/">everywoman</a>
+            </h4>
+          </span>
+          <span class="">　　支持~</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-3676420" class="wr comment-item " data-cid="3676420" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/demix/"><img class="pil " src="http://img3.douban.com/icon/u1791433-1.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2009-10-16 16:05:07</span> <a class="  " href="http://www.douban.com/people/demix/">demix</a>
+                (什么样的片子才是好片子。。)
+            </h4>
+          </span>
+          <span class="">　　支持。</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-3980287" class="wr comment-item " data-cid="3980287" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/CFC4N/"><img class="pil " src="http://img3.douban.com/icon/u1856379-5.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2009-11-20 10:55:06</span> <a class="  " href="http://www.douban.com/people/CFC4N/">CFC4N</a>
+            </h4>
+          </span>
+          <span class="">　　打算入手....先找下有没有电子版的... ^_^</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-4106328" class="wr comment-item " data-cid="4106328" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/tsonghua/"><img class="pil " src="http://img3.douban.com/icon/u1741731-3.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2009-12-04 16:42:14</span> <a class="  " href="http://www.douban.com/people/tsonghua/">tj051181</a>
+            </h4>
+          </span>
+          <span class="">　　想学习一下~~＾＾</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-4107084" class="wr comment-item " data-cid="4107084" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/metac/"><img class="pil " src="http://img3.douban.com/icon/u1142600-1.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2009-12-04 18:15:04</span> <a class="  " href="http://www.douban.com/people/metac/">元创</a>
+                (我的专业是打酱油)
+            </h4>
+          </span>
+          <span class="">　　说实话,我一直是看的电子书,惭愧.</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-4130987" class="wr comment-item " data-cid="4130987" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/3794194/"><img class="pil " src="http://img3.douban.com/icon/user_normal.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2009-12-07 14:27:15</span> <a class="  " href="http://www.douban.com/people/3794194/">[已注销]</a>
+            </h4>
+          </span>
+          <span class="">　　第一本快看完了，python munuals 之前不知道有这本书 谢谢介绍</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-4231163" class="wr comment-item " data-cid="4231163" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/metac/"><img class="pil " src="http://img3.douban.com/icon/u1142600-1.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2009-12-17 19:30:32</span> <a class="  " href="http://www.douban.com/people/metac/">元创</a>
+                (我的专业是打酱油)
+            </h4>
+          </span>
+          <span class="">　　语言的书，基本上与语言排名榜是一致的，python的书自然不能与第一阵营的java，C和C++比，但与其他语言相比，还真不少。</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-4863656" class="wr comment-item " data-cid="4863656" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/iLRainyday/"><img class="pil " src="http://img3.douban.com/icon/u2162211-23.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2010-02-26 12:38:20</span> <a class="  " href="http://www.douban.com/people/iLRainyday/">iLRainyday</a>
+                (人生如戏 全凭演技)
+            </h4>
+          </span>
+          <span class="">　　的确是比perl的多</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-5020501" class="wr comment-item " data-cid="5020501" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/2285818/"><img class="pil " src="http://img3.douban.com/icon/u2285818-4.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2010-03-16 18:17:51</span> <a class="  " href="http://www.douban.com/people/2285818/">flying5</a>
+            </h4>
+          </span>
+          <span class="">　　不错</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-5090123" class="wr comment-item " data-cid="5090123" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/5236843/"><img class="pil " src="http://img3.douban.com/icon/u5236843-18.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2010-03-24 12:38:58</span> <a class="  " href="http://www.douban.com/people/5236843/">应愿</a>
+                (应为便是愿为)
+            </h4>
+          </span>
+          <span class="">　　评论有用！</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-5711215" class="wr comment-item " data-cid="5711215" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/Veronaic/"><img class="pil " src="http://img3.douban.com/icon/u2059871-2.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2010-05-24 02:10:14</span> <a class="  " href="http://www.douban.com/people/Veronaic/">Veronica</a>
+            </h4>
+          </span>
+          <span class="">　　同意</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-5909628" class="wr comment-item " data-cid="5909628" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/wwissa/"><img class="pil " src="http://img3.douban.com/icon/u1519404-2.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2010-06-10 22:03:24</span> <a class="  " href="http://www.douban.com/people/wwissa/">骄傲的馄饨</a>
+            </h4>
+          </span>
+          <span class="">　　mark</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-6432125" class="wr comment-item " data-cid="6432125" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/xiaguangfightin/"><img class="pil " src="http://img3.douban.com/icon/u38927628-2.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2010-07-28 21:02:54</span> <a class="  " href="http://www.douban.com/people/xiaguangfightin/">霞光</a>
+            </h4>
+          </span>
+          <span class="">　　DIP确实很难懂啊！！！！</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-7065001" class="wr comment-item " data-cid="7065001" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/lovegcc/"><img class="pil " src="http://img3.douban.com/icon/user_normal.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2010-09-23 16:54:29</span> <a class="  " href="http://www.douban.com/people/lovegcc/">aganle</a>
+            </h4>
+          </span>
+          <span class="">　　喔~~</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-7103466" class="wr comment-item " data-cid="7103466" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/xiongharry/"><img class="pil " src="http://img3.douban.com/icon/user_normal.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2010-09-27 16:07:07</span> <a class="  " href="http://www.douban.com/people/xiongharry/">熊</a>
+            </h4>
+          </span>
+          <span class="">　　Python cookbook太老了点，不过确实是不可替代的，要是能有新版的就太好了。</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-7171997" class="wr comment-item " data-cid="7171997" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/Jaytai/"><img class="pil " src="http://img3.douban.com/icon/u1064982-7.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2010-10-04 05:03:04</span> <a class="  " href="http://www.douban.com/people/Jaytai/">悟空</a>
+                (世之介)
+            </h4>
+          </span>
+          <span class="">　　mark</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-12073318" class="wr comment-item " data-cid="12073318" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/59115861/"><img class="pil " src="http://img3.douban.com/icon/u59115861-2.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2012-05-15 12:56:59</span> <a class="  " href="http://www.douban.com/people/59115861/">秋枫落叶</a>
+            </h4>
+          </span>
+          <span class="">　　perl/bash/python</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-12679404" class="wr comment-item " data-cid="12679404" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/wwissa/"><img class="pil " src="http://img3.douban.com/icon/u1519404-2.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2012-08-06 13:45:07</span> <a class="  " href="http://www.douban.com/people/wwissa/">骄傲的馄饨</a>
+            </h4>
+          </span>
+          <span class="">　　mark<br/>　　</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-13719505" class="wr comment-item " data-cid="13719505" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/vetch/"><img class="pil " src="http://img3.douban.com/icon/u9348066-182.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2013-01-18 23:10:53</span> <a class="  " href="http://www.douban.com/people/vetch/">v_etch</a>
+                (Living is easy with eyesclosed)
+            </h4>
+          </span>
+          <span class="">　　有用</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-13857140" class="wr comment-item " data-cid="13857140" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/hugleecool/"><img class="pil " src="http://img3.douban.com/icon/u3277255-2.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2013-02-09 00:47:27</span> <a class="  " href="http://www.douban.com/people/hugleecool/">李航</a>
+                (平衡观点搅局人)
+            </h4>
+          </span>
+          <span class="">　　mark~</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-14424575" class="wr comment-item " data-cid="14424575" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/perl_python/"><img class="pil " src="http://img3.douban.com/icon/u68916208-7.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2013-06-29 21:45:19</span> <a class="  " href="http://www.douban.com/people/perl_python/">红色蟒蛇</a>
+            </h4>
+          </span>
+          <span class="">　　mark<br/>　　thks</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-14447872" class="wr comment-item " data-cid="14447872" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/metac/"><img class="pil " src="http://img3.douban.com/icon/u1142600-1.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2013-07-07 08:42:41</span> <a class="  " href="http://www.douban.com/people/metac/">元创</a>
+                (我的专业是打酱油)
+            </h4>
+          </span>
+          <span class="">　　python cookbook出了新版了，不过有点可惜，以python3为主。</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-14623980" class="wr comment-item " data-cid="14623980" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/49993673/"><img class="pil " src="http://img3.douban.com/icon/user_normal.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2013-08-28 17:24:30</span> <a class="  " href="http://www.douban.com/people/49993673/">哎呀费事</a>
+            </h4>
+          </span>
+          <span class="">　　以python3為主也沒什麽不好</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-14765763" class="wr comment-item " data-cid="14765763" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/onlineforever/"><img class="pil " src="http://img3.douban.com/icon/u50531333-5.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2013-10-18 18:52:32</span> <a class="  " href="http://www.douban.com/people/onlineforever/">Onlineforever</a>
+                (From neutrality to willingness)
+            </h4>
+          </span>
+          <span class="">　　非常不错！</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+        
+  
+  <table id="c-15311452" class="wr comment-item " data-cid="15311452" data-target_id="1015058" data-target_kind="1014">
+    <tbody class="content">
+      <tr>
+        <td valign="top" width="75">
+          <a href="http://www.douban.com/people/42760336/"><img class="pil " src="http://img3.douban.com/icon/u42760336-8.jpg"></a>
+        </td>
+        <td valign="top">
+          <span class="wrap">
+            <h4>
+              <span class="">2014-06-03 17:23:42</span> <a class="  " href="http://www.douban.com/people/42760336/">云夕卜</a>
+                (自由)
+            </h4>
+          </span>
+          <span class="">　　多谢楼主，正想学python</span>
+          <br/>
+          
+  
+  <div class="align-right">
+    &nbsp;
+  </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+
+
+      
+  
+
+    <br/>
+    <span class="pl2" align="right">
+      <a class="j a_show_login" href="%s/register?reason=comment">&gt; 我来回应</a>
+    </span>
+  <br/>
+
+
+  </div>
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+          
+        </td>
+      </tr>
+  </table>
+</div>
+      <div class="aside">
+        
+
+  <h2>
+    哪些内容不适合这里 · · · · · ·
+  </h2>
+  <p>
+    请尊重创作者的劳动，不要在讨论区里提供或讨论下载方面的内容。
+  </p>
+  <p class="pl2">&gt;
+    <a href="http://book.douban.com/subject/1418172/discussion/">
+      去Python Cookbook的论坛
+    </a>
+  </p>
+  <div class="clear"></div>
+  <br/>
+  <div id="dale_book_discussion_top_right"></div>
+  <div class="pl">
+    
+      <h2 class="usf">其他话题:</h2>
+      <div class="indent">
+          <p class="pl ul">
+            <a title="要是能出中文版就好了" href="http://book.douban.com/subject/1418172/discussion/1273909/">
+              要是能出中文版就好了
+            </a>
+            <span class="pl">
+              (狼)
+            </span>
+          </p>
+          <p class="pl ul">
+            <a title="这本书没有中文版的吗？" href="http://book.douban.com/subject/1418172/discussion/1152714/">
+              这本书没有中文版的吗？
+            </a>
+            <span class="pl">
+              (Messiah.)
+            </span>
+          </p>
+      </div>
+  </div>
+
+      </div>
+      <div class="extra">
+        
+      </div>
+    </div>
+  </div>
+
+        
+  <div id="footer">
+    
+
+<span id="icp" class="fleft gray-link">
+    &copy; 2005－2014 douban.com, all rights reserved
+</span>
+
+<a href="http://www.douban.com/hnypt/variformcyst.py" style="display: none;"></a>
+
+<span class="fright">
+    <a href="http://www.douban.com/about">关于豆瓣</a>
+    · <a href="http://www.douban.com/jobs">在豆瓣工作</a>
+    · <a href="http://www.douban.com/about?topic=contactus">联系我们</a>
+    · <a href="http://www.douban.com/about?policy=disclaimer">免责声明</a>
+    
+    · <a href="http://book.douban.com/help/">帮助中心</a>
+    · <a href="http://developers.douban.com/" target="_blank">开发者</a>
+    · <a href="http://book.douban.com/library_invitation">图书馆合作</a>
+    · <a href="http://www.douban.com/mobile/read">手机读书</a>
+    · <a href="http://www.douban.com/partner/">豆瓣广告</a>
+</span>
+
+
+  </div>
+
+    </div>
+    <script type="text/javascript" src="http://img3.douban.com/misc/mixed_static/11f0d59e18417f0a.js"></script>
+    <!-- mako -->
+    
+  
+
+
+
+
+    
+<script type="text/javascript">
+    (function (global) {
+        var newNode = global.document.createElement('script'),
+            existingNode = global.document.getElementsByTagName('script')[0],
+            adSource = 'http://erebor.douban.com/',
+            userId = '',
+            browserId = 'pFIzQhceB88',
+            ipAddress = '123.150.134.125',
+            criteria = '3:/subject/1418172/discussion/1015058/',
+            preview = '',
+            debug = false,
+            adSlots = ['dale_book_discussion_top_right'];
+
+        global.DoubanAdRequest = {src: adSource, uid: userId, bid: browserId, ip: ipAddress, crtr: criteria, prv: preview, debug: debug};
+        global.DoubanAdSlots = (global.DoubanAdSlots || []).concat(adSlots);
+
+        newNode.setAttribute('type', 'text/javascript');
+        newNode.setAttribute('src', 'http://img3.douban.com/f/shire/67edc816f226fc8489e5462d8755721ffaafe850/js/ad.js');
+        newNode.setAttribute('async', true);
+        existingNode.parentNode.insertBefore(newNode, existingNode);
+    })(this);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+    
+  
+
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var p=(('https:' == document.location.protocol) ? 'https' : 'http'), u=p+'://fundin.douban.com/';
+    _paq.push(['setTrackerUrl', u+'piwik']);
+    _paq.push(['setSiteId', '100001']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; 
+    g.type='text/javascript';
+    g.defer=true; 
+    g.async=true; 
+    g.src=p+'://s.doubanio.com/dae/fundin/piwik.js';
+    s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+<script type="text/javascript">
+var setMethodWithNs = function(namespace) {
+  var ns = namespace ? namespace + '.' : ''
+    , fn = function(string) {
+        if(!ns) {return string}
+        return ns + string
+      }
+  return fn
+}
+
+var gaWithNamespace = function(fn, namespace) {
+  var method = setMethodWithNs(namespace)
+  fn.call(this, method)
+}
+
+var _gaq = _gaq || []
+  , accounts = [
+      { id: 'UA-7019765-1', namespace: 'douban' }
+    , { id: 'UA-7019765-16', namespace: '' }
+    ]
+  , gaInit = function(account) {
+      gaWithNamespace(function(method) {
+        gaInitFn.call(this, method, account)
+      }, account.namespace)
+    }
+  , gaInitFn = function(method, account) {
+      _gaq.push([method('_setAccount'), account.id])
+
+      
+  _gaq.push([method('_addOrganic'), 'google', 'q'])
+  _gaq.push([method('_addOrganic'), 'baidu', 'wd'])
+  _gaq.push([method('_addOrganic'), 'soso', 'w'])
+  _gaq.push([method('_addOrganic'), 'youdao', 'q'])
+  _gaq.push([method('_addOrganic'), 'so.360.cn', 'q'])
+  _gaq.push([method('_addOrganic'), 'sogou', 'query'])
+  if (account.namespace) {
+    _gaq.push([method('_addIgnoredOrganic'), '豆瓣'])
+    _gaq.push([method('_addIgnoredOrganic'), 'douban'])
+    _gaq.push([method('_addIgnoredOrganic'), '豆瓣网'])
+    _gaq.push([method('_addIgnoredOrganic'), 'www.douban.com'])
+  }
+
+      if (account.namespace === 'douban') {
+        _gaq.push([method('_setDomainName'), '.douban.com'])
+      }
+
+        _gaq.push([method('_setCustomVar'), 1, 'responsive_view_mode', 'desktop', 3])
+
+        _gaq.push([method('_setCustomVar'), 2, 'login_status', '0', 2]);
+
+      _gaq.push([method('_trackPageview')])
+    }
+
+for(var i = 0, l = accounts.length; i < l; i++) {
+  var account = accounts[i]
+  gaInit(account)
+}
+
+
+;(function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+})()
+</script>
+
+
+
+
+
+
+
+
+    <!-- sindar1c-->
+
+
+<script>var _check_hijack = function () {
+    var _sig = "pFIzQhce", _login = false, bid = get_cookie('bid');
+    if (location.protocol != "file:" && (
+            typeof(bid) != "string" && _login ||
+            typeof(bid) == "string" && bid.substring(0,8) != _sig)) {
+        location.href += (/\?/.test(location.href)?"&":"?") + (
+                "_r=" + Math.random().toString(16).substring(2));
+    }};
+if (typeof(Do) != 'undefined') Do(_check_hijack);
+else if (typeof(get_cookie) != 'undefined') _check_hijack();
+</script></body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

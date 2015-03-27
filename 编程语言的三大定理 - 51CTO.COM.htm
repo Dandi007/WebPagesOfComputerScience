@@ -1,0 +1,636 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0047)http://developer.51cto.com/art/200707/52157.htm -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+
+<meta http-equiv="x-ua-compatible" content="ie=7">
+<title>编程语言的三大定理 - 51CTO.COM</title>
+<meta name="description" content="本文作者总结了编程语言存在的原因和它的使用特性，您同意他的观点吗？">
+<meta name="keywords" content="编程,语言,定理">
+<!--<base target="_blank">--><base href="." target="_blank">
+<link href="./编程语言的三大定理 - 51CTO.COM_files/grid.css" rel="stylesheet" type="text/css">
+<link type="text/css" rel="stylesheet" href="./编程语言的三大定理 - 51CTO.COM_files/art_master_top.css">
+<link href="./编程语言的三大定理 - 51CTO.COM_files/css3.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" async="" src="./编程语言的三大定理 - 51CTO.COM_files/ga.js"></script><script language="javaScript" src="./编程语言的三大定理 - 51CTO.COM_files/base_art.js"></script>
+<script src="./编程语言的三大定理 - 51CTO.COM_files/index_1_down.js"></script>
+<style type="text/css">
+.bds_tools a{ padding:0; margin:0;}
+</style>
+<link href="./编程语言的三大定理 - 51CTO.COM_files/bdsstyle.css" rel="stylesheet" type="text/css"><script src="./编程语言的三大定理 - 51CTO.COM_files/logger.js"></script></head>
+<body><iframe frameborder="0" style="display: none;"></iframe><div id="bdshare_s" style="display: block;"><iframe id="bdsIfr" style="position:absolute;display:none;z-index:9999;" frameborder="0"></iframe><div id="bdshare_l" style="display: none;"><div id="bdshare_l_c"><h6>分享到</h6><ul><li><a href="http://developer.51cto.com/art/200707/52157.htm#" class="bds_mshare mshare">一键分享</a></li><li><a href="http://developer.51cto.com/art/200707/52157.htm#" class="bds_qzone qqkj">QQ空间</a></li><li><a href="http://developer.51cto.com/art/200707/52157.htm#" class="bds_tsina xlwb">新浪微博</a></li><li><a href="http://developer.51cto.com/art/200707/52157.htm#" class="bds_bdysc bdysc">百度云收藏</a></li><li><a href="http://developer.51cto.com/art/200707/52157.htm#" class="bds_renren rrw">人人网</a></li><li><a href="http://developer.51cto.com/art/200707/52157.htm#" class="bds_tqq txwb">腾讯微博</a></li><li><a href="http://developer.51cto.com/art/200707/52157.htm#" class="bds_bdxc bdxc">百度相册</a></li><li><a href="http://developer.51cto.com/art/200707/52157.htm#" class="bds_kaixin001 kxw">开心网</a></li><li><a href="http://developer.51cto.com/art/200707/52157.htm#" class="bds_tqf txpy">腾讯朋友</a></li><li><a href="http://developer.51cto.com/art/200707/52157.htm#" class="bds_tieba bdtb">百度贴吧</a></li><li><a href="http://developer.51cto.com/art/200707/52157.htm#" class="bds_douban db">豆瓣网</a></li><li><a href="http://developer.51cto.com/art/200707/52157.htm#" class="bds_tsohu shwb">搜狐微博</a></li><li><a href="http://developer.51cto.com/art/200707/52157.htm#" class="bds_bdhome bdhome">百度新首页</a></li><li><a href="http://developer.51cto.com/art/200707/52157.htm#" class="bds_sqq sqq">QQ好友</a></li><li><a href="http://developer.51cto.com/art/200707/52157.htm#" class="bds_thx thx">和讯微博</a></li><li><a href="http://developer.51cto.com/art/200707/52157.htm#" class="bds_more">更多...</a></li></ul><p><a href="http://developer.51cto.com/art/200707/52157.htm#" class="goWebsite">百度分享</a></p></div></div></div>
+<!-- 导航 开始-->
+<div id="home_top">    <div class="top_nav">        <div class="left" style="width:400px"><div class="logo_51cto" title="51CTO.COM - 技术成就梦想 -  中国领先的IT技术网站"></div><a href="http://www.51cto.com/">首页</a><img width="16" height="25" align="absmiddle" src="./编程语言的三大定理 - 51CTO.COM_files/top_bg_xian.gif" style="padding-top: 2px;"><a onmouseover="show(1,this);" onmouseout="popupClose();" href="http://www.51cto.com/col/35/" target="_blank">技术频道<img align="absmiddle" src="./编程语言的三大定理 - 51CTO.COM_files/nav_ico1.gif" style="padding-left: 4px;"></a><img width="16" height="25" align="absmiddle" src="./编程语言的三大定理 - 51CTO.COM_files/top_bg_xian.gif"><a onmouseover="show(2,this);" onmouseout="popupClose();" href="http://www.51cto.com/" target="_blank">51CTO旗下网站<img align="absmiddle" src="./编程语言的三大定理 - 51CTO.COM_files/nav_ico1.gif" style="padding-left: 4px;"></a><img width="16" height="25" align="absmiddle" src="./编程语言的三大定理 - 51CTO.COM_files/top_bg_xian.gif"><a href="http://www.51cto.com/about/map.htm" target="_blank">地图</a> <a href="http://www.51cto.com/about/rss.html" target="_blank"><img src="./编程语言的三大定理 - 51CTO.COM_files/143749870.gif" style="vertical-align:middle; margin-bottom: 5px; margin-left:5px;"></a>       </div>        <div class="right">            <div class="more"><img width="27" height="16" align="absmiddle" src="./编程语言的三大定理 - 51CTO.COM_files/top_shequ.gif">社区：<a href="http://edu.51cto.com/" target="_blank" style="color:#CC0000">学院</a><a href="http://down.51cto.com/" target="_blank">下载</a><a href="http://bbs.51cto.com/" target="_blank">论坛</a><a href="http://blog.51cto.com/" target="_blank">博客</a><a onmouseover="show(3,this)" onmouseout="popupClose()" href="javascript:viod(0);">更多<img align="absmiddle" src="./编程语言的三大定理 - 51CTO.COM_files/nav_ico1.gif" style="padding-left: 4px;"></a>            </div>            <span id="login_status"><div class="login" style="padding-top:8px; text-align:right;"><a href="http://edu.51cto.com/top" style="background:none"><img style="margin-top:-3px" id="dia" align="absmiddle" width="20" title="今天你领学分了吗？" src="./编程语言的三大定理 - 51CTO.COM_files/dia.gif"></a><a href="http://home.51cto.com/?reback=http%253A%252F%252Fdeveloper.51cto.com%252Fart%252F200707%252F52157.htm" target="_self">登录</a><a href="http://ucenter.51cto.com/reg_01.php?reback=http%253A%252F%252Fdeveloper.51cto.com%252Fart%252F200707%252F52157.htm" target="_self">注册</a></div></span>                </div>    </div></div>
+<div class="subMenu1" id="s1" onmouseover="popupNoClose();" onmouseout="popupClose();">
+<ul>
+<li><a href="http://network.51cto.com/" target="_blank">网络</a></li>
+<li><a href="http://netsecurity.51cto.com/" target="_blank">安全</a></li>
+<li><a href="http://developer.51cto.com/" target="_blank">开发</a></li>
+<li><a href="http://database.51cto.com/" target="_blank">数据库</a></li>
+<li><a href="http://server.51cto.com/" target="_blank">服务器</a></li>
+<li><a href="http://os.51cto.com/" target="_blank">系统</a></li>
+<li><a href="http://virtual.51cto.com/" target="_blank">虚拟化</a></li>
+<li><a href="http://cloud.51cto.com/" target="_blank">云计算</a></li>
+<li><a href="http://developer.51cto.com/embed/" target="_blank">嵌入式</a></li>
+<li><a href="http://mobile.51cto.com/" target="_blank">移动开发</a></li>
+</ul>
+</div> 
+<div class="subMenu2" id="s2" onmouseover="popupNoClose()" onmouseout="popupClose()">
+<ul>
+<li><a href="http://www.51cto.com/" target="_blank" title="中国领先的IT技术网站">51CTO.COM</a></li>
+<li><a href="http://www.cioage.com/" target="_blank" title="中国首个专门服务于CIO的专业网站">CIOage.com</a></li>
+<li><a href="http://www.watchstor.com/" target="_blank" title="领先的中文存储网络媒体">WatchStor.com</a></li>
+<li><a href="http://www.hc3i.cn/" target="_blank" title="中国首家专注于数字医疗及医疗信息化的专业网站">HC3i.cn</a></li>
+</ul>
+</div>
+<script src="./编程语言的三大定理 - 51CTO.COM_files/jquery-1.8.3.min.js"></script>
+<script>
+$(function(){
+	$(".bann").height(265);	 
+	$(".bann").css("background-color","white");
+});
+var edunum=2;
+$(function(){
+	$("#change").click(function(){
+		$("#edu > ul").css("display","none");
+		var eduid='edu'+edunum;
+		$("#" + eduid).css("display","block");	
+		if(edunum<4){
+			edunum++;	
+		}else{
+			edunum=1;	
+		}							
+	});  
+});
+</script>
+
+<script src="./编程语言的三大定理 - 51CTO.COM_files/head_art_more1.js"></script><div class="subMenu3" id="s3" onmouseover="popupNoClose()" onmouseout="popupClose()" style="z-index:9999;position: absolute;">
+<ul>
+<li><a href="http://home.51cto.com/" target="_blank">家园</a></li>
+<li><a href="http://edu.51cto.com/" target="_blank">学院</a></li>
+<li><a href="http://blog.51cto.com/" target="_blank">博客</a></li>
+<li><a href="http://bbs.51cto.com/" target="_blank">论坛</a></li>
+<li><a href="http://down.51cto.com/" target="_blank">下载</a></li>
+<li><a href="http://selftest.51cto.com/" target="_blank">自测</a></li>
+<li><a href="http://doctor.51cto.com/" target="_blank">门诊</a></li>
+<li><a href="http://blog.51cto.com/newsletter/" target="_blank">周刊</a></li>
+<li><a href="http://book.51cto.com/" target="_blank">读书</a></li>
+<li><a href="http://g.51cto.com/" target="_blank">技术圈</a></li>
+</ul>
+</div>
+
+<!-- 登陆信息 -->
+<!-- 导航 结束--> 
+ <div class="g_39 mb10">
+	<div id="tonglanad" class="fl"><script language="JavaScript" src="./编程语言的三大定理 - 51CTO.COM_files/ad.js"></script><script type="text/javascript" src="./编程语言的三大定理 - 51CTO.COM_files/ad.php"></script><iframe width="760" height="90" noresize="" scrolling="No" frameborder="0" marginheight="0" marginwidth="0" src="./编程语言的三大定理 - 51CTO.COM_files/4(1).htm" align="left"></iframe></div>
+	<div id="list4" class="fr">
+		<ul>
+			<li id="wordlinkad1"><script src="./编程语言的三大定理 - 51CTO.COM_files/wordlink1.js"></script><script type="text/javascript" src="./编程语言的三大定理 - 51CTO.COM_files/ajs.php"></script><a href="http://gg3.51cto.com/www/delivery/ck.php?oaparams=2__bannerid=512__zoneid=254__cb=46e0a23dc0__oadest=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Fcloud%2Fbluemix%2F2014_8_7test.html%3Fcmp%3Ddwskl%26cpb%3Ddw%26ct%3Ddwcon%26cr%3Dcn_51CTO_t2%26ccy%3Dcn" target="_blank"><font color="red"> 关注移动开发，参与有奖问答</font></a><div id="beacon_46e0a23dc0" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./编程语言的三大定理 - 51CTO.COM_files/lg.php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div>
+</li>
+			<li id="wordlinkad2"><script src="./编程语言的三大定理 - 51CTO.COM_files/wordlink2.js"></script><script type="text/javascript" src="./编程语言的三大定理 - 51CTO.COM_files/ajs(1).php"></script><a href="http://gg3.51cto.com/www/delivery/ck.php?oaparams=2__bannerid=359__zoneid=255__cb=15c1263426__oadest=http%3A%2F%2Fnetsecurity.51cto.com%2Fsecu%2FF5%2FSynthesis%2F" target="_blank"><font color="blue">软件定义的数据中心解决方案</font></a><div id="beacon_15c1263426" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./编程语言的三大定理 - 51CTO.COM_files/lg(1).php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div>
+</li>
+			<li id="wordlinkad3"><script src="./编程语言的三大定理 - 51CTO.COM_files/wordlink3.js"></script><script type="text/javascript" src="./编程语言的三大定理 - 51CTO.COM_files/ajs(2).php"></script><a href="http://gg.51cto.com/www/delivery/ck.php?oaparams=2__bannerid=90__zoneid=256__cb=78b571739f__oadest=http%3A%2F%2Fnetwork.51cto.com%2Fnetwork%2F01%2F1.html" target="_blank"><font color="blue">智能化管理，让IT管理更轻松</font></a><div id="beacon_78b571739f" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./编程语言的三大定理 - 51CTO.COM_files/lg(2).php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div>
+</li>
+			<li id="wordlinkad4"><script src="./编程语言的三大定理 - 51CTO.COM_files/wordlink4.js"></script><script type="text/javascript" src="./编程语言的三大定理 - 51CTO.COM_files/ajs(3).php"></script></li>
+		</ul>
+	</div>
+<br class="dle">
+</div>
+
+<div class="g_39 menu">
+<div class="subNav_logo"><img src="./编程语言的三大定理 - 51CTO.COM_files/kaifa_logo.gif"></div>
+<div class="subNav_l"><a href="http://developer.51cto.com/">首页</a> | <a href="http://developer.51cto.com/java/">Java</a> | <a href="http://developer.51cto.com/net/">.NET</a> | <a href="http://developer.51cto.com/web/">Web</a> | <a href="http://developer.51cto.com/col/1315/">XML</a> | <a href="http://developer.51cto.com/col/585/">语言工具</a> | <a href="http://developer.51cto.com/col/1312/">测试</a> | <a href="http://developer.51cto.com/col/1314/" target="_blank">游戏</a> | <a href="http://developer.51cto.com/col/583/" target="_blank">移动</a> | <a href="http://developer.51cto.com/col/1308/">架构</a> | <a href="http://developer.51cto.com/col/586/">项目管理</a> | <a href="http://publish.51cto.com/list/460/">全部文章</a></div>
+  
+<div class="search fr">
+<dl>
+<form name="searchform" action="http://www.51cto.com/php/search.php" target="_blank" method="post" style="margin:0px; padding:0px;">
+<dt class="fl"><input name="keyword" type="text" class="searchInput f14 input" value="请输入关键字" onfocus="doempty(this, &#39;请输入关键字&#39;);" onblur="doempty(this, &#39;请输入关键字&#39;);"></dt>
+<dd class="fl"><input type="image" src="./编程语言的三大定理 - 51CTO.COM_files/search.gif"></dd></form>
+</dl>
+</div>
+<br class="dle">
+</div>
+<div class="g_39 b3-s-4273B3 rel">
+<!--width : 26*25 - 15 = 635px-->
+<div class="g_26 fl m_l">
+<div class="brief bgF8F8F8">
+<p class="crumb ">您所在的位置：<a href="http://developer.51cto.com/">开发</a> &gt; <a href="http://developer.51cto.com/col/585/">语言&amp;工具</a> &gt;  <b>编程语言的三大定理</b> </p>
+<h1>编程语言的三大定理</h1>
+<div class="msg">
+<div>2007-07-26 09:07  王玉磊编译  <a href="http://www.csdn.net/" target="_blank">Csdn</a> <span class="f12-a"><a href="http://developer.51cto.com/art/200707/52157.htm#commment" target="_self">我要评论(<span id="pinglun_1">0</span>)</a></span> 字号：<span class="f14-b"><a href="javascript:setfont(12);" target="_self">T</a></span> | <span class="f16-b"><a href="javascript:setfont(16);" target="_self">T</a></span></div>
+ 
+<div class="fav"><a href="javascript:favorBox('open');" title="一键收藏，随时查看，分享好友！" target="_self"><img src="./编程语言的三大定理 - 51CTO.COM_files/Fav.gif" alt="一键收藏，随时查看，分享好友！" border="0"></a></div>
+</div>
+<div class="brieftext">
+<p class="f14 green">本文作者总结了编程语言存在的原因和它的使用特性，您同意他的观点吗？</p>
+<p class="ad">AD：
+<script src="./编程语言的三大定理 - 51CTO.COM_files/keywords_ad_new.js"></script><a href="http://edu.51cto.com/course/course_id-1189.html" target="_blank" style="text-decoration: none;color:red">2014WOT全球软件技术峰会北京站 课程视频发布</a>
+</p>
+</div>
+</div>
+<div class="tag bgF8F8F8" id="indexlist" style="display:none;">
+<ul id="indexliststr">
+</ul>
+<br class="dle">
+</div>
+<div class="content bgF8F8F8 f14">
+<div id="content">
+<p></p><p></p><table style="WIDTH: 389pt; BORDER-COLLAPSE: collapse" cellspacing="0" cellpadding="0" width="518" border="0" x:str="">
+<tbody>
+<tr style="HEIGHT: 14.25pt; mso-height-source: userset" height="19">
+<td class="xl24" style="BORDER-RIGHT: black 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 389pt; BORDER-BOTTOM: windowtext 0.5pt solid; HEIGHT: 14.25pt; BACKGROUND-COLOR: transparent" width="518" colspan="3" height="19">
+<p align="center"><a href="http://developer.51cto.com/art/200709/55562.htm" target="_blank"><span style="TEXT-DECORATION: none"><font face="宋体"><strong>Linux之父炮轰C++：糟糕程序员的垃圾语言</strong></font></span></a></p></td></tr>
+<tr style="HEIGHT: 28.5pt" height="38">
+<td class="xl27" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext; BORDER-LEFT: windowtext 0.5pt solid; BORDER-BOTTOM: windowtext 0.5pt solid; HEIGHT: 28.5pt; BACKGROUND-COLOR: transparent" height="38"><a href="http://developer.51cto.com/art/200709/55859.htm" target="_blank"><span style="TEXT-DECORATION: none"><font face="宋体">Linux之父话糙理不糙</font></span></a></td>
+<td class="xl27" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext; BORDER-LEFT: windowtext; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent"><a href="http://developer.51cto.com/art/200709/55858.htm" target="_blank"><span style="TEXT-DECORATION: none"><font face="宋体">不得不看的两次从C++回归C的高手评论C++</font></span></a></td>
+<td class="xl27" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext; BORDER-LEFT: windowtext; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent"><span lang="EN-US"><a href="http://www.51cto.com/developer/cprogram/"><span style="TEXT-DECORATION: none"><font face="宋体">C语言是否该扔进垃圾桶</font></span></a></span></td></tr>
+<tr style="HEIGHT: 28.5pt" height="38">
+<td class="xl27" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext; BORDER-LEFT: windowtext 0.5pt solid; BORDER-BOTTOM: windowtext 0.5pt solid; HEIGHT: 28.5pt; BACKGROUND-COLOR: transparent" height="38"><span lang="EN-US"><span lang="EN-US"><span lang="EN-US"><a href="http://developer.51cto.com/art/200612/36504.htm" target="_blank"><span style="TEXT-DECORATION: none"><font face="宋体">为什么每个程序员都应该学习C语言？</font></span></a></span></span></span></td>
+<td class="xl27" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext; BORDER-LEFT: windowtext; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent"><span lang="EN-US"><span lang="EN-US"><span lang="EN-US"><a href="http://developer.51cto.com/art/200612/36505.htm" target="_blank"><span style="TEXT-DECORATION: none"><font face="宋体">每个程序员都应该学习C语言？我可不这么认为</font></span></a></span></span></span></td>
+<td class="xl27" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext; BORDER-LEFT: windowtext; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent"><span lang="EN-US"><a href="http://developer.51cto.com/art/200612/36506.htm" target="_blank"><span style="TEXT-DECORATION: none"><font face="宋体">C语言已经死了，5个需要忘却它的理由</font></span></a></span></td></tr>
+<tr style="HEIGHT: 28.5pt" height="38">
+<td class="xl27" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext; BORDER-LEFT: windowtext 0.5pt solid; BORDER-BOTTOM: windowtext 0.5pt solid; HEIGHT: 28.5pt; BACKGROUND-COLOR: transparent" height="38">
+<form name="form2"><a href="http://developer.51cto.com/art/200709/56147.htm" target="_blank"><span style="TEXT-DECORATION: none"><font face="宋体">用C设计 用C++编码</font></span></a></form></td>
+<td class="xl27" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext; BORDER-LEFT: windowtext; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent">
+<form name="form2"><a href="http://developer.51cto.com/art/200709/56146.htm" target="_blank"><span style="TEXT-DECORATION: none"><font face="宋体">为什么使用C++</font></span></a></form></td>
+<td class="xl27" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext; BORDER-LEFT: windowtext; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent"><span lang="EN-US"><a href="http://developer.51cto.com/art/200702/40366.htm" target="_blank"><span style="TEXT-DECORATION: none"><font face="宋体">C++0x：崭新的C++，还是另一个Java？</font></span></a></span></td></tr>
+<tr style="HEIGHT: 14.25pt" height="19">
+<td class="xl27" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext; BORDER-LEFT: windowtext 0.5pt solid; BORDER-BOTTOM: windowtext 0.5pt solid; HEIGHT: 14.25pt; BACKGROUND-COLOR: transparent" height="19"><span lang="EN-US"><span lang="EN-US"><span lang="EN-US"><a href="./编程语言的三大定理 - 51CTO.COM_files/编程语言的三大定理 - 51CTO.COM.htm" target="_blank"><span style="TEXT-DECORATION: none"><font face="宋体">编程语言的三大定理</font></span></a></span></span></span></td>
+<td class="xl27" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext; BORDER-LEFT: windowtext; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent"><span lang="EN-US"><span lang="EN-US"><span lang="EN-US"><a href="http://developer.51cto.com/art/200703/42884.htm" target="_blank"><span style="TEXT-DECORATION: none"><font face="宋体">动态语言为何难堪重任</font></span></a></span></span></span></td>
+<td class="xl27" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext; BORDER-LEFT: windowtext; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent"><span lang="EN-US"><span lang="EN-US"><span lang="EN-US"><a href="http://developer.51cto.com/art/200703/42870.htm" target="_blank"><span style="TEXT-DECORATION: none"><font face="宋体">动态语言面面观</font></span></a></span></span></span></td></tr></tbody></table><p></p>
+<p>最近看到不少文章，作者去比较两种或者多种语言以试图证明他喜爱的语言更棒。我仔细观察过，通常而言，这些文章会侧重在其他语言（指非作者喜爱的语言）的弱点上；有时候，会举例来证明其他语言的冗长，得出结论说自己的语言代码更少、更简捷。 </p>
+<p>在我看来，虽然是针对其他语言的“弱点”，但作者写这样的文章也无可厚非，毕竟这样的文章多依事实说话，起码你可以知道一门语言的优点和另外一门语言的弱点，而且会引起其他“语言人”的关注和争论，无论怎样这对你如何选择编程语言都是有借鉴意义的。以下为编程语言的三大定理，会客观地帮助你。</p>
+<p><strong>编程语言基本定理</strong></p>
+<p>为了分析编程语言，你首先要知道它们为什么存在。由此引申出我的编程语言基本定理：编程语言的存在是为了让人们明白计算机操作。</p>
+<p>编程语言的出现是为了克服人类认知的局限。现代计算机运行的是二进制指令，我们很难面对着“1”与“0”去写程序，我们无法号令机器，所以我们发明了编程语言，借以理解和向计算机传达我们所要的操作。</p>
+<p>所以比较任何语言，都应当权衡它们对我们理解计算机操作所带来的方便。</p>
+<p><strong>第二定理</strong></p>
+<p>如果程序员对一段代码不解，他会弃用或者重写。</p>
+<p>比你可以多快地写代码更重要的是，你写的代码可以让后来看到的人多快地理解。</p>
+<p>举个例子：parm=10</p>
+<p>既然没有声明变量，我怎么断定这行代码是对是错？编译器又没用，因为这完全可以执行，所以我只能通过后面的代码才能明白这段代码是什么意思。所以你也不难理解，为什么在查找错误代码是你会费那么大劲了，即使你知道出错的部分。</p>
+<p><strong>第三定理</strong></p>
+<p>没有任何一门语言适用于所有编程任务。这条定理很清楚，我不多做解释。</p>
+<p>所以在选择编程语言时以下事情应当考虑：</p>
+<p>◆常规特性：性能、兼容性、操作……<br>◆团队大小<br>◆代码多少<br>◆代码的寿命<br>◆应用领域<br>◆工具：选择语言考虑的最后一个问题是工具的支持。一个合适的编辑器对于你编程所起的作用不亚于语言本身的语法。</p>
+<p><font size="4">【相关文章】</font></p>
+<ul type="disc">
+<li><a href="http://developer.51cto.com/art/200703/41828.htm" target="_blank"><u><font color="blue">编程语言的王道：Lisp之美</font></u></a></li></ul>
+<ul type="disc">
+<li><a href="http://developer.51cto.com/art/200611/34444.htm" target="_blank"><u><font color="blue">世界编程语言大排名与点评: Ruby崛起，狂升15</font></u></a></li></ul>
+<div align="right">【责任编辑：<a class="ln" href="mailto:sunsj@51cto.com">火凤凰</a> TEL：（010）68476606-8036】</div><br> 
+<p class="blank10"></p> 
+ 
+ 
+<div class="biaoqing fixfloat">
+<ul>
+<li><a href="javascript:getcountscom(52157,1)" target="_self"><img src="./编程语言的三大定理 - 51CTO.COM_files/bq1.jpg"></a>
+<div><a href="javascript:getcountscom(52157,1)" target="_self">给力</a></div>
+<span id="52157_1">(0票)</span></li>
+<li><a href="javascript:getcountscom(52157,2)" target="_self"><img src="./编程语言的三大定理 - 51CTO.COM_files/bq2.jpg"></a>
+<div><a href="javascript:getcountscom(52157,2)" target="_self">动心</a></div>
+<span id="52157_2">(0票)</span></li>
+<li><a href="javascript:getcountscom(52157,3)" target="_self"><img src="./编程语言的三大定理 - 51CTO.COM_files/bq3.jpg"></a>
+<div><a href="javascript:getcountscom(52157,3)" target="_self">废话</a></div>
+<span id="52157_3">(0票)</span></li>
+<li><a href="javascript:getcountscom(52157,4)" target="_self"><img src="./编程语言的三大定理 - 51CTO.COM_files/bq4.jpg"></a>
+<div><a href="javascript:getcountscom(52157,4)" target="_self">专业</a></div>
+<span id="52157_4">(0票)</span></li>
+<li><a href="javascript:getcountscom(52157,5)" target="_self"><img src="./编程语言的三大定理 - 51CTO.COM_files/bq5.jpg"></a>
+<div><a href="javascript:getcountscom(52157,5)" target="_self">标题党</a></div>
+<span id="52157_5">(0票)</span></li>
+<li><a href="javascript:getcountscom(52157,6)" target="_self"><img src="./编程语言的三大定理 - 51CTO.COM_files/bq6.jpg"></a>
+<div><a href="javascript:getcountscom(52157,6)" target="_self">路过</a></div>
+<span id="52157_6">(0票)</span></li>
+</ul>
+</div>
+<script language="javascript"> 
+getcountscom(52157,11);
+getcountscom(52157,12);
+getcountscom(52157,13);
+getcountscom(52157,14);
+getcountscom(52157,15);
+getcountscom(52157,16);  
+</script>
+<p class="blank10"></p>
+<div class="f12"> <span class="fl">原文：<a href="./编程语言的三大定理 - 51CTO.COM_files/编程语言的三大定理 - 51CTO.COM.htm" class="blue"><b>编程语言的三大定理</b></a></span> <span class="fr"><a href="http://developer.51cto.com/">返回开发首页</a></span> </div>
+<p class="blank1"></p>
+</div>
+<div class="tips">
+<div style="float:left;">
+<span style="float:left; margin-top:4px;">分享到：</span>
+<!-- Baidu Button BEGIN -->
+    <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" style="margin-right:5px; float:left;">
+        <a class="bds_qzone" title="分享到QQ空间" href="http://developer.51cto.com/art/200707/52157.htm#"></a>
+        <a class="bds_tsina" title="分享到新浪微博" href="http://developer.51cto.com/art/200707/52157.htm#"></a>
+        <a class="bds_tqq" title="分享到腾讯微博" href="http://developer.51cto.com/art/200707/52157.htm#"></a>
+        <a class="bds_renren" title="分享到人人网" href="http://developer.51cto.com/art/200707/52157.htm#"></a>
+        <a class="bds_t163" title="分享到网易微博" href="http://developer.51cto.com/art/200707/52157.htm#"></a>
+        <span class="bds_more"></span>
+		<a class="shareCount" href="http://developer.51cto.com/art/200707/52157.htm#" title="累计分享1次">1</a>
+
+</div>
+<!--<div class="fl"> 
+    </div>
+--><script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=585532" src="./编程语言的三大定理 - 51CTO.COM_files/bds_s_v2.js"></script>
+
+<script type="text/javascript">
+	var bds_config = {'snsKey':{'tsina':'2378297317'}};
+	document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?t=" + new Date().getHours();
+</script>
+<!-- Baidu Button END -->
+
+
+
+</div><div class="fr blue"><a href="javascript:AddFavorite(document.location.href,document.title);" target="_self">收藏</a>|<a href="javascript:window.print();" target="_self">打印</a>|<a id="msnqqcopy" title="分享本资源给好友" target="_self">复制</a></div>
+</div>
+</div>
+<!--内容 end-->
+<div class="bor">
+<div class="titbg pl15">关于<a href="http://www.51cto.com/php/search.php?keyword=%B1%E0%B3%CC" target="_blank" class="underline">编程</a>&nbsp;&nbsp;<a href="http://www.51cto.com/php/search.php?keyword=%D3%EF%D1%D4" target="_blank" class="underline">语言</a>&nbsp;&nbsp;<a href="http://www.51cto.com/php/search.php?keyword=%B6%A8%C0%ED" target="_blank" class="underline">定理</a>的更多文章</div>
+<div class="reltag">
+<ul class="fl list02">
+  <li><a href="http://developer.51cto.com/art/201202/319998.htm" title="编程语言新宠儿：Julia诞生记">编程语言新宠儿：Julia诞生记</a></li><li><a href="http://developer.51cto.com/art/201201/312656.htm" title="回顾过去一年中编程语言领域的起起落落">回顾过去一年中编程语言领域的起起落落</a></li><li><a href="http://developer.51cto.com/art/201111/304308.htm" title="我曾经得到的一个最好的编程建议">我曾经得到的一个最好的编程建议</a></li><li><a href="http://fellow.51cto.com/art/201008/219925.htm" title="编程艺术——著名编程语录">编程艺术——著名编程语录</a></li><li><a href="http://book.51cto.com/art/200909/154689.htm" title="12 领域语言（2）">12 领域语言（2）</a></li>
+</ul>
+<div class="fr">
+<div class="h5 f12"><a href="http://developer.51cto.com/art/201202/318163.htm" title="Java Socket编程入门与实战"><b>Java Socket编程入门与实战</b></a></div>
+<a href="http://developer.51cto.com/art/201202/318163.htm" title="Java Socket编程入门与实战"><img src="./编程语言的三大定理 - 51CTO.COM_files/150759373.jpg" alt="Java Socket编程入门与实战" width="100" height="80" border="0"></a>
+<p class="c666">所谓socket通常也称作"套接字"，用于描述IP地址和端口，是一个通<a class="blue" href="http://developer.51cto.com/art/201202/318163.htm" title="Java Socket编程入门与实战">[详细]</a></p>
+</div>
+</div>
+<!--reltag end-->
+</div>
+<p class="blank10"></p>
+<div class="bor">
+<div class="f14 comm">
+<h3 class="fl">网友评论<em>TOP5</em></h3>
+<span class="fr"> <a href="http://www.51cto.com/php/feedbackt.php?id=52157">查看所有评论（<span id="pinglun_2"></span>）</a></span> </div>
+<p class="blank1"></p>
+<div class="blank1"></div>
+<ul class="commlist">
+<script src="./编程语言的三大定理 - 51CTO.COM_files/artcomment1105.php"></script>
+</ul>
+<div class="txt bgF8F8F8">
+<a name="commment"></a>
+<dl>
+<dt class="fl tlt">提交评论</dt>
+<dd><script src="./编程语言的三大定理 - 51CTO.COM_files/authart.php"></script><form action="http://www.51cto.com/login.php?referer=http://developer.51cto.com/art/200707/52157.htm" method="post" style="padding:0px;margin:0px" target="_self">通行证：<input name="username" size="10" type="text">&nbsp;密码：<input name="password" type="password" size="10"><input name="username2" class="test1" type="hidden" value="">&nbsp;<input type="submit" name="Submit" value="登录">&nbsp;&nbsp;<a href="http://ucenter.51cto.com/reg_01.php">注册通行证</a></form><form action="http://www.51cto.com/php/sendfeedback.php" method="post" name="feedback" id="feedback" onsubmit="return commentSubmit(this)" style="padding:0px;margin:0px" target="_self"><input type="hidden" name="referer" value="http://developer.51cto.com/art/200707/52157.htm"><input name="username" type="hidden" value=""><input name="uid" class="test1" type="hidden" value="">
+<br>
+</form></dd>
+
+</dl>
+	 <script type="text/javascript" language="javascript" src="./编程语言的三大定理 - 51CTO.COM_files/nomal_k.php"></script><textarea class="txtinput" name="msg" id="msg" style="height: 88px;"></textarea><br><table width="99%" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td height="6" colspan="6"><input type="hidden" name="artID" value="52157"><input type="hidden" name="referer" value="http://developer.51cto.com/art/200707/52157.htm"><input type="hidden" name="quick" value="0"><input type="hidden" name="author2" value="51CTO网友"></td></tr><tr><td width="9%">验证码：</td><td width="11%"><input name="authnum" onclick="displaysecunum();" type="text" class="test3"></td><td width="51%"><img id="secunum" style="vertical-align:middle;" onclick="refimg()"><span style="display:none;" id="spanfont">点击图片可刷新验证码</span><span style="display:inline;" id="clickfont">请点击后输入验证码</span></td><td width="4%"><input name="nouser" type="checkbox" value="1" onclick="author2username2()"></td><td width="12%">匿名发表</td><td width="13%"><input type="submit" style="background: url(&quot;http://www.51cto.com/php/tijiao.gif&quot;) no-repeat scroll 0% 0% transparent;cursor: pointer; height: 30px; width: 80px;" name="Submit32" value=""></td></tr><tr><td height="6" colspan="6"></td></tr></tbody></table>
+	
+</div>
+</div>
+<!--box end-->
+<p class="blank10"></p>
+<div class="relart fl bor">
+<div class="titbg">
+<h3 class="fl t1">栏目热门</h3>
+<a href="http://developer.51cto.com/click/585" class="tmore">更多&gt;&gt;</a></div>
+<ul>
+  
+	  <li><a href="http://developer.51cto.com/art/201201/311489.htm" title="2012年1月编程语言排行榜:Objective-C成为年度语言">2012年1月编程语言排行榜:Objective-C成为</a></li>
+	  
+	  <li><a href="http://developer.51cto.com/art/201201/312656.htm" title="回顾过去一年中编程语言领域的起起落落">回顾过去一年中编程语言领域的起起落落</a></li>
+	  
+	  <li><a href="http://developer.51cto.com/art/201202/314887.htm" title="2012最受企业欢迎的开发技能Top10">2012最受企业欢迎的开发技能Top10</a></li>
+	  
+	  <li><a href="http://developer.51cto.com/art/201202/317781.htm" title="一个站在技术之巅的女游戏程序员">一个站在技术之巅的女游戏程序员</a></li>
+	  
+	  <li><a href="http://developer.51cto.com/art/201202/319998.htm" title="编程语言新宠儿：Julia诞生记">编程语言新宠儿：Julia诞生记</a></li>
+	  
+</ul>
+</div>
+<div class="cathot fr bor">
+<div class="titbg">
+<h3 class="fl t1">同期最新</h3>
+<a href="http://developer.51cto.com/col/585" class="tmore">更多&gt;&gt;</a></div>
+<ul>
+	
+	  <li><a href="http://developer.51cto.com/art/200707/51998.htm" title="浅谈C++/CLI中引用类型的栈对象">浅谈C++/CLI中引用类型的栈对象</a></li>
+	  
+	  <li><a href="http://developer.51cto.com/art/200707/51942.htm" title="Python数据驱动变换表推导式">Python数据驱动变换表推导式</a></li>
+	  
+	  <li><a href="http://developer.51cto.com/art/200707/51939.htm" title="深入了解Python暂缓列表生成器">深入了解Python暂缓列表生成器</a></li>
+	  
+	  <li><a href="http://developer.51cto.com/art/200707/51817.htm" title="Python：你所需要的第一种也是最后一种语言">Python：你所需要的第一种也是最后一种语言</a></li>
+	  
+	  <li><a href="http://developer.51cto.com/art/200707/51787.htm" title="真实世界中的Rails，第2部分：高级页面缓存">真实世界中的Rails，第2部分：高级页面缓存</a></li>
+	  
+</ul>
+</div>
+<p class="blank10"></p>
+<div class="bor">
+<div class="titbg">
+<h3 class="fl t1"><a href="http://developer.51cto.com/">开发</a></h3>
+<span class="pl10">频道导航</span></div>
+ <ul class="xtlist">
+<li><span class="tit">Java</span>
+<div><a href="http://developer.51cto.com/java/">Java开发</a>|<a href="http://developer.51cto.com/col/1005/">Java基础</a>|<a href="http://developer.51cto.com/col/1014/">Java EE开发</a>|<a href="http://developer.51cto.com/col/1004/">Java框架</a>|<a href="http://developer.51cto.com/col/1007/">设计模式</a></div>
+</li>
+<li><span class="tit">WEB开发</span>
+<div><a href="http://developer.51cto.com/col/1441/">PHP开发</a>|<a href="http://developer.51cto.com/col/1455/">Python</a>|<a href="http://developer.51cto.com/col/1552/">Ruby</a>|<a href="http://developer.51cto.com/col/1552/">JSP</a>|<a href="http://developer.51cto.com/art/200907/133407.htm">HTML 5</a>|<a href="http://developer.51cto.com/col/1450/">DIV+CSS</a></div>
+</li>
+<li class="last"><span class="tit">综合</span>
+<div><a href="http://developer.51cto.com/net/">.NET开发</a>|<a href="http://developer.51cto.com/embed/">嵌入式开发</a>|<a href="http://developer.51cto.com/col/586/">项目管理</a>|<a href="http://developer.51cto.com/col/1308/">架构设计</a></div>
+</li>
+</ul> 
+</div> 
+<p class="blank10"></p>
+<div class="leftbotcon">
+<div class="bor jdlist">
+<div class="titbg">
+<h3 class="t2">热点推荐</h3></div>
+<ul>
+<li><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-t-4&#39;]);" href="http://mobile.51cto.com/mobile-182392.htm"><img src="./编程语言的三大定理 - 51CTO.COM_files/153546162.jpg"></a> 
+<div class="name"><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-t-4&#39;]);" href="http://mobile.51cto.com/mobile-182392.htm">Android开发应用详解</a></div></li>
+<li><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-t-4&#39;]);" href="http://developer.51cto.com/art/201106/266369.htm"><img src="./编程语言的三大定理 - 51CTO.COM_files/133620622.jpg"></a> 
+<div class="name"><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-t-4&#39;]);" href="http://developer.51cto.com/art/201106/266369.htm">那些性感的让人尖叫的程序员</a></div></li>
+<li><a href="http://developer.51cto.com/art/200907/133407.htm"><img src="./编程语言的三大定理 - 51CTO.COM_files/134217922.jpg"></a> 
+<div class="name"><a href="http://developer.51cto.com/art/200907/133407.htm">HTML5 下一代Web开发标准详解</a></div></li>
+<li><a href="http://developer.51cto.com/art/201104/257581.htm"><img src="./编程语言的三大定理 - 51CTO.COM_files/123123954.jpg"></a> 
+<div class="name"><a href="http://developer.51cto.com/art/201104/257581.htm">高性能WEB开发应用指南</a></div></li>
+<li><a href="http://os.51cto.com/art/200706/49181.htm"><img src="./编程语言的三大定理 - 51CTO.COM_files/195816929.jpg"></a> 
+<div class="name"><a href="http://os.51cto.com/art/200706/49181.htm">Ubuntu开源技术交流频道</a></div></li></ul></div>
+<p class="blank10"></p>
+<div class="bor hotTag"><strong>热门标签：</strong> <a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-2]);" href="http://os.51cto.com/windows/">windows频道</a><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-w&#39;]);" href="http://mobile.51cto.com/">移动开发</a><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-w&#39;]);" href="http://cloud.51cto.com/">云计算</a><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-w&#39;]);" href="http://mobile.51cto.com/mobile/objc/">objective-c</a><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-w&#39;]);" href="http://network.51cto.com/art/200909/151122.htm">tp-link路由器设置图解</a><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-w&#39;]);" href="http://developer.51cto.com/art/200907/133407.htm">html5</a> </div></div>
+<div class="leftbotbox"> </div>
+</div>
+<!--left end-->
+<div class="g_13 fr">
+<div class="focus fixfloat"> 
+ <img width="298" style="border: 1px solid #CCCCCC; margin:5px 0px 5px;" src="./编程语言的三大定理 - 51CTO.COM_files/weixin.png"><div class="hot">
+<ul>
+<li class="tit"><em>头条</em> <a href="http://developer.51cto.com/art/201405/438832.htm">《开发专刊》2014年4月刊发布</a> </li>
+<li class="con"><dl><dt><a href="http://developer.51cto.com/art/201405/438832.htm"><img border="0" src="./编程语言的三大定理 - 51CTO.COM_files/wKioL1NvvUaxFIvQAAAX2THaVGw231.jpg"></a></dt>
+<dd>本次的专刊为大家提供了Oracle最新推出的Java SE 8详细的开发教程，从解读到探究Java 8最新</dd>
+</dl></li></ul><ol class="hotlist"><li><a href="http://developer.51cto.com/art/201403/434342.htm">《开发专刊》2014年3月刊发布</a></li><li><a href="http://developer.51cto.com/art/201312/423275.htm">《开发月刊》2013年11月刊发布</a></li></ol></div>
+<p>
+<script language="JavaScript" src="./编程语言的三大定理 - 51CTO.COM_files/ad(1).js" type="text/javascript"></script><script type="text/javascript" src="./编程语言的三大定理 - 51CTO.COM_files/ad(2).php"></script><iframe width="300" height="400" noresize="" scrolling="No" frameborder="0" marginheight="0" marginwidth="0" src="./编程语言的三大定理 - 51CTO.COM_files/4.htm" align="left"></iframe>
+</p>
+</div>
+<div class="rank">
+<div class="tlt">
+      <h3>文章排行</h3>
+      <a onmouseover="change_top10(3);" id="top_3">本月</a><a onmouseover="change_top10(2);" id="top_2">本周</a><a onmouseover="change_top10(1);" class="myon" id="top_1">24小时</a> </div>
+ <div id="top10_1" style="display: block;" class="list"><ul>
+<li><a href="http://developer.51cto.com/art/201409/450248.htm" target="_blank" title="容器与虚拟机管理程序之战刚开始打响">容器与虚拟机管理程序之战刚开始打响</a>
+</li><li><a href="http://developer.51cto.com/art/201007/214478.htm" target="_blank" title="Eclipse插件大全 挑选最牛的TOP30">Eclipse插件大全 挑选最牛的TOP30</a>
+</li><li><a href="http://developer.51cto.com/art/200906/128274.htm" target="_blank" title="Java数组声明、创建、初始化">Java数组声明、创建、初始化</a>
+</li><li><a href="http://developer.51cto.com/art/200908/146071.htm" target="_blank" title="五个免费UML建模工具推荐">五个免费UML建模工具推荐</a>
+</li><li><a href="http://developer.51cto.com/art/201409/450255.htm" target="_blank" title="千万别理程序员">千万别理程序员</a>
+</li><li><a href="http://developer.51cto.com/art/201409/450265.htm" target="_blank" title="产品环境中 Go 语言的最佳实践">产品环境中 Go 语言的最佳实践</a>
+</li><li><a href="http://developer.51cto.com/art/200903/117512.htm" target="_blank" title="详解Java解析XML的四种方法">详解Java解析XML的四种方法</a>
+</li><li><a href="http://developer.51cto.com/art/201408/449789.htm" target="_blank" title="如何开发属于自己的框架">如何开发属于自己的框架</a>
+</li><li><a href="http://developer.51cto.com/art/201408/449857.htm" target="_blank" title="你真的该换一台新电脑的 14 种迹象">你真的该换一台新电脑的 14 种迹象</a>
+</li><li><a href="http://developer.51cto.com/art/201409/450273.htm" target="_blank" title="Shou.TV 背后基于 Node.js 和 WebSocke">Shou.TV 背后基于 Node.js 和 WebSocke</a>
+</li></ul></div>
+<div id="top10_2" style="display: none;" class="list"><ul>
+<li><a href="http://developer.51cto.com/art/201408/449789.htm" target="_blank" title="如何开发属于自己的框架">如何开发属于自己的框架</a>
+</li><li><a href="http://developer.51cto.com/art/201408/449857.htm" target="_blank" title="你真的该换一台新电脑的 14 种迹象">你真的该换一台新电脑的 14 种迹象</a>
+</li><li><a href="http://developer.51cto.com/art/201408/449785.htm" target="_blank" title="当程序员遇到硬盘损坏导致代码丢失时心">当程序员遇到硬盘损坏导致代码丢失时心</a>
+</li><li><a href="http://developer.51cto.com/art/201408/449852.htm" target="_blank" title="2014 年最火的 21 个 JavaScript 框架">2014 年最火的 21 个 JavaScript 框架</a>
+</li><li><a href="http://developer.51cto.com/art/201408/450082.htm" target="_blank" title="调查显示：OpenStack和Docker雄冠云计">调查显示：OpenStack和Docker雄冠云计</a>
+</li><li><a href="http://developer.51cto.com/art/201408/449991.htm" target="_blank" title="生于忧患而死于安乐：程序员如何走出安">生于忧患而死于安乐：程序员如何走出安</a>
+</li><li><a href="http://developer.51cto.com/art/201408/449995.htm" target="_blank" title="HTML5：Network Information API详解">HTML5：Network Information API详解</a>
+</li><li><a href="http://developer.51cto.com/art/201408/449867.htm" target="_blank" title=".NET程序的性能要领和优化建议">.NET程序的性能要领和优化建议</a>
+</li><li><a href="http://developer.51cto.com/art/201408/450086.htm" target="_blank" title="有效领导创业型员工的8种方式">有效领导创业型员工的8种方式</a>
+</li><li><a href="http://developer.51cto.com/art/201408/449978.htm" target="_blank" title="囧之有道：残酷现实中的巾帼程序员">囧之有道：残酷现实中的巾帼程序员</a>
+</li></ul></div>
+<div id="top10_3" style="display: none;" class="list"><ul>
+<li><a href="http://developer.51cto.com/art/201408/447341.htm" target="_blank" title="PHP终于迎来自己的正式语言规范">PHP终于迎来自己的正式语言规范</a>
+</li><li><a href="http://developer.51cto.com/art/201408/448142.htm" target="_blank" title="2014年8月编程语言排行榜：Swift降到20">2014年8月编程语言排行榜：Swift降到20</a>
+</li><li><a href="http://developer.51cto.com/art/201408/448409.htm" target="_blank" title="程序员不可不知的7款编程工具">程序员不可不知的7款编程工具</a>
+</li><li><a href="http://developer.51cto.com/art/201408/448405.htm" target="_blank" title="一个数据挖掘大牛，用程序算法做人生选">一个数据挖掘大牛，用程序算法做人生选</a>
+</li><li><a href="http://developer.51cto.com/art/201408/448609.htm" target="_blank" title="Java 专业人士必备的书籍和网站列表">Java 专业人士必备的书籍和网站列表</a>
+</li><li><a href="http://developer.51cto.com/art/201408/447561.htm" target="_blank" title="报告：新毕业程序员平均年薪暴涨44%">报告：新毕业程序员平均年薪暴涨44%</a>
+</li><li><a href="http://developer.51cto.com/art/201408/449789.htm" target="_blank" title="如何开发属于自己的框架">如何开发属于自己的框架</a>
+</li><li><a href="http://developer.51cto.com/art/201408/447865.htm" target="_blank" title="2014年最流行的应用服务器">2014年最流行的应用服务器</a>
+</li><li><a href="http://developer.51cto.com/art/201408/447346.htm" target="_blank" title="程序员生存定律：打造属于自己的稀缺性">程序员生存定律：打造属于自己的稀缺性</a>
+</li><li><a href="http://developer.51cto.com/art/201408/447248.htm" target="_blank" title="程序员逆袭应具备的7大技能">程序员逆袭应具备的7大技能</a>
+</li></ul></div>
+ 
+ </div>
+<p class="blank1"></p>
+
+<div class="bor">
+<div class="titbg">
+<h3 class="fl t1">热点专题</h3>
+<a href="http://developer.51cto.com/speclist/585" class="tmore">更多&gt;&gt;</a></div>
+<ul class="plist01">
+<li><a href="http://developer.51cto.com/art/201110/298535.htm" title="Google Dart新结构化编程语言"><img src="./编程语言的三大定理 - 51CTO.COM_files/172542751.jpg" alt="Google Dart新结构化编程语言" width="100" height="80"></a>
+<h5><a href="http://developer.51cto.com/art/201110/298535.htm" title="Google Dart新结构化编程语言">Google Dart新结构化</a></h5>
+<div class="c666">谷歌Dart语言项目的领导人Lars Bak宣布推出编程语言Da</div>
+</li><li><a href="http://developer.51cto.com/art/201110/297467.htm" title="Teched 2011微软技术大会现场视频专访（开发篇）"><img src="./编程语言的三大定理 - 51CTO.COM_files/141018836.jpg" alt="Teched 2011微软技术大会现场视频专访（开发篇）" width="100" height="80"></a>
+<h5><a href="http://developer.51cto.com/art/201110/297467.htm" title="Teched 2011微软技术大会现场视频专访（开发篇）">Teched 2011微软技术</a></h5>
+<div class="c666">2011年10月11日，微软TechED 2011在北京万事达中心召</div>
+</li><li><a href="http://developer.51cto.com/art/201110/297119.htm" title="HTML 5 VS Flash 谁是海贼王"><img src="./编程语言的三大定理 - 51CTO.COM_files/142106842.jpg" alt="HTML 5 VS Flash 谁是海贼王" width="100" height="80"></a>
+<h5><a href="http://developer.51cto.com/art/201110/297119.htm" title="HTML 5 VS Flash 谁是海贼王">HTML 5 VS Flash 谁是</a></h5>
+<div class="c666">HTML5仿佛一夜间受到大多业内巨头的青睐，有点像《海</div>
+</li> 
+</ul>
+</div>
+<p class="blank10"></p>
+<div class="tagCloud">
+<div class="tlt">
+<h3>热点标签</h3>
+</div>
+<div class="taglist"><a title="编程语言排行榜" href="http://developer.51cto.com/art/200911/165281.htm">编程语言排行榜</a> <a title="敏捷开发" href="http://developer.51cto.com/art/200803/68222.htm">敏捷开发</a> <a title="Eclipse" href="http://developer.51cto.com/art/201006/207407.htm">Eclipse 3.6</a> <a title="PHP设计模式" href="http://developer.51cto.com/art/201004/195765.htm">PHP设计模式</a> <a title="NetBeans7" href="http://developer.51cto.com/art/201105/259431.htm">NetBeans 7</a> <a title="Java7" href="http://developer.51cto.com/art/201001/175830.htm">Java7</a> <a title="Scala编程语言" href="http://developer.51cto.com/art/200906/127830.htm">Scala编程语言</a> <a title="Python编程世界" href="http://developer.51cto.com/art/201011/234347.htm">Python编程世界</a> <a title="Ruby" on="" rails开发="" href="http://developer.51cto.com/art/201007/215101.htm">Ruby On Rails开发</a> <a class="imp" title="LINQ" href="http://developer.51cto.com/art/200911/165090.htm">LINQ</a> <a title="ASP.NET视频教程" href="http://developer.51cto.com/art/200904/120314.htm">ASP.NET视频教程</a> <a title="Visual Studio" href="http://developer.51cto.com/art/201004/194262.htm">Visual Studio</a> <a title="智能手机" href="http://p.linkphone.cn/">智能手机</a> <a title="软件下载" href="http://download.linkphone.cn/">软件下载</a></div>
+</div>
+<div class="rss">
+<ul>
+<li class="lin f12-c"><a href="http://news.51cto.com/col/1323/"><strong>点击这里查看样刊</strong></a></li>
+<li>
+<dl>
+<dt> </dt>
+<dd><a href="http://home.51cto.com/index.php?s=/Subscribe"><img src="./编程语言的三大定理 - 51CTO.COM_files/dingy.gif"></a></dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="bor">
+<div class="titbg">
+<h3 class="t1">全站热点</h3>
+</div>
+<div class="webhot fixfloat">
+<ul>
+
+<li>
+  <a href="http://os.51cto.com/art/201202/320151.htm" title="网盘战国：需求，机遇与挑战"><img src="./编程语言的三大定理 - 51CTO.COM_files/142839780.jpg"></a>
+  <div><a href="http://os.51cto.com/art/201202/320151.htm" title="网盘战国：需求，机遇与挑战">网盘战国：需求，机遇与挑战</a></div>
+</li>
+
+<li>
+  <a href="http://os.51cto.com/art/201202/319997.htm" title="大数据浪潮填满了谁的腰包？"><img src="./编程语言的三大定理 - 51CTO.COM_files/153837312.jpg"></a>
+  <div><a href="http://os.51cto.com/art/201202/319997.htm" title="大数据浪潮填满了谁的腰包？">大数据浪潮填满了谁的腰包？</a></div>
+</li>
+
+</ul>
+</div>
+<p class="blank1"></p>
+<ul class="list03">
+
+<li><a href="http://cloud.51cto.com/art/201110/299145.htm" title="IBM美女骨干朱近之加盟华为 重组云计算">IBM美女骨干朱近之加盟华为 重组云计</a></li>
+
+<li><a href="http://news.51cto.com/art/201110/299124.htm" title="QCon杭州2011现场报道">QCon杭州2011现场报道</a></li>
+
+<li><a href="http://server.51cto.com/ibmceo/" title="IBM迎来首位女性CEO罗曼提">IBM迎来首位女性CEO罗曼提</a></li>
+
+<li><a href="http://server.51cto.com/ibmplatform/" title="解读IBM收购Platform">解读IBM收购Platform</a></li>
+
+<li><a href="http://mobile.51cto.com/NokiaWorld2011-299018.htm" title="Mango首“秀”诺基亚2011世界大会">Mango首“秀”诺基亚2011世界大会</a></li>
+
+</ul>
+</div>
+<p class="blank10"></p>
+<div class="bor">
+<div class="titbg">
+<h3 class="t1">读书</h3>
+</div>
+  
+<div class="catbook"><a href="http://book.51cto.com/art/200707/50443.htm" title="精通JBuilder 2006"><img src="./编程语言的三大定理 - 51CTO.COM_files/172621443.gif" width="66" height="98" border="0"></a>
+<h5><a href="http://book.51cto.com/art/200707/50443.htm">精通JBuilder 2006</a></h5>
+<div class="c666 text">JBuilder 2006是一款强大的Java企业级开发平台，其集成了几乎所有的Java技术，涵盖了软件开发生命周期的各个过程。本书深入浅出</div>
+</div>
+
+
+<ul class="list03">
+
+<li><a href="http://book.51cto.com/art/200704/45590.htm" title="网络管理员考试全真模拟试题与解析">网络管理员考试全真模拟试题与解析</a></li>
+
+<li><a href="http://book.51cto.com/art/200704/45708.htm" title="Windows Server 2003网络管理员完全手册">Windows Server 2003网络管理员完全手册</a></li>
+
+<li><a href="http://book.51cto.com/art/200704/45743.htm" title="点石成金：访客至上的网页设计秘笈（原书第2版）">点石成金：访客至上的网页设计秘笈（原书第2版）</a></li>
+
+<li><a href="http://book.51cto.com/art/200704/45749.htm" title="Oracle 10g应用指导与案例精讲">Oracle 10g应用指导与案例精讲</a></li>
+
+</ul>
+</div>
+<p class="blank10"></p>
+<div class="bor">
+<div class="titbg">
+<h3 class="t1 fl">博文推荐</h3>
+<a class="tmore" href="http://blog.51cto.com/">更多&gt;&gt;</a></div>
+
+<ul class="list03">
+ <li><a href="http://lavasoft.blog.51cto.com/62575/187993/" target="_blank" title="WebService客户端开发（Axis2 1.5）">WebService客户端开发（Axis2 1.5）</a></li><li><a href="http://gaoxingf.blog.51cto.com/612518/187957/" target="_blank" title="Redhat EL 5.3上安装Cacti(5)- 安装/配置cacti">Redhat EL 5.3上安装Cacti(5)- 安装/</a></li><li><a href="http://upfont.blog.51cto.com/716420/187916/" target="_blank" title="创建一个受限制的mysql用户">创建一个受限制的mysql用户</a></li><li><a href="http://mrfly.blog.51cto.com/151750/187895/" target="_blank" title="浅谈Hyper-V的几种备份方式(二)----Windows Server Backup &amp; VSS">浅谈Hyper-V的几种备份方式(二)----W</a></li>
+</ul>
+</div>
+<p class="blank10"></p>
+<div class="tj">
+<div class="tlt">
+<h3>最新热帖</h3>
+<a class="more" href="http://bbs.51cto.com/hotthreads.php">更多&gt;&gt;</a></div>
+<ul>
+<li><a href="http://bbs.51cto.com/thread-547738-1.html" target="_blank" title="H3CSE最新5.1培训课件">H3CSE最新5.1培训课件</a></li><li><a href="http://bbs.51cto.com/thread-547738-1.html" target="_blank" title="H3CSE最新5.1培训课件">H3CSE最新5.1培训课件</a></li><li><a href="http://bbs.51cto.com/thread-547738-1.html" target="_blank" title="H3CSE最新5.1培训课件">H3CSE最新5.1培训课件</a></li><li><a href="http://bbs.51cto.com/thread-525765-1.html" target="_blank" title="轻松实现SQL Server异地备份">轻松实现SQL Server异地备份</a></li><li><a href="http://bbs.51cto.com/thread-516714-1.html" target="_blank" title="H3C精典书籍系列----网络之路,H3CIE必看书籍!">H3C精典书籍系列----网络之路,H3CIE</a></li>
+</ul>
+</div>
+<div class="picAD">
+<iframe class="bann" frameborder="0" src="./编程语言的三大定理 - 51CTO.COM_files/baidu.htm" scrolling="No" style="height: 265px; width: 300px; padding: 0px; margin: 0px; overflow: hidden; background-color: white;"></iframe>
+</div>
+</div>
+<p class="blank1"></p> 
+<!--leftbotcon end-->
+</div> 
+<div class="subweb">
+<h4>51CTO旗下网站</h4>
+<div>
+<a target="_blank" href="http://www.51cto.com/">领先的IT技术网站 51CTO</a>
+<a target="_blank" href="http://www.watchstor.com/">领先的中文存储媒体 WatchStor</a>
+<a target="_blank" href="http://www.cioage.com/">中国首个CIO网站 CIOage</a>
+<a target="_blank" href="http://www.hc3i.cn/">中国首家数字医疗网站 HC3i</a>
+</div>
+</div>
+<div id="ft"><div id="foot" align="center"><script src="./编程语言的三大定理 - 51CTO.COM_files/copy_right.js"></script>Copyright&#169;2005-2014 <a href="http://www.51cto.com/">51CTO.COM</a> 版权所有 未经许可 请勿转载</div></div>
+<script src="./编程语言的三大定理 - 51CTO.COM_files/count.js"></script><script src="./编程语言的三大定理 - 51CTO.COM_files/count.php"></script>
+<!-- START GA.js -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-20883758-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_addOrganic', 'baidu', 'word']);
+  _gaq.push(['_addOrganic', 'google', 'q']);
+  _gaq.push(['_addOrganic', 'soso', 'w']);
+  _gaq.push(['_addOrganic', '3721', 'name']);
+  _gaq.push(['_addOrganic', 'yodao', 'q']); 
+  _gaq.push(['_addOrganic', 'vnet', 'kw']);
+  _gaq.push(['_addOrganic', 'sogou', 'query']);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<!-- END GA.js -->
+
+
+<script type="text/javascript">
+
+	$("#uyan_cmt_list").next().remove();	
+	$("#uyan_cmt_list").next().css("display","none");	
+</script>
+<style>
+.Nfloat {
+    position: fixed;
+    right: 2%;
+    top: 35%;
+    z-index: 801;
+}
+</style>
+<!--学院广告
+<div class="Nfloat" style="width:127px; height:197px;" id="fullYearfloatPic">
+	<img width="127" border="0" src="http://img1.51cto.com/edu/images/floatpic.png" usemap="#Map">
+	<map name="Map" id="Map">
+	  <area shape="rect" coords="11,83,120,117" target="_blank" href="http://edu.51cto.com/course/courseList/id-all-field-toll-isLecturer-0-difficulty-all.html" onfocus="isfox ? void(0) : blur(this);">
+	  <area shape="rect" coords="6,120,119,144" target="_blank" href="http://edu.51cto.com/member/index.html" onfocus="isfox ? void(0) : blur(this);">
+	  <area shape="rect" coords="9,149,117,178" target="_blank" href="http://bbs.51cto.com/viewthread.php?tid=1113099&amp;page=1&amp;extra=#pid5675432" onfocus="isfox ? void(0) : blur(this);">
+	  <area shape="circle" coords="118,25,9" href="javascript:void(0);" onclick="document.getElementById('fullYearfloatPic').style.display='none';return false;" onfocus="isfox ? void(0) : blur(this);">
+	</map>
+</div>
+学院广告end-->
+<!-- 新监测代码 -->
+<!-- 新监测代码 -->
+<div id="MyMoveAd" style="display: none; height: 2px;">
+<span id="wordlink_1"><script src="./编程语言的三大定理 - 51CTO.COM_files/wordlink1.js"></script><script type="text/javascript" src="./编程语言的三大定理 - 51CTO.COM_files/ajs.php"></script><a href="http://gg3.51cto.com/www/delivery/ck.php?oaparams=2__bannerid=512__zoneid=254__cb=46e0a23dc0__oadest=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Fcloud%2Fbluemix%2F2014_8_7test.html%3Fcmp%3Ddwskl%26cpb%3Ddw%26ct%3Ddwcon%26cr%3Dcn_51CTO_t2%26ccy%3Dcn" target="_blank"><font color="red"> 关注移动开发，参与有奖问答</font></a><div id="beacon_46e0a23dc0" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./编程语言的三大定理 - 51CTO.COM_files/lg.php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div>
+</span>
+<span id="wordlink_2"><script src="./编程语言的三大定理 - 51CTO.COM_files/wordlink2.js"></script><script type="text/javascript" src="./编程语言的三大定理 - 51CTO.COM_files/ajs(1).php"></script><a href="http://gg3.51cto.com/www/delivery/ck.php?oaparams=2__bannerid=359__zoneid=255__cb=15c1263426__oadest=http%3A%2F%2Fnetsecurity.51cto.com%2Fsecu%2FF5%2FSynthesis%2F" target="_blank"><font color="blue">软件定义的数据中心解决方案</font></a><div id="beacon_15c1263426" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./编程语言的三大定理 - 51CTO.COM_files/lg(1).php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div>
+</span>
+<span id="wordlink_3"><script src="./编程语言的三大定理 - 51CTO.COM_files/wordlink3.js"></script><script type="text/javascript" src="./编程语言的三大定理 - 51CTO.COM_files/ajs(2).php"></script><a href="http://gg.51cto.com/www/delivery/ck.php?oaparams=2__bannerid=90__zoneid=256__cb=78b571739f__oadest=http%3A%2F%2Fnetwork.51cto.com%2Fnetwork%2F01%2F1.html" target="_blank"><font color="blue">智能化管理，让IT管理更轻松</font></a><div id="beacon_78b571739f" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./编程语言的三大定理 - 51CTO.COM_files/lg(2).php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div>
+</span>
+<span id="wordlink_4"><script src="./编程语言的三大定理 - 51CTO.COM_files/wordlink4.js"></script><script type="text/javascript" src="./编程语言的三大定理 - 51CTO.COM_files/ajs(3).php"></script></span>
+<span id="pinglun"><script language="JavaScript" src="./编程语言的三大定理 - 51CTO.COM_files/getArtCount.php"></script>1</span>
+<span id="tonglan"></span>
+<span id="wordlink"><script language="JavaScript" src="./编程语言的三大定理 - 51CTO.COM_files/ad(3).js"></script></span>
+<script src="./编程语言的三大定理 - 51CTO.COM_files/ad(3).js"></script>
+<span id="bookss"><script language="JavaScript" src="./编程语言的三大定理 - 51CTO.COM_files/getBookData.php"></script></span>
+</div>   
+<script language="javascript" src="./编程语言的三大定理 - 51CTO.COM_files/favorite.js"></script>
+
+<script language="javaScript" src="./编程语言的三大定理 - 51CTO.COM_files/dialog_utf8.js"></script>
+<script language="javaScript" src="./编程语言的三大定理 - 51CTO.COM_files/mail.js"></script>  
+<script type="text/javascript" src="./编程语言的三大定理 - 51CTO.COM_files/favorbox.js"></script>
+<script language="javascript" src="./编程语言的三大定理 - 51CTO.COM_files/clipboard.js"></script>
+<script language="javaScript"> 
+	var thistid=52157; 
+	
+	//收藏按钮
+	var favor_url = 'http://developer.51cto.com/art/200707/52157.htm';  // 如：http://bbs.51cto.com/thread-789649-1.html
+	var favor_title = '编程语言的三大定理';       //  
+	
+	//绑定复制按钮
+	copy('msnqqcopy', 'http://developer.51cto.com/art/200707/52157.htm', '分享到MSN/QQ的链接复制成功!');
+//	copy('bbscopy', '[url=http://developer.51cto.com/art/200707/52157.htm][u]编程语言的三大定理[/u][/url]', '分享到论坛的UBB代码复制成功!');
+
+</script><div style="position: absolute; left: 783px; top: 2084px; width: 34px; height: 12px; z-index: 99;"><embed id="ZeroClipboardMovie_1" src="http://images.51cto.com/images/art/newart1012/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="34" height="12" name="ZeroClipboardMovie_1" align="middle" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=1&amp;width=34&amp;height=12" wmode="transparent"></div> 
+<script src="./编程语言的三大定理 - 51CTO.COM_files/index.php" charset="utf-8"></script>
+<script src="./编程语言的三大定理 - 51CTO.COM_files/count(1).php" language="javascript"></script>
+<script language="javascript">
+document.getElementById('books').innerHTML = document.getElementById("bookss").innerHTML; 
+</script>
+
+
+
+</body></html>

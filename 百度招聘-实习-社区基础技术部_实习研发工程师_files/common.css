@@ -1,0 +1,138 @@
+@import url(nav.css);
+
+@keyframes navHover{from{width:0;} to{width:190px;}}
+@-moz-keyframes navHover{from{width:0;} to{width:190px;}}
+@-webkit-keyframes navHover{from{width:0;} to{width:190px;}}
+@-o-keyframes navHover{from{width:0;} to{width:190px;}}
+
+@keyframes navLeave{from{width:190px;} to{width:0;}}
+@-moz-keyframes navLeave{from{width:190px;} to{width:0;}}
+@-webkit-keyframes navLeave{from{width:190px;} to{width:0;}}
+@-o-keyframes navLeave{from{width:190px;} to{width:0;}}
+
+a{color:#029fd3;blr:expression(this.onFocus=this.blur()); outline:none;}
+.hrs_inlineBlock{display:inline-block;*display:inline;zoom:1;vertical-align:middle;}
+.hrs_error{background:url(../images/sec_bg.png) no-repeat left -42px;padding-left:18px;color:#ff3300;}
+.hrs_right{background:url(../images/sec_bg.png) no-repeat left -256px;padding-left:18px;color:#ff3300;}
+.btnOrange_hover{background-position:left -294px;}
+.btnBlue_hover{background-position:left -326px;}
+.btnOrangeSmall_hover{background-position:left -381px;}
+.btnGraySmall_hover{background-position:left -427px;}
+.hrs_grayBorderTitle{height:42px;line-height:42px;border-bottom:1px solid #e5e5e5;font-size:14px;font-weight:bold;color:#333333;}
+.hrs_submitBtn:hover{text-decoration:none;}
+body{background:#f0e6db url(../images/15.jpg) no-repeat center top;}
+#hrs_header{position:absolute; top:0; left:0; width:100%; height:56px; z-index:9999; }
+#hrs_mainOuter{position:relative;padding-bottom:31px;}
+.hrs_mainbg{ width:100%;height:71px;background:#666;z-index:-1; }
+#hrs_main{width:990px;min-height:557px;margin:178px auto 0 ;background:#fff;overflow:hidden; position: relative;}
+#hrs_footer{height:31px;background:#444;text-align:center;color:#999;line-height:31px;}
+#hrs_footer a{color:#999;}
+.hrs_tab{height:57px;background:#f7f7f7;border-bottom:1px solid #e5e5e5;}
+.hrs_tab li{float:left;width:98px;height:55px;padding:1px;background:#fff;border-right:1px solid #e5e5e5;}
+.hrs_tab li a{display:block;line-height:55px;text-align:center;background:tab_grayBg;font-size:14px;font-weight:bold;color:#333333;}
+.hrs_tab li a:hover{text-decoration:none;}
+.hrs_tab li.hrs_tabCurrent{width:100px;padding:0 0 1px;border-top:1px solid #029fd3;}
+.hrs_tab li.hrs_tabCurrent a{border-top:4px solid #029fd3;background:#fff;line-height:52px;height:53px;}
+.hrs_formHorizontal{padding-top:10px;font-size:14px;color:#606060;}
+.hrs_formHorizontal .hrs_formGroup{margin-top:25px;}
+.hrs_radioGroup{margin-top:10px;}
+.hrs_submitGroup{margin-top:20px;}
+.hrs_formHorizontal label{display:inline-block;*display:inline;zoom:1;vertical-align:middle;min-width:150px;text-align:right;}
+.hrs_formHorizontal .hrs_formRequire{font-size:12px;color:#ff3300; margin-right: 5px;}
+.hrs_formHorizontal input[type='text'],.hrs_formHorizontal input[type='password']{width:260px;height:25px; line-height: 25px; margin-left:-3px;padding:2px 4px;border:1px solid #ccc;box-shadow:inset 0 1px 3px #eee; vertical-align: middle;}
+.hrs_formError,.hrs_formRight{display:inline-block;*display:inline;zoom:1;vertical-align:middle;background:url(../images/sec_bg.png) no-repeat left -42px;padding-left:18px;color:#ff3300;font-size:12px;color:#ff3300;height:30px;line-height:30px;margin-left:6px; }
+.hrs_formRight{background:url(../images/sec_bg.png) no-repeat left -256px;padding-left:18px;color:#ff3300;}
+.hrs_formHorizontal .hrs_submitBtn{margin-left:150px;margin-right:15px;}
+#hrs_loginTabContent .hrs_formHorizontal .hrs_radioGroup a.hrs_toOtherTab{font-size:12px;color:#606060; margin-left: 50px;}
+.hrs_formHorizontal label.hrs_radioLabel{width:auto;min-width:auto;margin-right:10px; text-align: left;min-width:90px;}
+.hrs_formHorizontal input[type='radio'],.hrs_formHorizontal input[type='checkbox']{width:auto;vertical-align:middle;margin:-3px 5px 0 0;}
+.hrs_tab2{overflow:hidden;}
+.hrs_tab2 li{float:left;width:105px;height:33px;border:1px solid #d4d4d4;margin-right:-1px;}
+.hrs_tab2 li a{display:block;line-height:33px;text-align:center;background:#f4f4f4;font-size:14px;color:#333333;}
+.hrs_tab2 li a:hover{text-decoration:none;}
+.hrs_tab2 li.hrs_tabCurrent a{background:#fff;line-height:34px;}
+.hrs_tabVertical ul{background:#fff;}
+.hrs_tabVertical li{width:0;height:39px;line-height:39px;}
+.hrs_tabVertical li a{position:absolute;display:block;width:170px;padding-left:20px;border-bottom:1px solid #dfdfdf;font-size:14px;color:#333333;background:url(../images/sec_bg.png) no-repeat right -79px;}
+.hrs_tabVertical li a:hover{text-decoration:none;}
+.hrs_tabVertical li.hover{width:190px;background:#eeeeee; animation:navHover 0.5s;-moz-animation:navHover 0.5s;-webkit-animation:navHover 0.5s;-o-animation:navHover 0.5s;}
+.hrs_tabVertical li.leave{background:#eeeeee;animation:navLeave 0.5s;-moz-animation:navLeave 0.5s;-webkit-animation:navLeave 0.5s;-o-animation:navLeave 0.5s;}
+.hrs_tabVertical li.hrs_tabCurrent a{background-color:#eeeeee;background-position:right -129px;}
+.hrs_table{width:100%;margin-top:12px;border:1px solid #ddd;border-top:2px solid #bbb;}
+.hrs_table tr{border-bottom:1px solid #ddd;}
+.hrs_table th{background:#f7f7f7;text-align:center;color:#333;}
+.hrs_table td{text-align:center;color:#666;}
+.hrs_table thead tr{height:29px;line-height:29px;}
+.hrs_table tbody tr{height:44px;line-height:44px;}
+.hrs_table tbody tr p{line-height:22px;}
+.hrs_p{color:#333;line-height:18px;}
+.hrs_more span{font-family:'宋体';}
+.hrs_page{text-align:center;}
+.hrs_page a{display:inline-block;*display:inline;zoom:1;vertical-align:middle;line-height:30px;border:1px solid #e5e5e5;color:#029fd3;padding:0 12px;margin-left:-5px;}
+.hrs_page a:hover,.hrs_page a.hrs_curPage{text-decoration:none;background:#efefef;color:#333;}
+.sec_warning,.sec_success{text-align:center;}
+.sec_warning span,.sec_success span{ display:inline-block;*display:inline;zoom:1;vertical-align:middle;line-height: 24px; background: url(../images/sec_bg.png) no-repeat left -464px; padding-left: 20px; }
+.sec_success span{ background-position: left -259px; }
+
+ input[type='submit']:focus{ blur: expression(this.onFocus=this.blur()); }
+
+
+/*实习*/
+.hrs_jobIntern .hrs_topBorder, .hrs_jobIntern .hrs_tab li.current span{border-top-color:#f88e1e;}
+.hrs_jobIntern .hrs_listModel h3, .hrs_jobIntern #hrs_side h3{ background: #f88f1c; }
+.hrs_jobIntern .hrs_listModel h3 a{ color:#fdc98f;}
+.hrs_jobIntern #hrs_searchOuter dd.hrs_curType,.hrs_jobIntern #hrs_searchOuter dd:hover{ background: #fa8f1d; }
+.hrs_jobIntern .hrs_table_striped tbody a:hover,.hrs_jobIntern .hrs_page a,.hrs_jobIntern .hrs_listModel ul li a:hover{color:#f88e1e;}
+
+/*校招*/
+.hrs_jobSchool .hrs_topBorder, .hrs_jobSchool .hrs_tab li.current span{border-top-color:#8ac916;}
+.hrs_jobSchool .hrs_listModel h3, .hrs_jobSchool #hrs_side h3{ background: #8dc919; }
+.hrs_jobSchool .hrs_listModel h3 a{ color:#daff9f;}
+.hrs_jobSchool #hrs_searchOuter dd.hrs_curType,.hrs_jobSchool #hrs_searchOuter dd:hover{ background: #8dca15; }
+.hrs_jobSchool .hrs_table_striped tbody a:hover,.hrs_jobSchool .hrs_page a,.hrs_jobSchool .hrs_listModel ul li a:hover{color:#8ac916;}
+
+/*海外*/
+.hrs_jobOverseas .hrs_topBorder, .hrs_jobOverseas .hrs_tab li.current span{border-top-color:#920093;}
+.hrs_jobOverseas .hrs_listModel h3, .hrs_jobOverseas #hrs_side h3{ background: #920093; }
+.hrs_jobOverseas .hrs_listModel h3 a{ color:#e43ee6;}
+.hrs_jobOverseas #hrs_searchOuter dd.hrs_curType, .hrs_jobOverseas #hrs_searchOuter dd:hover{ background: #8f0094; }
+.hrs_jobOverseas .hrs_table_striped tbody a:hover,.hrs_jobOverseas .hrs_page a,.hrs_jobOverseas .hrs_listModel ul li a:hover{color:#920093;}
+
+/*招聘帮助 -联系我们*/
+
+.office-address-detail li a,
+.dialog-selectResume-title,
+.dialog-selectResume-title .close,
+.dialog-selectResume-footer input{background: url("../images/sprite_bg.png") no-repeat scroll -99px -38px;}
+.office-address-area{margin: 20px 0;
+}
+.office-address-area label, .office-address-area span{font-family: "宋体"; font-size:14px;}
+.office-address-area span{padding:3px 6px 2px; cursor: pointer; margin-right: 4px;}
+.office-address-area span.current, .office-address-area span:hover{color:#fff; background:#009de0; }
+.office-address-detail{
+
+}
+.office-address-detail li{margin-bottom: 20px; overflow: hidden;}
+.office-address-detail li img{width: 280px; height: 189px; float:left; background: #f00;}
+.office-address-detail li div{margin-left: 300px; margin-top:8px;}
+.office-address-detail li h3{font-size: 12px; font-weight: 700; margin-bottom: 12px;}
+.office-address-detail li p{margin:6px 0; }
+.office-address-detail li a{color: #fff;display: block; height: 25px; line-height: 25px; margin-top: 19px; text-align: center; width: 69px;} 
+.office-address-detail li a:hover{text-decoration: none; background-position: -99px -70px;}
+
+.dialog-selectResume{border:5px solid #ccc; width: 500px; min-height: 280px; position: absolute; top:50%; left:50%; margin:-140px 0 0 -250px; background-color: #fff;}/* by dayee */
+.dialog-selectResume-title{height: 38px; line-height: 38px; padding: 0 0 0 10px; font-size: 14px; font-family: "宋体"; font-weight: 700; background-position: -10px -455px; background-repeat: repeat-x; border-bottom: 1px solid #ccc; table-layout: fixed;border-collapse:collapse;}
+.dialog-selectResume-title .close{width:38px; height: 38px; border-left:1px solid #ccc; text-indent:-9999px; float: right; background-position:-10px -404px; cursor: pointer;}
+.dialog-selectResume-title .close:hover{background-position: -61px -404px;}
+.dialog-selectResume-table{width: 100%;}
+.dialog-selectResume-table tr, .dialog-selectResume-table th{ height: 56px;}
+.dialog-selectResume-table td{ border:1px solid #ccc; border-width:1px 0; text-align: center; line-height: 20px; padding:0 10px;}
+.dialog-selectResume-table tr:nth-child(1):hover{background-color: #fff;}
+.dialog-selectResume-table tr:hover{background-color: #f7f7f7;}
+
+.dialog-selectResume-footer{height: 34px; margin:20px 0px 26px 0; text-align: center; }
+.dialog-selectResume-footer input{ font-size:14px; height: 34px; line-height: 34px; width:90px;  border:0 none; color:#fff; font-weight: 700;}
+.dialog-selectResume-footer .apply{background-position:-10px -208px; margin-right: 14px;}
+.dialog-selectResume-footer .apply:hover{background-position:-10px -258px;}
+.dialog-selectResume-footer .cancel{background-position:-10px -307px; color:#333;margin-right: 14px;}
+.dialog-selectResume-footer .cancel:hover{background-position:-10px -357px;}

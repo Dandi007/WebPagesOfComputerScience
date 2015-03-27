@@ -1,0 +1,1735 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0040)http://www.oschina.net/question/12_52027 -->
+<html lang="zh-CN" xml:lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <link rel="shortcut icon" type="image/x-icon" href="http://www.oschina.net/img/favicon.ico?t=1408501845000">
+  <title>初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区</title>
+      <link rel="stylesheet" href="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/style2013.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/channel.css" type="text/css" media="screen">
+  <link rel="stylesheet" type="text/css" href="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/jquery.fancybox-1.3.4.css" media="screen">
+  <link rel="alternate" type="application/rss+xml" title="最新开源项目" href="http://www.oschina.net/project/rss">
+  <link rel="alternate" type="application/rss+xml" title="最新开源资讯" href="http://www.oschina.net/news/rss">
+  <link rel="alternate" type="application/rss+xml" title="最新问题列表" href="http://www.oschina.net/question/rss">
+  <link rel="alternate" type="application/rss+xml" title="最新翻译列表" href="http://www.oschina.net/translate/rss">
+  <link rel="alternate" type="application/rss+xml" title="最新博客列表" href="http://www.oschina.net/blog/rss">
+  <link rel="alternate" type="application/rss+xml" title="最新代码分享列表" href="http://www.oschina.net/code/rss">
+  <link rel="alternate" type="application/rss+xml" title="开源中国 - 源码列表" href="http://www.oschina.net/code/source_rss">
+  <script async="" type="text/javascript" src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/ca-pub-1307862221338762.js"></script><script type="text/javascript" src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/jquery.form.js"></script>
+  <script type="text/javascript" src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/jquery.fancybox-fixed.js"></script>
+    <link rel="stylesheet" href="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/tip-yellowsimple.css" type="text/css">
+  <script type="text/javascript" src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/jquery.poshytip.min.js"></script>
+  <script type="text/javascript">
+  	g_user = {
+	id:0,
+	name:'',
+	login:false};  </script>
+    <script type="text/javascript" src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/oschina.js"></script>
+  <script type="text/javascript" src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/utils.js"></script>
+  <script type="text/javascript" src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/channel.js"></script>
+    <style id="poshytip-css-tip-yellowsimple" type="text/css">div.tip-yellowsimple{visibility:hidden;position:absolute;top:0;left:0;}div.tip-yellowsimple table, div.tip-yellowsimple td{margin:0;font-family:inherit;font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;}div.tip-yellowsimple td.tip-bg-image span{display:block;font:1px/1px sans-serif;height:10px;width:10px;overflow:hidden;}div.tip-yellowsimple td.tip-right{background-position:100% 0;}div.tip-yellowsimple td.tip-bottom{background-position:100% 100%;}div.tip-yellowsimple td.tip-left{background-position:0 100%;}div.tip-yellowsimple div.tip-inner{background-position:-10px -10px;}div.tip-yellowsimple div.tip-arrow{visibility:hidden;position:absolute;overflow:hidden;font:1px/1px sans-serif;}</style><style id="poshytip-css-tip-yellowsimple question-tag" type="text/css">div.tip-yellowsimple question-tag{visibility:hidden;position:absolute;top:0;left:0;}div.tip-yellowsimple question-tag table, div.tip-yellowsimple question-tag td{margin:0;font-family:inherit;font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;}div.tip-yellowsimple question-tag td.tip-bg-image span{display:block;font:1px/1px sans-serif;height:10px;width:10px;overflow:hidden;}div.tip-yellowsimple question-tag td.tip-right{background-position:100% 0;}div.tip-yellowsimple question-tag td.tip-bottom{background-position:100% 100%;}div.tip-yellowsimple question-tag td.tip-left{background-position:0 100%;}div.tip-yellowsimple question-tag div.tip-inner{background-position:-10px -10px;}div.tip-yellowsimple question-tag div.tip-arrow{visibility:hidden;position:absolute;overflow:hidden;font:1px/1px sans-serif;}</style><style id="poshytip-css-tip-yellowsimple question-tag" type="text/css">div.tip-yellowsimple question-tag{visibility:hidden;position:absolute;top:0;left:0;}div.tip-yellowsimple question-tag table, div.tip-yellowsimple question-tag td{margin:0;font-family:inherit;font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;}div.tip-yellowsimple question-tag td.tip-bg-image span{display:block;font:1px/1px sans-serif;height:10px;width:10px;overflow:hidden;}div.tip-yellowsimple question-tag td.tip-right{background-position:100% 0;}div.tip-yellowsimple question-tag td.tip-bottom{background-position:100% 100%;}div.tip-yellowsimple question-tag td.tip-left{background-position:0 100%;}div.tip-yellowsimple question-tag div.tip-inner{background-position:-10px -10px;}div.tip-yellowsimple question-tag div.tip-arrow{visibility:hidden;position:absolute;overflow:hidden;font:1px/1px sans-serif;}</style><link href="http://www.oschina.net/js/ke/themes/default/default.css" rel="stylesheet"><link href="http://www.oschina.net/js/ke/themes/oschina/oschina.css" rel="stylesheet"></head>
+<body>
+<div id="OSC_NavTop">
+	<div class="wp998">
+        <div id="OSC_Channels">
+        	<ul>
+        	<li class="item"><a href="http://www.oschina.net/" class="home">首页</a></li>        	<li class="item control_select"><a href="http://www.oschina.net/project" class="project">开源项目</a>
+				<ul class="cs_content">
+                	                	<li><a href="http://www.oschina.net/project/lang/19/java">Java 开源软件</a></li>
+                	<li><a href="http://www.oschina.net/project/lang/194/csharp">C# 开源软件</a></li>
+                	<li><a href="http://www.oschina.net/project/lang/22/php">PHP 开源软件</a></li>
+                	<li><a href="http://www.oschina.net/project/lang/21/c">C/C++ 开源软件</a></li>
+                	<li><a href="http://www.oschina.net/project/lang/26/ruby">Ruby 开源软件</a></li>
+                	<li><a href="http://www.oschina.net/project/lang/25/python">Python 开源软件</a></li>
+                	<li><a href="http://www.oschina.net/project/lang/358/go">Go开源软件</a></li>
+                	<li><a href="http://www.oschina.net/project/lang/28/javascript">JS开源软件</a></li>
+				</ul>
+			</li>
+        	<li class="item control_select">
+				<a href="http://www.oschina.net/question" class="question hl">问答</a>
+				<ul class="cs_content">
+                	<li><a href="http://www.oschina.net/question?catalog=1"> 技术问答 » </a></li>
+                	<li><a href="http://www.oschina.net/question?catalog=2"> 技术分享 » </a></li>
+                	<li><a href="http://www.oschina.net/question?catalog=3"> IT大杂烩 » </a></li>
+                	<li><a href="http://www.oschina.net/question?catalog=100"> 职业生涯 » </a></li>
+                	<li><a href="http://www.oschina.net/question?catalog=4"> 站务/建议 » </a></li>
+                	<li><a href="http://www.oschina.net/alipay"> 支付宝专区 » </a></li>
+                	<li><a href="http://www.oschina.net/hardware"> 开源硬件专区 » </a></li>
+				</ul>
+			</li>
+        	<li class="item"><a href="http://www.oschina.net/code/list" class="code">代码</a></li>
+        	        	<li class="item"><a href="http://www.oschina.net/blog" class="blog">博客</a></li>
+        	<li class="item"><a href="http://www.oschina.net/translate" class="tran">翻译</a></li>
+            <li class="item"><a href="http://www.oschina.net/news" class="news">资讯</a></li>
+        	<li class="item control_select">
+				<a href="http://www.oschina.net/android" class="mobile">移动开发</a>
+				<ul class="cs_content cs_mobile">
+                	<li class="android_"><a href="http://www.oschina.net/android">Android开发专区</a></li>
+                	<li class="ios_"><a href="http://www.oschina.net/ios/home">iOS开发专区</a></li>
+                	<li class="ios_"><a href="http://www.oschina.net/ios/codingList">iOS代码库</a></li>
+                	<li class="wp7_"><a href="http://www.oschina.net/wp">Windows Phone</a></li>
+				</ul>
+			</li>
+        	<li class="item t_job"><a href="http://www.oschina.net/job" class="job">招聘</a></li>
+									            <li class="item control_select">
+                <a href="http://city.oschina.net/" id="MyCities" title="城市圈">城市圈</a>
+							</li>
+        	</ul>
+        </div>
+		<div id="OSC_Userbar">
+                		    		当前访客身份：游客 [ <a href="http://www.oschina.net/home/login?goto_page=http%3A%2F%2Fwww.oschina.net%2Fquestion%2F12_52027">登录</a> | <a href="http://www.oschina.net/home/reg">加入开源中国</a> ]
+    				</div>
+		<div class="clear"></div>
+	</div>
+
+</div>
+<div id="OSC_Banner"><div class="wp998"><a href="http://www.oschina.net/" class="Logo" title="OSChina 开源中国">开源中国</a>
+<h1><a href="http://www.oschina.net/question">问答</a></h1>
+<dl>
+	<dt>当前位置：</dt>
+	<dd>
+					        		<a href="http://www.oschina.net/question">问答</a>&nbsp;»
+        		<a href="http://www.oschina.net/question?catalog=2">技术分享</a>								»&nbsp;<a href="http://www.oschina.net/p/java">Java</a>
+										</dd>
+</dl>
+<form action="http://www.oschina.net/search" class="search">
+	<input type="hidden" name="scope" value="bbs">
+	<input id="channel_q" type="text" name="q" value="" placeholder="资讯、软件、分享、代码、博客" class="TXT">
+    <button type="submit" class="BTN">搜 索</button>
+</form>
+<div class="clear"></div></div></div>
+<div id="OSC_Screen">
+	<div id="OSC_Content" class="CenterDiv">
+<script type="text/javascript" src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/scrolltopcontrol.js"></script>
+<script type="text/javascript">
+  	scrolltotop.offset(100,120);
+  	scrolltotop.init();
+	$(function(){
+		$('a.ShowUserOutline img.SmallPortrait').poshytip({
+			className: 'tip-yellowsimple',
+			alignTo: 'target',
+			alignX: 'right',
+			alignY: 'inner-top',
+			offsetX: 5,
+			offsetY: 0,
+			fade: false,
+			slide: false,
+			content: function(updateCallback) {
+				ajax_get("/action/ajax/get_user_outline?id="+$(this).attr('user'),false,function(html){
+					updateCallback(html);
+				});
+				return "<div style='height:100px;'>Loading...</div>";
+			}
+		});
+	});
+	function add_to_favorite(pid,concern_it){
+			alert("必须登录后才能收藏");
+		}
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+		osc.show_tag_introduce_project();
+		osc.show_tag_introduce_other();
+	});
+</script>
+
+
+
+<div class="Question">
+	<div class="Body">
+	<div class="main">
+    	<div class="Title">
+			<a class="jump_answer" href="http://www.oschina.net/question/12_52027#tags_nav" title="跳到回复"></a>
+    		<div class="QTitle">
+				    			<h1><a href="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区.html" hidefocus="true" name="top">初学 Java Web 开发，请远离各种框架，从 Servlet 开发</a></h1>
+					<div class="array"></div>
+    		</div>
+			<div class="clear"></div>
+    		
+    		<div class="clear"></div>
+    	</div>
+		    	    					
+		
+		<div class="Content">
+			<p style="margin:0 0 10px 0;"><a style="color:#A00;font-weight:bold;" href="http://baichuan.taobao.com/?from=oschinabbs" target="_blank">阿里百川，开启移动应用开发的新篇章</a></p>
+			<div class="detail"><p> OSCHINA 软件库有一个分类——<a target="_blank" href="http://www.oschina.net/project/tag/127/webframework" rel="nofollow">Web框架</a>，该分类中包含多种编程语言的将近500个项目。 </p> 
+<p> Web框架是开发者在使用某种语言编写Web应用服务端时关于架构的最佳实践。很多Web框架是从实际的Web项目抽取出来的，仅和Web的请求和响应处理有关，形成一个基础，在开发别的应用项目的时候则可以从这个剥离出来的基础做起，让开发者更关注更具体的业务问题，而不是Web的请求和响应的控制。 </p> 
+<p> 框架很多，但套路基本类似，帮你隐藏很多关于 HTTP 协议细节内容，专注功能开发。 </p> 
+<p> 但对一个初学者来说，过早的接触框架往往是事倍功半！同样一个问题，换一种框架你可能需要从头开始研究。 </p> 
+<p> 下面是针对初学 Java 开发 Web 过程一些个人见解和思路，高手可略过。 </p> 
+<p> <strong>1. 基本要求：Java 编程基础</strong> </p> 
+<p> 有良好的 Java 语言编程基础，这是必须的，在讨论 Web 开发技术时提了一个 Java 编程基础的问题会被鄙视的。 </p> 
+<p> <strong>2. 环境准备 (Eclipse + Tomcat)</strong> </p> 
+<p> 选择一个你喜爱的Servlet容器，或者说大一点就是应用服务器，推荐 Tomcat 、Resin 或者 Jetty 这些轻量级的产品。这三个产品下载 zip 包解压后就可以用了。如果你不熟悉 Tomcat 的话请不要使用 exe 版本的 Tomcat，那会徒增很多烦恼。也不建议在 Eclipse 等一些开发环境中集成 Tomcat 的做法，也会徒增烦恼。 </p> 
+<p> 把应用服务器启动起来并能访问到其默认的页面为准。 </p> 
+<p> 关于开发工具 </p> 
+<p> 不推荐使用 MyEclipse 和 Eclipse 的 JEE 版本，徒增烦恼、运行缓慢而且还让你无法了解 Web 项目的结构。普通的 Eclipse 或者你喜欢的开发工具就足够了，能支持普通 Java 项目开发即可。 </p> 
+<p> 为了方便，我做了一个最基本的Java 项目 —— <a target="_blank" href="http://www.oschina.net/code/snippet_12_10366" rel="nofollow">ServletDemo.zip</a> ，你可将它导入到 Eclipse 里就是一个完整的、最简单的 Web 项目。 </p> 
+<p> 然后将下面 XML 内容替换 Tomcat 下的 conf/server.xml 文件： </p> 
+<div><div id="highlighter_234365" class="syntaxhighlighter  xml"><div class="toolbar"><span><a href="http://www.oschina.net/question/12_52027#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xml plain">&lt;?</code><code class="xml keyword">xml</code> <code class="xml color1">version</code><code class="xml plain">=</code><code class="xml string">'1.0'</code> <code class="xml color1">encoding</code><code class="xml plain">=</code><code class="xml string">'utf-8'</code><code class="xml plain">?&gt;</code></div><div class="line number2 index1 alt1"><code class="xml plain">&lt;</code><code class="xml keyword">Server</code> <code class="xml color1">port</code><code class="xml plain">=</code><code class="xml string">"8005"</code> <code class="xml color1">shutdown</code><code class="xml plain">=</code><code class="xml string">"SHUTDOWN"</code><code class="xml plain">&gt;</code></div><div class="line number3 index2 alt2"><code class="xml spaces">&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">Service</code> <code class="xml color1">name</code><code class="xml plain">=</code><code class="xml string">"Catalina"</code><code class="xml plain">&gt;</code></div><div class="line number4 index3 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">Connector</code> <code class="xml color1">port</code><code class="xml plain">=</code><code class="xml string">"8080"</code> <code class="xml color1">protocol</code><code class="xml plain">=</code><code class="xml string">"HTTP/1.1"</code> <code class="xml color1">connectionTimeout</code><code class="xml plain">=</code><code class="xml string">"20000"</code> <code class="xml color1">redirectPort</code><code class="xml plain">=</code><code class="xml string">"8443"</code> <code class="xml color1">URIEncoding</code><code class="xml plain">=</code><code class="xml string">"UTF-8"</code><code class="xml plain">/&gt;</code></div><div class="line number5 index4 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">Engine</code> <code class="xml color1">name</code><code class="xml plain">=</code><code class="xml string">"Catalina"</code> <code class="xml color1">defaultHost</code><code class="xml plain">=</code><code class="xml string">"localhost"</code><code class="xml plain">&gt;</code></div><div class="line number6 index5 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">Host</code> <code class="xml color1">name</code><code class="xml plain">=</code><code class="xml string">"localhost"</code><code class="xml plain">&gt;</code></div><div class="line number7 index6 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">Context</code> <code class="xml color1">path</code><code class="xml plain">=</code><code class="xml string">""</code> <code class="xml color1">docBase</code><code class="xml plain">=</code><code class="xml string">"D:\WORKDIR\ServletDemo\webapp"</code> <code class="xml color1">reloadable</code><code class="xml plain">=</code><code class="xml string">"true"</code><code class="xml plain">/&gt;</code></div><div class="line number8 index7 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">Host</code><code class="xml plain">&gt;</code></div><div class="line number9 index8 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">Engine</code><code class="xml plain">&gt;</code></div><div class="line number10 index9 alt1"><code class="xml spaces">&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">Service</code><code class="xml plain">&gt;</code></div><div class="line number11 index10 alt2"><code class="xml plain">&lt;/</code><code class="xml keyword">Server</code><code class="xml plain">&gt;</code></div></div></td></tr></tbody></table></div></div> 
+<p> 其中 D:\WORKDIR\ServletDemo 替换为你导入的项目路径，再次启动 Tomcat 后在浏览器打开 http://localhost:8080/hello 便可看到 Hello World 的输出信息。 </p> 
+<p> <strong>3. 了解 Servlet 和 Filter</strong> </p> 
+<p> 好了，我已经把环境搭起来了，接下来该干嘛呢？ </p> 
+<p> 前面的步骤为的是搭建一个测试的环境，然后让你了解一个最基本的 Java Web 项目的结构。 </p> 
+<p> 一个最基本的 Java Web 项目所需的 jar 包只需要一个 servlet-api.jar ，这个 jar 包中的类大部分都是接口，还有一些工具类，共有 2 个包，分别是 javax.servlet 和 javax.servlet.http。我把这个jar包放到了 webapp 目录外的一个独立 packages 文件夹里，这是因为所有的 Servlet 容器都带有这个包，你无需再放到Web项目里，我们放到这里只不过是编译的需要，运行是不需要的。如果你硬是把 servlet-api.jar 放到 webapp/WEB-INF/lib 目录下，那么 Tomcat 启动时还会报一个警告信息。 </p> 
+<p> Java Web 项目还需要一个非常重要的配置文件 web.xml ，在这个项目中已经被我最小化了，只保留有用的信息： </p> 
+<div><div id="highlighter_589248" class="syntaxhighlighter  xml"><div class="toolbar"><span><a href="http://www.oschina.net/question/12_52027#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xml plain">&lt;?</code><code class="xml keyword">xml</code> <code class="xml color1">version</code><code class="xml plain">=</code><code class="xml string">"1.0"</code> <code class="xml color1">encoding</code><code class="xml plain">=</code><code class="xml string">"UTF-8"</code><code class="xml plain">?&gt;</code></div><div class="line number2 index1 alt1"><code class="xml plain">&lt;!</code><code class="xml keyword">DOCTYPE</code> <code class="xml plain">web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" </code></div><div class="line number3 index2 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">"http://java.sun.com/dtd/web-app_2_3.dtd"&gt;</code></div><div class="line number4 index3 alt1"><code class="xml plain">&lt;</code><code class="xml keyword">web-app</code><code class="xml plain">&gt;</code></div><div class="line number5 index4 alt2">&nbsp;</div><div class="line number6 index5 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">servlet</code><code class="xml plain">&gt;</code></div><div class="line number7 index6 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">servlet-name</code><code class="xml plain">&gt;hello_world&lt;/</code><code class="xml keyword">servlet-name</code><code class="xml plain">&gt;</code></div><div class="line number8 index7 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">servlet-class</code><code class="xml plain">&gt;demo.HelloServlet&lt;/</code><code class="xml keyword">servlet-class</code><code class="xml plain">&gt;</code></div><div class="line number9 index8 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">load-on-startup</code><code class="xml plain">&gt;1&lt;/</code><code class="xml keyword">load-on-startup</code><code class="xml plain">&gt;</code></div><div class="line number10 index9 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">servlet</code><code class="xml plain">&gt;</code></div><div class="line number11 index10 alt2">&nbsp;</div><div class="line number12 index11 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">servlet-mapping</code><code class="xml plain">&gt;</code></div><div class="line number13 index12 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">servlet-name</code><code class="xml plain">&gt;hello_world&lt;/</code><code class="xml keyword">servlet-name</code><code class="xml plain">&gt;</code></div><div class="line number14 index13 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">url-pattern</code><code class="xml plain">&gt;/hello&lt;/</code><code class="xml keyword">url-pattern</code><code class="xml plain">&gt;</code></div><div class="line number15 index14 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">servlet-mapping</code><code class="xml plain">&gt;</code></div><div class="line number16 index15 alt1">&nbsp;</div><div class="line number17 index16 alt2"><code class="xml plain">&lt;/</code><code class="xml keyword">web-app</code><code class="xml plain">&gt;</code></div></div></td></tr></tbody></table></div></div> 
+<p> 每个 servlet 都必须在 web.xml 中定义并进行 URL 映射配置，早期 Java 开发 Web 在没有框架满天飞的时候，这个文件会定义了大量的 servlet，或者有人为了省事干脆来一个 /servlet/* 来通过类名直接调用 Servlet。 </p> 
+<p> Servlet 规范里还有另外一个非常重要而且非常有用的接口那就是 Filter 过滤器。 </p> 
+<p> 下面是一个最简单的 Filter 类以及相应的定义方法： </p> 
+<div><div id="highlighter_942647" class="syntaxhighlighter  java"><div class="toolbar"><span><a href="http://www.oschina.net/question/12_52027#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div><div class="line number30 index29 alt1">30</div><div class="line number31 index30 alt2">31</div><div class="line number32 index31 alt1">32</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java keyword">package</code> <code class="java plain">demo;</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="java keyword">import</code> <code class="java plain">java.io.IOException;</code></div><div class="line number4 index3 alt1">&nbsp;</div><div class="line number5 index4 alt2"><code class="java keyword">import</code> <code class="java plain">javax.servlet.Filter;</code></div><div class="line number6 index5 alt1"><code class="java keyword">import</code> <code class="java plain">javax.servlet.FilterChain;</code></div><div class="line number7 index6 alt2"><code class="java keyword">import</code> <code class="java plain">javax.servlet.FilterConfig;</code></div><div class="line number8 index7 alt1"><code class="java keyword">import</code> <code class="java plain">javax.servlet.ServletException;</code></div><div class="line number9 index8 alt2"><code class="java keyword">import</code> <code class="java plain">javax.servlet.ServletRequest;</code></div><div class="line number10 index9 alt1"><code class="java keyword">import</code> <code class="java plain">javax.servlet.ServletResponse;</code></div><div class="line number11 index10 alt2"><code class="java keyword">import</code> <code class="java plain">javax.servlet.http.HttpServletRequest;</code></div><div class="line number12 index11 alt1">&nbsp;</div><div class="line number13 index12 alt2"><code class="java keyword">public</code> <code class="java keyword">class</code> <code class="java plain">HelloFilter </code><code class="java keyword">implements</code> <code class="java plain">Filter {</code></div><div class="line number14 index13 alt1">&nbsp;</div><div class="line number15 index14 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java color1">@Override</code></div><div class="line number16 index15 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java keyword">void</code> <code class="java plain">init(FilterConfig arg0) </code><code class="java keyword">throws</code> <code class="java plain">ServletException {</code></div><div class="line number17 index16 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">System.out.println(</code><code class="java string">"Filter 初始化"</code><code class="java plain">);</code></div><div class="line number18 index17 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number19 index18 alt2">&nbsp;</div><div class="line number20 index19 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java color1">@Override</code></div><div class="line number21 index20 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java keyword">void</code> <code class="java plain">doFilter(ServletRequest req, ServletResponse res,</code></div><div class="line number22 index21 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">FilterChain chain) </code><code class="java keyword">throws</code> <code class="java plain">IOException, ServletException {</code></div><div class="line number23 index22 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">HttpServletRequest request = (HttpServletRequest)req;</code></div><div class="line number24 index23 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">System.out.println(</code><code class="java string">"拦截 URI="</code><code class="java plain">+request.getRequestURI());</code></div><div class="line number25 index24 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">chain.doFilter(req, res);</code></div><div class="line number26 index25 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number27 index26 alt2">&nbsp;</div><div class="line number28 index27 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java color1">@Override</code></div><div class="line number29 index28 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java keyword">void</code> <code class="java plain">destroy() {</code></div><div class="line number30 index29 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">System.out.println(</code><code class="java string">"Filter 结束"</code><code class="java plain">);</code></div><div class="line number31 index30 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number32 index31 alt1"><code class="java plain">}</code></div></div></td></tr></tbody></table></div></div> 
+<p> 在 web.xml 中的配置必须放在 Servlet 的前面： </p> 
+<div><div id="highlighter_1180" class="syntaxhighlighter  xml"><div class="toolbar"><span><a href="http://www.oschina.net/question/12_52027#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xml plain">&lt;?</code><code class="xml keyword">xml</code> <code class="xml color1">version</code><code class="xml plain">=</code><code class="xml string">"1.0"</code> <code class="xml color1">encoding</code><code class="xml plain">=</code><code class="xml string">"UTF-8"</code><code class="xml plain">?&gt;</code></div><div class="line number2 index1 alt1"><code class="xml plain">&lt;!</code><code class="xml keyword">DOCTYPE</code> <code class="xml plain">web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" </code></div><div class="line number3 index2 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">"http://java.sun.com/dtd/web-app_2_3.dtd"&gt;</code></div><div class="line number4 index3 alt1"><code class="xml plain">&lt;</code><code class="xml keyword">web-app</code><code class="xml plain">&gt;</code></div><div class="line number5 index4 alt2">&nbsp;</div><div class="line number6 index5 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">filter</code><code class="xml plain">&gt;</code></div><div class="line number7 index6 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">filter-name</code><code class="xml plain">&gt;helloFilter&lt;/</code><code class="xml keyword">filter-name</code><code class="xml plain">&gt;</code></div><div class="line number8 index7 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">filter-class</code><code class="xml plain">&gt;demo.HelloFilter&lt;/</code><code class="xml keyword">filter-class</code><code class="xml plain">&gt;</code></div><div class="line number9 index8 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">filter</code><code class="xml plain">&gt;</code></div><div class="line number10 index9 alt1">&nbsp;</div><div class="line number11 index10 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">filter-mapping</code><code class="xml plain">&gt;</code></div><div class="line number12 index11 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">filter-name</code><code class="xml plain">&gt;helloFilter&lt;/</code><code class="xml keyword">filter-name</code><code class="xml plain">&gt;</code></div><div class="line number13 index12 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">url-pattern</code><code class="xml plain">&gt;/*&lt;/</code><code class="xml keyword">url-pattern</code><code class="xml plain">&gt;</code></div><div class="line number14 index13 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">filter-mapping</code><code class="xml plain">&gt;</code></div><div class="line number15 index14 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</div><div class="line number16 index15 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">servlet</code><code class="xml plain">&gt;</code></div><div class="line number17 index16 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">servlet-name</code><code class="xml plain">&gt;hello_world&lt;/</code><code class="xml keyword">servlet-name</code><code class="xml plain">&gt;</code></div><div class="line number18 index17 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">servlet-class</code><code class="xml plain">&gt;demo.HelloServlet&lt;/</code><code class="xml keyword">servlet-class</code><code class="xml plain">&gt;</code></div><div class="line number19 index18 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">load-on-startup</code><code class="xml plain">&gt;1&lt;/</code><code class="xml keyword">load-on-startup</code><code class="xml plain">&gt;</code></div><div class="line number20 index19 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">servlet</code><code class="xml plain">&gt;</code></div><div class="line number21 index20 alt2">&nbsp;</div><div class="line number22 index21 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">servlet-mapping</code><code class="xml plain">&gt;</code></div><div class="line number23 index22 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">servlet-name</code><code class="xml plain">&gt;hello_world&lt;/</code><code class="xml keyword">servlet-name</code><code class="xml plain">&gt;</code></div><div class="line number24 index23 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">url-pattern</code><code class="xml plain">&gt;/hello&lt;/</code><code class="xml keyword">url-pattern</code><code class="xml plain">&gt;</code></div><div class="line number25 index24 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">servlet-mapping</code><code class="xml plain">&gt;</code></div><div class="line number26 index25 alt1">&nbsp;</div><div class="line number27 index26 alt2"><code class="xml plain">&lt;/</code><code class="xml keyword">web-app</code><code class="xml plain">&gt;</code></div></div></td></tr></tbody></table></div></div> 
+<p> 访问 http://localhost:8080/hello 时看看 Tomcat 控制台有何输出信息。 </p> 
+<p> <strong>4. Servlet 和 HTTP 的对应关系</strong> </p> 
+<p> Servlet 是 J2EE 最重要的一部分，有了 Servlet 你就是 J2EE 了，J2EE 的其他方面的内容择需采用。而 Servlet 规范你需要掌握的就是 servlet 和 filter 这两项技术。绝大多数框架不是基于 servlet 就是基于 filter，如果它要在 Servlet 容器上运行，就永远也脱离不开这个模型。 </p> 
+<p> 为什么 Servlet 规范会有两个包，javax.servlet 和 javax.servlet.http ，早先设计该规范的人认为 Servlet 是一种服务模型，不一定是依赖某种网络协议之上，因此就抽象出了一个 javax.servlet ，同时在提供一个基于 HTTP 协议上的接口扩展。但是从实际运行这么多年来看，似乎没有发现有在其他协议上实现的 Servlet 技术。 </p> 
+<p> javax.servlet 和 javax.servlet.http 这两个包总共加起来也不过是三十四个接口和类。你需要通过 <a href="http://www.ostools.net/apidocs/apidoc?api=javaEE6" target="_blank" rel="nofollow">J2EE 的 JavaDoc 文档</a> 熟知每个类和接口的具体意思。特别是下面几个接口必须熟知每个方法的意思和用途： </p> 
+<ul> 
+ <li> HttpServlet </li> 
+ <li> ServetConfig </li> 
+ <li> ServletContext </li> 
+ <li> Filter </li> 
+ <li> FilterConfig </li> 
+ <li> FilterChain </li> 
+ <li> RequestDispatcher </li> 
+ <li> HttpServletRequest </li> 
+ <li> HttpServletResponse </li> 
+ <li> HttpSession<br> </li> 
+ <li> 一些 Listenser 类 </li> 
+</ul> 
+<p> 再次强调 HttpServletRequest 和 HttpServletResponse 这两个接口更应该是烂熟于心。 </p> 
+<p> 如果你从字面上无法理解某个方法的意思，你可以在前面那个项目的基础上做实验看看其输出，再不行你可以到讨论区提问，这样的提问非常明确，很多人都可以帮到你。 </p> 
+<p> 为什么我这么强调 HttpServletRequest 和 HttpServletResponse 这两个接口，因为 Web 开发是离不开 HTTP 协议的，而 Servlet 规范其实就是对 HTTP 协议做面向对象的封装，HTTP协议中的请求和响应就是对应了 HttpServletRequest 和 HttpServletResponse 这两个接口。 </p> 
+<p> 你可以通过 HttpServletRequest 来获取所有请求相关的信息，包括 URI、Cookie、Header、请求参数等等，别无它路。因此当你使用某个框架时，你想获取HTTP请求的相关信息，只要拿到 HttpServletRequest 实例即可。 </p> 
+<p> 而 HttpServletResponse接口是用来生产 HTTP 回应，包含 Cookie、Header 以及回应的内容等等。 </p> 
+<p> <strong>5. 再谈谈 Session</strong> </p> 
+<p> HTTP 协议里是没有关于 Session 会话的定义，Session 是各种编程语言根据 HTTP 协议的无状态这种特点而产生的。其实现无非就是服务器端的一个哈希表，哈希表的Key就是传递给浏览器的名为 jsessionid 的 Cookie 值。 </p> 
+<p> 当需要将某个值保存到 session 时，容器会执行如下几步： </p> 
+<p> a. 获取 jsessionid 值，没有的话就生成一个，也就是 request.getSession() 这个方法<br> b. 拿到的 HttpSession 对象实例就相当于一个哈希表，你可以往哈希表里存放数据(setAttribute)<br> c. 你也可以通过 getAttribute 来获取某个值 </p> 
+<p> 而这个名为 jsessionid 的 Cookie 在浏览器关闭时会自动删除。把 Cookie 的 MaxAge 值设为 -1 就能达到浏览器关闭自动删除的效果。 </p> 
+<p> <strong>6. 关于 JSP</strong> </p> 
+<p> 首先我已经不用 JSP 很多年了，现在一直是使用 <a target="_blank" href="http://www.oschina.net/p/velocity" rel="nofollow">Velocity</a> 模板引擎。 </p> 
+<p> 任何一个 JSP 页面在执行的时候都会编译成一个 Servlet 类文件，如果是 Tomcat 的话，这些生成的 java 文件会放置在 {TOMCAT}/work 目录下对应项目的子目录中，例如 Tomcat 生成的类文件如下： </p> 
+<div><div id="highlighter_443278" class="syntaxhighlighter  java"><div class="toolbar"><span><a href="http://www.oschina.net/question/12_52027#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div><div class="line number30 index29 alt1">30</div><div class="line number31 index30 alt2">31</div><div class="line number32 index31 alt1">32</div><div class="line number33 index32 alt2">33</div><div class="line number34 index33 alt1">34</div><div class="line number35 index34 alt2">35</div><div class="line number36 index35 alt1">36</div><div class="line number37 index36 alt2">37</div><div class="line number38 index37 alt1">38</div><div class="line number39 index38 alt2">39</div><div class="line number40 index39 alt1">40</div><div class="line number41 index40 alt2">41</div><div class="line number42 index41 alt1">42</div><div class="line number43 index42 alt2">43</div><div class="line number44 index43 alt1">44</div><div class="line number45 index44 alt2">45</div><div class="line number46 index45 alt1">46</div><div class="line number47 index46 alt2">47</div><div class="line number48 index47 alt1">48</div><div class="line number49 index48 alt2">49</div><div class="line number50 index49 alt1">50</div><div class="line number51 index50 alt2">51</div><div class="line number52 index51 alt1">52</div><div class="line number53 index52 alt2">53</div><div class="line number54 index53 alt1">54</div><div class="line number55 index54 alt2">55</div><div class="line number56 index55 alt1">56</div><div class="line number57 index56 alt2">57</div><div class="line number58 index57 alt1">58</div><div class="line number59 index58 alt2">59</div><div class="line number60 index59 alt1">60</div><div class="line number61 index60 alt2">61</div><div class="line number62 index61 alt1">62</div><div class="line number63 index62 alt2">63</div><div class="line number64 index63 alt1">64</div><div class="line number65 index64 alt2">65</div><div class="line number66 index65 alt1">66</div><div class="line number67 index66 alt2">67</div><div class="line number68 index67 alt1">68</div><div class="line number69 index68 alt2">69</div><div class="line number70 index69 alt1">70</div><div class="line number71 index70 alt2">71</div><div class="line number72 index71 alt1">72</div><div class="line number73 index72 alt2">73</div><div class="line number74 index73 alt1">74</div><div class="line number75 index74 alt2">75</div><div class="line number76 index75 alt1">76</div><div class="line number77 index76 alt2">77</div><div class="line number78 index77 alt1">78</div><div class="line number79 index78 alt2">79</div><div class="line number80 index79 alt1">80</div><div class="line number81 index80 alt2">81</div><div class="line number82 index81 alt1">82</div><div class="line number83 index82 alt2">83</div><div class="line number84 index83 alt1">84</div><div class="line number85 index84 alt2">85</div><div class="line number86 index85 alt1">86</div><div class="line number87 index86 alt2">87</div><div class="line number88 index87 alt1">88</div><div class="line number89 index88 alt2">89</div><div class="line number90 index89 alt1">90</div><div class="line number91 index90 alt2">91</div><div class="line number92 index91 alt1">92</div><div class="line number93 index92 alt2">93</div><div class="line number94 index93 alt1">94</div><div class="line number95 index94 alt2">95</div><div class="line number96 index95 alt1">96</div><div class="line number97 index96 alt2">97</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java keyword">package</code> <code class="java plain">org.apache.jsp;</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="java keyword">import</code> <code class="java plain">javax.servlet.*;</code></div><div class="line number4 index3 alt1"><code class="java keyword">import</code> <code class="java plain">javax.servlet.http.*;</code></div><div class="line number5 index4 alt2"><code class="java keyword">import</code> <code class="java plain">javax.servlet.jsp.*;</code></div><div class="line number6 index5 alt1"><code class="java keyword">import</code> <code class="java plain">java.util.*;</code></div><div class="line number7 index6 alt2">&nbsp;</div><div class="line number8 index7 alt1"><code class="java keyword">public</code> <code class="java keyword">final</code> <code class="java keyword">class</code> <code class="java plain">test_jsp </code><code class="java keyword">extends</code> <code class="java plain">org.apache.jasper.runtime.HttpJspBase</code></div><div class="line number9 index8 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">implements</code> <code class="java plain">org.apache.jasper.runtime.JspSourceDependent {</code></div><div class="line number10 index9 alt1">&nbsp;</div><div class="line number11 index10 alt2"><code class="java spaces">&nbsp;&nbsp;</code><code class="java keyword">private</code> <code class="java keyword">static</code> <code class="java keyword">final</code> <code class="java plain">JspFactory _jspxFactory = JspFactory.getDefaultFactory();</code></div><div class="line number12 index11 alt1">&nbsp;</div><div class="line number13 index12 alt2"><code class="java spaces">&nbsp;&nbsp;</code><code class="java keyword">private</code> <code class="java keyword">static</code> <code class="java plain">java.util.List&lt;String&gt; _jspx_dependants;</code></div><div class="line number14 index13 alt1">&nbsp;</div><div class="line number15 index14 alt2"><code class="java spaces">&nbsp;&nbsp;</code><code class="java keyword">private</code> <code class="java plain">javax.el.ExpressionFactory _el_expressionfactory;</code></div><div class="line number16 index15 alt1"><code class="java spaces">&nbsp;&nbsp;</code><code class="java keyword">private</code> <code class="java plain">org.apache.tomcat.InstanceManager _jsp_instancemanager;</code></div><div class="line number17 index16 alt2">&nbsp;</div><div class="line number18 index17 alt1"><code class="java spaces">&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java plain">java.util.List&lt;String&gt; getDependants() {</code></div><div class="line number19 index18 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">return</code> <code class="java plain">_jspx_dependants;</code></div><div class="line number20 index19 alt1"><code class="java spaces">&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number21 index20 alt2">&nbsp;</div><div class="line number22 index21 alt1"><code class="java spaces">&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java keyword">void</code> <code class="java plain">_jspInit() {</code></div><div class="line number23 index22 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">_el_expressionfactory = _jspxFactory.getJspApplicationContext(getServletConfig().getServletContext()).getExpressionFactory();</code></div><div class="line number24 index23 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">_jsp_instancemanager = org.apache.jasper.runtime.InstanceManagerFactory.getInstanceManager(getServletConfig());</code></div><div class="line number25 index24 alt2"><code class="java spaces">&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number26 index25 alt1">&nbsp;</div><div class="line number27 index26 alt2"><code class="java spaces">&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java keyword">void</code> <code class="java plain">_jspDestroy() {</code></div><div class="line number28 index27 alt1"><code class="java spaces">&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number29 index28 alt2">&nbsp;</div><div class="line number30 index29 alt1"><code class="java spaces">&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java keyword">void</code> <code class="java plain">_jspService(</code><code class="java keyword">final</code> <code class="java plain">HttpServletRequest request, </code><code class="java keyword">final</code> <code class="java plain">HttpServletResponse response)</code></div><div class="line number31 index30 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">throws</code> <code class="java plain">java.io.IOException, ServletException {</code></div><div class="line number32 index31 alt1">&nbsp;</div><div class="line number33 index32 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">final</code> <code class="java plain">PageContext pageContext;</code></div><div class="line number34 index33 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">HttpSession session = </code><code class="java keyword">null</code><code class="java plain">;</code></div><div class="line number35 index34 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">final</code> <code class="java plain">ServletContext application;</code></div><div class="line number36 index35 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">final</code> <code class="java plain">ServletConfig config;</code></div><div class="line number37 index36 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">JspWriter out = </code><code class="java keyword">null</code><code class="java plain">;</code></div><div class="line number38 index37 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">final</code> <code class="java plain">Object page = </code><code class="java keyword">this</code><code class="java plain">;</code></div><div class="line number39 index38 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">JspWriter _jspx_out = </code><code class="java keyword">null</code><code class="java plain">;</code></div><div class="line number40 index39 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">PageContext _jspx_page_context = </code><code class="java keyword">null</code><code class="java plain">;</code></div><div class="line number41 index40 alt2">&nbsp;</div><div class="line number42 index41 alt1">&nbsp;</div><div class="line number43 index42 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">try</code> <code class="java plain">{</code></div><div class="line number44 index43 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">response.setContentType(</code><code class="java string">"text/html;charset=utf-8"</code><code class="java plain">);</code></div><div class="line number45 index44 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">pageContext = _jspxFactory.getPageContext(</code><code class="java keyword">this</code><code class="java plain">, request, response,</code></div><div class="line number46 index45 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">null</code><code class="java plain">, </code><code class="java keyword">true</code><code class="java plain">, </code><code class="java value">8192</code><code class="java plain">, </code><code class="java keyword">true</code><code class="java plain">);</code></div><div class="line number47 index46 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">_jspx_page_context = pageContext;</code></div><div class="line number48 index47 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">application = pageContext.getServletContext();</code></div><div class="line number49 index48 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">config = pageContext.getServletConfig();</code></div><div class="line number50 index49 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">session = pageContext.getSession();</code></div><div class="line number51 index50 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">out = pageContext.getOut();</code></div><div class="line number52 index51 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">_jspx_out = out;</code></div><div class="line number53 index52 alt2">&nbsp;</div><div class="line number54 index53 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">out.write(</code><code class="java string">"\r\n"</code><code class="java plain">);</code></div><div class="line number55 index54 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">out.write(</code><code class="java string">"&lt;html&gt;\r\n"</code><code class="java plain">);</code></div><div class="line number56 index55 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">out.write(</code><code class="java string">"&nbsp;&nbsp;&nbsp; &lt;title&gt;Test&lt;/title&gt;\r\n"</code><code class="java plain">);</code></div><div class="line number57 index56 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">out.write(</code><code class="java string">"&nbsp;&nbsp;&nbsp; &lt;style&gt;\r\n"</code><code class="java plain">);</code></div><div class="line number58 index57 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">out.write(</code><code class="java string">"&nbsp;&nbsp;&nbsp; &lt;/style&gt; \r\n"</code><code class="java plain">);</code></div><div class="line number59 index58 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">out.write(</code><code class="java string">"&nbsp; &lt;body&gt;\r\n"</code><code class="java plain">);</code></div><div class="line number60 index59 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">out.write(</code><code class="java string">"&lt;h1&gt;Test Demo (oschina)&lt;/h1&gt;\r\n"</code><code class="java plain">);</code></div><div class="line number61 index60 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">out.write(</code><code class="java string">"&lt;table cellspacing=\"1\" cellpadding=\"5\"&gt;\r\n"</code><code class="java plain">);</code></div><div class="line number62 index61 alt1">&nbsp;</div><div class="line number63 index62 alt2"><code class="java plain">Enumeration Names=request.getHeaderNames();</code></div><div class="line number64 index63 alt1"><code class="java keyword">while</code><code class="java plain">(Names.hasMoreElements())</code></div><div class="line number65 index64 alt2"><code class="java plain">{String name=(String)Names.nextElement();</code></div><div class="line number66 index65 alt1"><code class="java plain">String value=request.getHeader(name);</code></div><div class="line number67 index66 alt2"><code class="java spaces">&nbsp;</code>&nbsp;</div><div class="line number68 index67 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">out.write(</code><code class="java string">"\r\n"</code><code class="java plain">);</code></div><div class="line number69 index68 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">out.write(</code><code class="java string">" &lt;tr&gt;\r\n"</code><code class="java plain">);</code></div><div class="line number70 index69 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">out.write(</code><code class="java string">" &lt;td&gt;"</code><code class="java plain">);</code></div><div class="line number71 index70 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">out.print(name);</code></div><div class="line number72 index71 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">out.write(</code><code class="java string">"&lt;/td&gt;\r\n"</code><code class="java plain">);</code></div><div class="line number73 index72 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">out.write(</code><code class="java string">"&nbsp; &lt;td&gt;"</code><code class="java plain">);</code></div><div class="line number74 index73 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">out.print(value);</code></div><div class="line number75 index74 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">out.write(</code><code class="java string">"&lt;/td&gt;\r\n"</code><code class="java plain">);</code></div><div class="line number76 index75 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">out.write(</code><code class="java string">" \r\n"</code><code class="java plain">);</code></div><div class="line number77 index76 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">out.write(</code><code class="java string">" &lt;/tr&gt;\r\n"</code><code class="java plain">);</code></div><div class="line number78 index77 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">out.write(</code><code class="java string">" "</code><code class="java plain">);</code></div><div class="line number79 index78 alt2">&nbsp;</div><div class="line number80 index79 alt1"><code class="java spaces">&nbsp;</code><code class="java plain">}</code></div><div class="line number81 index80 alt2"><code class="java spaces">&nbsp;&nbsp;</code>&nbsp;</div><div class="line number82 index81 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">out.write(</code><code class="java string">"\r\n"</code><code class="java plain">);</code></div><div class="line number83 index82 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">out.write(</code><code class="java string">"&lt;/table&gt;\r\n"</code><code class="java plain">);</code></div><div class="line number84 index83 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">out.write(</code><code class="java string">"&nbsp; &lt;/body&gt;\r\n"</code><code class="java plain">);</code></div><div class="line number85 index84 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">out.write(</code><code class="java string">"&lt;/html&gt;"</code><code class="java plain">);</code></div><div class="line number86 index85 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">} </code><code class="java keyword">catch</code> <code class="java plain">(Throwable t) {</code></div><div class="line number87 index86 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">if</code> <code class="java plain">(!(t </code><code class="java keyword">instanceof</code> <code class="java plain">SkipPageException)){</code></div><div class="line number88 index87 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">out = _jspx_out;</code></div><div class="line number89 index88 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">if</code> <code class="java plain">(out != </code><code class="java keyword">null</code> <code class="java plain">&amp;&amp; out.getBufferSize() != </code><code class="java value">0</code><code class="java plain">)</code></div><div class="line number90 index89 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">try</code> <code class="java plain">{ out.clearBuffer(); } </code><code class="java keyword">catch</code> <code class="java plain">(java.io.IOException e) {}</code></div><div class="line number91 index90 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">if</code> <code class="java plain">(_jspx_page_context != </code><code class="java keyword">null</code><code class="java plain">) _jspx_page_context.handlePageException(t);</code></div><div class="line number92 index91 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number93 index92 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">} </code><code class="java keyword">finally</code> <code class="java plain">{</code></div><div class="line number94 index93 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">_jspxFactory.releasePageContext(_jspx_page_context);</code></div><div class="line number95 index94 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number96 index95 alt1"><code class="java spaces">&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number97 index96 alt2"><code class="java plain">}</code></div></div></td></tr></tbody></table></div></div> 
+<p> 在 servlet 中有一个包 javax.servlet.jsp 是跟 JSP 相关的一些接口规范定义。JSP 比 Servlet 方便的地方在于可直接修改立即生效，不像 Servlet 修改后必须重启容器才能生效。 </p> 
+<p> 因此 JSP 适合用来做视图，而 Servlet 则适合做控制层。 </p> 
+<p> <span style="font-weight:bold;">7. 总结</span> </p> 
+<p> 罗哩罗嗦一大堆，归纳一下就是下面几点： </p> 
+<ul> 
+ <li> 熟知 Servlet 规范之前，请不要学习任何框架 </li> 
+ <li> 使用最简单的工具，不要任何向导和可视化 </li> 
+ <li> 熟知 HTTP 协议<br> </li> 
+</ul> 
+<p> 等你真的掌握了 Servlet 规范再去看框架，便会觉得一些都小菜。总之一点：不要被框架牵着鼻子走，框架是你的工具，它应该听你的！ </p> 
+<p> 红薯乱弹，随时准备挨喷。 </p><div class="clear"></div><div class="EditLogs">
+							<script type="text/javascript"><!--
+        var el_cur_page = 1;
+        function edit_logs_pp(){
+			el_cur_page = el_cur_page - 1;
+			if(el_cur_page < 1) el_cur_page = 1;
+			if(el_cur_page <= 1){
+				$('#a_el_prev').addClass('disabled');
+			}
+			else{
+				$('#a_el_prev').removeClass('disabled');
+			}
+			if(el_cur_page < $EDIT_LOG_PAGE_COUNT){
+				$('#a_el_next').removeClass('disabled');
+			}			
+			_fetch_edit_logs(52027,el_cur_page);
+		}
+		function edit_logs_np(){
+			el_cur_page = el_cur_page + 1;
+			if(el_cur_page > $EDIT_LOG_PAGE_COUNT) el_cur_page = $EDIT_LOG_PAGE_COUNT;
+			if(el_cur_page >= $EDIT_LOG_PAGE_COUNT){
+				$('#a_el_next').addClass('disabled');
+			}
+			if(el_cur_page > 1)
+				$('#a_el_prev').removeClass('disabled');
+			_fetch_edit_logs(52027,el_cur_page);
+		}
+		function _fetch_edit_logs(qid,page) {
+			var url = "/question/edit_logs?qid=" + qid + "&lp="+page;
+			ajax_get(url,true,function(html){
+				$('.EditLogs ul').html(html);
+			});
+		}
+		//--></script>
+										<span class="question_resupply_list">
+	<span class="question_resupply_title">---------------话题补充---------------</span><p id="q_reply_2160">
+	<a href="http://my.oschina.net/linker" class="loger_ame" target="_blank">@LinkerLin</a>：写的很好。很适合初学者。
+<span class="rpl_time">(3年前)</span></p>
+	</span>
+</div></div>
+						<div class="Asker special">
+				<div class="info" title="红薯">
+					<span class="ainfo">
+						<a href="http://my.oschina.net/javayou" class="ShowUserOutline" target="_blank" title="红薯"><img src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/12_50.jpg" align="absmiddle" alt="红薯" title="红薯" class="SmallPortrait" user="12"></a>
+					</span>
+					<span class="pinfo">
+		    			<a href="http://my.oschina.net/javayou" class="Asker-Name" target="_blank">红薯</a><br>
+		    			<span class="pub_time">发帖于&nbsp;3年前</span><br>
+		    			<span><a href="http://www.oschina.net/question/12_52027#answers" class="answer_count">282</a>回/189510阅</span>
+					</span>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="tags_toolbars">
+			<div class="Tags" id="tags_nav">
+				<strong>标签：</strong>				
+												<a href="http://www.oschina.net/question/tag/java" class="tag project image" data-id="16962" title="编程语言 Java"><img src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/java.png" height="18" class="prj_logo_18">Java</a> <a href="http://www.oschina.net/question/tag/tomcat" class="tag project image" data-id="536" title="Java应用服务器 Tomcat"><img src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/tomcat.png" height="18" class="prj_logo_18">Tomcat</a> <a href="http://www.oschina.net/question/tag/eclipse" class="tag project image" data-id="372" title="集成开发环境 Eclipse"><img src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/eclipse.png" height="18" class="prj_logo_18">Eclipse</a> 											</div>
+						<div class="SameQuestions">
+			<span class="q_toolbar">
+				<ul>
+								<li> <a href="javascript:report('http://www.oschina.net/question/12_52027',52027,2)">举报&nbsp;</a></li>
+				<li id="Share">
+					<a class="Ask_Share_Tencent" title="分享到腾讯微博" href="javascript:(function(){window.open('http://v.t.qq.com/share/share.php?url='+encodeURIComponent(document.location)+'&appkey=96f54f97c4de46e393c4835a266207f4&site=&title='+encodeURIComponent(document.title)+encodeURIComponent(': OSCHINA 软件库有一个分类——Web框架，该分类中包含多种编程语言的将近500个项目。 Web框架是开发者在使用某种语言编写Web应用服务端时关于架构的最佳实践。很多Web框架...'),'', 'width=450, height=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, location=yes, resizable=no, status=no');}())"></a>
+					<a class="Ask_Share_Sina" title="分享到新浪微博" href="javascript:void((function(s,d,e,r,l,p,t,z,c){var%20f='http://v.t.sina.com.cn/share/share.php?appkey=858381728',u=z||d.location,p=['&url=',e(u),'&title=',e(t||d.title),'&source=',e(r),'&sourceUrl=',e(l),'&content=',c||'gb2312','&pic=',e(p||'')].join('');function%20a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=440,height=430,left=',(s.width-440)/2,',top=',(s.height-430)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,'','','','初学 Java Web 开发，请远离各种框架，从 Servlet 开发: OSCHINA 软件库有一个分类——Web框架，该分类中包含多种编程语言的将近500个项目。 Web框架是开发者在使用某种语言编写Web应用服务端时关于架构的最佳实践。很多Web框架...','','utf-8'));"></a>
+					|<a href="javascript:function(0);">&nbsp;分享到</a>
+				</li>
+				</ul>
+			</span>
+			<div class="clear"></div>
+			</div>
+					</div>
+		</div>
+		<div class="Vote" id="Vote">
+    		    		    		<a id="vote_up" class="vote-up-off" href="http://www.oschina.net/question/12_52027#" title="顶：这问题很有用或者很提问清晰明了"></a>
+			    		<span class="q_vote_num">29</span>
+    		    		<a id="vote_down" class="vote-down-off" href="http://www.oschina.net/question/12_52027#" title="踩：这问题不知道在问什么，或者没什么用"></a>
+    		    		<span class="store">
+    		<a title="收藏此话题" class="Tool-Store-Off" id="favor_trigger" href="javascript:;">收藏(964)</a>
+    		</span>
+    	</div>
+	</div>
+		<style type="text/css">
+		#TagsSwitcher{color:#A00;}
+        #RecTags,#MyTags{margin:5px 0;}
+        #RecTags a.tag{line-height:24px;}
+		#favor_form p:first-child{margin:5px 0;}
+		#favor_form{width:200px;}
+        #favor_form p {color:#666;}
+        #favor_form form{width:200px;}
+        #favor_form form ._favor_input{display:block;margin:2px 0;width:199px;}
+        #favor_form form ._favor_button{float:left;padding:2px 5px;}
+        .favor_ok {text-align:center;font-size:10.5pt;width:199px;height:60px;margin-top:10px;}
+        #TagsSwitcher{cursor:pointer;float:right;margin-top:10px;}
+        #MyTags{display:none;width:199px;}
+        #MyTags a.tag {float:left; background-color: #E0EAF1;border-bottom: 1px solid #3E6D8E;border-right: 1px solid #7F9FB6;color: #3E6D8E;font-size: 8pt;line-height: 16px;margin: 2px 2px 2px 0;padding: 2px 4px;text-decoration: none;white-space: nowrap;}
+		#MyTags a.tag:hover{background-color: #3E6D8E;color: #FFF;}
+		.osc_promotion{ position: relative; display: inline-block; padding: 10px; margin: 10px 0; border: 1px solid #ccc;}
+        .osc_promotion .c{ position: absolute; right: -1px; top: -1px;}
+		.ask_toolbar {float:right;list-style: none; font-size: 12px; color: #333; height: 28px;_padding-top: 5px; overflow: hidden;margin:20px 0 10px 0;}
+        .ask_toolbar div{ float: left; margin-left: 5px; background: url("/img/ask-icon.gif") no-repeat; padding: 6px 0 6px 15px; padding-left: 15px; height: 16px;}
+        .ask_toolbar a{ height: 16px; color: #333; text-decoration: none; display:inline-block; zoom:1; vertical-align: middle; }
+        .ask_share{width: 89px;vertical-align: bottom; line-height: 15px; _line-height: 14px;}
+        .ask_share a{background: url("/img/ask-icon.gif"); width: 16px; }
+        a.ask_share_sina{ background: url("/img/ask-icon.gif") 0 -40px no-repeat; margin-left: 5px;  }
+        a.ask_share_tencent{background-position: 0 -70px; margin-left: 5px; }
+        .ask_toolbar em{ height: 28px; line-height:28px; width: 14px; display: inline-block; float: left; background: url("/img/ask-icon.gif") top right;}
+        .ask_collect a,.ask_report a, .ask_vote a, .ask_collected a{padding-left: 20px; line-height: 15px; }
+        .ask_collect a{ background: url("/img/ask-icon.gif") 0 -131px no-repeat; }
+        .ask_collected a{ background: url("/img/ask-icon.gif") 0 -100px no-repeat; }
+        div.ask_collect_count{ background: url("/img/ask-icon.gif") 0 -309px no-repeat; font-weight: bold; font-size: 14px; margin-left: 0; height: 16px;line-height: 16px;}
+        .ask_report a{ background: url("/img/ask-icon.gif") 0 -160px no-repeat;}
+        em.ask_collect_count_r{background-position: 59px -309px;}
+        .ask_vote a{background: url("/img/ask-icon.gif");}
+        		a.ask_vote_up{background-position: 3px -190px;}
+        a.ask_vote_down{background-position: 0 -280px;}
+        a.ask_vote_uped {background-position: 3px -190px;}
+        		a.ask_vote_downed {background-position: 0 -280px;}
+        .ask_vote span{ display: inline-block; margin: 0 10px; font-weight: bold; font-size: 14px; vertical-align: middle; margin-bottom: 2px; line-height: 16px;}
+		</style>
+		<div class="clear"></div>
+        
+		<div class="clear"></div>
+				        <div class="QuestionReplies">
+			
+        	<h2>
+				<span class="sort">
+					<a href="http://www.oschina.net/question/12_52027#answers" class="current">按默认排序</a>&nbsp;
+					<a href="http://www.oschina.net/question/12_52027?sort=time#answers">显示最新评论</a>&nbsp;&nbsp;
+				</span>
+				<a name="answers"></a>共有<em class="answer_count">282</em>个评论
+				<a href="http://www.oschina.net/question/12_52027?sort=time#answers" class="last_reply">(最后回答: 1周前)</a>			</h2>
+			        	<ul class="list"><span class="hr unvisible"></span><div class="Vote" id="vote_207765">
+		<a href="javascript:vote_answer(207765,true,true)" id="a_post_voteup_207765" class=" vote-up-off " title=" 投支持票 "></a>
+	<span class="a_vote_num" id="a_vote_num_207765">0</span>
+	<a href="javascript:vote_answer(207765,false,true)" id="a_post_votedown_207765" class=" vote-down-off " title=" 投反对票 "></a>
+				</div>
+<li class="Answer " id="answer_207765">
+	<div class="user">
+		<span class="user_img"><a href="http://my.oschina.net/nixin" class="ShowUserOutline" name="AnchorAnswer207765" target="_blank"><img src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/114251_50.jpg" align="absmiddle" alt="游客" title="游客" class="SmallPortrait" user="114251"></a></span>
+		<span class="user_info">
+			<a href="http://my.oschina.net/nixin" title="游客" target="_blank">游客</a>
+			<span class="reply-time">3年前</span>
+		</span>
+		<div class="clear"></div>
+	</div>
+	<div class="body">
+    															    			<div class="clear"></div>
+		<div class="detail">小清新 
+<br></div>
+	</div>
+	<div class="clear"></div>
+	<div class="replies" id="PostReplies_207765"></div>
+	
+	<div class="votes">
+				<span class="a_toolbar">
+		<a href="javascript:reply_to_post(207765, 0)">评论(0)</a>|
+		<a href="http://www.oschina.net/question/answer?question=52027&answer=207765">引用此评论</a>|							<a href="javascript:report('http://www.oschina.net/question/12_52027#AnchorAnswer207765',207765,17)">举报</a>
+				
+		(2012-05-03 11:12)
+		</span>
+	</div>
+</li>
+<span class="hr"></span>
+<script>
+			$('li.Answer').bind('mouseenter',function(){var anwserId = $(this).attr('id');}).bind('mouseleave',function(){var anwserId = $(this).attr('id');});
+    	$('.Vote').bind('mouseenter',function(){$(this).find('a.accept-off').show();$(this).find('a.accept-on').show();$(this).next('li.Answer').find('.hover-show').show();}).bind('mouseleave',function(){$(this).find('a.accept-off').hide();$(this).next('li.Answer').find('.hover-show').hide();});
+	</script><div class="Vote" id="vote_207770">
+		<a href="javascript:vote_answer(207770,true,true)" id="a_post_voteup_207770" class=" vote-up-off " title=" 投支持票 "></a>
+	<span class="a_vote_num" id="a_vote_num_207770">3</span>
+	<a href="javascript:vote_answer(207770,false,true)" id="a_post_votedown_207770" class=" vote-down-off " title=" 投反对票 "></a>
+				</div>
+<li class="Answer " id="answer_207770">
+	<div class="user">
+		<span class="user_img"><a href="http://my.oschina.net/jack230230" class="ShowUserOutline" name="AnchorAnswer207770" target="_blank"><img src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/82993_50.png" align="absmiddle" alt="王振威" title="王振威" class="SmallPortrait" user="82993"></a></span>
+		<span class="user_info">
+			<a href="http://my.oschina.net/jack230230" title="王振威" target="_blank">王振威</a>
+			<span class="reply-time">3年前</span>
+		</span>
+		<div class="clear"></div>
+	</div>
+	<div class="body">
+    															    			<div class="clear"></div>
+		<div class="detail">这要顶起的啊，struts神马的不过是对servlet、filter的封装而已，hibernate神马的也不过是对jdbc的封装而已，他们只是把一些常见的操作流程化了，如果不懂servlet、filter，不懂jdbc，使用struts和hibernate出问题了都不知道是怎么回事。</div>
+	</div>
+	<div class="clear"></div>
+	<div class="replies" id="PostReplies_207770"><div class="clear"></div>
+<strong>--- 共有 10 条评论 --- </strong>
+<ul>
+		<li id="PostReply_883316">
+				<a href="http://my.oschina.net/u/244251" class="p" name="AnchorAnswer883316">Jack_李志</a>
+		<span class="b">
+		<span class="c">回复 <a href="http://my.oschina.net/u/1258344" class="referer" target="_blank">@darkread</a>  : 说的很好！但红薯说的也是正确的，基础是王道。可以两种方式穿插来学习，理解</span>
+		<span class="t">
+				(3个月前)&nbsp;&nbsp;
+				<span class="opts"><a href="javascript:reply_to_post(207770,244251)">回复</a></span>
+		</span>
+		</span>
+		<div class="clear"></div>
+	</li>
+		<li id="PostReply_785827">
+				<a href="http://my.oschina.net/u/1258344" class="p" name="AnchorAnswer785827">darkread</a>
+		<span class="b">
+		<span class="c">这说法对有不对，你要深入，必然要问jdbc是什么？servlet是什么？你理解了么？最终一直问到java虚拟机什么，w、u两大阵营如何实现？这样没有意义，作为新人，连感性都没有就来理性，如何接受？SSH、play都是个好东西。新人都是从Helloword开始的，计算机是工科不是理科，别太阳春白雪了。</span>
+		<span class="t">
+				(8个月前)&nbsp;&nbsp;
+				<span class="opts"><a href="javascript:reply_to_post(207770,1258344)">回复</a></span>
+		</span>
+		</span>
+		<div class="clear"></div>
+	</li>
+		<li id="PostReply_533133">
+				<a href="http://my.oschina.net/u/271787" class="p" name="AnchorAnswer533133">酷毙程序猿</a>
+		<span class="b">
+		<span class="c">顶，不够10个积分，那就发个评论</span>
+		<span class="t">
+				(2年前)&nbsp;&nbsp;
+				<span class="opts"><a href="javascript:reply_to_post(207770,271787)">回复</a></span>
+		</span>
+		</span>
+		<div class="clear"></div>
+	</li>
+		<li id="PostReply_525045">
+				<a href="http://my.oschina.net/u/869170" class="p" name="AnchorAnswer525045">江浩翔</a>
+		<span class="b">
+		<span class="c">呵呵。</span>
+		<span class="t">
+				(2年前)&nbsp;&nbsp;
+				<span class="opts"><a href="javascript:reply_to_post(207770,869170)">回复</a></span>
+		</span>
+		</span>
+		<div class="clear"></div>
+	</li>
+		<li id="PostReply_437212">
+				<a href="http://my.oschina.net/u/995347" class="p" name="AnchorAnswer437212">平兄</a>
+		<span class="b">
+		<span class="c">所见略同啊</span>
+		<span class="t">
+				(2年前)&nbsp;&nbsp;
+				<span class="opts"><a href="javascript:reply_to_post(207770,995347)">回复</a></span>
+		</span>
+		</span>
+		<div class="clear"></div>
+	</li>
+	</ul>	
+<div class="PagerLinks">
+<a href="javascript:show_rp_prev(207770,1,2)" class="PR_PrevPage disabled" post="207770" current="1" total="2">上一页</a>&nbsp;|
+<a href="javascript:show_rp_next(207770,1,2)" class="PR_NextPage">下一页</a>
+</div>
+</div>
+	
+	<div class="votes">
+				<span class="a_toolbar">
+		<a href="javascript:reply_to_post(207770, 0)">评论(10)</a>|
+		<a href="http://www.oschina.net/question/answer?question=52027&answer=207770">引用此评论</a>|							<a href="javascript:report('http://www.oschina.net/question/12_52027#AnchorAnswer207770',207770,17)">举报</a>
+				
+		(2012-05-03 11:15)
+		</span>
+	</div>
+</li>
+<span class="hr"></span>
+<script>
+			$('li.Answer').bind('mouseenter',function(){var anwserId = $(this).attr('id');}).bind('mouseleave',function(){var anwserId = $(this).attr('id');});
+    	$('.Vote').bind('mouseenter',function(){$(this).find('a.accept-off').show();$(this).find('a.accept-on').show();$(this).next('li.Answer').find('.hover-show').show();}).bind('mouseleave',function(){$(this).find('a.accept-off').hide();$(this).next('li.Answer').find('.hover-show').hide();});
+	</script><div class="Vote" id="vote_207777">
+		<a href="javascript:vote_answer(207777,true,true)" id="a_post_voteup_207777" class=" vote-up-off " title=" 投支持票 "></a>
+	<span class="a_vote_num" id="a_vote_num_207777">0</span>
+	<a href="javascript:vote_answer(207777,false,true)" id="a_post_votedown_207777" class=" vote-down-off " title=" 投反对票 "></a>
+				</div>
+<li class="Answer " id="answer_207777">
+	<div class="user">
+		<span class="user_img"><a href="http://my.oschina.net/liu-xuewei" class="ShowUserOutline" name="AnchorAnswer207777" target="_blank"><img src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/188162_50.png" align="absmiddle" alt="麻辣烫" title="麻辣烫" class="SmallPortrait" user="188162"></a></span>
+		<span class="user_info">
+			<a href="http://my.oschina.net/liu-xuewei" title="麻辣烫" target="_blank">麻辣烫</a>
+			<span class="reply-time">3年前</span>
+		</span>
+		<div class="clear"></div>
+	</div>
+	<div class="body">
+    															    			<div class="clear"></div>
+		<div class="detail">红薯威武！！ 
+<a href="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/13.gif" target="_blank"><img alt="" src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/13.gif" style="cursor: pointer;"></a></div>
+	</div>
+	<div class="clear"></div>
+	<div class="replies" id="PostReplies_207777"></div>
+	
+	<div class="votes">
+				<span class="a_toolbar">
+		<a href="javascript:reply_to_post(207777, 0)">评论(0)</a>|
+		<a href="http://www.oschina.net/question/answer?question=52027&answer=207777">引用此评论</a>|							<a href="javascript:report('http://www.oschina.net/question/12_52027#AnchorAnswer207777',207777,17)">举报</a>
+				
+		(2012-05-03 11:19)
+		</span>
+	</div>
+</li>
+<span class="hr"></span>
+<script>
+			$('li.Answer').bind('mouseenter',function(){var anwserId = $(this).attr('id');}).bind('mouseleave',function(){var anwserId = $(this).attr('id');});
+    	$('.Vote').bind('mouseenter',function(){$(this).find('a.accept-off').show();$(this).find('a.accept-on').show();$(this).next('li.Answer').find('.hover-show').show();}).bind('mouseleave',function(){$(this).find('a.accept-off').hide();$(this).next('li.Answer').find('.hover-show').hide();});
+	</script><div class="Vote" id="vote_207783">
+		<a href="javascript:vote_answer(207783,true,true)" id="a_post_voteup_207783" class=" vote-up-off " title=" 投支持票 "></a>
+	<span class="a_vote_num" id="a_vote_num_207783">0</span>
+	<a href="javascript:vote_answer(207783,false,true)" id="a_post_votedown_207783" class=" vote-down-off " title=" 投反对票 "></a>
+				</div>
+<li class="Answer " id="answer_207783">
+	<div class="user">
+		<span class="user_img"><a href="http://my.oschina.net/zhangdapeng89" class="ShowUserOutline" name="AnchorAnswer207783" target="_blank"><img src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/216139_50.jpg" align="absmiddle" alt="张大鹏" title="张大鹏" class="SmallPortrait" user="216139"></a></span>
+		<span class="user_info">
+			<a href="http://my.oschina.net/zhangdapeng89" title="张大鹏" target="_blank">张大鹏</a>
+			<span class="reply-time">3年前</span>
+		</span>
+		<div class="clear"></div>
+	</div>
+	<div class="body">
+    															    			<div class="clear"></div>
+		<div class="detail">不错啊 呵呵 &nbsp;</div>
+	</div>
+	<div class="clear"></div>
+	<div class="replies" id="PostReplies_207783"></div>
+	
+	<div class="votes">
+				<span class="a_toolbar">
+		<a href="javascript:reply_to_post(207783, 0)">评论(0)</a>|
+		<a href="http://www.oschina.net/question/answer?question=52027&answer=207783">引用此评论</a>|							<a href="javascript:report('http://www.oschina.net/question/12_52027#AnchorAnswer207783',207783,17)">举报</a>
+				
+		(2012-05-03 11:23)
+		</span>
+	</div>
+</li>
+<span class="hr"></span>
+<script>
+			$('li.Answer').bind('mouseenter',function(){var anwserId = $(this).attr('id');}).bind('mouseleave',function(){var anwserId = $(this).attr('id');});
+    	$('.Vote').bind('mouseenter',function(){$(this).find('a.accept-off').show();$(this).find('a.accept-on').show();$(this).next('li.Answer').find('.hover-show').show();}).bind('mouseleave',function(){$(this).find('a.accept-off').hide();$(this).next('li.Answer').find('.hover-show').hide();});
+	</script><div class="Vote" id="vote_207788">
+		<a href="javascript:vote_answer(207788,true,true)" id="a_post_voteup_207788" class=" vote-up-off " title=" 投支持票 "></a>
+	<span class="a_vote_num" id="a_vote_num_207788">2</span>
+	<a href="javascript:vote_answer(207788,false,true)" id="a_post_votedown_207788" class=" vote-down-off " title=" 投反对票 "></a>
+				</div>
+<li class="Answer " id="answer_207788">
+	<div class="user">
+		<span class="user_img"><a href="http://my.oschina.net/moluyingxing" class="ShowUserOutline" name="AnchorAnswer207788" target="_blank"><img src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/portrait.gif" align="absmiddle" alt="godlike" title="godlike" class="SmallPortrait" user="147032"></a></span>
+		<span class="user_info">
+			<a href="http://my.oschina.net/moluyingxing" title="godlike" target="_blank">godlike</a>
+			<span class="reply-time">3年前</span>
+		</span>
+		<div class="clear"></div>
+	</div>
+	<div class="body">
+    															    			<div class="clear"></div>
+		<div class="detail"><p>这种学习方式是不错，但不太适合现在这些急功急利的人。</p> 
+<p>毕竟把这些东西理解清楚至少得好几个月（对于新人来说，甚至几个月都不必能理解清楚），而几个月的时间学了却做不了什么有实用价值的东西，对于大多新人来说是不可接受的。</p></div>
+	</div>
+	<div class="clear"></div>
+	<div class="replies" id="PostReplies_207788"><div class="clear"></div>
+<strong>--- 共有 5 条评论 --- </strong>
+<ul>
+		<li id="PostReply_825709">
+				<a href="http://my.oschina.net/u/126989" class="p" name="AnchorAnswer825709">谷粑糖</a>
+		<span class="b">
+		<span class="c">回复 <a href="http://my.oschina.net/u/1171288" class="referer" target="_blank">@DeeperPlay</a>  : 这要强赞一下</span>
+		<span class="t">
+				(6个月前)&nbsp;&nbsp;
+				<span class="opts"><a href="javascript:reply_to_post(207788,126989)">回复</a></span>
+		</span>
+		</span>
+		<div class="clear"></div>
+	</li>
+		<li id="PostReply_776122">
+				<a href="http://my.oschina.net/u/1444174" class="p" name="AnchorAnswer776122">lc__________</a>
+		<span class="b">
+		<span class="c">回复 <a href="http://my.oschina.net/u/1171288" class="referer" target="_blank">@王中龙</a>  : 赞一个</span>
+		<span class="t">
+				(9个月前)&nbsp;&nbsp;
+				<span class="opts"><a href="javascript:reply_to_post(207788,1444174)">回复</a></span>
+		</span>
+		</span>
+		<div class="clear"></div>
+	</li>
+		<li id="PostReply_630211">
+				<a href="http://my.oschina.net/u/1171288" class="p" name="AnchorAnswer630211">DeeperPlay</a>
+		<span class="b">
+		<span class="c">公司更加无法接受，呵呵。所以新手一定需要在业余时间好好从底层知识开始补习。</span>
+		<span class="t">
+				(1年前)&nbsp;&nbsp;
+				<span class="opts"><a href="javascript:reply_to_post(207788,1171288)">回复</a></span>
+		</span>
+		</span>
+		<div class="clear"></div>
+	</li>
+		<li id="PostReply_246008">
+				<a href="http://my.oschina.net/iehyou" class="p" name="AnchorAnswer246008">iehyou</a>
+		<span class="b">
+		<span class="c">不了解原理,除了问题也不知道是什么原因造成的. 这个就所有的知识的通病...</span>
+		<span class="t">
+				(3年前)&nbsp;&nbsp;
+				<span class="opts"><a href="javascript:reply_to_post(207788,136089)">回复</a></span>
+		</span>
+		</span>
+		<div class="clear"></div>
+	</li>
+		<li id="PostReply_214218">
+				<a href="http://my.oschina.net/myjavax" class="p" name="AnchorAnswer214218">myjavax</a>
+		<span class="b">
+		<span class="c">是的，如同大学教育一样很好但不实用</span>
+		<span class="t">
+				(3年前)&nbsp;&nbsp;
+				<span class="opts"><a href="javascript:reply_to_post(207788,40914)">回复</a></span>
+		</span>
+		</span>
+		<div class="clear"></div>
+	</li>
+	</ul>	
+<div class="PagerLinks">
+</div>
+</div>
+	
+	<div class="votes">
+				<span class="a_toolbar">
+		<a href="javascript:reply_to_post(207788, 0)">评论(5)</a>|
+		<a href="http://www.oschina.net/question/answer?question=52027&answer=207788">引用此评论</a>|							<a href="javascript:report('http://www.oschina.net/question/12_52027#AnchorAnswer207788',207788,17)">举报</a>
+				
+		(2012-05-03 11:26)
+		</span>
+	</div>
+</li>
+<span class="hr"></span>
+<script>
+			$('li.Answer').bind('mouseenter',function(){var anwserId = $(this).attr('id');}).bind('mouseleave',function(){var anwserId = $(this).attr('id');});
+    	$('.Vote').bind('mouseenter',function(){$(this).find('a.accept-off').show();$(this).find('a.accept-on').show();$(this).next('li.Answer').find('.hover-show').show();}).bind('mouseleave',function(){$(this).find('a.accept-off').hide();$(this).next('li.Answer').find('.hover-show').hide();});
+	</script><div class="Vote" id="vote_207793">
+		<a href="javascript:vote_answer(207793,true,true)" id="a_post_voteup_207793" class=" vote-up-off " title=" 投支持票 "></a>
+	<span class="a_vote_num" id="a_vote_num_207793">0</span>
+	<a href="javascript:vote_answer(207793,false,true)" id="a_post_votedown_207793" class=" vote-down-off " title=" 投反对票 "></a>
+				</div>
+<li class="Answer " id="answer_207793">
+	<div class="user">
+		<span class="user_img"><a href="http://my.oschina.net/zhlmmc" class="ShowUserOutline" name="AnchorAnswer207793" target="_blank"><img src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/28_50.jpg" align="absmiddle" alt="虫虫" title="虫虫" class="SmallPortrait" user="28"></a></span>
+		<span class="user_info">
+			<a href="http://my.oschina.net/zhlmmc" title="虫虫" target="_blank">虫虫</a>
+			<span class="reply-time">3年前</span>
+		</span>
+		<div class="clear"></div>
+	</div>
+	<div class="body">
+    															    			<div class="clear"></div>
+		<div class="detail">真乃看破红尘啊！ 
+<br></div>
+	</div>
+	<div class="clear"></div>
+	<div class="replies" id="PostReplies_207793"></div>
+	
+	<div class="votes">
+				<span class="a_toolbar">
+		<a href="javascript:reply_to_post(207793, 0)">评论(0)</a>|
+		<a href="http://www.oschina.net/question/answer?question=52027&answer=207793">引用此评论</a>|							<a href="javascript:report('http://www.oschina.net/question/12_52027#AnchorAnswer207793',207793,17)">举报</a>
+				
+		(2012-05-03 11:28)
+		</span>
+	</div>
+</li>
+<span class="hr"></span>
+<script>
+			$('li.Answer').bind('mouseenter',function(){var anwserId = $(this).attr('id');}).bind('mouseleave',function(){var anwserId = $(this).attr('id');});
+    	$('.Vote').bind('mouseenter',function(){$(this).find('a.accept-off').show();$(this).find('a.accept-on').show();$(this).next('li.Answer').find('.hover-show').show();}).bind('mouseleave',function(){$(this).find('a.accept-off').hide();$(this).next('li.Answer').find('.hover-show').hide();});
+	</script><div class="Vote" id="vote_207797">
+		<a href="javascript:vote_answer(207797,true,true)" id="a_post_voteup_207797" class=" vote-up-off " title=" 投支持票 "></a>
+	<span class="a_vote_num" id="a_vote_num_207797">1</span>
+	<a href="javascript:vote_answer(207797,false,true)" id="a_post_votedown_207797" class=" vote-down-off " title=" 投反对票 "></a>
+				</div>
+<li class="Answer " id="answer_207797">
+	<div class="user">
+		<span class="user_img"><a href="http://my.oschina.net/xohome" class="ShowUserOutline" name="AnchorAnswer207797" target="_blank"><img src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/137432_50.jpg" align="absmiddle" alt="xoHome" title="xoHome" class="SmallPortrait" user="137432"></a></span>
+		<span class="user_info">
+			<a href="http://my.oschina.net/xohome" title="xoHome" target="_blank">xoHome</a>
+			<span class="reply-time">3年前</span>
+		</span>
+		<div class="clear"></div>
+	</div>
+	<div class="body">
+    															    			<div class="clear"></div>
+		<div class="detail">“学习期间浮躁，工作期间速成”导致了现在快餐式的风气</div>
+	</div>
+	<div class="clear"></div>
+	<div class="replies" id="PostReplies_207797"></div>
+	
+	<div class="votes">
+				<span class="a_toolbar">
+		<a href="javascript:reply_to_post(207797, 0)">评论(0)</a>|
+		<a href="http://www.oschina.net/question/answer?question=52027&answer=207797">引用此评论</a>|							<a href="javascript:report('http://www.oschina.net/question/12_52027#AnchorAnswer207797',207797,17)">举报</a>
+				
+		(2012-05-03 11:30)
+		</span>
+	</div>
+</li>
+<span class="hr"></span>
+<script>
+			$('li.Answer').bind('mouseenter',function(){var anwserId = $(this).attr('id');}).bind('mouseleave',function(){var anwserId = $(this).attr('id');});
+    	$('.Vote').bind('mouseenter',function(){$(this).find('a.accept-off').show();$(this).find('a.accept-on').show();$(this).next('li.Answer').find('.hover-show').show();}).bind('mouseleave',function(){$(this).find('a.accept-off').hide();$(this).next('li.Answer').find('.hover-show').hide();});
+	</script><div class="Vote" id="vote_207804">
+		<a href="javascript:vote_answer(207804,true,true)" id="a_post_voteup_207804" class=" vote-up-off " title=" 投支持票 "></a>
+	<span class="a_vote_num" id="a_vote_num_207804">0</span>
+	<a href="javascript:vote_answer(207804,false,true)" id="a_post_votedown_207804" class=" vote-down-off " title=" 投反对票 "></a>
+				</div>
+<li class="Answer " id="answer_207804">
+	<div class="user">
+		<span class="user_img"><a href="http://my.oschina.net/ljc520" class="ShowUserOutline" name="AnchorAnswer207804" target="_blank"><img src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/139190_50.jpg" align="absmiddle" alt="梁吉超" title="梁吉超" class="SmallPortrait" user="139190"></a></span>
+		<span class="user_info">
+			<a href="http://my.oschina.net/ljc520" title="梁吉超" target="_blank">梁吉超</a>
+			<span class="reply-time">3年前</span>
+		</span>
+		<div class="clear"></div>
+	</div>
+	<div class="body">
+    															    			<div class="clear"></div>
+		<div class="detail">深有所悟,我也是从框架中慢慢回归到对servlet等最基础的东西,框架只是把所有基础的东西放在一起组合起来 
+<br></div>
+	</div>
+	<div class="clear"></div>
+	<div class="replies" id="PostReplies_207804"><div class="clear"></div>
+<strong>--- 共有 4 条评论 --- </strong>
+<ul>
+		<li id="PostReply_630213">
+				<a href="http://my.oschina.net/u/1171288" class="p" name="AnchorAnswer630213">DeeperPlay</a>
+		<span class="b">
+		<span class="c">是的，在学校就没学软件，工作后一上来就各种框架。学着学着感觉不对劲了，赶紧回去学习servlet等基础知识。</span>
+		<span class="t">
+				(1年前)&nbsp;&nbsp;
+				<span class="opts"><a href="javascript:reply_to_post(207804,1171288)">回复</a></span>
+		</span>
+		</span>
+		<div class="clear"></div>
+	</li>
+		<li id="PostReply_533134">
+				<a href="http://my.oschina.net/u/271787" class="p" name="AnchorAnswer533134">酷毙程序猿</a>
+		<span class="b">
+		<span class="c">原来“回归”是这个意思啊。</span>
+		<span class="t">
+				(2年前)&nbsp;&nbsp;
+				<span class="opts"><a href="javascript:reply_to_post(207804,271787)">回复</a></span>
+		</span>
+		</span>
+		<div class="clear"></div>
+	</li>
+		<li id="PostReply_339262">
+				<a href="http://my.oschina.net/u/261246" class="p" name="AnchorAnswer339262">铂金蛋蛋</a>
+		<span class="b">
+		<span class="c">+1</span>
+		<span class="t">
+				(2年前)&nbsp;&nbsp;
+				<span class="opts"><a href="javascript:reply_to_post(207804,261246)">回复</a></span>
+		</span>
+		</span>
+		<div class="clear"></div>
+	</li>
+		<li id="PostReply_209853">
+				<a href="http://my.oschina.net/jinceon" class="p" name="AnchorAnswer209853">jinceon</a>
+		<span class="b">
+		<span class="c">我也是</span>
+		<span class="t">
+				(3年前)&nbsp;&nbsp;
+				<span class="opts"><a href="javascript:reply_to_post(207804,113917)">回复</a></span>
+		</span>
+		</span>
+		<div class="clear"></div>
+	</li>
+	</ul>	
+<div class="PagerLinks">
+</div>
+</div>
+	
+	<div class="votes">
+				<span class="a_toolbar">
+		<a href="javascript:reply_to_post(207804, 0)">评论(4)</a>|
+		<a href="http://www.oschina.net/question/answer?question=52027&answer=207804">引用此评论</a>|							<a href="javascript:report('http://www.oschina.net/question/12_52027#AnchorAnswer207804',207804,17)">举报</a>
+				
+		(2012-05-03 11:33)
+		</span>
+	</div>
+</li>
+<span class="hr"></span>
+<script>
+			$('li.Answer').bind('mouseenter',function(){var anwserId = $(this).attr('id');}).bind('mouseleave',function(){var anwserId = $(this).attr('id');});
+    	$('.Vote').bind('mouseenter',function(){$(this).find('a.accept-off').show();$(this).find('a.accept-on').show();$(this).next('li.Answer').find('.hover-show').show();}).bind('mouseleave',function(){$(this).find('a.accept-off').hide();$(this).next('li.Answer').find('.hover-show').hide();});
+	</script><div class="Vote" id="vote_207815">
+		<a href="javascript:vote_answer(207815,true,true)" id="a_post_voteup_207815" class=" vote-up-off " title=" 投支持票 "></a>
+	<span class="a_vote_num" id="a_vote_num_207815">3</span>
+	<a href="javascript:vote_answer(207815,false,true)" id="a_post_votedown_207815" class=" vote-down-off " title=" 投反对票 "></a>
+				</div>
+<li class="Answer " id="answer_207815">
+	<div class="user">
+		<span class="user_img"><a href="http://my.oschina.net/jstart" class="ShowUserOutline" name="AnchorAnswer207815" target="_blank"><img src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/117299_50.jpg" align="absmiddle" alt="蛋蛋娃" title="蛋蛋娃" class="SmallPortrait" user="117299"></a></span>
+		<span class="user_info">
+			<a href="http://my.oschina.net/jstart" title="蛋蛋娃" target="_blank">蛋蛋娃</a>
+			<span class="reply-time">3年前</span>
+		</span>
+		<div class="clear"></div>
+	</div>
+	<div class="body">
+    															    			<div class="clear"></div>
+		<div class="detail"><div>
+  其实很多时候都是牛人把新人误解了..但是牛人的本意又不想是那样..这就是现象 
+</div> 
+<div> 
+ <br> 
+</div> 
+<div>
+  拿Hibernate来说..几年前有人说Hibernate性能低.. 
+</div> 
+<div> 
+ <br> 
+</div> 
+<div>
+  也许在他的角度hibernate是不适用他的应用.. 
+</div> 
+<div> 
+ <br> 
+</div> 
+<div>
+  比如..分库分表.以及SQL的调试..等 
+</div> 
+<div> 
+ <br> 
+</div> 
+<div>
+  后来..有其他人也用了Hibernate..不意乐乎.发现查询慢了. 
+</div> 
+<div> 
+ <br> 
+</div> 
+<div>
+  各种原因都其实都是因为自己引起的..比如.索引没建了..没有分页了.没配懒加载了.没有配置二级缓存了.. 
+</div> 
+<div>
+  .太多了太多了..甚至还有人用Hibernate来做报表(这个真有）. 
+</div> 
+<div> 
+ <br> 
+</div> 
+<div>
+  于是去网上去收hibernate为什么查询慢.. 
+</div> 
+<div> 
+ <br> 
+</div> 
+<div>
+  由于搜索引擎的强大..把牛人的贴子搜出来了. 
+</div> 
+<div> 
+ <br> 
+</div> 
+<div>
+  然后就简单的认为是hibernate的问题.就没想过是自己的问题..于是也跟着附和hibernate性能低. 
+</div> 
+<div> 
+ <br> 
+</div> 
+<div>
+  这样就恶性循环。 
+</div> 
+<div> 
+ <br> 
+</div> 
+<div>
+  如果牛人把使用情景,说出来了...可能也就不会有这样的问题了,.. 
+</div> 
+<div> 
+ <br> 
+</div> 
+<div>
+  则不是简单的发一篇贴...XXX性能低.. XXX不如XXX 
+</div> 
+<div> 
+ <br> 
+</div> 
+<div>
+  新人看见了.逮着就开跑..也不知道为什么这样说也跟着一起闹了 
+</div> 
+<div> 
+ <br> 
+</div> 
+<div>
+  这东西就相是一个相交 的BUG..也就是..如果大家水平一样..就没问题了.. 
+</div> 
+<div>
+  但是情况不是这样 
+</div> 
+<div> 
+ <br> 
+</div></div>
+	</div>
+	<div class="clear"></div>
+	<div class="replies" id="PostReplies_207815"><div class="clear"></div>
+<strong>--- 共有 3 条评论 --- </strong>
+<ul>
+		<li id="PostReply_653743">
+				<a href="http://my.oschina.net/oki" class="p" name="AnchorAnswer653743">OKi-Jet</a>
+		<span class="b">
+		<span class="c">很多牛人特爱装B，其实他们以前也是傻逼来着，牛起来就没好气了。</span>
+		<span class="t">
+				(1年前)&nbsp;&nbsp;
+				<span class="opts"><a href="javascript:reply_to_post(207815,1039966)">回复</a></span>
+		</span>
+		</span>
+		<div class="clear"></div>
+	</li>
+		<li id="PostReply_214450">
+				<a href="http://my.oschina.net/zhoulu" class="p" name="AnchorAnswer214450">走路</a>
+		<span class="b">
+		<span class="c">嗯，我一直想这样说，但没你总结到位</span>
+		<span class="t">
+				(3年前)&nbsp;&nbsp;
+				<span class="opts"><a href="javascript:reply_to_post(207815,53869)">回复</a></span>
+		</span>
+		</span>
+		<div class="clear"></div>
+	</li>
+		<li id="PostReply_209972">
+				<a href="http://my.oschina.net/lovelong1" class="p" name="AnchorAnswer209972">罪恶的花生</a>
+		<span class="b">
+		<span class="c">一个好的应用，我们只是用了20%的功能，</span>
+		<span class="t">
+				(3年前)&nbsp;&nbsp;
+				<span class="opts"><a href="javascript:reply_to_post(207815,54124)">回复</a></span>
+		</span>
+		</span>
+		<div class="clear"></div>
+	</li>
+	</ul>	
+<div class="PagerLinks">
+</div>
+</div>
+	
+	<div class="votes">
+				<span class="a_toolbar">
+		<a href="javascript:reply_to_post(207815, 0)">评论(3)</a>|
+		<a href="http://www.oschina.net/question/answer?question=52027&answer=207815">引用此评论</a>|							<a href="javascript:report('http://www.oschina.net/question/12_52027#AnchorAnswer207815',207815,17)">举报</a>
+				
+		(2012-05-03 11:37)
+		</span>
+	</div>
+</li>
+<span class="hr"></span>
+<script>
+			$('li.Answer').bind('mouseenter',function(){var anwserId = $(this).attr('id');}).bind('mouseleave',function(){var anwserId = $(this).attr('id');});
+    	$('.Vote').bind('mouseenter',function(){$(this).find('a.accept-off').show();$(this).find('a.accept-on').show();$(this).next('li.Answer').find('.hover-show').show();}).bind('mouseleave',function(){$(this).find('a.accept-off').hide();$(this).next('li.Answer').find('.hover-show').hide();});
+	</script><div class="Vote" id="vote_207825">
+		<a href="javascript:vote_answer(207825,true,true)" id="a_post_voteup_207825" class=" vote-up-off " title=" 投支持票 "></a>
+	<span class="a_vote_num" id="a_vote_num_207825">0</span>
+	<a href="javascript:vote_answer(207825,false,true)" id="a_post_votedown_207825" class=" vote-down-off " title=" 投反对票 "></a>
+				</div>
+<li class="Answer " id="answer_207825">
+	<div class="user">
+		<span class="user_img"><a href="http://my.oschina.net/ardede" class="ShowUserOutline" name="AnchorAnswer207825" target="_blank"><img src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/156174_50.jpg" align="absmiddle" alt="dedenj" title="dedenj" class="SmallPortrait" user="156174"></a></span>
+		<span class="user_info">
+			<a href="http://my.oschina.net/ardede" title="dedenj" target="_blank">dedenj</a>
+			<span class="reply-time">3年前</span>
+		</span>
+		<div class="clear"></div>
+	</div>
+	<div class="body">
+    															    			<div class="clear"></div>
+		<div class="detail">不错，从基础学起</div>
+	</div>
+	<div class="clear"></div>
+	<div class="replies" id="PostReplies_207825"><div class="clear"></div>
+<strong>--- 共有 5 条评论 --- </strong>
+<ul>
+		<li id="PostReply_601680">
+				<a href="http://my.oschina.net/u/817140" class="p" name="AnchorAnswer601680">饶飞成</a>
+		<span class="b">
+		<span class="c">其实我就不是从基础学起的，但是我现在都晓得了！哈哈！</span>
+		<span class="t">
+				(1年前)&nbsp;&nbsp;
+				<span class="opts"><a href="javascript:reply_to_post(207825,817140)">回复</a></span>
+		</span>
+		</span>
+		<div class="clear"></div>
+	</li>
+		<li id="PostReply_243218">
+				<a href="http://my.oschina.net/restart" class="p" name="AnchorAnswer243218">70岁</a>
+		<span class="b">
+		<span class="c">回复 <a href="http://my.oschina.net/luckystar" class="referer" target="_blank">@中山野鬼</a>  : 我也觉得你可耻啊，都一样</span>
+		<span class="t">
+				(3年前)&nbsp;&nbsp;
+				<span class="opts"><a href="javascript:reply_to_post(207825,229522)">回复</a></span>
+		</span>
+		</span>
+		<div class="clear"></div>
+	</li>
+		<li id="PostReply_210330">
+				<a href="http://my.oschina.net/qiyou" class="p" name="AnchorAnswer210330">变成马甲了哈哈</a>
+		<span class="b">
+		<span class="c">事业线果然了得</span>
+		<span class="t">
+				(3年前)&nbsp;&nbsp;
+				<span class="opts"><a href="javascript:reply_to_post(207825,154464)">回复</a></span>
+		</span>
+		</span>
+		<div class="clear"></div>
+	</li>
+		<li id="PostReply_208522">
+				<a href="http://my.oschina.net/luckystar" class="p" name="AnchorAnswer208522">中山野鬼</a>
+		<span class="b">
+		<span class="c">回复 <a href="http://my.oschina.net/seamanmei" class="referer" target="_blank">@梅公子</a>  : 我很可耻的承认，更关注他的头像。。。哈</span>
+		<span class="t">
+				(3年前)&nbsp;&nbsp;
+				<span class="opts"><a href="javascript:reply_to_post(207825,249672)">回复</a></span>
+		</span>
+		</span>
+		<div class="clear"></div>
+	</li>
+		<li id="PostReply_207893">
+				<a href="http://my.oschina.net/seamanmei" class="p" name="AnchorAnswer207893">梅公子</a>
+		<span class="b">
+		<span class="c">你的事业线不错~</span>
+		<span class="t">
+				(3年前)&nbsp;&nbsp;
+				<span class="opts"><a href="javascript:reply_to_post(207825,101460)">回复</a></span>
+		</span>
+		</span>
+		<div class="clear"></div>
+	</li>
+	</ul>	
+<div class="PagerLinks">
+</div>
+</div>
+	
+	<div class="votes">
+				<span class="a_toolbar">
+		<a href="javascript:reply_to_post(207825, 0)">评论(5)</a>|
+		<a href="http://www.oschina.net/question/answer?question=52027&answer=207825">引用此评论</a>|							<a href="javascript:report('http://www.oschina.net/question/12_52027#AnchorAnswer207825',207825,17)">举报</a>
+				
+		(2012-05-03 11:42)
+		</span>
+	</div>
+</li>
+<span class="hr"></span>
+<script>
+			$('li.Answer').bind('mouseenter',function(){var anwserId = $(this).attr('id');}).bind('mouseleave',function(){var anwserId = $(this).attr('id');});
+    	$('.Vote').bind('mouseenter',function(){$(this).find('a.accept-off').show();$(this).find('a.accept-on').show();$(this).next('li.Answer').find('.hover-show').show();}).bind('mouseleave',function(){$(this).find('a.accept-off').hide();$(this).next('li.Answer').find('.hover-show').hide();});
+	</script></ul>
+			                                                                                    <ul class="pager">
+                        <li class="page current"><a href="http://www.oschina.net/question/12_52027?sort=default&p=1">1</a></li>            <li class="page"><a href="http://www.oschina.net/question/12_52027?sort=default&p=2#answers">2</a></li>            <li class="page"><a href="http://www.oschina.net/question/12_52027?sort=default&p=3#answers">3</a></li>            <li class="page"><a href="http://www.oschina.net/question/12_52027?sort=default&p=4#answers">4</a></li>            <li class="page"><a href="http://www.oschina.net/question/12_52027?sort=default&p=5#answers">5</a></li>            <li class="page"><a href="http://www.oschina.net/question/12_52027?sort=default&p=6#answers">6</a></li>            <li class="page"><a href="http://www.oschina.net/question/12_52027?sort=default&p=7#answers">7</a></li>            <li class="page"><a href="http://www.oschina.net/question/12_52027?sort=default&p=8#answers">8</a></li>            <li class="page"><a href="http://www.oschina.net/question/12_52027?sort=default&p=9#answers">9</a></li>            <li class="page"><a href="http://www.oschina.net/question/12_52027?sort=default&p=10#answers">10</a></li>            <li class="page"><a href="http://www.oschina.net/question/12_52027?sort=default&p=29#answers">29</a>
+            </li>            <li class="page next"><a href="http://www.oschina.net/question/12_52027?sort=default&p=2#answers">&gt;</a></li>        </ul>
+                    </div> 
+		<div class="AnswerForm">
+						<form id="form_answer" action="http://www.oschina.net/action/question/answer?question=52027" method="post">
+				<input type="hidden" name="user" value="">
+				<div class="ke-container ke-container-oschina" style="width: 650px;"><div style="display:block;" class="ke-toolbar" unselectable="on"><span class="ke-outline" data-name="bold" title="粗体(Ctrl+B)" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-bold" unselectable="on"></span></span><span class="ke-outline" data-name="italic" title="斜体(Ctrl+I)" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-italic" unselectable="on"></span></span><span class="ke-outline" data-name="underline" title="下划线(Ctrl+U)" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-underline" unselectable="on"></span></span><span class="ke-outline" data-name="strikethrough" title="删除线" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-strikethrough" unselectable="on"></span></span><span class="ke-outline" data-name="removeformat" title="删除格式" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-removeformat" unselectable="on"></span></span><span class="ke-inline-block ke-separator"></span><span class="ke-outline" data-name="insertorderedlist" title="编号" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-insertorderedlist" unselectable="on"></span></span><span class="ke-outline" data-name="insertunorderedlist" title="项目符号" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-insertunorderedlist" unselectable="on"></span></span><span class="ke-outline" data-name="forecolor" title="文字颜色" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-forecolor" unselectable="on"></span></span><span class="ke-outline" data-name="hilitecolor" title="文字背景" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-hilitecolor" unselectable="on"></span></span><span class="ke-outline" data-name="fontname" title="字体" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-fontname" unselectable="on"></span></span><span class="ke-outline" data-name="fontsize" title="文字大小" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-fontsize" unselectable="on"></span></span><span class="ke-inline-block ke-separator"></span><span class="ke-outline" data-name="link" title="超级链接" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-link" unselectable="on"></span></span><span class="ke-outline" data-name="unlink" title="取消超级链接" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-unlink" unselectable="on"></span></span><span class="ke-outline" data-name="emoticons" title="插入表情" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-emoticons" unselectable="on"></span></span><span class="ke-outline" data-name="shcode" title="插入程序代码或脚本" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-shcode" unselectable="on"></span></span><span class="ke-outline" data-name="image" title="图片" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-image" unselectable="on"></span></span><span class="ke-outline" data-name="flash" title="Flash" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-flash" unselectable="on"></span></span><span class="ke-outline" data-name="quote" title="引用某段文字" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-quote" unselectable="on"></span></span><span class="ke-inline-block ke-separator"></span><span class="ke-outline" data-name="source" title="HTML代码" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-source" unselectable="on"></span></span><span class="ke-outline" data-name="about" title="关于" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-about" unselectable="on"></span></span></div><div style="display: block; height: 121px;" class="ke-edit"><iframe class="ke-edit-iframe" hidefocus="true" frameborder="0" style="width: 100%; height: 121px;"></iframe><textarea class="ke-edit-textarea" hidefocus="true" style="width: 100%; height: 121px; display: none;"></textarea></div><div class="ke-statusbar"><span class="ke-inline-block ke-statusbar-center-icon"></span><span class="ke-inline-block ke-statusbar-right-icon" style="visibility: hidden;"></span></div></div><textarea id="txt_answner" name="body" style="width: 650px; height: 160px; display: none;"></textarea>
+				<input type="submit" value=" 发表评论 " id="FormSubmitButton" class="rndbutton">
+				<span id="form_msg" style="display:none;"></span>
+				<br><br>
+				<a href="http://www.oschina.net/question/12_52027#answers">回评论顶部</a>&nbsp;|&nbsp;<a href="http://www.oschina.net/question/12_52027#top">回页面顶部</a>
+			</form>
+			<div class="clear"></div>
+			<script>			
+            $('#form_answer').ajaxForm({
+            	dataType: 'json',
+        		beforeSerialize: function($form, options) { 
+        			editor.sync();           
+                },
+        		beforeSubmit: function(){
+        			$('#FormSubmitButton').attr('disabled','disabled');
+        			$('#form_msg').html("<span class='ajax_processing'>正在提交评论，请稍候...</span>");	
+        			$('#form_msg').show();	
+        		},
+                success: function(json) {
+        			$('#FormSubmitButton').removeAttr('disabled');
+            		if(json.msg){
+        				$('#form_msg').html("<span class='error_msg'>"+json.msg+"</span>");
+        				$('#form_msg').show();
+        			}
+            		else if(json.id){
+            			ajax_get("/question/show_answer?_answer_id="+json.id, true, function(data){
+        					            				$('.QuestionReplies ul.list').append(data);
+        					        					editor.html('');
+        					$('.answer_count').html(json.answer_count);
+            			}); 				
+        				$('#form_msg').hide();
+            		}
+                }
+            });
+			</script>
+		</div>
+	</div>	
+	
+<script type="text/javascript" src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/xregexp-min.js"></script>
+<script type="text/javascript" src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/shCore.min.js"></script>
+<script type="text/javascript" src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/shAutoloader.js"></script>
+<link type="text/css" rel="stylesheet" href="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/shCore.css">
+<link type="text/css" rel="Stylesheet" href="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/shThemeDefault.css">
+
+<script type="text/javascript">
+    SyntaxHighlighter.autoloader(
+            'applescript			/js/sh309/scripts/shBrushAppleScript.js?t=1406837068000',
+            'actionscript3 as3		/js/sh309/scripts/shBrushAS3.js?t=1406837068000',
+            'bash shell				/js/sh309/scripts/shBrushBash.js?t=1406837068000',
+            'coldfusion cf			/js/sh309/scripts/shBrushColdFusion.js?t=1406837068000',
+            'cpp c					/js/sh309/scripts/shBrushCpp.js?t=1406837068000',
+            'obj-c objc				/js/sh309/scripts/shBrushObjC.js?t=1406837068000',
+            'c# c-sharp csharp		/js/sh309/scripts/shBrushCSharp.js?t=1406837068000',
+            'css					/js/sh309/scripts/shBrushCss.js?t=1406837068000',
+            'delphi pascal			/js/sh309/scripts/shBrushDelphi.js?t=1406837068000',
+            'diff patch pas			/js/sh309/scripts/shBrushDiff.js?t=1406837068000',
+            'erl erlang				/js/sh309/scripts/shBrushErlang.js?t=1406837068000',
+            'groovy					/js/sh309/scripts/shBrushGroovy.js?t=1406837068000',
+            'haxe hx				/js/sh309/scripts/shBrushHaxe.js?t=1406837068000',
+            'java					/js/sh309/scripts/shBrushJava.js?t=1406837068000',
+            'jfx javafx				/js/sh309/scripts/shBrushJavaFX.js?t=1406837068000',
+            'js jscript javascript	/js/sh309/scripts/shBrushJScript.js?t=1406837068000',
+            'perl pl				/js/sh309/scripts/shBrushPerl.js?t=1406837068000',
+            'php					/js/sh309/scripts/shBrushPhp.js?t=1406837068000',
+            'text plain				/js/sh309/scripts/shBrushPlain.js?t=1406837068000',
+            'py python				/js/sh309/scripts/shBrushPython.js?t=1406837068000',
+            'ruby rails ror rb		/js/sh309/scripts/shBrushRuby.js?t=1406837068000',
+            'scala					/js/sh309/scripts/shBrushScala.js?t=1406837068000',
+            'sql					/js/sh309/scripts/shBrushSql.js?t=1406837068000',
+            'vb vbnet				/js/sh309/scripts/shBrushVb.js?t=1406837068000',
+            'xml xhtml xslt html	/js/sh309/scripts/shBrushXml.js?t=1406837068000'
+    );
+    SyntaxHighlighter.all();
+</script>
+	<div class="QuestionRelations">
+	<div id="QuestionWizard">
+		有什么技术问题吗？
+		<a href="http://www.oschina.net/question/ask" class="rndbutton"><span>我要提问</span></a>
+		<div class="clear"></div>
+	</div>
+							<div style="text-align:center;margin-bottom:10px;">
+		<a name="question_banner_one">
+		</a><a href="https://www.jpush.cn/" target="_blank" title="极光推送">
+			<img src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/question_banner_one_1122_grycp.jpg" width="250.0" height="250.0">
+		</a>
+		 </div>
+		    		<div class="AskerCard">
+			<div id="OtherQuestionsOfUser" class="Qlist">
+		<strong><a href="http://my.oschina.net/javayou/?ft=bbs&scope=2&showme=1" class="more">全部(5158)</a>红薯的其他问题</strong>
+		<ul>
+				<li><a href="http://www.oschina.net/question/12_227440" title="一台 Linux 服务器执行 ps 查看进程列表的命令执行无响应">一台 Linux 服务器执行 ps 查看进程列表的命令执行无响应</a><span class="date">(5回/286阅,2周前)</span></li>				<li><a href="http://www.oschina.net/question/12_227105" title="在 Linux 下使用 J2Cache 需要修改系统网络内核参数：net.core.wmem_max 和 net.core.rmem_max">在 Linux 下使用 J2Cache 需要修改系统网络内核参数：net.core.wmem_max 和 net.core.rmem_max</a><span class="date">(0回/166阅,2周前)</span></li>				<li><a href="http://www.oschina.net/question/12_227100" title="如果你收到 Godaddy 的邮件：[Incident ID: xxxx] xxxx - DS Invalid Whois - Invalid Whois 1st Notice – Response Required">如果你收到 Godaddy 的邮件：[Incident ID: xxxx] xxxx - DS Invalid Whois - Invalid Whois 1st Notice – Response Required</a><span class="date">(0回/170阅,2周前)</span></li>				<li><a href="http://www.oschina.net/question/12_226857" title="4 千元悬赏 J2Cache 的 Hibernate 支持功能开发">4 千元悬赏 J2Cache 的 Hibernate 支持功能开发</a><span class="date">(45回/10241阅,2周前)</span></li>				<li><a href="http://www.oschina.net/question/12_226184" title="通过 PPA 在 Ubuntu 下安装 Java 9 （JDK 9）">通过 PPA 在 Ubuntu 下安装 Java 9 （JDK 9）</a><span class="date">(6回/243阅,3周前)</span></li>				</ul>
+	</div>
+		</div>
+						
+        <div class="google_ads" style="margin:20px 0;">
+			<script src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/question-side.js"></script><script async="" src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/adsbygoogle.js"></script>
+<!-- news-side -->
+<ins class="adsbygoogle" style="display:inline-block;width:250px;height:250px" data-ad-client="ca-pub-1307862221338762" data-ad-slot="9547725620" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:250px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:250px;background-color:transparent"><iframe width="250" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    	</div>
+				          				
+		<div id="Similarity" class="Qlist">
+									<strong>类似的话题</strong>
+			<ul>
+        				<li><a href="http://www.oschina.net/question/12_8793" title="Servlet 3.0 介绍">Servlet 3.0 介绍</a><span class="date">(3回/1208阅,5年前)</span></li>						<li><a href="http://www.oschina.net/question/12_16372" title="Servlet 工作原理解析">Servlet 工作原理解析</a><span class="date">(10回/4093阅,4年前)</span></li>						<li><a href="http://www.oschina.net/question/30362_3453" title="Servlet请求转发 RequestDispatcher接口">Servlet请求转发 RequestDispatcher接口</a><span class="date">(1回/709阅,5年前)</span></li>						<li><a href="http://www.oschina.net/question/129540_28430" title="Java 字节码工具 ASM 在 web services 开发中的应用">Java 字节码工具 ASM 在 web services 开发中的应用</a><span class="date">(2回/1514阅,3年前)</span></li>						<li><a href="http://www.oschina.net/question/129540_84242" title="Java Web 服务性能优化实践">Java Web 服务性能优化实践</a><span class="date">(2回/710阅,2年前)</span></li>						<li><a href="http://www.oschina.net/question/564772_71899" title="白话MVC（一）Model的产生及处理">白话MVC（一）Model的产生及处理</a><span class="date">(11回/1023阅,2年前)</span></li>						<li><a href="http://www.oschina.net/question/234345_51261" title="基于JAX-WS调用Web Service的Java客户端">基于JAX-WS调用Web Service的Java客户端</a><span class="date">(0回/1157阅,3年前)</span></li>						<li><a href="http://www.oschina.net/question/12_4873" title="用 jpa2web 生成 Ajax J2EE Web 应用程序">用 jpa2web 生成 Ajax J2EE Web 应用程序</a><span class="date">(0回/200阅,6年前)</span></li>						<li><a href="http://www.oschina.net/question/200090_32210" title="转：session监听 HttpSessionBindingListener">转：session监听 HttpSessionBindingListener</a><span class="date">(0回/657阅,3年前)</span></li>						<li><a href="http://www.oschina.net/question/5138_490" title="Servlet/JSP的配置使用,原来这么简单!">Servlet/JSP的配置使用,原来这么简单!</a><span class="date">(0回/1265阅,6年前)</span></li>						<li><a href="http://www.oschina.net/question/4873_23271" title="Servlet 四种过滤器的工作方式">Servlet 四种过滤器的工作方式</a><span class="date">(5回/807阅,4年前)</span></li>						<li><a href="http://www.oschina.net/question/108664_21479" title="jquery+swfupload+servlet 多文件上传">jquery+swfupload+servlet 多文件上传</a><span class="date">(12回/3269阅,4年前)</span></li>						<li><a href="http://www.oschina.net/question/234345_53775" title="servlet + JSP+ mysql实现文件的上传">servlet + JSP+ mysql实现文件的上传</a><span class="date">(2回/868阅,3年前)</span></li>						<li><a href="http://www.oschina.net/question/234345_51217" title="如何在客户端控制webservice调用的timeout">如何在客户端控制webservice调用的timeout</a><span class="date">(0回/1111阅,3年前)</span></li>						<li><a href="http://www.oschina.net/question/234345_51125" title="Spring的WebServiceTemplate访问WebService的方法及其本质原理">Spring的WebServiceTemplate访问WebService的方法及其本质原理</a><span class="date">(0回/694阅,3年前)</span></li>						<li><a href="http://www.oschina.net/question/67418_8344" title="jsf技术难题">jsf技术难题</a><span class="date">(1回/458阅,5年前)</span></li>						</ul>
+					</div>		
+	</div>
+	<div class="clear"></div>   
+</div>
+<script type="text/javascript" src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/kindeditor-min.js" charset="utf-8"></script>
+<script type="text/javascript">
+<!--
+var editor;
+KindEditor.ready(function(K) {
+    editor = K.create('#txt_answner', {
+		themeType : 'oschina',
+		resizeType : 1,
+		urlType: 'domain',
+		shadowMode : false,
+		allowPreviewEmoticons : false,
+		allowImageUpload : true,
+		allowFlashUpload : false,
+		cssPath : '/css/ke-oschina.css?t=1398073160000',
+		uploadJson : '/action/blog/upload_img',
+		afterCreate : function(){
+			/*
+			K.ctrl(this.edit.iframe.get(0).contentWindow.document, 13, function() {
+				$("#txt_answner").parent().submit();
+			});
+			*/
+			$(this.edit.iframe.get(0).contentWindow.document).keydown(function(e) {
+				if ((e.ctrlKey || e.metaKey) && e.which == 13 && !e.shiftKey && !e.altKey){
+					$("#txt_answner").parent().submit();
+				}
+			});
+		},
+		afterChange : function() {
+			this.sync();
+		},
+		items : ['bold', 'italic', 'underline', 'strikethrough', 'removeformat','|','insertorderedlist', 'insertunorderedlist', 
+				 'forecolor', 'hilitecolor', 'fontname', 'fontsize',  '|', 'link', 'unlink', 'emoticons', 
+				 'shcode', 'image', 'flash', 'quote', '|', 'source','about'],
+		htmlTags:
+		{
+			script : ['src'],
+            font : ['color', 'size', 'face', '.background-color'],
+            span : [
+                    '.color', '.background-color', '.font-size', '.font-family', '.background',
+                    '.font-weight', '.font-style', '.text-decoration', '.vertical-align', '.line-height'
+            ],
+            div : [
+                    'class', 'align', '.border', '.margin', '.padding', '.text-align', '.color',
+                    '.background-color', '.font-size', '.font-family', '.font-weight', '.background',
+                    '.font-style', '.text-decoration', '.vertical-align', '.margin-left'
+            ],
+            table: [
+                    'border', 'cellspacing', 'cellpadding', 'width', 'height', 'align', 'bordercolor',
+                    '.padding', '.margin', '.border', 'bgcolor', '.text-align', '.color', '.background-color',
+                    '.font-size', '.font-family', '.font-weight', '.font-style', '.text-decoration', '.background',
+                    '.width', '.height', '.border-collapse'
+            ],
+            'td,th': [
+                    'align', 'valign', 'width', 'height', 'colspan', 'rowspan', 'bgcolor',
+                    '.text-align', '.color', '.background-color', '.font-size', '.font-family', '.font-weight',
+                    '.font-style', '.text-decoration', '.vertical-align', '.background', '.border'
+            ],
+            a : ['href', 'target', 'name'],
+            embed : ['src', 'width', 'height', 'type', 'loop', 'autostart', 'quality', '.width', '.height', 'align', 'allowscriptaccess'],
+            img : ['src', 'width', 'height', 'border', 'alt', 'title', 'align', '.width', '.height', '.border'],
+            'p,ol,ul,li,blockquote,h1,h2,h3,h4,h5,h6' : [
+                    'align', '.text-align', '.color', '.background-color', '.font-size', '.font-family', '.background',
+                    '.font-weight', '.font-style', '.text-decoration', '.vertical-align', '.text-indent', '.margin-left'
+            ],
+            pre : ['class'],
+            hr : ['class', '.page-break-after'],
+            'br,tbody,tr,strong,b,sub,sup,em,i,u,strike,s,del' : []
+		}
+    });
+});
+//-->
+</script>
+<!--[if lt IE 7]>
+<script type="text/javascript" src="/js/minmax.js?t=1377425784000"></script>
+<![endif]-->
+<script type="text/javascript" src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/question"></script>
+<script type="text/javascript">
+<!--
+$(document).ready(function() {
+	$.ajax({
+		url:"/action/favorite/attentionUsersCount",
+		type:"get",
+		data:"id="+52027+"&type="+2,
+		success:function(msg){
+			$("#favor_trigger").html("收藏("+msg+")");
+		}
+	});
+	$('.Answer .replies li').hover(
+		function(){$(this).addClass('hover');},
+		function(){$(this).removeClass('hover');}
+	);
+	
+    $('.detail img').css('cursor','pointer');
+    jQuery.each($('.detail img'),function(idx,v){
+        if(!$(v).parent().is("a")) {
+            $(v).wrap("<a href='"+$(this).attr('src')+"' target='_blank'></a>");
+        }
+    });
+	
+	$('#c').bind('mouseover mouseout',function(){
+		$('#c_on').toggle();
+		$('#c_off').toggle();
+	});
+	
+	$('#favor_trigger').click(function(){
+			add_to_favor(52027,2);
+		});
+});
+function ask_too(qid, ask){
+	ajax_post("/action/question/ask_too?id="+qid+"&ask="+ask,"",function(html){
+		json = eval('('+html+')');
+		if(json.asker_count >= 0){
+			$('#c_asker_count').html(json.asker_count);
+			if(json.ask_mode)
+				$('#RQuestionAction').html("<span class='rect'>已问同一问题 | <a href='javascript:ask_too(52027,false)'>取消？</a></span>");
+			else
+				$('#RQuestionAction').html("<a href='javascript:ask_too(52027,true)' class='rndbutton'><span>我想问同样的问题</span></a>");			
+		}
+		else{
+			$('#RQuestionAction').poshytip({
+				className: 'tip-yellowsimple',
+				content: json.msg,
+				showOn: 'none',
+				alignTo: 'target',
+				alignX: 'center',
+				alignY: 'top',
+				offsetY: 6
+			});
+			$('#RQuestionAction').poshytip('show');
+			var t = setTimeout(function(){
+				clearTimeout(t);
+				$('#RQuestionAction').poshytip('destroy');
+			},4000);
+		}
+	});
+}
+function delete_q(qid){
+	if(!confirm("您确认要删除此问题吗，删除的数据不可恢复？"))
+		return ;
+		ajax_post("/action/question/delete?id="+qid+"&hash=727285000","",function(html){
+		if(html.length>0)
+			alert(html);
+		else{
+			location.href = "/question";
+		}
+	});
+}
+function edit_answer(aid){
+	location.href="/question/edit_answer?id="+aid;
+}
+function delete_answer(aid,hash){
+	if(!confirm("您确认要删除此答案吗，删除的数据不可恢复？"))
+		return ;
+	ajax_post("/action/question/delete_answer?id="+aid+"&hash="+hash,"",function(html){
+		if(html.length>0)
+			alert(html);
+		else{
+			$('#answer_'+aid).fadeOut();
+			$('#vote_'+aid).fadeOut();
+			$('#answer_'+aid).next('.hr').fadeOut();
+		}
+	});
+}
+function delete_post_reply(aid,hash){
+	if(!confirm("您确认要删除此评论吗，删除的数据不可恢复？"))
+		return ;
+	ajax_post("/action/question/delete_answer?id="+aid+"&hash="+hash,"",function(html){
+		if(html.length>0)
+			alert(html);
+		else{
+			$('#PostReply_'+aid).fadeOut();
+		}
+	});
+}
+function delete_q_rpl(qid, rid){
+	if(!confirm("删除补充说明会被扣威望值，是否继续？"))
+		return ;
+	ajax_post("/action/question/delete_detail?id="+rid,"",function(html){
+		if(html.length>0)
+			alert(html);
+		else
+			$("#q_reply_"+rid).fadeOut();
+	});
+}
+function close_tip(tid){$('#'+tid).poshytip('destroy');}
+//答案投票
+function vote_answer(qid, vote_up, need_confirm){
+	if(need_confirm && !vote_up){
+		if(!$('#a_post_votedown_' + qid).hasClass('bold')){
+			var vote_down_confirm_msg = "<p>此操作将会扣掉你1个积分，是否继续？</p><p style='margin-top:10px;'><a href='javascript:vote_answer("+qid+",false,false)' class='rbtn' style='margin:0 10px 0 50px;'><span>确定</span></a><a href=\"javascript:close_tip('a_post_votedown_" + qid +"')\" class='rbtn'><span>取消</span></a></p>";			
+			$('#a_post_votedown_' + qid).poshytip({
+				className: 'tip-yellowsimple',
+				content: vote_down_confirm_msg,
+				showOn: 'none',
+				slide: false,
+				fade: false,
+				alignTo: 'target',
+				alignX: 'center',
+				offsetY: 8
+			});
+			$('#a_post_votedown_' + qid).poshytip('show');
+			return;
+		}
+	}
+	if(!need_confirm){
+		$('#a_post_votedown_' + qid).poshytip('destroy');
+	}
+	ajax_post("/action/question/vote_answer?id="+qid+"&vote="+vote_up+"&user=","",function(data){
+		json = eval('('+data+')');
+		if(json.msg){
+			var aid = vote_up?"a_post_voteup_":"a_post_votedown_";
+			aid += qid;
+			$('#'+aid).poshytip({
+				className: 'tip-yellowsimple',
+				content: json.msg,
+				showOn: 'none',
+				alignTo: 'target',
+				alignX: 'center',
+				alignY: 'top',
+				offsetY: 6
+			});
+			$('#'+aid).poshytip('show');
+			var t = setTimeout(function(){
+				clearTimeout(t);
+				$('#'+aid).poshytip('destroy');
+			},2000);
+			//jQuery.fancybox("<div class='error_box'>"+json.msg+"</div>");
+		}
+		else{
+			if(vote_up){
+				$('#post_voteup_'+qid).html('('+json.vote+')');
+				var a_post_voteup = $('#a_post_voteup_'+qid);
+				if(a_post_voteup.attr('class').indexOf("vote-up-off")!=-1){
+					$('#a_post_voteup_'+qid).attr('class', 'vote-up-on');
+					$('#a_post_voteup_'+qid).attr('title','取消支持票');
+					$('#a_vote_num_'+qid).html(parseInt($('#a_vote_num_'+qid).html())+1);
+				}else{
+					$('#a_post_voteup_'+qid).attr('class', 'vote-up-off');
+					$('#a_post_voteup_'+qid).attr('title','投支持票');
+					$('#a_vote_num_'+qid).html(parseInt($('#a_vote_num_'+qid).html())-1);
+				}
+			}else{
+				$('#post_votedown_'+qid).html('('+json.vote+')');
+				var a_post_votedown = $('#a_post_votedown_'+qid);
+				if(a_post_votedown.attr('class').indexOf("vote-down-off")!=-1){
+    				a_post_votedown.attr('class', 'vote-down-on').attr('title','取消反对票');
+    				$('#a_vote_num_'+qid).html(parseInt($('#a_vote_num_'+qid).html())-1);
+				}else{
+					a_post_votedown.attr('class', 'vote-down-off');
+					a_post_votedown.attr('title','投反对票');
+    				$('#a_vote_num_'+qid).html(parseInt($('#a_vote_num_'+qid).html())+1);
+				}
+			}
+		}
+	});
+}
+//问题投票 
+$('#vote_up').click(function(){
+	if(this.clickTimeout){
+        // 双击
+        clearTimeout(this.clickTimeout);
+        this.clickTimeout = null;
+		alert("不用那么费劲啦，点击一下就够了:)");
+    }
+    else{
+        // 单击
+        var elem = this;
+        this.clickTimeout = setTimeout(function(){
+            // 执行点击动作
+            elem.clickTimeout = null;
+			vote_question(52027,true, true);
+        }, 250);
+    }
+    //阻止链接onclick时的默认行为
+    return false;
+});
+$('#vote_down').click(function(){
+	vote_question(52027,false, true);
+	/*
+	if(this.clickTimeout){
+        // 双击
+        clearTimeout(this.clickTimeout);
+        this.clickTimeout = null;
+		alert("不用那么费劲啦，点击一下就够了:)");
+    }
+    else{
+        // 单击
+        var elem = this;
+        this.clickTimeout = setTimeout(function(){
+            // 执行点击动作
+            elem.clickTimeout = null;
+			vote_question(52027,false, true);
+        }, 250);
+    }
+    //阻止链接onclick时的默认行为
+	*/
+    return false;
+});
+function vote_question(qid, vote_up, need_confirm){
+	if(need_confirm && !vote_up){
+		if($('#Vote #vote_down').hasClass('ask_vote_down')){
+			var vote_down_confirm_msg = "<p>踩问题将会扣掉你1个积分，是否继续？</p><p style='margin-top:10px;'><a href='javascript:vote_question(52027,false,false)' class='rbtn' style='margin-right:10px;'><span>确定</span></a><a href=\"javascript:close_tip('vote_down')\" class='rbtn'><span>取消</span></a></p>";
+			$('#Vote #vote_down').poshytip({
+				className: 'tip-yellowsimple',
+				content: vote_down_confirm_msg,
+				slide: false,
+				fade: false,
+				showOn: 'none',
+				alignTo: 'target',
+				alignX: 'inner-right',
+				alignY: 'bottom',
+				offsetX: -35,
+				offsetY: 5
+			});
+			$('#Vote #vote_down').poshytip('show');
+			return;
+		}
+	}
+	if(!need_confirm){
+		$('#Vote #vote_down').poshytip('destroy');
+	}
+	ajax_post("/action/question/vote?user=&id="+qid+"&vote="+vote_up,"",function(data){
+		json = eval('('+data+')');
+		if(json.msg){
+			var aid = vote_up?"vote_up":"vote_down";
+			$('#'+aid).poshytip({
+				className: 'tip-yellowsimple',
+				content: json.msg,
+				showOn: 'none',
+				alignTo: 'target',
+				alignX: 'inner-right',
+				alignY: 'bottom',
+				offsetX: 5,
+				offsetX: -35
+			});
+			$('#'+aid).poshytip('show');
+			var t = setTimeout(function(){
+				clearTimeout(t);
+				$('#'+aid).poshytip('destroy');
+			},2000);
+		}
+		else{
+						if(vote_up){
+				$('#Vote .vote-up-count').html(json.vote_up);
+				if($('#vote_up').attr('class').indexOf("vote-up-off")!=-1){
+					$('#vote_up').attr('class', 'vote-up-on');
+					$('#vote_up').attr('title','取消顶');
+					$('.q_vote_num').html(parseInt($('.q_vote_num').html())+1);
+				}else{
+					$('#vote_up').attr('class', 'vote-up-off');
+					$('#vote_up').attr('title','顶：这问题很有用或者很提问清晰明了');
+					$('.q_vote_num').html(parseInt($('.q_vote_num').html())-1);
+				}
+			}
+			else{
+				$('#Vote .vote-down-count').html(json.vote_down);
+				if($('#vote_down').attr('class').indexOf("vote-down-off")!=-1){
+					$('#vote_down').attr('class', 'vote-down-on');
+					$('#vote_down').attr('title','取消踩');
+					$('.q_vote_num').html(parseInt($('.q_vote_num').html())-1);
+				}else{
+					$('#vote_down').attr('class', 'vote-down-off');
+					$('#vote_down').attr('title','踩：这问题不知道在问什么，或者没什么用');
+					$('.q_vote_num').html(parseInt($('.q_vote_num').html())+1);
+				}
+			}
+		}
+	});
+}
+//评论答案
+function reply_to_post(postid,uid){
+	    url = "/action/ajax/reply_to_post?id=" + postid + "&refer="+uid
+    ajax_post(url,"",function(data){
+        $.fancybox({
+            content: data,
+            onComplete: function(){
+                $input = $('#ta_body');
+                $input.focus();
+                pos = $input.val().length;
+                if (document.selection) {
+                    range = $input[0].createTextRange();
+                    range.move("character", pos);
+                    range.select();
+                } else {
+                    $input[0].setSelectionRange(pos, pos);
+                }
+            }
+        });
+    });
+}
+
+function show_rp_next(postid,current,total){
+	if(current < total){
+		var next_page = current + 1;
+    	var url = "/question/post_replies?answer="+postid+"&rp="+next_page;
+    	ajax_post(url,"",function(html){
+    		$('#PostReplies_'+postid).html(html);
+				addRepliesHoverEvent();
+			});
+	}
+}
+
+function addRepliesHoverEvent(){
+	$("li [id ^= 'PostReply']").hover(function(){
+		$(this).addClass("hover");
+	},function(){
+		$(this).removeClass("hover");
+	});
+}
+
+function show_rp_prev(postid,current,total){
+	if(current > 1){
+		var next_page = current - 1;
+    	var url = "/question/post_replies?answer="+postid+"&rp="+next_page;
+    	ajax_post(url,"",function(html){
+    		$('#PostReplies_'+postid).html(html);
+			addRepliesHoverEvent();
+    	});
+	}
+}
+function mark_as_top(qid, as_top) {
+	var args = "id="+qid+"&top="+as_top;
+	ajax_post("/action/question/mark_as_top",args,function(html){
+		alert(html);
+	});
+}
+function mark_as_best(postid, is_best){
+	var args = "id="+postid+"&best="+(is_best?1:0);
+	ajax_post("/action/question/mark_as_best",args,function(html){
+    	if(html.length>0){
+    		$('#best_answer_'+postid).poshytip({
+    			className: 'tip-yellowsimple',
+    			content: html,
+    			showOn: 'none',
+    			alignTo: 'target',
+    			alignX: 'center',
+    			alignY: 'top',
+    			offsetY: 6
+    		});
+    		$('#best_answer_'+postid).poshytip('show');
+    		var t = setTimeout(function(){
+    			clearTimeout(t);
+    			$('#best_answer_'+postid).poshytip('destroy');
+    		},2000);
+    	}
+    	else{
+			if(is_best){
+				$('#answer_'+postid).addClass('Best');
+				$('#best_answer_'+postid).attr('class', 'accept-on')
+				.attr('href', 'javascript:mark_as_best('+postid+',false)')
+				.attr('title','取消标记为最佳答案');
+			}else{
+				$('#answer_'+postid).removeClass('Best');
+				$('#best_answer_'+postid).attr('class', 'accept-off')
+				.attr('href', 'javascript:mark_as_best('+postid+',true)')
+				.attr('title','标记为最佳答案');
+			}
+    	}
+	});
+}
+function edit_tags(qid){
+	popup("/question/edit_tags?question="+qid);
+}
+function edit_catalogs(qid){
+	popup("/admin/catalog/set-catalogs?parent=1&type=2&id="+qid);
+}
+function event_apply(event_id){	
+	popup("/action/ajax/event_apply","id="+event_id);
+}
+function cancel_apply(event_id){
+	if(confirm("您确认要取消参加此次活动吗？")){
+		ajax_post("/action/event/cancel","event="+event_id,function(html){
+			if(html.length>0)
+				alert(html);
+			else
+				alert('已取消参加此次活动，感谢您的支持:)');
+		});
+	}
+}
+
+var favor_ok = "<p class='favor_ok'>已成功添加到收藏夹<br/><br/> <a href='null/favorites?type=$DAISY_OBJ_TYPE'>我的收藏夹</a> | <a href='javascript:close_favor()'>关闭</a></p>";
+function delete_favor(obi_id, obj_type){
+	if(!confirm('确定取消收藏？')) return;
+	$.post("/action/favorite/cancel?type="+obj_type+"&id="+obi_id+"&user=",function(html){
+		$('#favor_trigger').parent('div').removeClass('ask_collected').addClass('ask_collect');
+		$('#favor_trigger').attr('title','添加到收藏');
+    	$('#p_favor_count').html(html);
+		$('#favor_trigger').unbind('click');
+		$('#favor_trigger').click(function(){add_to_favor(52027,2);});
+	});
+}
+function add_to_favor(obj_id, obj_type){
+	if(confirm('必须登录后才能收藏，是否现在登录？')){
+		location.href="http://www.oschina.net/home/login?goto_page="+location.href;
+	}
+}
+function close_favor(elem_id){
+    $('#favor_trigger').poshytip('destroy');
+}
+function setTag(tv){
+	var t = $("._favor_input");
+	var value = t.val();
+	var tags = value.replace(/，/ig,',').split(',');
+	var exist = false;
+	value = $.map(tags,function(v,i){
+		if($.trim(tv) == $.trim(v)){
+			exist = true;
+			return undefined;
+		}
+		return v;
+	}).join(',');
+	if(exist){
+		t.val(value);
+		return;
+	}
+	if(value!="")
+		t.val(value+","+tv);
+	else
+		t.val(tv)
+}
+//-->
+</script><div class="clear"></div></div>
+	<div id="OSC_Footer" class="CenterDiv"><style>
+.oscapp {text-align:left; width:220px;}
+.oscapp span {float:left;width:140px;}
+.oscapp a {float:left;text-indent:-9999em;width:16px;margin-left:8px;}
+.oscapp a.android {background:url('/img/android.gif') no-repeat left center;}
+.oscapp a.iphone {background:url('/img/iphone.gif') no-repeat left center;}
+.oscapp a.wp7 {background:url('/img/wp7.gif') no-repeat left center;}
+</style>
+<table width="100%"><tbody><tr>
+<td align="left">© 开源中国(OSChina.NET) | <a href="http://www.oschina.net/home/aboutosc">关于我们</a> | <a href="mailto:market@oschina.net">广告联系</a> | <a href="http://weibo.com/oschina2010" target="_blank">@新浪微博</a> | <a href="http://m.oschina.net/">开源中国手机版</a> | <a href="http://www.miitbeian.gov.cn/" target="_blank" style="color:#737573;text-decoration:none;">粤ICP备12009483号-3</a></td>
+<td class="oscapp">
+	<span>开源中国手机客户端：</span>
+	<a href="http://www.oschina.net/app" class="android" title="Android客户端">Android</a>
+	<a href="http://www.oschina.net/app" class="iphone" title="iPhone 客户端">iPhone</a>
+	<a href="http://www.oschina.net/app" class="wp7" title="Windows Phone 客户端">WP7</a>
+</td>
+</tr>
+<tr>
+<td colspan="2" align="left">开源中国社区(OSChina.net)是工信部 <a href="http://www.copu.org.cn/" target="_blank">开源软件推进联盟</a> 指定的官方社区</td>
+</tr>
+</tbody></table>
+<script type="text/javascript">
+<!--
+if (top.location != self.location)top.location=self.location;
+//-->
+</script></div>
+</div>
+
+
+<!-- Generated by OsChina.NET (init:0[ms],page:66[ms],ip:115.26.4.1) --><div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div><div id="topcontrol" title="回到顶部" style="position: fixed; bottom: 120px; right: 100px; cursor: pointer;"><img src="./初学 Java Web 开发，请远离各种框架，从 Servlet 开发 - 开源中国社区_files/gotop.gif" style="width:31px; height:31px;"></div></body></html>

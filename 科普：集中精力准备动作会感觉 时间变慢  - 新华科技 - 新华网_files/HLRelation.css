@@ -1,0 +1,139 @@
+/*
+ * @author 海量
+ * 海量演示界面css
+ * 延伸阅读结果页面各区域的style样式表
+ */
+
+.hl-RelationBox
+{
+	font-size		:14px;
+	font-family		:arial,sans-serif;
+	border			:none;
+	background		:#ffffff none repeat scroll 0 0;
+	margin			:10px 10px 10px 10px;
+	text-align		:left;
+}
+
+.hl-RelationHead
+{
+	margin				: 0;
+	padding				: 0;
+	height				: 0.86em;
+	font-size			: 0.86em;
+	border-color		: #2D68C6 #2D68C6;
+	border-style		: none none solid;
+	border-width		: 0 0 3px;
+}
+
+.hl-RelationHeadTitle
+{
+	color				:#2D68C6;		
+	background-color	:#ffffff;
+	font-weight			:bold;
+	margin-left			:1em;
+	padding				:0 1px 0 1px;
+}
+
+.hl-RelationBody
+{
+	margin			:0;
+	padding			:10px 10px 10px 10px;
+}
+
+.hl-RelationBodyBorder
+{
+	border-color	:#2D68C6 #2D68C6;
+	border-style	:none solid solid;
+	border-width	:0 1px 1px;
+}
+
+
+.hl-RelationWaitWord
+{
+	text-align:center;
+}
+
+
+.hl-RelateTitle
+{
+	font-weight			: bold;
+	padding-left		: 10px;
+	padding-top			: 10px;
+}
+
+.hl-Ul
+{
+	border				:0 none;
+	line-height			:23px;	
+	list-style-type		:square;
+	margin				:0;
+	padding				:0;
+	list-style-position	:inside;
+}
+
+.hl-Ul-5
+{
+	list-style-type		:none;
+	list-style-position	:outside;
+}
+
+.hl-Li
+{
+	padding-left		:1em;
+}
+
+.hl-Cite
+{
+	color				:#000000;
+	font-style			:normal;
+	text-decoration		:none;
+}
+
+.hl-StrongRed
+{
+	color		:red;
+	font-weight	:bold;
+}
+
+.hl-StrongBlack
+{
+	color		:#808080;
+	font-weight	:bold;
+}
+.hl-Date
+{
+	color		:#666666;
+	font-size	:0.86em;
+}
+
+.hl-TextRef
+{
+	color		:green;
+	font-size	:0.86em;
+}
+
+.hl-Abs
+{
+	color		:#555555;
+	font-size	:0.86em;
+	line-height	:1.1em;
+	margin		:0px;
+	padding		:5px 10px 15px 15px;	
+}
+
+.hl-Abs-noLeftPadding
+{
+	padding-left	:0;
+}
+
+.hl-Key
+{
+	color			:red
+}
+
+.hl-Channel
+{
+	background-color	:#2D68C6;
+	font-size			:0.86em;
+	color				:#ffffff;
+}

@@ -1,0 +1,739 @@
+@charset "utf-8";
+html{font-family: "微软雅黑","华文细黑", "宋体", sans-serif;}
+
+/*对main.css的一些改正*/
+.side-pane {width: 228px;}
+.container{ width:960px;}
+#content_wrapper .container{ background:#fff; box-shadow: 0 0 15px rgba(0, 0, 0, .4); *border-left:1px solid #d9d9d6; *border-right:1px solid #d9d9d6; -webkit-transition-property:none; -moz-transition-property:none}
+#content { margin: 35px auto 0; background: none; }
+#content_wrapper { padding:0}
+.side-pane .action-pane {margin-bottom: 0px; border:none; border-bottom: 1px solid #D9D9D6;}
+.pin-pane {border: none;border-right: 1px solid #D9D9D6; width: 731px;}
+#flow-no-pin-tip { border:none}
+
+
+.img_bg{ background:url(http://s2.pstatp.com/r2/image/toutiao/pic_bg.png) #f5f5f5 no-repeat center center; } 
+.shadow_img{ box-shadow:1px 1px 1px #ccc}
+/* CSS Document */
+.os_mac{font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3";}
+#menu ul li a,
+.side-pane .action-pane .unit .unit-name,
+#hot_list .hot_list_item .hot_list_title,
+.username,
+#article_app_intro,
+#infos,
+#p-infos,
+#new_desc,
+.comments_fix a,
+.comment-pane .comment-list .comment-item ul.comment-content .content,
+.comment-pane .comment-list .comment-item ul.comment-content .name a{font-family: "微软雅黑","华文细黑", "宋体", sans-serif;}
+#user_intro table a,
+.pin-content h2 a,
+#hot_list .hot_list_item .hot_list_title,
+.update_comments_content .comment_digg,
+#personal .personal_tabs li a{ color:#4e4e4e;}
+
+
+#user_intro table a:hover,
+.pin-content h2 a:hover,
+#hot_list .hot_list_item .hot_list_title:hover,
+.pin-content .fix-control span.like:hover,
+.pin-content .fix-control span.undigg,
+.pin-content .fix-control span.hate:hover,
+.pin-content .fix-control span.unbury,
+.pin-content .fix-control span.fav:hover,
+.pin-content .fix-control span.share:hover,
+.pin-content .fix-control span.unfavorite,
+.pin-content .fix-control span.commented,
+#menu ul li a:hover,
+#menu ul li a.cur,
+.username a,
+.username a:hover,
+.update_comments_content .comment_digg:hover,
+#personal .personal_tabs li a:hover,
+#update_intro a:hover,
+#update_intro label:hover,
+.com:hover,
+.share_list .share_item:hover,
+#related_news ul li a:hover{ color:#ca4f4f}
+
+.username a:hover,
+.pin-content h2 a:hover{ text-decoration:underline}
+
+.fl{ float:left}
+.fr{ float:right}
+
+.tag,
+.com,
+.src,
+.time,
+.comment{ color:#a9a9a9; font-size:12px; margin-right:10px;}
+
+.tag{padding-left:15px; background: url(http://s2.pstatp.com/r2/image/arrows.gif) no-repeat 0px -202px;}
+.widthpic,
+.widthpics{ display:inline-block; width:16px; height:16px; background: url(http://s2.pstatp.com/r2/image/toutiao/pic_icon.png) no-repeat 0px 4px;  }
+.widthpics{ background-position: 0px -32px;}
+
+.icon_hot,.icon_recommend{ display:block; width:17px; height:17px; position:absolute;background: url(http://s2.pstatp.com/r2/image/toutiao/hot.png) no-repeat 0px 0px; left:-15px; top:20px }
+.icon_recommend{ background-position:0 -41px;}
+.icon_first,.icon_exclusive{ display:block; width:46px; height:46px; position:absolute;background: url(http://s2.pstatp.com/r2/image/toutiao/first.png) no-repeat 0px -48px; left:-15px; top:0}
+.icon_exclusive{ background-position:0 0;}
+
+/**/
+.share_list{position: absolute;left: 52px;top: -4px;*top: -3px; margin: 0;width: 140px;padding: 0;}
+.share_list a {padding:6px 0px 3px 18px;background: url(http://bdimg.share.baidu.com/static/images/is.png?cdnversion=20120914) no-repeat; opacity:0.5;filter:alpha(opacity=50)}
+.share_list a:hover{ opacity:1.0; filter:alpha(opacity=100)}
+.share_list .bds_qzone { background-position:-2px -75px!important }
+.share_list .bds_tsina { background-position:-2px -115px!important }
+.share_list .bds_renren { background-position:-2px -195px!important }
+.share_list .bds_tqq { background-position:-2px -235px!important }
+.share_list .bds_kaixin001 { background-position:-2px -275px!important }
+.share_list .bds_kanshou { background-position:-2px -2390px!important }
+.share_list .bds_all{ background:url(http://s2.pstatp.com/r2/image/toutiao/share_all.jpg) no-repeat 2px center;}
+
+/* sprites  */
+.header-nav ul .menu .item, #p-infos .trigger .sig{background:url(http://s2.pstatp.com/r2/image/toutiao/comment_arrow_icon.gif) no-repeat}
+#header .header-bar{background:url(http://s2.pstatp.com/r2/image/toutiao/header_bg.png) #a60100 repeat-x}
+
+#profile-header{ position:fixed; top:0; width:100%; z-index:101}
+#profile-header .header-bar{ background:#fff; box-shadow: 0 0 15px rgba(0, 0, 0, .4); height:40px; padding:5px 0; *border-bottom:1px solid #d4d4d4}
+
+
+#p-infos ul li .app{background:url(http://s2.pstatp.com/r2/image/phone.gif) no-repeat left 2px;  }
+.control-line span,
+.comment-item .action .comment_digg,
+.comment-item .action .comment_bury,
+.comment-item .action .recomment,
+.comment-item .action .recommented,
+.update_comments_content .comment_digg{
+	background:url(http://s2.pstatp.com/r2/image/toutiao/tool_icon.png) no-repeat 0px -1px ; 
+	_background:url(http://s2.pstatp.com/r2/image/toutiao/tool_icon.gif) no-repeat 0px -1px ; 
+}
+.header-nav ul li:hover .item,
+#infos ul li a:hover,
+.header-nav ul li .cur{background:url(http://s2.pstatp.com/r2/image/toutiao/header_select_short.png) #8d1b1b no-repeat 0px 0px ;  }
+.header-nav ul li:hover #mp_pgc{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=Enabled,sizingMethod='scale',src='http://s2.pstatp.com/r2/image/toutiao/header_select_short.png');}
+#mp_pgc{background-size:100%;*width:64px;}
+#p-infos ul li .app:hover,
+#p-infos ul li .app.cur{background:url(http://s2.pstatp.com/r2/image/toutiao/header_select.png) #8d1b1b no-repeat 0px 0px ;  }
+
+/*左侧menu*/
+#menu{ float:left; position: fixed; margin-left: -64px; width: 64px; margin-top:23px; }
+#menu ul{ margin-top:30px;}
+#menu ul li{ background:url(http://s2.pstatp.com/r2/image/toutiao/tab.png) no-repeat 0 -45px;}
+#menu ul li:hover,
+#menu ul li.cur{ background-position:0 -3px}
+#menu ul li a{ display:block; font-size:14px; padding:10px 0px 10px 30px; _padding:12px 0px 8px 30px; background:url(http://s2.pstatp.com/r2/image/toutiao/tab_icon.png) no-repeat 10px 9px; _background:url(http://s2.pstatp.com/r2/image/toutiao/tab_icon.gif) no-repeat 10px 9px;}
+#menu ul li a.__all__{ background-position:10px 11px}
+#menu ul li a.__all__.cur,
+#menu ul li:hover a.__all__{background-position:10px -37px }
+#menu ul li a.news_society{ background-position:10px -84px}
+#menu ul li a.news_society.cur,
+#menu ul li:hover a.news_society{ background-position:10px -132px}
+#menu ul li a.news_finance{ background-position:10px -179px}
+#menu ul li a.news_finance.cur,
+#menu ul li:hover a.news_finance{ background-position:10px -227px}
+#menu ul li a.news_sports{ background-position:10px -276px}
+#menu ul li a.news_sports.cur,
+#menu ul li:hover a.news_sports{ background-position:10px -324px}
+#menu ul li a.news_entertainment{ background-position:10px -373px}
+#menu ul li a.news_entertainment.cur,
+#menu ul li:hover a.news_entertainment{ background-position:10px -420px}
+#menu ul li a.news_tech{ background-position:10px -468px}
+#menu ul li a.news_tech.cur,
+#menu ul li:hover a.news_tech{ background-position:10px -516px}
+#menu ul li a.news_military{ background-position:10px -565px}
+#menu ul li a.news_military.cur,
+#menu ul li:hover a.news_military{ background-position:10px -613px}
+#menu ul li a.news_fashion{ background-position:10px -660px}
+#menu ul li a.news_fashion.cur,
+#menu ul li:hover a.news_fashion{ background-position:10px -708px}
+#menu ul li a.news_world{ background-position:10px -757px}
+#menu ul li a.news_world.cur,
+#menu ul li:hover a.news_world{ background-position:10px -805px}
+#menu ul li a.news_car{ background-position:10px -852px}
+#menu ul li a.news_car.cur,
+#menu ul li:hover a.news_car{ background-position:10px -900px}
+#menu ul li a.news_hot{ background-position:10px -952px}
+#menu ul li a.news_hot.cur,
+#menu ul li:hover a.news_hot{ background-position:10px -995px}
+#menu ul li a.news_history{ background-position:10px -1139px}
+#menu ul li a.news_history.cur,
+#menu ul li:hover a.news_history{ background-position:10px -1187px}
+#menu ul li a.news_discovery{ background-position:10px -1233px}
+#menu ul li a.news_discovery.cur,
+#menu ul li:hover a.news_discovery{ background-position:10px -1282px}
+#menu ul li a.news_regimen{ background-position:10px -1332px}
+#menu ul li a.news_regimen.cur,
+#menu ul li:hover a.news_regimen{ background-position:10px -1379px}
+#menu ul li a.news_positive{ background-position:10px -1046px; width:36px; font-size:12px; }
+#menu ul li a.news_positive.cur,
+#menu ul li:hover a.news_positive{ background-position:10px -1092px}
+#menu ul li a.news_comic{ background-position:10px -1520px;}
+#menu ul li a.news_comic.cur,
+#menu ul li:hover a.news_comic{ background-position:10px -1568px}
+
+
+#menu ul li a.news_travel{ background-position:10px -1426px}
+#menu ul li a.news_travel.cur,
+#menu ul li:hover a.news_travel{ background-position:10px -1471px}
+
+
+/* header */
+#header{clear: both;    height: 38px;    position: fixed;    top: 0;    width: 100%;    z-index: 1000; box-shadow:0 2px 5px rgba(0,0,0,.5)}
+#header .header-bar{height:38px; z-index:999;}
+#header .header-nav{height:38px; margin-left:30px; _overflow:hidden; z-index:999; float:left}
+#header .fixed{position:fixed;top:0;}
+
+#header #logo_print{display: none}
+@media print { 
+	#header #logo_print{display: block;}
+	#header #logo_new{display: none}
+}
+
+#logo{float: left; margin:0; margin-left: -135px; width:365px; height:38px;}
+#logo a{font-size: 22px;color: white;font-weight: bold; height:22px; line-height:22px;}
+#infos{ float:right; margin-right:10px;}
+#infos ul{ }
+#infos ul li{ float:left }
+#infos ul li a{	display:block; 	padding:10px 18px; 	font-size:13px;	color:#fff; }
+
+.header-nav ul{ float:left; clear:both;}
+.header-nav ul li{ float:left; position:relative; }
+.header-nav ul li .item{ color:#fff; font-size:15px; margin-right:10px; display:block;  _float:left; padding:10px 15px;text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);  font-family:"Hiragino Sans GB","华文细黑","黑体","宋体"}
+
+.submenu{ position:absolute; left:0px;  top:38px; background:#fff; background:rgba(255,255,255,.9);  box-shadow:0 2px 2px #999; *border:1px solid #ddd; *border-top:none;    display:none; padding:5px 0px 5px; z-index:995; overflow:hidden}
+.submenu h4{ margin:0; float:left; clear:both; }
+.submenu h4 a{ font-size:13px; display:block; width:80px; float:left; font-weight: normal; padding:3px 5px 3px 10px; color:#024b85; font-family:"Hiragino Sans GB","华文细黑","黑体","宋体"}
+
+.submenu ul { display:block; padding-top:0px;  width:100% }
+.submenu ul li{ float:left; width:95px; padding:0; border-right:1px dotted #ddd }
+.submenu ul li:nth-child(3n){ border:0}
+.submenu ul li a{ display:block; width:80px; float:left; font-size:14px;  padding:4px 5px 4px 10px; color:#b50808;; font-family:"Hiragino Sans GB","华文细黑","黑体","宋体"}
+.submenu h4 a:hover,.menu .dropdown ul li a:hover{ background:#b50808;; color:#fff;  }
+#erweima{position: fixed; width: 103px; margin-top: 40px; margin-left: 961px;}
+
+.header-nav ul .menu{ z-index:997}
+.header-nav ul .menu .item{ padding:10px 16px 10px 10px; background-position:45px -25px;}
+.header-nav ul .menu:hover .item{  background: url(http://s2.pstatp.com/r2/image/arrows.gif) rgba(255,255,255,0.9) no-repeat 45px -33px;  *background: url(http://s2.pstatp.com/r2/image/arrows.gif) #f7e6e6 no-repeat 45px -33px; box-shadow: 0 2px -2px #999; color: #b50808; text-shadow: none;}
+
+/* 个人信息 */
+#p-infos{ float:right; z-index:998; position:relative}
+#p-infos ul{ z-index:997}
+#p-infos ul li{ float:left; position:relative;}
+#p-infos ul li a{ color:#fff; font-size:13px;  }
+#p-infos ul li a:hover{ color:#fff}
+#p-infos .trigger{ padding: 10px 0 0 10px; *padding: 7px 0 3px 10px; height: 28px; }
+#p-infos .trigger .ava{  display:block; width:20px; height:20px; float:left; margin-top: -2px; *margin-top: 2px;}
+#p-infos .trigger .sig{padding-right: 10px;background-position: right -34px;display: inline-block;max-width: 95px;overflow: hidden;height: 18px;margin-right: 10px; }
+#p-infos .trigger .sig:hover{ background-position: right 7px;}
+#p-infos .menu{ z-index:995; }
+
+#p-infos .p-select{top:38px; z-index:994; position:absolute; right:0; display:none; background:#fff; background:rgba(255,255,255,.9);  box-shadow:0 2px 2px #999; *border:1px solid #ddd; *border-top:none }
+#p-infos .p-select ul{ padding:5px 0; float:left; _padding-bottom:0; z-index:993 }
+#p-infos .p-select ul li{ padding:0; clear:both; width:110px; margin:0}
+#p-infos .p-select ul .pin-tool{ position:relative}
+#p-infos .p-select ul .pin-tool img{position:absolute; left:80px; top:5px;}
+#p-infos .p-select ul li a{ color:#b50808; font-size:14px; padding:6px 15px; width:80px; display:block;clear:both; float:left; font-family:"Hiragino Sans GB","华文细黑","黑体","宋体"}
+#p-infos .p-select ul li a:hover{ color:#fff; background:#b50808;}
+#p-infos .menu:hover .trigger{ background-color:rgba(255,255,255,0.9); *background-color:#f6e6e6; box-shadow:0 2px -2px #999;}
+#p-infos .menu:hover .trigger a{ color:#b50808;text-shadow:none; background-position: right 7px;}
+#p-infos ul li .app{ padding: 10px 10px 0 27px;  height: 28px; margin-left:13px; display:block;  _float:left; }
+
+
+
+#search{ float:left; margin:7px 0}
+#search #search_content{ position:relative}
+#search #search_input{ padding:2px 4px; width:150px; font-size:12px; margin:0;}
+#search #search_btn{ width:13px; height:13px; border:none; background:url(http://s2.pstatp.com/r2/image/toutiao/search_btn.png) no-repeat center bottom; position:absolute; right:5px; top:5px;}
+#search #search_btn:focus{ outline: none;}
+#search #search_btn:active, 
+#search #search_btn.active{ background-position:center top}
+#search #placeholder{ font-size:12px; position:absolute; left:5px; top:3px; color:#999}
+#search #placeholder.active{ color:#ccc }
+#search #search_form{ margin:0}
+#search #hot_words{ display:none; position:absolute; left:0; top:25px; background:#fff; border:1px solid #ddd; width:158px; border-radius:3px; box-shadow: 0 0 3px #d4d4d4;}
+#search #hot_words li a{ display:block; line-height:1.5em; font-size:12px; padding: 3px 10px; color:#747474}
+#search #hot_words li a:hover,
+#search #hot_words li a.active{ background:#eee; color:#747474}
+
+
+/*面包屑哈哈*/
+#bread{ margin:0; height:25px; clear:both; *overflow:hidden; }
+#bread a{ font-size:13px;  display:block; float:left;}
+#bread a:hover{ text-decoration:underline}
+#bread i{padding:0px 5px; display:block; float:left; font-family: "SimSun","Helvetica","sans-serif"; font-style: normal; }
+
+
+/*菜单显隐*/
+.menu:hover .dropdown{ display:block!important}
+
+
+/*debug panel*/
+#show-message-bar{ color:#fff;z-index:100;line-height:1.0;font-size:12px;position: fixed; background-color: rgba(0,0,0,0.5); color: #FDFCFC; top:50px; left: 14px; width:150px; height:100px;bottom: 10px; padding: 10px; }
+#show-message-bar a{ color:#fff; padding:0 5px}
+
+#show-message-bar a:hover{ text-decoration:underline;}
+
+
+/*detail页 右侧app推荐*/
+.action-pane .origin-info{  height: 55px;  overflow: hidden;}
+.action-pane .origin-info img{     height: 50px;   width: 50px;   float: left;} 
+.action-pane .origin-info ul{    float: left;   width: 135px;   margin-left: 10px;}
+.action-pane .down-link{ line-height: 30px;  height: 30px;  padding-top: 5px; width:206px;  }
+.action-pane .down-link span{ float: left;  color: #252525;  font-size: 14px;  font-weight: bold;}
+.action-pane .down-link a{margin: 0px 10px 0 0;  float: left;  width: 93px;  height: 38px;  text-indent: -10000px;  display: block;  
+	background: url(http://s2.pstatp.com/r2/image/toutiao/down_icon.png) no-repeat;
+	_background: url(http://s2.pstatp.com/r2/image/toutiao/down_icon.gif) no-repeat;
+}
+.action-pane .down-link .iphone-link{ background-position: 0px 0px;}
+.action-pane .down-link .iphone-link:hover{ background-position: 0px -114px;}
+
+.action-pane .down-link .android-link{ background-position: 0px -228px;}
+.action-pane .down-link .android-link:hover{ background-position: 0px -342px;}
+
+.side-pane { float:right; margin-left:0; }
+.side-pane .fixed{ position:fixed; top:42px}
+.side-pane .action-pane .unit .unit-name {color: #B50808;font-size: 16px;font-weight: bolder;border-left: 2px solid #B50808;margin-left: -15px;padding-left: 13px; margin-bottom: 15px;}
+
+
+/*相关新闻*/
+#related_news{ border-top:1px solid #d9d9d9; padding:20px 40px 10px; }
+#related_news h4{ font-size:18px; padding-bottom:10px;}
+#related_news ul{}
+#related_news ul li{ font-size:16px; line-height:30px; color:#a9a9a9 }
+#related_news ul li a{ font-size:16px; padding-right:10px; }
+
+
+/*右侧模块*/
+#article_app_intro{  margin-top:5px;}
+
+#user_intro .refresh_user_intro,#mp-profile a{ font-size:12px; cursor:pointer; color:#b00000; padding-left:20px; }
+#user_intro .refresh_user_intro.loading{background:url(http://s2.pstatp.com/r2/image/loading_tiny.gif) no-repeat 0px 0px;}
+#user_intro .refresh_user_intro:hover,#mp-profile a:hover{ color:#ca4f4f}
+#mp-profile a{font-weight:normal;}
+a.mp-article{display:block;width:100%;height:30px;line-height:30px;text-align:center;background-color:#B50808;color:white;margin-top:20px;}
+a.mp-article:hover{background-color:#FF0E00;}
+.mp-info{margin:0 auto;padding-top:5px;text-align:center;}
+.mp-info img{width:80px;height:80px;margin-bottom:10px;}
+.mp-info p{margin:0;font-size:18px;font-weight: bold;}
+.mp-info a{color:#444444;}
+.mp-info a:hover{color:#ca4f4f;}
+.mp-info p i{display:inline-block;width:18px;height:18px;background: url(http://s2.pstatp.com/r2/image/toutiao/v_pgc.png) no-repeat top center;margin-left:6px;vertical-align: middle;}
+#user_intro table{ width:100%; color:#4e4e4e}
+#user_intro table tbody{ -webkit-transition:opacity 400ms ease}
+#user_intro table .user_head,.user_head{ height:40px; width:40px; background:url(http://s2.pstatp.com/r2/image/toutiao/user_head.png) no-repeat 0px 0px; }
+#user_intro table tr td{ padding-bottom:15px; word-break: break-word;}
+.follow,
+.followed,
+.account,
+.co_followed{ 
+	display:block;
+  	width:70px; 
+    height:25px;
+    float:right;
+    background:url(http://s2.pstatp.com/r2/image/toutiao/follow_icon.png) no-repeat center 0px;
+	_background:url(http://s2.pstatp.com/r2/image/toutiao/follow_icon.gif) no-repeat center 0px;
+}
+.follow{background-position: -10px 0px; width: 50px;}
+.follow:hover{ background-position:-10px -72px;}
+.followed{background-position: -6px -144px; width: 60px;}
+.followed:hover{ background-position:-6px -216px;}
+.account{background-position: -10px -288px; width: 50px;}
+.account:hover{ background-position:-10px -360px;}
+.co_followed{ background-position:0px -431px;}
+.co_followed:hover{ background-position:0px -502px;}
+
+
+#hot_list{}
+#hot_list ul{ padding-left:20px;}
+#hot_list .hot_list_item{ list-style-type:decimal; margin-bottom:13px;}
+#hot_list .hot_list_item .hot_list_title{ font-size:14px;}
+#hot_list .hot_list_item img{ display:none}
+#hot_list .hot_list_item:hover img{}
+
+
+#profile{ position:relative; padding-left:50px;}
+.profile_avatar{ position:absolute; left:0; top:0px; *top:-6px; width:40px; height:40px; overflow:hidden; border-radius:5px}
+.profile_avatar img{ height:40px} 
+.profile_v{}
+.profile_name{ line-height: 40px;font-size:20px; font-weight:bold; padding-right:30px;}
+.profile_desc{ font-size:14px; padding-top:10px; }
+.profile_desc a:hover,
+.profile_name a:hover{ color:#ca4f4f}
+.profile_follow a{ color:#fff; background:#b50808; padding:3px 15px; border-radius:3px; font-size:16px;}
+.profile_follow{ margin-left:50px; }
+.profile_desc{ width:640px; *width:650px;}
+.profile_menu{ position:absolute; top:10px; *top:0px; right:0px}
+.profile_menu a{ color:#ca4f4f;}
+.profile_menu a:hover{ text-decoration:underline}
+.profile_menu .profile_item{ float: left;}
+.profile_menu .profile_about{ padding-left: 20px; *line-height: 1.5em}
+
+
+.profile_menu .menu{ display:inline-block; padding-bottom:10px;}
+.profile_menu .dropdown{ display:none; position:absolute;  background: rgba(255,255,255,.9);*background: rgb(255,255,255);*border:1px solid #eeeeee;box-shadow: 0 0 2px #999; top:30px;}
+.profile_menu .dropdown ul{ margin:0}
+.profile_menu .dropdown ul li a{ display:block; line-height:2em; padding:0 20px;}
+.profile_menu .dropdown ul li a:hover{ text-decoration:none}
+
+
+div#article { margin:0; float:left; font-family:Tahoma, Helvetica, Arial, "微软雅黑","华文细黑", "宋体", sans-serif; position:relative;  border-right: 1px solid #D9D9D9;min-height:2000px}
+#ColumnContainer{ float:left; margin-bottom:20px;}
+
+
+
+#article .pin{ position: relative;width: 680px;padding:15px 10px 0;margin: 0 15px; box-shadow:none; -webkit-box-shadow:none; border:none; border-bottom:1px solid #d9d9d9; overflow:visible}
+
+#article .pin .image { width:202px; border:1px solid #CCC; max-height:202px; margin-right:20px; overflow:hidden; display:block; float:left; margin-top:5px}
+#article .pin .image img{ display:block; margin:0 auto; float:left}
+
+
+
+#article .pin .close{ position:absolute; display:; right:0px; top:15px; height:16px; width:16px; background:url(http://s2.pstatp.com/r2/image/toutiao/close_btn.gif) no-repeat 0 0; z-index:100; opacity:1.0;  filter:alpha(opacity=100);  display:none; _display:block}
+#article .pin .close:hover{ background-position:0 -48px;}
+.close_tip{ position:absolute; width:200px; height:46px;background: url(http://s2.pstatp.com/r2/image/toutiao/dislike.png) no-repeat 0px 0px; z-index: 99;top: 10px;right: 30px; cursor:pointer; display:none}
+#article .pin:hover .close{ display:block;}
+
+
+.pin-content .comment-list .comment-item { background: #F4F4F4;  _background: #fff;  border-top: 1px solid #D9D9D6; margin: 0 -30px; padding: 10px 30px; float: left;  width: 660px;}
+.pin-content .comment-list .comment-item ul{ width:600px; }
+.pin-content > table{table-layout:fixed;}
+.pin-content > table .text{overflow:hidden;}
+.pin-content table tr td{ font-size:14px; line-height:1.5em; color: #4e4e4e; vertical-align:top; font-family:"微软雅黑","华文细黑", "宋体", sans-serif;}
+.pin-content h2{ font-size:18px;line-height:26px;}
+.pin-content .time,.pin-content .src{font-size:12px; color:#999}
+.pin-content .more {  color:#156fb7; float:left; border:none; float:right;  width:80px; padding:11px 0 0 0}
+.pin-content .more a:hover{ text-decoration:underline}
+.pin-content .comment-list .comment-item ul li span{ font-size:12px; line-height:20px;}
+.pin-content h2 a{ font-size:18px; font-weight:bold; font-family:"微软雅黑","华文细黑", "宋体", sans-serif;}
+
+
+
+/*重写的顶踩按钮样式*/
+.control-line {padding: 10px 0 5px; float:left;}
+.control-line span { color:#999; height:20px; line-height:20px; margin: 0px 10px 0 0;padding: 0px 10px 0px 24px;color: #4e4e4e;border: 0px solid #E1E1DE;}
+
+.control-line span.like {background-position: 8px 2px;}
+.pin-content .fix-control span.like:hover, .pin-content .fix-control span.undigg {background-position: 8px -40px;}
+
+.control-line span.fav {background-position: 8px -82px;}
+.pin-content .fix-control span.fav:hover, .pin-content .fix-control span.unfavorite {background-position: 8px -124px;}
+
+.control-line span.hate {background-position: 8px -289px;}
+.pin-content .fix-control span.hate:hover, .pin-content .fix-control span.unbury {background-position: 8px -247px;}
+
+.control-line span.share {background-position: 8px -419px; position:relative}
+.pin-content .fix-control span.share:hover{background-position: 8px -463px;}
+.pin-content .fix-control span.share .share_list{ display:none;}
+.pin-content .fix-control span.share:hover .share_list{ display:inline-block;}
+
+
+.control-line span.comment,
+.pin-content .fix-control span.comment:hover{background-position:8px -166px; float:left; margin-right:9px; }
+.pin-content .fix-control span.commented {background-position: 8px -206px;}
+
+.control-line span.expand{background-position: 8px -206px; color:#ca4f4f }
+
+/*.control-line span.comment i{ display:inline-block; width:5px; height:10px; background:url(http://s2.pstatp.com/r2/image/toutiao/comment_arrow_icon.gif) no-repeat 0px -18px; *background-position:0 -21px; margin-left:3px;}
+.pin-content .fix-control span.commented i{ background-position:0px 3px;*background-position:0px 0px}
+*/
+
+
+
+
+.article-detail{display: block; position: relative; margin: 0 auto; padding: 20px 40px 30px;}
+.article-detail .title,.article-detail h1 {font-size:24px; font-weight:700; line-height:40px; text-align:center;}
+.article-detail .subtitle{font-size: 12px;line-height: 40px;text-align:center;}
+.article-detail .article-content{border-top: 1px solid #CACACA; padding-top:30px;}
+.article-detail .article-content img { max-width: 100%; _width:600px; display: block;clear: both; margin: 0 auto; opacity: 1;}
+.article-detail .article-content table{ margin:0 auto; }
+.article-detail .article-content table tr td{border:1px solid #dadada; padding:5px}
+.article-detail .article-content table tr td:only-child{/*border:none;*/}
+.article-detail .article-content{color: #444; font-size: 16px; line-height: 28px;font-family:Tahoma, Helvetica, Arial, "微软雅黑","华文细黑", "宋体", sans-serif;}
+.article-detail .article-content p { color: #444; font-size: 16px; line-height: 28px;	margin-top:20px; font-family:Tahoma, Helvetica, Arial, "微软雅黑","华文细黑", "宋体", sans-serif;}
+.article-detail .article-content pre{white-space:normal;}
+.article-detail .article-content h5{font-size:14px;	line-height:2em;}
+.article-detail .article-content ul{ margin-left:40px; list-style-type:disc}
+.article-detail .article-content ul li{ line-height:28px;}
+
+.comment-pane .comment-list .comment_paginator { height:40px; line-height:40px; margin-bottom:20px;}
+
+/*组图模式*/
+.list_image{ width:100%; clear:both; *width:680px; *overflow:hidden}
+.list_image ul{ display:block; height:130px; clear:both; *width:715px;}
+.list_image ul li{ display:inline-block; float:left; height:100%; width:30%;  overflow:hidden; margin-left:5%; *width:202px;  *margin-left:36px;}
+.list_image ul li:first-child{ margin-left:0}
+.list_image ul li img{ width:100%; min-height:100%}
+.large_image{ max-height:200px; overflow:hidden; margin:5px 0}
+.large_image img{ width:100%; pointer-events: none;}
+
+.action_users{ float:right; padding:8px 0}
+.action_users a img{ width:20px; height:20px; background:url(http://s2.pstatp.com/r2/image/toutiao/user_head.png) no-repeat center center; background-size:20px 20px;}
+
+
+
+.comment-item .action .comment_digg,
+.comment-item .action .comment_bury{line-height: 20px;height: 20px;display: inline-block;}
+
+.comment-item .action .comment_digg{background-position: 0px 2px;}
+.comment-item .action .comment_digg:hover,
+.comment-item .action .comment_digged{background-position: 0px -40px;color:#ca4f4f }
+.comment-item .action .comment_bury{background-position: 0px -289px; }
+.comment-item .action .comment_bury:hover,
+.comment-item .action .comment_buryed{background-position: 0px -247px; color:#ca4f4f}
+.comment-item .action .recomment { background-position:0px -336px }
+.comment-item .action .recomment:hover,
+.comment-item .action .recommented{ background-position:0px -378px; color:#ca4f4f}
+
+/*动态页面*/
+.update_title,
+.update_users,
+.update_comments{ border:1px solid #dedede;  background:#FFF; padding:5px 10px; position:relative;}
+.update_users,
+.update_comments{ border-top:none}
+.update_title h2 a{ font-weight:bold}
+.update_comments{ background:#f7f7f7 }
+.update_comments_content{ position:relative;  padding-right:50px;}
+.update_comments_content .comment_digg{
+  	position: absolute;
+	right: 5px;
+	top: 5px;
+	font-size: 10px;
+	line-height: 14px;
+	padding-left: 17px;
+	height: 14px;
+	color: #999;
+  	cursor: pointer;
+}
+
+.update_comments_content .comment_digg:hover,
+.update_comments_content .comment_digged{ color:#ca4f4f; background-position:0px -43px}
+.update_users{padding:10px;}
+.update_users a{ display:inline-block; position:relative; margin-right:10px;}
+.update_users a i{ display:block; width:24px; height:24px; position:absolute; right:-5px; bottom:-5px}
+.W_arrline {display: block;width: 25px;height: 11px;background: url(http://s2.pstatp.com/r2/image/arrows.gif) no-repeat 0px -170px;position: absolute;top: -7px;left: 20px;}
+.unrepin{
+  position:absolute; 
+  right: 10px; 
+  top:7px;
+  display:none;
+}
+.unrepin a{
+  display:block; width:70px; height:25px; background:url(http://s2.pstatp.com/r2/image/toutiao/follow_icon.png) no-repeat 0 -557px;
+}
+.unrepin a:hover{ background-position:0px -611px;}
+
+
+i.action_type_12,
+i.action_type_13,
+i.action_type_10,
+i.action_type_11{ background:url(http://s2.pstatp.com/r2/image/toutiao/action_icon.png) no-repeat 0 0; _background:url(http://s2.pstatp.com/r2/image/toutiao/action_icon.gif) no-repeat 0 0;}
+i.action_type_13{ background-position:0px -144px}
+i.action_type_10{ background-position:0px -289px}
+i.action_type_12{ background-position:0px 0px}
+i.action_type_11{ background-position:0px -432px}
+
+
+
+/*个人页面*/
+#personal{ padding:30px 25px 0; width:680px; clear:both}
+#personal .avatar_frame{ margin-right:10px; padding:14px 16px; background:url(http://s2.pstatp.com/r2/image/toutiao/avatar_frame.png) no-repeat 0 0;}
+#personal .avatar_frame img{ width:80px; height:80px; }
+#personal h1,#personal h3{ font-size:16px; font-weight:normal; line-height:24px}
+#personal h1{ font-size: 18px; font-weight: bold;}
+#personal h3{ line-height: 20px; padding: 5px 0;}
+#personal .followed,
+#personal .follow,
+#personal .account{ float:left;} 
+#personal .personal_tabs{margin-top: 20px; border-bottom: 1px solid #DEDEDE; width: 100%; height:38px;}
+#personal .personal_tabs li{ display:inline-block; float:left; margin-right:10px;}
+#personal .personal_tabs li a{ font-size:18px;padding: 10px 20px 8px;display: block;  border-bottom:2px solid #FFF}
+#personal .personal_tabs li a:hover,
+#personal .personal_tabs li a.cur{ border-bottom:2px solid #CA4F4F}
+
+.follower_table{width: 640px; margin: 10px 0 10px 50px; font-size:16px; line-height:1.5em}
+.follower_table tr{ height:80px;}
+.follower_table tr .user_head,.follower_table tr .media_head{ width:50px; height:50px;}
+.follower_table tr .user_name{ }
+
+.media_home{
+height: 25px;
+line-height: 25px;
+font-size:16px;
+}
+.media_home a{color:#B50808;}
+.media_description{color: #a9a9a9;font-size: 12px;}
+.media_home_logo{height:25px;width:25px;float:left;margin-right:0;background:url(http://s2.pstatp.com/r2/image/toutiao/media_logo.png) no-repeat top center;background-size:contain;}
+
+/*login modal*/
+.modal{color: #4E4E4E; font-family: "微软雅黑","华文细黑", "宋体", sans-serif;}
+.modal .modal-header h3 {font-size: 20px;height: 20px;color: #CA4F4F;border-left: 2px solid #CA4F4F;padding-left: 23px;margin-left: -15px;line-height: 20px;}
+.modal .modal-body .pull-left{ margin-right:0; border:0; margin-top: 30px;}
+.modal .pull-right h4{ color: #CA4F4F; font-size:16px;}
+.modal .pull-right{ padding-left:30px; background:url("http://s2.pstatp.com/r2/image/toutiao/spliter.png") no-repeat 0px 0px;}
+.modal-header { border-bottom:1px solid #CA4F4F}
+.modal #submit_btn{ padding: 8px 30px; font-size:16px; font-family: "微软雅黑","华文细黑", "宋体", sans-serif; border: 0;background: #b60809; color: white; _width:50px;}
+.modal .modal-body #submit_btn:hover {background: #7e0d0e!important;}
+
+.modal .modal-body .pull-left #email, .modal .modal-body .pull-left #password {
+height: 30px;
+line-height: 30px;
+padding-left:35px;
+width:180px;
+background:url("http://s2.pstatp.com/r2/image/toutiao/login_icon.png") no-repeat 0px 0px;
+}
+.modal .modal-body .pull-left #email{
+  background-position:10px 11px 
+}
+.modal .modal-body .pull-left #password {
+  background-position: 10px -44px;
+}
+.modal .modal-body .pull-left #email:focus, .modal .modal-body .pull-left #password:focus,
+.comment-pane .comment-box .input-box textarea:hover, .comment-pane .comment-box .input-box textarea:focus {
+	border-color: rgba(202, 79, 79, 0.8);
+	outline: 0;	
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(202, 79, 79, .6);
+}
+.modal_login_list{ padding-top:15px}
+.modal_login_list li a{ display:block; font-size:16px; padding-left:40px; line-height:32px; height:32px; background:url("http://s2.pstatp.com/r2/image/toutiao/is_32.png") no-repeat 0px 0px; margin-bottom:10px; color: #4E4E4E;}
+.modal_login_list li a:hover{color:#CA4F4F}
+.modal_login_list .sinaweibo a{ background-position:0px -35px;}
+.modal_login_list .qqweibo a{ background-position:0px -106px}
+.modal_login_list .renren a{background-position:0px -71px}
+.modal_login_list .kaixin a{background-position:0px -141px}
+.modal_login_list .qzone a{ background-position:0px 0px}
+#myModal .close { right:0px; background: url("http://s2.pstatp.com/r2/image/toutiao/login_icon.png") no-repeat 0px -103px; opacity:1}
+#myModal .close:hover { background-position:0px -157px}
+
+
+.comment-pane .comment-box .input-box textarea { width:606px}
+
+
+
+
+
+/*update 模块*/
+#update_blank{width: 481px;height: 500px; margin: 100px 125px; background: url("http://s2.pstatp.com/r2/image/toutiao/update_blank.png") no-repeat 0px 0px; position:relative}
+#update_blank .blank_user{width: 380px; position:absolute; left:60px; top:43px; }
+#update_blank .blank_login{ width:320px; position:absolute; left: 33px; top: 208px; }
+
+#update_blank h3{ font-weight:normal; color:#4e4e4e; font-size:16px; height:16px; line-height:16px; padding-bottom:10px;}
+#update_blank h3 span{ color:#b50808}
+
+#update_blank .sns-login{position:absolute; left:80px; top:45px}
+#update_blank .sns-login h3{ font-size:14px; float:left}
+#update_blank .sns-login h3 a:hover{ color:#ca4f4f}
+#update_blank .sns-login ul{ float:left;}
+#update_blank .sns-login ul li{ float:left; display:block; width:32px; height:32px; margin-right:5px}
+#update_blank .sns-login ul li a{ display:block; width:32px; height:32px; background:url("http://s2.pstatp.com/r2/image/toutiao/is_32.png") no-repeat 0px 0px; }
+#update_blank .sns-login ul .sina-login a{ background-position:0px -35px;}
+#update_blank .sns-login ul .qq-login a{ background-position:0px -106px}
+#update_blank .sns-login ul .renren-login a{background-position:0px -71px}
+#update_blank .sns-login ul .kaixin-login a{background-position:0px -141px}
+#update_blank .sns-login ul .qzone-login a{ background-position:0px 0px}
+#update_blank .toutiao-login{ position: absolute;left: 40px;top: 220px;width: 300px;} 
+
+
+
+
+
+#update_intro{ width:641px; padding:30px 45px; color:#4e4e4e;}
+#update_intro .title{ padding-bottom:20px; border-bottom:1px solid #d9d9d9}
+#update_intro .refreshDiv{ padding-top:15px;}
+#update_intro .refreshDiv #refresh_update_intro{ font-size:14px; line-height:30px; margin-left:30px; }
+#update_intro label{ cursor:pointer; display:inline-block}
+#update_intro .update_intro_list li{ width:32%; display:inline-block; height:60px; margin-top:20px;}
+#update_intro .update_intro_list li img{ width:50px; height:50px; box-shadow:0px 0px 5px rgba(0,0,0,.3)}
+#update_intro .update_intro_list li a{ font-size:16px;}
+#update_intro h3{ float:left; font-weight:normal}
+#update_intro #add_all{ width:90px; height:30px; background:url("http://s2.pstatp.com/r2/image/toutiao/all-follow-btn.png") no-repeat 0px 0px; border:none}
+#update_intro #add_all:active{ background-position:0 -96px; }
+
+
+
+
+.expand-comment{ padding:0;  border-top: 1px solid #E4E4E4; margin-bottom:20px; margin-top:-5px; position:relative; display:none}
+.expand-comment .W_arrline{ left:35px;}
+.expand-comment .comment-item .comment_actions{ position:absolute; right:0px; top:5px;}
+.comment-item .action .comment_digg { margin-right:0}
+.expand-comment .comment-list .comment-item { border-bottom:none; padding:5px 0 0 10px; min-height:40px; margin:0}
+.expand-comment .comment-list #comment_list{ clear:both; display:block; width:100%; padding:0; margin:0}
+.expand-comment .comment_paginator{ display:none}
+.expand-comment .comment-list .comment-item .avatar { width:30px; height:30px; overflow:hidden}
+.expand-comment .comment-list .comment-item .avatar img{background: url(http://s2.pstatp.com/r2/image/toutiao/user_head.png) no-repeat center center; background-size:30px 30px; width:30px; height:30px;}
+.expand-comment .comment-list .comment-item ul.comment-content .content {font-size: 12px;color: #939597;}
+.comments_fix { text-align: right; clear: both; padding-bottom: 5px; }
+.comments_fix a{color:#4e4e4e; padding:0 10px 0 10px; font-size:12px}
+.comments_blank{ text-align:center; color:#949494; padding-top:10px; font-size:12px;}
+.comments_blank a{font-size:12px;}
+.comment-pane .comment-list .comment-item ul.comment-content .name a{ font-size:12px;}
+
+.comments_blank a{color:#4e4e4e; }
+.comments_blank a:hover,
+.comments_fix a:hover,
+.comment-pane .comment-list .comment-item ul.comment-content .name a:hover{color:#ca4f4f}
+
+
+.settings .save_btn {font-size: 17px;font-family: "微软雅黑","华文细黑", "宋体", sans-serif; font-weight:normal; background: #B60809;}
+.settings .save_btn:hover{background: #7E0D0E!important;}
+
+#footer{ text-align:center; margin:10px 0; color:#666;}
+#footer a{ color:#666;}
+#footer a:hover{color:#ca4f4f; text-decoration:underline}
+
+input:focus, textarea:focus {border-color: #B60809;}
+
+/*css ipad 适配
+@media only screen and (orientation:landscape){
+}
+
+@media only screen and (max-width: 772px){    
+.container {
+	width: 768px;
+}  
+#header .header-bar .container{
+  width: 728px;
+  padding:0 20px
+}
+.side-pane{
+  display:none
+}
+
+div#article{
+  margin-left:25px;
+}
+#bread .bread_index {
+  margin-left:25px
+}
+.pin-pane{
+  margin-left:25px;
+}
+
+#content .filter-line {
+  padding-left:20px;
+}
+
+}  
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

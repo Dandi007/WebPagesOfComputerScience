@@ -1,0 +1,2412 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="zh-CN">
+<head>
+<meta content="IE=edge" http-equiv="X-UA-Compatible" />
+<meta charset="UTF-8" />
+<title>鲜为人知的编程真相 | 外刊IT评论</title>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="stylesheet" type="text/css" media="all" href="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/style.css?7045b4" />
+<!--[if lt IE 8]>
+<style type="text/css">
+#col1{float: left;} 
+#col2{float: right;}
+.single .entry-content img, embed, #lead-image img, img.size-full {  
+  _width:expression((documentElement.clientWidth >559) ? "559px" : "auto" );
+} 
+.single #content{
+	width: 624px;
+	overflow: hidden;
+}
+table, pre {
+	_width:expression((documentElement.clientWidth >559) ? "559px" : "auto" );
+    overflow: auto;
+}
+#content pre{width: 530px; overflow: auto;}
+.archive   div.entry-thumbnail, .search   div.entry-thumbnail, .single  div.entry-thumbnail, .wp-caption {
+	_width:expression((documentElement.clientWidth >559) ? "559px" : "auto" );
+    overflow: hidden;
+}
+#gb-bio, .gb-intro {
+border: 1px solid #7ac9ed;
+background: #7ac9ed;
+}
+#column-hot h1.article-title{
+	font-size: 20px;
+}
+</style>
+<![endif]-->
+<!--[if IE 8]>
+<style type="text/css">
+.entry-content>pre, .entry-content>blockquote, .wp_syntax, .reCodeBlock{ width: 526px; max-width: 526px; overflow: auto;}
+a.book span {margin-top: 20px;}
+a.book:hover  span{margin-top: 20px;}
+#gb-bio, .gb-intro {
+border: 1px solid #7ac9ed;
+background: #7ac9ed;
+}
+div.article.post .article-title a {
+	font-size: 20px;
+}
+#content pre{width: 530px; overflow: auto;}
+</style>
+<![endif]-->
+
+
+
+
+<link rel="pingback" href="http://www.vaikan.com/wordpress/xmlrpc.php" />
+		<script type="text/javascript">addComment={moveForm:function(a,b,c,d){var e,f=this,g=f.I(a),h=f.I(c),i=f.I("cancel-comment-reply-link"),j=f.I("comment_parent"),k=f.I("comment_post_ID");if(g&&h&&i&&j){f.respondId=c,d=d||!1,f.I("wp-temp-form-div")||(e=document.createElement("div"),e.id="wp-temp-form-div",e.style.display="none",h.parentNode.insertBefore(e,h)),g.parentNode.insertBefore(h,g.nextSibling),k&&d&&(k.value=d),j.value=b,i.style.display="",i.onclick=function(){var a=addComment,b=a.I("wp-temp-form-div"),c=a.I(a.respondId);if(b&&c)return a.I("comment_parent").value="0",b.parentNode.insertBefore(c,b),b.parentNode.removeChild(b),this.style.display="none",this.onclick=null,!1};try{f.I("comment").focus()}catch(l){}return!1}},I:function(a){return document.getElementById(a)}};</script>
+<link rel="alternate" type="application/rss+xml" title="外刊IT评论 &raquo; Feed" href="http://www.vaikan.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="外刊IT评论 &raquo; 评论Feed" href="http://www.vaikan.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="外刊IT评论 &raquo; 鲜为人知的编程真相评论Feed" href="http://www.vaikan.com/some-lesser-known-truths-about-programming/feed/" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.vaikan.com/wordpress/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.vaikan.com/wordpress/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='HTML5 &#8211; 一个访问本地文件的例子' href='http://www.vaikan.com/html5-code-example-of-file-api-drag-drop-hard-drive-files-to-a-webpage/' />
+<link rel='next' title='我害怕老程序员，因为我也变老了' href='http://www.vaikan.com/im-terrified-of-older-web-developers/' />
+<meta name="generator" content="WordPress 3.9.3" />
+<link rel='canonical' href='http://www.vaikan.com/some-lesser-known-truths-about-programming/' />
+<link rel='shortlink' href='http://www.vaikan.com/?p=736' />
+
+<!-- All in One SEO Pack 2.1.7 by Michael Torbert of Semper Fi Web Design[-1,-1] -->
+<meta name="description" content="当程序员的经历让我知道了一些关于软件编程的事情。下面的这些事情可能会让朋友们对软件开发感到惊讶： 一个程序员用在写程序上的时间大概占他的工作时间的10-20%，大部分的程序员每天大约能写出10-12行的能进入最终的产品的代码 — —不管他的技术水平有多高。" />
+
+<!-- /all in one seo pack -->
+
+<script type='text/javascript'>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+var useSSL = 'https:' == document.location.protocol;
+gads.src = (useSSL ? 'https:' : 'http:') + 
+'//www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+</script>
+
+<script type='text/javascript'>
+googletag.cmd.push(function() {
+googletag.defineSlot('/2157720/331', [336, 280], 'div-gpt-ad-1403070709294-0').addService(googletag.pubads());
+googletag.defineSlot('/2157720/331', [336, 280], 'div-gpt-ad-1403070709294-2').addService(googletag.pubads());
+googletag.defineSlot('/2157720/332', [336, 280], 'div-gpt-ad-1403070709294-1').addService(googletag.pubads());
+googletag.pubads().enableSingleRequest();
+googletag.enableServices();
+});
+</script>
+
+</head>
+
+<body class="single single-post postid-736 single-format-standard custom-background">
+<script type="text/javascript" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/js/jquery-1.7.2.min.js?7045b4"></script>
+<div class="branddark sticky">
+	<div class="container brandbar">
+		<span class="beta-badge"></span>
+		<div class="nav-wrap-l pull-left">
+			<h1><a href="/">外刊IT评论</a></h1>
+			<div class="nav-desktop">
+				<ul class="nav-primary">
+					<li class="menu-trigger">
+						<a href="/" class="arrow-down" title="首页">首页</a>
+						<div class="menu menu-mega">
+                            <div class="menu-content">
+                                <div class="news-content">
+                                    <h3>关注我们</h3>
+                                    <ul class="news-list">
+                                        <li><a class="tsina" href="http://weibo.com/aqee">新浪微博</a></li>
+                                        <li><a class="qzone" href="http://1928879993.qzone.qq.com">QQ空间</a></li>
+                                        <li><a class="tqq" href="http://t.qq.com/aqee-net">腾讯微博</a></li>
+                                        <li><a class="twitter" href="http://twitter.com/vaikans">Twitter</a></li>
+                                        <li><a class="mail" href="http://list.qq.com/cgi-bin/qf_invite?id=0089a54510e8c73dd9d545903f388b7fc3d9b148c1392631">邮件订阅</a></li>
+                                        <li><a class="rss" href="http://www.vaikan.com/feed/">RSS订阅</a></li>
+                                       
+                                    </ul>
+                                </div>
+
+                                <div class="topics">
+                                    <h3>热门栏目</h3>
+                                    <ul class="topic-list">
+                                        <li><a href="http://www.vaikan.com/top-share/" class="cloud">十大热文</a></li>
+                                        <li><a href="http://www.vaikan.com/top-comment/" class="censorship">十大热议</a></li>
+                                        <li><a href="http://www.vaikan.com/tag/video/" class="movies">程序员视频</a></li>
+                                        <li><a href="http://www.vaikan.com/category/joke/" class="politics">程序员漫画</a></li>
+                                        <li><a href="http://www.vaikan.com/category/fun/" class="science">程序员幽默</a></li>
+                                        <li><a href="http://www.vaikan.com/archives/" class="space">全部文章</a></li>
+                                        <li><a href="http://www.vaikan.com/about/">关于我们</a></li>
+                                        <li><a href="http://www.vaikan.com/contact-me/">欢迎投稿</a></li>
+                                        <li><a href="http://www.vaikan.com">首页</a></li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+					</li>
+					<li><a class="alphatip" target="_blank" rel="nofollow" href="http://www.techug.com">程序师</a></li>
+					<li><a class="alphatip"  href="http://www.vaikan.com/contact-me/">来信/来稿</a></li>
+					
+				</ul>
+			</div>
+		</div>
+		<!-- Rail column, Secondary Navigation -->
+		<div class="col-rail pull-right">
+			<div class="nav-access pull-right">
+				<div class="col-rail search">
+					<div class='searchWarp'>
+					<form role="search" method="get" id="searchform" class="searchform" action="">
+						<input type="text"  name="s" id="s" class="alphatip" placeholder="搜索...">
+						<button type="text">Search</button>
+					</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="wrapper" class="hfeed split-right">
+	<div id="main">
+	<style type="text/css">
+	.tech-cont{
+		display: block;
+		width: 980px;
+		position: relative;
+		margin: 10px auto 0;
+		height: 90px;
+		overflow: hidden;
+
+	}
+	.tech-box{
+		width: 245px;
+		width: 25%;
+		display: table-cell;
+		position: relative;
+		overflow: hidden;
+	}
+	.tech-title{
+		position: absolute;
+		display: block;
+		height: 137px;
+		width: 245px;
+		overflow: hidden;
+		z-index: 2;
+
+	}
+
+	.shadowbox{
+		position: relative;
+		display: block;
+		height: 137px;
+		width: 245px;
+		overflow: hidden;
+	}
+	.shadowbox:before {
+-moz-box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+-webkit-box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+z-index: 1;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+content: "";
+}
+
+.shadowbox img{
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		height: 137px;
+		width: 245px;
+
+	}
+
+
+
+.tech-title:before {
+-ms-filter: "alpha(opacity=70)";
+filter: alpha(opacity=8);
+-moz-opacity: .8;
+-khtml-opacity: .8;
+opacity: .8;
+-moz-box-shadow: inset 0 0 30px 0 rgba(64,83,98,0.5);
+-webkit-box-shadow: inset 0 0 30px 0 rgba(64,83,98,0.5);
+box-shadow: inset 0 0 30px 0 rgba(64,83,98,0.5);
+content: "";
+z-index: -1;
+position: absolute;
+top: 0;
+left: 0;
+width: 520px;
+height: 350px;
+background-size: 100% 100%;
+background-image: url(http://cdn0.vox-cdn.com/images/verge/gradient-red.v5d9c44f.png);
+background-image: -webkit-gradient(linear,left top,right bottom,from(#002f4b),to(#dc4225));
+background-image: -webkit-linear-gradient(left top,#002f4b,#dc4225);
+background-image: -moz-linear-gradient(left top,#002f4b,#dc4225);
+background-image: -ms-linear-gradient(left top,#002f4b,#dc4225);
+background-image: -o-linear-gradient(left top,#002f4b,#dc4225);
+background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
+max-height: 350px;
+max-width: 520px;
+-ms-filter: "alpha(opacity=75)";
+-ms-filter: "alpha(opacity=70)";
+filter: alpha(opacity=8);
+-moz-opacity: .8;
+-khtml-opacity: .8;
+opacity: .8;
+-moz-box-shadow: inset 0 0 30px 0 rgba(0,0,0,0.5);
+-webkit-box-shadow: inset 0 0 30px 0 rgba(0,0,0,0.5);
+box-shadow: inset 0 0 30px 0 rgba(0,0,0,0.5);
+content: "";
+z-index: -1;
+position: absolute;
+top: 0;
+left: 0;
+width: 520px;
+height: 350px;
+background-size: 100% 100%;
+background-image: url(http://cdn3.vox-cdn.com/images/verge/gradient-green.v9acae24.png);
+background-image: -webkit-gradient(linear,left top,right bottom,from(#d38312),to(#a83279));
+background-image: -webkit-linear-gradient(left top,#d38312,#a83279);
+background-image: -moz-linear-gradient(left top,#d38312,#a83279);
+background-image: -ms-linear-gradient(left top,#d38312,#a83279);
+background-image: -o-linear-gradient(left top,#d38312,#a83279);
+background-image: linear-gradient(to bottom right,#d38312,#a83279);
+opacity: .9;
+}
+
+.f1:before{
+	-ms-filter: "alpha(opacity=70)";
+filter: alpha(opacity=8);
+-moz-opacity: .8;
+-khtml-opacity: .8;
+opacity: .8;
+-moz-box-shadow: inset 0 0 30px 0 rgba(114,19,0,0.5);
+-webkit-box-shadow: inset 0 0 30px 0 rgba(114,19,0,0.5);
+box-shadow: inset 0 0 30px 0 rgba(114,19,0,0.5);
+content: "";
+z-index: -1;
+position: absolute;
+top: 0;
+left: 0;
+width: 520px;
+height: 350px;
+background-size: 100% 100%;
+background-image: url(http://cdn1.vox-cdn.com/images/verge/gradient-yellow.vde5e011.png);
+background-image: -webkit-gradient(linear,left top,right bottom,from(#417711),to(#292484));
+background-image: -webkit-linear-gradient(left top,#417711,#292484);
+background-image: -moz-linear-gradient(left top,#417711,#292484);
+background-image: -ms-linear-gradient(left top,#417711,#292484);
+background-image: -o-linear-gradient(left top,#417711,#292484);
+background-image: linear-gradient(to bottom right,#417711,#292484);
+}
+.tech-title a{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+
+}
+.tech-title h2{
+	font-size: 20px;
+	font-weight: bold;
+	padding: 20px;
+	color: #ffffff;
+}
+
+	</style>
+	<style type="text/css">
+	.tech-cont{
+		display: block;
+		width: 980px;
+		position: relative;
+		margin: 10px auto 0;
+		height: 90px;
+		overflow: hidden;
+
+	}
+	.tech-box{
+		width: 245px;
+		width: 25%;
+		display: table-cell;
+		position: relative;
+		overflow: hidden;
+	}
+	.tech-title{
+		position: absolute;
+		display: block;
+		height: 137px;
+		width: 245px;
+		overflow: hidden;
+		z-index: 2;
+
+	}
+
+	.shadowbox{
+		position: relative;
+		display: block;
+		height: 137px;
+		width: 245px;
+		overflow: hidden;
+	}
+	.shadowbox:before {
+-moz-box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+-webkit-box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+z-index: 1;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+content: "";
+}
+
+.shadowbox img{
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+	}
+
+
+
+.tech-title:before {
+-ms-filter: "alpha(opacity=70)";
+filter: alpha(opacity=8);
+-moz-opacity: .8;
+-khtml-opacity: .8;
+opacity: .8;
+-moz-box-shadow: inset 0 0 30px 0 rgba(64,83,98,0.5);
+-webkit-box-shadow: inset 0 0 30px 0 rgba(64,83,98,0.5);
+box-shadow: inset 0 0 30px 0 rgba(64,83,98,0.5);
+content: "";
+z-index: -1;
+position: absolute;
+top: 0;
+left: 0;
+width: 520px;
+height: 350px;
+background-size: 100% 100%;
+background-image: url(http://cdn0.vox-cdn.com/images/verge/gradient-red.v5d9c44f.png);
+background-image: -webkit-gradient(linear,left top,right bottom,from(#002f4b),to(#dc4225));
+background-image: -webkit-linear-gradient(left top,#002f4b,#dc4225);
+background-image: -moz-linear-gradient(left top,#002f4b,#dc4225);
+background-image: -ms-linear-gradient(left top,#002f4b,#dc4225);
+background-image: -o-linear-gradient(left top,#002f4b,#dc4225);
+background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
+max-height: 350px;
+max-width: 520px;
+-ms-filter: "alpha(opacity=75)";
+-ms-filter: "alpha(opacity=70)";
+filter: alpha(opacity=8);
+-moz-opacity: .8;
+-khtml-opacity: .8;
+opacity: .8;
+-moz-box-shadow: inset 0 0 30px 0 rgba(0,0,0,0.5);
+-webkit-box-shadow: inset 0 0 30px 0 rgba(0,0,0,0.5);
+box-shadow: inset 0 0 30px 0 rgba(0,0,0,0.5);
+content: "";
+z-index: -1;
+position: absolute;
+top: 0;
+left: 0;
+width: 520px;
+height: 350px;
+background-size: 100% 100%;
+background-image: url(http://cdn3.vox-cdn.com/images/verge/gradient-green.v9acae24.png);
+background-image: -webkit-gradient(linear,left top,right bottom,from(#d38312),to(#a83279));
+background-image: -webkit-linear-gradient(left top,#d38312,#a83279);
+background-image: -moz-linear-gradient(left top,#d38312,#a83279);
+background-image: -ms-linear-gradient(left top,#d38312,#a83279);
+background-image: -o-linear-gradient(left top,#d38312,#a83279);
+background-image: linear-gradient(to bottom right,#d38312,#a83279);
+opacity: .9;
+}
+
+.f1:before{
+	-ms-filter: "alpha(opacity=70)";
+filter: alpha(opacity=8);
+-moz-opacity: .8;
+-khtml-opacity: .8;
+opacity: .8;
+-moz-box-shadow: inset 0 0 30px 0 rgba(114,19,0,0.5);
+-webkit-box-shadow: inset 0 0 30px 0 rgba(114,19,0,0.5);
+box-shadow: inset 0 0 30px 0 rgba(114,19,0,0.5);
+content: "";
+z-index: -1;
+position: absolute;
+top: 0;
+left: 0;
+width: 520px;
+height: 350px;
+background-size: 100% 100%;
+background-image: url(http://cdn1.vox-cdn.com/images/verge/gradient-yellow.vde5e011.png);
+background-image: -webkit-gradient(linear,left top,right bottom,from(#417711),to(#292484));
+background-image: -webkit-linear-gradient(left top,#417711,#292484);
+background-image: -moz-linear-gradient(left top,#417711,#292484);
+background-image: -ms-linear-gradient(left top,#417711,#292484);
+background-image: -o-linear-gradient(left top,#417711,#292484);
+background-image: linear-gradient(to bottom right,#417711,#292484);
+}
+.tech-title a{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+
+}
+.tech-title h2{
+	font-size: 20px;
+	font-weight: bold;
+	padding: 10px;
+	color: #ffffff;
+}
+
+	</style>
+<div class="tech-cont">
+
+
+	<div class="tech-box">
+		<div class="tech-title "><a href="http://www.techug.com/php-design-and-cloud-architecture" rel="nofollow" target="_blank"><h2>PHP系统设计与云架构</h2></a></div>
+		<div class="shadowbox"><img data-original="http://www.webhek.com/techug-res/uploads/2014/08/Woman-CakePHP-Programmer-Typing-on-Black-Mac.png-175x175.jpg" class="attachment-thumbnail wp-post-image lazy " alt="Woman-CakePHP-Programmer-Typing-on-Black-Mac.png" /></div>
+	</div>
+
+
+	<div class="tech-box">
+		<div class="tech-title f1"><a href="http://www.techug.com/why-google-and-firefox-break" rel="nofollow" target="_blank"><h2>谷歌火狐十年合作缘何破灭？</h2></a></div>
+		<div class="shadowbox"><img data-original="http://www.webhek.com/techug-res/uploads/2014/11/chrome_vs_firefox.jpg-175x175.jpg" class="attachment-thumbnail wp-post-image lazy " alt="chrome_vs_firefox.jpg" /></div>
+	</div>
+
+
+	<div class="tech-box">
+		<div class="tech-title "><a href="http://www.techug.com/most-dangrous-black-hacker" rel="nofollow" target="_blank"><h2>FBI最想抓住的黑客</h2></a></div>
+		<div class="shadowbox"><img data-original="http://www.webhek.com/techug-res/uploads/2014/11/14165568153-175x175.jpg" class="attachment-thumbnail wp-post-image lazy " alt="14165568153" /></div>
+	</div>
+
+
+	<div class="tech-box">
+		<div class="tech-title f1"><a href="http://www.techug.com/cache-is-the-new-ram" rel="nofollow" target="_blank"><h2>缓存是新的内存</h2></a></div>
+		<div class="shadowbox"><img data-original="http://www.webhek.com/techug-res/uploads/2014/11/012_ISC_2012_Monday_IZ3A1945.JPG-175x175.jpg" class="attachment-thumbnail wp-post-image lazy " alt="ISC 2012" /></div>
+	</div>
+
+
+</div>
+
+
+
+		<div id="container">
+			<div id="content" role="main">
+
+			
+
+
+				<div id="post-736" class="post-736 post type-post status-publish format-standard has-post-thumbnail hentry category-criticism tag-top-featured">
+
+					<div id="lead-image">
+			            				    </div>
+
+					<h1 class="entry-title">鲜为人知的编程真相</h1>
+
+					<section class="c square_shares">
+  <div>
+    <div class=" bottom-share-buttons">
+      <div class="tsina_share"><a title="分享到新浪微博" class="shareBtn square" onclick="t('tsina')" href="javascript:;">
+      <div class="tsina_icon">&nbsp;</div>
+        <div class="label">分享</div>
+        </a></div>
+      <div class="qzone_share"><a title="分享到QQ空间"  class="shareBtn square" onclick="t('qzone')" href="javascript:;">
+        <div class="qzone_icon">&nbsp;</div>
+        <div class="label">分享</div>
+        </a></div>
+      <div class="tqq_share"><a title="分享到腾讯微博"  class="shareBtn square" onclick="t('tqq')" href="javascript:;">
+        <div class="tqq_icon">&nbsp;</div>
+        <div class="label">分享</div>
+        </a></div>
+      <div class="renren_share"><a title="分享到人人网"  class="shareBtn square" onclick="t('renren')" href="javascript:;">
+        <div class="renren_icon">&nbsp;</div>
+        <div class="label">分享</div>
+        </a></div>
+      <div class="tweet_share"><a title="分享到Twitter" class=" shareBtn square"  onclick="t('twitter')" href="javascript:;">
+        <div class="twitter_icon">&nbsp;</div>
+        <div class="label">分享</div>
+        </a></div>
+
+      <div class="clear"></div>
+    </div>
+  </div>
+</section>
+					
+					<div class="entry-content">
+
+						<p>当程序员的经历让我知道了一些关于软件编程的事情。下面的这些事情可能会让朋友们对软件开发感到惊讶：</p>
+<p>一个程序员用在写程序上的时间大概占他的工作时间的10-20%，大部分的程序员每天大约能写出10-12行的能进入最终的产品的代码 — —不管他的技术水平有多高。 好的程序员花去90%的时间在思考、研究和实验，来找出最优方案。差的程序员花去90%的时间在调试问题程序、盲目的修改程序，期望某种写法能可行。<span id="more-736"></span><br />
+”一个卓越的车床工可以要求比一个一般的车床工多拿数倍高的工资，但一个卓越的软件写手的价值会10000倍于一个普通的写手。“ — — 比尔 盖茨</p>
+<p>一个好的程序员的效率会是一个普通的程序员的十倍之上。一个伟大的程序员的效率会是一个普通程序员的20-100倍。这不是夸张 — — 1960年以来的无数研究都一致的证明了这一点。一个差的程序员不仅仅是没效率 — — 他不仅不能完成任务，写出的大量代码也让别人头痛的没法维护。</p>
+<p>伟大的程序员只花很少的时间去写代码 — — 至少指那些最终形成产品的代码。那些要花掉大量时间写代码的程序员都是太懒惰，太自大，太傲慢，不屑用现有的方案去解决老问题。伟大的程序员的精明之处在于懂得欣赏和重复利用通用模式。好的程序员并不害怕经常的重构（重写）他们的代码以求达到最好效果。差的程序员写的代码缺乏整体概念，冗余，没有层次，没有模式，导致很难重构。把这些代码扔掉重做也比修改起来容易。</p>
+<p>软件遵循熵的定律，跟其它所有东西一样。持续的变更会导致软件腐烂，腐蚀掉对原始设计的完整性概念。软件的腐烂是不可避免的，但程序员在开发软件时没有考虑完整性，将会使软件腐烂的如此之快，以至于软件在还没有完成之前就已经毫无价值了。软件完整性上的熵变可能是软件项目失败最常见的原因。（第二大常见失败原因是做出的不是客户想要的东西。）软件腐烂使开发进度呈指数级速度放缓，大量的软件在失败之前都是面对着突增的时间要求和资金预算。</p>
+<p>2004年的一项研究表明大多数的软件项目（51%）会在关键功能上失败，其中15%是完全的失败。这比1994年前有很大的改进，当时是31%。</p>
+<p>尽管大多数软件都是团体开发的，但这并不是一项民主的活动。通常，一个人负责设计，其他人负责实现细节。</p>
+<p>编程是个很难的工作。是一种剧烈的脑力劳动。好的程序员7&#215;24小时的思考他们的工作。他们最重要的程序都是在淋浴时、睡梦中写成的。因为这最重要的工作都是在远离键盘的情况下完成的，所以软件工程不可能通过增加在办公室的工作时间或增加人手来加快进度。</p>
+
+						<h5 class="sd-title">分享这篇文章：</h5>
+
+						<section class="c square_shares">
+  <div>
+    <div class=" bottom-share-buttons">
+      <div class="tsina_share"><a title="分享到新浪微博" class="shareBtn square" onclick="t('tsina')" href="javascript:;">
+      <div class="tsina_icon">&nbsp;</div>
+        <div class="label">分享</div>
+        </a></div>
+      <div class="qzone_share"><a title="分享到QQ空间"  class="shareBtn square" onclick="t('qzone')" href="javascript:;">
+        <div class="qzone_icon">&nbsp;</div>
+        <div class="label">分享</div>
+        </a></div>
+      <div class="tqq_share"><a title="分享到腾讯微博"  class="shareBtn square" onclick="t('tqq')" href="javascript:;">
+        <div class="tqq_icon">&nbsp;</div>
+        <div class="label">分享</div>
+        </a></div>
+      <div class="renren_share"><a title="分享到人人网"  class="shareBtn square" onclick="t('renren')" href="javascript:;">
+        <div class="renren_icon">&nbsp;</div>
+        <div class="label">分享</div>
+        </a></div>
+      <div class="tweet_share"><a title="分享到Twitter" class=" shareBtn square"  onclick="t('twitter')" href="javascript:;">
+        <div class="twitter_icon">&nbsp;</div>
+        <div class="label">分享</div>
+        </a></div>
+
+      <div class="clear"></div>
+    </div>
+  </div>
+</section>
+						<div id="social-actions" class="section SocialActions social-actions social-actions-hybrid">
+  <div class="social-actions-buttons c">
+    <div id="badge_voting" class="social-buttons badge-voting left ">
+      <div id="reaction_1_love_hate" class="reactions_one badge_heart">
+        <div id="reactions-normal">
+          <h2>对于这篇文章，你的反应是：</h2>
+          <ul class="reactions extra-padding">
+           
+            <li id="love_button" class="love"><a id="love-button" href="javascript:;" class="vote-love_or_hate"><span class="heart vote-love_or_hate" id="vote-love_or_hate-8649457"></span></a> <span class="badge-vote-count" id="love-reaction-count">0</span> </li>
+            <li id="omg_button" class="omg us_reactions"> <span class="reaction_normal"> <a href="javascript:;" class="vote-badge " rel:message="" id="vote-badge-5971774"> 俺的神呀 </a> <span class="badge-vote-count" id="14-reaction-count">0</span> </span> </li>
+            <li id="win_button" class="win us_reactions"> <span class="reaction_normal"> <a href="javascript:;" class="vote-badge " rel:message="" id="vote-badge-9799996"> 赞一个 </a> <span class="badge-vote-count" id="47-reaction-count">3</span> </span> </li>
+            <li id="ew_button" class="ew us_reactions"> <span class="reaction_normal"> <a href="javascript:;" class="vote-badge " rel:message="" id="vote-badge-1727133"> 飘过~ </a> <span class="badge-vote-count" id="27-reaction-count">0</span> </span> </li>
+            <li id="cute_button" class="cute us_reactions"> <span class="reaction_normal"> <a href="javascript:;" class="vote-badge " rel:message="" id="vote-badge-8765294"> 强 </a> <span class="badge-vote-count" id="16-reaction-count">0</span> </span> </li>
+            <li id="cute_button" class="cute us_reactions"> <span class="reaction_normal"> <a href="javascript:;" class="vote-badge " rel:message="" id="vote-badge-8765294"> 标题党 </a> <span class="badge-vote-count" id="16-reaction-count">0</span> </span> </li>
+            <li id="wtf_button" class="wtf us_reactions"> <span class="reaction_normal"> <a href="javascript:;" class="vote-badge " rel:message="" id="vote-badge-7063226"> 很实用 </a> <span class="badge-vote-count" id="13-reaction-count">0</span> </span> </li>
+            <li id="fail_button" class="fail us_reactions"> <span class="reaction_normal"> <a href="javascript:;" class="vote-badge " rel:message="" id="vote-badge-3248218"> 好文 </a> <span class="badge-vote-count" id="49-reaction-count">0</span> </span> </li>
+            <li id="lol_button" class="lol us_reactions"> <span class="reaction_normal"> <a href="javascript:;" class="vote-badge " rel:message="" id="vote-badge-7984460"> 笑死了 </a> <span class="badge-vote-count" id="12-reaction-count">0</span> </span> </li>
+            <li id="classic_button" class="classic us_reactions"> <span class="reaction_normal"> <a href="javascript:;" class="vote-badge " rel:message="" id="vote-badge-7505532"> mark </a> <span class="badge-vote-count" id="19-reaction-count">0</span> </span> </li>
+            <li id="yasss_button" class="yasss us_reactions"> <span class="reaction_normal"> <a href="javascript:;" class="vote-badge " rel:message="" id="vote-badge-9845949"> 敬佩 </a> <span class="badge-vote-count" id="257-reaction-count">0</span> </span> </li>
+            <li id="trashy_button" class="trashy us_reactions"> <span class="reaction_normal"> <a href="javascript:;" class="vote-badge  longer" rel:message="" id="vote-badge-4898662"> 垃圾 </a> <span class="badge-vote-count" id="17-reaction-count">0</span> </span> </li>
+            <li id="hate_button" class="hate"><a href="javascript:;" class="vote-love_or_hate" id="hate-button"><span class="heart vote-love_or_hate" id="vote-love_or_hate-9037733"></span></a> <span class="badge-vote-count zero" id="hate-reaction-count">0</span> </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+   
+    <div id="social_message-already-voted" class=" section social-message" style="display:none;">
+      <h5>看样子你已经点过这个了！</h5>
+    </div>
+    <div id="social_message-badge-votecount-exceeded" class="section social-message" style="display:none;">
+      <h5>抱歉，你最多只能点三个！</h5>
+    </div>
+    <div id="reaction_loading" class="section social-message" style="display:none;">
+      <img src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/loading.gif?7045b4">
+    </div>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+  //http://stackoverflow.com/questions/1599287/create-read-and-erase-cookies-with-jquery
+  // Cookies
+    function createCookie(name, value, days) {
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            var expires = "; expires=" + date.toGMTString();
+        }
+        else var expires = "";
+
+        document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/";
+    }
+
+    function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return decodeURIComponent( c.substring(nameEQ.length, c.length) );
+        }
+        return null;
+    }
+</script>
+
+<script type="text/javascript">
+
+  img1 = new Image();
+  img1.src = "http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/loading.gif";
+
+  var vote_count = 0;
+
+  jQuery('ul.reactions li a').click(function (){
+
+      jQuery('.social-message').hide();
+
+      if( $(this).parents('li').hasClass('voted') ){
+
+        jQuery('#social_message-already-voted').show();
+
+        return;
+
+      }
+
+      if(vote_count == 3)  {
+
+          jQuery('#social_message-badge-votecount-exceeded').show();
+
+          return;
+      }
+      
+      //if we donnot has cookie author and email
+      if( !readCookie('react_user_email') ){
+
+          jQuery('#login_overlay').removeClass('hide_overlay');
+
+          $(this).addClass('just_clicked_me');
+
+          return;
+      }
+
+      jQuery('#reaction_loading').show();
+
+      var txt = jQuery.trim($(this).text());
+
+      if( $(this).attr('id') == 'love-button' ) txt = 'love';
+      else if( $(this).attr('id') == 'hate-button' ) txt = 'hate';
+
+      var pthis = this;
+
+      jQuery.post("/utils/reaction.php", { comment_post_ID: jQuery('#comment_post_ID').val(), txt: txt }, 
+      function(data){ 
+
+          jQuery('#reaction_loading').hide();
+
+          if(jQuery.trim(data) == 'ok') {
+              
+              $(pthis).parents('li').addClass('voted');
+
+              vote_count++;
+
+          }else if(jQuery.trim(data) == 'need login') {
+
+            jQuery('#login_overlay').removeClass('hide_overlay');
+
+            $(this).addClass('just_clicked_me');
+
+          }else if(jQuery.trim(data) == 'duplicated') {
+
+            jQuery('#social_message-already-voted').show();
+
+          }else if(jQuery.trim(data) == 'exceeded') {
+
+            jQuery('#social_message-badge-votecount-exceeded').show();
+
+          }else{
+
+            alert('出错了！请通知站长，谢谢。');
+
+          }
+
+
+
+      });
+
+      
+
+  });
+
+  function sigin_send(){
+
+    if( jQuery.trim( jQuery('#author2').val() ) == '')  return false;
+
+    if( jQuery.trim( jQuery('#email2').val() ) == '')  return false; 
+
+    close_overlay();
+
+    createCookie('react_user_email', jQuery.trim( jQuery('#email2').val() ), 365);
+
+    createCookie('react_user_name', jQuery.trim( jQuery('#author2').val() ), 365);
+
+    jQuery('#author').val( jQuery('#author2').val() );
+
+    jQuery('#email').val( jQuery('#email2').val() );
+
+    $('.just_clicked_me').removeClass('just_clicked_me').click();
+
+    return false;
+  }
+
+  function close_overlay(){
+    jQuery('#login_overlay').addClass('hide_overlay');
+
+  }
+
+
+</script>
+						
+						<div class="post_source">[英文原文：<a rel="nofollow" target="_top" href="http://dotmac.rationalmind.net/2010/08/some-lesser-known-truths-about-programming/">Some lesser-known truths about programming</a> ]</div>
+						
+					</div><!-- .entry-content -->
+
+
+					
+				</div><!-- #post-## -->
+
+				
+
+				<div class='bottom_abc google_ad'>
+							<!-- 文章结尾处 -->
+							<div id='div-gpt-ad-1403070709294-1' style='width:336px; height:280px;'>
+							<script type='text/javascript'>
+							googletag.cmd.push(function() { googletag.display('div-gpt-ad-1403070709294-1'); });
+							</script>
+							</div>
+				</div>
+				<div id='bottom_cup' class="bottom_abc" style="display:none">
+					<a href="http://www.webhek.com/go.php?id=1" target="_blank" rel="nofollow"><img style='max-width:400px' src="http://www.webhek.com/cup_560.jpg"></a>
+				</div>
+
+				<div class='hentry clear'>
+					  <h3 style='margin-bottom:20px;'>你也许会喜欢这些文章：</h3>
+  <OL>
+                     <li><a href="http://www.vaikan.com/how-can-an-introvert-asian-engineer-like-me-make-friends/">像我这样一个内向的亚裔程序员，如何在西方交到朋友？</a></li>
+                     <li><a href="http://www.vaikan.com/donot-optimize/">没事儿别优化！</a></li>
+                     <li><a href="http://www.vaikan.com/things-everyone-should-do-code-review/">谷歌是如何做代码审查的</a></li>
+                     <li><a href="http://www.vaikan.com/write-less-code/">写最少的代码，避免给自己找麻烦</a></li>
+                     <li><a href="http://www.vaikan.com/top-technical-mistakes-of-programers/">程序员最容易犯的几个技术上的错误</a></li>
+           </OL>
+				</div>
+
+				
+			<div id="comments" class='hentry '>
+
+
+			<h3 id="comments-title">29 Responses to <em>鲜为人知的编程真相</em></h3>
+
+
+			<ol class="commentlist">
+					<li class="comment even thread-even depth-1" id="li-comment-315">
+		<div id="comment-315">
+			<div class="comment-author vcard">
+				<img class="avatar photo lazy" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/vatar.png?7045b4" data-original="http://1.gravatar.com/avatar/fb1ec0472fcccf66c1969009e06b54c0?s=40&amp;d=monsterid&amp;r=G">				<cite class="fn">domando</cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/#comment-315">
+				2010年09月5日 at 9:13 下午</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>看来程序员都不喜欢评论哈？<br />
+我来第一条吧，</p>
+</div>
+
+			<div class="reply">
+				<a class='comment-reply-link' href='/some-lesser-known-truths-about-programming/?replytocom=315#respond' onclick='return addComment.moveForm("comment-315", "315", "respond", "736")'>回复</a>			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-316">
+		<div id="comment-316">
+			<div class="comment-author vcard">
+				<img class="avatar photo lazy" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/vatar.png?7045b4" data-original="http://1.gravatar.com/avatar/d15fcaa218e580192b4174047816489d?s=40&amp;d=monsterid&amp;r=G">				<cite class="fn"><a href='http://www.akasuna.com' rel='external nofollow' class='url'>akasuna</a></cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/#comment-316">
+				2010年09月6日 at 10:51 上午</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>这个要看怎么去定义程序员了，同样水平的程序员，在 A公司，是程序员，到B 公司，称呼就可能是“工程师”了，在C公司，称呼就可能是“架构师”了</p>
+</div>
+
+			<div class="reply">
+				<a class='comment-reply-link' href='/some-lesser-known-truths-about-programming/?replytocom=316#respond' onclick='return addComment.moveForm("comment-316", "316", "respond", "736")'>回复</a>			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-319">
+		<div id="comment-319">
+			<div class="comment-author vcard">
+				<img class="avatar photo lazy" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/vatar.png?7045b4" data-original="http://0.gravatar.com/avatar/0c56e2001ab9e0e4002a8f50196b9d83?s=40&amp;d=monsterid&amp;r=G">				<cite class="fn"><a href='http://sigmav.net' rel='external nofollow' class='url'>sigmax6</a></cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/#comment-319">
+				2010年09月6日 at 3:59 下午</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>确实，有些创意就是在远离电脑时才能想到。</p>
+</div>
+
+			<div class="reply">
+				<a class='comment-reply-link' href='/some-lesser-known-truths-about-programming/?replytocom=319#respond' onclick='return addComment.moveForm("comment-319", "319", "respond", "736")'>回复</a>			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-330">
+		<div id="comment-330">
+			<div class="comment-author vcard">
+				<img class="avatar photo lazy" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/vatar.png?7045b4" data-original="http://1.gravatar.com/avatar/7e8948f6a96863a2dfb3ba1f3fc13184?s=40&amp;d=monsterid&amp;r=G">				<cite class="fn">软件写手</cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/#comment-330">
+				2010年09月8日 at 10:23 上午</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>盖茨叫“软件写手”</p>
+</div>
+
+			<div class="reply">
+				<a class='comment-reply-link' href='/some-lesser-known-truths-about-programming/?replytocom=330#respond' onclick='return addComment.moveForm("comment-330", "330", "respond", "736")'>回复</a>			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-334">
+		<div id="comment-334">
+			<div class="comment-author vcard">
+				<img class="avatar photo lazy" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/vatar.png?7045b4" data-original="http://0.gravatar.com/avatar/e4470afb954e37824b8701f7d832b5af?s=40&amp;d=monsterid&amp;r=G">				<cite class="fn"><a href='http://d' rel='external nofollow' class='url'>xxx</a></cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/#comment-334">
+				2010年09月9日 at 2:56 下午</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>错了,好的程序员,是懂得发现最简便的工具,懂得copy和paste,而不是猛往键盘上敲,然后又删,又拷&#8230;<br />
+优秀的程序员,他们不需要再写程序,而是能够让那些新手写,并且能带领他们成为高手,而自己从来未曾成为高手</p>
+</div>
+
+			<div class="reply">
+				<a class='comment-reply-link' href='/some-lesser-known-truths-about-programming/?replytocom=334#respond' onclick='return addComment.moveForm("comment-334", "334", "respond", "736")'>回复</a>			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	<ul class="children">
+	<li class="comment odd alt depth-2" id="li-comment-9366">
+		<div id="comment-9366">
+			<div class="comment-author vcard">
+				<img class="avatar photo lazy" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/vatar.png?7045b4" data-original="http://1.gravatar.com/avatar/bd7d25030ccc791afd69fb28ec02433a?s=40&amp;d=monsterid&amp;r=G">				<cite class="fn">randomid</cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/#comment-9366">
+				2013年03月18日 at 8:54 上午</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>乱扯</p>
+</div>
+
+			<div class="reply">
+				<a class='comment-reply-link' href='/some-lesser-known-truths-about-programming/?replytocom=9366#respond' onclick='return addComment.moveForm("comment-9366", "9366", "respond", "736")'>回复</a>			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment even depth-2" id="li-comment-18286">
+		<div id="comment-18286">
+			<div class="comment-author vcard">
+				<img class="avatar photo lazy" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/vatar.png?7045b4" data-original="http://0.gravatar.com/avatar/0d6d3d3d601fc4c85a65c1a540c8f73b?s=40&amp;d=monsterid&amp;r=G">				<cite class="fn"><a href='http://asd.dmcan.net' rel='external nofollow' class='url'>Darc Teo</a></cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/#comment-18286">
+				2014年11月18日 at 3:29 下午</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>胡说八道，你要知道你每Copy和Paste一次，你就多了一段重复的代码。</p>
+</div>
+
+			<div class="reply">
+				<a class='comment-reply-link' href='/some-lesser-known-truths-about-programming/?replytocom=18286#respond' onclick='return addComment.moveForm("comment-18286", "18286", "respond", "736")'>回复</a>			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-420">
+		<div id="comment-420">
+			<div class="comment-author vcard">
+				<img class="avatar photo lazy" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/vatar.png?7045b4" data-original="http://0.gravatar.com/avatar/cc290d435b8a41bce818f5a09a4c4a59?s=40&amp;d=monsterid&amp;r=G">				<cite class="fn"><a href='http://mujiang.blogspot.com' rel='external nofollow' class='url'>木匠Charlie</a></cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/#comment-420">
+				2010年10月2日 at 4:41 上午</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>楼上说的是游泳教练吧. 自己不会游泳,却教出了一堆世界冠军.</p>
+</div>
+
+			<div class="reply">
+				<a class='comment-reply-link' href='/some-lesser-known-truths-about-programming/?replytocom=420#respond' onclick='return addComment.moveForm("comment-420", "420", "respond", "736")'>回复</a>			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-1875">
+		<div id="comment-1875">
+			<div class="comment-author vcard">
+				<img class="avatar photo lazy" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/vatar.png?7045b4" data-original="http://1.gravatar.com/avatar/3607fb2767dfcda89bc936ee8086839e?s=40&amp;d=monsterid&amp;r=G">				<cite class="fn">xxx这逻辑。。。。</cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/#comment-1875">
+				2011年06月18日 at 9:52 下午</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>xxx太逗了~~~~</p>
+</div>
+
+			<div class="reply">
+				<a class='comment-reply-link' href='/some-lesser-known-truths-about-programming/?replytocom=1875#respond' onclick='return addComment.moveForm("comment-1875", "1875", "respond", "736")'>回复</a>			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-5047">
+		<div id="comment-5047">
+			<div class="comment-author vcard">
+				<img class="avatar photo lazy" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/vatar.png?7045b4" data-original="http://0.gravatar.com/avatar/eeef32a44e7611a21603956996ac77aa?s=40&amp;d=monsterid&amp;r=G">				<cite class="fn">拓星</cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/#comment-5047">
+				2012年05月23日 at 5:34 下午</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>努力成为我眼中的牛人</p>
+</div>
+
+			<div class="reply">
+				<a class='comment-reply-link' href='/some-lesser-known-truths-about-programming/?replytocom=5047#respond' onclick='return addComment.moveForm("comment-5047", "5047", "respond", "736")'>回复</a>			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-7311">
+		<div id="comment-7311">
+			<div class="comment-author vcard">
+				<img class="avatar photo lazy" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/vatar.png?7045b4" data-original="http://0.gravatar.com/avatar/6cdc59896d32cf1ef24890471e3b1017?s=40&amp;d=monsterid&amp;r=G">				<cite class="fn">panxuzheng</cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/#comment-7311">
+				2012年11月16日 at 8:35 下午</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>思考、研究和实验也是在调试问题程序，只不过那是一种归零的思考，回到问题的原点，换一个方向走。</p>
+</div>
+
+			<div class="reply">
+				<a class='comment-reply-link' href='/some-lesser-known-truths-about-programming/?replytocom=7311#respond' onclick='return addComment.moveForm("comment-7311", "7311", "respond", "736")'>回复</a>			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-7582">
+		<div id="comment-7582">
+			<div class="comment-author vcard">
+				<img class="avatar photo lazy" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/vatar.png?7045b4" data-original="http://0.gravatar.com/avatar/c9491639386644984aed29eb51177459?s=40&amp;d=monsterid&amp;r=G">				<cite class="fn"><a href='http://外刊IT评论网' rel='external nofollow' class='url'>一鸟</a></cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/#comment-7582">
+				2012年12月9日 at 12:51 上午</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>&#8220;编程是个很难的工作。是一种剧烈的脑力劳动。好的程序员7×24小时的思考他们的工作。他们最重要的程序都是在淋浴时、睡梦中写成的。因为这最重要的工作都是在远离键盘的情况下完成的，所以软件工程不可能通过增加在办公室的工作时间或增加人手来加快进度。&#8221;      我听周围的人说 程序员加班的很晚  。这个矛盾是为什么？</p>
+</div>
+
+			<div class="reply">
+				<a class='comment-reply-link' href='/some-lesser-known-truths-about-programming/?replytocom=7582#respond' onclick='return addComment.moveForm("comment-7582", "7582", "respond", "736")'>回复</a>			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	<ul class="children">
+	<li class="comment even depth-2" id="li-comment-10606">
+		<div id="comment-10606">
+			<div class="comment-author vcard">
+				<img class="avatar photo lazy" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/vatar.png?7045b4" data-original="http://0.gravatar.com/avatar/81786c9d73e80afc90aeec0c93960b80?s=40&amp;d=monsterid&amp;r=G">				<cite class="fn">xfun68</cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/#comment-10606">
+				2013年06月1日 at 11:35 上午</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>注意，这里写的是“好的程序员”。你的矛盾是因为那些加班的程序员可能还不够。。。</p>
+</div>
+
+			<div class="reply">
+				<a class='comment-reply-link' href='/some-lesser-known-truths-about-programming/?replytocom=10606#respond' onclick='return addComment.moveForm("comment-10606", "10606", "respond", "736")'>回复</a>			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	<ul class="children">
+	<li class="comment odd alt depth-3" id="li-comment-16118">
+		<div id="comment-16118">
+			<div class="comment-author vcard">
+				<img class="avatar photo lazy" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/vatar.png?7045b4" data-original="http://0.gravatar.com/avatar/02b2e466ddc22af522ab25a47670337e?s=40&amp;d=monsterid&amp;r=G">				<cite class="fn">王大锤</cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/#comment-16118">
+				2014年07月1日 at 10:28 上午</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>这个由国情决定，中国的软件向来只追求速度，不追求质量。</p>
+</div>
+
+			<div class="reply">
+				<a class='comment-reply-link' href='/some-lesser-known-truths-about-programming/?replytocom=16118#respond' onclick='return addComment.moveForm("comment-16118", "16118", "respond", "736")'>回复</a>			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-7680">
+		<div id="comment-7680">
+			<div class="comment-author vcard">
+				<img class="avatar photo lazy" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/vatar.png?7045b4" data-original="http://1.gravatar.com/avatar/51c9422260354d9e4c201534e96ff309?s=40&amp;d=monsterid&amp;r=G">				<cite class="fn"><a href='http://www.oldcai.com/' rel='external nofollow' class='url'>老蔡</a></cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/#comment-7680">
+				2012年12月21日 at 3:14 上午</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>大部分的程序员每天大约能写出10-12行的能进入最终的产品的代码。<br />
+这个可考证么？<br />
+看似不太科学。</p>
+</div>
+
+			<div class="reply">
+				<a class='comment-reply-link' href='/some-lesser-known-truths-about-programming/?replytocom=7680#respond' onclick='return addComment.moveForm("comment-7680", "7680", "respond", "736")'>回复</a>			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-7913">
+		<div id="comment-7913">
+			<div class="comment-author vcard">
+				<img class="avatar photo lazy" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/vatar.png?7045b4" data-original="http://1.gravatar.com/avatar/bb982675ed2e6fda79d8a1c51dbf8fb7?s=40&amp;d=monsterid&amp;r=G">				<cite class="fn">mamak</cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/#comment-7913">
+				2013年01月9日 at 4:19 下午</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>当你们纠结作者的论点时 你们应该考虑国外的创造精神和国内软件业的批量生产（粘贴、拷贝）的区别</p>
+</div>
+
+			<div class="reply">
+				<a class='comment-reply-link' href='/some-lesser-known-truths-about-programming/?replytocom=7913#respond' onclick='return addComment.moveForm("comment-7913", "7913", "respond", "736")'>回复</a>			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-7914">
+		<div id="comment-7914">
+			<div class="comment-author vcard">
+				<img class="avatar photo lazy" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/vatar.png?7045b4" data-original="http://1.gravatar.com/avatar/bb982675ed2e6fda79d8a1c51dbf8fb7?s=40&amp;d=monsterid&amp;r=G">				<cite class="fn">mamak</cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/#comment-7914">
+				2013年01月9日 at 4:22 下午</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>如果你在工作场所 能像在自己家里一样做到不受干扰 旁若无人 自由行动，那么“在淋浴时、睡梦中写成的代码”同样能在工作场所里完成</p>
+</div>
+
+			<div class="reply">
+				<a class='comment-reply-link' href='/some-lesser-known-truths-about-programming/?replytocom=7914#respond' onclick='return addComment.moveForm("comment-7914", "7914", "respond", "736")'>回复</a>			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-8478">
+		<div id="comment-8478">
+			<div class="comment-author vcard">
+				<img class="avatar photo lazy" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/vatar.png?7045b4" data-original="http://0.gravatar.com/avatar/0a92e161b21fb4070e2ed4edd7d7e9ba?s=40&amp;d=monsterid&amp;r=G">				<cite class="fn"><a href='http://blog.csdn.net/sz_haitao/article/details/8547210' rel='external nofollow' class='url'>haitao</a></cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/#comment-8478">
+				2013年01月30日 at 11:30 上午</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>这个问题，正好最近写过一篇博客：用数字解释软件开发的8个为什么<br />
+这里不许出现链接，那就放到我的个人信息吧，点击 头像 即可看到，欢迎探讨</p>
+</div>
+
+			<div class="reply">
+				<a class='comment-reply-link' href='/some-lesser-known-truths-about-programming/?replytocom=8478#respond' onclick='return addComment.moveForm("comment-8478", "8478", "respond", "736")'>回复</a>			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	<ul class="children">
+	<li class="comment even depth-2" id="li-comment-8479">
+		<div id="comment-8479">
+			<div class="comment-author vcard">
+				<img class="avatar photo lazy" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/vatar.png?7045b4" data-original="http://0.gravatar.com/avatar/0a92e161b21fb4070e2ed4edd7d7e9ba?s=40&amp;d=monsterid&amp;r=G">				<cite class="fn"><a href='http://blog.csdn.net/sz_haitao/article/details/8547210' rel='external nofollow' class='url'>haitao</a></cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/#comment-8479">
+				2013年01月30日 at 11:32 上午</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>哦，是点击 头像右边的 名字</p>
+</div>
+
+			<div class="reply">
+				<a class='comment-reply-link' href='/some-lesser-known-truths-about-programming/?replytocom=8479#respond' onclick='return addComment.moveForm("comment-8479", "8479", "respond", "736")'>回复</a>			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	<ul class="children">
+	<li class="comment odd alt depth-3" id="li-comment-9367">
+		<div id="comment-9367">
+			<div class="comment-author vcard">
+				<img class="avatar photo lazy" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/vatar.png?7045b4" data-original="http://1.gravatar.com/avatar/bd7d25030ccc791afd69fb28ec02433a?s=40&amp;d=monsterid&amp;r=G">				<cite class="fn">randomid</cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/#comment-9367">
+				2013年03月18日 at 8:56 上午</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>拜读</p>
+</div>
+
+			<div class="reply">
+				<a class='comment-reply-link' href='/some-lesser-known-truths-about-programming/?replytocom=9367#respond' onclick='return addComment.moveForm("comment-9367", "9367", "respond", "736")'>回复</a>			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-10031">
+		<div id="comment-10031">
+			<div class="comment-author vcard">
+				<img class="avatar photo lazy" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/vatar.png?7045b4" data-original="http://0.gravatar.com/avatar/89c8fc6eb3546da3759703838d57e49c?s=40&amp;d=monsterid&amp;r=G">				<cite class="fn">陈丹阳</cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/#comment-10031">
+				2013年04月26日 at 12:36 上午</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p><strong>一种是创造，一种是模仿。呵呵。</strong></p>
+</div>
+
+			<div class="reply">
+				<a class='comment-reply-link' href='/some-lesser-known-truths-about-programming/?replytocom=10031#respond' onclick='return addComment.moveForm("comment-10031", "10031", "respond", "736")'>回复</a>			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-13395">
+		<div id="comment-13395">
+			<div class="comment-author vcard">
+				<img class="avatar photo lazy" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/vatar.png?7045b4" data-original="http://0.gravatar.com/avatar/4e4649acea41ecee084f39a4ae625fb9?s=40&amp;d=monsterid&amp;r=G">				<cite class="fn">leon</cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/#comment-13395">
+				2013年09月22日 at 9:39 下午</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>大多数时候，大难题的解决确实都是在远离键盘下完成的。</p>
+</div>
+
+			<div class="reply">
+				<a class='comment-reply-link' href='/some-lesser-known-truths-about-programming/?replytocom=13395#respond' onclick='return addComment.moveForm("comment-13395", "13395", "respond", "736")'>回复</a>			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-15694">
+		<div id="comment-15694">
+			<div class="comment-author vcard">
+				<img class="avatar photo lazy" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/vatar.png?7045b4" data-original="http://1.gravatar.com/avatar/1e196a687f60d09781507972f92c43c3?s=40&amp;d=monsterid&amp;r=G">				<cite class="fn">lrui</cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/#comment-15694">
+				2014年04月25日 at 7:30 下午</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>除了淋浴、睡梦，还有大便、骑车。</p>
+</div>
+
+			<div class="reply">
+				<a class='comment-reply-link' href='/some-lesser-known-truths-about-programming/?replytocom=15694#respond' onclick='return addComment.moveForm("comment-15694", "15694", "respond", "736")'>回复</a>			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-15928">
+		<div id="comment-15928">
+			<div class="comment-author vcard">
+				<img class="avatar photo lazy" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/vatar.png?7045b4" data-original="http://1.gravatar.com/avatar/72b120e0a579432586363e16c87748b6?s=40&amp;d=monsterid&amp;r=G">				<cite class="fn">FoolBrain</cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/#comment-15928">
+				2014年06月12日 at 4:10 下午</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>经常蹲厕所的时候想出解bug的方案</p>
+</div>
+
+			<div class="reply">
+				<a class='comment-reply-link' href='/some-lesser-known-truths-about-programming/?replytocom=15928#respond' onclick='return addComment.moveForm("comment-15928", "15928", "respond", "736")'>回复</a>			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="reaction even thread-even depth-1" id="li-comment-16601">
+		<div id="comment-16601">
+			
+			<div class="comment-body">
+				<span class="reaction_author">汪玲玲</span> 对这篇文章的反应是<a href="" class="badgeword WIN">赞一个</a>
+				<div class="comment-meta commentmetadata"><a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/#comment-16601">
+					2014年09月12日 at 3:01 下午</a>				</div><!-- .comment-meta .commentmetadata -->
+
+			</div>
+
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="reaction odd alt thread-odd thread-alt depth-1" id="li-comment-18135">
+		<div id="comment-18135">
+			
+			<div class="comment-body">
+				<span class="reaction_author">贾</span> 对这篇文章的反应是<a href="" class="badgeword WIN">赞一个</a>
+				<div class="comment-meta commentmetadata"><a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/#comment-18135">
+					2014年11月12日 at 8:54 上午</a>				</div><!-- .comment-meta .commentmetadata -->
+
+			</div>
+
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="reaction even thread-even depth-1" id="li-comment-18374">
+		<div id="comment-18374">
+			
+			<div class="comment-body">
+				<span class="reaction_author">王勤伟</span> 对这篇文章的反应是<a href="" class="badgeword WIN">赞一个</a>
+				<div class="comment-meta commentmetadata"><a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/#comment-18374">
+					2014年11月25日 at 11:29 上午</a>				</div><!-- .comment-meta .commentmetadata -->
+
+			</div>
+
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-18375">
+		<div id="comment-18375">
+			<div class="comment-author vcard">
+				<img class="avatar photo lazy" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/vatar.png?7045b4" data-original="http://0.gravatar.com/avatar/edc178a55650b4eb440b92bee4adf713?s=40&amp;d=monsterid&amp;r=G">				<cite class="fn">Mr.CHEN</cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/#comment-18375">
+				2014年11月25日 at 12:59 下午</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>好的程序员是用最有效的方式工作的，用不是把别人的想法编译成代码的码农</p>
+</div>
+
+			<div class="reply">
+				<a class='comment-reply-link' href='/some-lesser-known-truths-about-programming/?replytocom=18375#respond' onclick='return addComment.moveForm("comment-18375", "18375", "respond", "736")'>回复</a>			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-18386">
+		<div id="comment-18386">
+			<div class="comment-author vcard">
+				<img class="avatar photo lazy" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/vatar.png?7045b4" data-original="http://1.gravatar.com/avatar/1a99b8a2be8e269ad0d8064dfc7fc2fb?s=40&amp;d=monsterid&amp;r=G">				<cite class="fn">创领会</cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/#comment-18386">
+				2014年11月25日 at 3:10 下午</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>那些要花掉大量时间写代码的程序员都是太懒惰，太自大，太傲慢，不屑用现有的方案去解决老问题。-&gt; 不能太过断言，词与词之间也有些矛盾，时间只会前进，不带停留，科技也是如此。<br />
+伟大的程序员的精明之处在于懂得欣赏和重复利用通用模式。 -&gt; 这是一种渗透的赞颂，伟大的利用者映射着创造者的身影。</p>
+<p>总结：都很自恋！</p>
+</div>
+
+			<div class="reply">
+				<a class='comment-reply-link' href='/some-lesser-known-truths-about-programming/?replytocom=18386#respond' onclick='return addComment.moveForm("comment-18386", "18386", "respond", "736")'>回复</a>			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+			</ol>
+
+
+	
+
+								<div id="respond" class="comment-respond">
+				<h3 id="reply-title" class="comment-reply-title">发表评论 <small><a rel="nofollow" id="cancel-comment-reply-link" href="/some-lesser-known-truths-about-programming/#respond" style="display:none;">取消回复</a></small></h3>
+									<form action="http://www.vaikan.com/wordpress/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+																			<p class="comment-notes">电子邮件地址不会被公开。 必填项已用<span class="required">*</span>标注</p>							<p class="comment-form-author"><label for="author">姓名 <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-email"><label for="email">电子邮件 <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-url"><label for="url">站点</label> <input id="url" name="url" type="text" value="" size="30" /></p>
+<p class="comment-form-captcha">壹加壹等于 <input id="captcha" name="captcha" style="width:30px;" size="10" type="text" value="" /><p><script>if(document.getElementById("captcha").value == "") document.getElementById("captcha").value = "2";</script>
+												<p class="comment-form-comment"><label for="comment">评论</label> <textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>						<p class="form-allowed-tags">您可以使用这些<abbr title="HyperText Markup Language">HTML</abbr>标签和属性： <code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </code></p>						<p class="form-submit">
+							<input name="submit" type="submit" id="submit" value="发表评论" />
+							<input type='hidden' name='comment_post_ID' value='736' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+						</p>
+						<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="f0b4d153a3" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="160"/></p>					</form>
+							</div><!-- #respond -->
+			
+</div><!-- #comments -->
+
+
+			</div><!-- #content -->
+		</div><!-- #container -->
+
+
+		<div id="primary" class="widget-area" role="complementary">
+			<ul class="xoxo">
+				<li class="widget-container sidebar-top-abc">
+				<a target="_blank" href="http://t.sina.com.cn/aqee"><img src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/weibo.jpg?7045b4"></a>
+				</li>
+				
+
+
+			
+
+		
+		<li class="widget-container widget_popular">
+
+			<div class="column big-stories  column3" id="column-hot">
+			  <div class="column-content">
+
+					<div class="article-container sharable">
+	      <div class="article post short">
+	        
+	        <!-- 336右侧方块 -->
+			<div id='div-gpt-ad-1403070709294-0' style='width:336px; height:280px;'>
+			<script type='text/javascript'>
+			googletag.cmd.push(function() { googletag.display('div-gpt-ad-1403070709294-0'); });
+			</script>
+			</div>
+				
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/traveling-writing-programming/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2011/12/beaches_08-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/lifestyle/" title="查看思想人生中的全部文章" rel="category tag">思想人生</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/traveling-writing-programming/">旅行，写作，编程</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/traveling-writing-programming/"> <b>2219</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/im-sure-it-will-only-take-you-a-few-days-to-code/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2012/05/111-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/thought/" title="查看心得体会中的全部文章" rel="category tag">心得体会</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/im-sure-it-will-only-take-you-a-few-days-to-code/">不懂技术的人不要对懂技术的人说这很容易实现</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/im-sure-it-will-only-take-you-a-few-days-to-code/"> <b>1965</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/google-coding-standards/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2011/08/The-Google-Log-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/tech-tips/" title="查看技术技巧中的全部文章" rel="category tag">技术技巧</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/google-coding-standards/">为什么谷歌要执行严格的代码编写规范</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/google-coding-standards/"> <b>1363</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        
+	        <!-- 336右侧方块 -->
+			<div id='div-gpt-ad-1403070709294-2' style='width:336px; height:280px;'>
+			<script type='text/javascript'>
+			googletag.cmd.push(function() { googletag.display('div-gpt-ad-1403070709294-2'); });
+			</script>
+			</div>
+				
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/if-programming-languages-are-woman/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2012/11/z6516435X-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/joke/" title="查看幽默讽刺中的全部文章" rel="category tag">幽默讽刺</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/if-programming-languages-are-woman/">如果编程语言是女人</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/if-programming-languages-are-woman/"> <b>1248</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/daily-routine-of-a-4-hour-programmer/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2012/06/200711281441100_2-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/thought/" title="查看心得体会中的全部文章" rel="category tag">心得体会</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/daily-routine-of-a-4-hour-programmer/">每天工作4小时的程序员</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/daily-routine-of-a-4-hour-programmer/"> <b>1091</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/use-multiple-cpu-cores-with-your-linux-commands/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2013/10/multi-core-cpu-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/tech-tips/" title="查看技术技巧中的全部文章" rel="category tag">技术技巧</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/use-multiple-cpu-cores-with-your-linux-commands/">如何利用多核CPU来加速你的Linux命令 — awk, sed, bzip2, grep, wc等</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/use-multiple-cpu-cores-with-your-linux-commands/"> <b>1056</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/what-is-the-single-most-influential-book-every-programmer-should-read/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2011/03/20100802145937cbe-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/news/" title="查看新闻资讯中的全部文章" rel="category tag">新闻资讯</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/what-is-the-single-most-influential-book-every-programmer-should-read/">哪本书是对程序员最有影响、每个程序员都该阅读的书？</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/what-is-the-single-most-influential-book-every-programmer-should-read/"> <b>887</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/what-happens-to-older-developers/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2014/03/homeless-computer-coder-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/criticism/" title="查看批评评论中的全部文章" rel="category tag">批评评论</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/what-happens-to-older-developers/">老程序员的下场</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/what-happens-to-older-developers/"> <b>841</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/my-husband-is-a-programmer/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2010/08/3751216922_e84ddc06991-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/lifestyle/" title="查看思想人生中的全部文章" rel="category tag">思想人生</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/my-husband-is-a-programmer/">我的丈夫是个程序员</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/my-husband-is-a-programmer/"> <b>837</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/things-everyone-should-do-code-review/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2011/11/Mark-CC-and-SS-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/criticism/" title="查看批评评论中的全部文章" rel="category tag">批评评论</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/things-everyone-should-do-code-review/">谷歌是如何做代码审查的</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/things-everyone-should-do-code-review/"> <b>817</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/because-they-have-bigger-monitors/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2012/05/1197722904_b1349e7382_b1-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/criticism/" title="查看批评评论中的全部文章" rel="category tag">批评评论</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/because-they-have-bigger-monitors/">我跳槽是因为他们的显示器更大</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/because-they-have-bigger-monitors/"> <b>801</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/top-10-movies-for-programmers/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2013/10/Inception-09w-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/joke/" title="查看幽默讽刺中的全部文章" rel="category tag">幽默讽刺</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/top-10-movies-for-programmers/">程序员必看的十大电影</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/top-10-movies-for-programmers/"> <b>799</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/do-the-right-thing-wait-to-get-fired/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2013/07/barack_obama-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/criticism/" title="查看批评评论中的全部文章" rel="category tag">批评评论</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/do-the-right-thing-wait-to-get-fired/">做正确的事情，等着被开除</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/do-the-right-thing-wait-to-get-fired/"> <b>697</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/the-reality-of-developers-life/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2013/03/2318085_094950542344_2-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/joke/" title="查看幽默讽刺中的全部文章" rel="category tag">幽默讽刺</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/the-reality-of-developers-life/">程序员的样子</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/the-reality-of-developers-life/"> <b>684</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/10-best-code-comments/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2011/11/201106241349347909-247x150.png' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/joke/" title="查看幽默讽刺中的全部文章" rel="category tag">幽默讽刺</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/10-best-code-comments/">10个最“优秀”的代码注释</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/10-best-code-comments/"> <b>611</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/programmer-crazy/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2014/05/programmer-computer-night-3-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/criticism/" title="查看批评评论中的全部文章" rel="category tag">批评评论</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/programmer-crazy/">做程序员压力山大，很多人都快疯了</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/programmer-crazy/"> <b>603</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/why-we-dont-hire-net-programmers/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2011/12/396272304-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/criticism/" title="查看批评评论中的全部文章" rel="category tag">批评评论</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/why-we-dont-hire-net-programmers/">为什么我们不要 .NET 程序员</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/why-we-dont-hire-net-programmers/"> <b>590</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/why-you-dont-steal-from-a-hacker/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2011/08/thief31-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/tech-tips/" title="查看技术技巧中的全部文章" rel="category tag">技术技巧</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/why-you-dont-steal-from-a-hacker/">不要偷黑客的东西</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/why-you-dont-steal-from-a-hacker/"> <b>559</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2010/09/Img272238986-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/criticism/" title="查看批评评论中的全部文章" rel="category tag">批评评论</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/some-lesser-known-truths-about-programming/">鲜为人知的编程真相</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/some-lesser-known-truths-about-programming/"> <b>538</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/why-programmers-work-at-night/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2011/12/El-Buho-339894-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/thought/" title="查看心得体会中的全部文章" rel="category tag">心得体会</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/why-programmers-work-at-night/">为什么程序员都是夜猫子</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/why-programmers-work-at-night/"> <b>512</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/the-four-stages-of-programming-competence/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2009/10/ybjj0626101-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/default/" title="查看杂项中的全部文章" rel="category tag">杂项</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/the-four-stages-of-programming-competence/">编程能力的四种境界</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/the-four-stages-of-programming-competence/"> <b>496</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/programers-should-know-several-tech-websites/"> 							<img height="50" width="50" class="attachment-thumbnail wp-post-image" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/placeholder_50x50.jpg?7045b4">
+						 </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/news/" title="查看新闻资讯中的全部文章" rel="category tag">新闻资讯</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/programers-should-know-several-tech-websites/">程序员必须知道的几个国外IT网站</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/programers-should-know-several-tech-websites/"> <b>494</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/on-testers-and-testing/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2012/02/F2005091610253948300000-247x150.jpeg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/criticism/" title="查看批评评论中的全部文章" rel="category tag">批评评论</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/on-testers-and-testing/">关于测试和测试人员</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/on-testers-and-testing/"> <b>494</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/when-you-write-your-essays-in-programming-languages/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2012/09/essay-with-programming-lang-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/joke/" title="查看幽默讽刺中的全部文章" rel="category tag">幽默讽刺</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/when-you-write-your-essays-in-programming-languages/">漫画：如果用编程语言来写作文</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/when-you-write-your-essays-in-programming-languages/"> <b>484</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/linux-command-sheet/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2010/10/linux-command-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/docman/" title="查看文档手册中的全部文章" rel="category tag">文档手册</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/linux-command-sheet/">最常用的Linux命令简表</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/linux-command-sheet/"> <b>474</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/why-every-programmer-should-learn-python-or-ruby/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2011/07/python1-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/thought/" title="查看心得体会中的全部文章" rel="category tag">心得体会</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/why-every-programmer-should-learn-python-or-ruby/">每个程序员都应该学习使用Python或Ruby</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/why-every-programmer-should-learn-python-or-ruby/"> <b>473</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/books-programmers-dont-really-read/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2012/04/1338541889523-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/news/" title="查看新闻资讯中的全部文章" rel="category tag">新闻资讯</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/books-programmers-dont-really-read/">最常被程序员们谎称读过的计算机书籍</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/books-programmers-dont-really-read/"> <b>459</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/what-are-the-most-common-lies-told-by-programmers/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2012/09/U105P28T3D764881F326DT20050-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/joke/" title="查看幽默讽刺中的全部文章" rel="category tag">幽默讽刺</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/what-are-the-most-common-lies-told-by-programmers/">程序员的十大谎言</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/what-are-the-most-common-lies-told-by-programmers/"> <b>454</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/10-steps-to-becoming-a-better-programmer/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2012/12/ideas-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/tech-tips/" title="查看技术技巧中的全部文章" rel="category tag">技术技巧</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/10-steps-to-becoming-a-better-programmer/">10步让你成为更优秀的程序员</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/10-steps-to-becoming-a-better-programmer/"> <b>447</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/59-hilarious-but-true-programming-quotes-for-software-developers/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2013/12/ALTools_Famous_Love_Quotes_-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/joke/" title="查看幽默讽刺中的全部文章" rel="category tag">幽默讽刺</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/59-hilarious-but-true-programming-quotes-for-software-developers/">关于程序员的59条搞笑但却真实无比的编程语录</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/59-hilarious-but-true-programming-quotes-for-software-developers/"> <b>439</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/why-you-should-take-your-20s-seriously/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2012/12/46a0f5eadf450f553472c4361133e4cc-240x150.jpeg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/lifestyle/" title="查看思想人生中的全部文章" rel="category tag">思想人生</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/why-you-should-take-your-20s-seriously/">认真过好你的二十几岁</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/why-you-should-take-your-20s-seriously/"> <b>429</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/1k-rose/"> 							<img height="50" width="50" class="attachment-thumbnail wp-post-image" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/placeholder_50x50.jpg?7045b4">
+						 </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/tech-tips/" title="查看技术技巧中的全部文章" rel="category tag">技术技巧</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/1k-rose/">这段只有1K的代码能做什么？</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/1k-rose/"> <b>428</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/you-are-the-average-of-your-five-closest-friends/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2011/11/U3834P42DT20120606152858-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/lifestyle/" title="查看思想人生中的全部文章" rel="category tag">思想人生</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/you-are-the-average-of-your-five-closest-friends/">珍妮的故事</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/you-are-the-average-of-your-five-closest-friends/"> <b>425</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/on-technical-debt-now-with-chickens/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2012/03/20080618004102-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/criticism/" title="查看批评评论中的全部文章" rel="category tag">批评评论</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/on-technical-debt-now-with-chickens/">技术债务(母鸡的遭遇)</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/on-technical-debt-now-with-chickens/"> <b>403</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/good-programming-quotes/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2013/10/Screenshot.157179.1000000-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/criticism/" title="查看批评评论中的全部文章" rel="category tag">批评评论</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/good-programming-quotes/">编程名言名句</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/good-programming-quotes/"> <b>402</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/why-project-managers-get-higher-salary-than-programmers/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2011/11/W020090902510018540592-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/thought/" title="查看心得体会中的全部文章" rel="category tag">心得体会</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/why-project-managers-get-higher-salary-than-programmers/">为什么项目经理拿的钱比程序员多？</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/why-project-managers-get-higher-salary-than-programmers/"> <b>396</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/what-i-wish-someone-had-told-me-5-years-ago/"> 							<img height="50" width="50" class="attachment-thumbnail wp-post-image" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/placeholder_50x50.jpg?7045b4">
+						 </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/startup/" title="查看创业理想中的全部文章" rel="category tag">创业理想</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/what-i-wish-someone-had-told-me-5-years-ago/">我希望四年前就有人告诉我的事情</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/what-i-wish-someone-had-told-me-5-years-ago/"> <b>387</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/reasons-why-people-who-work-with-computers-seem-to-have-lot-of-spare-time/"> 							<img height="50" width="50" class="attachment-thumbnail wp-post-image" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/placeholder_50x50.jpg?7045b4">
+						 </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/joke/" title="查看幽默讽刺中的全部文章" rel="category tag">幽默讽刺</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/reasons-why-people-who-work-with-computers-seem-to-have-lot-of-spare-time/">漫画：为什么搞计算机工作的人总是看上去很清闲</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/reasons-why-people-who-work-with-computers-seem-to-have-lot-of-spare-time/"> <b>373</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/hottest-recent-sighs/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2012/02/37814-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/joke/" title="查看幽默讽刺中的全部文章" rel="category tag">幽默讽刺</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/hottest-recent-sighs/">一声叹息</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/hottest-recent-sighs/"> <b>361</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/yes-i-still-want-to-be-doing-this-at-56/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2012/10/kirkland_portrait_640-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/lifestyle/" title="查看思想人生中的全部文章" rel="category tag">思想人生</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/yes-i-still-want-to-be-doing-this-at-56/">到了50岁你还愿意做编程工作吗？</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/yes-i-still-want-to-be-doing-this-at-56/"> <b>359</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/what-do-the-best-computer-programmers-have-in-common/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2012/08/Tank-2-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/criticism/" title="查看批评评论中的全部文章" rel="category tag">批评评论</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/what-do-the-best-computer-programmers-have-in-common/">自由的公司环境是造就优秀程序员的摇篮</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/what-do-the-best-computer-programmers-have-in-common/"> <b>358</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/whats-your-favorite-programmer-cartoon/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2013/10/DevelopersAreBornBrave_Smal-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/joke/" title="查看幽默讽刺中的全部文章" rel="category tag">幽默讽刺</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/whats-your-favorite-programmer-cartoon/">“你最喜欢的程序员漫画”精选</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/whats-your-favorite-programmer-cartoon/"> <b>357</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/5-fundamental-differences-between-git-svn/"> 							<img height="50" width="50" class="attachment-thumbnail wp-post-image" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/placeholder_50x50.jpg?7045b4">
+						 </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/thought/" title="查看心得体会中的全部文章" rel="category tag">心得体会</a>, <a href="http://www.vaikan.com/category/tech-tips/" title="查看技术技巧中的全部文章" rel="category tag">技术技巧</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/5-fundamental-differences-between-git-svn/">GIT和SVN之间的五个基本区别</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/5-fundamental-differences-between-git-svn/"> <b>351</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/regrets-of-the-dying/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2012/06/Daisy-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/lifestyle/" title="查看思想人生中的全部文章" rel="category tag">思想人生</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/regrets-of-the-dying/">要死的人都后悔些什么</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/regrets-of-the-dying/"> <b>351</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/javazone-2013-javapocalypse/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2013/07/vlcsnap-2013-06-29-15h27m02-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/joke/" title="查看幽默讽刺中的全部文章" rel="category tag">幽默讽刺</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/javazone-2013-javapocalypse/">JavaZone2013年度大片《Java末日》预告片</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/javazone-2013-javapocalypse/"> <b>345</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/the-evolution-of-a-software-engineer/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2014/03/130898-2-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/joke/" title="查看幽默讽刺中的全部文章" rel="category tag">幽默讽刺</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/the-evolution-of-a-software-engineer/">程序员的回归式进化</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/the-evolution-of-a-software-engineer/"> <b>339</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/how-to-be-an-excellent-programmer-for-many-years/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2012/10/wisdom-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/thought/" title="查看心得体会中的全部文章" rel="category tag">心得体会</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/how-to-be-an-excellent-programmer-for-many-years/">程序员如何保持优秀</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/how-to-be-an-excellent-programmer-for-many-years/"> <b>331</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/for-gods-sake-follow-your-dreams/"> 							<img height="50" width="50" class="attachment-thumbnail wp-post-image" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/placeholder_50x50.jpg?7045b4">
+						 </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/lifestyle/" title="查看思想人生中的全部文章" rel="category tag">思想人生</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/for-gods-sake-follow-your-dreams/">不要放弃你的梦想</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/for-gods-sake-follow-your-dreams/"> <b>329</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/what-is-the-single-most-effective-thing-you-did-to-improve-your-programming-skil/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2012/04/114854mh-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/thought/" title="查看心得体会中的全部文章" rel="category tag">心得体会</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/what-is-the-single-most-effective-thing-you-did-to-improve-your-programming-skil/">你做过的最有效的提高你的编程水平的一件事情是什么</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/what-is-the-single-most-effective-thing-you-did-to-improve-your-programming-skil/"> <b>321</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>		<div class="article-container sharable">
+	      <div class="article post short">
+	        <div class="article-img-container"> <a href="http://www.vaikan.com/six-stages-of-debugging/"> <img alt='' class='lazy attachment-post-thumbnail wp-post-image' data-original='http://www.vaikan.com/wordpress/wp-content/uploads/2012/04/500x375-247x150.jpg' style=''> </a> </div>
+	        <div class="article-content-wrapper">
+	          <div class="article-content">
+				<span class='article-category'><a href="http://www.vaikan.com/category/joke/" title="查看幽默讽刺中的全部文章" rel="category tag">幽默讽刺</a></span>
+	            <h1 class="article-title"> <a href="http://www.vaikan.com/six-stages-of-debugging/">软件纠错的六个阶段</a> </h1>
+	          </div>
+	          <div class="footer">
+	          		            <div class="article-shares-stub"> <a class="num" href="http://www.vaikan.com/six-stages-of-debugging/"> <b>321</b> 次分享 </a> </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+			  </div>
+			</div>
+
+		</li>
+
+			</ul>
+		</div><!-- #primary .widget-area -->
+
+
+		<div id="secondary" class="widget-area" role="complementary">
+			<ul class="xoxo">
+				<li id="text-21" class="widget-container widget_text">			<div class="textwidget"><a  href='http://ihacker.taobao.com' target='_blank'><img class='lazy' width='300' data-original='/7777.png' src="/dot.gif?7045b4"></a></div>
+		</li><li id="text-23" class="widget-container widget_text">			<div class="textwidget"><a  href='http://wkee.net/4com/' target='_blank'><img class='lazy' width='300' data-original='/4domain.jpg' src="/dot.gif?7045b4"></a></div>
+		</li><li id="categories-2" class="widget-container widget_categories"><h3 class="widget-title">文章分类</h3>		<ul>
+	<li class="cat-item cat-item-15"><a href="http://www.vaikan.com/category/java-buzz/" title="查看Java评论下的所有文章">Java评论</a>
+</li>
+	<li class="cat-item cat-item-243"><a href="http://www.vaikan.com/category/startup/" title="查看创业理想下的所有文章">创业理想</a>
+</li>
+	<li class="cat-item cat-item-238"><a href="http://www.vaikan.com/category/team-building/" title="查看团队建设下的所有文章">团队建设</a>
+</li>
+	<li class="cat-item cat-item-788"><a href="http://www.vaikan.com/category/quiz/" title="查看小测验下的所有文章">小测验</a>
+</li>
+	<li class="cat-item cat-item-144"><a href="http://www.vaikan.com/category/joke/" title="查看幽默讽刺下的所有文章">幽默讽刺</a>
+</li>
+	<li class="cat-item cat-item-24"><a href="http://www.vaikan.com/category/thought/" title="查看心得体会下的所有文章">心得体会</a>
+</li>
+	<li class="cat-item cat-item-244"><a href="http://www.vaikan.com/category/lifestyle/" title="查看思想人生下的所有文章">思想人生</a>
+</li>
+	<li class="cat-item cat-item-230"><a href="http://www.vaikan.com/category/criticism/" title="批评评论">批评评论</a>
+</li>
+	<li class="cat-item cat-item-128"><a href="http://www.vaikan.com/category/tech-tips/" title="查看技术技巧下的所有文章">技术技巧</a>
+</li>
+	<li class="cat-item cat-item-43"><a href="http://www.vaikan.com/category/agile/" title="查看敏捷开发下的所有文章">敏捷开发</a>
+</li>
+	<li class="cat-item cat-item-133"><a href="http://www.vaikan.com/category/docman/" title="查看文档手册下的所有文章">文档手册</a>
+</li>
+	<li class="cat-item cat-item-149"><a href="http://www.vaikan.com/category/news/" title="查看新闻资讯下的所有文章">新闻资讯</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="http://www.vaikan.com/category/default/" title="查看杂项下的所有文章">杂项</a>
+</li>
+	<li class="cat-item cat-item-148"><a href="http://www.vaikan.com/category/hiring/" title="查看求职招聘下的所有文章">求职招聘</a>
+</li>
+	<li class="cat-item cat-item-16"><a href="http://www.vaikan.com/category/mobile-development/" title="查看移动开发下的所有文章">移动开发</a>
+</li>
+	<li class="cat-item cat-item-748"><a href="http://www.vaikan.com/category/fun/" title="查看程序员幽默下的所有文章">程序员幽默</a>
+</li>
+	<li class="cat-item cat-item-130"><a href="http://www.vaikan.com/category/software-tools/" title="查看软件工具下的所有文章">软件工具</a>
+</li>
+		</ul>
+</li><li id="rss-2" class="widget-container widget_rss"><h3 class="widget-title"><a class='rsswidget' href='http://www.webhek.com/feed/' title='订阅此内容'><img style='border:0' width='14' height='14' src="http://www.vaikan.com/wordpress/wp-includes/images/rss.png?7045b4" alt='RSS' /></a> <a class='rsswidget' href='http://www.webhek.com/' title='HTML5, CSS3, WEB前端开发技术'>推广</a></h3><ul><li><a class='rsswidget' href='http://www.webhek.com/css3-multi-columns' title='CSS3中新出现的多列布局(columns)是传统HTML网页中块状布局模式的有力扩充。这种新语法能够让WEB开发人员轻松的让文本呈现多列显示'>CSS3多列布局(columns)的用法</a></li><li><a class='rsswidget' href='http://www.webhek.com/border-image' title='从CSS3起，我们有了一个新的属性：border-image，它能让你用漂亮的小图片来围绕HTML元素，以图片边框的形式出现。通过border-image属性，我们可以制作出非常漂亮的边框样式。'>图片边框border-image的用法</a></li><li><a class='rsswidget' href='http://www.webhek.com/great-usage-of-before-and-after' title='在上一篇《理解:Before和:After伪元素》文章，我们举出的只是一个非常简单的使用伪元素:before和:after装饰“引用语”的用法。在这片文章里，我要在看看三个更高级、更绚丽的:before和:after的用法。'>伪元素:before和:after的精彩用法</a></li><li><a class='rsswidget' href='http://www.webhek.com/understanding-pseudo-element-before-and-after' title='所谓‘伪元素’，就是本身不存在的页面元素，HTML代码里并没有这样的元素，但在页面显示时，你却能看到这些本来不存在的元素发挥着作用。'>理解:Before和:After伪元素</a></li><li><a class='rsswidget' href='http://www.webhek.com/misc/html5-music-player-winamp' title='这是用纯HTML5和JavaScript实现的Winamp音乐播放器，它不仅仅外观看着像，它是以为可以实际播放音乐的HTML5音乐播放器。它可以播放你提供的音乐歌曲。'>HTML5版的Winamp音乐播放器</a></li><li><a class='rsswidget' href='http://www.webhek.com/accessibility-tip-empty-alt-attributes' title='我曾经以为，页面上的所有图片都应该设置alt属性。但现在却发现，事实并不是这样。'>设置空的alt属性值，让页面上图片更具易用性</a></li><li><a class='rsswidget' href='http://www.webhek.com/css-custom-cursors' title='这里要说的一个技巧也是以往在老式的IE浏览器里很难实现的功能——用css自定义鼠标光标样式。使用CSS能很容易的实现这个功能。'>CSS自定义光标样式</a></li><li><a class='rsswidget' href='http://www.webhek.com/js-detect-adblock' title='广告是一个不招人喜欢的东西。但是，对一个中小网站站长/博客主来说，广告几乎是唯一的能成支持网站/博客正常运转的资金来源。如果一个博客主，只是无私发布稿件，能坚持几年的，很少。大多数慢慢失去了热情。'>用JavaScript探测页面上的广告是否被AdBlock屏蔽了的方法</a></li><li><a class='rsswidget' href='http://www.webhek.com/misc/mastering-nth-child' title='CSS3中的:nth-child 伪类是一种非常有用的技巧。使用它，你可以通过CSS控制页面元素的第n个元素，或倒数第n个元素，或从第m个到第n个范围子元素的样式，甚至包括奇数位和偶数位过滤。'>精通:nth-child</a></li><li><a class='rsswidget' href='http://www.webhek.com/get-real-image-width-and-height-with-javascript' title='我们最常见到的带有多图的文章页面中，图的大小通常是和页面的宽度一致，这样看起来，页面就是一个直筒形，这样的布局看多了就会觉得很单调。之所以形成这样的局面，我想很大程度上是因为老式浏览器的限制。但随着现代浏览器(火狐/谷歌/IE11)的普及，浏览器对页面设计的限制越来越少，Web程序员的想象能力能够得到极大的发挥。'>如何用JavaScript获取图片的真实尺寸大小</a></li></ul></li><li id="tag_cloud-2" class="widget-container widget_tag_cloud"><h3 class="widget-title">标签</h3><div class="tagcloud"><a href='http://www.vaikan.com/tag/android/' class='tag-link-124' title='14个话题' style='font-size: 13.848101265823pt;'>android</a>
+<a href='http://www.vaikan.com/tag/bug/' class='tag-link-101' title='8个话题' style='font-size: 9.7721518987342pt;'>bug</a>
+<a href='http://www.vaikan.com/tag/featured/' class='tag-link-447' title='31个话题' style='font-size: 19.696202531646pt;'>featured</a>
+<a href='http://www.vaikan.com/tag/go/' class='tag-link-451' title='7个话题' style='font-size: 8.8860759493671pt;'>go</a>
+<a href='http://www.vaikan.com/tag/google/' class='tag-link-12' title='19个话题' style='font-size: 15.974683544304pt;'>google</a>
+<a href='http://www.vaikan.com/tag/go%e8%af%ad%e8%a8%80/' class='tag-link-519' title='8个话题' style='font-size: 9.7721518987342pt;'>go语言</a>
+<a href='http://www.vaikan.com/tag/html5/' class='tag-link-59' title='11个话题' style='font-size: 12.075949367089pt;'>html5</a>
+<a href='http://www.vaikan.com/tag/iphone/' class='tag-link-140' title='6个话题' style='font-size: 8pt;'>iphone</a>
+<a href='http://www.vaikan.com/tag/javascript/' class='tag-link-87' title='16个话题' style='font-size: 14.73417721519pt;'>javascript</a>
+<a href='http://www.vaikan.com/tag/linux/' class='tag-link-187' title='23个话题' style='font-size: 17.392405063291pt;'>linux</a>
+<a href='http://www.vaikan.com/tag/node-js/' class='tag-link-181' title='6个话题' style='font-size: 8pt;'>node.js</a>
+<a href='http://www.vaikan.com/tag/oracle/' class='tag-link-91' title='7个话题' style='font-size: 8.8860759493671pt;'>oracle</a>
+<a href='http://www.vaikan.com/tag/php/' class='tag-link-189' title='7个话题' style='font-size: 8.8860759493671pt;'>php</a>
+<a href='http://www.vaikan.com/tag/python/' class='tag-link-351' title='8个话题' style='font-size: 9.7721518987342pt;'>python</a>
+<a href='http://www.vaikan.com/tag/rails/' class='tag-link-156' title='8个话题' style='font-size: 9.7721518987342pt;'>Rails</a>
+<a href='http://www.vaikan.com/tag/ruby/' class='tag-link-190' title='11个话题' style='font-size: 12.075949367089pt;'>Ruby</a>
+<a href='http://www.vaikan.com/tag/scala/' class='tag-link-45' title='8个话题' style='font-size: 9.7721518987342pt;'>Scala</a>
+<a href='http://www.vaikan.com/tag/sql/' class='tag-link-64' title='7个话题' style='font-size: 8.8860759493671pt;'>sql</a>
+<a href='http://www.vaikan.com/tag/tdd/' class='tag-link-204' title='6个话题' style='font-size: 8pt;'>TDD</a>
+<a href='http://www.vaikan.com/tag/top-featured/' class='tag-link-530' title='23个话题' style='font-size: 17.392405063291pt;'>top-featured</a>
+<a href='http://www.vaikan.com/tag/top-share/' class='tag-link-503' title='18个话题' style='font-size: 15.620253164557pt;'>top-share</a>
+<a href='http://www.vaikan.com/tag/video/' class='tag-link-460' title='43个话题' style='font-size: 22pt;'>video</a>
+<a href='http://www.vaikan.com/tag/%e4%bb%a3%e7%a0%81%e5%ae%a1%e6%9f%a5/' class='tag-link-374' title='9个话题' style='font-size: 10.658227848101pt;'>代码审查</a>
+<a href='http://www.vaikan.com/tag/%e4%bc%81%e4%b8%9a%e6%96%87%e5%8c%96/' class='tag-link-98' title='13个话题' style='font-size: 13.316455696203pt;'>企业文化</a>
+<a href='http://www.vaikan.com/tag/%e5%87%bd%e6%95%b0%e5%bc%8f%e7%bc%96%e7%a8%8b/' class='tag-link-214' title='15个话题' style='font-size: 14.20253164557pt;'>函数式编程</a>
+<a href='http://www.vaikan.com/tag/%e5%8a%a0%e7%8f%ad/' class='tag-link-359' title='7个话题' style='font-size: 8.8860759493671pt;'>加班</a>
+<a href='http://www.vaikan.com/tag/%e5%ae%89%e5%85%a8%e6%bc%8f%e6%b4%9e/' class='tag-link-381' title='7个话题' style='font-size: 8.8860759493671pt;'>安全漏洞</a>
+<a href='http://www.vaikan.com/tag/%e5%b7%a5%e4%bd%9c%e6%95%88%e7%8e%87/' class='tag-link-306' title='12个话题' style='font-size: 12.607594936709pt;'>工作效率</a>
+<a href='http://www.vaikan.com/tag/%e5%b9%b4%e9%be%84/' class='tag-link-57' title='7个话题' style='font-size: 8.8860759493671pt;'>年龄</a>
+<a href='http://www.vaikan.com/tag/%e6%95%8f%e6%8d%b7%e5%bc%80%e5%8f%91/' class='tag-link-211' title='6个话题' style='font-size: 8pt;'>敏捷开发</a>
+<a href='http://www.vaikan.com/tag/%e6%b3%a8%e9%87%8a/' class='tag-link-105' title='7个话题' style='font-size: 8.8860759493671pt;'>注释</a>
+<a href='http://www.vaikan.com/tag/%e6%b5%8b%e8%af%95/' class='tag-link-35' title='19个话题' style='font-size: 15.974683544304pt;'>测试</a>
+<a href='http://www.vaikan.com/tag/%e6%b5%8f%e8%a7%88%e5%99%a8/' class='tag-link-32' title='7个话题' style='font-size: 8.8860759493671pt;'>浏览器</a>
+<a href='http://www.vaikan.com/tag/%e7%94%a8%e6%88%b7%e4%bd%93%e9%aa%8c/' class='tag-link-96' title='6个话题' style='font-size: 8pt;'>用户体验</a>
+<a href='http://www.vaikan.com/tag/%e7%bb%93%e5%af%b9%e7%bc%96%e7%a8%8b/' class='tag-link-176' title='9个话题' style='font-size: 10.658227848101pt;'>结对编程</a>
+<a href='http://www.vaikan.com/tag/%e7%bc%96%e7%a0%81%e8%a7%84%e8%8c%83/' class='tag-link-353' title='8个话题' style='font-size: 9.7721518987342pt;'>编码规范</a>
+<a href='http://www.vaikan.com/tag/%e7%bc%96%e7%a8%8b%e8%af%ad%e8%a8%80/' class='tag-link-642' title='9个话题' style='font-size: 10.658227848101pt;'>编程语言</a>
+<a href='http://www.vaikan.com/tag/%e8%87%aa%e5%ad%a6/' class='tag-link-40' title='7个话题' style='font-size: 8.8860759493671pt;'>自学</a>
+<a href='http://www.vaikan.com/tag/%e8%a7%86%e9%a2%91/' class='tag-link-270' title='13个话题' style='font-size: 13.316455696203pt;'>视频</a>
+<a href='http://www.vaikan.com/tag/%e8%af%bb%e4%b9%a6/' class='tag-link-602' title='10个话题' style='font-size: 11.367088607595pt;'>读书</a>
+<a href='http://www.vaikan.com/tag/%e8%b0%b7%e6%ad%8c/' class='tag-link-266' title='11个话题' style='font-size: 12.075949367089pt;'>谷歌</a>
+<a href='http://www.vaikan.com/tag/%e9%87%8d%e6%9e%84/' class='tag-link-173' title='14个话题' style='font-size: 13.848101265823pt;'>重构</a>
+<a href='http://www.vaikan.com/tag/%e9%9c%80%e6%b1%82/' class='tag-link-122' title='9个话题' style='font-size: 10.658227848101pt;'>需求</a>
+<a href='http://www.vaikan.com/tag/%e9%9d%a2%e5%90%91%e5%af%b9%e8%b1%a1/' class='tag-link-199' title='7个话题' style='font-size: 8.8860759493671pt;'>面向对象</a>
+<a href='http://www.vaikan.com/tag/%e9%bb%91%e5%ae%a2/' class='tag-link-386' title='12个话题' style='font-size: 12.607594936709pt;'>黑客</a></div>
+</li><li id="text-22" class="widget-container widget_text">			<div class="textwidget"><div id='west263' style='width:300px;text-align:center; margin: 30px auto 150px;'>
+  <div>
+  本站使用的是由<a href="http://www.west.cn/index.asp?ReferenceID=171737" 
+  target="_blank"><B>西部数码</B></a>提供<br>的<a href="http://www.west.cn/index.asp?ReferenceID=171737" 
+  target="_blank"><B>B032型</B></a>Linux虚拟主机
+  </div>
+  <div><a href="http://www.west.cn/index.asp?ReferenceID=171737" 
+  target="_blank"><img class="lazy" src="/dot.gif?7045b4" data-original="/west263-logo.jpg"></a></div>
+</div></div>
+		</li>			</ul>
+		</div><!-- #secondary .widget-area -->
+
+	</div><!-- #main -->
+
+</div><!-- #wrapper -->
+
+<a name='footer'></a>
+<div class="container">
+	<div id="layout-footer">
+		<h1><a href="http://www.vaikan.com">外刊IT评论</a></h1>
+		<div id='nav-footer'>
+			<ul class="day-jump">
+				<li class="alphatip"><a href="" class="alphatip">Today</a></li>
+				<li class="alphatip"><a href="" class="alphatip">Monday</a></li>
+				<li class="alphatip"><a href="" class="alphatip">Sunday</a></li>
+				<li class="alphatip"><a href="" class="alphatip">Saturday</a></li>
+				<li class="alphatip"><a href="" class="alphatip">Friday</a></li>
+				<li class="alphatip"><a href="" class="alphatip">Thursday</a></li>
+				<li class="alphatip"><a href="" class="alphatip">Wednesday</a></li>
+			</ul>
+		</div>
+		<div class="bucket-wrapper">
+			<div class="bucket">
+				<ul>
+					<h4>网站导航</h4>
+				      <li><a href="http://www.vaikan.com/" title="外刊IT评论" rel="home">首页        </a></li>
+				      <li><a title="全部文章" href="http://www.vaikan.com/archives/">全部文章</a></li>
+				      <li><a title="关于" href="http://www.vaikan.com/about/">关于本站</a></li>
+				      <li><a title="联系我" href="http://www.vaikan.com/contact-me/">联系我们</a></li>
+				</ul>
+			</div>
+			<div class="bucket">
+				<ul>
+					<h4>特色栏目</h4>
+				      <li><a href="http://www.vaikan.com/top-share/">十大传文</a></li>
+				      <li><a href="http://www.vaikan.com/top-comment/">十大评论</a></li>
+				      <li><a href="http://www.vaikan.com/tag/video/">编程视频</a></li>
+				      <li><a title="全部文章" href="http://www.vaikan.com/archives/">全部文章</a></li>
+				</ul>
+			</div>
+			<div class="bucket">
+				<ul>
+					<h4>订阅我们</h4>
+			      <li><a href="http://www.vaikan.com/feed/">RSS订阅</a></li>
+			      <li><a href="http://list.qq.com/cgi-bin/qf_invite?id=0089a54510e8c73dd9d545903f388b7fc3d9b148c1392631" target='_blank'>邮件订阅</a></li>
+				</ul>
+			</div>
+			<div class="bucket social">
+				<span>关注我们</span>
+				<ul>
+					<li><a href="http://t.sina.com.cn/aqee" target="_blank" class="fb">新浪微博</a></li>
+					<li><a href="http://t.qq.com/aqee-net" target="_blank" class="gp">腾讯微博</a></li>
+					<li><a href="http://twitter.com/vaikans" target="_blank" class="tw">Twitter</a></li>
+					<li><a href="http://www.vaikan.com/feed/" target="_blank" class="rs">RSS</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fancy">
+			<span>
+				<p>You had mail.  Paul read it, so ask him what it said.</p>
+			</span>
+		</div>
+		<p>
+			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh"><img class="lazy" alt="知识共享许可协议" style="border-width:0" src="/dot.gif?7045b4" data-original="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh">知识共享署名-非商业性使用-相同方式共享 3.0 Unported许可协议</a>进行许可。<br>
+			备案信息：京ICP备12002735号 &nbsp;&nbsp;京公网安备11010802009600号
+		</p>
+	</div>
+</div>
+
+
+
+<!--#####################-->
+<div id='login_overlay' class="signin_overlay hide_overlay">
+  <div class="signin_wrapper">
+    <div class="signin_section" id="signin_modal" ><a href="javascript:;" onclick="close_overlay()" class="signin_close" >×</a>
+      <div class="signin_content">
+        <div class="signin_upper">
+          <div class="msg-text" id="initial-msg">感谢你的参与互动。</div>
+          <header id="initial_header">只需要最后一个步骤！</header>
+          <form  class="comment-form" id="commentform2" method="post" action="" onsubmit="sigin_send(); return false;">
+            <p class="comment-form-author">
+              <label for="author2">姓名 <span class="required">*</span></label>
+              <input type="text" aria-required="true" size="30" value="" name="author" id="author2">
+            </p>
+            <p class="comment-form-email">
+              <label for="email2">电子邮件 <span class="required">*</span></label>
+              <input type="email" aria-required="true" size="30" value="" name="email" id="email2">
+            </p>
+            <p class="form-submit">
+              <input type="submit" value="确定" id="submit2" name="submit">
+            </p>
+          </form>
+          <div id="reaction_loading2" class="section social-message" style="display:none;">
+            <img src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/images/loading.gif?7045b4">
+          </div>
+          <div id="reaction_login_err" class="section social-message" style="display:none;">
+            输入有误！
+          </div>
+        </div>
+        <div class="signin_sep"></div>
+       
+        
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">jQuery = $;</script>
+
+
+
+<script type="text/javascript">
+jQuery(function($) { 
+  	var main_height = jQuery('#main').height(); 
+	jQuery('div.short').each(function(i){
+
+		if( i < 7 || jQuery('#primary').height() < main_height) $(this).show();
+
+	});
+});
+	
+</script>
+
+
+
+<script type="text/javascript" src="http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/js/jquery.lazyload-aqee.js?7045b4"></script>
+<script type="text/javascript">
+	$("#col1 img.lazy").lazyload();
+	$("#col2 img.lazy").lazyload();
+	$(".widget_popular img.lazy").lazyload();
+	$(".widget_text img.lazy").lazyload();
+	$("img.lazy").lazyload();
+	$("div.lazy").lazyload();
+</script>
+
+<script type="text/javascript">
+var shares_wb = 0;	
+var delay=5000;
+setTimeout(function(){
+
+	(function() {
+	      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	      ga.src = 'http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/js/wb.js';
+	      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	    })();
+
+},delay); 
+</script>
+
+<script type="text/javascript">
+$(function(){
+   setTimeout(function(){
+		if ($('.bottom_abc').height() == 0)
+			$('#bottom_cup').show();
+  },3000);
+});
+</script>
+
+
+
+<script type="text/javascript">
+	function t(webid){
+		var summary = '';
+		var description;
+		var metas = document.getElementsByTagName('meta');
+		for (var x=0,y=metas.length; x<y; x++) {
+		  if (metas[x].name.toLowerCase() == "description") {
+		    description = metas[x];
+		  }
+		}
+		if( description ) summary = description.content;
+
+		var title = "分享好文：【"+document.title+"】";
+
+		var tsummary = title + ":" + summary;
+
+		var url = document.location.href;
+
+		var pic = '';
+
+		  		 
+		pic = encodeURIComponent('http://www.vaikan.com/wordpress/wp-content/uploads/2010/09/Img272238986.jpg');
+
+		//tsina
+		var share_services = {
+			'tsina':   "http://service.weibo.com/share/share.php?title="+encodeURIComponent( tsummary )+"&url="+url+"&appkey=3878642337&pic="+pic,
+			'qzone':   "http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url="+url+"&title="+encodeURIComponent( title )+"&pics="+pic+"&summary="+encodeURIComponent( summary ),
+			'tqq':     "http://share.v.t.qq.com/index.php?c=share&a=index&title="+encodeURIComponent( tsummary )+"&url="+url+"&appkey=801004621&pic="+pic,
+			'renren':  "http://widget.renren.com/dialog/share?resourceUrl="+url+"&srcUrl="+url+"&title="+encodeURIComponent( title )+"&pic="+pic+"&description="+encodeURIComponent( summary ),
+			'twitter': "https://twitter.com/intent/tweet?text=" +encodeURIComponent( title + " " + url )+"&pic="+pic+"&description="+encodeURIComponent( summary ),
+			'facebook':"http://facebook.com/sharer.php?u="+url,
+			'more':    "http://www.jiathis.com/send/?webid=" + webid + "&url="+document.location.href+"&title="+encodeURIComponent("分享好文：【"+document.title+"】")+"&summary="+encodeURIComponent(summary)
+		};
+
+		window.open(share_services[webid], "_blank", "width=615,height=505");
+	}
+</script>
+
+<script type="text/javascript">
+if( $('a.book').length > 0 ){
+	(function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = 'http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/js/books.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+}
+
+if( $('pre[class*="language-"], pre[class*="lang-"]').length > 0 ){
+
+	$("<link/>", {
+		   rel: "stylesheet",
+		   type: "text/css",
+		   href: "http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/js/prism.css"
+	}).appendTo("head");
+
+	(function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = 'http://www.vaikan.com/wordpress/wp-content/themes/aqee2015/js/prism.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+}
+
+
+
+(function($) {
+
+ if ($(".article-meta-wrapper").length) {
+    
+    var f = $(".article-meta-wrapper").first();
+    var e = $(".article-meta-share").first();
+    var d = f.first().width();
+
+    $(window).on("resize scroll", function (k) {
+        var j = $(window).scrollTop();
+        var i = j > 0;
+        
+        if (f) {
+            var g = e.hasClass("fixed");
+            var h = j >= f.offset().top;
+            if (h && !g) {
+                e.addClass("fixed").css({
+                    width: d + "px"
+                })
+            } else {
+                if (!h && g) {
+                    e.removeClass("fixed").css({
+                        width: "auto"
+                    })
+                }
+            }
+        }
+    });
+
+}
+
+})(jQuery);
+
+</script>
+
+
+
+
+<a id="dynamic-to-top" href="javascript:;" style="display: none"><span>&nbsp;</span></a>
+<script>
+/*
+ * Dynamic To Top Plugin
+ * http://www.mattvarone.com
+ *
+ * By Matt Varone
+ * @sksmatt
+ *
+ */
+var mv_dynamic_to_top = {"text":"To Top","version":"0","min":"300","speed":"1100","easing":"easeInExpo","margin":"20"};
+
+(function($,mv_dynamic_to_top){jQuery.fn.DynamicToTop=function(options){var defaults={text:mv_dynamic_to_top.text,min:parseInt(mv_dynamic_to_top.min,10),fade_in:600,fade_out:400,speed:parseInt(mv_dynamic_to_top.speed,10),easing:mv_dynamic_to_top.easing,version:mv_dynamic_to_top.version,id:'dynamic-to-top'},settings=$.extend(defaults,options);if(settings.version===""||settings.version==='0'){settings.text='<span>&nbsp;</span>';}
+if(!$.isFunction(settings.easing)){settings.easing='linear';}
+var $toTop=$('<a href=\"#\" id=\"'+settings.id+'\"></a>').html(settings.text);$toTop.hide().appendTo('body').click(function(){$('html, body').stop().animate({scrollTop:0},settings.speed,settings.easing);return false;});$(window).scroll(function(){var sd=jQuery(window).scrollTop();if(typeof document.body.style.maxHeight==="undefined"){$toTop.css({'position':'absolute','top':sd+$(window).height()-mv_dynamic_to_top.margin});}
+if(sd>settings.min){$toTop.fadeIn(settings.fade_in);}else{$toTop.fadeOut(settings.fade_out);}});};$('body').DynamicToTop();})(jQuery,mv_dynamic_to_top);
+</script>
+
+
+
+<script type='text/javascript' src="http://www.vaikan.com/wordpress/wp-content/plugins/akismet/_inc/form.js?7045b4"></script>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2477810-17']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+</body>
+</html>
+
+<!-- Performance optimized by W3 Total Cache. Learn more: http://www.w3-edge.com/wordpress-plugins/
+
+Page Caching using disk
+
+ Served from: www.vaikan.com @ 2014-11-25 16:42:27 by W3 Total Cache -->

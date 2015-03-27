@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://www.geekfan.net/6228/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN" prefix="og: http://ogp.me/ns#" class="" style=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script async="" type="text/javascript" src="http://www.gstatic.com/pub-config/ca-pub-5020264604186994.js"></script><script src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/shares.php" charset="utf-8"></script>
+<meta charset="UTF-8">
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="http://www.geekfan.net/xmlrpc.php">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- This site is optimized with the Yoast WordPress SEO plugin v1.3.4.4 - http://yoast.com/wordpress/seo/ -->
+<title>利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net</title>
+<meta name="description" content="最近我利用树莓派为我所有的Git仓库创建了一个Git私有服务器。我花费了一些时间来使每件事情正确工作，但现在它已经能跑起来了，马年码农必备啊~">
+<link rel="canonical" href="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net.html">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net">
+<meta property="og:description" content="最近我利用树莓派为我所有的Git仓库创建了一个Git私有服务器。我花费了一些时间来使每件事情正确工作，但现在它已经能跑起来了，马年码农必备啊~">
+<meta property="og:url" content="http://www.geekfan.net/6228/">
+<meta property="og:site_name" content="极客范 - GeekFan.net">
+<meta property="og:type" content="article">
+<meta property="og:image" content="http://www.geekfan.net/wp-content/uploads/15c7c1ce6ed966f1d86d444b193640c6-300x266.png">
+<meta property="og:image" content="http://www.geekfan.net/wp-content/uploads/15c7c1ce6ed966f1d86d444b193640c6.png">
+<meta property="og:image" content="http://www.geekfan.net/wp-content/uploads/e87c3d04ef67a13a0926e49e8cb3c07c.png">
+<!-- / Yoast WordPress SEO plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="极客范 - GeekFan.net » Feed" href="http://www.geekfan.net/feed/">
+<link rel="alternate" type="application/rss+xml" title="极客范 - GeekFan.net » 评论 Feed" href="http://www.geekfan.net/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="极客范 - GeekFan.net » 利用树莓派搭建Git私有服务器 评论 Feed" href="http://www.geekfan.net/6228/feed/">
+<link rel="stylesheet" id="crayon-css" href="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/crayon.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-theme-github-css" href="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/github.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-font-monaco-css" href="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/monaco.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-recentcomments-css" href="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/wp-recentcomments.css" type="text/css" media="screen">
+<link rel="stylesheet" id="reset-css" href="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/reset.css" type="text/css" media="all">
+<link rel="stylesheet" id="gp-style-css" href="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/font-awesome.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-social-css" href="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/font-awesome-social.css" type="text/css" media="all">
+<link rel="stylesheet" id="prettyphoto-css" href="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/prettyPhoto.css" type="text/css" media="all">
+<link rel="stylesheet" id="responsive-css" href="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/responsive.css" type="text/css" media="all">
+<link rel="stylesheet" id="popular-widget-css" href="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/pop-widget.css" type="text/css" media="all">
+<link rel="stylesheet" id="lightboxStyle-css" href="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/colorbox.css" type="text/css" media="screen">
+<script async="" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/analytics.js"></script><script type="text/javascript">
+/* <![CDATA[ */
+var gp_script = {"post_id":"6228","ajaxurl":"http:\/\/www.geekfan.net\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/jquery.js"></script>
+<script type="text/javascript" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/q2w3-fixed-widget.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"2.4.2","is_admin":"0","ajaxurl":"http:\/\/www.geekfan.net\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"\u4f7f\u7528 %s \u590d\u5236\uff0c\u4f7f\u7528 %s \u7c98\u8d34\u3002","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/crayon.min.js"></script>
+<script type="text/javascript" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/comment-reply.min.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.geekfan.net/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.geekfan.net/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 3.5.1">
+<link rel="shortlink" href="http://www.geekfan.net/?p=6228">
+
+<!-- Comment Rating plugin Version: 2.9.32 by Bob King, http://wealthynetizen.com/, dynamic comment voting & styling. --> 
+<style type="text/css" media="screen">
+   .ckrating_highly_rated {background-color:#FFFFCC !important;}
+   .ckrating_poorly_rated {opacity:0.6;filter:alpha(opacity=60) !important;}
+   .ckrating_hotly_debated {background-color:#FFF0F5 !important;}
+</style>
+
+<script type="text/javascript">
+	window._wp_rp_static_base_url = 'http://wprp.zemanta.com/static/';
+	window._wp_rp_wp_ajax_url = "http://www.geekfan.net/wp-admin/admin-ajax.php";
+	window._wp_rp_plugin_version = '3.3';
+	window._wp_rp_post_id = '6228';
+	window._wp_rp_num_rel_posts = '10';
+	window._wp_rp_blog_id = '4218590';
+	window._wp_rp_thumbnails = false;
+	window._wp_rp_post_title = '%E5%88%A9%E7%94%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E6%90%AD%E5%BB%BAGit%E7%A7%81%E6%9C%89%E6%9C%8D%E5%8A%A1%E5%99%A8';
+	window._wp_rp_post_tags = ['%E6%A0%91%E8%8E%93%E6%B4%BE', 'git%E6%9C%8D%E5%8A%A1%E5%99%A8', '%E7%A1%AC%E4%BB%B6', '%E6%A0%91%E8%8E%93%E6%B4%BE', 'raspberri', 'shell', 'home', 'reboot', 'pi', 'control', 'a', 'ssh', 'host', 'remot', 'instal', 'git', 'system', 'clone', 'group'];
+	window._wp_rp_remote_recommendations = false;
+	window._wp_rp_promoted_content = true;
+	window._wp_rp_traffic_exchange = true;
+</script>
+<script type="text/javascript" src="http://wprp.zemanta.com/static/js/loader.js?version=3.3" async=""></script>
+<style type="text/css">
+.related_post_title {
+}
+ul.related_post {
+}
+ul.related_post li {
+}
+ul.related_post li a {
+}
+ul.related_post li img {
+}</style>
+
+<!--Plugin WP Missed Schedule 2013.0131.3333 Active - Key Tag: 8a22836915262a9b0c04fa9101e61016-->
+
+
+<!-- Start Of Script Generated By WP-PostViews -->
+<script type="text/javascript">
+/* <![CDATA[ */
+jQuery.ajax({type:'GET',url:'http://www.geekfan.net/wp-admin/admin-ajax.php',data:'postviews_id=6228&action=postviews',cache:false});/* ]]> */
+</script>
+<!-- End Of Script Generated By WP-PostViews -->
+<link rel="shortcut icon" href="http://www.geekfan.net/favicon.ico"><link rel="icon" href="http://www.geekfan.net/favicon.ico" type="image/vnd.microsoft.icon"><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40776722-1', 'geekfan.net');
+  ga('send', 'pageview');
+
+</script><style>@media only screen and (min-width: 1440px) {}@media only screen and (min-width: 1200px) and (max-width: 1439px) {}@media only screen and (min-width: 1025px) and (max-width: 1199px) {}@media only screen and (min-width: 960px) and (max-width: 1024px) {}@media only screen and (min-width: 768px) and (max-width: 959px) {}@media only screen and (min-width: 1440px) {}@media only screen and (min-width: 1200px) and (max-width: 1439px) {}@media only screen and (min-width: 1025px) and (max-width: 1199px) {}@media only screen and (min-width: 960px) and (max-width: 1024px) {}@media only screen and (min-width: 768px) and (max-width: 959px) {}@media only screen and (min-width: 960px) {}@media only screen and (min-width: 768px) and (max-width: 959px) {}</style>
+<script>
+
+/* Text Variables */
+
+var rootFolder = 'http://www.geekfan.net/wp-content/themes/wowgetit';
+var starNumber = '5';
+var ratingWidth = '98';
+var navigationText = "导航菜单";
+var emptySearchText = "Please enter something in the search box!";
+
+
+/* Retina Support */
+
+	jQuery(document).ready(function(){
+		"use strict";
+		if(window.devicePixelRatio >= 2){		
+			jQuery('.post-thumbnail img').each(function() {
+				jQuery(this).attr({src: jQuery(this).attr('data-rel')});
+			});		
+		}
+	});
+
+</script>	</head>
+
+<!--[if !IE]><!-->
+<body class="single single-post postid-6228 single-format-standard sb-right"><link href="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/jiathis_counter.css" rel="stylesheet" type="text/css"><script src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/jiathis.php" charset="utf-8"></script><link href="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/jiathis_share.css" rel="stylesheet" type="text/css"><iframe frameborder="0" style="position: absolute; display: none; opacity: 0;"></iframe><div class="jiathis_style" style="position: absolute; z-index: 1000000000; display: none; top: 50%; left: 50%; overflow: auto;"></div><div class="jiathis_style" style="position: absolute; z-index: 1000000000; display: none; overflow: auto;"></div><iframe frameborder="0" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/jiathis_utility.html" style="display: none;"></iframe>
+<!--<![endif]-->
+<!--[if gt IE 8]>
+<body class="single single-post postid-6228 single-format-standard ie9 sb-right">
+<![endif]-->
+<!--[if lt IE 9]>
+<body class="single single-post postid-6228 single-format-standard ie8 sb-right">
+<![endif]-->
+
+ 
+
+
+ 
+	<!-- BEGIN TOP BAR -->
+		
+	<div id="top-bar">
+
+
+		<!-- BEGIN TOP BAR INNER -->
+
+		<div id="top-bar-inner">
+	
+	
+			<!-- BEGIN TOP NAV -->
+
+			<div id="top-nav" class="nav">
+		
+				<ul id="menu-body-nav-example" class="menu"><li id="menu-item-576" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-576"><a href="http://www.geekfan.net/contact/">联系我们</a></li>
+</ul>	
+			
+				<select class="mobile-menu"><option selected="selected" value="">导航菜单</option><option value="http://www.geekfan.net/contact/" class="menu-item menu-item-type-post_type menu-item-object-page mobile-menu-item-576">联系我们</option><option>------------------------------</option>			
+				<option id="mobile-menu-item-4100" value="http://www.geekfan.net/" class="menu-item menu-item-type-post_type menu-item-object-page mobile-menu-item-4100">首页</option><option id="mobile-menu-item-5460" value="http://www.geekfan.net/category/news/" class="menu-item menu-item-type-taxonomy menu-item-object-category mobile-menu-item-5460">科技资讯</option><option id="mobile-menu-item-1356" value="http://www.geekfan.net/category/hardware/" class="blue2 menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent mobile-menu-item-1356">硬件</option><option id="mobile-menu-item-2834" value="http://www.geekfan.net/category/hardware/raspberry-pi-hardware/" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent mobile-menu-item-2834">&nbsp;&nbsp;&nbsp;&nbsp;树莓派</option><option id="mobile-menu-item-347" value="http://www.geekfan.net/category/android-2/" class="green2 menu-item menu-item-type-taxonomy menu-item-object-category mobile-menu-item-347">Android</option><option id="mobile-menu-item-340" value="http://www.geekfan.net/category/ios/" class="darkgrey menu-item menu-item-type-taxonomy menu-item-object-category mobile-menu-item-340">iOS</option><option id="mobile-menu-item-578" value="http://www.geekfan.net/category/mac/" class="lightgrey menu-item menu-item-type-taxonomy menu-item-object-category mobile-menu-item-578">Mac</option><option id="mobile-menu-item-577" value="http://www.geekfan.net/category/linux/" class="red menu-item menu-item-type-taxonomy menu-item-object-category mobile-menu-item-577">Linux</option><option id="mobile-menu-item-901" value="http://www.geekfan.net/category/originality/" class="purple menu-item menu-item-type-taxonomy menu-item-object-category mobile-menu-item-901">创意</option><option id="mobile-menu-item-343" value="http://www.geekfan.net/category/games/" class="orange menu-item menu-item-type-taxonomy menu-item-object-category mobile-menu-item-343">游戏</option><option id="mobile-menu-item-886" value="http://www.geekfan.net/category/video-2/" class="green1 menu-item menu-item-type-taxonomy menu-item-object-category mobile-menu-item-886">视频</option></select>			
+			</div>
+		
+			<!-- END TOP NAV -->
+		
+		
+			<!-- BEGIN SOCIAL ICONS -->
+		
+			
+				<div id="social-icons">
+						
+					<a href="http://www.geekfan.net/feed/" class="icon-rss" title="RSS订阅" rel="nofollow" target="_blank"></a>				
+									
+								
+									
+						
+						
+									
+															
+						
+													
+					
+				</div>
+		
+			 
+		
+			<!-- END SOCIAL ICONS -->
+				
+					
+		</div>
+	
+		<!-- END TOP BAR INNER -->
+	
+
+	</div>
+
+	<!-- END TOP BAR -->
+	 
+	 
+	<!-- BEGIN PAGE WRAPPER -->	 
+
+	<div id="page-wrapper">
+	
+
+		<!-- BEGIN HEADER -->
+	
+		<div id="header">
+	
+	
+			<!-- BEGIN LOGO -->
+		
+			<div id="logo" style="">
+			
+				<span class="logo-details">极客范 – GeekFan.net | 利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net</span>
+			
+				<a href="http://www.geekfan.net/" title="极客范 – GeekFan.net"><img src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/geekfan-logo.png" alt="极客范 – GeekFan.net" style="width: 188px;"></a>
+			
+			</div>
+		
+			<!-- END LOGO -->								
+
+
+			<!-- BEGIN HEADER CONTENT -->
+		
+			<div id="header-content">
+				<script async="" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/adsbygoogle.js"></script>
+<!-- top-banner -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5020264604186994" data-ad-slot="7311995661" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>			</div>
+		
+			<!-- END HEADER CONTENT -->	
+			
+			
+		</div>
+	
+		<!-- END HEADER -->	
+
+
+		<!-- BEGIN BODY NAV -->	
+		
+		<div id="body-nav" class="nav">
+			<ul id="menu-body-nav-1" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4100"><a href="http://www.geekfan.net/">首页</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5460"><a href="http://www.geekfan.net/category/news/">科技资讯</a></li>
+<li class="blue2 menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-1356"><a href="http://www.geekfan.net/category/hardware/">硬件</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-2834"><a href="http://www.geekfan.net/category/hardware/raspberry-pi-hardware/">树莓派</a></li>
+</ul>
+</li>
+<li class="green2 menu-item menu-item-type-taxonomy menu-item-object-category menu-item-347"><a href="http://www.geekfan.net/category/android-2/">Android</a></li>
+<li class="darkgrey menu-item menu-item-type-taxonomy menu-item-object-category menu-item-340"><a href="http://www.geekfan.net/category/ios/">iOS</a></li>
+<li class="lightgrey menu-item menu-item-type-taxonomy menu-item-object-category menu-item-578"><a href="http://www.geekfan.net/category/mac/">Mac</a></li>
+<li class="red menu-item menu-item-type-taxonomy menu-item-object-category menu-item-577"><a href="http://www.geekfan.net/category/linux/">Linux</a></li>
+<li class="purple menu-item menu-item-type-taxonomy menu-item-object-category menu-item-901"><a href="http://www.geekfan.net/category/originality/">创意</a></li>
+<li class="orange menu-item menu-item-type-taxonomy menu-item-object-category menu-item-343"><a href="http://www.geekfan.net/category/games/">游戏</a></li>
+<li class="green1 menu-item menu-item-type-taxonomy menu-item-object-category menu-item-886"><a href="http://www.geekfan.net/category/video-2/">视频</a></li>
+</ul>		</div>
+	
+		<!-- END BODY NAV -->
+			
+			
+		<!-- BEGIN CONTENT WRAPPER -->
+	
+		<div id="content-wrapper">
+		
+
+		
+
+
+
+	<!-- BEGIN CONTENT -->
+
+	<div id="content">
+					
+		
+		<!-- BEGIN PADDER -->
+							
+		<div class="padder">
+
+
+			<!-- BEGIN CATEGORIES -->
+
+							<div class="meta-cats single-wrapper">
+					<a href="http://www.geekfan.net/category/hardware/raspberry-pi-hardware/" title="View all posts in 树莓派" style="background-color: #dd3333">树莓派</a> <a href="http://www.geekfan.net/category/hardware/" title="View all posts in 硬件" style="background-color: #dd9933">硬件</a>					<div id="post-navigation"><a href="http://www.geekfan.net/6252/" rel="prev"><i class="icon-caret-left"></i>&nbsp;&nbsp;上一篇</a><a href="http://www.geekfan.net/6262/" rel="next">下一篇&nbsp;&nbsp;<i class="icon-caret-right"></i></a></div>
+				</div>
+				
+						
+			<!-- END CATEGORIES -->
+			
+					
+			<!-- BEGIN TITLE -->
+					
+			<h1 class="page-title">利用树莓派搭建Git私有服务器</h1>				
+			<!-- END TITLE -->
+			
+			
+			<!-- BEGIN SUBTITLE -->
+			
+						
+			<!-- END SUBTITLE -->
+			
+	
+			<!-- BEGIN POST META -->
+			
+							
+				<div class="post-meta">
+				
+											
+						<div class="meta-details">
+							<span class="meta-author"><a href="http://www.geekfan.net/author/boydw/">Boyd Wang</a></span>							
+							<span class="meta-date">2014 年 2 月 14 日</span>							
+							<span class="meta-cats"><a href="http://www.geekfan.net/6228/#comments">0 条评论</a></span>
+							
+											                        <span>标签:</span><a href="http://www.geekfan.net/tag/git%e6%9c%8d%e5%8a%a1%e5%99%a8/" rel="tag">Git服务器</a> , <a href="http://www.geekfan.net/tag/%e6%a0%91%e8%8e%93%e6%b4%be/" rel="tag">树莓派</a>			                                						</div>
+						
+										
+					
+					<!-- BEGIN SHARING BUTTONS -->
+						
+											<div class="meta-share">
+						<!-- JiaThis Button BEGIN -->
+						<div class="jiathis_style" style="display: block; float: right; margin: 0 0px; clear: both;"><span class="jiathis_txt"></span>
+						<a class="jiathis_button_tsina" title="分享到新浪微博"><span class="jiathis_txt jtico jtico_tsina"></span></a>
+						<a class="jiathis_button_weixin" title="分享到微信"><span class="jiathis_txt jtico jtico_weixin"></span></a>
+						<a class="jiathis_button_qzone" title="分享到QQ空间"><span class="jiathis_txt jtico jtico_qzone"></span></a>
+						<a class="jiathis_button_renren" title="分享到人人网"><span class="jiathis_txt jtico jtico_renren"></span></a>
+						<a class="jiathis_button_douban" title="分享到豆瓣"><span class="jiathis_txt jtico jtico_douban"></span></a>
+						<a class="jiathis_button_readitlater"></a>
+						<a class="jiathis_button_evernote" title="分享到EverNote"><span class="jiathis_txt jtico jtico_evernote"></span></a>
+						<a class="jiathis_button_ydnote" title="分享到有道云笔记"><span class="jiathis_txt jtico jtico_ydnote"></span></a>
+						<a href="http://www.jiathis.com/share?uid=1745061" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+						<a class="jiathis_counter_style"><span class="jiathis_button_expanded jiathis_counter jiathis_bubble_style" id="jiathis_counter_32" title="累计分享4次">4</span></a>
+						</div>
+						<!-- JiaThis Button END -->
+						</div>
+																	
+					<!-- END SHARING BUTTONS -->
+							
+								
+				</div>
+
+						
+			<!-- END POST META -->
+			
+					
+			<!-- BEGIN POST CONTENT -->
+						
+				
+			
+				<div id="post-content">
+
+
+					<!-- BEGIN FEATURED IMAGE -->
+					
+										
+					<!-- END FEATURED IMAGE -->
+					
+					
+					
+
+<!-- BEGIN REVIEW BOX -->
+
+
+<!-- END REVIEW BOX -->						
+<b>本文由 <a href="http://www.geekfan.net/">极客范</a> - <a href="http://www.geekfan.net/author/boydw/">Boyd Wang</a> 翻译自 <a target="_blank" href="http://monkeyhacks.com/raspberry-pi-as-private-git-server">MONKEY HACKS</a>。欢迎加入<a target="_blank" href="http://www.jobbole.com/groups/34/">极客翻译小组</a>，同我们一道翻译与分享。转载请参见文章末尾处的要求。</b><br><br>
+								
+					<p><a href="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/15c7c1ce6ed966f1d86d444b193640c6.png" rel="lightbox[6228]" title="利用树莓派搭建Git私有服务器" class="cboxElement"><img class="aligncenter size-full wp-image-6229" alt="git1" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/15c7c1ce6ed966f1d86d444b193640c6.png" width="390" height="347"></a><br>
+最近我利用树莓派为我所有的Git仓库创建了一个Git私有服务器。我花费了一些时间来使每件事情正确工作，但现在它已经能跑起来了。</p>
+<p><strong>安装Git</strong></p>
+<p>首先你需要在树莓派上安装Git.</p><!-- Crayon Syntax Highlighter v2.4.2 -->
+
+		<div id="crayon-54aa7175421e0373162138" class="crayon-syntax crayon-theme-github crayon-font-monaco crayon-os-pc print-yes crayon-wrapped" data-settings=" minimize scroll-mouseover wrap" style="margin-top: 12px; margin-bottom: 12px; float: none; clear: both; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="切换显示行编号"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="纯文本显示代码"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button crayon-pressed" title="切换自动换行"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="在新窗口中显示代码"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">sudo apt-get install wget git-core</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-54aa7175421e0373162138-1" style="height: 15px;">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-line" id="crayon-54aa7175421e0373162138-1"><span class="crayon-e">sudo </span><span class="crayon-i">apt</span><span class="crayon-o">-</span><span class="crayon-e">get </span><span class="crayon-e">install </span><span class="crayon-e">wget </span><span class="crayon-i">git</span><span class="crayon-o">-</span><span class="crayon-i">core</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0006 seconds] -->
+<p>
+这将会安装Git服务器和必要的客户端软件。</p>
+<p><strong>安装SSH</strong></p>
+<p>如果你还没有安装SSH，通过以下命令安装它：</p><!-- Crayon Syntax Highlighter v2.4.2 -->
+
+		<div id="crayon-54aa7175421eb396478007" class="crayon-syntax crayon-theme-github crayon-font-monaco crayon-os-pc print-yes crayon-wrapped" data-settings=" minimize scroll-mouseover wrap" style="margin-top: 12px; margin-bottom: 12px; float: none; clear: both; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="切换显示行编号"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="纯文本显示代码"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button crayon-pressed" title="切换自动换行"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="在新窗口中显示代码"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">sudo apt-get install ssh</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-54aa7175421eb396478007-1" style="height: 15px;">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-line" id="crayon-54aa7175421eb396478007-1"><span class="crayon-e">sudo </span><span class="crayon-i">apt</span><span class="crayon-o">-</span><span class="crayon-e">get </span><span class="crayon-e">install </span><span class="crayon-i">ssh</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0005 seconds] -->
+<p>
+通过以下命令启动它：</p><!-- Crayon Syntax Highlighter v2.4.2 -->
+
+		<div id="crayon-54aa7175421f1187201160" class="crayon-syntax crayon-theme-github crayon-font-monaco crayon-os-pc print-yes crayon-wrapped" data-settings=" minimize scroll-mouseover wrap" style="margin-top: 12px; margin-bottom: 12px; float: none; clear: both; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="切换显示行编号"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="纯文本显示代码"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button crayon-pressed" title="切换自动换行"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="在新窗口中显示代码"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">sudo /etc/init.d/ssh start</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-54aa7175421f1187201160-1" style="height: 15px;">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-line" id="crayon-54aa7175421f1187201160-1"><span class="crayon-i">sudo</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-i">etc</span><span class="crayon-o">/</span><span class="crayon-v">init</span><span class="crayon-sy">.</span><span class="crayon-i">d</span><span class="crayon-o">/</span><span class="crayon-e">ssh </span><span class="crayon-i">start</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0006 seconds] -->
+<p>
+现在ssh已经运行起来了，但是一旦你重启树莓派，你还需要重新执行一遍上面命令。你可以通过执行一次下面的命令来解决这个问题：</p><!-- Crayon Syntax Highlighter v2.4.2 -->
+
+		<div id="crayon-54aa7175421f6390349988" class="crayon-syntax crayon-theme-github crayon-font-monaco crayon-os-pc print-yes crayon-wrapped" data-settings=" minimize scroll-mouseover wrap" style="margin-top: 12px; margin-bottom: 12px; float: none; clear: both; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="切换显示行编号"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="纯文本显示代码"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button crayon-pressed" title="切换自动换行"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="在新窗口中显示代码"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">sudo update-rc.d ssh defaults</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-54aa7175421f6390349988-1" style="height: 15px;">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-line" id="crayon-54aa7175421f6390349988-1"><span class="crayon-e">sudo </span><span class="crayon-i">update</span><span class="crayon-o">-</span><span class="crayon-v">rc</span><span class="crayon-sy">.</span><span class="crayon-i">d</span><span class="crayon-h"> </span><span class="crayon-e">ssh </span><span class="crayon-i">defaults</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0005 seconds] -->
+<p>
+当你重启树莓派，SSH应该能够自动启动了。你可以看看能不能通过SSH连接到树莓派，在你的Windows机器上使用<a title="Putty" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">Putty</a>(Mac用户需要寻找替代的SSH客户端)。<br>
+<a href="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/e87c3d04ef67a13a0926e49e8cb3c07c.png" rel="lightbox[6228]" title="利用树莓派搭建Git私有服务器" class="cboxElement"><img class="aligncenter size-full wp-image-6230" alt="git2" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/e87c3d04ef67a13a0926e49e8cb3c07c.png" width="343" height="332"></a><br>
+在HostName文本框里输入树莓派的IP地址。通过以下命令找到你的树莓派IP:</p><!-- Crayon Syntax Highlighter v2.4.2 -->
+
+		<div id="crayon-54aa7175421fc259354664" class="crayon-syntax crayon-theme-github crayon-font-monaco crayon-os-pc print-yes crayon-wrapped" data-settings=" minimize scroll-mouseover wrap" style="margin-top: 12px; margin-bottom: 12px; float: none; clear: both; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="切换显示行编号"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="纯文本显示代码"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button crayon-pressed" title="切换自动换行"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="在新窗口中显示代码"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">/sbin/ifconfig</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-54aa7175421fc259354664-1" style="height: 15px;">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-line" id="crayon-54aa7175421fc259354664-1"><span class="crayon-o">/</span><span class="crayon-i">sbin</span><span class="crayon-o">/</span><span class="crayon-i">ifconfig</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0004 seconds] -->
+<p>
+找到<strong>inet addr:</strong>后面的就是IP。</p>
+<p><strong>改变主机名</strong></p>
+<p>这步不是必须的，但是我强烈推荐如果你正在，计划使用多台树莓派设备。</p><!-- Crayon Syntax Highlighter v2.4.2 -->
+
+		<div id="crayon-54aa717542201482473223" class="crayon-syntax crayon-theme-github crayon-font-monaco crayon-os-pc print-yes crayon-wrapped" data-settings=" minimize scroll-mouseover wrap" style="margin-top: 12px; margin-bottom: 12px; float: none; clear: both; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="切换显示行编号"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button crayon-pressed" title="纯文本显示代码"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button crayon-pressed" title="切换自动换行"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="在新窗口中显示代码"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important; margin-top: -17px; display: none;"></div>
+			<div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 1; opacity: 1; overflow: hidden; height: 23px;">sudo leafpad /etc/hostname</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 0; overflow: hidden; opacity: 0;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-54aa717542201482473223-1" style="height: 15px;">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-line" id="crayon-54aa717542201482473223-1"><span class="crayon-e">sudo </span><span class="crayon-i">leafpad</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-i">etc</span><span class="crayon-o">/</span><span class="crayon-i">hostname</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0004 seconds] -->
+<p>
+输入你想要的主机名，然后保存文件。我的主机名是”gitpi”。<br>
+接着，输入下面的命令：</p><!-- Crayon Syntax Highlighter v2.4.2 -->
+
+		<div id="crayon-54aa717542207849990166" class="crayon-syntax crayon-theme-github crayon-font-monaco crayon-os-pc print-yes crayon-wrapped" data-settings=" minimize scroll-mouseover wrap" style="margin-top: 12px; margin-bottom: 12px; float: none; clear: both; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="切换显示行编号"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="纯文本显示代码"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button crayon-pressed" title="切换自动换行"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="在新窗口中显示代码"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">sudo leafpad /etc/hosts</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-54aa717542207849990166-1" style="height: 15px;">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-line" id="crayon-54aa717542207849990166-1"><span class="crayon-e">sudo </span><span class="crayon-i">leafpad</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-i">etc</span><span class="crayon-o">/</span><span class="crayon-i">hosts</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0006 seconds] -->
+<p>
+替换所有”raspberrypi”为你上一步输入的新主机名。然后，<a title="How to Shutdown or Reboot Your Raspberry Pi" href="http://monkeyhacks.com/how-to-shutdown-or-reboot-your-raspberry-pi" target="_blank">重启你的树莓派</a>。</p>
+<p><strong>添加一个”Git”用户和组</strong></p>
+<p>接着我们来创建一个”Git”用户和用户组。注意<strong>/home/git</strong>是这个例子里我使用的文件夹。如果你想使用别的路径，替换下面命令里的”/home/git”。</p><!-- Crayon Syntax Highlighter v2.4.2 -->
+
+		<div id="crayon-54aa71754220c529873504" class="crayon-syntax crayon-theme-github crayon-font-monaco crayon-os-pc print-yes crayon-wrapped" data-settings=" minimize scroll-mouseover wrap" style="margin-top: 12px; margin-bottom: 12px; float: none; clear: both; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="切换显示行编号"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="纯文本显示代码"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button crayon-pressed" title="切换自动换行"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="在新窗口中显示代码"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">adduser --system --shell /bin/bash --gecos 'git version control by pi' --group --home /home/git git</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-54aa71754220c529873504-1" style="height: 15px;">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-line" id="crayon-54aa71754220c529873504-1"><span class="crayon-i">adduser</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-i">system</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-i">shell</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-i">bin</span><span class="crayon-o">/</span><span class="crayon-i">bash</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-i">gecos</span><span class="crayon-h"> </span><span class="crayon-s">'git version control by pi'</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-i">group</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-i">home</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-i">home</span><span class="crayon-o">/</span><span class="crayon-e">git </span><span class="crayon-i">git</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0013 seconds] -->
+<p>
+接着是更改密码：</p><!-- Crayon Syntax Highlighter v2.4.2 -->
+
+		<div id="crayon-54aa717542211059012417" class="crayon-syntax crayon-theme-github crayon-font-monaco crayon-os-pc print-yes crayon-wrapped" data-settings=" minimize scroll-mouseover wrap" style="margin-top: 12px; margin-bottom: 12px; float: none; clear: both; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="切换显示行编号"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="纯文本显示代码"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button crayon-pressed" title="切换自动换行"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="在新窗口中显示代码"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">passwd git</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-54aa717542211059012417-1" style="height: 15px;">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-line" id="crayon-54aa717542211059012417-1"><span class="crayon-e">passwd </span><span class="crayon-i">git</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0004 seconds] -->
+<p>
+你的”git”用户现在有了一个新密码。现在尝试切换用户，你将会看到现在的终端提示用户名和主机为”git@gitpi”。你可以通过下面的命令切换用户：</p><!-- Crayon Syntax Highlighter v2.4.2 -->
+
+		<div id="crayon-54aa717542217026784879" class="crayon-syntax crayon-theme-github crayon-font-monaco crayon-os-pc print-yes crayon-wrapped" data-settings=" minimize scroll-mouseover wrap" style="margin-top: 12px; margin-bottom: 12px; float: none; clear: both; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="切换显示行编号"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="纯文本显示代码"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button crayon-pressed" title="切换自动换行"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="在新窗口中显示代码"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">su git</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-54aa717542217026784879-1" style="height: 15px;">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-line" id="crayon-54aa717542217026784879-1"><span class="crayon-e">su </span><span class="crayon-i">git</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0003 seconds] -->
+<p>
+<strong>增加一个空的Git仓库(Git Repository)</strong></p>
+<p>我们现在来增加一个空的Git仓库.<br>
+首先更改目录到你存储git的路径下。</p><!-- Crayon Syntax Highlighter v2.4.2 -->
+
+		<div id="crayon-54aa71754221c176226907" class="crayon-syntax crayon-theme-github crayon-font-monaco crayon-os-pc print-yes crayon-wrapped" data-settings=" minimize scroll-mouseover wrap" style="margin-top: 12px; margin-bottom: 12px; float: none; clear: both; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="切换显示行编号"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="纯文本显示代码"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button crayon-pressed" title="切换自动换行"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="在新窗口中显示代码"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">cd /home/git</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-54aa71754221c176226907-1" style="height: 15px;">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-line" id="crayon-54aa71754221c176226907-1"><span class="crayon-i">cd</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-i">home</span><span class="crayon-o">/</span><span class="crayon-i">git</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0005 seconds] -->
+<p>
+为你的仓库创建一个文件夹，并移动进去，然后初始化并清空仓库。<br>
+注意我现在使用的是”git”用户。这个用户具有/home/git目录的控制权。</p><!-- Crayon Syntax Highlighter v2.4.2 -->
+
+		<div id="crayon-54aa717542221702673037" class="crayon-syntax crayon-theme-github crayon-font-monaco crayon-os-pc print-yes crayon-wrapped" data-settings=" minimize scroll-mouseover wrap" style="margin-top: 12px; margin-bottom: 12px; float: none; clear: both; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="切换显示行编号"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="纯文本显示代码"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button crayon-pressed" title="切换自动换行"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="在新窗口中显示代码"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">mkdir test.git
+cd test.git
+git --bare init</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-54aa717542221702673037-1" style="height: 15px;">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-54aa717542221702673037-2" style="height: 15px;">2</div><div class="crayon-num" data-line="crayon-54aa717542221702673037-3" style="height: 15px;">3</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-line" id="crayon-54aa717542221702673037-1"><span class="crayon-e">mkdir </span><span class="crayon-v">test</span><span class="crayon-sy">.</span><span class="crayon-e">git</span></div><div class="crayon-line crayon-striped-line" id="crayon-54aa717542221702673037-2"><span class="crayon-e">cd </span><span class="crayon-v">test</span><span class="crayon-sy">.</span><span class="crayon-e">git</span></div><div class="crayon-line" id="crayon-54aa717542221702673037-3"><span class="crayon-i">git</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-e">bare </span><span class="crayon-i">init</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0006 seconds] -->
+<p>
+<strong>Push你的代码到Pi上</strong></p>
+<p>最终，我们会把代码push到树莓派上。首先，更改路径到你之前初始化的git仓库(或初始化一个新的)。</p>
+<p>加入一个新的远程主机(*你的IP地址没有中括号)</p><!-- Crayon Syntax Highlighter v2.4.2 -->
+
+		<div id="crayon-54aa717542226605939005" class="crayon-syntax crayon-theme-github crayon-font-monaco crayon-os-pc print-yes crayon-wrapped" data-settings=" minimize scroll-mouseover wrap" style="margin-top: 12px; margin-bottom: 12px; float: none; clear: both; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="切换显示行编号"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="纯文本显示代码"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button crayon-pressed" title="切换自动换行"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="在新窗口中显示代码"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">git remote add pi git@[your IP]:/home/git/test.git</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-54aa717542226605939005-1" style="height: 15px;">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-line" id="crayon-54aa717542226605939005-1"><span class="crayon-e">git </span><span class="crayon-e">remote </span><span class="crayon-e">add </span><span class="crayon-e">pi </span><span class="crayon-i">git</span><span class="crayon-sy">@</span><span class="crayon-sy">[</span><span class="crayon-e">your </span><span class="crayon-i">IP</span><span class="crayon-sy">]</span><span class="crayon-o">:</span><span class="crayon-o">/</span><span class="crayon-i">home</span><span class="crayon-o">/</span><span class="crayon-i">git</span><span class="crayon-o">/</span><span class="crayon-v">test</span><span class="crayon-sy">.</span><span class="crayon-i">git</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0008 seconds] -->
+<p>
+现在你要做的就是add你的代码，commit然后push。</p><!-- Crayon Syntax Highlighter v2.4.2 -->
+
+		<div id="crayon-54aa71754222c963933304" class="crayon-syntax crayon-theme-github crayon-font-monaco crayon-os-pc print-yes crayon-wrapped" data-settings=" minimize scroll-mouseover wrap" style="margin-top: 12px; margin-bottom: 12px; float: none; clear: both; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="切换显示行编号"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="纯文本显示代码"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button crayon-pressed" title="切换自动换行"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="在新窗口中显示代码"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">git add .
+git commit -am "Initial"
+git push pi master</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table" style="">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-54aa71754222c963933304-1" style="height: 15px;">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-54aa71754222c963933304-2" style="height: 15px;">2</div><div class="crayon-num" data-line="crayon-54aa71754222c963933304-3" style="height: 15px;">3</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-line" id="crayon-54aa71754222c963933304-1"><span class="crayon-e">git </span><span class="crayon-v">add</span><span class="crayon-h"> </span><span class="crayon-sy">.</span></div><div class="crayon-line crayon-striped-line" id="crayon-54aa71754222c963933304-2"><span class="crayon-e">git </span><span class="crayon-i">commit</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-i">am</span><span class="crayon-h"> </span><span class="crayon-s">"Initial"</span></div><div class="crayon-line" id="crayon-54aa71754222c963933304-3"><span class="crayon-e">git </span><span class="crayon-e">push </span><span class="crayon-e">pi </span><span class="crayon-i">master</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0007 seconds] -->
+<p>
+如果你得到了一个类似这样的消息”authenticity of host …”只需要输入”yes”然后继续就可以了。<br>
+理想情况下，如果一切正常，你的Git仓库已经搭建在你的树莓派上了。</p>
+<p>如果你想要测试一下，试着clone你的仓库到你的Windows机器上。首先更改路径到你希望存储clone的地方(一个空文件夹)，然后通过命令行(或git bash)，运行：</p><!-- Crayon Syntax Highlighter v2.4.2 -->
+
+		<div id="crayon-54aa717542231760007583" class="crayon-syntax crayon-theme-github crayon-font-monaco crayon-os-pc print-yes crayon-wrapped" data-settings=" minimize scroll-mouseover wrap" style="margin-top: 12px; margin-bottom: 12px; float: none; clear: both; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="切换显示行编号"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="纯文本显示代码"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button crayon-pressed" title="切换自动换行"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="在新窗口中显示代码"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">git clone git@[your IP]:/home/git/test.git</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-54aa717542231760007583-1" style="height: 15px;">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-line" id="crayon-54aa717542231760007583-1"><span class="crayon-e">git </span><span class="crayon-r">clone</span><span class="crayon-h"> </span><span class="crayon-i">git</span><span class="crayon-sy">@</span><span class="crayon-sy">[</span><span class="crayon-e">your </span><span class="crayon-i">IP</span><span class="crayon-sy">]</span><span class="crayon-o">:</span><span class="crayon-o">/</span><span class="crayon-i">home</span><span class="crayon-o">/</span><span class="crayon-i">git</span><span class="crayon-o">/</span><span class="crayon-v">test</span><span class="crayon-sy">.</span><span class="crayon-i">git</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0008 seconds] -->
+<p>
+如果你有任何问题，请到原博客地址留言。祝你好运！</p>
+<script async="" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/adsbygoogle.js"></script>
+<!-- article-bottom-2 -->
+<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-5020264604186994" data-ad-slot="9322049666" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><iframe width="336" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+<br><br>
+原文链接： <a target="_blank" href="http://monkeyhacks.com/raspberry-pi-as-private-git-server">MONKEY HACKS</a>    翻译： <a href="http://www.geekfan.net/"> 极客范 </a> - <a href="http://www.geekfan.net/author/boydw/">Boyd Wang</a><br><br>译文链接： <a href="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net.html">http://www.geekfan.net/6228/</a><br><br>[ <span style="color:#E47070">转载请保留原文出处、译者和译文链接。</span>]<br><br>
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_24x24">
+<a class="jiathis_button_tsina" title="分享到新浪微博"><span class="jiathis_txt jtico jtico_tsina"></span></a>
+<a class="jiathis_button_weixin" title="分享到微信"><span class="jiathis_txt jtico jtico_weixin"></span></a>
+<a class="jiathis_button_qzone" title="分享到QQ空间"><span class="jiathis_txt jtico jtico_qzone"></span></a>
+<a class="jiathis_button_renren" title="分享到人人网"><span class="jiathis_txt jtico jtico_renren"></span></a>
+<a class="jiathis_button_tqq" title="分享到腾讯微博"><span class="jiathis_txt jtico jtico_tqq"></span></a>
+<a class="jiathis_button_t163" title="分享到网易微博"><span class="jiathis_txt jtico jtico_t163"></span></a>
+<a class="jiathis_button_tsohu" title="分享到搜狐微博"><span class="jiathis_txt jtico jtico_tsohu"></span></a>
+<a class="jiathis_button_douban" title="分享到豆瓣"><span class="jiathis_txt jtico jtico_douban"></span></a>
+<a class="jiathis_button_fb" title="分享到Facebook"><span class="jiathis_txt jtico jtico_fb"></span></a>
+<a class="jiathis_button_googleplus" title="分享到Google+"><span class="jiathis_txt jtico jtico_googleplus"></span></a>
+<a class="jiathis_button_twitter" title="分享到Twitter"><span class="jiathis_txt jtico jtico_twitter"></span></a>
+<a class="jiathis_button_readitlater"></a>
+<a class="jiathis_button_evernote" title="分享到EverNote"><span class="jiathis_txt jtico jtico_evernote"></span></a>
+<a class="jiathis_button_ydnote" title="分享到有道云笔记"><span class="jiathis_txt jtico jtico_ydnote"></span></a>
+<a href="http://www.jiathis.com/share?uid=1745061" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+<a class="jiathis_counter_style"><span class="jiathis_button_expanded jiathis_counter jiathis_bubble_style" id="jiathis_counter_60" title="累计分享4次">4</span></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+	data_track_clickback:false,
+	title:"《利用树莓派搭建Git私有服务器》",
+	summary:"最近我利用树莓派为我所有的Git仓库创建了一个Git私有服务器。我花费了一些时间来使每件事情正确工作，但现在它已经能跑起来了，马年码农必备啊~",
+	ralateuid:{
+		"tsina":3371558430
+	},
+	hideMore:false
+}
+</script>
+<script type="text/javascript" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+										
+					
+				</div>
+			
+			
+						
+			
+			
+			<!-- END POST CONTENT -->
+
+
+			<!-- BEGIN POST NAV -->
+						
+					
+			
+			<!-- END POST NAV -->
+
+	
+			<!-- BEGIN POST TAGS -->
+
+																
+			<!-- END POST TAGS -->
+			
+			
+			<!-- BEGIN AUTHOR INFO PANEL -->
+			
+			<div class="author-info"><img alt="" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/ee92e334eb9ab0dca35e05ce4842cecb" class="avatar avatar-80 photo" height="80" width="80">
+		<div class="author-meta">
+		
+			<div class="author-meta-top">
+				
+				<div class="author-name">  <a href="http://www.geekfan.net/author/boydw/">Boyd Wang</a></div>
+			
+			</div>
+			
+			<div class="author-desc">爱游戏，爱开源，爱英语，也爱文字。个人主页：<a href="http://www.boydwang.com/" rel="nofollow">www.boydwang.com</a>，新浪微博：<a href="http://weibo.com/boydwang" rel="nofollow">@Boyd_W</a></div>
+		
+		</div>
+		
+	</div>
+				
+			<!-- END AUTHOR INFO PANEL -->
+
+
+			<!-- BEGIN RELATED POSTS -->
+			
+			
+<div class="wp_rp_wrap  wp_rp_plain" id="wp_rp_first"><div class="wp_rp_content"><h3 class="related_post_title">相关文章</h3><ul class="related_post wp_rp" style="visibility: visible"><li data-position="0" data-poid="in-10419" data-post-type="none"><a href="http://www.geekfan.net/10419/" class="wp_rp_title">将树莓派打造成音乐播放服务器</a></li><li data-position="1" data-poid="in-8972" data-post-type="none"><a href="http://www.geekfan.net/8972/" class="wp_rp_title">Adafruit的树莓派教程第四课：GPIO配置</a></li><li data-position="2" data-poid="in-2942" data-post-type="none"><a href="http://www.geekfan.net/2942/" class="wp_rp_title">性能不够？来玩raspberry pi超频吧</a></li><li data-position="3" data-poid="in-6188" data-post-type="none"><a href="http://www.geekfan.net/6188/" class="wp_rp_title">树莓派自动喂猫器</a></li><li data-position="4" data-poid="in-7976" data-post-type="none"><a href="http://www.geekfan.net/7976/" class="wp_rp_title">树莓派延时拍摄控制器</a></li><li data-position="5" data-poid="in-2767" data-post-type="none"><a href="http://www.geekfan.net/2767/" class="wp_rp_title">把你的树莓派打造成一个NAS</a></li><li data-position="6" data-poid="in-8416" data-post-type="none"><a href="http://www.geekfan.net/8416/" class="wp_rp_title">树莓派初级折腾</a></li><li data-position="7" data-poid="in-9161" data-post-type="none"><a href="http://www.geekfan.net/9161/" class="wp_rp_title">小小树莓派有大大的可能，这次是廉价盲文显示器</a></li><li data-position="8" data-poid="in-5618" data-post-type="none"><a href="http://www.geekfan.net/5618/" class="wp_rp_title">DIY一个带WIFI的树莓派照相机</a></li><li data-position="9" data-poid="in-4569" data-post-type="none"><a href="http://www.geekfan.net/4569/" class="wp_rp_title">PiLarm: 便携式树莓派警报器</a></li></ul></div></div>
+			
+						
+			<!-- END RELATED POSTS -->	
+
+			
+			<!-- BEGIN COMMENTS -->
+			
+			
+
+	
+	<div id="comments">
+
+	
+									<div id="respond">
+				<h3 id="reply-title">发表评论 <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://www.geekfan.net/6228/#respond" style="display:none;">取消回复</a></small></h3>
+									<form action="http://www.geekfan.net/wp-comments-post.php" method="post" id="commentform">
+																			<p class="comment-notes">电子邮件地址不会被公开。 必填项已用 <span class="required">*</span> 标注</p>							<p class="comment-form-author"><label for="author">姓名 <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" aria-required="true"></p>
+<p class="comment-form-email"><label for="email">电子邮件 <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" aria-required="true"></p>
+<p class="comment-form-url"><label for="url">站点</label><input id="url" name="url" type="text" value="" size="30"></p>
+												<p class="comment-form-comment"><label for="comment">评论</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>						<p class="form-allowed-tags">您可以使用这些 <abbr title="HyperText Markup Language">HTML</abbr> 标签和属性： <code>&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code class="" title="" data-url=""&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; &lt;strong&gt; &lt;pre class="" title="" data-url=""&gt; &lt;span class="" title="" data-url=""&gt; </code></p>						<p class="form-submit">
+							<input name="submit" type="submit" id="submit" value="发表评论">
+							<input type="hidden" name="comment_post_ID" value="6228" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+						</p>
+						<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="e55e19e9fb"></p>					</form>
+							</div><!-- #respond -->
+						
+	</div>
+			
+			<!-- END COMMENTS -->				
+		
+		
+		</div>
+		
+		<!-- END PADDER -->
+		
+			
+	</div>
+	
+	<!-- END CONTENT -->
+
+
+
+
+
+
+
+
+	<!-- BEGIN SIDEBAR -->
+	
+	<div id="sidebar">
+				
+		
+
+			<!-- BEGIN SELECTED WIDGETS -->
+			
+			<div id="search-2" class="widget widget_search">
+<form method="get" id="searchform" action="http://www.geekfan.net/">
+
+	<input type="text" name="s" id="searchbar" value="" placeholder="搜索"><input type="submit" id="searchsubmit" value="▶">
+
+</form></div><div id="text-10" class="widget widget_text">			<div class="textwidget"><script async="" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/adsbygoogle.js"></script>
+<!-- sidebar-1 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-5020264604186994" data-ad-slot="6849494063" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+		</div><div id="popular-widget-3" class="widget popular-widget">
+<div class="pop-layout-v"><ul id="pop-widget-tabs-3" class="pop-widget-tabs pop-widget-tabs-2"><li><a href="http://www.geekfan.net/6228/#commented" rel="nofollow" class="active">热门文章</a></li><li><a href="http://www.geekfan.net/6228/#tags" rel="nofollow">热门标签</a></li></ul><div class="pop-inside-3 pop-inside"><ul id="pop-widget-commented-3" style="display: block;"><li><a href="http://www.geekfan.net/13530/" rel="bookmark"><img width="150" height="150" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/3a3ebe39d9b434fbf3ec17339b000391-150x150.jpg" class="attachment-thumbnail wp-post-image" alt="look-down"><div class="pop-overlay"><span class="pop-title">程序员的鄙视链</span> </div></a><div class="pop-cl"></div></li><li><a href="http://www.geekfan.net/13628/" rel="bookmark"><img width="150" height="150" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/54c0b004a8f15cd456fc0bb71c4b536d-150x150.jpg" class="attachment-thumbnail wp-post-image" alt="keamc.jpg"><div class="pop-overlay"><span class="pop-title">Linkedin工程师是如何优化他们的Java代码的</span> </div></a><div class="pop-cl"></div></li><li><a href="http://www.geekfan.net/13586/" rel="bookmark"><img width="150" height="150" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/ff20af608bd2d7636d422e15c51107e8-150x150.jpg" class="attachment-thumbnail wp-post-image" alt="OLYMPUS DIGITAL CAMERA"><div class="pop-overlay"><span class="pop-title">Apple Watch 注定失败？</span> </div></a><div class="pop-cl"></div></li><li><a href="http://www.geekfan.net/13365/" rel="bookmark"><img width="150" height="150" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/7c6e839805aae2dd020a0a9aaf6f894e-150x150.jpg" class="attachment-thumbnail wp-post-image" alt="Keewifi"><div class="pop-overlay"><span class="pop-title">Keewifi 无线路由：靠近我，我就给你 Wi-Fi</span> </div></a><div class="pop-cl"></div></li><li><a href="http://www.geekfan.net/13651/" rel="bookmark"><img width="150" height="150" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/18e1d24e3c9c7b9d4e6ea41cd2145e02-150x150.jpg" class="attachment-thumbnail wp-post-image" alt="19889_1152659_172777"><div class="pop-overlay"><span class="pop-title">评测国产操作系统优麒麟：乏善可陈</span> </div></a><div class="pop-cl"></div></li><li><a href="http://www.geekfan.net/13501/" rel="bookmark"><img width="150" height="150" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/203a83810143b2381e0c2c9886dc6a45-150x150.jpg" class="attachment-thumbnail wp-post-image" alt="hp.jpg"><div class="pop-overlay"><span class="pop-title">惠普研发内存硬盘合二为一的计算机</span> </div></a><div class="pop-cl"></div></li></ul><ul class="wp-tag-cloud" style="display: none;">
+	<li><a href="http://www.geekfan.net/tag/3d%e6%89%93%e5%8d%b0/" class="tag-link-236" title="10 个话题" style="font-size: 10.485981308411pt;">3D打印</a></li>
+	<li><a href="http://www.geekfan.net/tag/android/" class="tag-link-42" title="63 个话题" style="font-size: 20.560747663551pt;">android</a></li>
+	<li><a href="http://www.geekfan.net/tag/app/" class="tag-link-43" title="6 个话题" style="font-size: 8pt;">app</a></li>
+	<li><a href="http://www.geekfan.net/tag/apple/" class="tag-link-44" title="6 个话题" style="font-size: 8pt;">apple</a></li>
+	<li><a href="http://www.geekfan.net/tag/arduino/" class="tag-link-198" title="6 个话题" style="font-size: 8pt;">Arduino</a></li>
+	<li><a href="http://www.geekfan.net/tag/chrome/" class="tag-link-420" title="14 个话题" style="font-size: 12.317757009346pt;">Chrome</a></li>
+	<li><a href="http://www.geekfan.net/tag/diy/" class="tag-link-150" title="22 个话题" style="font-size: 14.672897196262pt;">DIY</a></li>
+	<li><a href="http://www.geekfan.net/tag/gif/" class="tag-link-584" title="6 个话题" style="font-size: 8pt;">gif</a></li>
+	<li><a href="http://www.geekfan.net/tag/google/" class="tag-link-130" title="29 个话题" style="font-size: 16.242990654206pt;">Google</a></li>
+	<li><a href="http://www.geekfan.net/tag/google-glass/" class="tag-link-243" title="8 个话题" style="font-size: 9.3084112149533pt;">google glass</a></li>
+	<li><a href="http://www.geekfan.net/tag/ios/" class="tag-link-77" title="31 个话题" style="font-size: 16.635514018692pt;">iOS</a></li>
+	<li><a href="http://www.geekfan.net/tag/ipad/" class="tag-link-126" title="7 个话题" style="font-size: 8.6542056074766pt;">iPad</a></li>
+	<li><a href="http://www.geekfan.net/tag/iphone/" class="tag-link-55" title="30 个话题" style="font-size: 16.373831775701pt;">iphone</a></li>
+	<li><a href="http://www.geekfan.net/tag/linux/" class="tag-link-102" title="49 个话题" style="font-size: 19.121495327103pt;">Linux</a></li>
+	<li><a href="http://www.geekfan.net/tag/linux%e5%91%bd%e4%bb%a4/" class="tag-link-605" title="6 个话题" style="font-size: 8pt;">Linux命令</a></li>
+	<li><a href="http://www.geekfan.net/tag/mac-2/" class="tag-link-233" title="9 个话题" style="font-size: 9.9626168224299pt;">mac</a></li>
+	<li><a href="http://www.geekfan.net/tag/python/" class="tag-link-237" title="14 个话题" style="font-size: 12.317757009346pt;">Python</a></li>
+	<li><a href="http://www.geekfan.net/tag/raspberry-pi/" class="tag-link-199" title="22 个话题" style="font-size: 14.672897196262pt;">Raspberry Pi</a></li>
+	<li><a href="http://www.geekfan.net/tag/raspberrypi/" class="tag-link-305" title="14 个话题" style="font-size: 12.317757009346pt;">RaspberryPi</a></li>
+	<li><a href="http://www.geekfan.net/tag/top10/" class="tag-link-476" title="9 个话题" style="font-size: 9.9626168224299pt;">top10</a></li>
+	<li><a href="http://www.geekfan.net/tag/ubuntu/" class="tag-link-169" title="11 个话题" style="font-size: 11.009345794393pt;">Ubuntu</a></li>
+	<li><a href="http://www.geekfan.net/tag/wifi/" class="tag-link-210" title="16 个话题" style="font-size: 12.971962616822pt;">WiFi</a></li>
+	<li><a href="http://www.geekfan.net/tag/windows/" class="tag-link-422" title="10 个话题" style="font-size: 10.485981308411pt;">Windows</a></li>
+	<li><a href="http://www.geekfan.net/tag/%e5%86%85%e5%ad%98/" class="tag-link-424" title="7 个话题" style="font-size: 8.6542056074766pt;">内存</a></li>
+	<li><a href="http://www.geekfan.net/tag/%e5%88%9b%e6%84%8f/" class="tag-link-664" title="6 个话题" style="font-size: 8pt;">创意</a></li>
+	<li><a href="http://www.geekfan.net/tag/%e5%8f%af%e7%a9%bf%e6%88%b4%e8%ae%be%e5%a4%87/" class="tag-link-313" title="9 个话题" style="font-size: 9.9626168224299pt;">可穿戴设备</a></li>
+	<li><a href="http://www.geekfan.net/tag/%e6%89%8b%e6%9c%ba/" class="tag-link-258" title="20 个话题" style="font-size: 14.14953271028pt;">手机</a></li>
+	<li><a href="http://www.geekfan.net/tag/%e6%99%ba%e8%83%bd%e5%ae%b6%e5%b1%85/" class="tag-link-490" title="11 个话题" style="font-size: 11.009345794393pt;">智能家居</a></li>
+	<li><a href="http://www.geekfan.net/tag/%e6%99%ba%e8%83%bd%e6%89%8b%e6%9c%ba/" class="tag-link-378" title="17 个话题" style="font-size: 13.364485981308pt;">智能手机</a></li>
+	<li><a href="http://www.geekfan.net/tag/%e6%9c%ba%e5%99%a8%e4%ba%ba/" class="tag-link-276" title="20 个话题" style="font-size: 14.14953271028pt;">机器人</a></li>
+	<li><a href="http://www.geekfan.net/tag/%e6%9e%81%e5%ae%a2/" class="tag-link-405" title="7 个话题" style="font-size: 8.6542056074766pt;">极客</a></li>
+	<li><a href="http://www.geekfan.net/tag/%e6%a0%91%e8%8e%93%e6%b4%be/" class="tag-link-244" title="83 个话题" style="font-size: 22pt;">树莓派</a></li>
+	<li><a href="http://www.geekfan.net/tag/%e6%af%8f%e5%91%a8%e5%ae%89%e5%8d%93%e6%b8%b8%e6%88%8f%e6%96%b0%e5%93%81top10/" class="tag-link-486" title="8 个话题" style="font-size: 9.3084112149533pt;">每周安卓游戏新品TOP10</a></li>
+	<li><a href="http://www.geekfan.net/tag/%e6%b5%8f%e8%a7%88%e5%99%a8/" class="tag-link-454" title="7 个话题" style="font-size: 8.6542056074766pt;">浏览器</a></li>
+	<li><a href="http://www.geekfan.net/tag/%e6%b8%b8%e6%88%8f/" class="tag-link-90" title="21 个话题" style="font-size: 14.411214953271pt;">游戏</a></li>
+	<li><a href="http://www.geekfan.net/tag/%e7%94%b5%e6%b1%a0/" class="tag-link-281" title="8 个话题" style="font-size: 9.3084112149533pt;">电池</a></li>
+	<li><a href="http://www.geekfan.net/tag/%e7%a8%8b%e5%ba%8f%e5%91%98/" class="tag-link-676" title="10 个话题" style="font-size: 10.485981308411pt;">程序员</a></li>
+	<li><a href="http://www.geekfan.net/tag/%e7%bd%91%e7%bb%9c%e5%ae%89%e5%85%a8/" class="tag-link-211" title="8 个话题" style="font-size: 9.3084112149533pt;">网络安全</a></li>
+	<li><a href="http://www.geekfan.net/tag/%e8%87%aa%e8%a1%8c%e8%bd%a6/" class="tag-link-266" title="8 个话题" style="font-size: 9.3084112149533pt;">自行车</a></li>
+	<li><a href="http://www.geekfan.net/tag/%e8%8b%b9%e6%9e%9c/" class="tag-link-477" title="10 个话题" style="font-size: 10.485981308411pt;">苹果</a></li>
+	<li><a href="http://www.geekfan.net/tag/%e8%99%9a%e6%8b%9f%e7%8e%b0%e5%ae%9e/" class="tag-link-875" title="6 个话题" style="font-size: 8pt;">虚拟现实</a></li>
+	<li><a href="http://www.geekfan.net/tag/%e8%b0%b7%e6%ad%8c/" class="tag-link-594" title="6 个话题" style="font-size: 8pt;">谷歌</a></li>
+	<li><a href="http://www.geekfan.net/tag/%e8%b7%af%e7%94%b1%e5%99%a8/" class="tag-link-384" title="9 个话题" style="font-size: 9.9626168224299pt;">路由器</a></li>
+	<li><a href="http://www.geekfan.net/tag/%e9%94%ae%e7%9b%98/" class="tag-link-161" title="7 个话题" style="font-size: 8.6542056074766pt;">键盘</a></li>
+	<li><a href="http://www.geekfan.net/tag/%e9%bc%a0%e6%a0%87/" class="tag-link-205" title="6 个话题" style="font-size: 8pt;">鼠标</a></li>
+</ul>
+</div><!--.pop-inside--></div><!--.pop-layout-v--></div>
+<div id="recentcomments" class="widget widget_recentcomments"><h2 class="widgettitle">最新评论</h2><ul style="cursor: wait;"><li class="rc-navi rc-clearfix"><span class="rc-loading">正在加载...<span></span></span></li><li id="rc-comment-temp" class="rc-item rc-comment rc-clearfix"><div class="rc-info"></div><div class="rc-timestamp"></div><div class="rc-excerpt"></div></li><li id="rc-ping-temp" class="rc-item rc-ping rc-clearfix"><span class="rc-label"></span></li></ul></div><div id="text-8" class="widget widget_text">			<div class="textwidget"><script async="" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/adsbygoogle.js"></script>
+<!-- sidebar-2 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-5020264604186994" data-ad-slot="9802960469" data-adsbygoogle-status="done"><ins id="aswift_3_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_3_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+		</div>			
+			<!-- END SELECTED WIDGETS -->
+			
+			
+				
+	</div>
+	
+	<!-- END SIDEBAR -->
+	
+
+
+
+
+
+
+	
+			<div class="clear"></div>
+		
+		</div>
+	
+		<!-- END CONTENT WRAPPER -->
+	
+		
+		<!-- BEGIN FOOTER -->
+	
+			
+			<div id="footer">
+
+						
+									<div class="footer-widget footer-1 footer-third">
+						<div id="text-2" class="widget widget_text"><h2 class="widgettitle">关于我们</h2>			<div class="textwidget"><p>极客范 - 分享Android与iOS App应用精品、  Mac和 Linux技巧、经典游戏、前沿与新兴科技应用 和 树莓派、Arduino等微型电脑DIY应用。涵盖Android、iOS、 Mac 、Linux和各种泛科技类产品。</p>
+</div>
+		</div>					</div>
+						
+									<div class="footer-widget footer-2 footer-third">
+						<div id="text-5" class="widget widget_text"><h2 class="widgettitle">联系我们</h2>			<div class="textwidget">Email: <a href="mailto:GeekFan.net@gmail.com">GeekFan.net@gmail.com</a>
+<br>
+新浪微博：<a target="_blank" ref="nofollow" href="http://weibo.com/u/3371558430">@GeekFan极客范</a>
+<br>
+微信号: iGeekFan
+<br>
+外联合作Q：1286283835 （加Q请注明来意）
+<br>
+欢迎PR &gt;=3 的相关网站互换链接。
+
+</div>
+		</div>					</div>
+							
+									<div class="footer-widget footer-3 footer-third">
+						<div id="text-11" class="widget widget_text"><h2 class="widgettitle">推荐关注</h2>			<div class="textwidget"><a href="http://www.jobbole.com/groups/6/%20target=" _blank"="">翻译小组</a>  - 和我们一起翻译最新极客文章
+
+<br>
+
+<a href="http://www.jobbole.com/groups/23/" target="_blank">开源硬件小组</a>  - 加入开源硬件玩家圈子
+
+<br>
+
+<a href="http://blog.jobbole.com/" target="_blank">伯乐在线博客</a>  - IT互联网职业博客
+
+<br>
+
+<a href="http://www.importnew.com/" target="_blank">ImportNew</a>  - 专注Java技术分享</div>
+		</div>					</div>
+							
+				
+							
+			</div>
+	
+			
+		<!-- END FOOTER -->
+	
+	
+		<!-- BEGIN COPYRIGHT -->
+	
+		<div id="copyright"><div id="copyright">© 2014 <a href="http://geekfan.net/">GeekFan.net - 极客范</a>.  <a target="_blank" href="http://www.miibeian.gov.cn/"></a></div></div>
+		
+		<!-- END COPYRIGHT -->
+	
+
+	</div>
+
+	<!-- END PAGE WRAPPER -->
+
+
+
+
+
+<!--Plugin WP Missed Schedule 2013.0131.3333 Active - Key Tag: 8a22836915262a9b0c04fa9101e61016-->
+
+<script>
+/* <![CDATA[ */
+var rcGlobal = {
+	serverUrl		:'http://www.geekfan.net',
+	infoTemp		:'Re: %POST%',
+	loadingText		:'正在加载',
+	noCommentsText	:'没有任何评论',
+	newestText		:'&laquo; 最新的',
+	newerText		:'&laquo; 上一页',
+	olderText		:'下一页 &raquo;',
+	showContent		:'',
+	external		:'1',
+	avatarSize		:'32',
+	avatarPosition	:'left',
+	anonymous		:'匿名'
+};
+/* ]]> */
+</script>
+<!-- Lightbox Plus ColorBox v2.6/1.3.32 - 2013.01.24 - Message: 0-->
+<script type="text/javascript">
+jQuery(document).ready(function($){
+  $("a[rel*=lightbox]").colorbox({width:false,height:false,innerWidth:false,innerHeight:false,initialWidth:false,initialHeight:false,maxWidth:false,maxHeight:false,scalePhotos:false,opacity:0.85,current:" {current}  {total}",previous:"",next:"",close:"",overlayClose:false,loop:false,scrolling:false,escKey:false,arrowKey:false,top:false,right:false,bottom:false,left:false});
+});
+</script>
+<script type="text/javascript" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/ck-karma.js"></script>
+<script type="text/javascript" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/wp-recentcomments.dev.js"></script>
+<script type="text/javascript" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/jquery.ui.core.min.js"></script>
+<script type="text/javascript" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/jquery.ui.widget.min.js"></script>
+<script type="text/javascript" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/jquery.ui.accordion.min.js"></script>
+<script type="text/javascript" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/jquery.ui.tabs.min.js"></script>
+<script type="text/javascript" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/css3-mediaqueries.js"></script>
+<script type="text/javascript" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/jquery.ui.totop.min.js"></script>
+<script type="text/javascript" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/user-rating.js"></script>
+<script type="text/javascript" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/custom.js"></script>
+<script type="text/javascript" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/pop-widget.js"></script>
+<script type="text/javascript" src="./利用树莓派搭建Git私有服务器 - 极客范 - GeekFan.net_files/jquery.colorbox.1.3.32.js"></script>
+
+
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><div id="cboxNext" style="float: left;"></div><div id="cboxPrevious" style="float: left;"></div><div id="cboxSlideshow" style="float: left;"></div><div id="cboxClose" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div><a href="http://www.geekfan.net/6228/#" id="toTop" style="display: inline;"><span id="toTopHover"></span><i class="icon-chevron-up"></i></a></body></html>

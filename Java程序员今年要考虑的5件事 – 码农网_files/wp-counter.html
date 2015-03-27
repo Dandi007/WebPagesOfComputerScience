@@ -1,0 +1,1 @@
+try{eval('document.getElementById("span_views").innerHTML=""');}catch(e){}

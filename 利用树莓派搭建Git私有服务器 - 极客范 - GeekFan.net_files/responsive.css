@@ -1,0 +1,549 @@
+/*********************************  Computer < 1440 *********************************/
+
+@media only screen and (max-width: 1440px) {
+
+
+	/*********  Content Areas *********/
+
+	/* Page Wrapper */
+	#page-wrapper {
+	width: 1200px !important;
+	}
+	
+	/* Main Content */	
+	#content {
+	width: 870px !important;	
+	}
+	
+	/* Sidebar */
+	#sidebar {
+	width: 300px !important;	
+	}	
+	
+	
+	/*********  Top Bar *********/
+	
+	/* Top Bar */
+	#top-bar-inner {
+	width: 1200px !important;
+	}
+
+
+	/*********  Widgets *********/
+	
+	/* Calendar Widget */
+	#footer #wp-calendar th {
+	padding: 4px;
+	}
+	#footer #wp-calendar td {
+	padding: 4px;
+	}
+
+
+}
+
+
+/*********************************  Computer < 1200 *********************************/
+
+@media only screen and (max-width: 1200px) {
+
+
+	/*********  Content Areas *********/
+
+	/* Page Wrapper */
+	#page-wrapper {
+	width: 1024px !important;
+	}
+	
+	/* Main Content */	
+	#content {
+	width: 694px !important;	
+	}
+	
+	/* Sidebar */
+	#sidebar {
+	width: 300px !important;	
+	}	
+
+
+	/*********  Top Bar *********/
+	
+	/* Top Bar */
+	#top-bar-inner {
+	width: 1024px !important;
+	}
+
+
+	/********* Shortcodes: Carousel *********/
+	
+	/* Carousel Post */
+	.carousel-wrapper .post-text h2 {
+	font-size: 12px;
+	}
+
+
+}
+
+
+/*********************************  iPad (Landscape)  *********************************/
+
+@media only screen and (max-width: 1024px) {
+
+
+	/*********  Content Areas *********/
+
+	/* Page Wrapper */
+	#page-wrapper {
+	width: 960px !important;
+	}
+	
+	/* Main Content */	
+	#content {
+	width: 630px !important;	
+	}
+	
+	/* Sidebar */
+	#sidebar {
+	width: 300px !important;	
+	}	
+	
+
+	/*********  Top Bar *********/
+	
+	/* Top Bar */
+	#top-bar-inner {
+	width: 960px !important;
+	}
+
+
+	/*********  Header *********/
+	
+	/* Header Content */
+	#header-content {
+	width: 100%;
+	margin-top: 30px;
+	text-align: center;
+	}
+	
+
+	/*********  Review Box *********/
+
+	/* Review Box Wrapper */
+	#gp-review-wrapper.review-position-left,
+	#gp-review-wrapper.review-position-right {
+	width: 100%;
+	margin-left: 0;
+	margin-right: 0; 
+	}
+		
+		
+	/********* Shortcodes: Slider *********/
+
+	/* Slide Caption */
+	.caption {
+	width: 200px;
+	padding: 15px;
+	}
+	.caption h2 {
+	font-size: 14px;
+	}
+	.caption p {
+	font-size: 11px;
+	line-height: 16px;
+	}
+		
+
+}
+
+
+/*********************************  iPad (Portrait)  *********************************/
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+
+	/*********  Content Areas *********/
+
+	/* Page Wrapper */
+	#page-wrapper {
+	width: 748px !important;
+	}
+	
+	/* Main Content */	
+	#content {
+	width: 530px !important;	
+	}
+
+	/* Sidebar */
+	#sidebar {
+	width: 188px !important;
+	}
+	
+
+	/*********  Navigation *********/
+
+	/* Nav Wrapper */		
+	/*REMOVE#primary-nav.nav .menu li a {
+	padding: 15px 10px;
+	}*/
+
+	/* Sub Drop Down Menus */
+	.nav .menu .sub-menu {
+	width: 220px !important;
+	}
+
+	/* Mega Menus */
+	.nav .nav-section {
+	clear: both;
+	}
+	
+		
+	/*********  Top Bar *********/
+	
+	/* Top Bar */
+	#top-bar-inner {
+	width: 748px !important;
+	}
+
+
+	/*********  Review Box *********/
+
+	/* Review Box Wrapper */
+	#gp-review-wrapper.review-position-left,
+	#gp-review-wrapper.review-position-right {
+	width: 100%;
+	margin-left: 0;
+	margin-right: 0; 
+	}
+			
+
+	/*********  Widgets *********/
+	
+	/* Calendar Widget */
+	#wp-calendar th {
+	padding: 4px;
+	}
+	#wp-calendar td {
+	padding: 4px;
+	}
+
+
+	/*********  Shortcodes: Featured Posts *********/
+	
+	/* Post Loop */
+	.featured-small-posts .post-thumbnail {
+	display: none;
+	}
+	.featured-small-posts .post-text {
+	margin-left: 0 !important;
+	}
+				
+	
+}
+
+
+/******************************************  iPhone (Landscape)  ******************************************/
+
+@media only screen and (max-width: 767px) {
+
+	
+	/*********  Content Areas *********/
+
+	/* Page Wrapper */
+	#page-wrapper {
+	width: 100% !important;
+	padding: 0 10px;
+	}
+	
+	/* Main Content */	
+	#content {
+	width: 100% !important;
+	}
+
+	/* Sidebar */
+	#sidebar {
+	width: 100% !important;
+	margin-top: 50px;
+	padding-top: 50px;
+	border-top: 2px solid #eee;
+	}
+
+
+	/*********  Top Bar *********/
+	
+	/* Top Bar */
+	#top-bar-inner {
+	width: 100% !important;
+	padding: 0 10px;
+	}
+
+	/* Social Icons */
+	#social-icons {
+	padding: 16px 0 0 0;
+	}
+
+
+	/*********  Header *********/
+
+	/* Logo */
+	#logo {
+	text-align: center;
+	width: 100%;
+	}
+
+	/* Header Content */
+	#header-content {
+	width: 100%;
+	margin-top: 30px;
+	text-align: center;
+	}
+
+
+	/*********  Navigation Menus *********/
+	
+	/* Nav Wrapper */
+	#top-nav {
+	float: left;
+	width: 50%;
+	margin: 10px 0; 
+	}
+	#top-nav > ul,
+	#body-nav {
+	display: none;
+	}
+	#top-nav select {
+	display: block;
+	height: 30px;
+	padding: 6px;
+	width: 100%;
+	font-size: 12px;
+	border: 1px solid #888;
+	}
+	
+		
+	/*********  Page/Post Styling *********/
+
+	/* Page/Post Title */
+	.page-title {
+	font-size: 34px;
+	margin-bottom: 24px;
+	}
+
+	/* Posts */
+	.post-wrapper .post-loop {
+	width: 100% !important;
+	}
+	.post-text {
+	width: 100%;
+	}
+
+	/* Post Categories */
+	.single-post .meta-cats a {
+	font-size: 12px;
+	line-height: 12px;
+	}
+	
+	/* Post Share Meta */
+	.meta-share {
+	margin: 20px 0 0 0;
+	width: 100%;
+	clear: both;
+	text-align: left;
+	}
+
+	
+	/*********  Lightbox *********/
+
+	.pp_pic_holder.pp_default {
+	width: 95% !important; 
+	left: 5% !important;
+	}
+	.pp_content {
+	width: 98% !important;
+	height: auto !important;
+	}
+	.pp_fade {
+	width: 100% !important;
+	height: 100% !important;
+	padding-bottom: 40px;
+	}
+	#pp_full_res img,
+	#pp_full_res iframe {
+	width: 100% !important;
+	height: auto !important;
+	max-width: none !important;
+	}
+	.pp_details {
+	width: 100% !important;
+	}
+	.ppt {
+	width: 100% !important;
+	margin-left: 0 !important;
+	}
+			
+
+	/*********  Review Box *********/
+
+	/* Review Box Wrapper */
+	#gp-review-wrapper.review-position-left,
+	#gp-review-wrapper.review-position-right {
+	width: 100%;
+	margin-left: 0;
+	margin-right: 0; 
+	}
+
+	/* Site Scores */
+	#gp-site-ratings-wrapper .gp-rating-wrapper,
+	.gp-user-rating-wrapper.gp-rating-wrapper {
+	height: 60px;
+	}
+	#gp-site-ratings-wrapper .gp-stars-wrapper,
+	.gp-user-rating-wrapper .gp-stars-wrapper {
+	top: 40px;
+	left: 20px;
+	}	
+	
+				
+	/*********  Shortcodes: Blockquotes *********/
+	
+	blockquote,
+	.blockquote-left,
+	.blockquote-right {
+	width: 100%;
+	margin: 0 0 12px 0;
+	padding: 0;
+	}
+	
+
+	/********* Shortcodes: Carousel *********/
+	
+	/* Carousel Post */
+	.carousel-wrapper .post-text h2 {
+	font-size: 10px;
+	}
+	
+		
+	/*********  Shortcodes: Columns *********/
+
+	/* General */
+	.columns {
+	width: 100% !important;
+	margin: 0 0 20px 0;
+	}
+	.columns > div {
+	height: auto !important;
+	}
+	.columns .sc-image {
+	position: relative !important;
+	}
+	
+	/* Joint Columns */
+	.joint > div {
+	border-left-width: 0;
+	}
+	.three.first.joint > div,
+	.three.middle.joint > div {
+	border-bottom-width: 1px;
+	}
+	
+
+	/*********  Shortcodes: Featured Posts *********/
+	
+	/* Post Loop */
+	.horizontal .featured-small-posts {
+	width: 100%;
+	}
+	.horizontal .featured-small-post:first-child {
+	margin-top: 30px !important;
+	}
+	.featured-small-posts .post-thumbnail {
+	display: none;
+	}
+	.featured-small-posts .post-text {
+	margin-left: 0 !important;
+	}	
+			
+
+	/*********  Shortcodes: Images *********/
+	
+	/* Image */
+	.sc-image,
+	.sc-image img {
+	height: auto !important;
+	}
+
+
+	/********* Shortcodes: Slider *********/
+
+	/* Slide Caption */
+	.caption {
+	width: 200px;
+	padding: 10px;
+	}
+	.caption h2 {
+	font-size: 12px;
+	margin-bottom: 5px;
+	}
+	.caption p {
+	font-size: 11px;
+	line-height: 16px;
+	}
+		
+		
+	/*********  Shortcodes: Tabs *********/
+	
+	.ui-tabs .ui-tabs-nav li { 
+	width: 100%;
+	border-bottom-width: 1px !important;
+	}
+	.ui-tabs .ui-tabs-nav li.ui-tabs-selected { 
+	border-bottom-color: #eee;
+	}
+	
+		
+	/*********  Comments Section *********/
+	
+	/* Comment Box */
+	.comment-avatar {
+	display: none;
+	}
+	.comment-body {
+	margin-left: 0;
+	}
+	
+	/* Child Comments */
+	#commentlist .children .comment-body {
+	margin-left: 10px;
+	}
+
+
+	/*********  Footer *********/ 
+	
+	/* Footer */
+	#footer {
+	padding: 10px 10px 0 10px;
+	}
+
+	/* Footer Widgets */
+	.footer-widget {
+	width: 100%;
+	padding: 0;
+	}
+		
+		
+}
+
+
+/******************************************  iPhone (Portrait)  ******************************************/
+
+@media only screen and (max-width: 480px) {
+
+
+	/********* Shortcodes: Slider *********/
+
+	/* Slide Caption */
+	.caption {
+	display: none;
+	}
+	
+		
+}

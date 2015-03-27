@@ -1,0 +1,3 @@
+var OX_e6b615ba = '';
+OX_e6b615ba += "<"+"a href=\'//gg3.51cto.com/www/delivery/ck.php?oaparams=2__bannerid=90__zoneid=256__cb=8e747675fc__oadest=http%3A%2F%2Fnetwork.51cto.com%2Fnetwork%2F01%2F1.html\' target=\'_blank\'><"+"font color=\'blue\'>智能化管理，让IT管理更轻松<"+"/font><"+"/a><"+"div id=\'beacon_8e747675fc\' style=\'position: absolute; left: 0px; top: 0px; visibility: hidden;\'><"+"img src=\'//gg3.51cto.com/www/delivery/lg.php?bannerid=90&amp;campaignid=39&amp;zoneid=256&amp;loc=1&amp;referer=http%3A%2F%2Fdeveloper.51cto.com%2Fart%2F201207%2F351061.htm&amp;cb=8e747675fc\' width=\'0\' height=\'0\' alt=\'\' style=\'width: 0px; height: 0px;\' /><"+"/div>\n";
+document.write(OX_e6b615ba);

@@ -1,0 +1,1175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0058)http://www.cppblog.com/vczh/archive/2009/12/23/103835.html -->
+<html><head id="Head"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+	2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客
+</title><meta id="metaKeywords" name="keywords" content="2005-2009年个人总结"><link type="text/css" rel="stylesheet" href="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/common.css"><link id="MainCss" type="text/css" rel="stylesheet" href="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/style.css"><link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cppblog.com/vczh/rss.aspx"><script type="text/javascript" src="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/osd.js"></script></head>
+<body>
+    <form name="Form1" method="post" action="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客.htm" onsubmit="javascript:return WebForm_OnSubmit();" id="Form1">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="
+__VIEWSTATE" value="">
+</div>
+
+<script type="text/javascript" async="" src="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/ga.js"></script><script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/WebResource.axd" type="text/javascript"></script>
+
+<script language="JavaScript">
+									function ctlent(evt,id)
+											{
+												if(evt.ctrlKey && evt.keyCode == 13)
+												{	
+													try
+													{
+														TempSave(id);
+													}
+													catch(ex)
+													{
+													}
+													finally
+													{
+													    __doPostBack('AjaxHolder$PostComment$btnSubmit','')
+													}
+												}
+		
+												}</script>
+												<script language="JavaScript">function SetReplyAuhor(author){document.getElementById('AjaxHolder_PostComment_tbComment').value+="@"+author+"\n";document.getElementById('AjaxHolder_PostComment_tbComment').focus();return false}</script>
+<script src="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/ScriptResource.axd" type="text/javascript"></script>
+<script src="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/ScriptResource(1).axd" type="text/javascript"></script>
+<script src="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/ScriptResource(2).axd" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+        
+<!--done-->
+<div id="header">
+	
+<!--done-->
+<div class="header">
+	<div class="headerText">
+		<a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cppblog.com/vczh/">λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx）</a><br>
+		【QQ：343056143】【Email：vczh@163.com】【新浪微博：http://weibo.com/vczh】
+	</div>
+</div>
+
+</div>
+
+<div id="mytopmenu">
+	
+		<div id="mylinks">
+<!--done-->
+<a id="MyLinks1_HomeLink" class="menu" href="http://www.cppblog.com/">C++博客</a>&nbsp;&nbsp;
+<a id="MyLinks1_MyHomeLink" class="menu" href="http://www.cppblog.com/vczh/">首页</a>&nbsp;&nbsp;
+<a id="MyLinks1_NewPostLink" class="menu" href="http://www.cppblog.com/vczh/admin/EditPosts.aspx?opt=1">新随笔</a>
+<a id="MyLinks1_ContactLink" class="menu" href="http://www.cppblog.com/vczh/contact.aspx?id=1">联系</a>&nbsp;&nbsp;
+<a id="MyLinks1_Syndication" class="menu" href="http://www.cppblog.com/vczh/Rss.aspx">聚合</a><a id="MyLinks1_XMLLink" href="http://www.cppblog.com/vczh/Rss.aspx"><img src="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/xml.gif" style="border-width:0px;"></a>&nbsp;&nbsp;
+<a id="MyLinks1_Admin" class="menu" href="http://www.cppblog.com/vczh/admin/EditPosts.aspx">管理</a>
+</div>
+		<div id="mystats">
+<!--done-->
+随笔-340&nbsp;
+评论-2596&nbsp;
+文章-0&nbsp;
+trackbacks-0
+</div>
+	
+</div>
+<div id="centercontent">
+	
+					
+<!--done-->
+<div class="post">
+	<div class="postTitle">
+		<a id="viewpost1_TitleUrl" class="postTitle2" href="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客.htm">2005-2009年个人总结</a>
+	</div>
+	&nbsp;&nbsp;&nbsp; 今年事情比较多，第一个是自己终于从本科毕业了，第二个是自己找到了工作，拿了一份offer。虽然当初为了去Microsoft实习错过了一大堆其他公司的面试机会，只投了Microsoft，Google和百度。不过最后还是进了Microsoft，在这危机四伏的日子里，虽然说自己写了10年代码总归有点功力，但是也有运气的成分在。只是面试百度的时候我明明在简历上写了我人在上海，他非要我飞回广州面试，很不爽，拒了他。<br><br>&nbsp;&nbsp;&nbsp; 去年下半年几乎都投身Microsoft的实习，到了12月上旬回学校，于是从今年的元旦开始其实就是在学校里面混日子了。其实还好，完成了一个<a style="TEXT-DECORATION: underline" href="http://www.cppblog.com/vczh/category/6825.html" target="_blank">阉割版的Haskell编译器</a>当毕业设计，还做了一个<a style="TEXT-DECORATION: underline" href="http://www.cppblog.com/vczh/archive/2009/05/22/85424.html" target="_blank">C语言编译到机器码写入内存的编译器</a>，最后<a style="TEXT-DECORATION: underline" href="http://www.cppblog.com/vczh/archive/2009/10/09/98207.html" target="_blank">重写了Vczh Library++3.0</a>，还把它<a style="TEXT-DECORATION: underline" href="http://vlpp.codeplex.com/" target="_blank">开源</a>了，虽然还没最终完成。不过开源了之后就得补文档了，因此近期的开发进度可能会慢一点。<br><br>&nbsp;&nbsp;&nbsp; 回想大学四年，还是写了不少代码的，也足够拼成一张至少可以留住HR眼球的简历了。当初比较大的转变是我刚上大一，可怜的Borland就不行了，于是很喜欢的Delphi看来也有危机了，所以转去C++。幸好所学的知识并不是绑定在Delphi的平台上，因此刚开始也只觉得是换了个语法。不够C++实在是博大精深，里面可以用各种各样的范式写代码，比较突出的是元编程，虽然这种东西在现实生活中重要性不言而喻不过所占比例还是很小的。<br><br>&nbsp;&nbsp;&nbsp; 于是开始拿C++练手了。高中的Delphi时代写了不少游戏，积累了一个2D的游戏引擎，其实也不复杂，不过好歹也到了3.0了，里面有图形图像、音效、数据管理、脚本引擎，还有一个UI。因此C++上手了之后，自然是移植它了。移植的过程中发现C++的写法跟Delphi还是截然不同，因此Vczh Library++ 1.0基本上是失败告终，虽然那个Delphi的游戏引擎大部分都实现了。在开发的途中我曾经写了一个模仿显卡固顶管线的3D软件渲染器，不过最后一个Demo应该是在大二，用OpenGL实现了3D模型的骨骼动画，用的好像还是Halflife 1的几个模型，什么鸟啊，僵尸啊，警察啊。后来觉得实在是找不到美工，而且自己还有一项喜欢的，也就是写编译器了，所以干脆就集中力量搞编译器吧。<br><br>&nbsp;&nbsp;&nbsp; 第一个见得人的编译器应该是<a style="TEXT-DECORATION: underline" href="http://www.mscenter.edu.cn/prj/Prj_Info.aspx?id=1446" target="_blank">Vczh Jove Script</a>了。这个东西阉割了Java，然后实现了一次，主要是针对OOP，有继承，有虚函数，还有泛型。当然泛型我实现了跟C#一样的参数约束，也就是可以指定说某个类型参数必须继承与另一个类。数组使用引用计数，其他的都垃圾收集。当然最后发现数组用引用计数是不对的，会导致垃圾收集。<br><br>&nbsp;&nbsp;&nbsp; 之后我就对计算机的理论燃起了热情了，首当其冲当然是编译原理。当时受到了CSDN上那个袁泳的一点指导，其实主要不是技术上的，是方向上的，后来给我看了一本很厉害的书叫《Parsing Techniques》。很多知识都从这里面吸收了，然后就要开刀，当然是从最简单的正则表达式引擎下手。第一次写还是有点别扭，到现在一共写了三次，其中第二次是在第一次写完了之后觉得很不爽立刻重写的。写完了就轮到Syngram，是一个将文法写进C++然后自动变成语法分析器的小库。当然后来也重写了。<br><br>&nbsp;&nbsp;&nbsp; 上面的事情完成了之后就着手<a style="TEXT-DECORATION: underline" href="http://www.cppblog.com/vczh/archive/2008/07/01/55072.html" target="_blank">Vczh Free Script</a>的开发了。这是一个“纯”动态语言。为什么说纯呢，因为我坚持所有东西匿名（包括类定义，其实结果就是返回一个类型，像C#的System.Type，然后可以到处传），所以为了给一个东西命名就写一个赋值语句。当然不仅如此，我还实现了函数闭包，然后将之后的所有特性譬如说动态的Multiple Dispatch（虚函数是Single Dispatch）啊，namespace啊，类和继承什么的统统编译到函数闭包上，整个语言是匿名的。当然我还是把它是实现成一个C++的类库，如果你愿意在我的接口下面写插件的话，就可以跟Python一样直接应用到你自己的工程里面去了。<br><br>&nbsp;&nbsp;&nbsp; 在这个过程中我学习了很多关于编程语言方面的基础理论，还学了一点数学虽然我还是觉得数学有点难度。完了之后就开发一个小型的IDE，其亮点是就算代码是动态生成的，我也能捕捉到然后给你单步调试。不过这个由于稳定性并不是非常好，第一次将C++跟C#混起来用还是有点力不从心，因此就没拿出来贡献给大家了。<br><br>&nbsp;&nbsp;&nbsp; 之后就开始Microsoft的实习之旅了，在实习的过程中我首先封装了一次win32api的GUI部分，尽量达到跟Delphi一样好用，于是有了这个<a style="TEXT-DECORATION: underline" href="http://www.cppblog.com/vczh/archive/2008/08/25/59954.html" target="_blank">Demo</a>，然后做了阉割版Haskell——也就是Kernel FP了。当初叫这个名称我只是想看看实现一个最小的纯函数式语言的内核要怎么办，要包含多少功能（当然是越少越好，其他的都是语法糖或者库，不过不能让能力下降）。后来又看了一本书好像叫做《The Implementation of Functional Programmang Languages》，也很好看，学到了很多东西。<br><br>&nbsp;&nbsp;&nbsp; 于是2008年就结束了，进入2009年，做了一个CMinus，可以把C语言编译到内存里面，搞成x86的机器码，然后就能将一个写了代码的txt文件变成一个函数指针了。然后就毕业了。<br><br>&nbsp;&nbsp;&nbsp; 7月13日开始入职Microsoft，虽然说是在开发界面，不过我还是觉得需要自己仍然保持热情，于是工作结束之后自己要继续写自己的代码，也就是Vczh Library++ 3.0了。上面做了很多4个编译器，刚好针对语言的4中特性，这次看看能不能把它们综合起来，变成一个真正有用的脚本引擎。当然这不是重复劳动了，毕竟自己实现给自己带来的质的提高会比你纯粹用别人的要高很多。但至于最后怎么办，其实我还是觉得.NET的潜力比较大，总之挑战它是不明智的，但我还是想自己试一试。<br><br>&nbsp;&nbsp;&nbsp; 从第一个QBasic的Hello World到现在也差不多要10年了，初中因为不小心拿到了本QBasic的书然后戏剧性地开始了我程序员的人生，所幸中间没有间断过，而且也将对一贯来编程的激情很好的保存了下来，有增无减。至于说30岁（其实日本说的是35岁）就要转管理什么的，我还是不太相信，或者说我愿意就做一线的开发人员，或者架构师（当然这个跟通常意义上的架构师还是不一样的，有朝一日真的给我做了，我还是想跟一线的程序员一起写代码）。管理还是不适合我，毕竟我对钱（或者是权力？）没那么渴望，够花就好了，虽然我自己没多少钱。<br><br>&nbsp;&nbsp;&nbsp; 总之，要有激情，无论是对什么事情。剩下的就是要追求快乐，不同的人对快乐的定义还是不一样的，不过我目前只要能写有挑战性的代码，我就会觉得很快乐了。工作了之后因为在上海，瞬间感到了房价的压力。只是如果要我牺牲写代码的时间和乐趣去换取那些所谓的财产，我还是不太愿意的。 
+
+	<div class="postDesc">posted on 2009-12-23 21:22 <a href="http://www.cppblog.com/vczh/">陈梓瀚(vczh)</a> 阅读(6888) <a href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#Post">评论(40)</a> &nbsp;<a href="http://www.cppblog.com/vczh/admin/EditPosts.aspx?postid=103835">编辑</a>&nbsp;<a href="http://www.cppblog.com/vczh/AddToFavorite.aspx?id=103835">收藏</a> <a href="http://www.cppblog.com/vczh/services/trackbacks/103835.aspx">引用</a>  所属分类: <a href="http://www.cppblog.com/vczh/category/7321.html">启示</a> </div>
+</div>
+<img src="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/103835.html" width="1" height="1">
+
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html"
+dc:identifier="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html"
+dc:title="2005-2009年个人总结"
+trackback:ping="http://www.cppblog.com/vczh/services/trackbacks/103835.aspx" />
+</rdf:RDF>
+-->
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('AjaxHolder$scriptmanager1', document.getElementById('Form1'));
+Sys.WebForms.PageRequestManager.getInstance()._updateControls(['tAjaxHolder$UpdatePanel1'], [], [], 90);
+//]]>
+</script>
+
+<div id="AjaxHolder_UpdatePanel1">
+	    
+    <a name="pagedcomment"></a>
+<!--done-->
+<br>
+<b>评论:</b>
+<div class="feedbackNoItems"></div>
+	
+
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#103841">#</a>&nbsp;<a name="103841"></a>re: 2005-2009年个人总结
+				2009-12-23 21:56 | <a id="AjaxHolder_Comments_CommentList_ctl00_NameLink" href="http://www.cppblog.com/pxhszcn/" target="_blank">彭小虎(Tigerkin)</a><br>
+				<div align="left">能一辈子从事自己喜欢的工作，是件很幸福的事情。。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;彭小虎(Tigerkin)&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e5%bd%ad%e5%b0%8f%e8%99%8e(Tigerkin)" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl00_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl00$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl00_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#103843">#</a>&nbsp;<a name="103843"></a>re: 2005-2009年个人总结
+				2009-12-23 22:00 | <a id="AjaxHolder_Comments_CommentList_ctl01_NameLink" href="http://www.cppblog.com/darkdestiny/" target="_blank">LOGOS</a><br>
+				<div align="left">毕业了啊<br>没想到牛轰轰的你，才本科毕业，启蒙早的人总是令人羡慕<br>继续写博客，我会来看的<br>&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;LOGOS&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=LOGOS" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl01_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl01$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl01_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#103845">#</a>&nbsp;<a name="103845"></a>re: 2005-2009年个人总结
+				2009-12-23 22:01 | <a id="AjaxHolder_Comments_CommentList_ctl02_NameLink" target="_blank">路过</a><br>
+				<div align="left">在msra还是工程院？本科进M$其实不是什么好事&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;路过&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e8%b7%af%e8%bf%87" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl02_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl02$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl02_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#103846">#</a>&nbsp;<a name="103846"></a>re: 2005-2009年个人总结
+				2009-12-23 22:02 | <a id="AjaxHolder_Comments_CommentList_ctl03_NameLink" href="http://www.cppblog.com/vczh/" target="_blank">陈梓瀚(vczh)</a><br>
+				<div align="left">@路过
+<br>没什么好不好的，高兴就好了，至少生活来源稳定，可以专心写代码。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;陈梓瀚(vczh)&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e9%99%88%e6%a2%93%e7%80%9a(vczh)" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl03_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl03$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl03_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结[未登录]" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#103857">#</a>&nbsp;<a name="103857"></a>re: 2005-2009年个人总结[未登录]
+				2009-12-23 23:05 | <a id="AjaxHolder_Comments_CommentList_ctl04_NameLink" target="_blank">Davy.xu</a><br>
+				<div align="left">还以为大侠读研究生呢，终于了解大侠的经历了，牛！&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;Davy.xu&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=Davy.xu" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl04_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl04$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl04_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结[未登录]" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#103866">#</a>&nbsp;<a name="103866"></a>re: 2005-2009年个人总结[未登录]
+				2009-12-24 03:04 | <a id="AjaxHolder_Comments_CommentList_ctl05_NameLink" target="_blank">cc</a><br>
+				<div align="left">以后再也不说自己是程序员了&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;cc&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=cc" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl05_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl05$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl05_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#103876">#</a>&nbsp;<a name="103876"></a>re: 2005-2009年个人总结
+				2009-12-24 09:11 | <a id="AjaxHolder_Comments_CommentList_ctl06_NameLink" href="http://www.cppblog.com/kevinlynx/" target="_blank">Kevin Lynx</a><br>
+				<div align="left">怎么像临终感言。。。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;Kevin Lynx&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=Kevin+Lynx" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl06_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl06$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl06_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#103882">#</a>&nbsp;<a name="103882"></a>re: 2005-2009年个人总结
+				2009-12-24 10:06 | <a id="AjaxHolder_Comments_CommentList_ctl07_NameLink" target="_blank">absolute</a><br>
+				<div align="left">华工的大牛。赞~~~&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;absolute&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=absolute" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl07_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl07$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl07_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#103903">#</a>&nbsp;<a name="103903"></a>re: 2005-2009年个人总结
+				2009-12-24 12:10 | <a id="AjaxHolder_Comments_CommentList_ctl08_NameLink" href="http://www.cppblog.com/lingjingqiu/" target="_blank">空明流转</a><br>
+				<div align="left">小子，你不愿意为五斗米折腰，是因为你还没有老婆呢。<br>哈哈。当程序员也没什么不好，但是财路也是要找的啊。<br>希望你能当一个有钱的程序员，当然诚如你所言，需要些运气。<br>我觉得Martin Fowler就是个很幸运的人，相信你也是。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;空明流转&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e7%a9%ba%e6%98%8e%e6%b5%81%e8%bd%ac" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl08_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl08$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl08_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#103904">#</a>&nbsp;<a name="103904"></a>re: 2005-2009年个人总结
+				2009-12-24 12:17 | <a id="AjaxHolder_Comments_CommentList_ctl09_NameLink" href="http://www.cppblog.com/Hero/" target="_blank">Hero</a><br>
+				<div align="left">看到了很早就不曾感觉到的"激情"二字&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;Hero&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=Hero" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl09_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl09$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl09_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#103928">#</a>&nbsp;<a name="103928"></a>re: 2005-2009年个人总结
+				2009-12-24 13:38 | <a id="AjaxHolder_Comments_CommentList_ctl10_NameLink" target="_blank">Tangel</a><br>
+				<div align="left">：） 生活本应该是这样，祝楼主更进一步&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;Tangel&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=Tangel" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl10_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl10$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl10_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#103937">#</a>&nbsp;<a name="103937"></a>re: 2005-2009年个人总结
+				2009-12-24 15:01 | <a id="AjaxHolder_Comments_CommentList_ctl11_NameLink" href="http://www.cppblog.com/Streamlet/" target="_blank">溪流</a><br>
+				<div align="left">祝楼主更加快乐、更进一步&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;溪流&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e6%ba%aa%e6%b5%81" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl11_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl11$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl11_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#103949">#</a>&nbsp;<a name="103949"></a>re: 2005-2009年个人总结
+				2009-12-24 16:00 | <a id="AjaxHolder_Comments_CommentList_ctl12_NameLink" href="http://www.cppblog.com/lijiakxl/" target="_blank">李佳</a><br>
+				<div align="left">哎 只能说佩服....  &nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;李佳&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e6%9d%8e%e4%bd%b3" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl12_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl12$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl12_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#103974">#</a>&nbsp;<a name="103974"></a>re: 2005-2009年个人总结
+				2009-12-24 18:29 | <a id="AjaxHolder_Comments_CommentList_ctl13_NameLink" target="_blank">Adrian</a><br>
+				<div align="left">喜欢就好，祝福你！&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;Adrian&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=Adrian" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl13_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl13$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl13_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#103991">#</a>&nbsp;<a name="103991"></a>re: 2005-2009年个人总结
+				2009-12-24 22:02 | <a id="AjaxHolder_Comments_CommentList_ctl14_NameLink" href="http://www.cppblog.com/cdy20/" target="_blank">cdy20</a><br>
+				<div align="left">祝福你！&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;cdy20&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=cdy20" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl14_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl14$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl14_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#104000">#</a>&nbsp;<a name="104000"></a>re: 2005-2009年个人总结
+				2009-12-24 23:11 | <a id="AjaxHolder_Comments_CommentList_ctl15_NameLink" target="_blank">radar</a><br>
+				<div align="left">好牛！希望楼主当一个快乐的有钱的程序员！&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;radar&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=radar" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl15_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl15$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl15_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结[未登录]" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#104026">#</a>&nbsp;<a name="104026"></a>re: 2005-2009年个人总结[未登录]
+				2009-12-25 10:47 | <a id="AjaxHolder_Comments_CommentList_ctl16_NameLink" target="_blank">xu</a><br>
+				<div align="left">祝福，相信当一个程序员不被钱所牵引着他的发展会更好&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;xu&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=xu" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl16_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl16$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl16_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#104031">#</a>&nbsp;<a name="104031"></a>re: 2005-2009年个人总结
+				2009-12-25 11:32 | <a id="AjaxHolder_Comments_CommentList_ctl17_NameLink" target="_blank">MaR.sHaNe</a><br>
+				<div align="left">你是华工里面第一个影响我的师兄，那时我还没正式进入华工。
+<br>直到你毕业了，到了微软，还是一直影响着我。
+<br>每个人都有自己喜欢的事，有人希望通过写程序达到某些金钱的目的，
+<br>但有的人却乐在开发过程和结果的成就感。
+<br>无论做什么，只要做喜欢的事，就是幸福的。
+<br>MS里面一开始可能很少会让本科生做比较核心的开发。
+<br>不过相信以你的一直热情，一定可以找到你想要的东西。
+<br>祝你成功~&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;MaR.sHaNe&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=MaR.sHaNe" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl17_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl17$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl17_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结[未登录]" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#104048">#</a>&nbsp;<a name="104048"></a>re: 2005-2009年个人总结[未登录]
+				2009-12-25 13:33 | <a id="AjaxHolder_Comments_CommentList_ctl18_NameLink" target="_blank">jc_ontheroad</a><br>
+				<div align="left">做好你想做的事，其它的东西都是附属品，会随之而来的。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;jc_ontheroad&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=jc_ontheroad" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl18_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl18$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl18_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结[未登录]" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#104049">#</a>&nbsp;<a name="104049"></a>re: 2005-2009年个人总结[未登录]
+				2009-12-25 13:36 | <a id="AjaxHolder_Comments_CommentList_ctl19_NameLink" target="_blank">sun</a><br>
+				<div align="left">很牛，很佩服啊，虽然年纪比我小，但比我强多了，佩服佩服。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;sun&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=sun" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl19_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl19$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl19_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#104064">#</a>&nbsp;<a name="104064"></a>re: 2005-2009年个人总结
+				2009-12-25 16:32 | <a id="AjaxHolder_Comments_CommentList_ctl20_NameLink" target="_blank">phoenixbing</a><br>
+				<div align="left">有当年云风的影子.&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;phoenixbing&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=phoenixbing" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl20_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl20$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl20_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#104076">#</a>&nbsp;<a name="104076"></a>re: 2005-2009年个人总结
+				2009-12-25 19:03 | <a id="AjaxHolder_Comments_CommentList_ctl21_NameLink" target="_blank">coder</a><br>
+				<div align="left">真的太强了，老牛&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;coder&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=coder" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl21_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl21$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl21_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#104077">#</a>&nbsp;<a name="104077"></a>re: 2005-2009年个人总结
+				2009-12-25 19:10 | <a id="AjaxHolder_Comments_CommentList_ctl22_NameLink" target="_blank">哎</a><br>
+				<div align="left">看到你之后，我感觉自己根本不是程序员&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;哎&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e5%93%8e" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl22_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl22$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl22_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#104114">#</a>&nbsp;<a name="104114"></a>re: 2005-2009年个人总结
+				2009-12-26 10:09 | <a id="AjaxHolder_Comments_CommentList_ctl23_NameLink" target="_blank">yzq</a><br>
+				<div align="left">能在那么早就坚持一件事，你真的很幸运，我是从大学才开始接触编程，才知道有这么个东东，呵呵，到大三才开始意识到，自己可能喜欢，到现在才知道原来自己喜欢编程。我也是今年刚毕业的，比起你来，差远了。。。。非常赞同你说的一个词，激情。加油啊。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;yzq&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=yzq" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl23_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl23$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl23_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#104223">#</a>&nbsp;<a name="104223"></a>re: 2005-2009年个人总结
+				2009-12-27 20:58 | <a id="AjaxHolder_Comments_CommentList_ctl24_NameLink" target="_blank">radar</a><br>
+				<div align="left">师兄，我爱你！&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;radar&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=radar" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl24_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl24$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl24_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#104260">#</a>&nbsp;<a name="104260"></a>re: 2005-2009年个人总结
+				2009-12-28 11:32 | <a id="AjaxHolder_Comments_CommentList_ctl25_NameLink" href="http://www.cppblog.com/xfpl-at-hotmail-dot-com/" target="_blank">侠客西风</a><br>
+				<div align="left">跟楼主比,自惭形秽...
+<br>
+<br>楼上的是什么人啊,汗....
+<br>
+<br>我今年也算是一把年纪了,技术还很菜,同样是09年毕业的,写程序只有2年多的历史,水平菜的要死...
+<br>
+<br>唉,人之间真的是不能比呀...
+<br>
+<br>不然就是现在累死我,也是比不上如楼主这样的人...
+<br>
+<br>加油.&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;侠客西风&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e4%be%a0%e5%ae%a2%e8%a5%bf%e9%a3%8e" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl25_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl25$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl25_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结[未登录]" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#104277">#</a>&nbsp;<a name="104277"></a>re: 2005-2009年个人总结[未登录]
+				2009-12-28 15:02 | <a id="AjaxHolder_Comments_CommentList_ctl26_NameLink" href="http://www.cppblog.com/zzxhang" target="_blank">清风</a><br>
+				<div align="left">人要能一辈子这么单纯也不错，只可惜压力逼着我们改变&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;清风&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e6%b8%85%e9%a3%8e" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl26_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl26$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl26_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#104386">#</a>&nbsp;<a name="104386"></a>re: 2005-2009年个人总结
+				2009-12-29 17:05 | <a id="AjaxHolder_Comments_CommentList_ctl27_NameLink" href="http://www.cppblog.com/vczh/" target="_blank">陈梓瀚(vczh)</a><br>
+				<div align="left">@清风
+<br>这是长期投资&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;陈梓瀚(vczh)&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e9%99%88%e6%a2%93%e7%80%9a(vczh)" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl27_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl27$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl27_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#104598">#</a>&nbsp;<a name="104598"></a>re: 2005-2009年个人总结
+				2010-01-01 11:16 | <a id="AjaxHolder_Comments_CommentList_ctl28_NameLink" target="_blank">giant</a><br>
+				<div align="left">来华工两年半了，虽然素未谋面，但经常来看你的博客，一直受到师兄那股激情的感染，谢谢师兄！&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;giant&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=giant" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl28_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl28$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl28_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#104677">#</a>&nbsp;<a name="104677"></a>re: 2005-2009年个人总结
+				2010-01-03 12:08 | <a id="AjaxHolder_Comments_CommentList_ctl29_NameLink" href="http://www.cppblog.com/zblc/" target="_blank">千暮(zblc)</a><br>
+				<div align="left">@清风
+<br>@giant
+<br>- -。谁说行为上表面单纯就单纯了.&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;千暮(zblc)&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e5%8d%83%e6%9a%ae(zblc)" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl29_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl29$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl29_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#105175">#</a>&nbsp;<a name="105175"></a>re: 2005-2009年个人总结
+				2010-01-08 17:16 | <a id="AjaxHolder_Comments_CommentList_ctl30_NameLink" target="_blank">感叹</a><br>
+				<div align="left">看过你的经历，真是感叹&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;感叹&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e6%84%9f%e5%8f%b9" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl30_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl30$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl30_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#105217">#</a>&nbsp;<a name="105217"></a>re: 2005-2009年个人总结
+				2010-01-09 00:45 | <a id="AjaxHolder_Comments_CommentList_ctl31_NameLink" href="http://www.cppblog.com/deercoder/" target="_blank">刘畅</a><br>
+				<div align="left">没想到LZ是华工的，校友啊，同LZ相比，我是自惭形秽啊。LZ也是计算机专业的吗？本科能进微软，真的很牛啊！&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;刘畅&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e5%88%98%e7%95%85" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl31_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl31$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl31_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#105237">#</a>&nbsp;<a name="105237"></a>re: 2005-2009年个人总结
+				2010-01-09 12:36 | <a id="AjaxHolder_Comments_CommentList_ctl32_NameLink" href="http://www.cppblog.com/vczh/" target="_blank">陈梓瀚(vczh)</a><br>
+				<div align="left">@刘畅
+<br>我也认识一个华南理工的刘畅（某club前主席）难道是同一个人！？&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;陈梓瀚(vczh)&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e9%99%88%e6%a2%93%e7%80%9a(vczh)" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl32_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl32$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl32_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#105297">#</a>&nbsp;<a name="105297"></a>re: 2005-2009年个人总结
+				2010-01-09 23:06 | <a id="AjaxHolder_Comments_CommentList_ctl33_NameLink" href="http://www.cppblog.com/deercoder/" target="_blank">刘畅</a><br>
+				<div align="left">@陈梓瀚(vczh)
+<br>呵呵，不是，小弟只是一个无名小辈而已，像大侠学习！&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;刘畅&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e5%88%98%e7%95%85" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl33_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl33$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl33_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#106566">#</a>&nbsp;<a name="106566"></a>re: 2005-2009年个人总结
+				2010-01-28 00:28 | <a id="AjaxHolder_Comments_CommentList_ctl34_NameLink" target="_blank">zmy</a><br>
+				<div align="left">华南理工确实一个很不错的学校，仰视！&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;zmy&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=zmy" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl34_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl34$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl34_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#107854">#</a>&nbsp;<a name="107854"></a>re: 2005-2009年个人总结
+				2010-02-15 03:28 | <a id="AjaxHolder_Comments_CommentList_ctl35_NameLink" href="http://www.cppblog.com/kangnixi/" target="_blank">烟皑</a><br>
+				<div align="left">十年？
+<br>不知道博主是啥时候开始写代码的呢？
+<br>大学本科四年，感觉你做了好多好多事情，真充实~~
+<br>看了你的文章，回望自己，感觉自己什么都没做似的，呵呵&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;烟皑&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e7%83%9f%e7%9a%91" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl35_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl35$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl35_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结[未登录]" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#108234">#</a>&nbsp;<a name="108234"></a>re: 2005-2009年个人总结[未登录]
+				2010-02-22 16:32 | <a id="AjaxHolder_Comments_CommentList_ctl36_NameLink" href="http://www.cppblog.com/yefeng" target="_blank">夜风</a><br>
+				<div align="left">你的总结真让人振奋，新的一年 我也得做点什么了，像兄台学习！&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;夜风&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e5%a4%9c%e9%a3%8e" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl36_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl36$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl36_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#108235">#</a>&nbsp;<a name="108235"></a>re: 2005-2009年个人总结
+				2010-02-22 16:33 | <a id="AjaxHolder_Comments_CommentList_ctl37_NameLink" href="http://www.cppblog.com/yefeng/" target="_blank">夜风</a><br>
+				<div align="left">你的总结真让人振奋，新的一年 我也得做点什么了，像兄台学习！&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;夜风&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e5%a4%9c%e9%a3%8e" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl37_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl37$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl37_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#117344">#</a>&nbsp;<a name="117344"></a>re: 2005-2009年个人总结
+				2010-06-07 21:12 | <a id="AjaxHolder_Comments_CommentList_ctl38_NameLink" target="_blank">旱圣</a><br>
+				<div align="left">水王一直都是无敌的，以后也将继续无敌&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;旱圣&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=%e6%97%b1%e5%9c%a3" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl38_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl38$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl38_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<a title="permalink: re: 2005-2009年个人总结" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#201414">#</a>&nbsp;<a name="201414"></a>re: 2005-2009年个人总结<a name="Post"></a>
+				2013-06-30 22:24 | <a id="AjaxHolder_Comments_CommentList_ctl39_NameLink" href="http://www.cnblogs.com/mavaL/" target="_blank">maval</a><br>
+				<div align="left">支持大牛..........<br>向前辈学习&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;maval&quot;)" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cppblog.com/comment?author=maval" target="_blank">更多评论</a><br><a id="AjaxHolder_Comments_CommentList_ctl39_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl39$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl39_EditLink"></a></div>
+			</div>
+			
+			
+		</div>
+	
+
+
+
+<div id="AjaxHolder_Comments_divRefreshComments" style="text-align:right;margin-right:10px;margin-bottom:5px;font-size:12px;"><a id="AjaxHolder_Comments_refreshList" href="javascript:__doPostBack('AjaxHolder$Comments$refreshList','')">刷新评论列表</a></div>
+<style>
+td { font-size: 12px }
+.commentTextBox 
+{ 
+    font-family : Verdana; 
+    font-size: 13px;
+ }
+</style>
+<!--Beging Temp Save-->
+<style>.userData { BEHAVIOR: url(#default#userdata) }
+	</style>
+<div class="userData" id="CommentsPersistDiv"></div>
+<script type="text/javascript">
+function pageLoad()
+{
+    Sys.WebForms.PageRequestManager.getInstance().add_initializeRequest(handleInitializeRequest);
+    //Sys.WebForms.PageRequestManager.getInstance().add_endRequest(handleEndRequest);
+}
+
+function handleInitializeRequest(sender, args)
+{
+    var prm = Sys.WebForms.PageRequestManager.getInstance();
+    var eid = args.get_postBackElement().id;
+    if (eid.indexOf("DeleteLink")>0) 
+    {
+       args.get_postBackElement().innerHTML = "<font color='red'>正在删除...</font>";         
+    }    
+    if (eid.indexOf("btnSubmit")>0) 
+    {
+       document.getElementById("AjaxHolder_PostComment_ltSubmitMsg").innerHTML="正在提交...";
+       document.getElementById("AjaxHolder_PostComment_btnSubmit").disabled = true;
+       
+    }    
+   
+}	
+
+function TempSave(ElementID)
+{
+	try
+	{
+	CommentsPersistDiv.setAttribute("CommentContent",document.getElementById(ElementID).value);
+	CommentsPersistDiv.save("CommentXMLStore");
+	}
+	catch(ex)
+	{
+	}
+	
+}
+function Restore(ElementID)
+{
+	CommentsPersistDiv.load("CommentXMLStore");
+	document.getElementById(ElementID).value=CommentsPersistDiv.getAttribute("CommentContent");
+}	
+			
+			
+</script>
+<!--Ene TempSave-->
+<div class="commentform">
+<span id="AjaxHolder_PostComment_ltSubmitMsg" style="color:Red;"></span>
+<br>
+<a name="Feedback"></a>
+	<table cellspacing="1" cellpadding="1" border="0">
+		<tbody><tr>			
+		<td id="AjaxHolder_PostComment_tdOnCommentForm" colspan="3">
+		<div id="blog_bottom_adtext"><a href="http://job.cnblogs.com/" target="_blank">程序员找工作，就在博客园招聘频道</a>	
+		</div></td>
+	
+		</tr>
+		<tr>
+			<td colspan="3">
+<script type="Text/Javascript">
+try{
+  GA_googleFillSlot("cppblog_commentbox_up");
+  } catch (e) { }
+</script>
+<br> </td>
+		</tr>
+		<tr>
+			<td width="75"></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td colspan="2">
+			<a href="http://www.cnblogs.com/" target="_blank">博客园</a>&nbsp;  <a href="http://q.cnblogs.com/" target="_blank">博问</a>&nbsp; <a href="http://news.cnblogs.com/" target="_blank">IT新闻</a>&nbsp; <a href="http://job.cnblogs.com/cate-cpp_programmer/" target="_blank">C++程序员招聘</a>
+			</td>
+		</tr>
+		<tr>
+			<td width="55">标题</td>
+			<td><input name="AjaxHolder$PostComment$tbTitle" type="text" value="re: 2005-2009年个人总结" id="AjaxHolder_PostComment_tbTitle" class="commenttb" style="width:320"></td>
+			<td><span id="AjaxHolder_PostComment_RequiredFieldValidator1" style="color:Red;visibility:hidden;">请输入标题</span></td>
+		</tr>
+		<tr>
+			<td>姓名</td>
+			<td><input name="AjaxHolder$PostComment$tbName" type="text" id="AjaxHolder_PostComment_tbName" class="commenttb" style="width:320"></td>
+			<td><span id="AjaxHolder_PostComment_RequiredFieldValidator2" style="color:Red;visibility:hidden;">请输入你的姓名</span></td>
+		</tr>
+		<tr>
+			<td>主页</td>
+			<td><input name="AjaxHolder$PostComment$tbUrl" type="text" id="AjaxHolder_PostComment_tbUrl" class="commenttb" style="width:320"></td>
+			<td><font face="宋体"></font></td>
+		</tr>
+		<tr>
+			<td align="left" colspan="3">
+				<table id="AjaxHolder_PostComment_tbCaptchaImage" class="CommentForm" cellspacing="0" cellpadding="0" border="0">
+		<tbody><tr>
+			<td colspan="3">
+							<span id="AjaxHolder_PostComment_Requiredfieldvalidator4" style="color:Red;display:none;">请输入验证码</span>
+							<span id="AjaxHolder_PostComment_lblImage" style="color:Red;font-weight:bold;"></span>
+						</td>
+		</tr>
+		<tr>
+			<td width="78">验证码</td>
+			<td><input name="AjaxHolder$PostComment$CodeNumberTextBox" type="text" id="AjaxHolder_PostComment_CodeNumberTextBox">*</td>
+			<td align="left">
+							<img src="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/JpegImage.aspx" id="AjaxHolder_PostComment_Img1">
+						</td>
+		</tr>
+	</tbody></table>
+	
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3">内容(提交失败后,可以通过“恢复上次提交”恢复刚刚提交的内容)
+				<span id="AjaxHolder_PostComment_RequiredFieldValidator3" style="color:Red;visibility:hidden;">请输入评论内容</span><br>
+				<textarea name="AjaxHolder$PostComment$tbComment" rows="10" cols="50" id="AjaxHolder_PostComment_tbComment" class="commentTextBox" onkeydown="ctlent(event,&#39;AjaxHolder_PostComment_tbComment&#39;)" style="Width:480;Height:220"></textarea></td>
+		</tr>
+		<tr>
+			<td colspan="3">
+		<span id="AjaxHolder_PostComment_Message" style="color:Red;"></span>
+		</td>
+		</tr><tr>
+			<td colspan="3"><input id="AjaxHolder_PostComment_chkRemember" type="checkbox" name="AjaxHolder$PostComment$chkRemember" checked="checked" tabindex="-1"><label for="AjaxHolder_PostComment_chkRemember">Remember Me?</label></td>
+		</tr>
+		<tr>
+			<td height="23"><input type="submit" name="AjaxHolder$PostComment$btnSubmit" value="提交" onclick="TempSave(&#39;AjaxHolder_PostComment_tbComment&#39;);WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;AjaxHolder$PostComment$btnSubmit&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="AjaxHolder_PostComment_btnSubmit">
+				</td>
+			<td colspan="2" height="23">&nbsp;
+				<a id="AjaxHolder_PostComment_lnkLogin" href="http://www.cppblog.com/login.aspx?ReturnURL=http://www.cppblog.com/vczh/archive/2009/12/23/103835.html&SourceURL=/vczh/archive/2009/12/23/103835.html">登录</a>&nbsp;&nbsp;<a id="AjaxHolder_PostComment_linkLoginComment" onclick="if(document.getElementById(&#39;AjaxHolder_PostComment_tbComment&#39;).value != &#39;&#39;) return confirm(&#39;未提交的评论内容将会丢失, 你真的要进入高级评论吗?&#39;);" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html?login=1#Post">使用高级评论</a>&nbsp;&nbsp;<a href="http://www.cppblog.com/RequireRegister.aspx">新用户注册</a>&nbsp;&nbsp;<a href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#Top">返回页首</a>&nbsp;&nbsp;<a id="AjaxHolder_PostComment_lbRestore" onclick="Restore(&#39;AjaxHolder_PostComment_tbComment&#39;); return false;" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html#Post">恢复上次提交</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</td>
+		</tr>
+		<tr>
+			<td colspan="3">[使用Ctrl+Enter键可以直接提交]</td>
+		</tr>
+		<tr>
+		<td colspan="3">
+		<script type="text/javascript">
+		(function() {
+		var useSSL = 'https:' == document.location.protocol;
+		var src = (useSSL ? 'https:' : 'http:') +
+		'//www.googletagservices.com/tag/js/gpt.js';
+		document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+		})();
+		</script><script src="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/gpt.js"></script>
+
+		<script type="text/javascript">
+		googletag.defineSlot('/1090369/cppblog_blogpost_bottom', [300, 250], 'div-gpt-ad-1391948236744-0').addService(googletag.pubads());
+		googletag.pubads().enableSyncRendering();
+		googletag.pubads().enableSingleRequest();
+		googletag.enableServices();
+		</script><script type="text/javascript" src="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/pubads_impl_47.js"></script>
+		
+		<!-- cppblog_blogpost_bottom -->
+		<div id="div-gpt-ad-1391948236744-0" style="width:300px; height:250px;">
+		<script type="text/javascript">
+		googletag.display('div-gpt-ad-1391948236744-0');
+		</script><script type="text/javascript" src="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/ads"></script><div id="div-gpt-ad-1391948236744-0_ad_container">
+<ins style="width: 300px; height: 250px; display: inline-table; position: relative; border: 0px; vertical-align: bottom;"><ins style="width: 300px; height: 250px; display: block; position: relative; border: 0px;"><iframe id="google_ads_iframe_/1090369/cppblog_blogpost_bottom_0" name="google_ads_iframe_/1090369/cppblog_blogpost_bottom_0" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; position: absolute; top: 0px; left: 0px;"></iframe></ins></ins></div>
+<script>googletag.impl.pubads.createDomIframe("div-gpt-ad-1391948236744-0_ad_container" ,"/1090369/cppblog_blogpost_bottom_0",false,undefined);</script>
+		</div>
+		</td>
+		</tr>
+		<tr>			
+		<td colspan="3">
+		
+		</td>
+		</tr>
+		<tr>
+			<td colspan="3" height="5">
+<div id="divRelativePosts">
+相关文章:
+	
+			<ul style="margin-top:0px;line-height:1.8;">
+		
+			<li style="list-style:none;">
+				<a id="AjaxHolder_PostComment_ctl07_RelativePostsList_ctl01_Hyperlink1" href="http://www.cppblog.com/vczh/archive/2014/07/15/207658.html">靠谱的代码和DRY</a>
+			</li>
+		
+			<li style="list-style:none;">
+				<a id="AjaxHolder_PostComment_ctl07_RelativePostsList_ctl02_Hyperlink1" href="http://www.cppblog.com/vczh/archive/2014/01/04/205169.html">2013年终总结</a>
+			</li>
+		
+			<li style="list-style:none;">
+				<a id="AjaxHolder_PostComment_ctl07_RelativePostsList_ctl03_Hyperlink1" href="http://www.cppblog.com/vczh/archive/2013/11/10/204189.html">如何设计一门语言（十二）——设计可扩展的类型</a>
+			</li>
+		
+			<li style="list-style:none;">
+				<a id="AjaxHolder_PostComment_ctl07_RelativePostsList_ctl04_Hyperlink1" href="http://www.cppblog.com/vczh/archive/2013/10/19/203819.html">如何设计一门语言（十一）——删减语言的功能</a>
+			</li>
+		
+			<li style="list-style:none;">
+				<a id="AjaxHolder_PostComment_ctl07_RelativePostsList_ctl05_Hyperlink1" href="http://www.cppblog.com/vczh/archive/2013/09/16/203249.html">如何设计一门语言（十）——正则表达式与领域特定语言（DSL）</a>
+			</li>
+		
+			<li style="list-style:none;">
+				<a id="AjaxHolder_PostComment_ctl07_RelativePostsList_ctl06_Hyperlink1" href="http://www.cppblog.com/vczh/archive/2013/08/17/202605.html">如何设计一门语言（九）——类型</a>
+			</li>
+		
+			<li style="list-style:none;">
+				<a id="AjaxHolder_PostComment_ctl07_RelativePostsList_ctl07_Hyperlink1" href="http://www.cppblog.com/vczh/archive/2013/07/27/202154.html">如何设计一门语言（八）——异步编程和CPS变换</a>
+			</li>
+		
+			<li style="list-style:none;">
+				<a id="AjaxHolder_PostComment_ctl07_RelativePostsList_ctl08_Hyperlink1" href="http://www.cppblog.com/vczh/archive/2013/07/05/201541.html">如何设计一门语言（七）——闭包、lambda和interface</a>
+			</li>
+		
+			<li style="list-style:none;">
+				<a id="AjaxHolder_PostComment_ctl07_RelativePostsList_ctl09_Hyperlink1" href="http://www.cppblog.com/vczh/archive/2013/06/10/200920.html">如何设计一门语言（六）——exception和error code</a>
+			</li>
+		
+			<li style="list-style:none;">
+				<a id="AjaxHolder_PostComment_ctl07_RelativePostsList_ctl10_Hyperlink1" href="http://www.cppblog.com/vczh/archive/2013/05/25/200580.html">如何设计一门语言（五）——面向对象和消息发送</a>
+			</li>
+		
+			</ul>
+		
+</div>
+</td>
+		</tr>
+		<tr>
+			<td colspan="3"></td>
+		</tr>
+		<tr>
+			<td colspan="3" height="1"><div id="blogsite">网站导航:
+			<a href="http://www.cnblogs.com/">博客园</a>&nbsp;&nbsp;
+			<a href="http://news.cnblogs.com/">IT新闻</a>&nbsp;&nbsp;
+			<a href="http://www.blogjava.net/">BlogJava</a>&nbsp;&nbsp;
+			<a href="http://kb.cnblogs.com/">知识库</a>&nbsp;&nbsp;
+			<a href="http://job.cnblogs.com/">程序员招聘</a>&nbsp;&nbsp;
+			<a href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.html?opt=admin">管理</a>
+			</div></td>
+		</tr>
+		<tr>
+			<td colspan="3">
+				
+<br>
+
+<br>
+
+</td>
+		</tr>
+	</tbody></table>	
+</div>
+<div id="AjaxHolder_PostComment_ValidationSummary1" style="color:Red;display:none;">
+
+	</div>
+
+</div>
+
+				
+</div>
+<div id="leftcontent" style="display: inline;">
+	
+		<div id="leftcontentcontainer">
+			
+			<br>
+			
+<h3>留言簿<span style="font-size:11px;font-weight:normal;">(58)</span></h3>
+<ul>
+	<li>
+		<a id="SingleColumn1__d800ac_lnkMessages" href="http://www.cppblog.com/vczh/Contact.aspx?id=1">给我留言</a>
+	</li><li>
+		<a id="SingleColumn1__d800ac_lnkPublicMsgView" href="http://www.cppblog.com/vczh/default.aspx?opt=msg">查看公开留言</a>
+	</li><li>
+		<a id="SingleColumn1__d800ac_lnkPrivateMsgView" href="http://www.cppblog.com/vczh/admin/MyMessages.aspx">查看私人留言</a>
+	</li>
+</ul>
+
+<!--done-->
+
+		<h1 class="catListTitle">随笔分类<span style="font-size:11px;font-weight:normal">(346)</span></h1>
+		
+				<ul class="catList">
+			
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link" class="listitem" href="http://www.cppblog.com/vczh/category/7314.html">.NET(3)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_RssLink" title="Subscribe to .NET(3)" class="listitem" href="http://www.cppblog.com/vczh/category/7314.html/rss"><img title="Subscribe to .NET(3)" src="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/xml(1).gif" style="border-width:0px;"></a></li>
+			
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_Link" class="listitem" href="http://www.cppblog.com/vczh/category/7351.html">2D(14)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_RssLink" title="Subscribe to 2D(14)" class="listitem" href="http://www.cppblog.com/vczh/category/7351.html/rss"><img title="Subscribe to 2D(14)" src="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/xml(1).gif" style="border-width:0px;"></a></li>
+			
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_Link" class="listitem" href="http://www.cppblog.com/vczh/category/9410.html">3D(12)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_RssLink" title="Subscribe to 3D(12)" class="listitem" href="http://www.cppblog.com/vczh/category/9410.html/rss"><img title="Subscribe to 3D(12)" src="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/xml(1).gif" style="border-width:0px;"></a></li>
+			
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_Link" class="listitem" href="http://www.cppblog.com/vczh/category/6885.html">C++(54)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_RssLink" title="Subscribe to C++(54)" class="listitem" href="http://www.cppblog.com/vczh/category/6885.html/rss"><img title="Subscribe to C++(54)" src="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/xml(1).gif" style="border-width:0px;"></a></li>
+			
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_Link" class="listitem" href="http://www.cppblog.com/vczh/category/14099.html">C++实用技巧(7)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_RssLink" title="Subscribe to C++实用技巧(7)" class="listitem" href="http://www.cppblog.com/vczh/category/14099.html/rss"><img title="Subscribe to C++实用技巧(7)" src="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/xml(1).gif" style="border-width:0px;"></a></li>
+			
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_Link" class="listitem" href="http://www.cppblog.com/vczh/category/17975.html">GacUI(37)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_RssLink" title="Subscribe to GacUI(37)" class="listitem" href="http://www.cppblog.com/vczh/category/17975.html/rss"><img title="Subscribe to GacUI(37)" src="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/xml(1).gif" style="border-width:0px;"></a></li>
+			
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_Link" class="listitem" href="http://www.cppblog.com/vczh/category/9583.html">JIT(28)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_RssLink" title="Subscribe to JIT(28)" class="listitem" href="http://www.cppblog.com/vczh/category/9583.html/rss"><img title="Subscribe to JIT(28)" src="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/xml(1).gif" style="border-width:0px;"></a></li>
+			
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_Link" class="listitem" href="http://www.cppblog.com/vczh/category/7042.html">Vczh Free Script(7)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_RssLink" title="Subscribe to Vczh Free Script(7)" class="listitem" href="http://www.cppblog.com/vczh/category/7042.html/rss"><img title="Subscribe to Vczh Free Script(7)" src="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/xml(1).gif" style="border-width:0px;"></a></li>
+			
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_Link" class="listitem" href="http://www.cppblog.com/vczh/category/6824.html">Vczh Lazy Script(4)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_RssLink" title="Subscribe to Vczh Lazy Script(4)" class="listitem" href="http://www.cppblog.com/vczh/category/6824.html/rss"><img title="Subscribe to Vczh Lazy Script(4)" src="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/xml(1).gif" style="border-width:0px;"></a></li>
+			
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_Link" class="listitem" href="http://www.cppblog.com/vczh/category/12070.html">VL++3.0开发纪事(51)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_RssLink" title="Subscribe to VL++3.0开发纪事(51)" class="listitem" href="http://www.cppblog.com/vczh/category/12070.html/rss"><img title="Subscribe to VL++3.0开发纪事(51)" src="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/xml(1).gif" style="border-width:0px;"></a></li>
+			
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl11_Link" class="listitem" href="http://www.cppblog.com/vczh/category/20808.html">跟vczh看实例学编译原理(4)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl11_RssLink" title="Subscribe to 跟vczh看实例学编译原理(4)" class="listitem" href="http://www.cppblog.com/vczh/category/20808.html/rss"><img title="Subscribe to 跟vczh看实例学编译原理(4)" src="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/xml(1).gif" style="border-width:0px;"></a></li>
+			
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl12_Link" class="listitem" href="http://www.cppblog.com/vczh/category/6825.html">脚本技术(47)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl12_RssLink" title="Subscribe to 脚本技术(47)" class="listitem" href="http://www.cppblog.com/vczh/category/6825.html/rss"><img title="Subscribe to 脚本技术(47)" src="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/xml(1).gif" style="border-width:0px;"></a></li>
+			
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl13_Link" class="listitem" href="http://www.cppblog.com/vczh/category/14937.html">开发自己的IDE(13)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl13_RssLink" title="Subscribe to 开发自己的IDE(13)" class="listitem" href="http://www.cppblog.com/vczh/category/14937.html/rss"><img title="Subscribe to 开发自己的IDE(13)" src="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/xml(1).gif" style="border-width:0px;"></a></li>
+			
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl14_Link" class="listitem" href="http://www.cppblog.com/vczh/category/7341.html">其他(23)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl14_RssLink" title="Subscribe to 其他(23)" class="listitem" href="http://www.cppblog.com/vczh/category/7341.html/rss"><img title="Subscribe to 其他(23)" src="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/xml(1).gif" style="border-width:0px;"></a></li>
+			
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl15_Link" class="listitem" href="http://www.cppblog.com/vczh/category/7321.html">启示(29)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl15_RssLink" title="Subscribe to 启示(29)" class="listitem" href="http://www.cppblog.com/vczh/category/7321.html/rss"><img title="Subscribe to 启示(29)" src="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/xml(1).gif" style="border-width:0px;"></a></li>
+			
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl16_Link" class="listitem" href="http://www.cppblog.com/vczh/category/6940.html">作品(13)</a><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl16_RssLink" title="Subscribe to 作品(13)" class="listitem" href="http://www.cppblog.com/vczh/category/6940.html/rss"><img title="Subscribe to 作品(13)" src="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/xml(1).gif" style="border-width:0px;"></a></li>
+			
+				</ul>
+			
+	
+		<h1 class="catListTitle">好友博客</h1>
+		
+				<ul class="catList">
+			
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_Link" class="listitem" href="http://www.csyong.net/" target="_blank">Graphixer</a></li>
+			<li style="margin-top:2px;">何咏师弟的图形学网站</li>
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_Link" class="listitem" href="http://www.cppblog.com/jetricy" target="_blank">jetricy</a></li>
+			<li style="margin-top:2px;">Jetricy的技术博客</li>
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_Link" class="listitem" href="http://www.cnblogs.com/gongminmin/">KlayGE游戏引擎</a></li>
+			<li style="margin-top:2px;">叛叛大神</li>
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_Link" class="listitem" href="http://www.lomox.org/index.html" target="_blank">Lomox UI框架</a></li>
+			<li style="margin-top:2px;">Lomox UI框架</li>
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl05_Link" class="listitem" href="http://blog.csdn.net/boymgl" target="_blank">MiGL</a></li>
+			<li style="margin-top:2px;">Tyeah的博客</li>
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl06_Link" class="listitem" href="http://hi.baidu.com/geniusvczh" target="_blank">vczh的百度空间</a></li>
+			<li style="margin-top:2px;">vczh的百度空间</li>
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl07_Link" class="listitem" href="http://superymk.blogspot.com/" target="_blank">YMK的后花园</a></li>
+			<li style="margin-top:2px;">YMK的技术博客</li>
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl08_Link" class="listitem" href="http://zciii.com/blog/" target="_blank">德利菲</a></li>
+			<li style="margin-top:2px;">德利菲的技术博客</li>
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl09_Link" class="listitem" href="http://hi.baidu.com/kidcdf" target="_blank">怪盗KID的游戏开发博客</a></li>
+			<li style="margin-top:2px;">怪盗KID的游戏开发博客</li>
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl10_Link" class="listitem" href="http://www.cnblogs.com/SCUTMSTechClub/" target="_blank">华工微软俱乐部</a></li>
+			<li style="margin-top:2px;">华南理工大学微软俱乐部科技部博客</li>
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl11_Link" class="listitem" href="http://www.sf.org.cn/" target="_blank">开发视界</a></li>
+			<li style="margin-top:2px;">开发视界 - 移动开发社区</li>
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl12_Link" class="listitem" href="http://blog.zhaojie.me/" target="_blank">老赵点滴</a></li>
+			<li style="margin-top:2px;">赵姐夫的.net博客</li>
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl13_Link" class="listitem" href="http://szamuro.blogbus.com/" target="_blank">临渊羡鱼，不如退而山寨</a></li>
+			<li style="margin-top:2px;">另一个SOS团的C++程序员……</li>
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl14_Link" class="listitem" href="http://www.cppblog.com/Lyt/" target="_blank">某白食(Lyt)</a></li>
+			<li style="margin-top:2px;">某白食的C++博客</li>
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl15_Link" class="listitem" href="http://www.cppblog.com/lingjingqiu/" target="_blank">岁月流转，往昔空明</a></li>
+			<li style="margin-top:2px;">空明流转的blog</li>
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl16_Link" class="listitem" href="http://www.cnblogs.com/Jialiang/" target="_blank">微软一站式实例代码库</a></li>
+			<li style="margin-top:2px;">500个经典示例，速学速用，效率倍增。</li>
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl17_Link" class="listitem" href="http://www.cnblogs.com/geniusvczh" target="_blank">我在博客园的blog</a></li>
+			<li style="margin-top:2px;">我在博客园的blog</li>
+				<li class="catListItem"> <a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl18_Link" class="listitem" href="http://jeffchen.cn/" target="_blank">一个不靠谱的程序员</a></li>
+			<li style="margin-top:2px;">JeffChen的技术博客</li>
+				</ul>
+			
+	
+
+
+<script language="JavaScript">
+function SearchGoogle(key,evt,site)
+		{
+			if(evt.keyCode==13 || evt.keyCode==0 || evt.type =='click')
+			{
+				key.focus();
+				var keystr = encodeURIComponent(key.value);
+				url = "http://www.google.com/search?q=";
+				url = url+keystr;
+				url += "&ie=UTF-8&oe=GB2312&hl=zh-CN&domains="+site+"&sitesearch="+site;
+				window.location=url;
+				return false;
+			}
+		}
+</script>
+<h3>搜索</h3>
+<ul>
+	<li>
+		</li><li><input style="WIDTH: 130px" type="text" name="q" id="q" onkeydown="return SearchGoogle(document.getElementById(&#39;q&#39;),event,&#39;www.cppblog.com/vczh&#39;)">&nbsp;<input onclick="SearchGoogle(document.getElementById(&#39;q&#39;),event,&#39;www.cppblog.com/vczh&#39;)" type="button" value="搜索" name="sa">
+	</li>
+</ul>
+
+<h3>最新评论
+	<a id="SingleColumn1__3b39618_RSSHyperlink1" href="http://www.cppblog.com/vczh/CommentsRSS.aspx"><img src="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/xml.gif" style="border-width:0px;"></a></h3>
+<div class="RecentComment">
+	
+			<ul>
+		
+			<li style="word-break:break-all">
+				<a id="SingleColumn1__3b39618_CommentList_ctl01_Hyperlink1" href="http://www.cppblog.com/vczh/archive/2014/08/20/195805.html#208066">1.&nbsp;re: 根据网友phoenixbing的建议我决定开一个（主要是编译/语言/图形的）讨论群</a>
+			</li>
+			<li style="word-break:break-all">
+				@dawn<br>v大 是谷歌一生黑...
+			</li>
+			<li style="text-align:right;margin-right:4px">
+				--zikidls</li>
+		
+			<li style="word-break:break-all">
+				<a id="SingleColumn1__3b39618_CommentList_ctl02_Hyperlink1" href="http://www.cppblog.com/vczh/archive/2014/08/11/207658.html#207962">2.&nbsp;re: 靠谱的代码和DRY</a>
+			</li>
+			<li style="word-break:break-all">
+				主页真不错！
+			</li>
+			<li style="text-align:right;margin-right:4px">
+				--飞奔吧少年</li>
+		
+			<li style="word-break:break-all">
+				<a id="SingleColumn1__3b39618_CommentList_ctl03_Hyperlink1" href="http://www.cppblog.com/vczh/archive/2014/08/11/207658.html#207961">3.&nbsp;re: 靠谱的代码和DRY</a>
+			</li>
+			<li style="word-break:break-all">
+				各种都真不错！
+			</li>
+			<li style="text-align:right;margin-right:4px">
+				--飞奔吧少年</li>
+		
+			<li style="word-break:break-all">
+				<a id="SingleColumn1__3b39618_CommentList_ctl04_Hyperlink1" href="http://www.cppblog.com/vczh/archive/2014/07/31/204074.html#207876">4.&nbsp;re: 开始用Word2013来写博客[未登录]</a>
+			</li>
+			<li style="word-break:break-all">
+				有一个使用上的问题：用 Word2013 撰写博客园的文章，有一个「插入类别」功能，但是插入之后如何删除？我直接选中按 Del 键，Word 给的提示是「所选的内容已被锁定」。请问应该如何操作？
+			</li>
+			<li style="text-align:right;margin-right:4px">
+				--lsdsjy</li>
+		
+			<li style="word-break:break-all">
+				<a id="SingleColumn1__3b39618_CommentList_ctl05_Hyperlink1" href="http://www.cppblog.com/vczh/archive/2014/07/23/71390.html#207761">5.&nbsp;re: LZ77压缩效果测试</a>
+			</li>
+			<li style="word-break:break-all">
+				压缩效果是很好   不过压缩速度好像有点慢了。   我在网上找了2个代码 加到自己的程序中     一个3MB的bmp图像压缩要用8秒       太慢了  不知道是不是我找的代码有问题
+			</li>
+			<li style="text-align:right;margin-right:4px">
+				--275610049</li>
+		
+			</ul>
+		
+</div>
+
+<h3>阅读排行榜</h3>
+<div class="RecentComment">
+	
+			<ul style="word-break:break-all">
+		
+			<li>
+				<a id="SingleColumn1__e56295_TopList_ctl01_Hyperlink1" href="http://www.cppblog.com/vczh/archive/2008/05/22/50763.aspx">1.&nbsp;《构造正则表达式引擎》新鲜出炉啦！(17114)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__e56295_TopList_ctl02_Hyperlink1" href="http://www.cppblog.com/vczh/archive/2009/10/27/99578.aspx">2.&nbsp;（转）架构师已死（转自UML软件工程组织） (15441)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__e56295_TopList_ctl03_Hyperlink1" href="http://www.cppblog.com/vczh/archive/2013/03/24/198769.aspx">3.&nbsp;伴随我成长的编程书(15329)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__e56295_TopList_ctl04_Hyperlink1" href="http://www.cppblog.com/vczh/archive/2013/04/27/199765.aspx">4.&nbsp;如何设计一门语言（一）——什么是坑(a)(14220)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__e56295_TopList_ctl05_Hyperlink1" href="http://www.cppblog.com/vczh/archive/2008/06/15/53373.aspx">5.&nbsp;如何手写语法分析器(13665)</a>
+			</li>
+		
+			</ul>
+		
+</div>
+
+<h3>评论排行榜</h3>
+<div class="RecentComment">
+	
+			<ul style="word-break:break-all">
+		
+			<li>
+				<a id="SingleColumn1__fd131f_TopList_ctl01_Hyperlink1" href="http://www.cppblog.com/vczh/archive/2010/07/07/119562.aspx">1.&nbsp;关于C++之“复杂”(66)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__fd131f_TopList_ctl02_Hyperlink1" href="http://www.cppblog.com/vczh/archive/2009/10/27/99578.aspx">2.&nbsp;（转）架构师已死（转自UML软件工程组织） (56)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__fd131f_TopList_ctl03_Hyperlink1" href="http://www.cppblog.com/vczh/archive/2009/12/23/103835.aspx">3.&nbsp;2005-2009年个人总结(40)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__fd131f_TopList_ctl04_Hyperlink1" href="http://www.cppblog.com/vczh/archive/2013/04/27/199765.aspx">4.&nbsp;如何设计一门语言（一）——什么是坑(a)(36)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__fd131f_TopList_ctl05_Hyperlink1" href="http://www.cppblog.com/vczh/archive/2008/05/22/50763.aspx">5.&nbsp;《构造正则表达式引擎》新鲜出炉啦！(34)</a>
+			</li>
+		
+			</ul>
+		
+</div>
+</div>
+	
+</div>
+
+<!--done-->
+<div class="footer">
+	Powered by: <a href="http://www.cnblogs.com/">博客园</a>	模板提供：<a href="http://blog.hjenglish.com/">沪江博客</a>
+	Copyright ©2014 陈梓瀚(vczh)
+</div>
+
+
+    
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("AjaxHolder_PostComment_ValidationSummary1"));
+var Page_Validators =  new Array(document.getElementById("AjaxHolder_PostComment_RequiredFieldValidator1"), document.getElementById("AjaxHolder_PostComment_RequiredFieldValidator2"), document.getElementById("AjaxHolder_PostComment_Requiredfieldvalidator4"), document.getElementById("AjaxHolder_PostComment_RequiredFieldValidator3"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var AjaxHolder_PostComment_RequiredFieldValidator1 = document.all ? document.all["AjaxHolder_PostComment_RequiredFieldValidator1"] : document.getElementById("AjaxHolder_PostComment_RequiredFieldValidator1");
+AjaxHolder_PostComment_RequiredFieldValidator1.controltovalidate = "AjaxHolder_PostComment_tbTitle";
+AjaxHolder_PostComment_RequiredFieldValidator1.errormessage = "请输入标题";
+AjaxHolder_PostComment_RequiredFieldValidator1.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+AjaxHolder_PostComment_RequiredFieldValidator1.initialvalue = "";
+var AjaxHolder_PostComment_RequiredFieldValidator2 = document.all ? document.all["AjaxHolder_PostComment_RequiredFieldValidator2"] : document.getElementById("AjaxHolder_PostComment_RequiredFieldValidator2");
+AjaxHolder_PostComment_RequiredFieldValidator2.controltovalidate = "AjaxHolder_PostComment_tbName";
+AjaxHolder_PostComment_RequiredFieldValidator2.errormessage = "请输入你的姓名";
+AjaxHolder_PostComment_RequiredFieldValidator2.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+AjaxHolder_PostComment_RequiredFieldValidator2.initialvalue = "";
+var AjaxHolder_PostComment_Requiredfieldvalidator4 = document.all ? document.all["AjaxHolder_PostComment_Requiredfieldvalidator4"] : document.getElementById("AjaxHolder_PostComment_Requiredfieldvalidator4");
+AjaxHolder_PostComment_Requiredfieldvalidator4.controltovalidate = "AjaxHolder_PostComment_CodeNumberTextBox";
+AjaxHolder_PostComment_Requiredfieldvalidator4.errormessage = "请输入验证码";
+AjaxHolder_PostComment_Requiredfieldvalidator4.display = "Dynamic";
+AjaxHolder_PostComment_Requiredfieldvalidator4.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+AjaxHolder_PostComment_Requiredfieldvalidator4.initialvalue = "";
+var AjaxHolder_PostComment_RequiredFieldValidator3 = document.all ? document.all["AjaxHolder_PostComment_RequiredFieldValidator3"] : document.getElementById("AjaxHolder_PostComment_RequiredFieldValidator3");
+AjaxHolder_PostComment_RequiredFieldValidator3.controltovalidate = "AjaxHolder_PostComment_tbComment";
+AjaxHolder_PostComment_RequiredFieldValidator3.errormessage = "请输入评论内容";
+AjaxHolder_PostComment_RequiredFieldValidator3.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+AjaxHolder_PostComment_RequiredFieldValidator3.initialvalue = "";
+var AjaxHolder_PostComment_ValidationSummary1 = document.all ? document.all["AjaxHolder_PostComment_ValidationSummary1"] : document.getElementById("AjaxHolder_PostComment_ValidationSummary1");
+AjaxHolder_PostComment_ValidationSummary1.showmessagebox = "True";
+AjaxHolder_PostComment_ValidationSummary1.showsummary = "False";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        
+document.getElementById('AjaxHolder_PostComment_ValidationSummary1').dispose = function() {
+    Array.remove(Page_ValidationSummaries, document.getElementById('AjaxHolder_PostComment_ValidationSummary1'));
+}
+Sys.Application.initialize();
+
+document.getElementById('AjaxHolder_PostComment_RequiredFieldValidator1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('AjaxHolder_PostComment_RequiredFieldValidator1'));
+}
+
+document.getElementById('AjaxHolder_PostComment_RequiredFieldValidator2').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('AjaxHolder_PostComment_RequiredFieldValidator2'));
+}
+
+document.getElementById('AjaxHolder_PostComment_Requiredfieldvalidator4').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('AjaxHolder_PostComment_Requiredfieldvalidator4'));
+}
+
+document.getElementById('AjaxHolder_PostComment_RequiredFieldValidator3').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('AjaxHolder_PostComment_RequiredFieldValidator3'));
+}
+//]]>
+</script>
+</form>
+	<script type="text/javascript" src="./2005-2009年个人总结 - λ-calculus（惊愕到手了欧耶，GetBlogPostIds.aspx） - C++博客_files/ShowHidden.js"></script>   
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-476124-5']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+
+<iframe id="google_osd_static_frame_1923526041209" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe></body></html>

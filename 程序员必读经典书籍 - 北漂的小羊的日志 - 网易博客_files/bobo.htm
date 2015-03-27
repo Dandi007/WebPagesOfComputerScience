@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)http://bobo.blog.163.com/special/001249LB/bobo.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+    <meta charset="gbk">
+    <title>bobo推广</title>
+    <style type="text/css">
+body, div, img, ul, li, p, h3 {
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: none;
+}
+html, body {
+    overflow: hidden;
+}
+        /*bobo列表*/
+        #bobo {position:relative;}
+        .f12px { font-size: 12px }
+        #bobo ul {position:relative;list-style: none;}
+        #bobo li{float:left;position:relative;width:140px;height:105px;overflow:hidden;margin:0;border:0;_display:inline;}
+        #bobo li.bobo-logo {height:86px;}
+        #bobo li img {border: none;}
+        .full-hover-show{width: 140px; height:105px;position:absolute; left:0; display:block;top:-140px; }
+        .full-hover-show-title{width: 140px; height: 25px;;line-height: 25px; overflow: hidden; text-align: center;padding: 0; position:absolute;left:0;  bottom:0;color:#fff;display:block;cursor: pointer; }
+        .live-tip { background-image:url(http://img6.cache.netease.com/www/v2013/img/icon_bobo_140227-2.png);background-repeat:no-repeat;width:33px;height:20px;position:absolute;top:0;right:0;background-color:#F44103;background-position:0 -705px;}
+        a.hover-show-box:hover{_zoom:1; overflow:hidden; border:none;}
+        a.hover-show-box:hover .full-hover-show{color:#fff;top:0;z-index: 1;}
+        a.hover-show-box:hover .icon-play{left:35%;top:27%;z-index: 1;}
+        .hover-show-box, .hover-show-box:visited{ position:relative; display:block; overflow:hidden; *zoom:1;*display:inline;}
+        .hover-show-box:hover{ text-decoration:none;}
+        .icon-play { background:url(http://img3.cache.netease.com/cnews/2014/2/bobo_ad/v_btn.png) no-repeat; background-position:0 0; height:42px; width:44px;position:absolute;top:-85%;cursor: pointer;}
+        .semi-trans { background: rgba(255, 255, 255, .8); background:#fff; opacity:0.5; filter:alpha(opacity=50); }
+        .semi-trans-title{ background: rgba(0, 0, 0, .5); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000, endColorstr=#B2000000)}
+        :root .semi-trans-title{  filter: none;/*for IE9*/}
+        /*bobo列表*/
+    </style>
+    <script src="ntes_jslib_1.x.js" language="javascript" type="text/javascript"></script>
+    <script type="text/javascript">
+        (function() {
+            var random = Math.floor(Math.random()*10),
+                    url = "http://bobo.163.com/a/p/blog/4/bobodata/" + random + ".js",
+                    boboStatTag = "?f=163.blog",
+                    boboNum = 4,
+                    html = "";
+            window.bobodata = function(data){
+                hotLive = data.hotLive;
+            };
+            NTES.ajax.importJs(url, function() {
+                var len = hotLive.length;
+                if (hotLive != '' && len != 0){
+                    for (var i = 0; i < boboNum; i++) {
+                        var boboItem = hotLive[i],
+                                isLive = boboItem.live,
+                                liveHref = isLive ? boboItem.liveUrl + boboStatTag : "http://bobo.163.com/" + boboStatTag,
+                                boboLiveStat = isLive ? '<em class="png24 live-tip"></em>' : '',
+                                boboHtml = '<li><a href="' + liveHref + '" class="hover-show-box" target="_blank" onmousedown="ns_Tie.statistics.send(\'bobo\')"><img width="140" height="105" src="'+ boboItem.liveCoverUrl +'" title="'+boboItem.anchorExtendTitle +'" alt="' + boboItem.anchorExtendTitle+'">' + boboLiveStat +'<span class="full-hover-show semi-trans"></span><span class="icon-play png24"></span><span class="full-hover-show-title semi-trans-title f12px">' + boboItem.anchorExtendTitle +'</span></a></li>';
+                        html += boboHtml;
+                    };
+                    NTES("#js-bobo-content").attr("innerHTML", function() {
+                        return this.innerHTML + html;
+                    });
+                }
+            }, "utf-8");
+        })();
+    </script>
+</head>
+<body>
+    <div id="bobo">
+        <ul id="js-bobo-content" class="clearfix">
+            <li class="bobo-logo">
+                <a href="http://bobo.163.com/?f=163.blog" target="_blank">
+                    <img src="bobo_logo2.png" alt="bobo">
+                </a>
+            </li>
+        <li><a href="http://www.bobo.com/601713?f=163.blog" class="hover-show-box" target="_blank" onmousedown="ns_Tie.statistics.send(&#39;bobo&#39;)"><img width="140" height="105" src="6608889516654984203.jpg" title="粉红阿狸女孩萌而美" alt="粉红阿狸女孩萌而美"><em class="png24 live-tip"></em><span class="full-hover-show semi-trans"></span><span class="icon-play png24"></span><span class="full-hover-show-title semi-trans-title f12px">粉红阿狸女孩萌而美</span></a></li><li><a href="http://bobo.163.com/?f=163.blog" class="hover-show-box" target="_blank" onmousedown="ns_Tie.statistics.send(&#39;bobo&#39;)"><img width="140" height="105" src="6608503588073353253.jpg" title="干练美女实力唱将" alt="干练美女实力唱将"><span class="full-hover-show semi-trans"></span><span class="icon-play png24"></span><span class="full-hover-show-title semi-trans-title f12px">干练美女实力唱将</span></a></li><li><a href="http://bobo.163.com/?f=163.blog" class="hover-show-box" target="_blank" onmousedown="ns_Tie.statistics.send(&#39;bobo&#39;)"><img width="140" height="105" src="6608213317004295832.jpg" title="杨坤嗓最成功的模仿者" alt="杨坤嗓最成功的模仿者"><span class="full-hover-show semi-trans"></span><span class="icon-play png24"></span><span class="full-hover-show-title semi-trans-title f12px">杨坤嗓最成功的模仿者</span></a></li><li><a href="http://www.bobo.com/800580?f=163.blog" class="hover-show-box" target="_blank" onmousedown="ns_Tie.statistics.send(&#39;bobo&#39;)"><img width="140" height="105" src="6619313986397576247.jpg" title="道骨仙风 闻鸡起舞" alt="道骨仙风 闻鸡起舞"><em class="png24 live-tip"></em><span class="full-hover-show semi-trans"></span><span class="icon-play png24"></span><span class="full-hover-show-title semi-trans-title f12px">道骨仙风 闻鸡起舞</span></a></li></ul>
+    </div>
+    <!--[if IE 6]>
+    <script type="text/javascript" src="http://img1.cache.netease.com/bobo/js/DD_belatedPNG-min.js"></script>
+    <script type="text/javascript">
+    DD_belatedPNG.fix('.png24');
+    </script>
+    <![endif]-->
+
+</body></html>

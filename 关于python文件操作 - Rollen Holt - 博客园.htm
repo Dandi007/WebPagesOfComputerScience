@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<title>关于python文件操作 - Rollen Holt - 博客园</title>
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=k2uL13BZlYpYjZ7FITMnMaB1mOfAPcMGfJChBRaBpP01"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/Minyx2_Lite/bundle-Minyx2_Lite.css?v=box8Dmmj5G0VFMZyypCbLIqNJsuu5lz6TpJ4OOK0WkE1"/>
+<link type="text/css" rel="stylesheet" href="/blog/customcss/80995.css?v=tA67LprVDWvSSaARgRywIA3OZoU%3d"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/rollenholt/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/rollenholt/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/rollenholt/wlwmanifest.xml"/>
+<script src="http://common.cnblogs.com/script/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'rollenholt', cb_enable_mathjax=false;</script>
+<script src="/bundles/blog-common.js?v=Pbt4uMm_qWARxxiPM8vQwX0Bh-yg-NcQxX73-xkOCnw1" type="text/javascript"></script>
+<script src="/skins/Minyx2_Lite/bundle-Minyx2_Lite.js?v=dAK2Rw4GyogXqBvhMZEW0IkYD2kjtuL3y_BKRj-vp4g1" language="javascript" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+
+<div id="container">
+    <a class="minyx" href="http://www.cnblogs.com/">代码改变世界</a>
+    <ul id="topMnu">
+        <!-- 统计数据 -->
+        <li>
+            
+                
+Posts - 507, 
+Articles - 263, 
+Comments - 745
+<!---->
+            
+        </li>
+        <!-- 这边可以增加一些链接 -->
+        <!-- 博客园 -->
+        <li><a href="http://www.cnblogs.com">Cnblogs</a></li>
+        <!-- 管理 -->
+        <li id="topMnu-dashboard">
+            <a id="lnkDashboard" href="http://www.cnblogs.com/rollenholt/admin/EditPosts.aspx">Dashboard</a></li>
+        <li>
+            <a id="lnkLogin" href="http://passport.cnblogs.com/logout.aspx?ReturnUrl=http://www.cnblogs.com/rollenholt/archive/2012/04/23/2466179.html">Logout</a></li>
+    </ul>
+
+    <script type="text/javascript">
+        var m = window.__blog.topMenuRendered;
+        if (m) { m(__$("topMnu")); }
+    </script>
+
+    <div id="header">
+        <ul id="menu">
+            <!-- 首页，当前section加上current类 -->
+            <li id="menu-home" class="current">
+                <a id="lnkHome" href="http://www.cnblogs.com/rollenholt/">Home</a></li>
+            <!-- 联系 -->
+            <li id="menu-contact">
+                <a id="lnkContact" href="http://space.cnblogs.com/msg/send/Rollen+Holt">Contact</a></li>
+            <!-- 相册 -->
+            <li id="menu-gallary">
+                <a id="lnkGallery" href="http://www.cnblogs.com/rollenholt/gallery.html">Gallery</a></li>
+            <!-- Rss订阅 -->
+            <li id="rss">
+                <a id="lnkRss" href="http://www.cnblogs.com/rollenholt/rss">RSS</a></li>
+        </ul>
+        <div id="newmsg"></div>
+        <h1>
+            <!-- 主标题 -->
+            <a id="lnkBlogTitle" href="http://www.cnblogs.com/rollenholt/">一个人的旅行</a>
+            <!-- 子标题 -->
+            <small>
+                白首为功名。旧山松竹老，阻归程。欲将心事付瑶琴。知音少，弦断有谁听？</small>
+        </h1>
+    </div>
+
+    <script type="text/javascript">
+        var m = window.__blog.headerRendered;
+        if (m) { m(__$("header")); }
+    </script>
+
+    <div id="wrapper">
+        <div id="content">
+            <script type="text/javascript">
+                var m = window.__blog.preRenderPosts;
+                if (m) { m(); }
+            </script>
+            
+
+<div class="post" id="post">
+    <a name="top"></a>
+    <h2><a id="cb_post_title_url" href="http://www.cnblogs.com/rollenholt/archive/2012/04/23/2466179.html">关于python文件操作</a></h2>
+    <small>2012-04-23 11:28 by Rollen Holt, <span id="post_view_count">...</span> 阅读, <span id="post_comment_count">...</span> 评论, <a href="#" onclick="AddToWz({0});return false;">收藏</a>,  <a href ="http://i.cnblogs.com/EditPosts.aspx?postid=2466179" rel="nofollow">编辑</a></small>
+    <div class="entry">
+        <div id="cnblogs_post_body"><p>总是记不住API。昨晚写的时候用到了这些，但是没记住，于是就索性整理一下吧：</p>
+<p><strong><span>python中对文件、文件夹</span></strong><strong><span>（文件操作函数）</span></strong><strong><span>的操作需要涉及到os模块和shutil模块。</span></strong></p>
+<p><span><span>得到当前工作目录，即当前Python脚本工作的目录路径</span>:&nbsp;</span><strong><span>os.getcwd()</span></strong></p>
+<p><span><span>返回指定目录下的所有文件和目录名</span>:</span><strong><span>os.listdir()</span></strong></p>
+<p><span><span>函数用来删除一个文件</span>:</span><strong><span>os.remove()</span></strong></p>
+<p><span>删除多个目录</span>：<strong><span>os.removedirs（r&ldquo;c：\python&rdquo;）</span></strong></p>
+<p><span><span>检验给出的路径是否是一个文件</span>：</span><strong><span>os.path.isfile()</span></strong></p>
+<p><span>检验给出的路径是否是一个目录：</span><strong><span>os.path.isdir()</span></strong></p>
+<p>判断是否是绝对路径：<strong><span>os.path.isabs()</span></strong></p>
+<p><span>检验给出的路径是否真地存:</span><strong><span>os.path.</span><span>exists()</span></strong></p>
+<p><span>返回一个路径的目录名和文件名:</span><strong><span>os.path.split()&nbsp;&nbsp;</span></strong><span>&nbsp;&nbsp; eg os.path.split('/home/swaroop/byte/code/poem.txt') 结果：('/home/swaroop/byte/code', 'poem.txt')&nbsp;<br /></span></p>
+<p>分离扩展名：<strong><span>os.path.splitext()</span></strong></p>
+<p>获取路径名：<strong><span>os.path.dirname()</span></strong></p>
+<p>获取文件名：<strong><span>os.path.basename()</span></strong></p>
+<p><span>运行shell命令:&nbsp;</span><strong><span>os.system()</span></strong></p>
+<p><span>读取和设置环境变量:</span><strong><span>os.getenv() 与os.putenv()</span></strong></p>
+<p><span>给出当前平台使用的行终止符:</span><strong><span>os.linesep&nbsp;&nbsp;&nbsp;&nbsp;</span></strong><span>Windows使用'\r\n'，Linux使用'\n'而Mac使用'\r'</span></p>
+<p><span>指示你正在使用的平台：</span><strong><span>os.name&nbsp;</span></strong><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 对于Windows，它是'nt'，而对于Linux/Unix用户，它是'posix'</span></p>
+<p>重命名：<strong><span>os.rename（old， new）</span></strong></p>
+<p>创建多级目录：<strong><span>os.makedirs（r&ldquo;c：\python\test&rdquo;）</span></strong></p>
+<p>创建单个目录：<strong><span>os.mkdir（&ldquo;test&rdquo;）</span></strong></p>
+<p>获取文件属性：<strong><span>os.stat（file）</span></strong></p>
+<p>修改文件权限与时间戳：<strong><span>os.chmod（file）</span></strong></p>
+<p>终止当前进程：<strong><span>os.exit（）</span></strong></p>
+<p>获取文件大小：<strong><span>os.path.getsize（filename）</span></strong></p>
+<p><br /><strong><span>文件操作：</span></strong><br /><strong><span>os.mknod("test.txt")&nbsp;</span></strong><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 创建空文件</span><br /><strong><span>fp = open("test.txt",w)&nbsp;&nbsp;</span></strong><span>&nbsp;&nbsp; 直接打开一个文件，如果文件不存在则创建文件</span></p>
+<p>关于open 模式：</p>
+<p><span><span>w&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以写方式打开，</span><br /><span>a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以追加模式打开 (从 EOF 开始, 必要时创建新文件)</span><br /><span>r+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以读写模式打开</span><br /><span>w+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以读写模式打开 (参见 w )</span><br /><span>a+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以读写模式打开 (参见 a )</span><br /><span>rb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以二进制读模式打开</span><br /><span>wb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以二进制写模式打开 (参见 w )</span><br /><span>ab&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以二进制追加模式打开 (参见 a )</span><br /><span>rb+&nbsp;&nbsp;&nbsp;&nbsp;以二进制读写模式打开 (参见 r+ )</span><br /><span>wb+&nbsp;&nbsp;&nbsp;&nbsp;以二进制读写模式打开 (参见 w+ )</span><br /><span>ab+&nbsp;&nbsp;&nbsp;&nbsp;以二进制读写模式打开 (参见 a+ )</span></span></p>
+<p><span>&nbsp;</span></p>
+<p><strong><span>fp.read([size])&nbsp;&nbsp;</span></strong><span>&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#size为读取的长度，以byte为单位</p>
+<p><strong><span>fp.readline([size])&nbsp;&nbsp;</span></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #读一行，如果定义了size，有可能返回的只是一行的一部分</p>
+<p><strong><span>fp.readlines([size])&nbsp;&nbsp;&nbsp;</span></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #把文件每一行作为一个list的一个成员，并返回这个list。其实它的内部是通过循环调用readline()来实现的。如果提供size参数，size是表示读取内容的总长，也就是说可能只读到文件的一部分。</p>
+<p><strong><span>fp.write(str)&nbsp;&nbsp;</span><em><span>&nbsp;</span></em></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #把str写到文件中，write()并不会在str后加上一个换行符</p>
+<p><strong><span>fp.writelines(seq)&nbsp;&nbsp;&nbsp;&nbsp;</span></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #把seq的内容全部写到文件中(多行一次性写入)。这个函数也只是忠实地写入，不会在每行后面加上任何东西。</p>
+<p><strong><span>fp.close()&nbsp;&nbsp;&nbsp;</span></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #关闭文件。python会在一个文件不用后自动关闭文件，不过这一功能没有保证，最好还是养成自己关闭的习惯。&nbsp; 如果一个文件在关闭后还对其进行操作会产生ValueError</p>
+<p><strong><span>fp.flush()&nbsp;&nbsp;&nbsp;</span></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; #把缓冲区的内容写入硬盘</p>
+<p><strong><span>fp.fileno()&nbsp;&nbsp;&nbsp;&nbsp;</span></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #返回一个长整型的&rdquo;文件标签&ldquo;</p>
+<p><strong><span>fp.isatty()&nbsp;&nbsp;&nbsp;&nbsp;</span></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #文件是否是一个终端设备文件（unix系统中的）</p>
+<p><strong><span>fp.tell()</span></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; #返回文件操作标记的当前位置，以文件的开头为原点</p>
+<p><strong><span>fp.next() &nbsp; &nbsp;</span></strong>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #返回下一行，并将文件操作标记位移到下一行。把一个file用于for &hellip; in file这样的语句时，就是调用next()函数来实现遍历的。</p>
+<p><strong><span>fp.seek(offset[,whence])&nbsp;&nbsp;</span></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #将文件打操作标记移到offset的位置。这个offset一般是相对于文件的开头来计算的，一般为正数。但如果提供了whence参数就不一定了，whence可以为0表示从头开始计算，1表示以当前位置为原点计算。2表示以文件末尾为原点进行计算。需要注意，如果文件以a或a+的模式打开，每次进行写操作时，文件操作标记会自动返回到文件末尾。</p>
+<p><strong><span>fp.truncate([size])&nbsp;&nbsp;&nbsp;</span></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #把文件裁成规定的大小，默认的是裁到当前文件操作标记的位置。如果size比文件的大小还要大，依据系统的不同可能是不改变文件，也可能是用0把文件补到相应的大小，也可能是以一些随机的内容加上去。</p>
+<p>&nbsp;</p>
+<p><strong><span>目录操作：</span></strong><br /><strong><span>os.mkdir("file")&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;</span></strong><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 创建目录</span><br /><span>复制文件：</span><br /><strong><span>shutil.copyfile("oldfile","newfile")&nbsp;</span></strong><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oldfile和newfile都只能是文件</span><br /><strong><span>shutil.copy("oldfile","newfile")&nbsp;&nbsp;&nbsp;</span></strong><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oldfile只能是文件夹，newfile可以是文件，也可以是目标目录</span><br /><span>复制文件夹：</span><br /><strong><span>shutil.copytree("olddir","newdir")&nbsp;</span></strong><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; olddir和newdir都只能是目录，且newdir必须不存在</span><br /><span>重命名文件（目录）</span><br /><strong><span>os.rename("oldname","newname")&nbsp;</span></strong><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 文件或目录都是使用这条命令</span><br /><span>移动文件（目录）</span><br /><strong><span>shutil.move("oldpos","newpos") &nbsp;&nbsp;</span></strong><br /><span>删除文件</span><br /><strong><span>os.remove("file")</span></strong><br /><span>删除目录</span><br /><strong><span>os.rmdir("dir")</span></strong><span>只能删除空目录</span><br /><strong><span>shutil.rmtree("dir") &nbsp;</span></strong><span>&nbsp; 空目录、有内容的目录都可以删</span><br /><span>转换目录</span><br /><strong><span>os.chdir("path") &nbsp;&nbsp;</span></strong><span>换路径</span></p>
+<p>&nbsp;</p>
+<p><strong>相关例子&nbsp;</strong></p>
+<p><strong>&nbsp;1&nbsp;</strong>将文件夹下所有图片名称加上'_fc'</p>
+<p><strong><em><span>python代码:</span></em></strong></p>
+<p><span># -*- coding:utf-8 -*-</span><br /><span>import re</span><br /><span>import os</span><br /><span>import time</span><br /><span>#str.split(string)分割字符串</span><br /><span>#'连接符'.join(list) 将列表组成字符串</span><br /><span>def change_name(path):</span><br /><span>&nbsp;&nbsp;&nbsp; global i</span><br /><span>&nbsp;&nbsp;&nbsp; if not os.path.isdir(path) and not os.path.isfile(path):</span><br /><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return False</span><br /><span>&nbsp;&nbsp;&nbsp; if os.path.isfile(path):</span><br /><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; file_path = os.path.split(path)&nbsp;<span>#分割出目录与文件</span></span><br /><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lists = file_path[1].split('.')&nbsp;<span>#分割出文件与文件扩展名</span></span><br /><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; file_ext = lists[-1]&nbsp;<span>#取出后缀名(列表切片操作)</span></span><br /><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; img_ext = ['bmp','jpeg','gif','psd','png','jpg']</span><br /><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if file_ext in img_ext:</span><br /><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; os.rename(path,file_path[0]+'/'+lists[0]+'_fc.'+file_ext)</span><br /><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i+=1&nbsp;<span>#注意这里的i是一个陷阱</span></span><br /><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #或者</span><br /><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #img_ext = 'bmp|jpeg|gif|psd|png|jpg'</span><br /><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #if file_ext in img_ext:</span><br /><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #&nbsp;&nbsp;&nbsp; print('ok---'+file_ext)</span><br /><span>&nbsp;&nbsp;&nbsp; elif os.path.isdir(path):</span><br /><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for x in os.listdir(path):</span><br /><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; change_name(os.path.join(path,x))&nbsp;<span>#os.path.join()在路径处理上很有用</span></span></p>
+<p><br /><span>img_dir = 'D:\\xx\\xx\\images'</span><br /><span>img_dir = img_dir.replace('\\','/')</span><br /><span>start = time.time()</span><br /><span>i = 0</span><br /><span>change_name(img_dir)</span><br /><span>c = time.time() - start</span><br /><span>print('程序运行耗时:%0.2f'%(c))</span><br /><span>print('总共处理了 %s 张图片'%(i))</span></p>
+<p>输出结果：</p>
+<p><span>程序运行耗时:0.11</span><br /><span>总共处理了 109 张图片</span></p></div><div id="MySignature"></div>
+        <div class="clear"></div>
+        <div id="blog_post_info_block">
+        <div id="blog_post_info">
+        </div>
+        <div class="clear"></div>
+        <div id="post_next_prev"></div>
+    </div>
+</div>
+    <ul class="postmetadata">
+        <li class="icon_cat" id="BlogPostCategory"></li>
+        <li class="icon_bullet" id="EntryTag"></li>
+    </ul>
+</div>
+<script type="text/javascript">var allowComments=true,isLogined=true,cb_blogId=80995,cb_entryId=2466179,cb_blogApp=currentBlogApp,cb_blogUserGuid='cc6cd4de-5a08-e011-ac81-842b2b196315',cb_entryCreatedDate='2012/4/23 11:28:00';loadViewCount(cb_entryId);</script>
+<script type="text/javascript">
+    var m = window.__blog.postRendered;
+    if (m) { m(__$("post")); }
+</script>
+<script type="text/javascript">
+    var m = window.__blog.postRenderPosts;
+    if (m) { m(); }
+</script>
+<a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" id="lnk_RefreshComments" onclick="return RefreshCommentList();">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+<div id="comment_form_container"></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="site_nav_under"><a href="http://www.cnblogs.com/" target="_blank" title="开发者的网上家园">博客园首页</a><a href="http://q.cnblogs.com/" target="_blank" title="程序员问答社区">博问</a><a href="http://news.cnblogs.com/" target="_blank" title="IT新闻">新闻</a><a href="http://home.cnblogs.com/ing/" target="_blank">闪存</a><a href="http://job.cnblogs.com/" target="_blank">程序员招聘</a><a href="http://kb.cnblogs.com/" target="_blank">知识库</a></div>
+<div id="opt_under_post"></div>
+<script type="text/javascript">
+    var enableGoogleAd = canShowAdsense(); var googletag = googletag || {}; googletag.cmd = googletag.cmd || [];
+    fixPostBodyFormat();
+</script>
+<div id="ad_under_post_holder">
+<script type='text/javascript'>
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function () {
+        if (enableGoogleAd) {
+            var gads = document.createElement('script');
+            gads.async = true;
+            gads.type = 'text/javascript';
+            var useSSL = 'https:' == document.location.protocol;
+            gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+            var node = document.getElementsByTagName('script')[0];
+            node.parentNode.insertBefore(gads, node);
+        }
+    })();
+</script>
+<script type='text/javascript'>
+    try {
+        if (enableGoogleAd) {
+            googletag.cmd.push(function () {
+                googletag.defineSlot('/1090369/cnblogs_blogpost_C1_sitehome', [300, 250], 'div-gpt-ad-1346480159711-0').addService(googletag.pubads());
+                googletag.defineSlot('/1090369/cnblogs_blogpost_C2', [468, 60], 'div-gpt-ad-1410860226396-0').addService(googletag.pubads());
+                googletag.pubads().enableSingleRequest();
+                googletag.enableServices();
+            });
+        };
+    } catch (e) { }
+</script>
+<div id="google_ad_c1" class="c_ad_block">
+    <div id='div-gpt-ad-1346480159711-0' style='width:300px; height:250px;'>
+    <script type='text/javascript'>
+        try {
+            if (enableGoogleAd) {
+                googletag.cmd.push(function () { googletag.display('div-gpt-ad-1346480159711-0'); });            
+            } else {
+                $('#div-gpt-ad-1346480159711-0').hide();
+            }
+    } catch (e) { }
+    </script>
+    </div>
+</div>
+</div>
+<div id="under_post_news"></div>
+<div id="google_ad_c2" class="c_ad_block">
+<div id='div-gpt-ad-1410860226396-0' style='width:468px; height:60px;'>
+<script type='text/javascript'>
+try {
+    if (enableGoogleAd) {
+        googletag.cmd.push(function () { googletag.display('div-gpt-ad-1410860226396-0'); });
+    } else {
+        $('#div-gpt-ad-1346480159711-0').hide();
+    }
+} catch (e) { }
+</script>
+</div>
+</div>
+<div id="under_post_kb"></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+$(function () {
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 200);
+});
+</script>
+</div>
+
+        </div>
+
+        <script type="text/javascript">
+            var m = window.__blog.contentRendered;
+            if (m) { m(__$("content")); }
+        </script>
+
+        <div id="sidebar">
+            
+<div id="about">
+<div>
+<h2 id="about_title">About</h2>
+<div id="about_body">
+<div id="blog-news"></div>
+<script type="text/javascript">loadBlogNews();</script>
+</div>
+</div>
+</div>
+
+            <script type="text/javascript">
+                var m = window.__blog.aboutRendered;
+                if (m) { m(__$("about")); }
+            </script>
+            
+<div id="mySearchWrapper">
+    <div id="mySearch">
+        <input type="image" src="/skins/Minyx2_Lite/images/btnsearch.gif" id="btnZzk"  class="submit" onclick="zzk_go();return false;"/>
+        <label class="lb_search"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="keyword" /></label>
+    </div>
+</div>
+
+            <script type="text/javascript">
+                var m = window.__blog.searchFormRendered;
+                if (m) { m(__$("searchform")); }
+            </script>
+            <div id="sideMain">
+            </div>
+            <div id="sideRight">
+            </div>
+            <div id="sideLeft">
+            </div>
+            
+                <div id="sideContainer">
+                </div>
+                <script type="text/javascript">
+                    $.ajax({
+                        url: '/' + currentBlogApp + '/mvc/blog/Minyx2_Lite_SideColumn.aspx',
+                        data: '{}',
+                        type: 'post',
+                        dataType: 'text',
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (data) {
+                            if (data) {
+                                $("#sideContainer").html(data);
+                                loadBlogDefaultCalendar();
+                                loadBlogSideBlocks();
+                                var m = window.__blog.sideContainerRendered;
+                                if (m) { m(__$("sideContainer")); }
+                                window.__blog.sidebar.__layout();
+                            }
+                        }
+                    });
+
+                </script>
+            
+        </div>
+
+        <script type="text/javascript">
+            var m = window.__blog.sidebarRendered;
+            if (m) { m(__$("sidebar")); }
+        </script>
+
+        <div id="footer">
+            
+<p id="logoFoot">
+    <a href="http://www.spiga.com.mx/" title="Agencia Interactiva Spiga">www.spiga.com.mx</a>
+</p>
+<div class="footText">
+<p>
+Copyright &copy;2014 Rollen Holt
+</p>
+<p>
+<a href="http://www.cnblogs.com">博客园</a>
+</p>
+</div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var m = window.__blog.wrapperRendered;
+        if (m) { m(__$("wrapper")); }
+    </script>
+
+</div>
+<script type="text/javascript">
+    var m = window.__blog.containerRendered;
+    if (m) { m(__$("container")); }
+</script>
+</body>
+</html>

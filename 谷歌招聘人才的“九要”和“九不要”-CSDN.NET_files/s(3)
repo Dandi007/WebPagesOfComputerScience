@@ -1,0 +1,14 @@
+ADFHOST54="http://csdnim.allyes.com";
+ADFCID54=30;
+ADFBID54=54;
+ADFLOC='CNTJ0000';
+ADFUSER54="http://csdnim.allyes.com/main/adfclick?d=csdnim&i=z30,10081392,54,121&rf=&a=d5AhDcQtg2A5yGQ7E4TKc5SC2&u=";
+ALLYESID4="08DBA4B4D4EEDBFB";
+ADFPGC="2,4,30,0,57,54,121,10081392";
+
+document.write("<script type=\"text/javascript\">\n");
+document.write("/*文章页右边栏视窗广告*/\n");
+document.write("var cpro_id = \"u1607561\";\n");
+document.write("</Scr"+"ipt>\n");
+document.write("<script src=\"http://cpro.baidustatic.com/cpro/ui/c.js\" type=\"text/javascript\"></Scr"+"ipt>");
+

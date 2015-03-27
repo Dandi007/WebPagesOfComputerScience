@@ -1,0 +1,345 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>人生苦短，我用python——当我在玩python的时候我玩些什么 - LevenYes - 博客园</title>
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=k2uL13BZlYpYjZ7FITMnMaB1mOfAPcMGfJChBRaBpP01"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/SimpleClear/bundle-SimpleClear.css?v=EVOKy_9d-0OzsDt7Iaw0OHSiRqKJoQVRFQeK_xCGZ6c1"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/levenyes/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/levenyes/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/levenyes/wlwmanifest.xml"/>
+<script src="http://common.cnblogs.com/script/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'levenyes', cb_enable_mathjax=false;</script>
+<script src="/bundles/blog-common.js?v=Pbt4uMm_qWARxxiPM8vQwX0Bh-yg-NcQxX73-xkOCnw1" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<div id="main">
+<div id="header">
+<h1><a id="Header1_HeaderTitle" href="http://www.cnblogs.com/levenyes/">LevenYes</a></h1>
+<p id="tagline"></p></div>
+
+
+<div class="post">
+    <h2 class="postTitle"><a id="cb_post_title_url" href="http://www.cnblogs.com/levenyes/p/4003681.html">人生苦短，我用python——当我在玩python的时候我玩些什么</a></h2>
+    <div class="postText"><div id="cnblogs_post_body"><p><span style="font-size: 18pt;"><strong>文章背景</strong></span></p>
+<p><span style="font-size: 18pt;"><span style="font-size: 16px;">　　家里的第一台电脑是在2006年夏天买的，10年上大学之后基本上就没人用，过没两年就当二手卖给一个熟人。</span></span></p>
+<p><span style="font-size: 18pt;"><span style="font-size: 16px;">　　弟弟小我10岁，今年刚上初一。他在我毕业前半年就整天用妈妈的手机发短信给我，问我什么时候把学校里的台式机寄回家给他用。虽然从小就一直因为玩电脑的问题跟爸妈时不时有点小别扭，可是我还是非常鼓励弟弟接触电脑和网络的。可能有人会说小孩子就只会玩游戏，玩游戏怎么了？小孩子的天性不就是玩嘛，在娱乐的过程中其实是可以潜移默化地学会许多计算机日常使用的知识，还可以通过互联网跟已经认识、尚未认识的朋友进行沟通交流，好处多多的是。</span></span></p>
+<p><span style="font-size: 18pt;"><span style="font-size: 16px;">　　然而，凡事都得有个度。初中生不可能像我们成年人一样懂得克制自己（且不说很多大人都会沉迷在这个虚拟世界里），我就萌生了写一个程序限制弟弟平日玩电脑时间的想法。</span></span></p>
+<p><span style="font-size: 18pt;"><strong>技术选型</strong></span></p>
+<p><span style="font-size: 18pt;"><span style="font-size: 16px;">　　其实我的第一想法是用Java，因为平时用的最多的就是它，而且除了C++之外就没有再用过别的语言。</span></span></p>
+<p><span style="font-size: 18pt;"><span style="font-size: 16px;">　　<strong><span style="font-size: 14pt;">程序的基本思路</span></strong></span></span></p>
+<ol>
+<li><span style="font-size: 18pt;"><span style="font-size: 16px;"><span style="font-size: 14pt;"><span style="font-size: 16px;">用一个txt文件记录电脑的一天内累计使用时间<br /></span></span></span></span></li>
+<li><span style="font-size: 18pt;"><span style="font-size: 16px;"><span style="font-size: 14pt;"><span style="font-size: 16px;">累计使用时间超过若干小时就会自动关机</span></span></span></span></li>
+<li><span style="font-size: 18pt;"><span style="font-size: 16px;"><span style="font-size: 14pt;"><span style="font-size: 16px;">程序开机自动运行</span></span></span></span></li>
+
+
+</ol>
+<p><span style="font-size: 18pt;"><span style="font-size: 16px;"><span style="font-size: 14pt;"><span style="font-size: 16px;">　　<span style="font-size: 14pt;"><strong>为什么我最后选择了python</strong></span></span></span></span></span></p>
+<p><span style="font-size: 18pt;"><span style="font-size: 16px;"><span style="font-size: 14pt;"><span style="font-size: 16px;">　　想着怎么写、搜资料的时候就发现Java并不适合，虽然不是不能实现，但有好几个问题解决起来都有点麻烦。对我这么一个&ldquo;懒&rdquo;程序员来说，已经构成了&ldquo;弃用&rdquo;的充分理由。就举一个简单的例子好了，最后会使用系统的关机命令实现自动关机这个功能，用Java+运行windows命令搜出来一大堆东西，看着就头疼。</span></span></span></span><span style="font-size: 18pt;"><span style="font-size: 16px;"><span style="font-size: 14pt;"><span style="font-size: 16px;">毕竟是业余时间玩玩，没必要这么耗脑子。</span></span></span></span></p>
+<p><span style="font-size: 18pt;"><span style="font-size: 16px;"><span style="font-size: 14pt;"><span style="font-size: 16px;">　　可是用python就只需要用到两行代码！</span></span></span></span></p>
+<p>&nbsp;</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;">1</span> <span style="color: #008000;">#</span><span style="color: #008000;">关机命令       </span>
+<span style="color: #008080;">2</span> cmd=<span style="color: #800000;">"</span><span style="color: #800000;">cmd.exe /k shutdown -s -t 0</span><span style="color: #800000;">"</span><span style="color: #000000;">;
+</span><span style="color: #008080;">3</span> 
+<span style="color: #008080;">4</span> <span style="color: #008000;">#</span><span style="color: #008000;">执行关机命令</span>
+<span style="color: #008080;">5</span> os.system(cmd)</pre>
+</div>
+<p>&nbsp;</p>
+<p><span style="font-size: 18pt;"><strong>动手写代码</strong></span></p>
+<p><span style="font-size: 18pt;"><span style="font-size: 16px;">　　在网上一通乱搜之后，很快就把测试用的代码给写出来了。</span></span></p>
+<p>&nbsp;</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #008000;">#</span><span style="color: #008000;">! /usr/bin/env python</span>
+<span style="color: #008080;"> 2</span> 
+<span style="color: #008080;"> 3</span> <span style="color: #008000;">#</span><span style="color: #008000;">coding=utf-8</span>
+<span style="color: #008080;"> 4</span> 
+<span style="color: #008080;"> 5</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> os 
+</span><span style="color: #008080;"> 6</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> time   
+</span><span style="color: #008080;"> 7</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> datetime   
+</span><span style="color: #008080;"> 8</span> 
+<span style="color: #008080;"> 9</span> <span style="color: #008000;">#</span><span style="color: #008000;">根据是否工作日设置限制时间</span>
+<span style="color: #008080;">10</span> <span style="color: #0000ff;">if</span> datetime.date.today().weekday()&lt;5<span style="color: #000000;">:
+</span><span style="color: #008080;">11</span>     timeLimit = 20
+<span style="color: #008080;">12</span> <span style="color: #0000ff;">else</span><span style="color: #000000;">:
+</span><span style="color: #008080;">13</span>     timeLimit = 40
+<span style="color: #008080;">14</span> 
+<span style="color: #008080;">15</span> <span style="color: #008000;">#</span><span style="color: #008000;">读取文本中记录的日期</span>
+<span style="color: #008080;">16</span> f = open(<span style="color: #800000;">'</span><span style="color: #800000;">E:\\thefile.txt</span><span style="color: #800000;">'</span>,<span style="color: #800000;">'</span><span style="color: #800000;">r+</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+</span><span style="color: #008080;">17</span> f_date =<span style="color: #000000;"> f.readline()
+</span><span style="color: #008080;">18</span> <span style="color: #000000;">f.close
+</span><span style="color: #008080;">19</span> 
+<span style="color: #008080;">20</span> <span style="color: #008000;">#</span><span style="color: #008000;">读取系统日期，并与文本日期进行比对</span>
+<span style="color: #008080;">21</span> <span style="color: #008000;">#</span><span style="color: #008000;">如果不相等，则清空文件，进行当日初始化</span>
+<span style="color: #008080;">22</span> n_date = time.strftime(<span style="color: #800000;">"</span><span style="color: #800000;">%d/%m/%Y</span><span style="color: #800000;">"</span>)+<span style="color: #800000;">"</span><span style="color: #800000;">\n</span><span style="color: #800000;">"</span>
+<span style="color: #008080;">23</span> <span style="color: #0000ff;">if</span> f_date !=<span style="color: #000000;"> n_date:
+</span><span style="color: #008080;">24</span>     <span style="color: #0000ff;">print</span>(<span style="color: #800000;">"</span><span style="color: #800000;">sucessed</span><span style="color: #800000;">"</span><span style="color: #000000;">)
+</span><span style="color: #008080;">25</span>     f = open(<span style="color: #800000;">'</span><span style="color: #800000;">E:\\thefile.txt</span><span style="color: #800000;">'</span>,<span style="color: #800000;">'</span><span style="color: #800000;">r+</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+</span><span style="color: #008080;">26</span> <span style="color: #000000;">    f.truncate()
+</span><span style="color: #008080;">27</span> <span style="color: #000000;">    f.close
+</span><span style="color: #008080;">28</span>     f = open(<span style="color: #800000;">'</span><span style="color: #800000;">E:\\thefile.txt</span><span style="color: #800000;">'</span>,<span style="color: #800000;">'</span><span style="color: #800000;">r+</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+</span><span style="color: #008080;">29</span> <span style="color: #000000;">    f.write((n_date))
+</span><span style="color: #008080;">30</span>     run_time=<span style="color: #800000;">"</span><span style="color: #800000;">0</span><span style="color: #800000;">"</span>
+<span style="color: #008080;">31</span> <span style="color: #000000;">    f.write(run_time)
+</span><span style="color: #008080;">32</span> <span style="color: #000000;">    f.close
+</span><span style="color: #008080;">33</span> 
+<span style="color: #008080;">34</span> <span style="color: #008000;">#</span><span style="color: #008000;">死循环语句，当且仅当运行时间大于等于限制时间时跳出循环</span>
+<span style="color: #008080;">35</span> <span style="color: #0000ff;">while</span> 2 &gt; 1<span style="color: #000000;"> :
+</span><span style="color: #008080;">36</span>     f = open(<span style="color: #800000;">'</span><span style="color: #800000;">E:\\thefile.txt</span><span style="color: #800000;">'</span>,<span style="color: #800000;">'</span><span style="color: #800000;">r+</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+</span><span style="color: #008080;">37</span>     f_date =<span style="color: #000000;"> f.readline()
+</span><span style="color: #008080;">38</span>     run_time =<span style="color: #000000;"> f.readline()
+</span><span style="color: #008080;">39</span>     run =<span style="color: #000000;"> int(run_time)
+</span><span style="color: #008080;">40</span>     <span style="color: #0000ff;">print</span><span style="color: #000000;">(run)
+</span><span style="color: #008080;">41</span>     time.sleep(2<span style="color: #000000;">)
+</span><span style="color: #008080;">42</span>     <span style="color: #0000ff;">if</span> run&lt;<span style="color: #000000;">timeLimit:
+</span><span style="color: #008080;">43</span>         run = run + 1
+<span style="color: #008080;">44</span> <span style="color: #000000;">        f.truncate()
+</span><span style="color: #008080;">45</span> <span style="color: #000000;">        f.close
+</span><span style="color: #008080;">46</span>         f = open(<span style="color: #800000;">'</span><span style="color: #800000;">E:\\thefile.txt</span><span style="color: #800000;">'</span>,<span style="color: #800000;">'</span><span style="color: #800000;">r+</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+</span><span style="color: #008080;">47</span> <span style="color: #000000;">        f.write(f_date)
+</span><span style="color: #008080;">48</span>         run_time =<span style="color: #000000;"> str(run)
+</span><span style="color: #008080;">49</span> <span style="color: #000000;">        f.write(run_time)
+</span><span style="color: #008080;">50</span> <span style="color: #000000;">        f.close
+</span><span style="color: #008080;">51</span>     <span style="color: #0000ff;">else</span><span style="color: #000000;">:
+</span><span style="color: #008080;">52</span>         <span style="color: #0000ff;">break</span>
+<span style="color: #008080;">53</span> 
+<span style="color: #008080;">54</span> <span style="color: #008000;">#</span><span style="color: #008000;">关机命令       </span>
+<span style="color: #008080;">55</span> cmd=<span style="color: #800000;">"</span><span style="color: #800000;">cmd.exe /k shutdown -s -t 0</span><span style="color: #800000;">"</span><span style="color: #000000;">;
+</span><span style="color: #008080;">56</span> 
+<span style="color: #008080;">57</span> <span style="color: #0000ff;">print</span>(cmd)</pre>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>　<span style="font-size: 16px;">　为了方便大家理解程序，再把txt文件中的内容贴出来以供参考</span></p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">01/10/2014
+20</span></pre>
+</div>
+<p>　　<span style="font-size: 14pt;"><strong>需要特别提出的几个点</strong></span></p>
+<p><span style="font-size: 14pt;"><span style="font-size: 16px;">　　第一，因为需要实现开机自启动，所以要把python文件复制到系统的&ldquo;启动&rdquo;文件夹里。</span></span></p>
+<p><span style="font-size: 14pt;"><span style="font-size: 16px;">　　第二，由于.py文件启动后会有控制台界面出现，非常影响使用效果，因此要把.py文件的后缀改成.pyw。</span></span></p>
+<p><span style="font-size: 14pt;"><span style="font-size: 16px;">　　第三，不需要担心如果自己想要用电脑的话会受到这个限制，只要在开机六分钟内把python进程关掉即可。</span></span></p>
+<p><span style="font-size: 18pt;"><strong>最后的成果</strong></span></p>
+<p><span style="font-size: 16px;">　　忙活了一会，终于把实际使用的代码写完。<br /></span></p>
+<p>&nbsp;</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #008000;">#</span><span style="color: #008000;">! /usr/bin/env python</span>
+<span style="color: #008080;"> 2</span> 
+<span style="color: #008080;"> 3</span> <span style="color: #008000;">#</span><span style="color: #008000;">coding=utf-8</span>
+<span style="color: #008080;"> 4</span> 
+<span style="color: #008080;"> 5</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> os 
+</span><span style="color: #008080;"> 6</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> time   
+</span><span style="color: #008080;"> 7</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> datetime   
+</span><span style="color: #008080;"> 8</span> 
+<span style="color: #008080;"> 9</span> <span style="color: #008000;">#</span><span style="color: #008000;">根据是否工作日设置限制时间</span>
+<span style="color: #008080;">10</span> <span style="color: #0000ff;">if</span> datetime.date.today().weekday()&lt;5<span style="color: #000000;">:
+</span><span style="color: #008080;">11</span>     timeLimit = 20
+<span style="color: #008080;">12</span> <span style="color: #0000ff;">else</span><span style="color: #000000;">:
+</span><span style="color: #008080;">13</span>     timeLimit = 40
+<span style="color: #008080;">14</span> 
+<span style="color: #008080;">15</span> <span style="color: #008000;">#</span><span style="color: #008000;">读取文本中记录的日期</span>
+<span style="color: #008080;">16</span> f = open(<span style="color: #800000;">'</span><span style="color: #800000;">E:\\thefile.txt</span><span style="color: #800000;">'</span>,<span style="color: #800000;">'</span><span style="color: #800000;">r+</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+</span><span style="color: #008080;">17</span> f_date =<span style="color: #000000;"> f.readline()
+</span><span style="color: #008080;">18</span> <span style="color: #000000;">f.close
+</span><span style="color: #008080;">19</span> 
+<span style="color: #008080;">20</span> <span style="color: #008000;">#</span><span style="color: #008000;">读取系统日期，并与文本日期进行比对</span>
+<span style="color: #008080;">21</span> <span style="color: #008000;">#</span><span style="color: #008000;">如果不相等，则清空文件，进行当日初始化</span>
+<span style="color: #008080;">22</span> n_date = time.strftime(<span style="color: #800000;">"</span><span style="color: #800000;">%d/%m/%Y</span><span style="color: #800000;">"</span>)+<span style="color: #800000;">"</span><span style="color: #800000;">\n</span><span style="color: #800000;">"</span>
+<span style="color: #008080;">23</span> <span style="color: #0000ff;">if</span> f_date !=<span style="color: #000000;"> n_date:
+</span><span style="color: #008080;">24</span>     <span style="color: #0000ff;">print</span>(<span style="color: #800000;">"</span><span style="color: #800000;">sucessed</span><span style="color: #800000;">"</span><span style="color: #000000;">)
+</span><span style="color: #008080;">25</span>     f = open(<span style="color: #800000;">'</span><span style="color: #800000;">E:\\thefile.txt</span><span style="color: #800000;">'</span>,<span style="color: #800000;">'</span><span style="color: #800000;">r+</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+</span><span style="color: #008080;">26</span> <span style="color: #000000;">    f.truncate()
+</span><span style="color: #008080;">27</span> <span style="color: #000000;">    f.close
+</span><span style="color: #008080;">28</span>     f = open(<span style="color: #800000;">'</span><span style="color: #800000;">E:\\thefile.txt</span><span style="color: #800000;">'</span>,<span style="color: #800000;">'</span><span style="color: #800000;">r+</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+</span><span style="color: #008080;">29</span> <span style="color: #000000;">    f.write((n_date))
+</span><span style="color: #008080;">30</span>     run_time=<span style="color: #800000;">"</span><span style="color: #800000;">0</span><span style="color: #800000;">"</span>
+<span style="color: #008080;">31</span> <span style="color: #000000;">    f.write(run_time)
+</span><span style="color: #008080;">32</span> <span style="color: #000000;">    f.close
+</span><span style="color: #008080;">33</span> 
+<span style="color: #008080;">34</span> <span style="color: #008000;">#</span><span style="color: #008000;">死循环语句，当且仅当运行时间大于等于限制时间时跳出循环</span>
+<span style="color: #008080;">35</span> <span style="color: #0000ff;">while</span> 2 &gt; 1<span style="color: #000000;"> :
+</span><span style="color: #008080;">36</span>     f = open(<span style="color: #800000;">'</span><span style="color: #800000;">E:\\thefile.txt</span><span style="color: #800000;">'</span>,<span style="color: #800000;">'</span><span style="color: #800000;">r+</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+</span><span style="color: #008080;">37</span>     f_date =<span style="color: #000000;"> f.readline()
+</span><span style="color: #008080;">38</span>     run_time =<span style="color: #000000;"> f.readline()
+</span><span style="color: #008080;">39</span>     run =<span style="color: #000000;"> int(run_time)
+</span><span style="color: #008080;">40</span>     time.sleep(360<span style="color: #000000;">)
+</span><span style="color: #008080;">41</span>     <span style="color: #0000ff;">if</span> run&lt;<span style="color: #000000;">timeLimit:
+</span><span style="color: #008080;">42</span>         run = run + 1
+<span style="color: #008080;">43</span> <span style="color: #000000;">        f.truncate()
+</span><span style="color: #008080;">44</span> <span style="color: #000000;">        f.close
+</span><span style="color: #008080;">45</span>         f = open(<span style="color: #800000;">'</span><span style="color: #800000;">E:\\thefile.txt</span><span style="color: #800000;">'</span>,<span style="color: #800000;">'</span><span style="color: #800000;">r+</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+</span><span style="color: #008080;">46</span> <span style="color: #000000;">        f.write(f_date)
+</span><span style="color: #008080;">47</span>         run_time =<span style="color: #000000;"> str(run)
+</span><span style="color: #008080;">48</span> <span style="color: #000000;">        f.write(run_time)
+</span><span style="color: #008080;">49</span> <span style="color: #000000;">        f.close
+</span><span style="color: #008080;">50</span>     <span style="color: #0000ff;">else</span><span style="color: #000000;">:
+</span><span style="color: #008080;">51</span>         <span style="color: #0000ff;">break</span>
+<span style="color: #008080;">52</span> 
+<span style="color: #008080;">53</span> <span style="color: #008000;">#</span><span style="color: #008000;">关机命令       </span>
+<span style="color: #008080;">54</span> cmd=<span style="color: #800000;">"</span><span style="color: #800000;">cmd.exe /k shutdown -s -t 0</span><span style="color: #800000;">"</span><span style="color: #000000;">;
+</span><span style="color: #008080;">55</span> 
+<span style="color: #008080;">56</span> <span style="color: #008000;">#</span><span style="color: #008000;">执行关机命令</span>
+<span style="color: #008080;">57</span> os.system(cmd)</pre>
+</div>
+<p>　　<span style="font-size: 16px;">周一到周五，弟弟能用电脑的时间最多只能是两个小时；而周末，则是四个小时。</span></p>
+<p>&nbsp;</p>
+<p>　　<strong><span style="font-size: 14pt;">感想</span></strong></p>
+<p><span style="font-size: 16px;">　　1.&nbsp;虽然这只是一个很简单的小程序，几乎可以说是毫无难度可言，但是起到的作用还是挺大的。因为我跟哥哥工作都不在家，平时都是妈妈管着弟弟，每次都要盯着他，不能让他玩电脑太长时间，有的时候要很大声地让他快点关机写作业。现在，只要大家商量好平时用电脑的时间，设定好参数就行。妈妈可以安心地做自己的事情，弟弟也可以心安理得地玩他想玩的游戏。（制定规则，以一种便捷和不容分辨的方式执行，而这种方式和途径就是减少摩擦的润滑剂）</span></p>
+<p><span style="font-size: 16px;">　　2. 平时工作都是用Java，业余时间用别的语言（例如python）玩玩是一个蛮有趣的做法。以兴趣和小作品作为驱动，说不定以后能成为你跳槽或者转型的凭借。</span></p>
+<p><span style="font-size: 16px;">　　3. 作为程序员，编程是我们的饭碗，同时也可以是我们改变生活、转变思路的工具，哪怕这种影响在别人看来微不足道。&nbsp;</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px;">PS:关于编程、关于在现实生活中的创意和需求，大家如果有什么有趣好玩的想法，非常欢迎在评论中留言一起分享。也可以关注我的微信公众号，&ldquo;华工小y&rdquo;继续交流。　　</span></p>
+<p>　</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+</div>
+    <p class="postfoot">posted on <span id="post-date">2014-10-02 07:25</span> <a href='http://www.cnblogs.com/levenyes/'>LevenYes</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="http://i.cnblogs.com/EditPosts.aspx?postid=4003681" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(4003681);return false;">收藏</a></p>
+</div>
+<script type="text/javascript">var allowComments=true,isLogined=true,cb_blogId=134667,cb_entryId=4003681,cb_blogApp=currentBlogApp,cb_blogUserGuid='c629a188-5932-e211-aa8f-842b2b196315',cb_entryCreatedDate='2014/10/2 7:25:00';loadViewCount(cb_entryId);</script>
+
+<a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" id="lnk_RefreshComments" onclick="return RefreshCommentList();">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+<div id="comment_form_container"></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="site_nav_under"><a href="http://www.cnblogs.com/" target="_blank" title="开发者的网上家园">博客园首页</a><a href="http://q.cnblogs.com/" target="_blank" title="程序员问答社区">博问</a><a href="http://news.cnblogs.com/" target="_blank" title="IT新闻">新闻</a><a href="http://home.cnblogs.com/ing/" target="_blank">闪存</a><a href="http://job.cnblogs.com/" target="_blank">程序员招聘</a><a href="http://kb.cnblogs.com/" target="_blank">知识库</a></div>
+<div id="opt_under_post"></div>
+<script type="text/javascript">
+    var enableGoogleAd = canShowAdsense(); var googletag = googletag || {}; googletag.cmd = googletag.cmd || [];
+    fixPostBodyFormat();
+</script>
+<div id="ad_under_post_holder">
+<script type='text/javascript'>
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function () {
+        if (enableGoogleAd) {
+            var gads = document.createElement('script');
+            gads.async = true;
+            gads.type = 'text/javascript';
+            var useSSL = 'https:' == document.location.protocol;
+            gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+            var node = document.getElementsByTagName('script')[0];
+            node.parentNode.insertBefore(gads, node);
+        }
+    })();
+</script>
+<script type='text/javascript'>
+    try {
+        if (enableGoogleAd) {
+            googletag.cmd.push(function () {
+                googletag.defineSlot('/1090369/cnblogs_blogpost_C1_sitehome', [300, 250], 'div-gpt-ad-1346480159711-0').addService(googletag.pubads());
+                googletag.defineSlot('/1090369/cnblogs_blogpost_C2', [468, 60], 'div-gpt-ad-1410860226396-0').addService(googletag.pubads());
+                googletag.pubads().enableSingleRequest();
+                googletag.enableServices();
+            });
+        };
+    } catch (e) { }
+</script>
+<div id="google_ad_c1" class="c_ad_block">
+    <div id='div-gpt-ad-1346480159711-0' style='width:300px; height:250px;'>
+    <script type='text/javascript'>
+        try {
+            if (enableGoogleAd) {
+                googletag.cmd.push(function () { googletag.display('div-gpt-ad-1346480159711-0'); });            
+            } else {
+                $('#div-gpt-ad-1346480159711-0').hide();
+            }
+    } catch (e) { }
+    </script>
+    </div>
+</div>
+</div>
+<div id="under_post_news"></div>
+<div id="google_ad_c2" class="c_ad_block">
+<div id='div-gpt-ad-1410860226396-0' style='width:468px; height:60px;'>
+<script type='text/javascript'>
+try {
+    if (enableGoogleAd) {
+        googletag.cmd.push(function () { googletag.display('div-gpt-ad-1410860226396-0'); });
+    } else {
+        $('#div-gpt-ad-1346480159711-0').hide();
+    }
+} catch (e) { }
+</script>
+</div>
+</div>
+<div id="under_post_kb"></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+$(function () {
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 200);
+});
+</script>
+</div>
+
+</div>
+<div id="rightmenu">
+	
+		
+<div id="my_links">
+<h3>导航</h3>
+<ul>
+<li><a id="MyLinks1_HomeLink" href="http://www.cnblogs.com/">博客园</a></li>
+<li><a id="MyLinks1_MyHomeLink" href="http://www.cnblogs.com/levenyes/">首页</a></li>
+<!--<li><a id="MyLinks1_NewPostLink" rel="nofollow" href="http://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>-->
+<li><a id="MyLinks1_ContactLink" rel="nofollow" href="http://space.cnblogs.com/msg/send/LevenYes">联系</a></li>
+<li><a id="MyLinks1_Syndication" href="http://www.cnblogs.com/levenyes/rss">订阅</a></li><!--<a id="MyLinks1_XMLLink" href="http://www.cnblogs.com/levenyes/rss"><img src="http://www.cnblogs.com/images/xml.gif" alt="订阅" /></a>-->
+<li><a id="MyLinks1_Admin" rel="nofollow" href="http://i.cnblogs.com/">管理</a></li>
+</ul>
+</div>
+		<div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+		
+<h3>公告</h3>
+<div class="newsItem">
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+</div>		
+		
+<div id="blog_stats">
+<h3>统计</h3>
+<ul>
+<li>随笔 - 55
+<li>文章 - 1
+<li>评论 - 429
+<!--<li>引用 - 0-->
+</li>
+</ul>
+</div>
+		<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+        
+		
+<div id="footer">
+	Powered by: 
+	<br />
+	
+	<a id="Footer1_Hyperlink3" NAME="Hyperlink1" href="http://www.cnblogs.com/" style="font-family:Verdana;font-size:12px;">博客园</a>
+	<br />
+	Copyright &copy; LevenYes
+</div>
+	
+</div>			
+			
+	
+
+</body>
+</html>

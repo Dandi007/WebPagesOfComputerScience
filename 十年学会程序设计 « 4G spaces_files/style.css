@@ -1,0 +1,270 @@
+/*
+Theme Name: Less Is Less
+Description: Less is Less, but usually better: This is a minimalist, beautiful and customizable theme for Wordpress, created by <a href"http://miguelsantirso.es/">Miguel Santirso</a>. The theme allows you to choose from three diferent color schemes (green, blue and pink) and includes a full translation into spanish and belorusian.
+Also includes a .po file so that you can translate it into any language you want.
+
+Version: 1.4
+Author: Miguel Santirso
+Author URI: http://miguelsantirso.es
+Theme URI: http://miguelsantirso.es/less-is-less-%e2%80%94-wordpress-theme/
+Tags: green, blue, pink, light, white, black, fixed-width, two-columns, right-sidebar, threaded-comments, sticky-post, theme-options
+
+	The CSS, XHTML and design is released under GPL:
+	http://www.opensource.org/licenses/gpl-3.0.html
+
+*/
+
+/* load Nevis font (CSS3) */
+
+@font-face { font-family: Nevis; src: url('nevis.ttf'); }
+
+/* a tiny reset... */
+
+body, html, input { margin: 0; padding: 0; }
+body { font-size: 85%; }
+
+/* global styles */
+
+a { color: green; }
+a:hover { color: #10bc10; }
+
+pre { overflow: auto; }
+
+blockquote { font-family: Serif; font-size: 1.05em; color: #444; }
+
+/* alignments */ 
+
+img.alignright { margin: 0 7px 2px 0; }
+img.centered { display: block;	margin-left: auto; margin-right: auto; }
+img.alignleft { margin: 0 0 2px 7px; }
+
+.alignright { float: right; }
+.alignleft { float: left; }
+.aligncenter, div.aligncenter { display: block;	margin-left: auto; margin-right: auto; }
+
+/* blog title */
+
+/*h1#blogTitle { display: none; }*/
+h1#blogTitle { font: bold 35px Nevis, sans-serif; text-transform: uppercase; letter-spacing: -2px; line-height: 85%; margin: 30px 0 -3px; }
+	h1#blogTitle a { color: #72bc72; text-decoration: none; }
+	h1#blogTitle a:hover { color: #10bc10; }
+
+/* header */
+
+div#header { height: 45px; background: #fff url('images/blurLine.png') no-repeat bottom; }
+div#headerContent { width: 960px; margin: 0 auto; }
+
+/* search form */
+
+form#searchform { float: right; padding-top: 4px; }
+	form#searchform #searchInput { font-size: 13px; color: #696969; }
+	form#searchform #searchInput:focus { color: black; }
+
+/* blog menu */
+
+ul#blogMenu { list-style-type: none; margin: 0; padding: 10px 0 0; }
+	ul#blogMenu li { height: 32px; float: left; border: 3px solid transparent; border-bottom: 0; margin: 0 2px; font: 12px Verdana, sans-serif; text-transform: uppercase; letter-spacing: -1px; }
+	ul#blogMenu li > a:focus, ul#blogMenu li:hover, ul#blogMenu li.selected, li:hover.selected, ul#blogMenu li.current_page_item, li:hover.current_page_item 
+		{ border-color: #e8e8e8; background: #fff; -moz-border-radius: 4px 4px 0 0; -webkit-border-top-left-radius: 4px; -webkit-border-top-right-radius: 4px; }
+	ul#blogMenu li.selected, ul#blogMenu li:hover.selected, ul#blogMenu li.current_page_item { font-weight: bold; }
+		ul#blogMenu li a { display: block; color: green; text-decoration: none; outline: 0; padding: 10px 15px 6px; }
+		ul#blogMenu li a:hover, ul#blogMenu li a:focus { text-decoration: underline; color: black; }
+
+/* menu dropdown */
+
+ul#blogMenu li ul { display: none; position: absolute; margin: 0 0 0 -3px; padding: 5px 5px 5px 5px; border: 3px solid #e8e8e8; border-top: 0; -moz-border-radius: 0 0px 4px 4px; -webkit-border-bottom-left-radius: 4px; -webkit-border-bottom-right-radius: 4px; background: #fff; }
+ul#blogMenu li:hover ul { display: block; }
+	ul#blogMenu li ul li { display: block; height: auto; float: none; border: 0; }
+	ul#blogMenu li ul li:hover, ul#blogMenu li ul#archiveDropdown li > a:focus
+		{ background: none; border: 0; }
+		ul#blogMenu li ul li a { margin: 0; padding: 3px; }
+
+/* menu dropdown sublists */
+
+ul#blogMenu li ul * ul { display: default; position: relative; list-style-type: none; border: 0; margin: 0 0 0 0.5em; padding: 0; }
+	ul#blogMenu li ul * ul li { border-left: 3px solid #e8e8e8 !important; padding-left: 0.5em; }
+	ul#blogMenu li ul * ul li:hover { border-color: green !important; -moz-border-radius: 0 !important; -webkit-border-radius: 0 !important; }
+
+/* content div */
+
+#content { width: 960px; margin: 0 auto; }
+
+/* main content */
+
+#mainContent { font-family: Verdana, sans-serif; padding-right: 30px; width: 583px; float: left; }
+
+/* contextual info */
+
+div#contextualInfo { padding: 20px; margin: 15px 5px 25px; background-color: #f1f1f1; -moz-border-radius: 6px; -webkit-border-radius: 6px; }
+	div#contextualInfo p { font: bold 19px Nevis, sans-serif; margin: 0; text-align: center; text-transform: uppercase; color: #666; }
+		div#contextualInfo p span{ color: #10bc10; }
+
+/* post */
+
+div.post { margin-bottom: 80px; }
+
+/* sticky post */
+
+.sticky { border-bottom: 8px solid #333; margin-bottom: 10px; }
+
+/* post title */
+
+div.postTitle { border-bottom: 3px solid #444; margin-bottom: 1.8em; }
+div.postTitle h2 { font: bold 23px Nevis, sans-serif; color: #333; letter-spacing: -2px; text-align: center; margin: 0; text-transform: uppercase; }
+	div.postTitle h2 a { padding: 2px 0 6px 0; color: #333; text-decoration: none; display: block; }
+	div.postTitle h2 a:first-line { font-size: 40px; }
+	div.postTitle h2 a:hover { background: #72bc72; color: white; }
+	div.postTitle h2 a:active { color: black; }
+
+/* post date */
+
+p.postDate { color: #696969; text-align: center; margin-bottom: 2px; font-size: 12px; }
+
+/* comment count */
+
+a.commentCount { position: absolute; font-size: 15px; font-family: Verdana, sans-serif; margin-left: 555px; color: #333; text-decoration: none; }
+a.commentCount:hover { color: #333; }
+	a.commentCount span.commentCountNumber { background-color: #333; color: white; -moz-border-radius: 20px 20px 20px 0; -webkit-border-radius: 13px; -webkit-border-bottom-left-radius: 0; padding: 4px 10px; }
+	a.commentCount:hover span.commentCountNumber { background-color: green; color: white; }
+	a.commentCount span.commentCountText { display: none; background: white; padding: 2px; }
+	a.commentCount:hover span.commentCountText { color: green; }
+	div.postTitle:hover span.commentCountText { display: inline; }
+
+/* post content */
+/* kudos to Type is beautiful for finding those Chinese typefaces */
+div.entry { text-align: justify; font-family: Georgia,"Times New Roman",Times,"Hiragino Sans GB","Hiragino Kaku Gothic Pro","STXihei",Hei,SimSun,"WenQuanYi Micro Hei",sans-serif; color:#5F5F5F; line-height: 1.5em; overflow: auto;}
+
+/* post content headings */
+
+div.entry h1, div.entry h2, div.entry h3, div.entry h4, div.entry h5, div.entry h6 { font-family: Nevis, sans-serif; text-transform: uppercase; border-bottom: 1px solid #444; }
+
+/* post links */
+
+div.entry a:hover { text-decoration: none; }
+	div.entry a img { padding: 4px; border: 0; margin: 2px 4px; }
+
+/* captions */
+.wp-caption { text-align: center; background-color: #f3f3f3; padding-top: 5px; margin: 10px; -moz-border-radius: 3px; -khtml-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+	.wp-caption img { margin: 0; padding: 0; border: 0 none; }
+	.wp-caption p.wp-caption-text { font-size: 12px; line-height: 17px; padding: 0 4px 5px; margin: 0; border-bottom: 3px solid #696969; color: #696969; }
+
+/* more link */
+
+a.more-link { color: #333; margin-top: 10px; padding: 15px 20px 12px; display: block; background: #e8e8e8 url('images/arrowShape.gif') center right no-repeat; font: bold 20px Nevis, sans-serif; text-transform: uppercase; text-decoration: none; }
+a.more-link:hover { color: #10bc10; background-color: #444; }
+a.more-link:active { color: white; background-color: #10bc10; }
+
+/* post metadata */
+
+div.postmetadata { background: #ddeedd; color: #666; margin: 5px 0 0 0; padding-bottom: 10px; border-bottom: 5px solid #444; }
+	div.postmetadata h3 { font: bold 15px Nevis, sans-serif; color: #444; background: white; text-transform: uppercase; padding-left: 5px; line-height: 11px; margin-bottom: 13px; }	
+	div.postmetadata p { margin: 5px 15px; }
+		div.postmetadata p 	a { color: #555; font-weight: bold; text-decoration: none; }
+		div.postmetadata p 	a:hover { color: black; text-decoration: underline; }
+
+/* comments wrapper */
+
+div.commentsWrapper { margin-top: 50px; color: #444; }
+	div.commentsWrapper a { color: #00bc00; text-decoration: none; }
+	div.commentsWrapper a:hover { color: green; text-decoration: underline; }
+
+/* comments title */
+
+h3#comments, h3#pings { font: bold 15px Nevis, sans-serif; color: #696969; text-transform: uppercase; letter-spacing: -1px; border-bottom: 3px solid #696969; }
+h3#comments, h3#pings { margin-left: 90px; }
+	h3#comments span, h3#pings span { font-size: 25px; display: block; color: #333; }
+
+/* comments */
+
+ol.commentlist, ul.children { list-style-type: none; margin: 0; padding: 0; }
+	ol.commentlist li.comment, ol.commentlist li.ping { padding-bottom: 20px; margin-bottom: 30px; border-bottom: 1px solid #e8e8e8; position: relative; }
+	ol.commentlist li.comment, ol.commentlist li.ping { padding-left: 100px; }
+		ol.commentlist li.comment img.avatar { margin-left: -100px; float: left; }
+
+/* nested comments */
+
+ul.children { margin-top: 15px; border-top: 1px solid #e8e8e8; padding-top: 20px; margin-bottom: -30px; }
+	ul.children li.comment { padding-left: 50px !important; border-bottom: 0 !important; margin-bottom: 10px !important; }
+	ul.children img.avatar { width: 40px; height: 40px; margin-left: -50px !important; }
+
+/* comments metadata */
+
+div.comment-author { color: #999; padding-bottom: 5px; border-bottom: 1px solid #696969; text-transform: lowercase; }
+	div.comment-author cite { font-weight: bold; font-style: normal; text-transform: none; }
+div.comment-meta { position: absolute; top: 0; right: 0; font-size: small; }
+
+/* comment form */
+
+#respond { background-color: #ddeedd; padding: 8px 0 8px 8px; border-bottom: 4px solid #444; }
+	#respond h3 { background-color: white; margin-top: -8px; margin-left: -8px; font: bold 19px Nevis, sans-serif; color: #333; text-transform: uppercase; }
+	#respond input { padding: 4px; font-size: normal; color: #444; }
+	#respond textarea { width: 90%; padding: 6px; font-family: sans-serif; color: #444; }
+
+/* sidebar */
+
+div#sidebar { margin-left: 693px; width: 267px; padding: 9px 0 0 0px; }
+
+/* blog logo */
+
+div#blogLogo { text-align: right; }
+/*div#theLogo { border-top: 8px solid #222; background: #72bc72; padding: 35px 0; text-align: center; }*/
+#theBlogDescription { border-top: 8px solid #222; background: #72bc72; padding: 15px 15px; text-align: right; }
+#theBlogDescription p { font: bold 20px Nevis, sans-serif; color: white; margin: 0; }
+
+/* sidebar widgets */
+
+ul#widgetBar { list-style-type: none; padding: 0; margin: 0; font-family: Georgia,"Times New Roman",Times,"Hiragino Sans GB","Hiragino Kaku Gothic Pro","STXihei",Hei,SimSun,"WenQuanYi Micro Hei",sans-serif; color:#7F7F7F; }
+	ul#widgetBar li.widget { background: #ddeedd; color: #666; border-bottom: 6px solid #444; }
+	ul#widgetBar h2 { font: bold 25px; font-family: Georgia,"Times New Roman",Times,"Hiragino Sans GB","Hiragino Kaku Gothic Pro","STXihei",Hei,SimSun,"WenQuanYi Micro Hei",sans-serif; color:#5F5F5F;
+color: #333; display: block; background: white; text-transform: uppercase; letter-spacing: -2px; padding-left: 0.3em; margin: 30px 0 0 0; line-height: 18px; }
+	
+/* sidebar widgets links */
+
+ul#widgetBar li.widget a { color: #555; font-weight: bold; text-decoration: none; }
+	ul#widgetBar li.widget a:hover { color: black; text-decoration: underline; }
+
+/* sidebar widgets lists */
+
+ul#widgetBar li.widget ul { list-style-type: none; padding: 0.5em 0.4em; }
+	ul#widgetBar li.widget ul li { padding: 3px 8px; }
+	
+/* sidebar tag cloud */
+
+li#tag_cloud { padding-bottom: 15px !important; }
+	li#tag_cloud h3 { margin-bottom: 15px; text-align: left; }
+li.widget_tag_cloud { text-align: center; }
+
+/* sidebar text widget */
+
+ul#widgetBar li.widget_text div.textwidget { padding: 10px; }
+
+/* navigation */
+
+div.navigation { margin-top: -30px; height: 75px; }
+	div.navigation div { width: 50%; }
+	div.navigation div.alignright a { text-align: right; background: #444 url('images/arrowShape.gif') right center no-repeat; }
+	div.navigation div.alignleft a { text-align: left; background: #444 url('images/arrowShape_left.gif') left center no-repeat; }
+		div.navigation div a { display: block; padding: 10px 30px; font: bold 15px Nevis, sans-serif; text-transform: uppercase; color: white; text-decoration: none; }
+		div.navigation div a:hover { background-color: #10bc10; }
+		div.navigation div a:active { background-color: #444; color: #10bc10; }
+
+/* footer */
+
+#footer { clear: both; position: relative; height: 105px; margin-top: 35px; }
+	#footer a { color: #10bc10; text-decoration: none; font-size: 12px; }
+	#footer a:hover { text-decoration: underline; }
+
+/* less is less */
+
+p#lessisless {position: absolute; bottom: 20px; margin: 20px 0 0 20px; text-transform: uppercase; font: bold 25px Nevis, sans-serif; color: #696969; width: 450px; letter-spacing: -1px; }
+p#lessisless:first-line { font-size: 44px; letter-spacing: -3px; line-height: 44px; }
+
+/* theme info */
+
+p#footerInfo { margin: 5px; font: 10px sans-serif; color: #444; line-height: 18px; text-transform: uppercase; text-align: right; position: absolute; bottom: 20px; right: 0; }
+
+/* footer options */
+
+div#footerOptions { width: 100%; height: 26px; margin: 0; position: absolute; bottom: 0px; font: 12px Verdana, sans-serif; background: #444; color: #888; }
+	div#footerOptions p { margin: 6px 0 0 6px; }
+

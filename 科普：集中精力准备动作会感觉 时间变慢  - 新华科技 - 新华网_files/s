@@ -1,0 +1,9 @@
+document.write("<SCRIPT LANGUAGE=\"Javascript\">\n");
+document.write("ADFHOST395=\"http://embed.xinhuanet.com\";\n");
+document.write("ADFCID395=7;\n");
+document.write("ADFBID395=395;\n");
+document.write("ADFLOC='CNTJ00';\n");
+document.write("ADFUSER395=\"http://embed.xinhuanet.com/c?d=xinhuanet&i=z7,339213,395,961&k=&p=0&v=677062687&wl=&rf=(null)&u=\";\n");
+document.write("</SCR"+"IPT>");
+document.write("<script type=\"text/javascript\" >BAIDU_CLB_SLOT_ID = \"910236\";</Scr"+"ipt>\n");
+document.write("<script type=\"text/javascript\" src=\"http://cbjs.baidu.com/js/o.js\"></Scr"+"ipt>");

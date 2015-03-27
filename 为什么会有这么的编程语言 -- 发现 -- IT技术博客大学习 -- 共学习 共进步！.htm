@@ -1,0 +1,448 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0039)http://blogread.cn/it/article/6192?f=wb -->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wb="http://open.weibo.com/wb"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/cb=gapi.loaded_0" async=""></script><script src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/ex" async=""></script><script charset="gbk" src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/main.js" async="" mod_name="tanxssp-main"></script><script charset="gbk" async="" src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/tanxssp.js"></script><script type="text/javascript" charset="gbk" id="tanx-s-mm_10984112_4090067_13398709" async="" src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/ex(1)"></script>
+
+<title>为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！</title>
+<meta name="description" content="Paul Graham不仅是Y Combinator天使投资公司的创始人，而且还是一名关系编程界的程序员，最近他的一位朋友Kevin Kelleher向他建议了一个比较各种编程语言的有趣方法：看看它们各自都是来解决什么问题的。可问题是，像这样去描述，你可以罗列出无数的语言，而且你可以使用各种的角度来描述。                	">
+<meta name="keywords" content="编程语言,为什么会有这么的编程语言,发现">
+<meta name="renderer" content="webkit">
+<meta property="qc:admins" content="0135301347725146367147">
+<link rel="canonical" href="http://blogread.cn/it/article/6192">
+
+<link href="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/css.css" rel="stylesheet" type="text/css">
+<script async="" type="text/javascript" src="http://www.gstatic.com/pub-config/ca-pub-2206192680127944.js"></script><script type="text/javascript" src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/jquery.min.js"></script>
+<script type="text/javascript">
+	window.google_analytics_uacct = "UA-6082292-6";
+</script>
+<script src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/wb.js" type="text/javascript" charset="utf-8"></script><script charset="UTF-8" src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/query"></script>
+
+<script type="text/javascript">
+function nav_locate(){
+	var top=$(document).scrollTop();
+	if(($.browser.msie==true)&&($.browser.version==6.0)){
+		if(top>131) {
+			$('.main').css('margin-top', '104px');
+			$("#nav").css({position:"absolute",top:top-131});
+		}
+	}else{
+		if(top>131) {
+			$('.main').css('margin-top', '104px');
+			$("#nav").css({position:"fixed",top:0});
+		}
+	}
+	if(top<=131) {
+		$('.main').removeAttr('style');
+		$("#nav").css({position:"static",top:0});
+	}
+}
+$(function(){
+		window.onscroll=nav_locate;
+		window.onresize=nav_locate;
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#adlayerclose").click(function(){
+		$("#adlayer").hide();
+	});
+	$("#adlayerclose").click(function(){
+		$("#adlayertitle").show();
+	});
+	
+	$("#adlayeropen").click(function(){
+		$("#adlayer").show();
+		$("#adlayertitle").hide();
+	});
+});
+</script>
+
+<script charset="UTF-8" src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/bundle.js"></script><script charset="UTF-8" src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/followButton.js"></script><link href="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/followButtonSdk.css" type="text/css" rel="stylesheet"><script charset="UTF-8" src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/publish.js"></script><link href="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/weiboPublish.css" type="text/css" rel="stylesheet"><script charset="UTF-8" src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/iframeWidget.js"></script><link rel="Stylesheet" type="text/css" charset="utf-8" href="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/followWithCard.css"><div style="position: absolute; top: -9999px; left: -9999px;"></div></head>
+
+<body><iframe id="sina_anywhere_iframe" style="display: none;"></iframe>
+
+<div class="body">
+	<div class="topnav">
+		<div style="float:left;"><a href="http://weibo.com/blogread" title="IT技术博客大学习" target="_blank"><img src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/1" style="border:0" alt="IT技术博客大学习"></a></div>
+		<div style="float:left;margin-top:5px;"><wb:follow-button uid="1646218964" type="red_3" width="100%" height="24"><div class="WB_widget WB_follow_ex" style="height: 24px; overflow: hidden;"><div class="follow_btn_line" node-type="inner"><a class="follow_btn status_followed" node-type="followBtn" target="_blank" title="已关注" href="http://weibo.com/u/1646218964"><cite class="follow_btn_inner"><u class="WB_ico_logo"></u><cite class="follow_text">新动态</cite></cite></a><cite class="follow_intro"><a title="IT技术博客大学习" target="_blank" href="http://weibo.com/blogread" class="follow_name name_bold">IT技术博客大学习</a><cite class="intro_data">(粉丝9.6万)</cite></cite></div></div></wb:follow-button></div>
+		&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://blogread.cn/daohang/"><strong>博客导航</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://blogread.cn/it/wap/">手机版</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://blogread.cn/it/search.php">搜索本站</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://blogread.cn/it/site/">作者列表</a>
+	</div>
+    
+    <div class="banner">
+    	<div>
+        	<div class="logo"><h2><a href="http://blogread.cn/it/">IT技术博客大学习</a></h2><font color="#FB993B">-- 共学习 共进步！ --</font></div>
+        	<div class="ad">
+				<script type="text/javascript"><!--
+				google_ad_client = "pub-2206192680127944";
+				/* 728x90, 创建于 09-10-14 */
+				google_ad_slot = "2235377458";
+				google_ad_width = 728;
+				google_ad_height = 90;
+				//-->
+				</script>
+				<script type="text/javascript" src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/show_ads.js">
+				</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+            </div>    
+        </div>
+	</div><!-- banner -->
+
+	<div class="nav" id="nav" style="position: fixed; top: 0px;"> 
+		<a href="http://blogread.cn/it/category/2">PHP</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://blogread.cn/it/category/3">MySQL</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://blogread.cn/it/category/4">Oracle</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://blogread.cn/it/category/5">Linux</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://blogread.cn/it/category/6">Apache</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://blogread.cn/it/category/9">算法</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://blogread.cn/it/category/16">安全</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://blogread.cn/it/category/15">网络系统</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://blogread.cn/it/category/17">系统架构</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://blogread.cn/it/category/18">系统运维</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://blogread.cn/it/category/23">源码分析</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://blogread.cn/it/category/22">编程语言</a>
+		<br> 
+		<a href="http://blogread.cn/it/">首页</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://blogread.cn/it/category/7">JavaScript</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://blogread.cn/it/category/12">CSS/HTML</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://blogread.cn/it/category/13">用户研究</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://blogread.cn/it/category/20">信息和交互</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://blogread.cn/it/category/19">视觉设计</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://blogread.cn/it/category/21">设计思想</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://blogread.cn/it/category/11">发现</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://blogread.cn/it/category/10">奋斗</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://blogread.cn/it/category/14">互联网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://blogread.cn/it/category/8">其他</a> 
+	</div> 
+	<div class="main" style="margin-top: 104px;"> 
+
+		<div class="main_left">
+			
+			
+			<div class="posi">
+				<strong>您现在的位置</strong>：<a href="http://blogread.cn/it/">首页</a> --&gt; <a href="http://blogread.cn/it/category/11">发现</a> --&gt; 为什么会有这么的编程语言
+			</div>
+
+			<div class="articlebox">
+				<div class="title"><h2>为什么会有这么的编程语言</h2></div>
+				<div class="info">
+					<script type="text/javascript" charset="utf-8">
+(function(){
+  var _w = 106 , _h = 24;
+  var param = {
+    /*url:location.href,*/
+    url:'http://blogread.cn/it/article/6192?f=wb1', 
+    type:'5',
+    count:'', /**是否显示分享数，1显示(可选)*/
+    appkey:'3741373929', /**您申请的应用appkey,显示分享来源(可选)*/
+    title:'【为什么会有这么的编程语言】Paul Graham不仅是Y Combinator天使投资公司的创始人，而且还是一名关系编程界的程序员，最近他的一位朋友Kevin Kelleher向他建议了一个比较各种编程语言的有趣方法：看看它们各自都是来解决什么问题的。可问题是，像这样去描述，你可以罗列出无数的语言，而且你可以使用各种的角度来描述。                	', /**分享的文字内容(可选，默认为所在页面的title)*/
+    pic:'', /**分享图片的路径(可选)*/
+    ralateUid:'1646218964', /**关联用户的UID，分享微博会@该用户(可选)*/
+	language:'zh_cn', /**设置语言，zh_cn|zh_tw(可选)*/
+    rnd:new Date().valueOf()
+  }
+  var temp = [];
+  for( var p in param ){
+    temp.push(p + '=' + encodeURIComponent( param[p] || '' ) )
+  }
+  document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://hits.sinajs.cn/A1/weiboshare.html?' + temp.join('&') + '" width="'+ _w+'" height="'+_h+'"></iframe>')
+})()
+</script><iframe allowtransparency="true" frameborder="0" scrolling="no" src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/weiboshare.htm" width="106" height="24"></iframe>
+									&nbsp;&nbsp;<a href="http://blogread.cn/it/article/6192?f=wb#original">出处信息</a>
+				</div>
+
+				<div class="article">
+										<div style="float:right;margin: 4px;">
+						<script type="text/javascript"><!--
+						google_ad_client = "ca-pub-2206192680127944";
+						/* blogread正文页336-280 */
+						google_ad_slot = "2362052085";
+						google_ad_width = 336;
+						google_ad_height = 280;
+						//-->
+						</script>
+						<script type="text/javascript" src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/show_ads.js">
+						</script><ins id="aswift_1_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><iframe width="336" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+					</div>
+
+					<p> &nbsp; &nbsp;朋友Kevin Kelleher向我建议了一个比较各种编程语言的有趣方法：看看它们各自都是来解决什么问题的。可问题是，像这样去描述，你可以罗列出无数的语言，而且你可以使用各种的角度来描述。</p><p> &nbsp; &nbsp;<strong>Algol:</strong> 汇编语言太低级了。</p><p> &nbsp; &nbsp;<strong>Pascal:</strong> Algol语言缺少足够的数据类型。</p><p> &nbsp; &nbsp;<strong>Modula:</strong> Pascal语言对于系统应用编程来说太弱了。</p><p> &nbsp; &nbsp;<strong>Simula:</strong> Algol语言在仿真模拟方面不够好。</p><p> &nbsp; &nbsp;<strong>Smalltalk:</strong>Simula语言里并不是所有的东西都是对象。</p><p> &nbsp; &nbsp;<strong>Fortran:</strong>汇编语言太低级。</p><p> &nbsp; &nbsp;<strong>Cobol:</strong> Fortran语言不好用。</p><p> &nbsp; &nbsp;<strong>PL/1:</strong> Fortran语言缺少足够的数据类型。</p><p> &nbsp; &nbsp;<strong>Ada:</strong>所有现存的编程语言都有缺失。</p><p> &nbsp; &nbsp;<strong>Basic:</strong> Fortran语言不好用。</p><p> &nbsp; &nbsp;<strong>APL:</strong> Fortran语言在数组操作上不好用。</p><p> &nbsp; &nbsp;<strong>J:</strong> APL语言需要自己的字符集。</p><p> &nbsp; &nbsp;<strong>C:</strong> 汇编语言太低级。</p><p> &nbsp; &nbsp;<strong>C++:</strong> C语言太低级。</p><p> &nbsp; &nbsp;<strong>Java:</strong> C++太笨重。微软在压迫我们。</p><p> &nbsp; &nbsp;<strong>C#:</strong> Java是Sun公司控制的。</p><p> &nbsp; &nbsp;<strong>Lisp:</strong> 用图灵机方式描述计算机计算太别扭。</p><p> &nbsp; &nbsp;<strong>Scheme:</strong> MacLisp语言太笨拙。</p><p> &nbsp; &nbsp;<strong>T:</strong> Scheme语言没有程序库。</p><p> &nbsp; &nbsp;<strong>Common Lisp:</strong>Lisp语言的方言太多了。</p><p> &nbsp; &nbsp;<strong>Dylan:</strong> Scheme语言没有程序库，Lisp语法太疯狂。</p><p> &nbsp; &nbsp;<strong>Perl:</strong> Shell脚本/awk/sed都不像编程语言。</p><p> &nbsp; &nbsp;<strong>Python:</strong> Perl语言太让人受不了。</p><p> &nbsp; &nbsp;<strong>Ruby:</strong> Perl语言太笨拙，Lisp语法太疯狂。</p><p> &nbsp; &nbsp;<strong>Prolog:</strong> 编程不够逻辑。</p><hr><p>本文由<a href="http://www.aqee.net/">外刊IT评论网</a>(<a href="http://www.aqee.net/">www.aqee.net</a>)原创发表，文章地址：<a href="http://www.aqee.net/what-languages-fix/" rel="bookmark">为什么会有这么的编程语言</a></p>
+					
+					<div style="margin: 4px 80px;padding:10px;border:#01DF01 3px dashed;background: #F3F781;-moz-border-radius: 5px;border-radius: 5px;">
+					觉得文章有用？立即：
+<script type="text/javascript" charset="utf-8">
+(function(){
+  var _w = 106 , _h = 24;
+  var param = {
+    /*url:location.href,*/
+    url:'http://blogread.cn/it/article/6192?f=wb2', 
+    type:'5',
+    count:'', /**是否显示分享数，1显示(可选)*/
+    appkey:'3741373929', /**您申请的应用appkey,显示分享来源(可选)*/
+    title:'【为什么会有这么的编程语言】Paul Graham不仅是Y Combinator天使投资公司的创始人，而且还是一名关系编程界的程序员，最近他的一位朋友Kevin Kelleher向他建议了一个比较各种编程语言的有趣方法：看看它们各自都是来解决什么问题的。可问题是，像这样去描述，你可以罗列出无数的语言，而且你可以使用各种的角度来描述。                	', /**分享的文字内容(可选，默认为所在页面的title)*/
+    pic:'', /**分享图片的路径(可选)*/
+    ralateUid:'1646218964', /**关联用户的UID，分享微博会@该用户(可选)*/
+	language:'zh_cn', /**设置语言，zh_cn|zh_tw(可选)*/
+    rnd:new Date().valueOf()
+  }
+  var temp = [];
+  for( var p in param ){
+    temp.push(p + '=' + encodeURIComponent( param[p] || '' ) )
+  }
+  document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://hits.sinajs.cn/A1/weiboshare.html?' + temp.join('&') + '" width="'+ _w+'" height="'+_h+'"></iframe>')
+})()
+</script><iframe allowtransparency="true" frameborder="0" scrolling="no" src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/weiboshare(1).htm" width="106" height="24"></iframe>
+						和朋友一起 <strong>共学习 共进步！</strong>
+						
+					                		<script type="text/javascript">
+							WB2.anyWhere(function(W){
+								W.widget.followButton({
+									'nick_name': '外刊IT评论网',	//用户昵称
+									'id': "wb_follow_btn1"	//关注按钮容器ID
+								});
+							});
+						</script>
+						<p>本文作者：</p>
+						<span id="wb_follow_btn1"><div class="WB_widgets WB_followButton"><div class="clearfix"><div class="WB_UserAvatar"><img node-type="profilePic" alt="" src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/undefined"></div><div class="WB_UserInfo"><p class="WB_UserName" node-type="nameBox"><a href="http://www.weibo.com/undefined" target="_blank">undefined</a></p><p class="WB_UserStat" node-type="btnbox"><span class="WB_btnA" node-type="followBtn"><span> <em class="WB_btnicn_add" node-type="followImg"></em><em>加关注</em></span></span></p></div></div></div></span>
+						<p>而且，对文章有任何想法，可：</p>
+						<wb:publish default_text="@外刊IT评论网，我对您这个文章（http://blogread.cn/it/article/6192?f=wbc2 分享自 @IT技术博客大学习）有点想法：" button_size="big" button_text="立即在微博与作者 @外刊IT评论网 沟通！"><a class="publishButton publishButton_red01" href="javascript:;"><span>立即在微博与作者 @外刊IT评论网 沟通！</span></a></wb:publish>
+                    					</div>
+
+					<div>
+						<script type="text/javascript"><!--
+						google_ad_client = "ca-pub-2206192680127944";
+						/* blogread文章底部 */
+						google_ad_slot = "1471313689";
+						google_ad_width = 728;
+						google_ad_height = 90;
+						//-->
+						</script>
+						<script type="text/javascript" src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/show_ads.js">
+						</script><ins id="aswift_2_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+					</div>
+					
+					
+										<h3>我们猜你喜欢：</h3>
+					<ol>
+													<li><a href="http://blogread.cn/it/article/5745?f=sa">为什么有些编程语言会死而有些能活下来？ &nbsp;&nbsp; <span style="font-size:14px;">(阅读：1360)</span></a></li>
+													<li><a href="http://blogread.cn/it/article/5205?f=sa">为什么我们要学习Haskell这样的编程语言 &nbsp;&nbsp; <span style="font-size:14px;">(阅读：1340)</span></a></li>
+													<li><a href="http://blogread.cn/it/article/6688?f=sa">10分钟尝试10种编程语言 &nbsp;&nbsp; <span style="font-size:14px;">(阅读：80)</span></a></li>
+												
+					</ol>
+					
+				</div><!-- article -->
+
+			</div><!-- articlebox -->
+
+			<div class="around">
+				<div class="prefix"><img src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/article.gif" border="0"> <strong>前一篇：</strong><a href="http://blogread.cn/it/article/6189">彻底屏蔽优酷广告</a></div>
+				<div class="suffix"><img src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/article.gif" border="0"> <strong>后一篇：</strong><a href="http://blogread.cn/it/article/6195">Chrome浏览器内部协议Chrome://收集</a></div>
+			</div>
+			
+			<div class="comment">
+				<div class="tip"><a name="original">文章信息</a></div>
+				
+				<ul>
+					<li>作者：<a href="http://blogread.cn/it/channel/245">Aqee</a></li>
+					<li>来源： <a href="http://www.aqee.net/what-languages-fix/" target="_blank">外刊IT评论</a></li>
+					<li>发布时间：2013-01-16 14:04:04</li>
+					<li>浏览：1011</li>
+					<li>标签：    <a href="http://blogread.cn/it/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80">编程语言</a></li>
+				</ul>
+			</div>
+
+			<div class="comment">
+				<div class="tip"><a name="comment">评论</a></div>
+				<div class="commentbox">
+				            	<wb:comments url="http://blogread.cn/it/article/6192?f=wb" brandline="y" width="auto" appkey="3741373929"><iframe id="WBCommentFrame" src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/250x250danpin0911.htm" width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0"></iframe></wb:comments>
+				</div>
+				<!-- 
+									<ol>暂时还没有评论，要不您先来？</ol>
+								 -->
+                
+            </div><!-- comment -->
+            
+            
+<!-- 
+            <div class="commentadd">
+
+            	
+            	<form action="" method="post">
+            		<input type="hidden" name="idArticle" value="6192" />
+            	<div class="tip">巩固知识，从评论开始！</div>
+            	<div class="info">
+                	昵称(*)：<input name="name" type="text" id="name" value="" size="8">
+                    <br />邮箱(*)：<input name="email" type="text" id="email" value="" size="20">
+                   个人网站：<input name="site" type="text" id="site" value="" size="30">
+                    <p>（昵称、邮箱和内容为必填，邮箱将被保密！）</p>
+                </div>
+                <div class="content">
+                	<textarea name="content" cols="70" rows="10" wrap="PHYSICAL"></textarea>
+                </div>
+                <div class="post">
+                	<input name="submit" type="submit" value="提交评论"> 巩固知识，从评论开始！
+                </div>
+                </form>
+                
+            </div>!-- commentadd -->
+
+        </div><!-- main_left -->
+
+        <div class="main_right"> 
+
+            			<div style="margin-bottom:4px;">
+				<iframe src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/qrcode_for_gh_609c8c16bbd2_258.jpg" frameborder="0" height="300"></iframe>
+			</div><!-- category -->
+
+            <div class="category">
+                <div class="title">
+					努力让您和作者直接沟通
+                </div>
+                <div class="info">
+                		<script type="text/javascript">
+							WB2.anyWhere(function(W){
+								W.widget.followButton({
+									'nick_name': '外刊IT评论网',	//用户昵称
+									'id': "wb_follow_btn"	//关注按钮容器ID
+								});
+							});
+						</script>
+						<span id="wb_follow_btn"><div class="WB_widgets WB_followButton"><div class="clearfix"><div class="WB_UserAvatar"><img node-type="profilePic" alt="" src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/undefined"></div><div class="WB_UserInfo"><p class="WB_UserName" node-type="nameBox"><a href="http://www.weibo.com/undefined" target="_blank">undefined</a></p><p class="WB_UserStat" node-type="btnbox"><span class="WB_btnA" node-type="followBtn"><span> <em class="WB_btnicn_add" node-type="followImg"></em><em>加关注</em></span></span></p></div></div></div></span>
+						<p>哇，太棒了！对文章有任何想法，可：</p>
+						<wb:publish default_text="@外刊IT评论网，我对您这个文章（http://blogread.cn/it/article/6192?f=wbc 分享自 @IT技术博客大学习）有点想法：" button_size="big" button_text="立即在微博与作者沟通！"><a class="publishButton publishButton_red01" href="javascript:;"><span>立即在微博与作者沟通！</span></a></wb:publish>
+                </div>
+            </div><!-- category -->
+
+
+
+
+            <div class="category">
+                <div class="title">
+                    我们猜您喜欢
+                </div>
+                <div class="info">
+                    <ul>
+                                            <li><img src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/re.gif" border="0"><a href="http://blogread.cn/it/article/5745?f=sr">为什么有些编程语言会死而有些能活下来？</a></li>
+                                            <li><img src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/re.gif" border="0"><a href="http://blogread.cn/it/article/5205?f=sr">为什么我们要学习Haskell这样的编程语言</a></li>
+                                            <li><img src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/re.gif" border="0"><a href="http://blogread.cn/it/article/6688?f=sr">10分钟尝试10种编程语言</a></li>
+                        
+                    </ul>
+                </div>
+            </div><!-- category -->
+
+            <div class="category">
+                <div class="info">
+                	学习的同时，勿忘上淘宝，上淘宝有助家庭和睦 :) 原因你懂的！
+<script type="text/javascript">
+     document.write('<a style="display:none!important" id="tanx-a-mm_10984112_4090067_13398709"></a>');
+     tanx_s = document.createElement("script");
+     tanx_s.type = "text/javascript";
+     tanx_s.charset = "gbk";
+     tanx_s.id = "tanx-s-mm_10984112_4090067_13398709";
+     tanx_s.async = true;
+     tanx_s.src = "http://p.tanx.com/ex?i=mm_10984112_4090067_13398709";
+     tanx_h = document.getElementsByTagName("head")[0];
+     if(tanx_h)tanx_h.insertBefore(tanx_s,tanx_h.firstChild);
+</script><div id="tanxssp_con_mm_10984112_4090067_13398709" style="display:inline-block;position:relative;width:250px;height:250px;*display:inline;*zoom:1"><iframe scrolling="no" frameborder="0" marginheight="0" marginwidth="0" border="0" style="width:250px;height:250px;" src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/acbeacon2.htm"></iframe><a id="iconmm_10984112_4090067_13398709" title="我也要申请橱窗推广" target="_blank" href="http://c.alimama.com/" style="width:26px;height:17px;right:0px;bottom:0px;display:block;position:absolute;cursor:pointer;z-index:250;">   <span id="icon_smallmm_10984112_4090067_13398709" style="float:none;width:26px;display:block;height:17px;background-repeat:no-repeat;background-image: url(&#39;http://gtms02.alicdn.com/tps/i2/T1oY3VXmNbXXXb8qDc-26-18.png&#39;);*background-image:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&#39;http://img02.taobaocdn.com/tps/i2/T1oY3VXmNbXXXb8qDc-26-18.png&#39;);"></span>   <span id="icon_bigmm_10984112_4090067_13398709" style="float:none;width:110px;height:17px;display: none;background-repeat:no-repeat;background-image: url(&#39;http://img03.taobaocdn.com/tps/i3/T1dt7VXiRaXXbd25o5-110-18.png&#39;);*background-image:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&#39;http://img03.taobaocdn.com/tps/i3/T1dt7VXiRaXXbd25o5-110-18.png&#39;);"></span></a></div><a style="display:none!important" id="tanx-a-mm_10984112_4090067_13398709"></a>
+				</div>
+            </div><!-- category -->
+            
+
+            <div class="category">
+                <div class="title">
+                    扫一扫订阅我的微信
+                </div>
+                <div class="info">
+					微信号：IT技术博客大学习
+					<br>
+                        <iframe src="about:blank" frameborder="0" height="258"></iframe>
+                </div>
+            </div><!-- category -->
+
+            <div class="category">
+                <div class="title">
+                    近3天十大热文
+                </div>
+                <div class="info">
+                    <ul>
+                                                	<li><img src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/h_article.gif" border="0">[257] <a href="http://blogread.cn/it/article/6077?f=hot3">程序员疫苗：代码注入</a></li>
+                                                	<li><img src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/h_article.gif" border="0">[237] <a href="http://blogread.cn/it/article/6082?f=hot3">查看linux系统版本命令总结</a></li>
+                                                	<li><img src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/h_article.gif" border="0">[236] <a href="http://blogread.cn/it/article/2170?f=hot3">python实现自动登录discuz论坛</a></li>
+                                                	<li><img src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/h_article.gif" border="0">[149] <a href="http://blogread.cn/it/article/6189?f=hot3">彻底屏蔽优酷广告</a></li>
+                                                	<li><img src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/h_article.gif" border="0">[120] <a href="http://blogread.cn/it/article/1738?f=hot3">用户研究方法介绍――情绪板（Mood Boa</a></li>
+                                                	<li><img src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/h_article.gif" border="0">[116] <a href="http://blogread.cn/it/article/6084?f=hot3">各种浏览器审查、监听http头工具介绍</a></li>
+                                                	<li><img src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/h_article.gif" border="0">[106] <a href="http://blogread.cn/it/article/3496?f=hot3">Fix Bug的五个阶段</a></li>
+                                                	<li><img src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/h_article.gif" border="0">[103] <a href="http://blogread.cn/it/article/874?f=hot3">用Hyer来进行网站的抓取</a></li>
+                                                	<li><img src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/h_article.gif" border="0">[99] <a href="http://blogread.cn/it/article/6078?f=hot3">Windows: 使用Win7自带的远程协助</a></li>
+                                                	<li><img src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/h_article.gif" border="0">[95] <a href="http://blogread.cn/it/article/2885?f=hot3">神马？用excel来做项目管理？</a></li>
+                                        </ul>
+                </div>
+            </div><!-- category -->
+
+            <div class="category">
+                <div class="title">
+                    最新发表
+                </div>
+                <div class="info">
+                    <ul>
+                                            <li><img src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6902">教你如何在Windiws平台上创建以点(.)开头的文件名</a></li>
+                                            <li><img src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6901">浏览器的重绘(repaints)与重排(reflows)</a></li>
+                                            <li><img src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6900">页面重绘和回流以及优化</a></li>
+                                            <li><img src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6899">用三段 140 字符以内的代码生成一张 1024×1024 的图片</a></li>
+                                            <li><img src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6898">Python中的闭包</a></li>
+                                            <li><img src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6897">百度是如何使用hadoop的</a></li>
+                                            <li><img src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6896">Linux系统巡检常用命令</a></li>
+                                            <li><img src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6895">有用的linux命令——chattr</a></li>
+                                            <li><img src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6894">那些让工作更美好的设备们</a></li>
+                                            <li><img src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6893">CAP 理论</a></li>
+                        
+                    </ul>
+                </div>
+            </div><!-- category -->
+
+
+
+
+
+			<div class="adlayer" id="adlayer">
+				<div class="header">
+					<div class="title">极客学院精品课程</div>
+					<div class="close" id="adlayerclose">关闭</div>
+				</div>
+				<div class="box">
+					<div class="articletitle"><a href="http://blogread.cn/it/go.php?from=jike" rel="nofollow" target="_blank">极客学院—最酷的IT职业在线教育平台</a></div>
+					<div class="content">
+						<a href="http://blogread.cn/it/go.php?from=jike" rel="nofollow" target="_blank">
+							<img src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/jike_180_180.jpg" height="90" width="90" style="float:left;margin-right:5px">
+							50000+开发者在线学习，通过1500+高清课程，系统学习Android/Cocos2d-x/iOS开发技能。存款不够首付？那就快来充电吧！
+						</a>
+					</div>
+				</div>
+				<div class="footer"><a href="http://blogread.cn/it/go.php?from=jike" rel="nofollow" target="_blank">查看 &gt;&gt;</a></div>
+			</div><!-- category -->
+			
+			<div class="adlayer" id="adlayertitle" style="display: none">
+				<div class="header">
+					<div class="title">极客学院精品课程</div>
+					<div class="close" id="adlayeropen">打开</div>
+				</div>
+			</div><!-- category -->
+            
+        </div><!-- main_right --> 
+
+    </div> 
+
+            <div class="bottomarticle">
+            © 2009 - 2014 本页面所有内容，转载请注明出处 站长Email:blogread.cn@gmail.com
+        
+        <br>
+        <br>
+		<a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备09017802号</a>
+		<script language="javascript" type="text/javascript" src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/2709512.js"></script><a href="http://www.51.la/?2709512" target="_blank" title="51.la 专业、免费、强健的访问统计">网站统计</a>
+
+<noscript>&lt;a href="http://www.51.la/?2709512" target="_blank"&gt;&lt;img alt="&amp;#x6211;&amp;#x8981;&amp;#x5566;&amp;#x514D;&amp;#x8D39;&amp;#x7EDF;&amp;#x8BA1;" src="http://img.users.51.la/2709512.asp" style="border:none" /&gt;&lt;/a&gt;</noscript>
+
+	<script src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/stat.php" language="JavaScript"></script><script src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/core.php" charset="utf-8" type="text/javascript"></script><a href="http://www.cnzz.com/stat/website.php?web_id=2320291" target="_blank" title="站长统计">站长统计</a>
+	
+	
+	<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6082292-6");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F7d07e17bc73562efebd41b6ddcd5a499' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/h.js" type="text/javascript"></script>
+
+    </div><!-- bottom -->
+
+		 
+</div><!-- body -->
+<!-- 将以下代码放在<head>之后或者</body>标签之前。 -->
+<script type="text/javascript" src="./为什么会有这么的编程语言 -- 发现 -- IT技术博客大学习 -- 共学习 共进步！_files/plusone.js" gapi_processed="true">
+  {lang: 'zh-CN'}
+</script>
+
+ 
+<div class="WB_widget WB_follow_ex WB_floatContainer"></div></body></html>

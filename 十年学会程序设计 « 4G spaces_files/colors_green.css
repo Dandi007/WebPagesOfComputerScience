@@ -1,0 +1,44 @@
+/* colors */
+/**********/
+
+a,
+ul#blogMenu li a,
+a.commentCount:hover span.commentCountText,
+div.commentsWrapper a:hover
+	{ color: green; }
+
+a:hover,
+h1#blogTitle a:hover,
+div#contextualInfo p span,
+div.navigation div a:active,
+#footer a
+	{ color: #10bc10; }
+
+h1#blogTitle a,
+div#contextualInfo p span
+	{ color: #72bc72; }
+
+
+ul#blogMenu li ul * ul li:hover
+	{ border-color: green !important; }
+
+
+div.postTitle h2 a:hover,
+#theBlogDescription
+	{ background: #72bc72; }
+
+a.commentCount:hover span.commentCountNumber
+	{ background-color: green; }
+
+a.more-link:active,
+div.navigation div a:hover
+	{ background-color: #10bc10; }
+
+div.commentsWrapper a
+	{ color: #00bc00; }
+
+#respond,
+div.postmetadata,
+ul#widgetBar li.widget
+	{ background-color: #ddeedd; }
+

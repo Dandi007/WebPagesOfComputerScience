@@ -1,0 +1,974 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+     
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    
+<head>
+
+    <script id="allmobilize" charset="utf-8" src="http://a.yunshipei.com/46aae4d1e2371e4aa769798941cef698/allmobilize.min.js"></script>
+ <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+
+    <title>GDB十分钟教程 - liigo&#39;s blog
+        - 博客频道 - CSDN.NET</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="GDB十分钟教程作者: liigo原文链接:&#160;http://blog.csdn.net/liigo/archive/2006/01/17/582231.aspx日期: 2006年1月16日本文写给主要工作在Windows操作系统下而又需要开发一些跨平台软件的程序员朋友，以及程序爱好者。GDB是一个由GNU开源组织发布的、UNIX/LINUX操作系统下的、基于命令行的、功能强大的程序调试" />
+    <script src="http://static.blog.csdn.net/scripts/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://static.blog.csdn.net/scripts/ad.js?v=1.1"></script>
+        <!--new top-->
+               <link rel="stylesheet" href="http://static.csdn.net/public/common/toolbar/css/index.css">        <!--new top-->
+
+    <link rel="Stylesheet" type="text/css" href="http://static.blog.csdn.net/skin/default/css/style.css?v=1.1" />
+    <link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="/liigo/rss/list" />
+    <link rel="shortcut icon" href="http://csdnimg.cn/public/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="http://static.blog.csdn.net/scripts/SyntaxHighlighter/styles/default.css" />
+ 
+
+
+</head>
+<body>
+    
+   
+      <!--new top-->
+    <script id="toolbar-tpl-scriptId" fixed="true" prod="blog" skin="black" src="http://static.csdn.net/public/common/toolbar/js/html.js" type="text/javascript"></script>
+     <!--new top-->
+    <div id="container">
+        <div id="header">
+    <div class="header">
+        <div id="blog_title">
+            <h2>
+                <a href="http://blog.csdn.net/liigo">liigo&#39;s blog</a></h2>
+            <h3>当我沉默着的时候，我觉得充实；我将开口，同时感到空虚……</h3>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div id="navigator">
+    <div class="navigator_bg">
+    </div>
+    <div class="navigator">
+        <ul>
+                <li id="btnContents"><a href="http://blog.csdn.net/liigo?viewmode=contents"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_mulu'])">
+                    <img src="http://static.blog.csdn.net/images/ico_list.gif">目录视图</span></a></li>
+                <li id="btnView"><a href="http://blog.csdn.net/liigo?viewmode=list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_zhaiyao'])">
+                    <img src="http://static.blog.csdn.net/images/ico_summary.gif">摘要视图</span></a></li>
+                <li id="btnRss"><a href="http://blog.csdn.net/liigo/rss/list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_RSS'])">
+                    <img src="http://static.blog.csdn.net/images/ico_rss.gif">订阅</span></a></li>                
+
+            </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var username = "liigo";
+    var _blogger = username;
+    var blog_address = "http://blog.csdn.net/liigo";
+    var static_host = "http://static.blog.csdn.net";
+    var currentUserName = "Dandi007";  
+</script>
+
+        <div id="body">
+            <div id="main">
+                <div class="main">
+                        <div class="ad_class">
+<div class="notice tracking-ad" data-mod='popu_3' > 
+
+<a href="http://bbs.csdn.net/topics/390812950?page=2#post-398116601"target="_blank">
+<font color=blue>博客专家福利
+</font></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="http://blog.csdn.net/blogdevteam/article/details/39498125">
+<font color=red>2015年1月微软MVP申请开始啦</font></a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="http://www.csdn.net/article/2014-09-24/2821834">
+<font color=blue>专访李智勇：一个老程序员的哲学思考
+</font></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="http://blog.csdn.net/blogdevteam/article/details/38418263">
+<font color=red>推荐有礼--找出您心中的技术大牛
+</font></a>
+
+
+</div>                        </div>
+                        
+
+  
+<link href="http://static.blog.csdn.net/css/comment1.css" type="text/css" rel="stylesheet" />
+<link href="http://static.blog.csdn.net/css/style1.css" type="text/css" rel="stylesheet" />
+<script language='JavaScript' type='text/javascript' src='http://download.csdn.net/js/jquery.cookie.js'></script>
+<script type="text/javascript" src="http://csdnimg.cn/rabbit/search-service/main.js"></script>
+<div id="article_details" class="details">
+    <div class="article_title">   
+         <span class="ico ico_type_Original"></span>
+
+
+    <h1>
+        <span class="link_title"><a href="/liigo/article/details/582231">
+        GDB十分钟教程
+        </a></span>
+    </h1>
+</div>
+
+    <div class="article_manage">
+        <span class="link_categories">
+        分类：
+            <a href="/liigo/article/category/124948" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_fenlei']);">其它</a> 
+        </span>
+    <span class="link_postdate">2006-01-17 18:28</span>
+    <span class="link_view" title="阅读次数">32009人阅读</span>
+    <span class="link_comments" title="评论次数"><a href="#comments" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_pinglun'])">评论</a>(21)</span>
+    <span class="link_collect"><a href="javascript:void(0);" onclick="javascript:_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shoucang']);collectArticle('GDB十分钟教程','582231');return false;" title="收藏">收藏</a></span>
+    <span class="link_report"><a href="#report"  onclick="javascript:_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_jubao']);report(582231,2);return false;" title="举报">举报</a></span>
+    
+</div>
+<div class="tag2box"><a href='http://www.csdn.net/tag/%e6%b1%87%e7%bc%96' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">汇编</a><a href='http://www.csdn.net/tag/%e7%a8%8b%e5%ba%8f%e8%b0%83%e8%af%95%e5%b7%a5%e5%85%b7' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">程序调试工具</a><a href='http://www.csdn.net/tag/file' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">file</a><a href='http://www.csdn.net/tag/%e7%bc%96%e8%af%91%e5%99%a8' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">编译器</a><a href='http://www.csdn.net/tag/delete' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">delete</a><a href='http://www.csdn.net/tag/gcc' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">gcc</a></div>
+
+  
+    
+<div id="article_content" class="article_content">
+<p><font size="6">GDB十分钟教程</font></p>
+<p><font face="Courier New"><font size="2">作者: liigo<br />原文链接:&nbsp;</font><a href="http://blog.csdn.net/liigo/archive/2006/01/17/582231.aspx"><font size="2">http://blog.csdn.net/liigo/archive/2006/01/17/582231.aspx</font></a><br /><font size="2">日期: 2006年1月16日</font></font></p>
+<p><font face="Courier New" size="2">本文写给主要工作在Windows操作系统下而又需要开发一些跨平台软件的程序员朋友，以及程序爱好者。</font></p>
+<p><font face="Courier New" size="2">GDB是一个由GNU开源组织发布的、UNIX/LINUX操作系统下的、基于命令行的、功能强大的程序调试工具。</font></p>
+<p><font face="Courier New" size="2">GDB中的命令固然很多，但我们只需掌握其中十个左右的命令，就大致可以完成日常的基本的程序调试工作。</font></p>
+<table cellspacing="0" cellpadding="2" width="100%" border="1">
+    <tbody>
+        <tr>
+            <td width="138" bgcolor="#d4d0c8"><strong><font face="Courier New" size="2">&nbsp;命令</font></strong></td>
+            <td width="500" bgcolor="#d4d0c8"><strong><font face="Courier New" size="2">&nbsp;解释</font></strong></td>
+            <td nowrap="nowrap" bgcolor="#d4d0c8"><strong><font face="Courier New" size="2">&nbsp;示例</font></strong></td>
+        </tr>
+        <tr>
+            <td width="138"><font face="Courier New" size="2">file &lt;文件名&gt;</font></td>
+            <td><font face="Courier New" size="2">加载被调试的可执行程序文件。<br />因为一般都在被调试程序所在目录下执行GDB，因而文本名不需要带路径。</font></td>
+            <td width="220"><font face="Courier New" size="2">(gdb) file gdb-sample</font></td>
+        </tr>
+        <tr>
+            <td width="138"><font face="Courier New" size="2">r</font></td>
+            <td><font face="Courier New" size="2">Run的简写，运行被调试的程序。<br />如果此前没有下过断点，则执行完整个程序；如果有断点，则程序暂停在第一个可用断点处。</font></td>
+            <td width="180"><font face="Courier New" size="2">(gdb) r</font></td>
+        </tr>
+        <tr>
+            <td width="138"><font face="Courier New" size="2">c</font></td>
+            <td><font face="Courier New" size="2">Continue的简写，继续执行被调试程序，直至下一个断点或程序结束。</font></td>
+            <td width="180"><font face="Courier New" size="2">(gdb) c</font></td>
+        </tr>
+        <tr>
+            <td width="138"><font face="Courier New" size="2">b &lt;行号&gt;<br />b &lt;函数名称&gt;<br />b *&lt;函数名称&gt;<br />b *&lt;代码地址&gt; </font>
+            <p><font face="Courier New" size="2">d [编号]</font></p>
+            </td>
+            <td><font face="Courier New" size="2">b: Breakpoint的简写，设置断点。两可以使用&ldquo;行号&rdquo;&ldquo;函数名称&rdquo;&ldquo;执行地址&rdquo;等方式指定断点位置。<br />其中在函数名称前面加&ldquo;*&rdquo;符号表示将断点设置在&ldquo;由编译器生成的prolog代码处&rdquo;。如果不了解汇编，可以不予理会此用法。 </font>
+            <p><font face="Courier New" size="2">d: Delete breakpoint的简写，删除指定编号的某个断点，或删除所有断点。断点编号从1开始递增。</font></p>
+            </td>
+            <td width="180"><font face="Courier New" size="2">(gdb) b 8<br />(gdb) b main<br />(gdb) b *main<br />(gdb) b *0x804835c </font>
+            <p><font face="Courier New" size="2">(gdb) d</font></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="138"><font face="Courier New" size="2">s, n</font></td>
+            <td><font face="Courier New" size="2">s: 执行一行源程序代码，如果此行代码中有函数调用，则进入该函数；<br />n: 执行一行源程序代码，此行代码中的函数调用也一并执行。 </font>
+            <p><font face="Courier New" size="2">s 相当于其它调试器中的&ldquo;Step Into (单步跟踪进入)&rdquo;；<br />n 相当于其它调试器中的&ldquo;Step Over (单步跟踪)&rdquo;。</font></p>
+            <p><font face="Courier New" size="2">这两个命令必须在有源代码调试信息的情况下才可以使用（GCC编译时使用&ldquo;-g&rdquo;参数）。</font></p>
+            </td>
+            <td width="180"><font face="Courier New" size="2">(gdb) s<br />(gdb) n</font></td>
+        </tr>
+        <tr>
+            <td width="138"><font face="Courier New" size="2">si, ni</font></td>
+            <td><font face="Courier New" size="2">si命令类似于s命令，ni命令类似于n命令。所不同的是，这两个命令（si/ni）所针对的是汇编指令，而s/n针对的是源代码。</font></td>
+            <td width="180"><font face="Courier New" size="2">(gdb) si<br />(gdb) ni</font></td>
+        </tr>
+        <tr>
+            <td width="138"><font face="Courier New" size="2">p &lt;变量名称&gt;</font></td>
+            <td><font face="Courier New" size="2">Print的简写，显示指定变量（临时变量或全局变量）的值。</font></td>
+            <td width="180"><font face="Courier New" size="2">(gdb) p i<br />(gdb) p nGlobalVar</font></td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap" width="155"><font face="Courier New" size="2">display ... </font>
+            <p><font face="Courier New" size="2">undisplay &lt;编号&gt;</font></p>
+            </td>
+            <td><font face="Courier New" size="2">display，设置程序中断后欲显示的数据及其格式。<br />例如，如果希望每次程序中断后可以看到即将被执行的下一条汇编指令，可以使用命令<br />&ldquo;display /i $pc&rdquo;<br />其中 $pc 代表当前汇编指令，/i 表示以十六进行显示。当需要关心汇编代码时，此命令相当有用。 </font>
+            <p><font face="Courier New" size="2">undispaly，取消先前的display设置，编号从1开始递增。</font></p>
+            </td>
+            <td width="180"><font face="Courier New" size="2">(gdb) display /i $pc </font>
+            <p><font face="Courier New" size="2">(gdb) undisplay 1</font></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="138"><font face="Courier New" size="2">i</font></td>
+            <td><font face="Courier New" size="2">Info的简写，用于显示各类信息，详情请查阅&ldquo;help i&rdquo;。</font></td>
+            <td width="180"><font face="Courier New" size="2">(gdb) i r</font></td>
+        </tr>
+        <tr>
+            <td width="138"><font face="Courier New" size="2">q</font></td>
+            <td><font face="Courier New" size="2">Quit的简写，退出GDB调试环境。</font></td>
+            <td width="180"><font face="Courier New" size="2">(gdb) q</font></td>
+        </tr>
+        <tr>
+            <td width="138"><font face="Courier New" size="2">help [命令名称]</font></td>
+            <td><font face="Courier New" size="2">GDB帮助命令，提供对GDB名种命令的解释说明。<br />如果指定了&ldquo;命令名称&rdquo;参数，则显示该命令的详细说明；如果没有指定参数，则分类显示所有GDB命令，供用户进一步浏览和查询。</font></td>
+            <td width="180"><font face="Courier New" size="2">(gdb) help display</font></td>
+        </tr>
+    </tbody>
+</table>
+<p><font face="Courier New" size="2">　</font></p>
+<p><font face="Courier New" size="2">废话不多说，下面开始实践。</font></p>
+<p><font face="Courier New" size="2">先给出一个示例用的小程序，C语言代码，简单的不能再简单了：</font></p>
+<table cellspacing="0" cellpadding="2" width="100%" bgcolor="#eeeeee" summary="" border="0">
+    <tbody>
+        <tr>
+            <td valign="top" nowrap="nowrap" align="left" width="38" bgcolor="#cccccc">
+            <p><font face="Courier New" size="2">1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9<br />10<br />11<br />12<br />13<br />14<br />15<br />16<br />17<br />18<br />19<br />20<br />21<br />22<br />23<br />24<br />25<br />26<br />27<br />28<br />29<br />30<br />31<br />32<br />33</font></p>
+            </td>
+            <td valign="top" nowrap="nowrap" align="left">
+            <p><font color="#008000"><font face="Courier New" size="2">//此程序仅作为&ldquo;GDB十分钟教程&rdquo;的示例代码, by liigo<br />//Email: </font><a href="mailto:liigo@sina.com"><font face="Courier New" size="2">liigo@sina.com</font></a><br /><font face="Courier New" size="2">//blog: </font><a target="_blank" href="http://blog.csdn.net/liigo"><font face="Courier New" size="2">http://blog.csdn.net/liigo</font></a><br /><font face="Courier New" size="2">//WebSite: </font><a target="_blank" href="http://www.liigo.com/"><font face="Courier New" size="2">www.liigo.com</font></a></font><font color="#0000ff"><font face="Courier New" size="2"> <br /><br /></font><font face="Courier New" size="2">#include </font></font><font size="2"><font face="Courier New"><font color="#000080">&lt;</font>stdio<font color="#000080">.</font>h<font color="#000080">&gt;</font></font></font><font color="#0000ff"><br /><br /><font face="Courier New" size="2">int</font></font><font size="2"><font face="Courier New"><font color="#000080"> </font>nGlobalVar<font color="#000080"> = </font><font color="#800000">0</font><font color="#000080">;</font></font></font><font color="#0000ff"><br /><br /><font face="Courier New" size="2">int</font></font><font size="2"><font face="Courier New"><font color="#000080"> </font>tempFunction<font color="#000080">(</font><font color="#0000ff">int</font><font color="#000080"> </font>a<font color="#000080">, </font><font color="#0000ff">int</font><font color="#000080"> </font>b</font></font><font size="2"><font face="Courier New"><font color="#000080">)<br />{<br /></font>&nbsp;&nbsp;&nbsp; <font color="#880000">printf</font><font color="#000080">(</font><font color="#008080">&quot;tempFunction is called, a = %d, b = %d /n&quot;</font><font color="#000080">, </font>a<font color="#000080">, </font>b</font></font><font size="2"><font face="Courier New"><font color="#000080">);<br /></font>&nbsp;&nbsp;&nbsp; <font color="#0000ff">return</font><font color="#000080"> (</font>a<font color="#000080"> + </font>b</font></font><font face="Courier New" color="#000080" size="2">);<br />}</font><font color="#0000ff"><br /><br /><font face="Courier New" size="2">int</font></font><font size="2"><font face="Courier New"><font color="#000080"> </font>main</font></font><font size="2"><font face="Courier New"><font color="#000080">()<br />{<br /></font>&nbsp;&nbsp;&nbsp; <font color="#0000ff">int</font><font color="#000080"> </font>n</font></font><font size="2"><font face="Courier New"><font color="#000080">;<br /></font>&nbsp;&nbsp;&nbsp; n<font color="#000080"> = </font><font color="#800000">1</font></font></font><font size="2"><font face="Courier New"><font color="#000080">;<br /></font>&nbsp;&nbsp;&nbsp; n</font></font><font size="2"><font face="Courier New"><font color="#000080">++;<br /></font>&nbsp;&nbsp;&nbsp; n</font></font><font size="2"><font face="Courier New"><font color="#000080">--;<br /><br /></font>&nbsp;&nbsp;&nbsp; nGlobalVar<font color="#000080"> += </font><font color="#800000">100</font></font></font><font size="2"><font face="Courier New"><font color="#000080">;<br /></font>&nbsp;&nbsp;&nbsp; nGlobalVar<font color="#000080"> -= </font><font color="#800000">12</font></font></font><font size="2"><font face="Courier New"><font color="#000080">;<br /><br /></font>&nbsp;&nbsp;&nbsp; <font color="#880000">printf</font><font color="#000080">(</font><font color="#008080">&quot;n = %d, nGlobalVar = %d /n&quot;</font><font color="#000080">, </font>n<font color="#000080">, </font>nGlobalVar</font></font><font size="2"><font face="Courier New"><font color="#000080">);<br /><br /></font>&nbsp;&nbsp;&nbsp; n<font color="#000080"> = </font>tempFunction<font color="#000080">(</font><font color="#800000">1</font><font color="#000080">, </font><font color="#800000">2</font></font></font><font size="2"><font face="Courier New"><font color="#000080">);<br /></font>&nbsp;&nbsp;&nbsp; <font color="#880000">printf</font><font color="#000080">(</font><font color="#008080">&quot;n = %d&quot;</font><font color="#000080">, </font>n</font></font><font size="2"><font face="Courier New"><font color="#000080">);<br /><br /></font>&nbsp;&nbsp;&nbsp; <font color="#0000ff">return</font><font color="#000080"> </font><font color="#800000">0</font></font></font><font face="Courier New" color="#000080" size="2">;<br />}<br /></font></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p><font face="Courier New" size="2">请将此代码复制出来并保存到文件 gdb-sample.c 中，然后切换到此文件所在目录，用GCC编译之：</font></p>
+<table cellspacing="0" cellpadding="2" width="100%" bgcolor="#000000" border="0">
+    <tbody>
+        <tr>
+            <td width="100%"><font face="Courier New" color="#ffffff" size="2">gcc gdb-sample.c -o gdb-sample -g</font></td>
+        </tr>
+    </tbody>
+</table>
+<p><font face="Courier New" size="2">在上面的命令行中，使用 -o 参数指定了编译生成的可执行文件名为 gdb-sample，使用参数 -g 表示将源代码信息编译到可执行文件中。如果不使用参数 -g，会给后面的GDB调试造成不便。当然，如果我们没有程序的源代码，自然也无从使用 -g 参数，调试/跟踪时也只能是汇编代码级别的调试/跟踪。</font></p>
+<p><font face="Courier New" size="2">下面&ldquo;gdb&rdquo;命令启动GDB，将首先显示GDB说明，不管它：</font></p>
+<table cellspacing="0" cellpadding="2" width="100%" bgcolor="#000000" border="0">
+    <tbody>
+        <tr>
+            <td width="100%"><font face="Courier New" color="#ffffff" size="2">GNU gdb Red Hat Linux (5.3post-0.20021129.18rh)<br />Copyright 2003 Free Software Foundation, Inc.<br />GDB is free software, covered by the GNU General Public License, and you are<br />welcome to change it and/or distribute copies of it under certain conditions.<br />Type &quot;show copying&quot; to see the conditions.<br />There is absolutely no warranty for GDB. Type &quot;show warranty&quot; for details.<br />This GDB was configured as &quot;i386-redhat-linux-gnu&quot;.<br />(gdb)&nbsp;</font></td>
+        </tr>
+    </tbody>
+</table>
+<p><font face="Courier New" size="2">上面最后一行&ldquo;(gdb) &rdquo;为GDB内部命令引导符，等待用户输入GDB命令。</font></p>
+<p><font face="Courier New" size="2">下面使用&ldquo;file&rdquo;命令载入被调试程序 gdb-sample（这里的 gdb-sample 即前面 GCC 编译输出的可执行文件）：</font></p>
+<table cellspacing="0" cellpadding="2" width="100%" bgcolor="#000000" border="0">
+    <tbody>
+        <tr>
+            <td width="100%"><font face="Courier New" color="#ffffff" size="2">(gdb) file gdb-sample<br />Reading symbols from gdb-sample...done.</font></td>
+        </tr>
+    </tbody>
+</table>
+<p><font face="Courier New" size="2">上面最后一行提示已经加载成功。</font></p>
+<p><font face="Courier New" size="2">下面使用&ldquo;r&rdquo;命令执行（Run）被调试文件，因为尚未设置任何断点，将直接执行到程序结束：</font></p>
+<table cellspacing="0" cellpadding="2" width="100%" bgcolor="#000000" border="0">
+    <tbody>
+        <tr>
+            <td width="100%"><font face="Courier New" color="#ffffff" size="2">(gdb) r<br />Starting program: /home/liigo/temp/test_jmp/test_jmp/gdb-sample<br />n = 1, nGlobalVar = 88<br />tempFunction is called, a = 1, b = 2<br />n = 3<br />Program exited normally.</font></td>
+        </tr>
+    </tbody>
+</table>
+<p><font face="Courier New" size="2">下面使用&ldquo;b&rdquo;命令在 main 函数开头设置一个断点（Breakpoint）：</font></p>
+<table cellspacing="0" cellpadding="2" width="100%" bgcolor="#000000" border="0">
+    <tbody>
+        <tr>
+            <td width="100%"><font face="Courier New" color="#ffffff" size="2">(gdb) b main<br />Breakpoint 1 at 0x804835c: file gdb-sample.c, line 19.</font></td>
+        </tr>
+    </tbody>
+</table>
+<p><font face="Courier New" size="2">上面最后一行提示已经成功设置断点，并给出了该断点信息：在源文件 gdb-sample.c 第19行处设置断点；这是本程序的第一个断点（序号为1）；断点处的代码地址为 0x804835c（此值可能仅在本次调试过程中有效）。回过头去看源代码，第19行中的代码为&ldquo;n = 1&rdquo;，恰好是 main 函数中的第一个可执行语句（前面的&ldquo;int n;&rdquo;为变量定义语句，并非可执行语句）。</font></p>
+<p><font face="Courier New" size="2">再次使用&ldquo;r&rdquo;命令执行（Run）被调试程序：</font></p>
+<table cellspacing="0" cellpadding="2" width="100%" bgcolor="#000000" border="0">
+    <tbody>
+        <tr>
+            <td width="100%"><font face="Courier New" color="#ffffff" size="2">(gdb) r<br />Starting program: /home/liigo/temp/gdb-sample<br /><br />Breakpoint 1, main () at gdb-sample.c:19<br />19 n = 1;</font></td>
+        </tr>
+    </tbody>
+</table>
+<p><font face="Courier New" size="2">程序中断在gdb-sample.c第19行处，即main函数是第一个可执行语句处。</font></p>
+<p><font face="Courier New" size="2">上面最后一行信息为：下一条将要执行的源代码为&ldquo;n = 1;&rdquo;，它是源代码文件gdb-sample.c中的第19行。</font></p>
+<p><font face="Courier New" size="2">下面使用&ldquo;s&rdquo;命令（Step）执行下一行代码（即第19行&ldquo;n = 1;&rdquo;）：</font></p>
+<table cellspacing="0" cellpadding="2" width="100%" bgcolor="#000000" border="0">
+    <tbody>
+        <tr>
+            <td width="100%"><font face="Courier New" color="#ffffff" size="2">(gdb) s<br />20 n++;</font></td>
+        </tr>
+    </tbody>
+</table>
+<p><font face="Courier New" size="2">上面的信息表示已经执行完&ldquo;n = 1;&rdquo;，并显示下一条要执行的代码为第20行的&ldquo;n++;&rdquo;。</font></p>
+<p><font face="Courier New" size="2">既然已经执行了&ldquo;n = 1;&rdquo;，即给变量 n 赋值为 1，那我们用&ldquo;p&rdquo;命令（Print）看一下变量 n 的值是不是 1 ：</font></p>
+<table cellspacing="0" cellpadding="2" width="100%" bgcolor="#000000" border="0">
+    <tbody>
+        <tr>
+            <td width="100%"><font face="Courier New" color="#ffffff" size="2">(gdb) p n<br />$1 = 1</font></td>
+        </tr>
+    </tbody>
+</table>
+<p><font face="Courier New" size="2">果然是 1。（$1大致是表示这是第一次使用&ldquo;p&rdquo;命令&mdash;&mdash;再次执行&ldquo;p n&rdquo;将显示&ldquo;$2 = 1&rdquo;&mdash;&mdash;此信息应该没有什么用处。）</font></p>
+<p><font face="Courier New" size="2">下面我们分别在第26行、tempFunction 函数开头各设置一个断点（分别使用命令&ldquo;b 26&rdquo;&ldquo;b tempFunction&rdquo;）：</font></p>
+<table cellspacing="0" cellpadding="2" width="100%" bgcolor="#000000" border="0">
+    <tbody>
+        <tr>
+            <td width="100%"><font face="Courier New" color="#ffffff" size="2">(gdb) b 26<br />Breakpoint 2 at 0x804837b: file gdb-sample.c, line 26.<br />(gdb) b tempFunction<br />Breakpoint 3 at 0x804832e: file gdb-sample.c, line 12.</font></td>
+        </tr>
+    </tbody>
+</table>
+<p><font face="Courier New" size="2">使用&ldquo;c&rdquo;命令继续（Continue）执行被调试程序，程序将中断在第二个断点（26行），此时全局变量 nGlobalVar 的值应该是 88；再一次执行&ldquo;c&rdquo;命令，程序将中断于第三个断点（12行，tempFunction 函数开头处），此时tempFunction 函数的两个参数 a、b 的值应分别是 1 和 2：</font></p>
+<table cellspacing="0" cellpadding="2" width="100%" bgcolor="#000000" border="0">
+    <tbody>
+        <tr>
+            <td width="100%"><font face="Courier New" color="#ffffff" size="2">(gdb) c<br />Continuing.<br /><br />Breakpoint 2, main () at gdb-sample.c:26<br />26 printf(&quot;n = %d, nGlobalVar = %d /n&quot;, n, nGlobalVar);<br />(gdb) p nGlobalVar<br />$2 = 88<br />(gdb) c<br />Continuing.<br />n = 1, nGlobalVar = 88<br /><br />Breakpoint 3, tempFunction (a=1, b=2) at gdb-sample.c:12<br />12 printf(&quot;tempFunction is called, a = %d, b = %d /n&quot;, a, b);<br />(gdb) p a<br />$3 = 1<br />(gdb) p b<br />$4 = 2</font></td>
+        </tr>
+    </tbody>
+</table>
+<p><font face="Courier New" size="2">上面反馈的信息一切都在我们预料之中，哈哈~~~</font></p>
+<p><font face="Courier New" size="2">再一次执行&ldquo;c&rdquo;命令（Continue），因为后面再也没有其它断点，程序将一直执行到结束：</font></p>
+<table cellspacing="0" cellpadding="2" width="100%" bgcolor="#000000" border="0">
+    <tbody>
+        <tr>
+            <td width="100%"><font face="Courier New" color="#ffffff" size="2">(gdb) c<br />Continuing.<br />tempFunction is called, a = 1, b = 2<br />n = 3<br />Program exited normally.</font></td>
+        </tr>
+    </tbody>
+</table>
+<p><font face="Courier New" size="2">　</font></p>
+<p><font face="Courier New" size="2">有时候需要看到编译器生成的汇编代码，以进行汇编级的调试或跟踪，又该如何操作呢？</font></p>
+<p><font face="Courier New" size="2">这就要用到display命令&ldquo;display /i $pc&rdquo;了（此命令前面已有详细解释）：</font></p>
+<table cellspacing="0" cellpadding="2" width="100%" bgcolor="#000000" border="0">
+    <tbody>
+        <tr>
+            <td width="100%"><font face="Courier New" color="#ffffff" size="2">(gdb) display /i $pc<br />(gdb)&nbsp;</font></td>
+        </tr>
+    </tbody>
+</table>
+<p><font face="Courier New" size="2">此后程序再中断时，就可以显示出汇编代码了：</font></p>
+<table cellspacing="0" cellpadding="2" width="100%" bgcolor="#000000" border="0">
+    <tbody>
+        <tr>
+            <td width="100%"><font face="Courier New" color="#ffffff" size="2">(gdb) r<br />Starting program: /home/liigo/temp/test_jmp/test_jmp/gdb-sample<br /><br />Breakpoint 1, main () at gdb-sample.c:19<br />19 n = 1;<br />1: x/i $pc 0x804835c &lt;main+16&gt;: movl $0x1,0xfffffffc(%ebp)</font></td>
+        </tr>
+    </tbody>
+</table>
+<p><font face="Courier New" size="2">看到了汇编代码，&ldquo;n = 1;&rdquo;对应的汇编代码是&ldquo;movl $0x1,0xfffffffc(%ebp)&rdquo;。</font></p>
+<p><font face="Courier New" size="2">并且以后程序每次中断都将显示下一条汇编指定（&ldquo;si&rdquo;命令用于执行一条汇编代码&mdash;&mdash;区别于&ldquo;s&rdquo;执行一行C代码）：</font></p>
+<table cellspacing="0" cellpadding="2" width="100%" bgcolor="#000000" border="0">
+    <tbody>
+        <tr>
+            <td width="100%"><font face="Courier New" color="#ffffff" size="2">(gdb) si<br />20 n++;<br />1: x/i $pc 0x8048363 &lt;main+23&gt;: lea 0xfffffffc(%ebp),%eax<br />(gdb) si<br />0x08048366 20 n++;<br />1: x/i $pc 0x8048366 &lt;main+26&gt;: incl (%eax)<br />(gdb) si<br />21 n--;<br />1: x/i $pc 0x8048368 &lt;main+28&gt;: lea 0xfffffffc(%ebp),%eax<br />(gdb) si<br />0x0804836b 21 n--;<br />1: x/i $pc 0x804836b &lt;main+31&gt;: decl (%eax)<br />(gdb) si<br />23 nGlobalVar += 100;<br />1: x/i $pc 0x804836d &lt;main+33&gt;: addl $0x64,0x80494fc</font></td>
+        </tr>
+    </tbody>
+</table>
+<p><font face="Courier New" size="2">　</font></p>
+<p><font face="Courier New" size="2">接下来我们试一下命令&ldquo;b *&lt;函数名称&gt;&rdquo;。</font></p>
+<p><font face="Courier New" size="2">为了更简明，有必要先删除目前所有断点（使用&ldquo;d&rdquo;命令&mdash;&mdash;Delete breakpoint）：</font></p>
+<table cellspacing="0" cellpadding="2" width="100%" bgcolor="#000000" border="0">
+    <tbody>
+        <tr>
+            <td width="100%"><font face="Courier New" color="#ffffff" size="2">(gdb) d<br />Delete all breakpoints? (y or n) y<br />(gdb)</font></td>
+        </tr>
+    </tbody>
+</table>
+<p><font face="Courier New" size="2">当被询问是否删除所有断点时，输入&ldquo;y&rdquo;并按回车键即可。</font></p>
+<p><font face="Courier New" size="2">下面使用命令&ldquo;b *main&rdquo;在 main 函数的 prolog 代码处设置断点（prolog、epilog，分别表示编译器在每个函数的开头和结尾自行插入的代码）：</font></p>
+<table cellspacing="0" cellpadding="2" width="100%" bgcolor="#000000" border="0">
+    <tbody>
+        <tr>
+            <td width="100%"><font face="Courier New" color="#ffffff" size="2">(gdb) b *main<br />Breakpoint 4 at 0x804834c: file gdb-sample.c, line 17.<br />(gdb) r<br />The program being debugged has been started already.<br />Start it from the beginning? (y or n) y<br />Starting program: /home/liigo/temp/test_jmp/test_jmp/gdb-sample<br /><br />Breakpoint 4, main () at gdb-sample.c:17<br />17 {<br />1: x/i $pc 0x804834c &lt;main&gt;: push %ebp<br />(gdb) si<br />0x0804834d 17 {<br />1: x/i $pc 0x804834d &lt;main+1&gt;: mov %esp,%ebp<br />(gdb) si<br />0x0804834f in main () at gdb-sample.c:17<br />17 {<br />1: x/i $pc 0x804834f &lt;main+3&gt;: sub $0x8,%esp<br />(gdb) si<br />0x08048352 17 {<br />1: x/i $pc 0x8048352 &lt;main+6&gt;: and $0xfffffff0,%esp<br />(gdb) si<br />0x08048355 17 {<br />1: x/i $pc 0x8048355 &lt;main+9&gt;: mov $0x0,%eax<br />(gdb) si<br />0x0804835a 17 {<br />1: x/i $pc 0x804835a &lt;main+14&gt;: sub %eax,%esp<br />(gdb) si<br />19 n = 1;<br />1: x/i $pc 0x804835c &lt;main+16&gt;: movl $0x1,0xfffffffc(%ebp)</font></td>
+        </tr>
+    </tbody>
+</table>
+<p><font face="Courier New" size="2">此时可以使用&ldquo;i r&rdquo;命令显示寄存器中的当前值&mdash;&mdash;&mdash;&ldquo;i r&rdquo;即&ldquo;Infomation Register&rdquo;：</font></p>
+<table cellspacing="0" cellpadding="2" width="100%" bgcolor="#000000" border="0">
+    <tbody>
+        <tr>
+            <td width="100%"><font face="Courier New" color="#ffffff" size="2">(gdb) i r<br />eax 0xbffff6a4 -1073744220<br />ecx 0x42015554 1107383636<br />edx 0x40016bc8 1073834952<br />ebx 0x42130a14 1108544020<br />esp 0xbffff6a0 0xbffff6a0<br />ebp 0xbffff6a8 0xbffff6a8<br />esi 0x40015360 1073828704<br />edi 0x80483f0 134513648<br />eip 0x8048366 0x8048366<br />eflags 0x386 902<br />cs 0x23 35<br />ss 0x2b 43<br />ds 0x2b 43<br />es 0x2b 43<br />fs 0x0 0<br />gs 0x33 51</font></td>
+        </tr>
+    </tbody>
+</table>
+<p><font face="Courier New" size="2">当然也可以显示任意一个指定的寄存器值：</font></p>
+<table cellspacing="0" cellpadding="2" width="100%" bgcolor="#000000" border="0">
+    <tbody>
+        <tr>
+            <td width="100%"><font face="Courier New" color="#ffffff" size="2">(gdb) i r eax<br />eax 0xbffff6a4 -1073744220</font></td>
+        </tr>
+    </tbody>
+</table>
+<p><font face="Courier New" size="2">　</font></p>
+<p><font face="Courier New" size="2">最后一个要介绍的命令是&ldquo;q&rdquo;，退出（Quit）GDB调试环境：</font></p>
+<table cellspacing="0" cellpadding="2" width="100%" bgcolor="#000000" border="0">
+    <tbody>
+        <tr>
+            <td width="100%"><font face="Courier New" color="#ffffff" size="2">(gdb) q<br />The program is running. Exit anyway? (y or n) y</font></td>
+        </tr>
+    </tbody>
+</table>
+<p><font face="Courier New" size="2">&nbsp;</font></p>
+<p><font face="Courier New" size="2">版权所有：liigo.com</font></p>
+<p><font face="Courier New" size="2">转载请事先征得作者liigo同意。</font></p>
+<p><a href="mailto:liigo@sina.com"><font face="Courier New" size="2">liigo@sina.com</font></a><br /><a href="http://www.liigo.com/"><font face="Courier New" size="2">www.liigo.com</font></a><br /><a href="http://blog.csdn.net/liigo/"><font face="Courier New" size="2">http://blog.csdn.net/liigo/</font></a><br /><font face="Courier New" size="2">QQ: 175199125</font></p>
+<p><font face="Courier New" size="2">&nbsp;</font></p>
+</div>
+
+
+
+
+<!-- Baidu Button BEGIN -->
+
+<div class="bdsharebuttonbox" style="float: right;">
+<a href="#" class="bds_more" data-cmd="more" style="background-position:0 0 !important; background-image: url(http://bdimg.share.baidu.com/static/api/img/share/icons_0_16.png?v=d754dcc0.png) !important"></a>
+<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"  style="background-position:0 -52px !important"></a>
+<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"style="background-position:0 -104px !important"></a>
+<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"style="background-position:0 -260px !important"></a>
+<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"style="background-position:0 -208px !important"></a>
+<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"style="background-position:0 -1612px !important" ></a>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+<!-- Baidu Button END -->
+
+<!--192.168.100.33-->
+<ul class="article_next_prev">
+            <li class="prev_article"><span  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian']);location.href='/liigo/article/details/580028';">上一篇</span><a href="/liigo/article/details/580028" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian'])">我知道AWT/Swing不受欢迎的根本原因了：外观不够漂亮！附图</a></li>
+            <li class="next_article"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian']);location.href='/liigo/article/details/610572';">下一篇</span><a href="/liigo/article/details/610572" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian'])">《包青天》中的《鸳鸯蝴蝶梦》单元，剧中有一个很漂亮的女子叫“离垢”</a></li>
+</ul>
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1536434" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+
+</div>
+      <dl class="blog-associat-tag">
+        <dt>主题推荐</dt>
+        <dd>
+                <a href="http://www.csdn.net/tag/全局变量" target="_blank" class="blog-tage-red" >全局变量</a> 
+                <a href="http://www.csdn.net/tag/操作系统" target="_blank" class="blog-tage-red" >操作系统</a> 
+                <a href="http://www.csdn.net/tag/编译器" target="_blank" class="blog-tage-red" >编译器</a> 
+                <a href="http://www.csdn.net/tag/程序员" target="_blank" class="blog-tage-red" >程序员</a> 
+                <a href="http://www.csdn.net/tag/跨平台" target="_blank" class="blog-tage-red" >跨平台</a> 
+        </dd>
+    </dl> 
+
+
+<dl class="blog-ass-articl tracking-ad"  data-mod="popu_36" id="res-relatived"> 
+     <dt><span>猜你在找</span></dt>    
+</dl>
+
+<script type="text/javascript">
+    var searchtitletags = 'GDB十分钟教程' + ',' + '全局变量,操作系统,编译器,程序员,跨平台';
+    searchService({
+        index: 'blog',
+        query: searchtitletags,
+        from: 10,
+        size: 10,
+        appendTo: '#res-relatived',
+        url: 'recommend',
+        his: 2,
+        client: "blog_cf_enhance",
+        tmpl: '<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="#{ url }" title="#{ title }" strategy="#{ strategy }">#{ title }</a></dd>'
+    });
+
+ </script>   
+
+
+    <div id="ad_cen">
+   
+          <script type="text/javascript">
+              new Ad(4, 'ad_cen');
+          </script>
+    </div>
+<div class="comment_class">
+    <div id="comment_title" class="panel_head">
+        <span class="see_comment">查看评论</span><a name="comments"></a></div>
+    <div id="comment_list">
+    </div>
+    <div id="comment_bar">
+    </div>
+    <div id="comment_form">
+    </div>
+
+    <div class="announce">
+        * 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场<a name="reply"></a><a name="quote"></a></div>
+</div>
+
+<script type="text/javascript">
+    var fileName = '582231';
+    var commentscount = 21;
+    var islock = false
+</script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/comment.js"></script>
+    <div id="ad_bot">
+    </div>
+    <script type="text/javascript">
+    new Ad(5, 'ad_bot');
+    </script>
+<div id="report_dialog">
+</div>
+
+<div id="d-top"  style="bottom:60px;">
+      
+
+       <a id="quick-reply" class="btn btn-top q-reply" title="快速回复" style="display:none;">
+            <img src="http://static.blog.csdn.net/images/blog-icon-reply.png" alt="快速回复">
+        </a>    
+
+    <a id="d-top-a" class="btn btn-top backtop"  style="display: none;" title="返回顶部" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_huidaodingbu'])" style="">         
+         <img src="http://static.blog.csdn.net/images/top.png" alt="TOP">
+    </a>
+</div>
+<script type="text/javascript">
+    $(function ()
+    {
+        $("#ad_frm_0").height("90px");
+        
+        setTimeout(function(){
+            $("#ad_frm_2").height("200px");
+        },1000);
+        
+
+        if($("#comment_content").length>0)
+        {
+            $("#quick-reply").show();
+
+            $("#quick-reply").click(function(){
+                setEditorFocus();
+            });
+        }       
+     
+        var d_top = $('#d-top-a');
+        document.onscroll = function ()
+        {
+            var scrTop = (document.body.scrollTop || document.documentElement.scrollTop);
+            if (scrTop > 500)
+            {
+                d_top.show();
+            } else
+            {
+                d_top.hide();
+            }
+        }
+        $('#d-top-a').click(function ()
+        {
+            scrollTo(0, 0);
+            this.blur();
+            return false;
+        });
+    });
+  
+</script>
+<style type="text/css">
+    .tag_list
+    {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #D7CBC1;
+        color: #000000;
+        font-size: 12px;
+        line-height: 20px;
+        list-style: none outside none;
+        margin: 10px 2% 0 1%;
+        padding: 1px;
+    }
+    .tag_list h5
+    {
+        background: none repeat scroll 0 0 #E0DBD3;
+        color: #47381C;
+        font-size: 12px;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 5px;
+        margin: 0;
+    }
+    .tag_list h5 a
+    {
+        color: #47381C;
+    }
+    .classify
+    {
+        margin: 10px 0;
+        padding: 4px 12px 8px;
+    }
+    .classify a
+    {
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+</style>
+<div class="tag_list">
+    <h5>
+        <a href="http://www.csdn.net/tag/" target="_blank">核心技术类目</a></h5>
+    <div class="classify">
+<a title="全部主题" href="http://www.csdn.net/tag" target="_blank" onclick="LogClickCount(this,336);">全部主题</a>
+<a title="Hadoop" href="http://g.csdn.net/5272865" target="_blank" onclick="LogClickCount(this,336);">Hadoop</a>
+<a title="AWS" href="http://g.csdn.net/5272866" target="_blank" onclick="LogClickCount(this,336);">AWS</a>
+<a title="移动游戏" href="http://g.csdn.net/5272870" target="_blank" onclick="LogClickCount(this,336);">移动游戏</a>
+<a title="Java" href="http://g.csdn.net/5272871" target="_blank" onclick="LogClickCount(this,336);">Java</a>
+<a title="Android" href="http://g.csdn.net/5272872" target="_blank" onclick="LogClickCount(this,336);">Android</a>
+<a title="iOS" href="http://g.csdn.net/5272873" target="_blank" onclick="LogClickCount(this,336);">iOS</a>
+<a title="Swift" href="http://g.csdn.net/5272868" target="_blank" onclick="LogClickCount(this,336);">Swift</a>
+<a title="智能硬件" href="http://g.csdn.net/5272869" target="_blank" onclick="LogClickCount(this,336);">智能硬件</a>
+<a title="Docker" href="http://g.csdn.net/5272867" target="_blank" onclick="LogClickCount(this,336);">Docker</a>
+<a title="OpenStack" href="http://g.csdn.net/5272925" target="_blank" onclick="LogClickCount(this,336);">OpenStack</a>
+<a title="VPN" href="http://www.csdn.net/tag/vpn" target="_blank" onclick="LogClickCount(this,336);">VPN</a>
+<a title="Spark" href="http://g.csdn.net/5272924" target="_blank" onclick="LogClickCount(this,336);">Spark</a>
+<a title="ERP" href="http://www.csdn.net/tag/erp" target="_blank" onclick="LogClickCount(this,336);">ERP</a>
+<a title="IE10" href="http://www.csdn.net/tag/ie10" target="_blank" onclick="LogClickCount(this,336);">IE10</a>
+<a title="Eclipse" href="http://www.csdn.net/tag/eclipse" target="_blank" onclick="LogClickCount(this,336);">Eclipse</a>
+<a title="CRM" href="http://www.csdn.net/tag/crm" target="_blank" onclick="LogClickCount(this,336);">CRM</a>
+<a title="JavaScript" href="http://www.csdn.net/tag/javascript" target="_blank" onclick="LogClickCount(this,336);">JavaScript</a>
+<a title="数据库" href="http://www.csdn.net/tag/数据库" target="_blank" onclick="LogClickCount(this,336);">数据库</a>
+<a title="Ubuntu" href="http://www.csdn.net/tag/ubuntu" target="_blank" onclick="LogClickCount(this,336);">Ubuntu</a>
+<a title="NFC" href="http://www.csdn.net/tag/nfc" target="_blank" onclick="LogClickCount(this,336);">NFC</a>
+<a title="WAP" href="http://www.csdn.net/tag/wap" target="_blank" onclick="LogClickCount(this,336);">WAP</a>
+<a title="jQuery" href="http://www.csdn.net/tag/jquery" target="_blank" onclick="LogClickCount(this,336);">jQuery</a>
+<a title="BI" href="http://www.csdn.net/tag/bi" target="_blank" onclick="LogClickCount(this,336);">BI</a>
+<a title="HTML5" href="http://www.csdn.net/tag/html5" target="_blank" onclick="LogClickCount(this,336);">HTML5</a>
+<a title="Spring" href="http://www.csdn.net/tag/spring" target="_blank" onclick="LogClickCount(this,336);">Spring</a>
+<a title="Apache" href="http://www.csdn.net/tag/apache" target="_blank" onclick="LogClickCount(this,336);">Apache</a>
+<a title=".NET" href="http://www.csdn.net/tag/.net" target="_blank" onclick="LogClickCount(this,336);">.NET</a>
+<a title="API" href="http://www.csdn.net/tag/api" target="_blank" onclick="LogClickCount(this,336);">API</a>
+<a title="HTML" href="http://www.csdn.net/tag/html" target="_blank" onclick="LogClickCount(this,336);">HTML</a>
+<a title="SDK" href="http://www.csdn.net/tag/sdk" target="_blank" onclick="LogClickCount(this,336);">SDK</a>
+<a title="IIS" href="http://www.csdn.net/tag/iis" target="_blank" onclick="LogClickCount(this,336);">IIS</a>
+<a title="Fedora" href="http://www.csdn.net/tag/fedora" target="_blank" onclick="LogClickCount(this,336);">Fedora</a>
+<a title="XML" href="http://www.csdn.net/tag/xml" target="_blank" onclick="LogClickCount(this,336);">XML</a>
+<a title="LBS" href="http://www.csdn.net/tag/lbs" target="_blank" onclick="LogClickCount(this,336);">LBS</a>
+<a title="Unity" href="http://www.csdn.net/tag/unity" target="_blank" onclick="LogClickCount(this,336);">Unity</a>
+<a title="Splashtop" href="http://www.csdn.net/tag/splashtop" target="_blank" onclick="LogClickCount(this,336);">Splashtop</a>
+<a title="UML" href="http://www.csdn.net/tag/uml" target="_blank" onclick="LogClickCount(this,336);">UML</a>
+<a title="components" href="http://www.csdn.net/tag/components" target="_blank" onclick="LogClickCount(this,336);">components</a>
+<a title="Windows Mobile" href="http://www.csdn.net/tag/windowsmobile" target="_blank" onclick="LogClickCount(this,336);">Windows Mobile</a>
+<a title="Rails" href="http://www.csdn.net/tag/rails" target="_blank" onclick="LogClickCount(this,336);">Rails</a>
+<a title="QEMU" href="http://www.csdn.net/tag/qemu" target="_blank" onclick="LogClickCount(this,336);">QEMU</a>
+<a title="KDE" href="http://www.csdn.net/tag/kde" target="_blank" onclick="LogClickCount(this,336);">KDE</a>
+<a title="Cassandra" href="http://www.csdn.net/tag/cassandra" target="_blank" onclick="LogClickCount(this,336);">Cassandra</a>
+<a title="CloudStack" href="http://www.csdn.net/tag/cloudstack" target="_blank" onclick="LogClickCount(this,336);">CloudStack</a>
+<a title="FTC" href="http://www.csdn.net/tag/ftc" target="_blank" onclick="LogClickCount(this,336);">FTC</a>
+<a title="coremail" href="http://www.csdn.net/tag/coremail" target="_blank" onclick="LogClickCount(this,336);">coremail</a>
+<a title="OPhone " href="http://www.csdn.net/tag/ophone " target="_blank" onclick="LogClickCount(this,336);">OPhone </a>
+<a title="CouchBase" href="http://www.csdn.net/tag/couchbase" target="_blank" onclick="LogClickCount(this,336);">CouchBase</a>
+<a title="云计算" href="http://www.csdn.net/tag/云计算" target="_blank" onclick="LogClickCount(this,336);">云计算</a>
+<a title="iOS6" href="http://www.csdn.net/tag/iOS6" target="_blank" onclick="LogClickCount(this,336);">iOS6</a>
+<a title="Rackspace " href="http://www.csdn.net/tag/rackspace " target="_blank" onclick="LogClickCount(this,336);">Rackspace </a>
+<a title="Web App" href="http://www.csdn.net/tag/webapp" target="_blank" onclick="LogClickCount(this,336);">Web App</a>
+<a title="SpringSide" href="http://www.csdn.net/tag/springside" target="_blank" onclick="LogClickCount(this,336);">SpringSide</a>
+<a title="Maemo" href="http://www.csdn.net/tag/maemo" target="_blank" onclick="LogClickCount(this,336);">Maemo</a>
+<a title="Compuware" href="http://www.csdn.net/tag/compuware" target="_blank" onclick="LogClickCount(this,336);">Compuware</a>
+<a title="大数据" href="http://www.csdn.net/tag/大数据" target="_blank" onclick="LogClickCount(this,336);">大数据</a>
+<a title="aptech" href="http://www.csdn.net/tag/aptech" target="_blank" onclick="LogClickCount(this,336);">aptech</a>
+<a title="Perl" href="http://www.csdn.net/tag/perl" target="_blank" onclick="LogClickCount(this,336);">Perl</a>
+<a title="Tornado" href="http://www.csdn.net/tag/tornado" target="_blank" onclick="LogClickCount(this,336);">Tornado</a>
+<a title="Ruby" href="http://www.csdn.net/tag/ruby" target="_blank" onclick="LogClickCount(this,336);">Ruby</a>
+<a title="Hibernate" href="http://www.csdn.net/hibernate" target="_blank" onclick="LogClickCount(this,336);">Hibernate</a>
+<a title="ThinkPHP" href="http://www.csdn.net/tag/thinkphp" target="_blank" onclick="LogClickCount(this,336);">ThinkPHP</a>
+<a title="HBase" href="http://www.csdn.net/tag/hbase" target="_blank" onclick="LogClickCount(this,336);">HBase</a>
+<a title="Pure" href="http://www.csdn.net/tag/pure" target="_blank" onclick="LogClickCount(this,336);">Pure</a>
+<a title="Solr" href="http://www.csdn.net/tag/solr" target="_blank" onclick="LogClickCount(this,336);">Solr</a>
+<a title="Angular" href="http://www.csdn.net/tag/angular" target="_blank" onclick="LogClickCount(this,336);">Angular</a>
+<a title="Cloud Foundry" href="http://www.csdn.net/tag/cloudfoundry" target="_blank" onclick="LogClickCount(this,336);">Cloud Foundry</a>
+<a title="Redis" href="http://www.csdn.net/tag/redis" target="_blank" onclick="LogClickCount(this,336);">Redis</a>
+<a title="Scala" href="http://www.csdn.net/tag/scala" target="_blank" onclick="LogClickCount(this,336);">Scala</a>
+<a title="Django" href="http://www.csdn.net/tag/django" target="_blank" onclick="LogClickCount(this,336);">Django</a>
+<a title="Bootstrap" href="http://www.csdn.net/tag/bootstrap" target="_blank" onclick="LogClickCount(this,336);">Bootstrap</a>
+    </div>
+</div>
+
+
+                        <div class="clear">
+                        </div>
+                    </div>                   
+                
+            </div>
+            <div id="side">
+    <div class="side">
+<div id="panel_Profile" class="panel">
+<ul class="panel_head"><span>个人资料</span></ul>
+<ul class="panel_body profile">
+<div id="blog_userface">
+    <a href="http://my.csdn.net/liigo" target="_blank">
+    <img src="http://avatar.csdn.net/D/7/D/1_liigo.jpg" title="访问我的空间" style="max-width:90%"/>
+    </a>
+    <br />
+    <span><a href="http://my.csdn.net/liigo" class="user_name" target="_blank">liigo</a></span>
+</div>
+<div class="interact">
+<a href="javascript:void(0);" class="attent" id="span_add_follow" title="[加关注]" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_guanzhu'])"></a>
+
+ <a href="javascript:void(0);" class="letter"  title="[发私信]" onclick="window.open('http://msg.csdn.net/letters/model?receiver=liigo','_blank','height=350,width=700');_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_sixin'])"></a>  
+</div>
+<div id="blog_medal">
+<div class="ico_expert" title="CSDN认证编程语言专家"></div></div>
+<ul id="blog_rank">
+    <li>访问：<span>715930次</span></li>
+    <li>积分：<span>10424分</span></li>
+    <li>排名：<span>第400名</span></li>
+</ul>
+<ul id="blog_statistics">
+    <li>原创：<span>251篇</span></li>
+    <li>转载：<span>12篇</span></li>
+    <li>译文：<span>0篇</span></li>
+    <li>评论：<span>1426条</span></li>
+</ul>
+</ul>
+</div>
+
+
+<div id="custom_column_957080" class="panel">
+<ul class="panel_head"><span>关于</span></ul>
+<ul class="panel_body">
+
+<p>当我沉默着的时候，我觉得充实；我将开口，同时感到空虚……</p>
+<p></p>
+<p>相对于篮球，我更喜欢足球；相对于象棋，我更喜欢围棋；相对于C ，我更喜欢Java；相对于易语言，我更喜欢EF；……</p>
+<p>庄晓立（liigo），男，山东省梁山县人，毕业于山东理工大学，现生活在大连，供职于易语言软件公司，从事技术研究和产品研发。</p>
+<p><a rel="author" href="https://plus.google.com/105597640837742873343/">&#43;Liigo Zhuang</a> At Google plus</p>
+
+</ul>
+</div><div id="custom_column_9071311" class="panel">
+<ul class="panel_head"><span>分类导航</span></ul>
+<ul class="panel_body">
+
+<p>本博客绝大多数文章均为Liigo原创，转载请注明出处。</p>
+<ul>
+<li><a href="http://blog.csdn.net/liigo/article/category/124945">易语言系列70余篇</a> </li><li><a href="http://blog.csdn.net/liigo/article/category/180056">C/C&#43;&#43;系列50余篇</a></li><li><a href="http://blog.csdn.net/liigo/article/category/375625">“易语言.飞扬”系列20余篇</a></li><li><a href="http://blog.csdn.net/liigo/article/category/375640">EF WEB FastCGI 10余篇</a></li><li><a href="http://blog.csdn.net/liigo/article/category/445859">“易写易库”系列10余篇</a></li><li><a href="http://blog.csdn.net/liigo/article/category/592703">“重复发明轮子”系列近10篇</a></li><li><a href="http://blog.csdn.net/liigo/article/category/441642">开放源代码系列近30篇</a></li><li><a href="http://blog.csdn.net/liigo/article/category/560281">尘土界面库源码解析系列</a></li><li><a href="http://blog.csdn.net/liigo/article/category/1139070">parser</a> <a href="http://blog.csdn.net/liigo/article/category/622507">
+linker</a> <a href="http://blog.csdn.net/liigo/article/category/1144787">isapi</a>
+<a href="http://blog.csdn.net/liigo/article/category/375640">fastcgi</a> <a href="http://blog.csdn.net/liigo/article/category/540741">
+m8</a></li><li><a href="http://blog.csdn.net/liigo/article/category/124946">java</a> <a href="http://blog.csdn.net/liigo/article/category/833189">
+android</a> <a href="http://blog.csdn.net/liigo/article/category/376355">delphi</a>
+<a href="http://blog.csdn.net/liigo/article/category/383995">ef</a> <a href="http://blog.csdn.net/liigo/article/category/953863">
+mygui</a></li></ul>
+
+</ul>
+</div><div class="panel" id="panel_Search">
+    <ul class="panel_head"><span>文章搜索</span></ul>
+    <ul class="panel_body">
+        <form id="frmSearch" action="http://so.csdn.net/search" class="form_search" target="_blank">
+        <span><input id="inputSearch" type="text" class="blogsearch" title="请输入关键字" /></span>
+        <input id="btnSubmit" type="button" value="搜索" title="search in blog" />
+        <input type="hidden" name="q" id="inputQ" />
+        <input type="hidden" name="t" value="blog" />
+        <a id="btnSearchBlog" target="_blank"></a>
+        </form>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {           
+            search();
+        });
+
+        $("#frmSearch").submit(function () {
+            search();
+            return false;
+        });
+
+        function search()
+        {
+            var url = "http://so.csdn.net/so/search/s.do?q=" + encodeURIComponent($("#inputSearch").val()) + "&u=" + username + "&t=blog";
+            window.location.href = url;
+        }   
+    });
+</script><div id="hotarticls" class="panel">
+<ul class="panel_head">
+    <span>       
+阅读排行    </span>
+</ul>
+
+<ul class="panel_body itemlist">
+<li>
+<a href="/liigo/article/details/582231" title="GDB十分钟教程">GDB十分钟教程</a><span>(31998)</span>
+</li>
+<li>
+<a href="/liigo/article/details/23699459" title="我为什么放弃Go语言">我为什么放弃Go语言</a><span>(27668)</span>
+</li>
+<li>
+<a href="/liigo/article/details/638741" title="Microsoft Visual C++ 与 MinGW，附图">Microsoft Visual C++ 与 MinGW，附图</a><span>(23760)</span>
+</li>
+<li>
+<a href="/liigo/article/details/6153829" title="基本的HTML文本解析器的设计和实现（C/C++源码），图文并茂">基本的HTML文本解析器的设计和实现（C/C++源码），图文并茂</a><span>(22719)</span>
+</li>
+<li>
+<a href="/liigo/article/details/1472077" title="“易语言.飞扬”十分钟入门教程">“易语言.飞扬”十分钟入门教程</a><span>(20733)</span>
+</li>
+<li>
+<a href="/liigo/article/details/5295420" title="易语言“非主流”，杀毒软件“躲猫猫”">易语言“非主流”，杀毒软件“躲猫猫”</a><span>(15255)</span>
+</li>
+<li>
+<a href="/liigo/article/details/395223" title="多家权威机构、几十篇权威证据证明：Java比C++更快。如果反对，请举反证。">多家权威机构、几十篇权威证据证明：Java比C++更快。如果反对，请举反证。</a><span>(10377)</span>
+</li>
+<li>
+<a href="/liigo/article/details/4466676" title="遇到C语言相关的两个问题让我心情压抑">遇到C语言相关的两个问题让我心情压抑</a><span>(9169)</span>
+</li>
+<li>
+<a href="/liigo/article/details/1447351" title="我所期待的易语言2007">我所期待的易语言2007</a><span>(8889)</span>
+</li>
+<li>
+<a href="/liigo/article/details/6025720" title="liigo：2010年底平板电脑（MID）横向参数对比，附需求分析">liigo：2010年底平板电脑（MID）横向参数对比，附需求分析</a><span>(8363)</span>
+</li>
+</ul>
+</div>
+<div id="newcomments" class="panel">
+<ul class="panel_head"><span>最新评论</span></ul>
+<ul class="panel_body itemlist">
+    <li>
+   
+         <a href="/liigo/article/details/39347541#comments">MIPS平台OpenWrt路由器系统内的Rust应用程序开发</a>
+    <p style="margin:0px;"><a href="/bywayboy" class="user_name">bywayboy</a>:
+强烈支持~。哈哈哈……
+    </p>
+    </li>
+    <li>
+   
+         <a href="/liigo/article/details/582231#comments">GDB十分钟教程</a>
+    <p style="margin:0px;"><a href="/taoshengyijiu20008" class="user_name">taoshengyijiu20008</a>:
+xie de taihaole
+    </p>
+    </li>
+    <li>
+   
+         <a href="/liigo/article/details/23699459#comments">我为什么放弃Go语言</a>
+    <p style="margin:0px;"><a href="/Aulang" class="user_name">Aulang</a>:
+看完文章，强烈支持作者，再也不用纠结的，Golang彻底拜拜吧。
+    </p>
+    </li>
+    <li>
+   
+         <a href="/liigo/article/details/23699459#comments">我为什么放弃Go语言</a>
+    <p style="margin:0px;"><a href="/yong7" class="user_name">yong7</a>:
+我只能说，差点让楼主误导了，楼主说的很多缺点在我看来是优点
+    </p>
+    </li>
+    <li>
+   
+         <a href="/liigo/article/details/23699459#comments">我为什么放弃Go语言</a>
+    <p style="margin:0px;"><a href="/yong7" class="user_name">yong7</a>:
+我只能说，差点让楼主误导了，楼主说的很多缺点在我看来是优点
+    </p>
+    </li>
+    <li>
+   
+         <a href="/liigo/article/details/23699459#comments">我为什么放弃Go语言</a>
+    <p style="margin:0px;"><a href="/Vizee" class="user_name">Vizee</a>:
+@alZou:我总不能告诉你做作者学易语言吧, 这种天生优越感的语言
+    </p>
+    </li>
+    <li>
+   
+         <a href="/liigo/article/details/5834450#comments">在易语言中调用MS SQL SERVER数据库存储过程(Transact-SQL)方法总结</a>
+    <p style="margin:0px;"><a href="/gfman" class="user_name">gfman</a>:
+为什么我这边运行存储过程没用？.版本 2.支持库 eDB.局部变量 文本, 文本型.局部变量 wb1...
+    </p>
+    </li>
+    <li>
+   
+         <a href="/liigo/article/details/38424417#comments">基于libuv的最精简Web服务器：tinyweb v1 v2 v3 （C语言源码）</a>
+    <p style="margin:0px;"><a href="/bywayboy" class="user_name">bywayboy</a>:
+支持一下~~ liigo加油
+    </p>
+    </li>
+    <li>
+   
+         <a href="/liigo/article/details/38424417#comments">我为什么放弃Go语言</a>
+    <p style="margin:0px;"><a href="/Vizee" class="user_name">Vizee</a>:
+学易语言的人就是牛逼
+    </p>
+    </li>
+    <li>
+   
+         <a href="/liigo/article/details/38424417#comments">我为什么放弃Go语言</a>
+    <p style="margin:0px;"><a href="/human8848" class="user_name">human8848</a>:
+多谢博主，至少对GO有了一个粗浅的认识。从文中列举所看，某些确实我很不喜欢，比如创建对象的方式和多余...
+    </p>
+    </li>
+</ul>
+</div>
+<div id="hotarticls2" class="panel">
+<ul class="panel_head"><span>评论排行</span></ul>
+<ul class="panel_body itemlist">
+<li>
+<a href="/liigo/article/details/23699459" title="我为什么放弃Go语言">我为什么放弃Go语言</a><span>(187)</span>
+</li>
+<li>
+<a href="/liigo/article/details/5295420" title="易语言“非主流”，杀毒软件“躲猫猫”">易语言“非主流”，杀毒软件“躲猫猫”</a><span>(120)</span>
+</li>
+<li>
+<a href="/liigo/article/details/6153829" title="基本的HTML文本解析器的设计和实现（C/C++源码），图文并茂">基本的HTML文本解析器的设计和实现（C/C++源码），图文并茂</a><span>(69)</span>
+</li>
+<li>
+<a href="/liigo/article/details/395223" title="多家权威机构、几十篇权威证据证明：Java比C++更快。如果反对，请举反证。">多家权威机构、几十篇权威证据证明：Java比C++更快。如果反对，请举反证。</a><span>(58)</span>
+</li>
+<li>
+<a href="/liigo/article/details/6339960" title="简析移动领域内微软(Microsoft)和英特尔(Intel)的市场前景">简析移动领域内微软(Microsoft)和英特尔(Intel)的市场前景</a><span>(55)</span>
+</li>
+<li>
+<a href="/liigo/article/details/4466676" title="遇到C语言相关的两个问题让我心情压抑">遇到C语言相关的两个问题让我心情压抑</a><span>(47)</span>
+</li>
+<li>
+<a href="/liigo/article/details/6025720" title="liigo：2010年底平板电脑（MID）横向参数对比，附需求分析">liigo：2010年底平板电脑（MID）横向参数对比，附需求分析</a><span>(34)</span>
+</li>
+<li>
+<a href="/liigo/article/details/7467309" title="修改Go语言(golang)编译器源代码让它支持UTF-8 BOM">修改Go语言(golang)编译器源代码让它支持UTF-8 BOM</a><span>(25)</span>
+</li>
+<li>
+<a href="/liigo/article/details/5320661" title="2010春节期间易语言论坛大事记，5.0/静态编译/黑月/白月/驱动/加密壳">2010春节期间易语言论坛大事记，5.0/静态编译/黑月/白月/驱动/加密壳</a><span>(22)</span>
+</li>
+<li>
+<a href="/liigo/article/details/638741" title="Microsoft Visual C++ 与 MinGW，附图">Microsoft Visual C++ 与 MinGW，附图</a><span>(22)</span>
+</li>
+</ul>
+</div>
+<div id="custom_column_957079" class="panel">
+<ul class="panel_head"><span>友情链接</span></ul>
+<ul class="panel_body">
+
+<ul>
+<li><a href="http://www.eyuyan.com" target="_blank">易语言官方网站</a></li><li><a href="http://bbs.eyuyan.com" target="_blank">易语言官方论坛</a></li><li><a href="http://blog.sina.com.cn/m/luoxinfayan" target="_blank">骆新发言的BLOG</a></li><li><a href="http://blog.csdn.net/uoyevoli/" target="_blank">farproc's blog</a></li><li><a href="http://monkeycz.blogbus.com" target="_blank">monkeycz's blog</a></li><li><a href="http://blog.csdn.net/efdev/" target="_blank">EF官方博客</a> (<a href="http://blog.csdn.net/efdev/rss.aspx" target="_blank">RSS</a>)</li><li><a href="http://blog.csdn.net/haoel/" target="_blank">陈皓专栏</a> (<a href="http://blog.csdn.net/haoel/Rss.aspx" target="_blank">RSS</a>)</li><li><a href="http://blog.csdn.net/bywayboy/" target="_blank">bywayboy's blog</a> (<a href="http://blog.csdn.net/bywayboy/Rss.aspx" target="_blank">RSS</a>)</li><li><a href="http://hi.baidu.com/jouby/blog" target="_blank">石年遗梦(jouby)</a> (<a href="http://hi.baidu.com/jouby/rss" target="_blank">RSS</a>)</li></ul>
+
+</ul>
+</div>    </div>
+    <div class="clear">
+    </div>
+</div>
+
+            <div class="clear">
+            </div>
+        </div>
+        
+
+<script type="text/javascript" src="http://csdnimg.cn/rabbit/cnick/cnick.js"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/newblog.min.js"></script>
+
+
+<script type="text/javascript" src="http://medal.blog.csdn.net/showblogmedal.ashx?blogid=66270"></script>
+<script type="text/javascript">
+    document.write('<script type="text/javascript" src="http://csdnimg.cn/pubfooter/js/publib_footer.js?' + Math.floor(new Date() / 120000).toString(36) + '="></' + 'script>');
+</script>
+<script type="text/javascript">document.write("<img src=http://counter.csdn.net/pv.aspx?id=24 border=0 width=0 height=0>");</script>
+<script type="text/javascript" src="http://www.csdn.net/ui/scripts/Csdn/counter.js"></script>
+<script type="text/javascript" src="http://ad.csdn.net/scripts/ad-blog.js"></script>
+<script type="text/javascript" src="http://zz.csdn.net/js/count.js"></script>
+<script type="text/javascript">
+    $(function () {
+        function __get_code_toolbar(snippet_id) {
+            return $("<a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "' target='_blank' title='在CODE上查看代码片' style='text-indent:0;'><img src='https://code.csdn.net/assets/CODE_ico.png' width=12 height=12 alt='在CODE上查看代码片' style='position:relative;top:1px;left:2px;'/></a>"
+                    + "<a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "/fork' target='_blank' title='派生到我的代码片'  style='text-indent:0;'><img src='https://code.csdn.net/assets/ico_fork.svg' width=12 height=12 alt='派生到我的代码片' style='position:relative;top:2px;left:2px;'/></a>");
+        }
+        
+        $("[code_snippet_id]").each(function () {
+            __s_id = $(this).attr("code_snippet_id");
+            if (__s_id != null && __s_id != "" && __s_id != 0 && parseInt(__s_id) > 70020) {
+                __code_tool = __get_code_toolbar(__s_id);
+                $(this).prev().find(".tools").append(__code_tool);
+            }
+        });
+    });
+</script>
+
+    </div>
+      <!--new top-->
+    
+    <script id="csdn-toolbar-id" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" type="text/javascript" src="http://static.csdn.net/public/common/toolbar/js/toolbar.js"></script>     <!--new top-->
+</body>
+</html>

@@ -1,0 +1,695 @@
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>C语言全局变量那些事儿 -- 编程语言 -- IT技术博客大学习 -- 共学习 共进步！</title>
+<meta name="description" content="作为一名程序员，如果说沉迷一门编程语言算作一种乐趣的话，那么与此同时反过来去黑一门编程语言就是这种乐趣的升华。今天我们就来黑一把C语言，好好展示一下这门经典语言令人抓狂的一面。" />
+<meta name="keywords" content="C语言,全局变量,C语言全局变量那些事儿,编程语言" />
+<meta name="renderer" content="webkit">
+<meta property="qc:admins" content="0135301347725146367147" />
+<link rel="canonical" href="http://blogread.cn/it/article/6533"/>
+<html xmlns:wb="http://open.weibo.com/wb">
+<link href="/it/css/css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://lib.vipsinaapp.com/js/jquery/1.8/jquery.min.js"></script>
+<script type="text/javascript">
+	window.google_analytics_uacct = "UA-6082292-6";
+</script>
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=3741373929" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript">
+function nav_locate(){
+	var top=$(document).scrollTop();
+	if(($.browser.msie==true)&&($.browser.version==6.0)){
+		if(top>131) {
+			$('.main').css('margin-top', '104px');
+			$("#nav").css({position:"absolute",top:top-131});
+		}
+	}else{
+		if(top>131) {
+			$('.main').css('margin-top', '104px');
+			$("#nav").css({position:"fixed",top:0});
+		}
+	}
+	if(top<=131) {
+		$('.main').removeAttr('style');
+		$("#nav").css({position:"static",top:0});
+	}
+}
+$(function(){
+		window.onscroll=nav_locate;
+		window.onresize=nav_locate;
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#adlayerclose").click(function(){
+		$("#adlayer").hide();
+	});
+	$("#adlayerclose").click(function(){
+		$("#adlayertitle").show();
+	});
+	
+	$("#adlayeropen").click(function(){
+		$("#adlayer").show();
+		$("#adlayertitle").hide();
+	});
+});
+</script>
+
+</head>
+
+<body>
+
+<div class="body">
+	<div class="topnav">
+		<div style="float:left;"><a href="http://weibo.com/blogread" title="IT技术博客大学习" target="_blank"><img src="http://tp1.sinaimg.cn/1646218964/30/1279883225/1" style="border:0" alt="IT技术博客大学习" /></a></div>
+		<div style="float:left;margin-top:5px;"><wb:follow-button uid="1646218964" type="red_3" width="100%" height="24" ></wb:follow-button></div>
+		&nbsp;&nbsp;&nbsp;&nbsp;<a href="/daohang/"><strong>博客导航</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/wap/">手机版</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/search.php">搜索本站</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/site/">作者列表</a>
+	</div>
+    
+    <div class="banner">
+    	<div>
+        	<div class="logo"><h2><a href="/it/">IT技术博客大学习</a></h2><font color="#FB993B">-- 共学习 共进步！ --</font></div>
+        	<div class="ad">
+				<script type="text/javascript"><!--
+				google_ad_client = "pub-2206192680127944";
+				/* 728x90, 创建于 09-10-14 */
+				google_ad_slot = "2235377458";
+				google_ad_width = 728;
+				google_ad_height = 90;
+				//-->
+				</script>
+				<script type="text/javascript"
+				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+				</script>
+            </div>    
+        </div>
+	</div><!-- banner -->
+
+	<div class="nav" id="nav"> 
+		<a href="/it/category/2">PHP</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/3">MySQL</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/4">Oracle</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/5">Linux</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/6">Apache</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/9">算法</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/16">安全</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/15">网络系统</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/17">系统架构</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/18">系统运维</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/23">源码分析</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/22">编程语言</a>
+		<br /> 
+		<a href="/it/">首页</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/7">JavaScript</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/12">CSS/HTML</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/13">用户研究</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/20">信息和交互</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/19">视觉设计</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/21">设计思想</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/11">发现</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/10">奋斗</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/14">互联网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/it/category/8">其他</a> 
+	</div> 
+	<div class="main"> 
+
+		<div class="main_left">
+			
+			
+			<div class="posi">
+				<strong>您现在的位置</strong>：<a href="http://blogread.cn/it/">首页</a> --> <a href="http://blogread.cn/it/category/22">编程语言</a> --> C语言全局变量那些事儿
+			</div>
+
+			<div class="articlebox">
+				<div class="title"><h2>C语言全局变量那些事儿</h2></div>
+				<div class="info">
+					<script type="text/javascript" charset="utf-8">
+(function(){
+  var _w = 106 , _h = 24;
+  var param = {
+    /*url:location.href,*/
+    url:'http://blogread.cn/it/article/6533?f=wb1', 
+    type:'5',
+    count:'', /**是否显示分享数，1显示(可选)*/
+    appkey:'3741373929', /**您申请的应用appkey,显示分享来源(可选)*/
+    title:'【C语言全局变量那些事儿】作为一名程序员，如果说沉迷一门编程语言算作一种乐趣的话，那么与此同时反过来去黑一门编程语言就是这种乐趣的升华。今天我们就来黑一把C语言，好好展示一下这门经典语言令人抓狂的一面。', /**分享的文字内容(可选，默认为所在页面的title)*/
+    pic:'', /**分享图片的路径(可选)*/
+    ralateUid:'1646218964', /**关联用户的UID，分享微博会@该用户(可选)*/
+	language:'zh_cn', /**设置语言，zh_cn|zh_tw(可选)*/
+    rnd:new Date().valueOf()
+  }
+  var temp = [];
+  for( var p in param ){
+    temp.push(p + '=' + encodeURIComponent( param[p] || '' ) )
+  }
+  document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://hits.sinajs.cn/A1/weiboshare.html?' + temp.join('&') + '" width="'+ _w+'" height="'+_h+'"></iframe>')
+})()
+</script>
+									&nbsp;&nbsp;<a href="#original">出处信息</a>
+				</div>
+
+				<div class="article">
+										<div style="float:right;margin: 4px;">
+						<script type="text/javascript"><!--
+						google_ad_client = "ca-pub-2206192680127944";
+						/* blogread正文页336-280 */
+						google_ad_slot = "2362052085";
+						google_ad_width = 336;
+						google_ad_height = 280;
+						//-->
+						</script>
+						<script type="text/javascript"
+						src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+						</script>
+					</div>
+
+					<p> &nbsp; &nbsp;<strong>(感谢网友 </strong><a href="http://weibo.com/fullofbull" target="_blank"><strong>@我的上铺叫路遥</strong></a><strong> 投稿)</strong></p><p> &nbsp; &nbsp;作为一名程序员，如果说沉迷一门编程语言算作一种乐趣的话，那么与此同时反过来去黑一门编程语言就是这种乐趣的升华。今天我们就来黑一把C语言，好好展示一下这门经典语言令人抓狂的一面。</p><p> &nbsp; &nbsp;我们知道，全局变量是C语言语法和语义中一个很重要的知识点，首先它的存在意义需要从三个不同角度去理解：对于程序员来说，它是一个记录内容的<strong>变量(variable)</strong>；对于编译/链接器来说，它是一个需要解析的<strong>符号(symbol)</strong>；对于计算机来说，它可能是具有地址的一块<strong>内存(memory)</strong>。其次是语法/语义：从作用域上看，带static关键字的全局变量范围只能限定在文件里，否则会外联到整个模块和项目中；从生存期来看，它是静态的，贯穿整个程序或模块运行期间(<strong>注意，正是跨单元访问和持续生存周期这两个特点使得全局变量往往成为一段受攻击代码的突破口，了解这一点十分重要</strong>)；从空间分配上看，定义且初始化的全局变量在编译时在数据段(.data)分配空间，定义但未初始化的全局变量<strong>暂存(tentative definition)</strong>在.bss段，编译时自动清零，而仅仅是声明的全局变量只能算个符号，寄存在编译器的符号表内，不会分配空间，直到链接或者运行时再重定向到相应的地址上。</p><p> &nbsp; &nbsp;我们将向您展现一下，<strong>非static限定全局变量</strong>在编译/链接以及程序运行时会发生哪些有趣的事情，顺便可以对C编译器/链接器的解析原理管中窥豹。以下示例对ANSI C和GNU C标准都有效，笔者的编译环境是Ubuntu下的GCC-4.4.3。</p><h4>第一个例子</h4><pre class="brush:cpp; title:; notranslate">/* t.h */
+#ifndef _H_
+#define _H_
+int a;
+#endif
+ 
+/* foo.c */
+#include &lt;stdio.h&gt;
+#include "t.h"
+ 
+struct {
+   char a;
+   int b;
+} b = { 2, 4 };
+ 
+int main();
+ 
+void foo()
+{
+    printf("foo:\t(&amp;a)=0x%08x\n\t(&amp;b)=0x%08x\n
+        \tsizeof(b)=%d\n\tb.a=%d\n\tb.b=%d\n\tmain:0x%08x\n",
+        &amp;a, &amp;b, sizeof b, b.a, b.b, main);
+}
+ 
+/* main.c */
+#include &lt;stdio.h&gt;
+#include "t.h"
+ 
+int b;
+int c;
+ 
+int main()
+{
+    foo();
+    printf("main:\t(&amp;a)=0x%08x\n\t(&amp;b)=0x%08x\n
+        \t(&amp;c)=0x%08x\n\tsize(b)=%d\n\tb=%d\n\tc=%d\n",
+        &amp;a, &amp;b, &amp;c, sizeof b, b, c);
+    return 0;
+}</pre><p> &nbsp; &nbsp;Makefile如下：</p><pre class="brush:bash; title:; notranslate">test: main.o foo.o
+    gcc -o test main.o foo.o
+ 
+main.o: main.c
+foo.o: foo.c
+ 
+clean:
+    rm *.o test</pre><p> &nbsp; &nbsp;运行情况：</p><pre class="brush:bash; title:; notranslate">foo:    (&amp;a)=0x0804a024
+    (&amp;b)=0x0804a014
+    sizeof(b)=8
+    b.a=2
+    b.b=4
+    main:0x080483e4
+main:   (&amp;a)=0x0804a024
+    (&amp;b)=0x0804a014
+    (&amp;c)=0x0804a028
+    size(b)=4
+    b=2
+    c=0</pre><p> &nbsp; &nbsp;这个项目里我们定义了四个全局变量，t.h头文件定义了一个整型a，main.c里定义了两个整型b和c并且未初始化，foo.c里定义了一个初始化了的结构体，还定义了一个main的函数指针变量。由于C语言每个源文件单独编译，所以t.h分别包含了两次，所以int a就被定义了两次。两个源文件里变量b和函数指针变量main被重复定义了，实际上可以看做代码段的地址。但编译器并未报错，只给出一条警告：</p><pre class="brush:bash; title:; notranslate">/usr/bin/ld: Warning: size of symbol 'b' changed from 4 in main.o to 8 in foo.o</pre><p> &nbsp; &nbsp;运行程序发现，main.c打印中b大小是4个字节，而foo.c是8个字节，因为sizeof关键字是编译时决议，而源文件中对b类型定义不一样。但令人惊奇的是无论是在main.c还是foo.c中，a和b都是相同的地址，也就是说，a和b被定义了两次，b还是不同类型，但内存映像中只有一份拷贝。我们还看到，main.c中b的值居然就是foo.c中结构体第一个成员变量b.a的值，这证实了前面的推断——<strong>即便存在多次定义，内存中只有一份初始化的拷贝。</strong>另外在这里c是置身事外的一个独立变量。</p><p> &nbsp; &nbsp;为何会这样呢？这涉及到<strong>C编译器对多重定义的全局符号的解析和链接。</strong>在编译阶段，编译器将全局符号信息隐含地编码在可重定位目标文件的符号表里。这里有个<strong>“强符号(strong)”</strong>和<strong>“弱符号(weak)”</strong>的概念——前者指的是定义并且初始化了的变量，比如foo.c里的结构体b，后者指的是未定义或者定义但未初始化的变量，比如main.c里的整型b和c，还有两个源文件都包含头文件里的a。当符号被多重定义时，GNU链接器(ld)使用以下规则决议：</p><ul><li><p>不允许出现多个相同强符号。</p></li><li><p>如果有一个强符号和多个弱符号，则选择强符号。</p></li><li><p>如果有多个弱符号，那么先决议到size最大的那个，如果同样大小，则按照链接顺序选择第一个。</p></li><p> &nbsp; &nbsp;像上面这个例子中，全局变量a和b存在重复定义。如果我们将main.c中的b初始化赋值，那么就存在两个强符号而违反了规则一，编译器报错。如果满足规则二，则仅仅提出警告，实际运行时决议的是foo.c中的强符号。而变量a都是弱符号，所以只选择一个(按照目标文件链接时的顺序)。</p><p> &nbsp; &nbsp;事实上，这种规则是C语言里的一个大坑，编译器对这种全局变量多重定义的“纵容”很可能会无端修改某个变量，导致程序不确定行为。如果你还没有意识到事态严重性，我再举个例子。</p><h4>第二个例子</h4><pre class="brush:cpp; title:; notranslate">/* foo.c */
+#include &lt;stdio.h&gt;;
+ 
+struct {
+    int a;
+    int b;
+} b = { 2, 4 };
+ 
+int main();
+ 
+void foo()
+{
+    printf("foo:\t(&amp;b)=0x%08x\n\tsizeof(b)=%d\n
+        \tb.a=%d\n\tb.b=%d\n\tmain:0x%08x\n",
+        &amp;b, sizeof b, b.a, b.b, main);
+}
+ 
+/* main.c */
+#include &lt;stdio.h&gt;
+ 
+int b;
+int c;
+ 
+int main()
+{
+    if (0 == fork()) {
+        sleep(1);
+        b = 1;
+        printf("child:\tsleep(1)\n\t(&amp;b):0x%08x\n
+            \t(&amp;c)=0x%08x\n\tsizeof(b)=%d\n\tset b=%d\n\tc=%d\n",
+            &amp;b, &amp;c, sizeof b, b, c);
+        foo();
+    } else {
+        foo();
+        printf("parent:\t(&amp;b)=0x%08x\n\t(&amp;c)=0x%08x\n
+            \tsizeof(b)=%d\n\tb=%d\n\tc=%d\n\twait child...\n",
+            &amp;b, &amp;c, sizeof b, b, c);
+        wait(-1);
+        printf("parent:\tchild over\n\t(&amp;b)=0x%08x\n
+            \t(&amp;c)=0x%08x\n\tsizeof(b)=%d\n\tb=%d\n\tc=%d\n",
+            &amp;b, &amp;c, sizeof b, b, c);
+    }
+    return 0;
+}</pre><p> &nbsp; &nbsp;运行情况如下：</p><pre class="brush:bash; title:; notranslate">foo:    (&amp;b)=0x0804a020
+    sizeof(b)=8
+    b.a=2
+    b.b=4
+    main:0x080484c8
+parent: (&amp;b)=0x0804a020
+    (&amp;c)=0x0804a034
+    sizeof(b)=4
+    b=2
+    c=0
+    wait child...
+child:  sleep(1)
+    (&amp;b):0x0804a020
+    (&amp;c)=0x0804a034
+    sizeof(b)=4
+    set b=1
+    c=0
+foo:    (&amp;b)=0x0804a020
+    sizeof(b)=8
+    b.a=1
+    b.b=4
+    main:0x080484c8
+parent: child over
+    (&amp;b)=0x0804a020
+    (&amp;c)=0x0804a034
+    sizeof(b)=4
+    b=2
+    c=0</pre><p> &nbsp; &nbsp;(说明一点，运行情况是直接输出到stdout的打印，笔者曾经将./test输出重定向到log中，结果发现打印的执行序列不一致，所以采用默认输出。)</p><p> &nbsp; &nbsp;这是一个<strong>多进程环境</strong>，首先我们看到无论父进程还是子进程，main.c还是foo.c，全局变量b和c的地址仍然是一致的(当然只是个<strong>逻辑地址</strong>)，而且对b的大小不同模块仍然有不同的决议。这里值得注意的是，我们在子进程中对变量b进行赋值动作，从此子进程本身包括foo()调用中，整型b以及结构体成员b.a的值都是1，而父进程中整型b和结构体成员b.a的值仍是2，但它们显示的逻辑地址仍是一致的。</p><p> &nbsp; &nbsp;个人认为可以这样解释，fork创建新进程时，子进程获得了父进程上下文“镜像”(自然包括全局变量)，虚拟地址相同但属于不同的进程空间，而且此时真正映射的物理地址中只有一份拷贝，所以b的值是相同的(都是2)。随后子进程对b改写，触发了操作系统的<strong>写时拷贝(copy on write)</strong>机制，这时物理内存中才产生真正的两份拷贝，分别映射到不同进程空间的虚拟地址上，但虚拟地址的值本身仍然不变，这对于应用程序来说是透明的，具有隐瞒性。</p><p> &nbsp; &nbsp;还有一点值得注意，这个示例编译时没有出现第一个示例的警告，即对变量b的sizeof决议，笔者也不知道为什么，或许是GCC的一个bug？</p><h4>第三个例子</h4><p> &nbsp; &nbsp;这个例子代码同上一个一致，只不过我们将foo.c做成一个静态链接库libfoo.a进行链接，这里只给出Makefile的改动。</p><pre class="brush:bash; title:; notranslate">test: main.o foo.o
+    ar rcs libfoo.a foo.o
+    gcc -static -o test main.o libfoo.a
+ 
+main.o: main.c
+foo.o: foo.c
+ 
+clean:
+    rm -f *.o test</pre><p> &nbsp; &nbsp;运行情况如下：</p><pre class="brush:bash; title:; notranslate">foo:    (&amp;b)=0x080ca008
+    sizeof(b)=8
+    b.a=2
+    b.b=4
+    main:0x08048250
+parent: (&amp;b)=0x080ca008
+    (&amp;c)=0x080cc084
+    sizeof(b)=4
+    b=2
+    c=0
+    wait child...
+child:  sleep(1)
+    (&amp;b):0x080ca008
+    (&amp;c)=0x080cc084
+    sizeof(b)=4
+    set b=1
+    c=0
+foo:    (&amp;b)=0x080ca008
+    sizeof(b)=8
+    b.a=1
+    b.b=4
+    main:0x08048250
+parent: child over
+    (&amp;b)=0x080ca008
+    (&amp;c)=0x080cc084
+    sizeof(b)=4
+    b=2
+    c=0</pre><p> &nbsp; &nbsp;从这个例子看不出有啥差别，只不过使用<strong>静态链接</strong>后，全局变量加载的地址有所改变，b和c的地址之间似乎相隔更远了些。不过这次编译器倒是给出了变量b的sizeof决议警告。</p><p> &nbsp; &nbsp;到此为止，有些人可能会对上面的例子嗤之以鼻，觉得这不过是列举了C语言的某些特性而已，算不上黑。有些人认为既然如此，对于一切全局变量要么用static限死，要么定义同时初始化，杜绝弱符号，以便在编译时报错检测出来。只要小心地使用，C语言还是很完美的嘛~对于抱这样想法的人，我只想说，请你在夜深人静的时候竖起耳朵仔细聆听，你很可能听到Dennis Richie在九泉之下邪恶的笑声——不，与其说是嘲笑，不如说是诅咒……</p><h4>第四个例子</h4><pre class="brush:cpp; title:; notranslate">/* foo.c */
+#include &lt;stdio.h&gt;
+ 
+const struct {
+    int a;
+    int b;
+} b = { 3, 3 };
+ 
+int main();
+ 
+void foo()
+{
+    b.a = 4;
+    b.b = 4;
+    printf("foo:\t(&amp;b)=0x%08x\n\tsizeof(b)=%d\n
+        \tb.a=%d\n\tb.b=%d\n\tmain:0x%08x\n",
+        &amp;b, sizeof b, b.a, b.b, main);
+}
+ 
+/* t1.c */
+#include &lt;stdio.h&gt;
+ 
+int b = 1;
+int c = 1;
+ 
+int main()
+{
+    int count = 5;
+    while (count-- &gt; 0) {
+        t2();
+        foo();
+        printf("t1:\t(&amp;b)=0x%08x\n\t(&amp;c)=0x%08x\n
+            \tsizeof(b)=%d\n\tb=%d\n\tc=%d\n",
+            &amp;b, &amp;c, sizeof b, b, c);
+        sleep(1);
+    }
+    return 0;
+}
+ 
+/* t2.c */
+#include &lt;stdio.h&gt;
+ 
+int b;
+int c;
+ 
+int t2()
+{
+    printf("t2:\t(&amp;b)=0x%08x\n\t(&amp;c)=0x%08x\n
+        \tsizeof(b)=%d\n\tb=%d\n\tc=%d\n",
+        &amp;b, &amp;c, sizeof b, b, c);
+    return 0;
+}</pre><p> &nbsp; &nbsp;Makefile脚本：</p><pre class="brush:bash; title:; notranslate">export LD_LIBRARY_PATH:=.
+ 
+all: test
+    ./test
+ 
+test: t1.o t2.o
+    gcc -shared -fPIC -o libfoo.so foo.c
+    gcc -o test t1.o t2.o -L. -lfoo
+ 
+t1.o: t1.c
+t2.o: t2.c
+ 
+.PHONY:clean
+clean:
+    rm -f *.o *.so test*</pre><p> &nbsp; &nbsp;执行结果：</p><pre class="brush:bash; title:; notranslate">./test
+t2: (&amp;b)=0x0804a01c
+    (&amp;c)=0x0804a020
+    sizeof(b)=4
+    b=1
+    c=1
+foo:    (&amp;b)=0x0804a01c
+    sizeof(b)=8
+    b.a=4
+    b.b=4
+    main:0x08048564
+t1: (&amp;b)=0x0804a01c
+    (&amp;c)=0x0804a020
+    sizeof(b)=4
+    b=4
+    c=4
+t2: (&amp;b)=0x0804a01c
+    (&amp;c)=0x0804a020
+    sizeof(b)=4
+    b=4
+    c=4
+foo:    (&amp;b)=0x0804a01c
+    sizeof(b)=8
+    b.a=4
+    b.b=4
+    main:0x08048564
+t1: (&amp;b)=0x0804a01c
+    (&amp;c)=0x0804a020
+    sizeof(b)=4
+    b=4
+    c=4
+    ...</pre><p> &nbsp; &nbsp;其实前面几个例子只是开胃小菜而已，真正的大坑终于出现了！而且这次编译器既没报错也没警告，但我们确实眼睁睁地看到作为main()中强符号的b被改写了，而且一旁的c也“躺枪”了。眼尖的读者发现，这次foo.c是作为动态链接库运行时加载的，当t1第一次调用t2时，libfoo.so还未加载，一旦调用了foo函数，b立马中弹，而且<strong>c的地址居然还相邻着b，这使得c一同中弹了。</strong>不过笔者有些无法解释这种行为的原因，有种说法是强符号的全局变量在数据段中是连续分布的(相应地弱符号暂存在.bss段或者符号表里)，或许可以上报GNU的编译器开发小组。</p><p> &nbsp; &nbsp;另外笔者尝试过将t1.c中的b和c定义前面加上<strong>const限定词</strong>，编译器仍然默认通过，但程序在main()中第一次调用foo()时触发了Segment fault异常导致奔溃，在foo.c里使用指针改写它也一样。<strong>推断这是GCC对const常量所在地址启用了类似操作系统写保护机制，但我无法确定早期版本的GCC是否会让这个const常量被改写而程序不会奔溃。</strong></p><p> &nbsp; &nbsp;至于<strong>volatile关键词</strong>之于全局变量，自测似乎没有影响。</p><p> &nbsp; &nbsp;怎么样？看了最后一个例子是否有点“不明觉厉”呢？C语言在你心目中是否还是当初那个“纯洁”、“干净”、“行为一致”的姑娘呢？也许趁着你不注意的时候她会偷偷给你戴顶绿帽，这一切都是通过全局变量，特别在动态链接的环境下，就算全部定义成强符号仍然无法为编译器所察觉。而一些IT界“恐怖分子”也经常<strong>将恶意代码包装成全局变量注入到root权限下存在漏洞的操作序列中，</strong>就像著名的栈溢出攻击那样。某一天当你傻傻地看着一个程序出现未定义的行为却无法定位原因的时候，请不要忘记Richie大爷那来自九泉之下最深沉的“问候”~</p><p> &nbsp; &nbsp;或许有些人会偷换概念，把这一切归咎于编译器和链接器身上，认为这同语言无关，但我要提醒你，正是编译/链接器的行为支撑了整个语言的语法和语义。你可以反过来思考一下为何C的胞弟C++推出<strong>“命名空间(namespace)”</strong>的概念，或者你可以使用其它高级语言，对于重定义的全局变量是否能通过编译这一关。</p><p> &nbsp; &nbsp;所以请时刻谨记，<strong>C是一门很恐怖的语言！</strong></p><p> &nbsp; &nbsp;P.S.题外话写在最后。我无意挑起语言之争，只是就事论事地去<strong>“黑(hack)</strong><strong>”</strong>一门语言而已，而且要黑就要黑得有理有力有层次，还要带点娱乐精神。其实黑一门语言并非什么尖端复杂的技术，个人觉得起码要做到两点：</p><li><p><strong>亲自动手写测试程序。</strong>动手写测试程序是开发人员必备的基础技能，只有现成的代码才能让人心服口服，那些只会停留在口头上的争论只能算作cheap hack。</p></li><li><p><strong>测试程序不能依赖于不成熟的代码。</strong>软件开发99%以上的bug都是基于不合格(substandard)开发人员导致，这并不能怪罪于语言以及编译器本身。使用诸如#define TRUE FALSE或者#define NULL 1之类的trick来黑C语言只能证明此人很有娱乐精神而不是真正的”hack value”，拿老北京梨园行当里的一句话——“那是下三滥的玩意儿”。</p></li><p> &nbsp; &nbsp;(全文完)<br /></p><div class="wp_rp_wrap  wp_rp_plain" id="wp_rp_first"><div class="wp_rp_content"><ul><li></li></ul></div></div><p><br/></p></ul>
+					
+					<div style="margin: 4px 80px;padding:10px;border:#01DF01 3px dashed;background: #F3F781;-moz-border-radius: 5px;border-radius: 5px;">
+					觉得文章有用？立即：
+<script type="text/javascript" charset="utf-8">
+(function(){
+  var _w = 106 , _h = 24;
+  var param = {
+    /*url:location.href,*/
+    url:'http://blogread.cn/it/article/6533?f=wb2', 
+    type:'5',
+    count:'', /**是否显示分享数，1显示(可选)*/
+    appkey:'3741373929', /**您申请的应用appkey,显示分享来源(可选)*/
+    title:'【C语言全局变量那些事儿】作为一名程序员，如果说沉迷一门编程语言算作一种乐趣的话，那么与此同时反过来去黑一门编程语言就是这种乐趣的升华。今天我们就来黑一把C语言，好好展示一下这门经典语言令人抓狂的一面。', /**分享的文字内容(可选，默认为所在页面的title)*/
+    pic:'', /**分享图片的路径(可选)*/
+    ralateUid:'1646218964', /**关联用户的UID，分享微博会@该用户(可选)*/
+	language:'zh_cn', /**设置语言，zh_cn|zh_tw(可选)*/
+    rnd:new Date().valueOf()
+  }
+  var temp = [];
+  for( var p in param ){
+    temp.push(p + '=' + encodeURIComponent( param[p] || '' ) )
+  }
+  document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://hits.sinajs.cn/A1/weiboshare.html?' + temp.join('&') + '" width="'+ _w+'" height="'+_h+'"></iframe>')
+})()
+</script>
+						和朋友一起 <strong>共学习 共进步！</strong>
+						
+										</div>
+
+					<div>
+						<script type="text/javascript"><!--
+						google_ad_client = "ca-pub-2206192680127944";
+						/* blogread文章底部 */
+						google_ad_slot = "1471313689";
+						google_ad_width = 728;
+						google_ad_height = 90;
+						//-->
+						</script>
+						<script type="text/javascript"
+						src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+						</script>
+					</div>
+					
+					
+										<h3>我们猜你喜欢：</h3>
+					<ol>
+													<li><a href="http://blogread.cn/it/article/3483?f=sa">如何学好C语言 &nbsp;&nbsp; <span style="font-size:14px;">(阅读：2625)</span></a></li>
+													<li><a href="http://blogread.cn/it/article/1728?f=sa">c语言全局变量和局部变量问题汇总 &nbsp;&nbsp; <span style="font-size:14px;">(阅读：2127)</span></a></li>
+													<li><a href="http://blogread.cn/it/article/267?f=sa">关于全局变量不能全局的问题 &nbsp;&nbsp; <span style="font-size:14px;">(阅读：1843)</span></a></li>
+													<li><a href="http://blogread.cn/it/article/2307?f=sa">jRaiser与jQuery的冲突问题 &nbsp;&nbsp; <span style="font-size:14px;">(阅读：1599)</span></a></li>
+													<li><a href="http://blogread.cn/it/article/4553?f=sa">深入了解C语言 &nbsp;&nbsp; <span style="font-size:14px;">(阅读：1246)</span></a></li>
+												
+					</ol>
+					
+				</div><!-- article -->
+
+			</div><!-- articlebox -->
+
+			<div class="around">
+				<div class="prefix"><img src="http://blogread.cn/it/images/article.gif" border="0"> <strong>前一篇：</strong><a href="http://blogread.cn/it/article/6531">类型的本质和函数式实现</a></div>
+				<div class="suffix"><img src="http://blogread.cn/it/images/article.gif" border="0"> <strong>后一篇：</strong><a href="http://blogread.cn/it/article/6560">面向“接口”编程和面向“实现”编程</a></div>
+			</div>
+			
+			<div class="comment">
+				<div class="tip"><a name="original">文章信息</a></div>
+				
+				<ul>
+					<li>作者：<a href="http://blogread.cn/it/channel/272">Leo</a></li>
+					<li>来源： <a href="http://coolshell.cn/articles/10115.html" target="_blank">酷壳 - CoolShell.cn</a></li>
+					<li>发布时间：2013-07-26 13:37:32</li>
+					<li>浏览：1280</li>
+					<li>标签：    <a href="http://blogread.cn/it/tags/C%E8%AF%AD%E8%A8%80">C语言</a>    <a href="http://blogread.cn/it/tags/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F">全局变量</a></li>
+				</ul>
+			</div>
+
+			<div class="comment">
+				<div class="tip"><a name="comment">评论</a></div>
+				<div class="commentbox">
+				            	<wb:comments url="http://blogread.cn/it/article/6533?f=wb" brandline="y" width="auto" appkey="3741373929" ></wb:comments>
+				</div>
+				<!-- 
+									<ol>暂时还没有评论，要不您先来？</ol>
+								 -->
+                
+            </div><!-- comment -->
+            
+            
+<!-- 
+            <div class="commentadd">
+
+            	
+            	<form action="" method="post">
+            		<input type="hidden" name="idArticle" value="6533" />
+            	<div class="tip">巩固知识，从评论开始！</div>
+            	<div class="info">
+                	昵称(*)：<input name="name" type="text" id="name" value="" size="8">
+                    <br />邮箱(*)：<input name="email" type="text" id="email" value="" size="20">
+                   个人网站：<input name="site" type="text" id="site" value="" size="30">
+                    <p>（昵称、邮箱和内容为必填，邮箱将被保密！）</p>
+                </div>
+                <div class="content">
+                	<textarea name="content" cols="70" rows="10" wrap="PHYSICAL"></textarea>
+                </div>
+                <div class="post">
+                	<input name="submit" type="submit" value="提交评论"> 巩固知识，从评论开始！
+                </div>
+                </form>
+                
+            </div>!-- commentadd -->
+
+        </div><!-- main_left -->
+
+        <div class="main_right"> 
+
+            			<div style="margin-bottom:4px;">
+				<iframe src="/it/gg/jike/2/geek.html" frameborder="0" height="300"></iframe>
+			</div><!-- category -->
+
+            <div class="category">
+                <div class="title">
+					努力让您和作者直接沟通
+                </div>
+                <div class="info">
+                		<script type="text/javascript">
+							WB2.anyWhere(function(W){
+								W.widget.followButton({
+									'nick_name': '左耳朵耗子',	//用户昵称
+									'id': "wb_follow_btn"	//关注按钮容器ID
+								});
+							});
+						</script>
+						<span id="wb_follow_btn"></span>
+						<p>哇，太棒了！对文章有任何想法，可：</p>
+						<wb:publish default_text="@左耳朵耗子，我对您这个文章（http://blogread.cn/it/article/6533?f=wbc 分享自 @IT技术博客大学习）有点想法：" button_size="big" button_text="立即在微博与作者沟通！" />正在拼命挖掘沟通路线，马上就通了！</wb:publish>
+                </div>
+            </div><!-- category -->
+
+
+
+
+            <div class="category">
+                <div class="title">
+                    我们猜您喜欢
+                </div>
+                <div class="info">
+                    <ul>
+                                            <li><img src="http://blogread.cn/it/images/re.gif" border="0"><a href="http://blogread.cn/it/article/3483?f=sr">如何学好C语言</a></li>
+                                            <li><img src="http://blogread.cn/it/images/re.gif" border="0"><a href="http://blogread.cn/it/article/1728?f=sr">c语言全局变量和局部变量问题汇总</a></li>
+                                            <li><img src="http://blogread.cn/it/images/re.gif" border="0"><a href="http://blogread.cn/it/article/267?f=sr">关于全局变量不能全局的问题</a></li>
+                                            <li><img src="http://blogread.cn/it/images/re.gif" border="0"><a href="http://blogread.cn/it/article/2307?f=sr">jRaiser与jQuery的冲突问题</a></li>
+                                            <li><img src="http://blogread.cn/it/images/re.gif" border="0"><a href="http://blogread.cn/it/article/4553?f=sr">深入了解C语言</a></li>
+                        
+                    </ul>
+                </div>
+            </div><!-- category -->
+
+            <div class="category">
+                <div class="info" style="text-align:center">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- it右侧 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:250px;height:250px"
+     data-ad-client="ca-pub-2206192680127944"
+     data-ad-slot="5430998082"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+				</div>
+            </div><!-- category -->
+            
+
+            <div class="category">
+                <div class="title">
+                    扫一扫订阅我的微信
+                </div>
+                <div class="info">
+					微信号：IT技术博客大学习
+					<br />
+                        <iframe src="http://blogread.cn/it/images/weixin/qrcode_for_gh_609c8c16bbd2_258.jpg" frameborder="0" height="258"></iframe>
+                </div>
+            </div><!-- category -->
+
+            <div class="category">
+                <div class="title">
+                    近3天十大热文
+                </div>
+                <div class="info">
+                    <ul>
+                                                	<li><img src="http://blogread.cn/it/images/h_article.gif" border="0">[411] <a href="http://blogread.cn/it/article/6526?f=hot3">加班与效率</a></li>
+                                                	<li><img src="http://blogread.cn/it/images/h_article.gif" border="0">[305] <a href="http://blogread.cn/it/article/6525?f=hot3">程序员最怕的事</a></li>
+                                                	<li><img src="http://blogread.cn/it/images/h_article.gif" border="0">[296] <a href="http://blogread.cn/it/article/6529?f=hot3">服务器监控软件Zabbix初窥</a></li>
+                                                	<li><img src="http://blogread.cn/it/images/h_article.gif" border="0">[280] <a href="http://blogread.cn/it/article/6532?f=hot3">失败的人生</a></li>
+                                                	<li><img src="http://blogread.cn/it/images/h_article.gif" border="0">[230] <a href="http://blogread.cn/it/article/6771?f=hot3">Linux大棚版Thrift入门教程</a></li>
+                                                	<li><img src="http://blogread.cn/it/images/h_article.gif" border="0">[175] <a href="http://blogread.cn/it/article/6527?f=hot3">学习搭建Python2.7.5环境</a></li>
+                                                	<li><img src="http://blogread.cn/it/images/h_article.gif" border="0">[174] <a href="http://blogread.cn/it/article/6774?f=hot3">Linux如何统计进程的CPU利用率</a></li>
+                                                	<li><img src="http://blogread.cn/it/images/h_article.gif" border="0">[141] <a href="http://blogread.cn/it/article/6533?f=hot3">C语言全局变量那些事儿</a></li>
+                                                	<li><img src="http://blogread.cn/it/images/h_article.gif" border="0">[137] <a href="http://blogread.cn/it/article/6528?f=hot3">人人都能用的10条网站易用性技巧</a></li>
+                                                	<li><img src="http://blogread.cn/it/images/h_article.gif" border="0">[95] <a href="http://blogread.cn/it/article/6758?f=hot3">如何写好一封邮件</a></li>
+                                        </ul>
+                </div>
+            </div><!-- category -->
+
+            <div class="category">
+                <div class="title">
+                    最新发表
+                </div>
+                <div class="info">
+                    <ul>
+                                            <li><img src="http://blogread.cn/it/images/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6923">jQuery.ajax处理302重定向</a></li>
+                                            <li><img src="http://blogread.cn/it/images/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6922">linux下boot空间不足解决方法</a></li>
+                                            <li><img src="http://blogread.cn/it/images/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6921">如何应对：这个功能别人都有了</a></li>
+                                            <li><img src="http://blogread.cn/it/images/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6920">如何捕获和分析 JavaScript Error</a></li>
+                                            <li><img src="http://blogread.cn/it/images/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6919">cookie窃取和session劫持</a></li>
+                                            <li><img src="http://blogread.cn/it/images/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6918">如何实现一个malloc</a></li>
+                                            <li><img src="http://blogread.cn/it/images/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6917">理解JavaScript 中的 this</a></li>
+                                            <li><img src="http://blogread.cn/it/images/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6916">Print —— 被埋没的Media Type</a></li>
+                                            <li><img src="http://blogread.cn/it/images/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6915">launchAnyWhere: Activity组件权限绕过漏洞解析</a></li>
+                                            <li><img src="http://blogread.cn/it/images/h_reart.gif" border="0"><a href="http://blogread.cn/it/article/6914">javascript DOM操作中的insertAdjacentHT</a></li>
+                        
+                    </ul>
+                </div>
+            </div><!-- category -->
+
+
+
+
+
+			<div class="adlayer" id="adlayer">
+				<div class="header">
+					<div class="title">站长推荐</div>
+					<div class="close" id="adlayerclose">关闭</div>
+				</div>
+				<div class="box">
+					<div class="articletitle"><a href="http://blogread.cn/it/go.php?from=jike&url=http%3A%2F%2Fwww.jikexueyuan.com%2Fpath%2Fhtml5%2F%3Fhmsr%3Dblogread_tc_html5" rel="nofollow" target="_blank">独家分享，HTML5开发学习路径图</a></div>
+					<div class="content">
+						<a href="http://blogread.cn/it/go.php?from=jike&url=http%3A%2F%2Fwww.jikexueyuan.com%2Fpath%2Fhtml5%2F%3Fhmsr%3Dblogread_tc_html5" rel="nofollow" target="_blank">
+							<img src="http://blogread.cn/it/images/gg/h5.jpg" height="90" width="90" style="float:left;margin-right:5px">
+							新WEB / HTML5的时代马上就要到来, 还不把握先机？从入门到完整项目开发啥都有。 
+						</a>
+					</div>
+				</div>
+				<div class="footer"><a href="http://blogread.cn/it/go.php?from=jike&url=http%3A%2F%2Fwww.jikexueyuan.com%2Fpath%2Fhtml5%2F%3Fhmsr%3D%20blogread_tc_html5" rel="nofollow" target="_blank">查看 &gt;&gt;</a></div>
+			</div><!-- category -->
+			
+			<div class="adlayer" id="adlayertitle" style="display: none">
+				<div class="header">
+					<div class="title">极客学院精品课程</div>
+					<div class="close" id="adlayeropen">打开</div>
+				</div>
+			</div><!-- category -->            
+        </div><!-- main_right --> 
+
+    </div> 
+
+            <div class="bottomarticle">
+            &copy; 2009 - 2014 本页面所有内容，转载请注明出处 站长Email:blogread.cn@gmail.com
+        
+        <br />
+        <br />
+		<a href="http://www.miibeian.gov.cn" target="_blank">京ICP备09017802号</a>
+		<script language="javascript" type="text/javascript" src="http://js.users.51.la/2709512.js"></script>
+<noscript><a href="http://www.51.la/?2709512" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/2709512.asp" style="border:none" /></a></noscript>
+
+	<script src="http://s15.cnzz.com/stat.php?id=2320291&web_id=2320291" language="JavaScript"></script>
+	
+	
+	<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6082292-6");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F7d07e17bc73562efebd41b6ddcd5a499' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+    </div><!-- bottom -->
+
+		 
+</div><!-- body -->
+<!-- 将以下代码放在<head>之后或者</body>标签之前。 -->
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+  {lang: 'zh-CN'}
+</script>
+
+</body> 
+</html>
